@@ -7,7 +7,7 @@
 
 ##预习报告统计情况##
 
-![phylist](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/phylist.jpg)
+![phylist](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/2015级上学期物理实验信息列表.jpg)
 
 **其中已经上线的预习报告（以实验种类作为个体单位，例如1011）:**
 
