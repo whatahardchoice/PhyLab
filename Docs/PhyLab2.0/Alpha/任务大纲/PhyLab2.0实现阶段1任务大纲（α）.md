@@ -5,7 +5,7 @@
 # 任务信息
 
 * GitHub：[PhyLab2.0实现（α） Project](https://github.com/default1406/PhyLab/projects/2)
-* 日期：2016.10.19~2016.10.30
+* 日期：2016.10.19~2016.10.24
 * 总时长：90h
 
 # 任务分配
