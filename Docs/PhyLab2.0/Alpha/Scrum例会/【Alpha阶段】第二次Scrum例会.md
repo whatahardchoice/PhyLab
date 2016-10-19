@@ -12,10 +12,10 @@
 | 姓名 | 今日已完成任务 | 明日计划任务 | 工作困难 | 阶段时长（h） | 阶段团队贡献 |
 | --- | --- | --- | --- | --- | --- |
 | 岳桐宇 | 无 | [#21 设计改进后的网页设计原型](https://github.com/default1406/PhyLab/issues/21) | 1. 由于之前和邓楚云发生工作冲突，前端任务被耽误。 | 5 | *待定* |
-| 冯炜韬 | [#15 阅读分析PhyLab后端代码与文档](https://github.com/default1406/PhyLab/issues/15)<br/>[#17 协商预估PhyLab后端开发时长](https://github.com/default1406/PhyLab/issues/17) | *待定* | 1. 网站结构比较混乱，可能需要重新部署。 | 5.5 | *待定* |
-| 杨子琛 | [#13 整理录入数据处理方式](https://github.com/default1406/PhyLab/issues/13)<br/>[#11 阅读分析PhyLab数据处理脚本代码与文档](https://github.com/default1406/PhyLab/issues/11) | *待定* | 1. NumPy无法安装。 | 10 | *待定* |
-| 程富瑞 | [#9 整理收集物理实验相关资料](https://github.com/default1406/PhyLab/issues/9) | *待定* | 无 | 12 | *待定* |
-| 邓楚云 | [#3 撰写PhyLab2.0需求与功能分析改进文档](https://github.com/default1406/PhyLab/issues/3)<br/>[#5 初步掌握Web前端知识](https://github.com/default1406/PhyLab/issues/5) | *待定* | 1. 给自己布置的任务量过大，导致压力过大，相当疲劳。 | 41 | *待定* |
+| 冯炜韬 | [#15 阅读分析PhyLab后端代码与文档](https://github.com/default1406/PhyLab/issues/15)<br/>[#17 协商预估PhyLab后端开发时长](https://github.com/default1406/PhyLab/issues/17) | [#37 整理PhyLab1.0服务器代码](https://github.com/default1406/PhyLab/issues/37)<br/>[#38 整理PhyLab2.0部署的Web服务集成模式](https://github.com/default1406/PhyLab/issues/38) | 1. 网站结构比较混乱，可能需要重新部署。 | 5.5 | *待定* |
+| 杨子琛 | [#13 整理录入数据处理方式](https://github.com/default1406/PhyLab/issues/13)<br/>[#11 阅读分析PhyLab数据处理脚本代码与文档](https://github.com/default1406/PhyLab/issues/11) | [#33 测试1010113实验脚本与LaTeX模板可用性与正确性](https://github.com/default1406/PhyLab/issues/33) | 1. NumPy无法安装。 | 10 | *待定* |
+| 程富瑞 | [#9 整理收集物理实验相关资料](https://github.com/default1406/PhyLab/issues/9) | [#29 测试1070212实验脚本与LaTeX模板可用性与正确性](https://github.com/default1406/PhyLab/issues/29) | 无 | 12 | *待定* |
+| 邓楚云 | [#3 撰写PhyLab2.0需求与功能分析改进文档](https://github.com/default1406/PhyLab/issues/3)<br/>[#5 初步掌握Web前端知识](https://github.com/default1406/PhyLab/issues/5) | [#22 制定PhyLab2.0实现阶段1任务大纲（α）](https://github.com/default1406/PhyLab/issues/22)<br/>[#23 分配2016.10.19~2016.10.21任务Issues](https://github.com/default1406/PhyLab/issues/23)<br/>[#24 撰写2016.10.19Scrum会议记录](https://github.com/default1406/PhyLab/issues/24) | 1. 给自己布置的任务量过大，导致压力过大，相当疲劳。 | 41 | *待定* |
 
 # 燃尽图
 
