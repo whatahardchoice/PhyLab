@@ -36,3 +36,22 @@
 ## 收藏夹
 - 只能收藏报告，意义不大。
 - 可以加入收藏数据，收藏文章的功能。***feature***
+
+# 改进后的网页模板
+## 首页
+![首页](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/首页.jpg?raw=true)
+
+## 实验选择
+![实验选择](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/实验选择.jpg?raw=true)
+
+## 数据录入
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/数据录入.jpg?raw=true)
+
+## 预览报告
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/预览报告.jpg?raw=true)
+
+## 反馈
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/反馈.jpg?raw=true)
+
+## 个人信息
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/个人信息.jpg?raw=true)
