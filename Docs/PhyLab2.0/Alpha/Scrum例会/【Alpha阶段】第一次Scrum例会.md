@@ -10,11 +10,11 @@
 
 # 燃尽图
 
-![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/%E7%87%83%E5%B0%BD%E5%9B%BE20161018.png?raw=true)
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/%E7%87%83%E5%B0%BD%E5%9B%BE20161017.png?raw=true)
 
 # 例会照片
 
-![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/Scrum%E4%BE%8B%E4%BC%9A20161018.JPG?raw=true)
+![](https://github.com/default1406/PhyLab/blob/master/Docs/PhyLab2.0/Alpha/Resources/Scrum%E4%BE%8B%E4%BC%9A20161017.JPG?raw=true)
 
 # 迁入记录
 
