@@ -80,35 +80,38 @@ def BitAdapt(x,u_x) :
                 break
             else :
                 i+=1
-        u_x = round(float(u_x),bit)
-        x = round(float(x),bit)
-        if bit == 0:
-            u_x = ("%d" % u_x)
-            x = ("%d" % x)
-        elif bit == 1:
-            u_x = ("%.1f" % u_x)
-            x = ("%.1f" % x)
-        elif bit == 2:
-            u_x = ("%.2f" % u_x)
-            x = ("%.2f" % x)
-        elif bit == 3:
-            u_x = ("%.3f" % u_x)
-            x = ("%.3f" % x)
-        elif bit == 4:
-            u_x = ("%.4f" % u_x)
-            x = ("%.4f" % x)
-        elif bit == 5:
-            u_x = ("%.5f" % u_x)
-            x = ("%.5f" % x)
-        elif bit == 6:
-            u_x = ("%.6f" % u_x)
-            x = ("%.6f" % x)
-        elif bit == 7:
-            u_x = ("%.7f" % u_x)
-            x = ("%.7f" % x)
-        elif bit == 8:
-            u_x = ("%.8f" % u_x)
-            x = ("%.8f" % x)
+        u_x = ("%.*f"%(bit, u_x))
+        x = ("%.*f"%(bit, x))
+        # u_x = round(float(u_x),bit)
+        # x = round(float(x),bit)
+
+        # if bit == 0:
+        #     u_x = ("%d" % u_x)
+        #     x = ("%d" % x)
+        # elif bit == 1:
+        #     u_x = ("%.1f" % u_x)
+        #     x = ("%.1f" % x)
+        # elif bit == 2:
+        #     u_x = ("%.2f" % u_x)
+        #     x = ("%.2f" % x)
+        # elif bit == 3:
+        #     u_x = ("%.3f" % u_x)
+        #     x = ("%.3f" % x)
+        # elif bit == 4:
+        #     u_x = ("%.4f" % u_x)
+        #     x = ("%.4f" % x)
+        # elif bit == 5:
+        #     u_x = ("%.5f" % u_x)
+        #     x = ("%.5f" % x)
+        # elif bit == 6:
+        #     u_x = ("%.6f" % u_x)
+        #     x = ("%.6f" % x)
+        # elif bit == 7:
+        #     u_x = ("%.7f" % u_x)
+        #     x = ("%.7f" % x)
+        # elif bit == 8:
+        #     u_x = ("%.8f" % u_x)
+        #     x = ("%.8f" % x)
         i = 0
         while(1):
             temp = float(u_x)*(10**i)
@@ -120,14 +123,14 @@ def BitAdapt(x,u_x) :
         if Tempbit == bit:
             break
     if ten > 0:
-        x = "(" + str(x) + "\\pm"
-        u_x = str(u_x) + "){\\times}10^{" + str(ten) + "}"
+        x = "(" + x + "\\pm"
+        u_x += "){\\times}10^{" + str(ten) + "}"
     elif ften > 0:
-        x = "(" + str(x) + "\\pm"
-        u_x = str(u_x) + "){\\times}10^{-" + str(ften) + "}"
+        x = "(" + x + "\\pm"
+        u_x += "){\\times}10^{-" + str(ften) + "}"
     else:
-        x = "(" + str(x) + "\\pm"
-        u_x = str(u_x) + ")" 
+        x = "(" + x + "\\pm"
+        u_x += ")" 
     return x + u_x
 
 #转换为科学计数法表示
