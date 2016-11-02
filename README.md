@@ -15,6 +15,9 @@
 
 # ChangeLog
 
+## 2016/11/03
+- 增加服务器自动部署
+
 ## Build 1.2.2
 **Release Date: 22 December 2015**
 - 实用小工具加入，Beta阶段基本完成
