@@ -1,4 +1,12 @@
-/bootstrap/compiled.php
+/vendor
+/node_modules
+/public/pdf_tmp
+/public/star_pdf
+/public/xel.php
+Homestead.yaml
+Homestead.json
+.env
+*.swp
 .env.*.php
 .env.php
 .env
