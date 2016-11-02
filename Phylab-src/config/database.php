@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'mysql',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '121.42.204.94:3306',
+            'host'      => '121.42.204.94',
             'database'  => 'Phylab_db',
             'username'  => 'root',
             'password'  => 'default2014',

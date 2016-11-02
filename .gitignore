@@ -1,12 +1,7 @@
-/public/pdf_tmp
-/public/star_pdf
-/public/xel.php
-Homestead.yaml
-Homestead.json
-.env
-*.swp
+/bootstrap/compiled.php
 .env.*.php
 .env.php
+.env
 *.aux
 *.log
 *.synctex.gz(busy)
