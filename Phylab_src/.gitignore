@@ -1,3 +1,4 @@
+/vendor
 /node_modules
 /public/pdf_tmp
 /public/star_pdf
