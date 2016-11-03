@@ -12,8 +12,10 @@
 - [团队编码规范](https://github.com/buaase/Phylab-Web/blob/master/docs/PSR-SE.md)
 - [用户界面原型](https://github.com/buaase/Phylab-Web/blob/master/docs/User-Interface.md)
 
-
 # ChangeLog
+
+## 2016/11/3
+- 配置服务器实现自动化部署
 
 ## Build 1.2.2
 **Release Date: 22 December 2015**
