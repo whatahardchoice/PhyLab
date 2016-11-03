@@ -28,9 +28,6 @@
             }
             $('#login-alert').show();
         }
-        else {
-          window.location.href="#";
-        }
     });
 }
 $('#login_form input').keydown(function (e) {

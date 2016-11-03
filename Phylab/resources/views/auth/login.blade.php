@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.html">
+        <a class="navbar-brand" href="{{URL::route('index')}}">
           <img id="header-logo" src="./img/phylab_logo_single.svg"/>
           <span>PhyLab</span>
         </a>
@@ -49,12 +49,8 @@
           </li>
         </ul>
         <div class="navbar-right btns">
-          @if (!$auth)
           <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
           <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
-          @else
-          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
-          @endif
         </div>
       </div>
     </div>

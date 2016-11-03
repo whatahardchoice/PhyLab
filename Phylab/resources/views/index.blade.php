@@ -53,7 +53,7 @@
           <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
           <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
           @else
-          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
+          <a class="btn btn-default navbar-btn" href="{{URL::route('logout')}}">登出</a>
           @endif
         </div>
       </div>
