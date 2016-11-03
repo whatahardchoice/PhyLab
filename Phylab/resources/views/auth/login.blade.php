@@ -98,7 +98,7 @@
                 </div>
               </div>
               <div class="submit">
-                <input class="btn btn-primary" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
+                <input class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
               </div>
             </form>
             <div class="login-footer">
@@ -188,5 +188,9 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
+<script src="../js/global.js"></script>
+<script src="../js/login.js"></script>
+<script type="text/javascript">$('.carousel').carousel()</script>
+<script src="../js/statistics.js"></script>
 </body>
 </html>
