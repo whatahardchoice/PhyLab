@@ -31,8 +31,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html">
-          <img id="header-logo" src="../img/phylab_logo_single.svg"/>
+        <a class="navbar-brand" href="{{URL::route('index')}}">
+          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
           <span>PhyLab</span>
         </a>
       </div>
@@ -49,14 +49,13 @@
           </li>
         </ul>
         <div class="navbar-right btns">
-          <a class="btn btn-default navbar-btn sign-in" href="./login.html">登录</a>
-          <a class="btn btn-default navbar-btn sign-up" href="./register.html">注册</a>
+          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
+          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
-
 
 <div class="container layout layout-margin-top">
   <div class="row">
@@ -69,7 +68,10 @@
         </div>
         <div class="col-md-6 col-md-offset-3">
           <div class="login-body">
-            <form method="POST" action="/login">
+            <div class="alert alert-danger text-center" role="alert" id="login-alert">
+              <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
+            </div>
+            <form role="form" method="POST" action="{{URL::route('login')}}">
               <div class="form-group login">
                 <div class="input-group">
                   <div class="input-group-addon">
@@ -96,11 +98,11 @@
                 </div>
               </div>
               <div class="submit">
-                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="登录">
+                <input class="btn btn-primary" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
               </div>
             </form>
             <div class="login-footer">
-              <span><a href="/reset_password">忘记密码？</a><a href="register.html">注册新账号</a></span>
+              <span><a href="/password/email">忘记密码？</a><a href="{{URL::route('register')}}">注册新账号</a></span>
             </div>
           </div>
         </div>

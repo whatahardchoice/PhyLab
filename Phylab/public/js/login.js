@@ -1,7 +1,7 @@
  function Post_login(){
-    postData="email="+encodeURI($('#InputAccount').val())+"&password="+encodeURI($('#InputPassword').val());
-    if($('#IfRemember').prop('checked'))
-        postData+="&remember="+$('#IfRemember').val();
+    postData="email="+encodeURI($('#login').val())+"&password="+encodeURI($('#password').val());
+    if($('#remember').prop('checked'))
+        postData+="&remember="+$('#remember').val();
     PostAjax("/login",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -11,28 +11,28 @@
                 window.location.href="/index";
             }
             else{
-                $('#errorMessage').text(jsonText["message"]);
-                $('#loginAlert').show();
+                $('#alert-message').text(jsonText["message"]);
+                $('#login-alert').show();
             }
         }
         else if(this.readyState==4 && this.status!=200){
             var jsonText = eval("(" + this.responseText + ")");
             if(jsonText["code"]==904){
-                $('#errorMessage').text(" 账号或密码不能为空");
+                $('#alert-message').text("账号或密码不能为空");
             }
             else if(jsonText["code"]==101){
-                $('#errorMessage').text(" 用户名或密码错误");
+                $('#alert-message').text("用户名或密码错误");
             }
             else{
-                $('#errorMessage').text(" 未知错误");
+                $('#alert-message').text("未知错误");
             }
-            $('#loginAlert').show();
+            $('#login-alert').show();
         }
     });
 }
 $('#login_form input').keydown(function (e) {
     if (e.keyCode == 13)
         {
-            $('#login_submit').click();
+            $('#login-submit').click();
         }
     });
