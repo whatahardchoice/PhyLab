@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.html">
+        <a class="navbar-brand" href="{{URL::route('index')}}">
           <img id="header-logo" src="./img/phylab_logo_single.svg"/>
           <span>PhyLab</span>
         </a>
