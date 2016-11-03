@@ -223,7 +223,7 @@
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
 <script src="./js/global.js"></script>
-<script src="./js/login.js"></script>
+<script src="./js/oldlogin.js"></script>
 <script type="text/javascript">$('.carousel').carousel()</script>
 <script src="./js/statistics.js"></script>
 </body>
