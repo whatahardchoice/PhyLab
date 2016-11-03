@@ -109,20 +109,22 @@
 			          <div class="alert alert-danger" role="alert" id="loginAlert" style="display:none;height:30px;padding:5px;">
                     <span class="glyphicon glyphicon-remove-sign"></span><span id="errorMessage">&nbsp 用户名或密码错误!</span>
                 </div>
-                <div class="form-group">
-                    <label for="InputAccount" class="col-md-2 control-label">用户名</label>
-                    <div class="input-group col-md-9">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="email" class="form-control" id="login" placeholder="请输入您的用户名/邮箱" name="email" value="{{ old('email') }}">
-                    </div>
+                <div class="form-group login">
+                	<div class="input-group">
+                  	<div class="input-group-addon">
+                    	<i class="fa fa-envelope"></i>
+                  	</div>
+                  	<input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
                 </div>
-                <div class="form-group">
-                    <label for="InputPassword" class="col-md-2 control-label">密码</label>
-                    <div class="input-group col-md-9">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
-                        <input type="password" class="form-control" id="password" placeholder="请输入您的密码" name="password">
-                    </div>
-                </div>
+              	</div>
+                <div class="form-group password">
+                	<div class="input-group">
+                  	<div class="input-group-addon">
+                    	<i class="fa fa-lock"></i>
+                  	</div>
+                  	<input class="form-control" id="password" name="password" placeholder="请输入密码" type="password" value="">
+                	</div>
+              	</div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-4">
                         <div class="checkbox">
