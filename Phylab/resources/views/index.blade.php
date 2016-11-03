@@ -66,8 +66,8 @@
             &nbsp;PhyLab<br/>物理数据中心
           </div>
         </div>
-        <div class="col-xs-12 col-md-5">
-          <form action="" method="post">
+        <div class="col-xs-12 col-md-5" @if (!$auth) style="display: block" @else style="display: none" @endif>
+          <form method="post">
             <div class="form-group">
               <input class="form-control" name="name" id="name" type="text" placeholder="昵称">
             </div>
