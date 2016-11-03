@@ -1,0 +1,15 @@
+<form method="POST" action="/password/email">
+    <?php echo csrf_field(); ?>
+
+
+    <div>
+        Email
+        <input type="email" name="email" value="<?php echo e(old('email')); ?>">
+    </div>
+
+    <div>
+        <button type="submit">
+            发送密码重置链接
+        </button>
+    </div>
+</form>
