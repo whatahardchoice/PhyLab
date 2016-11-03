@@ -113,26 +113,26 @@
                     <label for="InputAccount" class="col-md-2 control-label">用户名</label>
                     <div class="input-group col-md-9">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="email" class="form-control" id="InputAccount" placeholder="请输入您的用户名/邮箱" name="email" value="{{ old('email') }}">
+                        <input type="email" class="form-control" id="login" placeholder="请输入您的用户名/邮箱" name="email" value="{{ old('email') }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="InputPassword" class="col-md-2 control-label">密码</label>
                     <div class="input-group col-md-9">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
-                        <input type="password" class="form-control" id="InputPassword" placeholder="请输入您的密码" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="请输入您的密码" name="password">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-4">
                         <div class="checkbox">
-                            <label><input type="checkbox" id="IfRemember" name="remember">记住密码</input></label>
+                            <label><input type="checkbox" id="remember" name="remember">记住密码</input></label>
                         </div>
                     </div>
                     <div class="col-md-offset-3 col-md-3" style="float:right"><a href="/password/email">忘记密码?</a></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
+                    <button type="button" id="login-submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
                 </div>
             </form>
             <div class="login-footer">
@@ -223,7 +223,7 @@
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
 <script src="./js/global.js"></script>
-<script src="./js/oldlogin.js"></script>
+<script src="./js/login.js"></script>
 <script type="text/javascript">$('.carousel').carousel()</script>
 <script src="./js/statistics.js"></script>
 </body>
