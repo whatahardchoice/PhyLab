@@ -31,7 +31,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{URL::route('index')}}">
+        <a class="navbar-brand" href="./index.html">
           <img id="header-logo" src="./img/phylab_logo_single.svg"/>
           <span>PhyLab</span>
         </a>
@@ -49,8 +49,12 @@
           </li>
         </ul>
         <div class="navbar-right btns">
+          @if (!$auth)
           <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
           <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
+          @else
+          <a class="btn btn-default navbar-btn" href="{{URL::route('logout')}}">登出</a>
+          @endif
         </div>
       </div>
     </div>
@@ -66,8 +70,8 @@
             &nbsp;PhyLab<br/>物理数据中心
           </div>
         </div>
-        <div class="col-xs-12 col-md-5">
-          <form action="" method="post">
+        <div class="col-xs-12 col-md-5" @if (!$auth) style="display: none" @else style="display: block" @endif>
+          <form method="post">
             <div class="form-group">
               <input class="form-control" name="name" id="name" type="text" placeholder="昵称">
             </div>
@@ -77,7 +81,7 @@
             <div class="form-group">
               <input class="form-control" name="password" id="password " type="password" placeholder="密码">
             </div>
-            <button class="btn register" type="submit">注册</button>
+            <button class="btn register" href="{{URL::route('register')}}" type="submit">注册</button>
             <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</P>
           </form>
         </div>
