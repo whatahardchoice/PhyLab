@@ -71,7 +71,8 @@
             <div class="alert alert-danger text-center" role="alert" id="login-alert">
               <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
             </div>
-            <form role="form" method="POST">
+            <form role="form" method="POST" action="{{URL::route('login')}}">
+            	{!! csrf_field() !!}
               <div class="form-group login">
                 <div class="input-group">
                   <div class="input-group-addon">
