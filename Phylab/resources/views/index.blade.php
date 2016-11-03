@@ -104,36 +104,36 @@
             <div class="alert alert-danger text-center" role="alert" id="login-alert">
               <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
             </div>
-            <form role="form" method="POST" action="{{URL::route('login')}}">
-            	{!! csrf_field() !!}
-              <div class="form-group login">
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-envelope"></i>
-                  </div>
-                  <input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
+            <form id="login_form" class="form-horizontal" role="form" method="post" action="{{URL::route('login')}}">
+                {!! csrf_field() !!}
+			          <div class="alert alert-danger" role="alert" id="loginAlert" style="display:none;height:30px;padding:5px;">
+                    <span class="glyphicon glyphicon-remove-sign"></span><span id="errorMessage">&nbsp 用户名或密码错误!</span>
                 </div>
-              </div>
-              <div class="form-group password">
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-lock"></i>
-                  </div>
-                  <input class="form-control" id="password" name="password" placeholder="请输入密码" type="password" value="">
+                <div class="form-group">
+                    <label for="InputAccount" class="col-md-2 control-label">用户名</label>
+                    <div class="input-group col-md-9">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="email" class="form-control" id="InputAccount" placeholder="请输入您的用户名/邮箱" name="email" value="{{ old('email') }}">
+                    </div>
                 </div>
-              </div>
-              <div id="auto-login" class="col-xs-12 col-md-2">
-                <div class=" form-group controls">
-                  <div class="input-group">
-                    <label for="remember" class="checkbox-inline btn btn-primary">
-                      <input id="remember" name="remember" type="checkbox" value="y"/>下次自动登录
-                    </label>
-                  </div>
+                <div class="form-group">
+                    <label for="InputPassword" class="col-md-2 control-label">密码</label>
+                    <div class="input-group col-md-9">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
+                        <input type="password" class="form-control" id="InputPassword" placeholder="请输入您的密码" name="password">
+                    </div>
                 </div>
-              </div>
-              <div class="submit">
-                <input class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
-              </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-4">
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="IfRemember" name="remember">记住密码</input></label>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-3 col-md-3" style="float:right"><a href="/password/email">忘记密码?</a></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
+                </div>
             </form>
             <div class="login-footer">
               <span><a href="/password/email">忘记密码？</a><a href="{{URL::route('register')}}">注册新账号</a></span>
