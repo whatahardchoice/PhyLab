@@ -15,7 +15,7 @@
 # ChangeLog
 
 ## 2016/11/3
-- 服务器完成自动化部署
+- 配置服务器实现自动化部署
 
 ## Build 1.2.2
 **Release Date: 22 December 2015**
