@@ -1,200 +1,171 @@
-﻿<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PhyLabHome</title>
-    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('css/seven-style.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('css/mystyle.css')}}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhyLab</title>
+
+  <!-- Bootstrap -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/bootstrap-tour.min.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./css/phylab.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body style="background-color:#222;">
-<div class="modal fade" id="mymodal-signin">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title lead">登录PhyLab</h4>
-            </div>
-            <div class="modal-body">
-                <form id="login_form" class="form-horizontal" role="form" method="post" action="{{URL::route('login')}}">
-                    {!! csrf_field() !!}
-					<div class="alert alert-danger" role="alert" id="loginAlert" style="display:none;height:30px;padding:5px;">
-                        <span class="glyphicon glyphicon-remove-sign"></span><span id="errorMessage">&nbsp 用户名或密码错误!</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="InputAccount" class="col-md-2 control-label">用户名</label>
-                        <div class="input-group col-md-9">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                            <input type="email" class="form-control" id="InputAccount" placeholder="请输入您的用户名/邮箱" name="email" value="{{ old('email') }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="InputPassword" class="col-md-2 control-label">密码</label>
-                        <div class="input-group col-md-9">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-eye-close"></span></span>
-                            <input type="password" class="form-control" id="InputPassword" placeholder="请输入您的密码" name="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-4">
-                            <div class="checkbox">
-                                <label><input type="checkbox" id="IfRemember" name="remember">记住密码</input></label>
-                            </div>
-                        </div>
-                        <div class="col-md-offset-3 col-md-3" style="float:right"><a href="/password/email">忘记密码?</a></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
-                    </div>
-                </form>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="mymodal-party">
-	<div class="modal-dialog modal-lab" >
-		<div class="modal-content">
-			<div class="modal-head">
-				<button type="button" class="close" data-dismiss="modal" style="height:50px;width:auto;"><span aria-hidden="true" style="font-size:30px;">&times;&nbsp;</span><span class="sr-only">Close</span></button>
-				<h4 class="lead ch">&nbsp &nbsp 联系我们</h4>
-			</div>
-			<div class="modal-body well">
-				<div class="container">
-				<div class="row">
-					<div class="col-md-4">
-						<img class="img-responsive" src="./img/1447574686560.jpg"></img>
-					</div>
-					<div class="col-md-8">
-						<br/><a href="##" class="Title-black" style="font-size:15px;" onclick="window.open('http://www.cnblogs.com/buaase','_blank');"><b>博客: http://www.cnblogs.com/buaase</b></a><hr/>
-						<a href="mailto:buaase@126.com" class="Title-black" style="font-size:15px;"><b>邮箱: default1406@outlook.com</b></a><hr/>
-						<a href="##" class="Title-black" style="font-size:15px;" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?k=_8RvE1OthrVD1heTREc3i0HN8kXBx92_','_blank');"><b>QQ: 229407702(物理实验网站交流群)</b></a><br/><br/>
-						<strong style="float:right">我们需要您的反馈！</strong>
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-@if($auth)
-<!--star modal-->
-<div class="modal fade" id="mymodal-star">
-    <div class="modal-dialog modal-lab">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title lead">报告收藏夹</h4>
-            </div>
-            <div class="well" style="padding:0px;">
-                <iframe src="{{URL::route('star')}}" style="width:100%;height:75%" frameborder="0"></iframe>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-@endif
-
-<div class="wrapper wrapper_navbar_top">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-         　  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <img src="./img/phylab_logo_single.svg" href="##" style="float:left;margin:0 0 0 20px;height:50px;"></img>
-            <a class="navbar-brand" href="##" style="margin:0 40px 0 0px;">PhyLab</a>
+<body>
+<header id="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">
+          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
+          <span>PhyLab</span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a  href="report/data.html">实验</a>
+          </li>
+          <li>
+            <a href="index">社区</a>
+          </li>
+          <li>
+            <a href="index">反馈</a>
+          </li>
+        </ul>
+        <div class="navbar-right btns">
+          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
+          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
         </div>
-        <div class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="##"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
-                <li><a data-toggle="modal" @if (!$auth) data-target="#mymodal-signin" href="##" @else href="{{URL::route('wc_login')}}"@endif></span>社区</a></li>
-                <li class="dropdown">
-                    <a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a data-toggle="modal" @if (!$auth) data-target="#mymodal-signin" href="##" @else href="{{URL::route('report')}}"@endif><span class="glyphicon glyphicon-flag"></span>&nbsp 实验报告中心</a></li>
-                        <li><a data-toggle="modal" @if (!$auth) data-target="#mymodal-signin" href="##" @else href="{{URL::route('tools')}}"@endif><span class="glyphicon glyphicon-wrench"></span>&nbsp 实用小工具</a></li>
-						<li class="disabled"><a>其他功能</a></li>
-                    </ul>
-                </li>
-                <li><a href="##" data-toggle="modal" data-target="#mymodal-party">反馈</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @if (!$auth)
-                <div class="btn-group btn-block" rol="Sign" style="padding:10px 40px 0 20px;">
-                    <button class="btn btn-success sym-nav-signup" type="button" id="Sign_up" onclick="window.location.href='{{URL::route('register')}}'">&nbsp&nbsp注册&nbsp&nbsp</button>
-                    <button class="btn btn-default sym-nav-signin" data-toggle="modal" data-target="#mymodal-signin" type="button" id="Sign_in">&nbsp&nbsp登录&nbsp&nbsp</button>
-                </div>
-                @else
-                <!--<li><a href="{{URL::route('user')}}">{{$username}}的个人中心</a></li>-->
-                <li><a data-toggle="modal" data-target="#mymodal-star" href="#">{{$username}}的收藏夹</a></li>
-                <li><a href="{{URL::route('logout')}}">登出</a></li>
-                @endif
-            </ul>
-        </div>
-    </nav>
-</div>
-<div class="wrapper wrapper_contents">
-    <div class="container-fluid hidden-xs" style="position:relative;">
-        <div id="slidershow" class="carousel slide carousel-fade">
-            <ol class="carousel-indicators">
-                <li data-target="#slidershow" data-slide-to="0" class="active"></li>
-                <li data-target="#slidershow" data-slide-to="1"></li>
-                <li data-target="#slidershow" data-slide-to="2"></li>
-                <li data-target="#slidershow" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <iframe src="https://sojump.com/jq/10045920.aspx" class="" width="100%" height="100%"></iframe>
-                </div>
-                <div class="item">
-                    <img src="./img/QuantumPhysics2.jpg" alt=""  ></img>
-                </div>
-                <div class="item">
-                    <a href="##" data-toggle="modal" @if (!$auth) data-target="#mymodal-signin" @else onclick="window.location.href='{{URL::route('report')}}'"@endif><img src="./img/quantumislam.jpg" alt=""></img></a>
-                </div>
-                <div class="item">
-                    <a href="##" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?k=_8RvE1OthrVD1heTREc3i0HN8kXBx92_','_blank');"><img src="./img/format2.jpg" alt=""></a>
-					<div class="carousel-caption" style="padding-bottom:10%;">
-                        <a href="##" class="Title" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?k=_8RvE1OthrVD1heTREc3i0HN8kXBx92_','_blank');">—— Join PhyLab Community ——</a>
-                    </div>
-                </div>
-            </div>
-            <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#slidershow" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div>
+      </div>
     </div>
-	<div class="container-fluid visible-xs" style="position:relative;">
-		<div>
-			<img class="img-responsive" src="./img/QuantumPhysics2.jpg" alt=""  ></img>
-		</div>
-		<div>
-			<a href="##" data-toggle="modal" @if (!$auth) data-target="#mymodal-signin" @else onclick="window.location.href='{{URL::route('report')}}'"@endif><img class="img-responsive" src="./img/quantumislam.jpg" alt=""></img></a>
-		</div>
-		<div>
-			<a href="##" onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?k=_8RvE1OthrVD1heTREc3i0HN8kXBx92_','_blank');"><img class="img-responsive" src="./img/format2.jpg" alt=""></img></a>
-			<p onclick="window.open('http://qm.qq.com/cgi-bin/qm/qr?k=_8RvE1OthrVD1heTREc3i0HN8kXBx92_','_blank');" class="Title" style="position:relative;bottom:50px;text-align:center;">—— Join PhyLab Community ——</p>
-		</div>
-	</div>
-</div> 
-<div class="wrapper wrapper_navbar_foot">
-    <nav class="navbar navbar-inverse navbar-fixed-bottom" style="min-height:20px;">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-right"  style="padding-top:0.25%;">
-                <li class="text-white ch" style="float:right;opacity:0.7;font-size:13px">Developed By BUAA-SCSE 软件攻城队&nbsp &nbsp &nbsp &nbsp &nbsp </li>
-            </ul>
+  </nav>
+</header>
+
+<div class="navbar-banner layout-no-margin-top">
+  <div class="banner-container">
+    <div class="container">
+      <div class="row">
+        <div class="hidden-xs col-md-7">
+          <div class="container-title">
+            &nbsp;PhyLab<br/>物理数据中心
+          </div>
         </div>
-    </nav>
+        <div class="col-xs-12 col-md-5">
+          <form action="" method="post">
+            <div class="form-group">
+              <input class="form-control" name="name" id="name" type="text" placeholder="昵称">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="email" id="email" type="email" placeholder="邮箱">
+            </div>
+            <div class="form-group">
+              <input class="form-control" name="password" id="password " type="password" placeholder="密码">
+            </div>
+            <button class="btn register" type="submit">注册</button>
+            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</P>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
- <script src="./js/jquery-2.1.4.min.js"></script>
- <script src="./js/bootstrap.min.js"></script>
- <script src="./js/global.js"></script>
- <script src="./js/login.js"></script>
- <script type="text/javascript">$('.carousel').carousel()</script>
- <script src="./js/statistics.js"></script>
+<footer id="site-footer">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 clearfix footer-col">
+          <div class="col-lx-12 text-center">
+            <img id="footer-logo" src="./img/phylab_logo_single.svg"/>
+            <div class="footer-slogan">PhyLab</div>
+          </div>
+          <div class="col-xs-4">
+            <div class="social-item footer-weixin-item">
+              <i class="fa fa-weixin" aria-hidden="true"></i>
+              <div class="footer-weixin">
+                <img src="http://www.buaaphylab.com/img/1447574686560.jpg">
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="social-item footer-qq-item">
+              <i class="fa fa-qq"></i>
+              <div class="footer-qq">
+                QQ: 229407702 (实验网站交流群)
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="social-item footer-blog-item">
+              <a href="http://www.cnblogs.com/Default1406/" target="_blank ">
+                <i class="fa fa-rss"></i>
+              </a>
+              <div class="footer-blog">
+                Default2014
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+          <div class="col-title ">团队</div>
+          <a href="#" target="_blank">关于我们</a><br>
+          <a href="#" target="_blank">联系我们</a><br>
+          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">加入我们</a><br>
+          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">技术博客</a><br>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+          <div class="col-title ">合作</div>
+          <a href="#" target="_blank ">上传资源</a><br>
+          <a href="#" target="_blank ">教师合作</a><br>
+          <a href="#" target="_blank ">友情链接</a>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+          <div class="col-title ">模块</div>
+          <a href="#" target="_blank ">实验</a><br>
+          <a href="#" target="_blank ">社区</a><br>
+          <a href="#" target="_blank ">反馈</a><br>
+        </div>
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+          <div class="col-title ">支持实验</div>
+          <a href="#" target="_blank ">1011</a><br>
+          <a href="#" target="_blank ">1011</a><br>
+          <a href="#" target="_blank ">1011</a><br>
+          <a href="#" target="_blank ">1011</a><br>
+          <a href="#" target="_blank ">1011</a><br>
+          <a href="#" , target="_blank ">全部</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center copyright">
+      <span>Copyright @2016-2016 物理实验报告平台</span>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./js/bootstrap.min.js"></script>
+<!--自定义js脚本-->
+<script src="./js/global.js"></script>
+<script src="./js/login.js"></script>
+<script type="text/javascript">$('.carousel').carousel()</script>
+<script src="./js/statistics.js"></script>
 </body>
 </html>

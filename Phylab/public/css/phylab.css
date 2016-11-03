@@ -1,0 +1,131 @@
+@font-face
+{
+  font-family: "Container Title Font";
+  src: url("../fonts/banner-font.ttf");
+}
+@font-face
+{
+  font-family: "Logo Font";
+  src: url("../fonts/logo-font.ttf");
+}
+/*导航栏CSS*/
+.header {
+  background-color: RGBA(47, 79, 79, 0.3);
+}
+#header-logo {
+  float:left;
+  height:50px;
+}
+.navbar-brand span {
+  float:left;
+  position:relative;
+  top:18px;
+  padding: 0 0 0 5px;
+  font-family: "Logo Font";
+  font-size: 30px;
+}
+.navbar-brand span, .header .navbar-nav>li>a {
+  color: RGB(32, 32, 32);
+}
+/*首页CSS*/
+.banner-container {
+  min-height:700px;
+}
+.banner-container form {
+  padding: 40px 0 10px 0;
+  background-color: RGBA(0, 0, 0, 0.1);
+}
+.navbar-banner {
+  margin-top: 50px;
+  background: url("../img/phylab_navbar_banner.png");
+  background-size: 100%;
+  background-position: center;
+  backgtound-repeat: no-repeat;
+}
+.navbar-brand span:hover {
+  color: white;
+}
+.container-title {
+  font-family: "Container Title Font";
+  font-size: 80px;
+  position: relative;
+  left: 180px;
+}
+.tip {
+  color: black;
+}
+/*数据处理页CSS*/
+#lab-console {
+  margin-top: -20px;
+  height: auto;
+}
+#lab-console #lab-container {
+  width: 100%;
+}
+#lab-console .nav-tabs .dropdown-menu {
+  background-color: rgb(8, 192, 147);
+  margin-top: 4px;
+  border-radius: 10px;
+}
+#lab-console .nav-tabs .dropdown-menu li, #lab-console .nav-tabs .dropdown-menu li:first-child {
+  width: auto;
+  text-align: left;
+}
+#lab-console .nav-tabs .dropdown-menu li a, #lab-console .nav-tabs .dropdown-menu li:first-child a{
+  padding: 4px;
+  font-size: 14px;
+}
+#lab-console .nav-tabs .dropdown-menu li a:hover{
+  background-color: RGBA(0, 0, 0, 0.3);
+  border: 1px;
+  border-radius: 10px;
+  border-color: rgb(8, 192, 147);
+}
+/*登录页CSS*/
+#auto-login {
+  padding: 0px;
+}
+#auto-login .checkbox-inline {
+  padding-left: 30px;
+}
+.login-body .submit .btn-primary, .signup-container .submit .btn-primary{
+  color: #fff;
+  background-color: #0c9;
+  border-color: #0c9;
+}
+/*注册页CSS*/
+.captcha {
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  border-top-right-radius:4px;
+  border-bottom-right-radius:4px;
+}
+/*页脚CSS*/
+.footer-qq, .footer-blog{
+  display:none;
+  position:absolute;
+  bottom:45px;
+  left:-40px;
+  width: 150px;
+  padding:6px;
+  background:#1f2532;
+  text-align:center;
+  box-shadow:0 5px 10px 0 rgba(0,0,0,.75)
+}
+.footer-qq-item:hover .footer-qq, .footer-blog-item:hover .footer-blog {
+  display: block;
+}
+.footer-blog-item:hover i {
+  color: red;
+}
+#footer-logo {
+  height:100px;
+}
+.footer-weixin-item {
+  position: relative;
+  left: 60%;
+}
+.footer-blog-item {
+  position: relative;
+  right: 60%;
+}
