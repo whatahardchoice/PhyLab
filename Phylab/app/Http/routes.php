@@ -75,16 +75,16 @@ Route::get('/logout', [
 /***
 // Registration routes
 ***/
-/*
+
 Route::get('/register', [
     'as'    =>  'register',
     'uses'  =>  'Auth\AuthController@getRegister',
     'middleware'    =>  'guest']);
-/*
+
 Route::post('/register', [
     'uses'    =>  'Auth\PhylabAuthController@postRegister',
     'middleware'    =>  'guest']);
-*/
+
 /* use the wecenter register*/
 /*
 Route::get('/register', [
