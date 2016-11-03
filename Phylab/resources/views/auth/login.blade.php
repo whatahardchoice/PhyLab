@@ -78,7 +78,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-envelope"></i>
                   </div>
-                  <input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
+                  <input class="form-control" id="email" name="email" placeholder="请输入您的登录邮箱" type="email" value="">
                 </div>
               </div>
               <div class="form-group password">
