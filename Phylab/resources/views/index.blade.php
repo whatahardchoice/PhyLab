@@ -131,9 +131,9 @@
                     </div>
                     <div class="col-md-offset-3 col-md-3" style="float:right"><a href="/password/email">忘记密码?</a></div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" id="login-submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
-                </div>
+                <div class="submit">
+                <a class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
+              	</div>
             </form>
             <div class="login-footer">
               <span><a href="/password/email">忘记密码？</a><a href="{{URL::route('register')}}">注册新账号</a></span>
