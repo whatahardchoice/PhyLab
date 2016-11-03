@@ -98,7 +98,7 @@
                   </div>
                 </div>
               </div>
-              <div class="submit">
+              <div class="login-button">
                 <button class="btn btn-primary" style="width: 100%;" onclick="Post_login()" id="login-submit">登录</button>
               </div>
             </form>
