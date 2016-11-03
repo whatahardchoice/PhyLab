@@ -104,38 +104,36 @@
             <div class="alert alert-danger text-center" role="alert" id="login-alert">
               <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
             </div>
-            <form id="login_form" class="form-horizontal" role="form" method="post" action="{{URL::route('login')}}">
-                {!! csrf_field() !!}
-			          <div class="alert alert-danger" role="alert" id="loginAlert" style="display:none;height:30px;padding:5px;">
-                    <span class="glyphicon glyphicon-remove-sign"></span><span id="errorMessage">&nbsp 用户名或密码错误!</span>
+            <form role="form" method="POST" action="{{URL::route('login')}}">
+            	{!! csrf_field() !!}
+              <div class="form-group login">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  <input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
                 </div>
-                <div class="form-group login">
-                	<div class="input-group">
-                  	<div class="input-group-addon">
-                    	<i class="fa fa-envelope"></i>
-                  	</div>
-                  	<input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
+              </div>
+              <div class="form-group password">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-lock"></i>
+                  </div>
+                  <input class="form-control" id="password" name="password" placeholder="请输入密码" type="password" value="">
                 </div>
-              	</div>
-                <div class="form-group password">
-                	<div class="input-group">
-                  	<div class="input-group-addon">
-                    	<i class="fa fa-lock"></i>
-                  	</div>
-                  	<input class="form-control" id="password" name="password" placeholder="请输入密码" type="password" value="">
-                	</div>
-              	</div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-4">
-                        <div class="checkbox">
-                            <label><input type="checkbox" id="remember" name="remember">记住密码</input></label>
-                        </div>
-                    </div>
-                    <div class="col-md-offset-3 col-md-3" style="float:right"><a href="/password/email">忘记密码?</a></div>
+              </div>
+              <div id="auto-login" class="col-xs-12 col-md-2">
+                <div class=" form-group controls">
+                  <div class="input-group">
+                    <label for="remember" class="checkbox-inline btn btn-primary">
+                      <input id="remember" name="remember" type="checkbox" value="y"/>下次自动登录
+                    </label>
+                  </div>
                 </div>
-                <div class="submit">
+              </div>
+              <div class="submit">
                 <a class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
-              	</div>
+              </div>
             </form>
             <div class="login-footer">
               <span><a href="/password/email">忘记密码？</a><a href="{{URL::route('register')}}">注册新账号</a></span>
