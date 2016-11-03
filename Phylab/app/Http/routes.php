@@ -75,7 +75,7 @@ Route::get('/logout', [
 /***
 // Registration routes
 ***/
-
+/*
 Route::get('/register', [
     'as'    =>  'register',
     'uses'  =>  'Auth\AuthController@getRegister',
