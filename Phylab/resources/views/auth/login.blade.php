@@ -99,7 +99,7 @@
                 </div>
               </div>
               <div class="submit">
-                <a class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
+                <a style="display: block" class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
               </div>
             </form>
             <div class="login-footer">
