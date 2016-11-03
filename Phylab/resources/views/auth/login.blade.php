@@ -101,6 +101,9 @@
               <div class="login-button">
                 <button class="btn btn-primary" style="width: 100%;" onclick="Post_login()" id="login-submit">登录</button>
               </div>
+              <div class="modal-footer">
+                  <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
+              </div>
             </form>
             <div class="login-footer">
               <span><a href="/password/email">忘记密码？</a><a href="{{URL::route('register')}}">注册新账号</a></span>
