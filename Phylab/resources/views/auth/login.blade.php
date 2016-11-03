@@ -99,10 +99,10 @@
                 </div>
               </div>
               <div class="login-button">
-                <button class="btn btn-primary" style="width: 100%;" onclick="Post_login()" id="login-submit">登录</button>
+                <button type="button" id="login-submit" onclick="Post_login()" class="btn btn-primary" style="width: 100%;">登录</button>
               </div>
               <div class="modal-footer">
-                  <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
+                <button type="button" id="login_submit" onclick="Post_login()" class="btn btn-primary btn-lg btn-block lead"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp&nbsp登录！&nbsp </button>
               </div>
             </form>
             <div class="login-footer">
