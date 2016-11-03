@@ -27,14 +27,6 @@
 .navbar-brand span, .header .navbar-nav>li>a {
   color: RGB(32, 32, 32);
 }
-.sign-out {
-  color:hsla(0,0%,100%,.5);
-  border:1px solid hsla(0,0%,100%,.5);
-  border-radius:4px
-}
-.sign-out:hover {
-  background-color:#2d323e;
-}
 /*首页CSS*/
 .banner-container {
   min-height:700px;
