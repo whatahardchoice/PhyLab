@@ -112,60 +112,6 @@
   </div>
 </div>
 
-<div class="container layout layout-margin-top">
-  <div class="row">
-    <div class="col-md-12 layout-body">
-      <div class="login-container">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="login-title">
-            登录
-          </div>
-        </div>
-        <div class="col-md-6 col-md-offset-3">
-          <div class="login-body">
-            <div class="alert alert-danger text-center" role="alert" id="login-alert">
-              <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
-            </div>
-            <form role="form" method="POST">
-              <div class="form-group login">
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-envelope"></i>
-                  </div>
-                  <input class="form-control" id="login" name="login" placeholder="请输入您的登录邮箱" type="email" value="">
-                </div>
-              </div>
-              <div class="form-group password">
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-lock"></i>
-                  </div>
-                  <input class="form-control" id="password" name="password" placeholder="请输入密码" type="password" value="">
-                </div>
-              </div>
-              <div id="auto-login" class="col-xs-12 col-md-2">
-                <div class=" form-group controls">
-                  <div class="input-group">
-                    <label for="remember" class="checkbox-inline btn btn-primary">
-                      <input id="remember" name="remember" type="checkbox" value="y"/>下次自动登录
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="submit">
-                <input class="btn btn-primary" style="width: 100%" onclick="Post_login()" id="login-submit" name="submit" type="submit" value="登录">
-              </div>
-            </form>
-            <div class="login-footer">
-              <span><a href="#">忘记密码？</a><a href="#">注册新账号</a></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <footer id="site-footer">
   <div class="footer">
     <div class="container">
