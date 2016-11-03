@@ -29,6 +29,7 @@
             $('#login-alert').show();
         }
     });
+   return false;
 }
 $('#login_form input').keydown(function (e) {
     if (e.keyCode == 13)
