@@ -147,18 +147,23 @@ Route::get('/tools',[
 Route::get('/report',[
     'as'    =>  'report',
     'uses'  =>  'ReportController@index',
-    'middleware'    =>  'auth']);
+    // 'middleware'    =>  'auth']
+	);
 Route::get('/report/{id}',[
     'uses'  =>  'ReportController@show',
-    'middleware'    =>  'auth']);
+    // 'middleware'    =>  'auth']
+	);
 Route::get('/report/edit/{id}',[
     'as'    =>  'editReport',
     'uses'  =>  'ReportController@getXmlForm',
-    'middleware'    =>  'auth']);
+    // 'middleware'    =>  'auth']
+	);
 Route::post('/report',[
     'uses'  =>  'ReportController@create',
-    'middleware'    =>  'auth']);
+    // 'middleware'    =>  'auth']
+	);
 Route::get('/report/download/{experimentId}/{link}',[
     'as'    =>  'downloadReport',
     'uses'  =>  'ReportController@downloadReport',
-    'middleware'    =>  'auth']);
+    // 'middleware'    =>  'auth']
+	);
