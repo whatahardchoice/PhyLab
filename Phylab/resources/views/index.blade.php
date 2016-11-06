@@ -39,13 +39,13 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a  href="report/data.html">实验</a>
+            <a data-toggle="modal" @if (!$auth) data-target="{{URL::route('login')}}" href="##" @else href="{{URL::route('report')}}"@endif>实验</a>
           </li>
           <li>
-            <a href="index">社区</a>
+            <a data-toggle="modal" @if (!$auth) data-target="{{URL::route('login')}}" href="##" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
           </li>
           <li>
-            <a href="index">反馈</a>
+            <a href="#">反馈</a>
           </li>
         </ul>
         <div class="navbar-right btns">

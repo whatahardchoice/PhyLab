@@ -132,7 +132,6 @@
                     </div>
                     <a style="display: inline-flex;">
                       <input class="form-control" id="captcha" name="captcha" placeholder="请输入图片中的验证码" type="text">
-                      <img id="CapCodeImg" style="height:33px;width:100%;margin-left: 35px;" alt="验证码" src="">
                     </a>
                   </div>
                 </div>
