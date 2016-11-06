@@ -39,10 +39,10 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a data-toggle="modal" @if (!$auth) data-target="{{URL::route('login')}}" href="##" @else href="{{URL::route('report')}}"@endif>实验</a>
+            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
           </li>
           <li>
-            <a data-toggle="modal" @if (!$auth) data-target="{{URL::route('login')}}" href="##" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
+            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
           </li>
           <li>
             <a href="#">反馈</a>
