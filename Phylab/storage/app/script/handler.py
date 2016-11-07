@@ -7,8 +7,8 @@ import os
 import platform
 
 available_lab = ['1010113', '1010212', '1070212', '1070312', '1070322', '1080114', '1080124', '1090114']
-texdir = '/var/www/phylab/storage/app/script/tex/' if platform.system() == 'Linux' else 'D:/Apache24/htdocs/PhyLab/Phylab/storage/app/script/tex/'
-handledir = '/var/www/phylab/storage/app/script/' if platform.system() == 'Linux' else 'D:/Apache24/htdocs/PhyLab/Phylab/storage/app/script/'
+handledir = '/var/www/buaaphylab/storage/app/script/' if platform.system() == 'Linux' else 'D:/Apache24/htdocs/PhyLab/Phylab/storage/app/script/'
+texdir = handledir + 'tex/'
 sys.path.append(handledir)
 
 if __name__ == '__main__':
