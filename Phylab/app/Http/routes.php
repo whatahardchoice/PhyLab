@@ -172,6 +172,7 @@ Route::get('/report/download/{experimentId}/{link}',
     'uses'  =>  'ReportController@downloadReport',
     'middleware'    =>  'auth'
 	]);
+	
 Route::get('/zichen',
 	[
 	'as' => 'DebugScript',
