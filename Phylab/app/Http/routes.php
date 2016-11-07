@@ -176,5 +176,5 @@ Route::get('/report/download/{experimentId}/{link}',
 Route::get('/zichen',
 	[
 	'as' => 'DebugScript',
-	'uses' => 'DebugScriptController'
+	'uses' => 'DebugScriptController@index'
 	]);

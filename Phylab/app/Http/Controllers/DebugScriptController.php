@@ -4,10 +4,10 @@ use App\Http\Controllers\Controller;
 
 class DebugScriptController extends Controller {
 
-    public function index(){
+    public function ha(){
 		// $id = $_GET['id'];
 		header('Location: https://www.baidu.com/');
-		return;
+		return 1;
 	}
 
 }
