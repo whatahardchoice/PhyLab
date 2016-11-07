@@ -29,8 +29,8 @@ if __name__ == '__main__':
 		for lab in available_lab:
 			if (lab == sys.argv[1]):
 				#from p1010113 import handler
-				eval('from p' + lab + ' import handler')
-				latex_body = handler(handler + 'test/' + lab + 'test/' + lab + '.xml')#(sys.argv[2])
+				#eval('from p' + lab + ' import handler')
+				latex_body = __import__('p'+lab).handler(handledir + 'test/' + l    ab + 'test/' + lab + '.xml')#(sys.argv[2])
 				flag = False
 				break
 		if (flag):
