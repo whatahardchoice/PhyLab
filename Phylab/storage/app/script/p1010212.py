@@ -9,7 +9,7 @@ env = Environment()
 
 def Inertia(m, d, T, l, T2, source):
 	# 所有测得的数据必须是5倍周期
-	I = []#实际值
+	I = [-1]#实际值
 	J = [-1]#理论值
 	delta = []
 	for a in T:
@@ -17,8 +17,9 @@ def Inertia(m, d, T, l, T2, source):
 	#计算扭转常数k
 	temp = m[0] * pow(d[0],2) * pow(10,-9) / 8
 	I.append(temp)
+	J.append(temp)
 	k = 4 * pow(pi,2) * temp / (pow(T[1][-1],2) - pow(T[0][-1],2))
-	for i in range(1,4):
+	for i in range(2,5):
 		#圆筒转动惯量
 		if i == 1:
 			temp1 = (pow(T[2][-1],2)-pow(T[0][-1],2)) * k / (4 * pow(pi,2))
