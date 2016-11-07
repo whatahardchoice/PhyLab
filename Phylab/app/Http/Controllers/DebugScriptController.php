@@ -6,8 +6,7 @@ class DebugScriptController extends Controller {
 
     public function index(){
 		// $id = $_GET['id'];
-		header("www.baidu.com");
-		;
+		header('Location: https://www.baidu.com/');
 		return;
 	}
 
