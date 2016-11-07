@@ -144,29 +144,35 @@ Route::get('/tools',[
 /***
 //Report routes
 ***/
-Route::get('/report',[
+Route::get('/report',
+	[
     'as'    =>  'report',
     'uses'  =>  'ReportController@index',
-    'middleware'    =>  'auth']
-	);
-Route::get('/report/{id}',[
+    'middleware'    =>  'auth'
+	]);
+Route::get('/report/{id}',
+	[
     'uses'  =>  'ReportController@show',
-    'middleware'    =>  'auth']
-	);
-Route::get('/report/edit/{id}',[
+    'middleware'    =>  'auth'
+	]);
+Route::get('/report/edit/{id}',
+	[
     'as'    =>  'editReport',
     'uses'  =>  'ReportController@getXmlForm',
-    'middleware'    =>  'auth']
-	);
-Route::post('/report',[
+    'middleware'    =>  'auth'
+	]);
+Route::post('/report',
+	[
     'uses'  =>  'ReportController@create',
-    'middleware'    =>  'auth']
-	);
-Route::get('/report/download/{experimentId}/{link}',[
+    'middleware'    =>  'auth'
+	]);
+Route::get('/report/download/{experimentId}/{link}',
+	[
     'as'    =>  'downloadReport',
     'uses'  =>  'ReportController@downloadReport',
-    'middleware'    =>  'auth']
-	);
-Route::get('/zichen',[
-	'uses' => 'DebugScriptController'
+    'middleware'    =>  'auth'
 	]);
+// Route::get('/zichen',
+	// [
+	// 'uses' => 'DebugScriptController'
+	// ]);
