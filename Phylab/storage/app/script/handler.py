@@ -35,6 +35,7 @@ if __name__ == '__main__':
 				break
 		if (flag):
 				print('{"status":"fail", "msg":"no handler"}')
+				exit(1)
 
 		finish_str = latex_head+latex_body+latex_tail
 		finish_file = open(sys.argv[3]+".tex","w")
