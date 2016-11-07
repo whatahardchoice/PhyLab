@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller;
 
 class DebugScriptController extends Controller {
 
-    public function index(){
+    public function debug(){
         // $id = $_GET['id'];
         /*$id = $_GET['id'];
         $xml = 'null';
@@ -17,6 +17,8 @@ class DebugScriptController extends Controller {
             readfile("$pdf.pdf");
         }*/
         hedaer('Location: https://www.baidu.com/');
+        exit;
+        return 1;
     }
 
 }
