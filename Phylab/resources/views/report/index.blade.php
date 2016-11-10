@@ -1,20 +1,30 @@
-﻿<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PhyLabReportCore</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/seven-style.css">
-	<link rel="stylesheet" href="./css/loading.css">
-	<link href="../css/font-awesome.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhyLab</title>
+
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/bootstrap-tour.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
   <link href="../css/styles.css" rel="stylesheet">
   <link href="../css/phylab.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-<div class="wrapper wrapper_navbar_top">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="navbar-header">
+<header id="site-header">
+  <nav class="navbar navbar-default header" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="sr-only">Toggle Navigation</span>
           <span class="icon-bar"></span>
@@ -26,28 +36,26 @@
           <span>PhyLab</span>
         </a>
       </div>
-		<div class="collapse navbar-collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav navbar-left">
-				<li><a href="{{URL::route('report')}}">实验</a></li>
-				<li><a href="{{URL::route('wc_login')}}">社区</a></li>
-        <li class="dropdown active">
-					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="{{URL::route('report')}}"><span class="glyphicon glyphicon-flag"></span>&nbsp实验报告中心</a></li>
-						<li><a href="{{URL::route('tools')}}"><span class="glyphicon glyphicon-wrench"></span>&nbsp 实用小工具</a></li>
-						<li class="disabled"><a>其他功能</a></li>
-					</ul>
-				</li>
-				<li><a href="##" data-toggle="modal" data-target="#mymodal-party">反馈</a></li>
-            </ul>
-			<ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" data-target="#mymodal-star" href="#">{{$username}}的收藏夹</a></li>
-                <li><a href="{{URL::route('logout')}}">登出</a></li>
-            </ul>
-		</div>
-	</nav>
-</div>
-<!--star modal-->
+      <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{URL::route('report')}}">实验</a>
+          </li>
+          <li>
+            <a href="{{URL::route('wc_login')}}">社区</a>
+          </li>
+          <li>
+            <a href="#">反馈</a>
+          </li>
+        </ul>
+        <div class="navbar-right btns">
+          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div id="lab-console" class="row">
   <div class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 1px;">
     <div id="lab-container">
@@ -118,7 +126,9 @@
   </div>
 </footer>
 
-<script src="./js/jquery-2.1.4.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/global.js"></script>
 <script src="./js/reportCore.js"></script>
