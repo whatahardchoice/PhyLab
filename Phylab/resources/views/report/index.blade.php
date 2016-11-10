@@ -15,15 +15,17 @@
 <div class="wrapper wrapper_navbar_top">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-		 　	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-				<span class="sr-only">Toggle Navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<img src="./img/phylab_logo_single.svg" href="{{URL::route('index')}}" style="float:left;margin:0 0 0 20px;height:50px;"></img>
-			<a class="navbar-brand" href="{{URL::route('index')}}" style="margin:0 40px 0 0px;">PhyLab</a>
-		</div>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{URL::route('index')}}">
+          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
+          <span>PhyLab</span>
+        </a>
+      </div>
 		<div class="collapse navbar-collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav navbar-left">
 				<li><a href="{{URL::route('index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
