@@ -45,6 +45,7 @@ env = Environment(line_statement_prefix="#", variable_start_string="%%", variabl
 
 
 def handler(xml):
+    global  d_list
     d_list = [51.05257, 51.08570, 51.11871, 51.15150, 51.18287, 51.21456, 51.25132, 51.28370, 51.31506, 51.34883]
     # xmlReader(xml)
     niconiconi()

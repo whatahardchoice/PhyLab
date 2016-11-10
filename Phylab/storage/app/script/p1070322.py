@@ -69,6 +69,12 @@ RESULT_U_N = ""
 
 
 def handler(xml):
+    global  angle_a1
+    global  angle_a2
+    global  angle_b1
+    global  angle_b2
+    global  angle_A
+    global  u_A
     angle_a1 = [270.40, 16.31, 87.07, 163.27, 256.36]
     angle_a2 = [310.15, 56.14, 126.50, 203.10, 296.18]
     angle_b1 = [90.42, 196.30, 267.10, 343.30, 76.36]
