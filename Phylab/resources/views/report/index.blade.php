@@ -25,25 +25,24 @@
 			<a class="navbar-brand" href="{{URL::route('index')}}" style="margin:0 40px 0 0px;">PhyLab</a>
 		</div>
 		<div class="collapse navbar-collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav">
-          <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
-          </li>
-          <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
-          </li>
-          <li>
-            <a href="#">反馈</a>
-          </li>
-        </ul>
-        <div class="navbar-right btns">
-          @if (!$auth)
-          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
-          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
-          @else
-          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
-          @endif
-        </div>
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="{{URL::route('index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
+				<li><a href="{{URL::route('wc_login')}}">社区</a></li>
+                <li class="dropdown active">
+					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{URL::route('report')}}"><span class="glyphicon glyphicon-flag"></span>&nbsp实验报告中心</a></li>
+						<li><a href="{{URL::route('tools')}}"><span class="glyphicon glyphicon-wrench"></span>&nbsp 实用小工具</a></li>
+						<li class="disabled"><a>其他功能</a></li>
+					</ul>
+				</li>
+				<li><a href="##" data-toggle="modal" data-target="#mymodal-party">反馈</a></li>
+            </ul>
+			<ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" data-target="#mymodal-star" href="#">{{$username}}的收藏夹</a></li>
+                <li><a href="{{URL::route('logout')}}">登出</a></li>
+            </ul>
 		</div>
 	</nav>
 </div>
