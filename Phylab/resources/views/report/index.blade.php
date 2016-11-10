@@ -20,7 +20,7 @@
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body onload="check()">
 <header id="site-header">
   <nav class="navbar navbar-default header" role="navigation">
     <div class="container">
