@@ -28,11 +28,10 @@
       </div>
 		<div class="collapse navbar-collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="{{URL::route('index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
+				<li><a href="{{URL::route('report')}}">实验</a></li>
 				<li><a href="{{URL::route('wc_login')}}">社区</a></li>
-                <li class="dropdown active">
-					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span>
-					</a>
+        <li class="dropdown active">
+					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="{{URL::route('report')}}"><span class="glyphicon glyphicon-flag"></span>&nbsp实验报告中心</a></li>
 						<li><a href="{{URL::route('tools')}}"><span class="glyphicon glyphicon-wrench"></span>&nbsp 实用小工具</a></li>
