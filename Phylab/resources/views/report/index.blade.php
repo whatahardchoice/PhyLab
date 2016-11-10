@@ -13,45 +13,40 @@
   <link href="../css/phylab.css" rel="stylesheet">
 </head>
 <body>
-<header id="site-header">
-  <nav class="navbar navbar-default header" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{URL::route('index')}}">
-          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
-          <span>PhyLab</span>
-        </a>
-      </div>
-      <div class="collapse navbar-collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
-          </li>
-          <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
-          </li>
-          <li>
-            <a href="#">反馈</a>
-          </li>
-        </ul>
-        <div class="navbar-right btns">
-          @if (!$auth)
-          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
-          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
-          @else
-          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
-          @endif
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+<div class="wrapper wrapper_navbar_top">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+		 　	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img src="./img/phylab_logo_single.svg" href="{{URL::route('index')}}" style="float:left;margin:0 0 0 20px;height:50px;"></img>
+			<a class="navbar-brand" href="{{URL::route('index')}}" style="margin:0 40px 0 0px;">PhyLab</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li><a href="{{URL::route('index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
+				<li><a href="{{URL::route('wc_login')}}">社区</a></li>
+                <li class="dropdown active">
+					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{URL::route('report')}}"><span class="glyphicon glyphicon-flag"></span>&nbsp实验报告中心</a></li>
+						<li><a href="{{URL::route('tools')}}"><span class="glyphicon glyphicon-wrench"></span>&nbsp 实用小工具</a></li>
+						<li class="disabled"><a>其他功能</a></li>
+					</ul>
+				</li>
+				<li><a href="##" data-toggle="modal" data-target="#mymodal-party">反馈</a></li>
+            </ul>
+			<ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" data-target="#mymodal-star" href="#">{{$username}}的收藏夹</a></li>
+                <li><a href="{{URL::route('logout')}}">登出</a></li>
+            </ul>
+		</div>
+	</nav>
+</div>
 <!--star modal-->
 <div class="wrapper wrapper_contents" style="position:relative;top:60px;">
 	<div class="container-fluid" style="margin-left:50px;margin-right:50px;">
