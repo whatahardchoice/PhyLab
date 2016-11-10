@@ -13,22 +13,19 @@
 </head>
 <body>
 <div class="wrapper wrapper_navbar_top">
-	<nav class="navbar navbar-default header" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{URL::route('index')}}">
-          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
-          <span>PhyLab</span>
-        </a>
-      </div>
-      <div class="collapse navbar-collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+		 　	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img src="./img/phylab_logo_single.svg" href="{{URL::route('index')}}" style="float:left;margin:0 0 0 20px;height:50px;"></img>
+			<a class="navbar-brand" href="{{URL::route('index')}}" style="margin:0 40px 0 0px;">PhyLab</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav">
           <li>
             <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
           </li>
@@ -47,9 +44,8 @@
           <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
           @endif
         </div>
-      </div>
-    </div>
-  </nav>
+		</div>
+	</nav>
 </div>
 <!--star modal-->
 <div id="lab-console" class="row">
