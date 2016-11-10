@@ -69,6 +69,17 @@ RESULT_U_N = ""
 
 
 def handler(xml):
+    angle_a1 = [270.40, 16.31, 87.07, 163.27, 256.36]
+    angle_a2 = [310.15, 56.14, 126.50, 203.10, 296.18]
+    angle_b1 = [90.42, 196.30, 267.10, 343.30, 76.36]
+    angle_b2 = [130.16, 236.13, 307.52, 383.15, 116.16]
+    for i in range(5):
+        angle_a1[i] = angleTransfer(angle_a1[i])
+        angle_a2[i] = angleTransfer(angle_a2[i])
+        angle_b1[i] = angleTransfer(angle_b1[i])
+        angle_b2[i] = angleTransfer(angle_b2[i])
+    angle_A = 60
+    u_A = 0
     # xmlReader(xml)
     niconiconi()
     regulation()
@@ -209,18 +220,8 @@ def angleTransfer(raw):
     return int(raw) + (raw - int(raw)) * 100 / 60
 
 
+
 if __name__ == '__main__':
-    angle_a1 = [270.40, 16.31, 87.07, 163.27, 256.36]
-    angle_a2 = [310.15, 56.14, 126.50, 203.10, 296.18]
-    angle_b1 = [90.42, 196.30, 267.10, 343.30, 76.36]
-    angle_b2 = [130.16, 236.13, 307.52, 383.15, 116.16]
-    for i in range(5):
-        angle_a1[i] = angleTransfer(angle_a1[i])
-        angle_a2[i] = angleTransfer(angle_a2[i])
-        angle_b1[i] = angleTransfer(angle_b1[i])
-        angle_b2[i] = angleTransfer(angle_b2[i])
-    angle_A = 60
-    u_A = 0
     fileTex = open('./1070322test/1070322test.tex', 'w')
     text = handler("").encode('utf-8')
     fileTex.write(text)

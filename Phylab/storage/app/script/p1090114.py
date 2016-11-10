@@ -45,6 +45,7 @@ env = Environment(line_statement_prefix="#", variable_start_string="%%", variabl
 
 
 def handler(xml):
+    d_list = [51.05257, 51.08570, 51.11871, 51.15150, 51.18287, 51.21456, 51.25132, 51.28370, 51.31506, 51.34883]
     # xmlReader(xml)
     niconiconi()
     regulation()
@@ -156,6 +157,7 @@ def Ua(x, aver, k):
     for i in range(k):
         sumx += (x[i] - aver) ** 2
     return sqrt(sumx / (k * (k - 1)))
+
 
 
 if __name__ == '__main__':
