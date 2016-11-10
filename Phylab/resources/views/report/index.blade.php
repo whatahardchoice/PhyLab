@@ -48,124 +48,75 @@
 	</nav>
 </div>
 <!--star modal-->
-<div class="wrapper wrapper_contents" style="position:relative;top:60px;">
-	<div class="container-fluid" style="margin-left:50px;margin-right:50px;">
-		<div class="row">
-			<div class="col-md-3" style="padding-top:0px;padding-bottom:0px;">
-				<div class="row">
-					<h2 class="text-left">
-						<span>物理实验
-							<small>数据报告中心</small>
-						</span>
-						<hr/>
-					</h2>
-				</div>
-				<div class="row" style="padding-top:0px;">
-					<div class="panel-group">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<span class="glyphicon glyphicon-th-list">&nbsp </span>
-									<a data-toggle="collapse" data-parent="#accordion" href="#lab_collapse">
-										<span>实验选择<span class="caret" style="float:right;"></span></span>
-									</a>
-								</h4>
-							</div>
-							<div id="lab_collapse" class="panel-collapse collapse in">
-								<div class="panel-body">
-									<form class="form-inline container-fluid">
-										<div class="row">
-											<div class="form-group  col-md-7">
-												<label for="InputLabIndex" class="sr-only">LabIndex</label>
-												<input type="text" class="form-control lab_input" id="InputLabIndex" placeholder="请输入实验编号">
-											 </div>
-											<input type="button" class="btn btn-default-outline col-md-4" id="selectBtn" style="margin-left:10px;" onclick="selectBtnClick()"  value="Select"></input>
-										</div>
-									</form>
-                                    <div style="display:none" id="back_info">
-                                        @foreach ($reportTemplates as $rept)
-                                        <a index="{{$rept['experimentId']}}" prepareLink="{{$rept['prepareLink']}}" db-id="{{$rept['id']}}"></a>
-                                        @endforeach
-                                    </div>
-									<div class="alert alert-danger" role="alert" style="display:none;height:30px;padding:5px;">
-										<span class="glyphicon glyphicon-remove-sign"></span><strong>&nbsp Error:</strong><span>&nbsp 请输入正确的实验序号!</span>
-									</div>
-									<div class="table-autoscroll" style="width:100%;height:29%;">
-									   <table class="table table-condensed table-hover table-striped" style="width:100%;height:92%;">
-									   <tbody class="table-small no-decoration">
-										 @foreach ($reportTemplates as $rept)
-                                         <tr>
-                                           <td><a href="#" class="lab lab_index">{{$rept['experimentId']}}</a></td>
-                                           <td><a href="#" class="lab lab_title" title="{{$rept['experimentId']}}">{{$rept['experimentName']}}</a></td>
-                                         </tr>
-                                         @endforeach
-									   </tbody>
-									 </table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row" style="padding-top:20px;">
-					<button class="btn btn-lg btn-danger btn-block" id="importBtn" disabled="disabled" onclick="importBtnClick()"><span class="glyphicon glyphicon-edit"></span>&nbsp录入实验数据</button>
-				</div>
-				<div class="row">
-					<div class="col-md-5" style="padding:0;padding-top:10px;">
-						<button class="btn btn-lg btn-warning btn-block"  type="submit" id="collectBtn" link="" dbid="" disabled="disabled" onclick="collectBtnClick()"><span id="collectIco" class="glyphicon glyphicon-star-empty"></span>&nbsp <span id="collectText">收藏</span></button>
-					</div>
-					<div class="col-md-offset-1 col-md-6" style="padding:0;padding-top:10px;">
-						<button class="btn btn-lg btn-info btn-block" type="submit" id="exportBtn" disabled="disabled" onclick="exportBtnClick()"><span class="glyphicon glyphicon-download-alt"></span>&nbsp生成报告</button>
-					</div>
-				</div>
-				<div class="row" id="loading-container" style="padding-top:30px;display:none;">
-					<ul class="loading-spinner">
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-					<h3 style="text-align:center;font-color:#233">LOADING</h3>
-				</div>
-				<br/><br/>
-			</div>
-			<div class="col-md-9" style="padding-left:30px;height:82%;">
-				<div class="row"><br/></div>
-				<div class="panel-group row" id="labReport" >
-					<div class="panel panel-default pannel-autoscroll">
-						<div class="panel-heading">
-							<div class="panel-title">
-								<h4 class="panel-title text-center">
-									<span>实验报告&nbsp <span id="LabText" title="false"></span>&nbsp <span id="LabStatus" class="badge">帮助</span></span>
-								</h4>
-							</div>
-						</div>
-						<div class="panel-body" style="padding:5px;">
-							<!--<iframe id="lab_window" src="lab_report.html" style="width:100%;height:92%;">
-							</iframe>-->
-                            <div id="firefox_pdf" style="width:100%;height:92%;min-height:500px;display:none;">
-								<object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object"  style="width:100%;height:92%;min-height:480px;">
-									<embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed"/>
-								</object>
-							</div>
-							<div id="chrom_pdf" style="width:100%;height:92%;min-height:500px;display:none">
-							</div>
-						</div>
-					</div><br/>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="lab-console" class="row">
+  <div class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 1px;">
+    <div id="lab-container">
+      <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;">
+        <div class="nav nav-tabs row" role="tablist" style="border-radius: inherit;padding-top: 2px;padding-bottom: 2px">
+          <h1 class="text-left col-md-12">
+						<span style="color: white">物理实验<small>数据报告中心</small></span>
+            <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
+          </h1>
+          <div class="btn-group labdoc-btns col-xs-6 col-md-6">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" style="width: 100%;margin-bottom: 1px;">
+              实验分组 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">1011</a></li>
+            </ul>
+          </div>
+          <div class="btn-group labdoc-btns col-xs-6 col-md-6">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" style="width: 100%;margin-top: 1px">
+              题目编号 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">1010113</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container tab-content" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin-bottom: 2px;">
+        <div class="tab-pane active " role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;max-height: 704px;text-align: center;">
+          <h1>未选择子实验</h1>
+        </div>
+        <div class="labdoc-btns">
+          <button class="btn btn-success" style="margin-bottom: 5px;">
+            <i class="fa fa-file-pdf-o"></i>查看预习报告
+          </button>
+          <button class="btn btn-success" style="margin-bottom: 5px;">
+            <i class="fa fa-area-chart"></i>生成数据报告
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="doc" class="col-xs-12 col-md-9 hidden-xs" style="padding-left: 1px;height: 100%;">
+    <div class="panel-group" id="lab-report">
+      <div class="panel panel-default pannel-autoscroll">
+        <div class="panel-heading"  style="background-color: #2b2f36;border: solid;border-width: 2px;border-color: black;">
+          <div class="panel-title">
+            <h4 class="panel-title text-center">
+              <span><span id="lab-status" class="badge">实验报告&nbsp; <span id="lab-text" title="false">1011</span>&nbsp; 数据</span></span>
+            </h4>
+          </div>
+        </div>
+        <div class="panel-body" style="padding:5px;">
+          <div id="firefox_pdf" style="width: 100%; height: 100%; display: block;">
+            <object data="pdf/Chapter-3.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
+              <embed src="pdf/Chapter-3.pdf" type="application/pdf" id="pdf_embed">
+            </object>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="wrapper wrapper_navbar_foot">
-	<nav class="navbar navbar-inverse navbar-fixed-bottom" style="min-height:20px;">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav navbar-right text-ch"  style="padding-top:0.25%;">
-				<li class="text-white ch" style="float:right;opacity:0.7;font-size:13px">Developed By BUAA-SCSE 软件攻城队&nbsp &nbsp &nbsp &nbsp &nbsp </li>
-			</ul>
-		</div>
-	</nav>
-</div>
+
+<footer id="site-footer">
+  <div class="text-center copyright">
+    <span>Copyright @2016-2016 物理实验报告平台</span>
+  </div>
+</footer>
 
 <script src="./js/jquery-2.1.4.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
