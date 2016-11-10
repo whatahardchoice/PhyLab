@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./css/mystyle.css">
 	<link rel="stylesheet" href="./css/loading.css">
 </head>
-<body onload="check()">
+<body>
 <div class="modal fade" id="mymodal-star">
     <div class="modal-dialog modal-lab">
         <div class="modal-content">
