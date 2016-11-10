@@ -28,9 +28,7 @@
       </div>
 		<div class="collapse navbar-collapse navbar-responsive-collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<li>
-           <a @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
-        </li>
+				<li><a href="{{URL::route('index')}}"><span class="glyphicon glyphicon-home"></span>&nbsp主页</a></li>
 				<li><a href="{{URL::route('wc_login')}}">社区</a></li>
                 <li class="dropdown active">
 					<a href="##" data-toggle="dropdown" class="dropdown-toggle">服务<span class="caret"></span>
