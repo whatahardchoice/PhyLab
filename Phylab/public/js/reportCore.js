@@ -230,6 +230,9 @@ var labDoc3dot1415926;
       $('#labdoc').text($(data));
     });
   })
+  $('#button-generate-report').click(function () {
+    setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
+  })
 
 	function changePdf(type,pdfName){
 	    var path = ""
