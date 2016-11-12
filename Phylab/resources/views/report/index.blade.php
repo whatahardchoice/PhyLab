@@ -237,7 +237,7 @@
           <button class="btn btn-success" style="margin-bottom: 5px;">
             <i class="fa fa-file-pdf-o"></i>查看预习报告
           </button>
-          <button id="button-generate-report" class="btn btn-success" style="margin-bottom: 5px;">
+          <button id="button-generate-report" class="btn btn-success" style="margin-bottom: 5px;" type="submit">
             <i class="fa fa-area-chart"></i>生成数据报告
           </button>
         </div>
