@@ -231,7 +231,7 @@ var labDoc3dot1415926;
     });
   })
   $('#button-generate-report').click(function () {
-    setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
+    Post_lab(errorFunction);
   })
 
 	function changePdf(type,pdfName){
