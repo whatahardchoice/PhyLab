@@ -400,7 +400,7 @@ function SetXMLDoc_lab(labnum){
 		
 	case "1071":
 		str += "<lab id=\"1071\">"+			
-			"<sublab id=\"10711\" status=\""+document.getElementById('check_1071_1').checked+"\">"+
+			"<sublab id=\"10711\" status=\""+true+"\">"+
 				"<table name=\"10711_1\" raw=\"5\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('a11').value+"</td>"+
@@ -434,7 +434,7 @@ function SetXMLDoc_lab(labnum){
 					"</tr>"+	
 				"</table>"+
 			"</sublab>"+
-			"<sublab id=\"10712\" status=\""+document.getElementById('check_1071_2').checked+"\">"+
+			"<sublab id=\"10712\" status=\""+false+"\">"+
 				"<table name=\"10712_1\" raw=\"5\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('ra11').value+"</td>"+
