@@ -232,7 +232,7 @@ var labDoc3dot1415926;
   })
   $('#button-generate-report').click(function () {
     labDoc3dot1415926.flush();
-    Post_lab(errorFunction);
+    setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
   })
 
 	function changePdf(type,pdfName){
