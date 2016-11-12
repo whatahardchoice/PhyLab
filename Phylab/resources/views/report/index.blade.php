@@ -20,7 +20,7 @@
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body>
+<body onload="check()">
 <header id="site-header">
   <nav class="navbar navbar-default header" role="navigation">
     <div class="container">
@@ -62,7 +62,7 @@
       <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;">
         <div class="nav nav-tabs row" role="tablist" style="border-radius: inherit;padding-top: 2px;padding-bottom: 2px">
           <h1 class="text-left col-md-12">
-						<span style="color: white">物理实验<small>数据报告中心</small></span>
+            <span style="color: white">物理实验<small>数据报告中心</small></span>
             <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
           </h1>
           <div class="btn-group labdoc-btns col-xs-6 col-md-6">
@@ -110,10 +110,11 @@
         </div>
         <div class="panel-body" style="padding:5px;">
           <div id="firefox_pdf" style="width: 100%; height: 100%; display: block;">
-            <object data="pdf/Chapter-3.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
-              <embed src="pdf/Chapter-3.pdf" type="application/pdf" id="pdf_embed">
+            <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
+              <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
             </object>
           </div>
+          <div id="chrom_pdf" style="width:100%;height:92%;min-height:500px;display:none"></div>
         </div>
       </div>
     </div>
