@@ -231,6 +231,7 @@ var labDoc3dot1415926;
     });
   })
   $('#button-generate-report').click(function () {
+    labDoc3dot1415926.flush();
     Post_lab(errorFunction);
   })
 
