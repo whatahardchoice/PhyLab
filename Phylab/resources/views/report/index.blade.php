@@ -125,99 +125,53 @@
       </div>
       <div class="container tab-content" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin-bottom: 2px;min-height: 500px;">
         <div class="tab-pane active " role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;max-height: 704px;text-align: center;">
-          <div role="tabpanel" class="tab-pane fade in active" id="lab_1011_1">
-            <table class="table table-condensed table-hover table-striped" id="table1011_1_Lhb">
+          <div role="tabpanel" class="tab-pane fade in active" id="lab_1071_1">
+            <table class="table table-condensed table-hover table-striped" id="table1071_fanshefa">
+              <caption class="well">	θ=((α2-α1)+(β2-β1))/2,θ值应为120左右,角度输入形式为x.y，表示x度y分,其中x为度数，y为分数</caption>
               <thead>
               <tr>
-                <th><label for="1011_1_gangsi">钢丝长L(cm)</label></th>
-                <th><label for="1011_1_pingmianjing">平面镜到标尺H(cm)</label></th>
-                <th><label for="1011_1_guangganggan">光杠杆前后足b(cm)</label></th>
+                <th></th>
+                <th>入射角α1(mm)</th>
+                <th>反射角α2(mm)</th>
+                <th>入射角β1(mm)</th>
+                <th>反射角β2(mm)</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td><input class="para 1011_1 form-control" aria-label="钢丝长L" id="1011_1_gangsi" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="平面镜到标尺H" id="1011_1_pingmianjing" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="光杠杆前后足b" id="1011_1_guangganggan" type="text"></td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="table table-condensed table-hover table-striped" id="table1011_1_zhijing">
-              <thead>
-              <tr>
-                <th>直径 </th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>(mm)</td>
-                <td><input class="para 1011_1 form-control" aria-label="直径1" id="1011_1_D1" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="直径2" id="1011_1_D2" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="直径3" id="1011_1_D3" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="直径4" id="1011_1_D4" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="直径5" id="1011_1_D5" type="text"></td>
-              </tr>
-              </tbody>
-            </table>
-            <table class="table table-condensed table-hover table-striped" id="table1011_1_jiali">
-              <thead>
-              <tr>
-                <th>加力(kg)</th>
-                <td>读数(加力)</td>
-                <td>读数(减力)</td>
-
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td>10</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力10" id="1011_1_jia10" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力10" id="1011_1_jian10" type="text"></td>
+                <td>1</td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角α1值1" id="a11" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角α2值1" id="a21" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角β1值1" id="b11" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角β2值1" id="b21" type="text"></td>
               </tr>
               <tr>
-                <td>12</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力12" id="1011_1_jia12" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力12" id="1011_1_jian12" type="text"></td>
+                <td>2</td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角α1值2" id="a12" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角α2值2" id="a22" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角β1值2" id="b12" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角β2值2" id="b22" type="text"></td>
               </tr>
               <tr>
-                <td>14</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力14" id="1011_1_jia14" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力14" id="1011_1_jian14" type="text"></td>
+                <td>3</td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角α1值3" id="a13" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角α2值3" id="a23" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角β1值3" id="b13" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角β2值3" id="b23" type="text"></td>
               </tr>
               <tr>
-                <td>16</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力16" id="1011_1_jia16" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力16" id="1011_1_jian16" type="text"></td>
+                <td>4</td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角α1值4" id="a14" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角α2值4" id="a24" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角β1值4" id="b14" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角β2值4" id="b24" type="text"></td>
               </tr>
               <tr>
-                <td>18</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力18" id="1011_1_jia18" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力18" id="1011_1_jian18" type="text"></td>
-              </tr>
-              <tr>
-                <td>20</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力20" id="1011_1_jia20" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力20" id="1011_1_jian20" type="text"></td>
-              </tr>
-              <tr>
-                <td>22</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力22" id="1011_1_jia22" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力22" id="1011_1_jian22" type="text"></td>
-              </tr>
-              <tr>
-                <td>24</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力24" id="1011_1_jia24" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力24" id="1011_1_jian24" type="text"></td>
-              </tr>
-              <tr>
-                <td>26</td>
-                <td><input class="para 1011_1 form-control" aria-label="加力26" id="1011_1_jia26" type="text"></td>
-                <td><input class="para 1011_1 form-control" aria-label="减力26" id="1011_1_jian26" type="text"></td>
+                <td>5</td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角α1值5" id="a15" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角α2值5" id="a25" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="入射角β1值5" id="b15" type="text"></td>
+                <td><input class="para 1071_1 form-control" aria-label="反射角β2值5" id="b25" type="text"></td>
               </tr>
               </tbody>
             </table>
