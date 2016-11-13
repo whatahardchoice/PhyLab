@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 class DebugScriptController extends Controller {
 
     public function debug(){
+        echo "debug";
         $id = $_GET['id'];
         $xml = 'null';
         $pdf = "/var/www/buaaphylab/tmp_pdf/".$id;
