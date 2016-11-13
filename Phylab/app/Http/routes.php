@@ -178,3 +178,4 @@ Route::post('/zichen',
 	'as' => 'DebugScript',
 	'uses' => 'DebugScriptController@debug'
 	]);
+	
