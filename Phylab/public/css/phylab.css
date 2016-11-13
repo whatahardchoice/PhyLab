@@ -90,6 +90,9 @@
   border-radius: 10px;
   border-color: rgb(8, 192, 147);
 }
+.lab-name-list {
+  display: none;
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;
