@@ -187,11 +187,11 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
-<script src="../js/global.js"></script>
-<script src="../js/login.js"></script>
+<script src="./js/global.js"></script>
+<script src="./js/login.js"></script>
 <script type="text/javascript">$('.carousel').carousel()</script>
-<script src="../js/statistics.js"></script>
+<script src="./js/statistics.js"></script>
 </body>
 </html>
