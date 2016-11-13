@@ -254,7 +254,7 @@ var labDoc3dot1415926;
 		var xmlString = labDoc3dot1415926.getXML();
 		var dbId = labDoc3dot1415926.getDbId();
 		var postData = "xml="+encodeURI(xmlString)+"&id="+dbId;
-		PostAjax("/report",postData,function(){
+		PostAjax("./report",postData,function(){
 			if (this.readyState==4 && this.status==200){
 				var jsonText = eval("(" + this.responseText + ")");
 				//alert(this.responseText);
