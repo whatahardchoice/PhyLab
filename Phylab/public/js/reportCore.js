@@ -231,8 +231,10 @@ var labDoc3dot1415926;
     });
   })
   $('#button-generate-report').click(function () {
-    labDoc3dot1415926.flush();
-    setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
+    var jqxhr = $.ajax('./zichen?id=1010113').done(function (data) {
+				$("#pdf_object").attr("data",data);
+    		$('#pdf_embed').attr("src",data);
+			});
   })
 
 	function changePdf(type,pdfName){
