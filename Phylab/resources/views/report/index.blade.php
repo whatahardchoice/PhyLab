@@ -256,8 +256,8 @@
         </div>
         <div class="panel-body" style="padding:5px;">
           <div id="firefox_pdf" style="width: 100%; height: 100%; display: block;">
-            <object data="./zichen?id=1010113" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
-              <embed src="./zichen?id=1010113" type="application/pdf" id="pdf_embed">
+            <object data="http://120.27.125.156/buaaphylab/public/zichen?id=1010113" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
+              <embed src="http://120.27.125.156/buaaphylab/public/zichen?id=1010113" type="application/pdf" id="pdf_embed">
             </object>
           </div>
           <div id="chrom_pdf" style="width:100%;height:92%;min-height:500px;display:none"></div>
