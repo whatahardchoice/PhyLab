@@ -26,7 +26,7 @@ else if (version_compare(PHP_VERSION, ENVIRONMENT_PHP_VERSION, '<'))
 }
 else if (version_compare(PHP_VERSION, '6.0', '>='))
 {
-	die('Error: WeCenter not support PHP version 6 currently');
+	//die('Error: WeCenter not support PHP version 6 currently');
 }
 
 define('START_TIME', microtime(TRUE));
