@@ -1,6 +1,6 @@
 ﻿
 var labDoc3dot1415926;
- 
+
 	function lab(index){
 		this.index = index;
 		this.dbId = getDbId(index);
@@ -35,7 +35,7 @@ var labDoc3dot1415926;
 		$('#lab_collapse').collapse({
 			toggle: false
 		})
-	}	
+	}
 	function eleDisable(){
 		SetDisable('importBtn',true);
 		SetDisable('collectBtn',true);
@@ -58,7 +58,7 @@ var labDoc3dot1415926;
 		document.getElementById('collectIco').setAttribute("class","glyphicon glyphicon-star-empty");
 		document.getElementById('collectText').innerHTML = "收藏";
 	}
-	
+
 	function collectLab(ico_id,txt_id){
 		var ico = document.getElementById(ico_id);
 		var txt = document.getElementById(txt_id);
@@ -71,19 +71,19 @@ var labDoc3dot1415926;
             }
 			else
 				alert("Button text can not be [txt] when use this function!Please Use 收藏/取消收藏");
-	}	
+	}
 	function SelectLab(index,ref){
 		var lt = document.getElementById(ref);
 			if((new RegExp("^10(11|12|21|22|31|41|61|71|81|82|91)$")).test(index)){
 				labDoc3dot1415926 = new lab(index);
-				lt.innerHTML = index;
+				lt.innerHTML = '实验' + index + '分组预习报告';
 				return true;
 			}
 			else{
 				return false;
 			}
 	}
-		
+
 	//USE jquery version 2.1.4, bootstrap.min.js
 	function inputCheck(){
 		var a = $.merge($("input.para"),$("input.var"));
@@ -111,17 +111,17 @@ var labDoc3dot1415926;
 		try{
 			$('#lab_collapse').collapse('hide');
 			$('#loading-container').fadeIn();
-			setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000); 
+			setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
 		}catch(e){
 			$('#loading-container').fadeOut();
 			error();
 		}
 	}
-	
+
 	function errorFunction(message){
 		alert(message);
-	}	
-	
+	}
+
 	$("#InputLabIndex").bind("keypress",function(){
 		if(event.keyCode==13) {
 			if(SelectLab($('#InputLabIndex')[0].value,'LabText')){
@@ -165,7 +165,7 @@ var labDoc3dot1415926;
 	$('input.var').bind('keyup',function(){
 		if((new RegExp("(^\\d+(.\\d+)?$)|(^$)")).test(this.value)==false) $(this).addClass("wrong-input");
 		else $(this).removeClass("wrong-input")
-	})	
+	})
 	$('button.btn-Save').bind('click',function(){
 		var index = labDoc3dot1415926.getIndex();
 		var paraArray,varArray;
@@ -177,7 +177,7 @@ var labDoc3dot1415926;
 		//get selected sublab
 		if(labStr==""){
 			document.getElementById("ErrorText_"+index).innerHTML = "请先选择需要保存数据的子实验（￣▽￣）~*　)";
-			setShowHide("btnError_"+index,"btnSave_"+index,3000);	
+			setShowHide("btnError_"+index,"btnSave_"+index,3000);
 		}
 		else{
 			labStr = labStr.substring(0,labStr.lastIndexOf(','));
@@ -210,9 +210,31 @@ var labDoc3dot1415926;
 				setShowHide("btnError_"+index,"btnSave_"+index,3000);
 			}
 		}
-	})	
-	
-	
+	})
+	$('#lab-group-select li').bind('click', function () {
+    $('#default-lab-name').hide();
+    $('.lab-name-list').hide();
+    $('#lab-group-select button').text($(this).children().text()).append('<span class="caret"></span>');
+    $('#lab-select button').text('题目编号').append('<span class="caret"></span>');
+    $('#lab-' + /lab-group-(\d{4})/.exec(this.id)[1] + '-list').show();
+    if(SelectLab(/lab-group-(\d{4})/.exec(this.id)[1],'lab-status'))
+      changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf");
+    else $('.alert').show();
+  })
+  $('#lab-select li').bind('click', function () {
+    $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
+    $.ajax('./api/', {
+      data: /lab-(\d{7})/.exec(this.id)[1],
+      dataType: html
+    }).done(function (data) {
+      $('#labdoc').text($(data));
+    });
+  })
+  $('#button-generate-report').click(function () {
+    labDoc3dot1415926.flush();
+    setTimeout('Post_lab(errorFunction)',1000+Math.random()*2000);
+  })
+
 	function changePdf(type,pdfName){
 	    var path = ""
 	    if(type=="prepare"){
@@ -225,8 +247,8 @@ var labDoc3dot1415926;
 	        path = "./star_pdf/"
 	    }
 		$("#pdf_object").attr("data",path+pdfName);
-	    $('#pdf_embed').attr("src",path+pdfName);
-	    cp(path+pdfName);
+    $('#pdf_embed').attr("src",path+pdfName);
+    cp(path+pdfName);
 	}
 	function Post_lab(postErrorFunc){
 		var xmlString = labDoc3dot1415926.getXML();
