@@ -173,7 +173,7 @@ Route::get('/report/download/{experimentId}/{link}',
     'middleware'    =>  'auth'
 	]);
 	
-Route::get('/zichen',
+Route::post('/zichen',
 	[
 	'as' => 'DebugScript',
 	'uses' => 'DebugScriptController@debug'
