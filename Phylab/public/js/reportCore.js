@@ -231,9 +231,7 @@ var labDoc3dot1415926;
     });
   })
   $('#button-generate-report').click(function () {
-    var jqxhr = $.ajax('./zichen', {
-    	data: 'id=1010113'
-			}).done(function (data) {
+    var jqxhr = $.ajax('./zichen?id=1010113').done(function (data) {
 				$("#pdf_object").attr("data",data);
     		$('#pdf_embed').attr("src",data);
 			});
