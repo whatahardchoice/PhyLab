@@ -1,9 +1,9 @@
 function SetXMLDoc_lab(labnum){
 	var str = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	switch(labnum){
-		case "1011":
-			str += "<lab id=\"1011\">"+
-				"<sublab id=\"10111\" status=\""+document.getElementById('check_1011_1').checked+"\">"+
+		case '1010113':
+			str +=
+				"<sublab id=\"1010113\">"+
 					"<table name=\"10111_1\" raw=\"1\" column=\"5\">"+
 						"<tr index=\"1\">"+
 							"<td>"+document.getElementById('1011_1_D1').value+"</td>"+
@@ -37,8 +37,11 @@ function SetXMLDoc_lab(labnum){
 							"<td>"+document.getElementById('1011_1_jian26').value+"</td>"+
 						"</tr>"+
 					"</table>"+
-				"</sublab>"+
-				"<sublab id=\"10112\" status=\""+document.getElementById('check_1011_2').checked+"\">"+
+				"</sublab>";
+				break;
+		case '1010212':
+			str +=
+				"<sublab id=\"1010212\">"+
 					"<table name=\"10112_1\" raw=\"3\" column=\"4\">"+
 						"<tr index=\"1\">"+
 							"<td>"+document.getElementById('1011_2_myuanzhu').value+"</td>"+
@@ -93,12 +96,11 @@ function SetXMLDoc_lab(labnum){
 							"<td>"+document.getElementById('1011_2_xcg5').value+"</td>"+
 						"</tr>"+
 					"</table>"+
-				"</sublab>"+
-			"</lab>"
-			return str;		
-	case "1021":
-		str += "<lab id=\"1021\">"+
-			"<sublab id=\"10211\" status=\""+document.getElementById('check_1021_1').checked+"\">"+
+				"</sublab>";
+			break;
+	case "1020113":
+		str +=
+			"<sublab id=\"1020113\">"+
 				"<table name=\"10211_1\" raw=\"1\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('mTong').value+"</td>"+
@@ -209,8 +211,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('a60-20').value+"</td>"+
 					"</tr>"+	
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10212\" status=\""+document.getElementById('check_1021_2').checked+"\">"+
+			"</sublab>";
+			break;
+		case '1020212':
+			str +=
+			"<sublab id=\"1020212\">"+
 				"<table name=\"10212_1\" raw=\"1\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('mNeitong').value+"</td>"+
@@ -315,13 +320,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('r30').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
-	case "1031":
-		str += "<lab id=\"1031\">"+
-			"<sublab id=\"10311\" status=\""+document.getElementById('check_1031_1').checked+"\">"+
+	case "1030113":
+		str +=
+			"<sublab id=\"1030113\">"+
 				"<table name=\"10311_1\" raw=\"6\" column=\"3\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('chjiao1').value+"</td>"+
@@ -394,13 +398,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('ny4').value+"</td>"+
 					"</tr>"+			
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
-	case "1071":
-		str += "<lab id=\"1071\">"+			
-			"<sublab id=\"10711\" status=\""+true+"\">"+
+	case "1070212":
+		str +=	
+			"<sublab id=\"1070212\">"+
 				"<table name=\"10711_1\" raw=\"5\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('a11').value+"</td>"+
@@ -432,9 +435,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('b15').value+"</td>"+
 						"<td>"+document.getElementById('b25').value+"</td>"+
 					"</tr>"+	
-				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10712\" status=\""+false+"\">"+
+				"</table>";
+			"</sublab>";
+			break;
+	case "1070312":
+		str +=	
+			"<sublab id=\"1070312\">"+
 				"<table name=\"10712_1\" raw=\"5\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('ra11').value+"</td>"+
@@ -467,13 +473,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('rb25').value+"</td>"+
 					"</tr>"+	
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
-	case "1091":
-		str += "<lab id=\"1091\">"+
-			"<sublab id=\"10911\" status=\""+document.getElementById('check_1091_1').checked+"\">"+
+	case "1090114":
+		str +=
+			"<sublab id=\"1090114\">"+
 				"<table name=\"10911_1\" raw=\"1\" column=\"10\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1091_1_d0').value+"</td>"+
@@ -488,8 +493,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1091_1_d900').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10912\" status=\""+document.getElementById('check_1091_2').checked+"\">"+
+			"</sublab>";
+			break;
+	case '1090212':
+		str +=
+			"<sublab id=\"1090212\">"+
 				"<table name=\"10912_1\" raw=\"2\" column=\"10\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1091_2_z11').value+"</td>"+
@@ -516,8 +524,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1091_2_y20').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10913\" status=\""+document.getElementById('check_1091_3').checked+"\">"+
+			"</sublab>";
+			break;
+	case '1090312':
+		str +=
+			"<sublab id=\"1090312\">"+
 				"<table name=\"10913_1\" raw=\"2\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1091_3_z1').value+"</td>"+
@@ -549,13 +560,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1091_4_x50').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+			
-		"</lab>"
-		return str;
+			"</sublab>";		
+		break;
 		
-	case "1061":
-		str += "<lab id=\"1061\">"+
-			"<sublab id=\"10611\" status=\""+document.getElementById('check_1061_1').checked+"\">"+
+	case "1060111":
+		str +=
+			"<sublab id=\"1060111\">"+
 				"<table name=\"10611_1\" raw=\"9\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('wt1_guangyuan1').value+"</td>"+
@@ -612,8 +622,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('wt3_tutoujing23').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10612\" status=\""+document.getElementById('check_1061_2').checked+"\">"+
+			"</sublab>";
+			break;
+		case '1060213':
+			str +=
+			"<sublab id=\"1060213\">"+
 				"<table name=\"10612_1\" raw=\"5\" column=\"4\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('z_guangyuan1').value+"</td>"+
@@ -641,8 +654,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('z_tutoujing25').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10613\" status=\""+document.getElementById('check_1061_3').checked+"\">"+
+			"</sublab>";
+			break;
+	case '1060312':
+		str +=
+			"<sublab id=\"1060312\">"+
 				"<table name=\"10613_1\" raw=\"3\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('wa_guangyuan1').value+"</td>"+
@@ -663,8 +679,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('wa_guangyuan3').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10614\" status=\""+document.getElementById('check_1061_4').checked+"\">"+
+			"</sublab>";
+			break;
+	case '1060412':
+		str +=
+			"<sublab id=\"1060412\">"+
 				"<table name=\"10614_1\" raw=\"5\" column=\"8\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('g_guangyuan1').value+"</td>"+
@@ -707,13 +726,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('g_ping5').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
-	case "1081":
-		str += "<lab id=\"1081\">"+
-			"<sublab id=\"10811\" status=\""+document.getElementById('check_1081_1').checked+"\">"+
+	case "1080114":
+		str +=
+			"<sublab id=\"1080114\">"+
 				"<table name=\"10811_1\" raw=\"1\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1081_kuoshu').value+"</td>"+
@@ -767,13 +785,12 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1081_x20').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
-	case "1082":
-		str += "<lab id=\"1082\">"+
-			"<sublab id=\"10821\" status=\""+document.getElementById('check_1082_1').checked+"\">"+
+	case "1080215":
+		str +=
+			"<sublab id=\"1080215\">"+
 				"<table name=\"10821_1\" raw=\"1\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1082_1_xiafeng').value+"</td>"+
@@ -827,8 +844,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1082_1_x20').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-			"<sublab id=\"10822\" status=\""+document.getElementById('check_1082_2').checked+"\">"+
+			"</sublab>";
+			break;
+	case '1080225':
+		str +=
+			"<sublab id=\"1080225\">"+
 				"<table name=\"10822_1\" raw=\"1\" column=\"5\">"+
 					"<tr index=\"1\">"+
 						"<td>"+document.getElementById('1082_2_xiafeng').value+"</td>"+
@@ -882,11 +902,11 @@ function SetXMLDoc_lab(labnum){
 						"<td>"+document.getElementById('1082_2_x20').value+"</td>"+
 					"</tr>"+
 				"</table>"+
-			"</sublab>"+
-		"</lab>"
-		return str;
+			"</sublab>";
+		break;
 		
 	default:
-		return
+		return;
 	}
+	return str;
 }
