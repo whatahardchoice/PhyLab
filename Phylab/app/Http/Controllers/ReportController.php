@@ -68,40 +68,53 @@ class ReportController extends Controller
         catch(Exception $e){
             throw new FileIOException();
         }
-        $report = Report::find(Request::get('id'));
-        $scriptLink = $report->script_link;
-        $experimentId = $report->experiment_id;
-        if($scriptLink!=null){
-			$output = array();
-            $system = exec(Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.' '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
-            #echo Config::get('phylab.scriptPath')."create.sh ".Config::get('phylab.tmpReportPath')." ".Config::get('phylab.scriptPath').$scriptLink." ".Config::get('phylab.tmpXmlPath').$tmpName." ".Config::get('phylab.tmpReportPath').$tmpName;
-            #echo $out;
-            #echo $system."\n";
-            #echo $reval."\n";
-            #echo var_dump($output);
-            if($reval==0){
-                #echo $system.'\n';
-                #echo "python ".storage_path()."/app/script/".$scriptLink." ".storage_path()."/app/xml_tmp/".$xmlLink." ".public_path()."/pdf_tmp/".$tmpName.".tex";
-                $system = json_decode($system);
+        // $report = Report::find(Request::get('id'));
+        // $scriptLink = $report->script_link;
+        $experimentId = Request::get('id');
+        $output = array();
+        $system = exec(Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.' '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+        if($reval==0){
+            $system = json_decode($system);
                 if($system->status== SUCCESS_MESSAGE){
                     $data["status"] = SUCCESS_MESSAGE;
                     $data["link"] = $tmpName.".pdf";
                     $data["experimentId"] = $experimentId;
                 }
-                else{
-                    $data["status"]=FAIL_MESSAGE;
-                    $data["message"]="生成脚本生成失败，请检查您的输入";
-                }
-            }
-            else{
-                $data["status"]=FAIL_MESSAGE;
-                $data["message"]="似乎发生了系统级的错误";
-            }
-        }
-        else{
+        }else{
             $data["status"]=FAIL_MESSAGE;
-            $data["message"]="暂时未有生成模板的脚本";
+            $data["message"]="生成脚本生成失败";
         }
+        // if($scriptLink!=null){
+		// 	$output = array();
+        //     $system = exec(Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.' '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+        //     #echo Config::get('phylab.scriptPath')."create.sh ".Config::get('phylab.tmpReportPath')." ".Config::get('phylab.scriptPath').$scriptLink." ".Config::get('phylab.tmpXmlPath').$tmpName." ".Config::get('phylab.tmpReportPath').$tmpName;
+        //     #echo $out;
+        //     #echo $system."\n";
+        //     #echo $reval."\n";
+        //     #echo var_dump($output);
+        //     if($reval==0){
+        //         #echo $system.'\n';
+        //         #echo "python ".storage_path()."/app/script/".$scriptLink." ".storage_path()."/app/xml_tmp/".$xmlLink." ".public_path()."/pdf_tmp/".$tmpName.".tex";
+        //         $system = json_decode($system);
+        //         if($system->status== SUCCESS_MESSAGE){
+        //             $data["status"] = SUCCESS_MESSAGE;
+        //             $data["link"] = $tmpName.".pdf";
+        //             $data["experimentId"] = $experimentId;
+        //         }
+        //         else{
+        //             $data["status"]=FAIL_MESSAGE;
+        //             $data["message"]="生成脚本生成失败，请检查您的输入";
+        //         }
+        //     }
+        //     else{
+        //         $data["status"]=FAIL_MESSAGE;
+        //         $data["message"]="似乎发生了系统级的错误";
+        //     }
+        // }
+        // else{
+        //     $data["status"]=FAIL_MESSAGE;
+        //     $data["message"]="暂时未有生成模板的脚本";
+        // }
         return response()->json($data);
     }
 
