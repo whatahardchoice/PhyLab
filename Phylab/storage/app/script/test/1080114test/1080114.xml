@@ -1,58 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <lab id="1081">
-<sublab id="10811" status="true">
-		<table name="10811_1" raw="1" column="5">
-			<tr index="1">
-				<td>115.34</td>
-				<td>52.38</td>
-				<td>46.72</td>
-				<td>85.94</td>
-				<td>63.39</td>
-			</tr>
-		</table>
-		<table name="10811_2" raw="2" column="4">
-			<tr index="1">
-				<td>5.609</td>
-				<td>3.839</td>
-				<td>5.625</td>
-				<td>3.895</td>
-			</tr>
-			<tr index="2">
-				<td>4.638</td>
-				<td>4.034</td>
-				<td>4.636</td>
-				<td>3.991</td>
-			</tr>
-		</table>
-		<table name="10811_3" raw="4" column="5">
-			<tr index="1">
-				<td>1.220</td>
-				<td>1.531</td>
-				<td>1.913</td>
-				<td>2.221</td>
-				<td>2.339</td>
-			</tr>
-			<tr index="2">
-				<td>2.870</td>
-				<td>3.179</td>
-				<td>3.487</td>
-				<td>3.838</td>
-				<td>4.142</td>
-			</tr>
-			<tr index="3">
-				<td>4.516</td>
-				<td>4.831</td>
-				<td>5.144</td>
-				<td>5.462</td>
-				<td>5.774</td>
-			</tr>
-			<tr index="4">
-				<td>6.078</td>
-				<td>6.418</td>
-				<td>6.752</td>
-				<td>7.064</td>
-				<td>7.401</td>
-			</tr>
-		</table>
-	</sublab>
+	<table name="10811_1" raw="1" column="5">
+		<tr index="1">
+			<td>115.34</td>
+			<td>52.38</td>
+			<td>46.72</td>
+			<td>85.94</td>
+			<td>63.39</td>
+		</tr>
+	</table>
+	<table name="10811_2" raw="2" column="4">
+		<tr index="1">
+			<td>5.609</td>
+			<td>3.839</td>
+			<td>5.625</td>
+			<td>3.895</td>
+		</tr>
+		<tr index="2">
+			<td>4.638</td>
+			<td>4.034</td>
+			<td>4.636</td>
+			<td>3.991</td>
+		</tr>
+	</table>
+	<table name="10811_3" raw="4" column="5">
+		<tr index="1">
+			<td>1.220</td>
+			<td>1.531</td>
+			<td>1.913</td>
+			<td>2.221</td>
+			<td>2.339</td>
+		</tr>
+		<tr index="2">
+			<td>2.870</td>
+			<td>3.179</td>
+			<td>3.487</td>
+			<td>3.838</td>
+			<td>4.142</td>
+		</tr>
+		<tr index="3">
+			<td>4.516</td>
+			<td>4.831</td>
+			<td>5.144</td>
+			<td>5.462</td>
+			<td>5.774</td>
+		</tr>
+		<tr index="4">
+			<td>6.078</td>
+			<td>6.418</td>
+			<td>6.752</td>
+			<td>7.064</td>
+			<td>7.401</td>
+		</tr>
+	</table>
 </lab>

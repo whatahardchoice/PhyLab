@@ -32,19 +32,19 @@ if __name__ == '__main__':
 			if (lab == sys.argv[1]):
 				#from p1010113 import handler
 				#eval('from p' + lab + ' import handler')
-				testxml = handledir + 'test/' + lab + 'test/' + lab + '.xml'
+				#testxml = handledir + 'test/' + lab + 'test/' + lab + '.xml'
 				try:
-					sublab = ''
-					dom = xml.dom.minidom.parse(testxml)
+					root = ''
+					dom = xml.dom.minidom.parse(sys.argv[2])
 					root = dom.documentElement
-					sublab_list = root.getElementsByTagName('sublab')
-					for l in sublab_list:
-						if (l.getAttribute("status") == 'true') & (l.getAttribute("id") == xmlid[lab]):
-							sublab = l
+					# sublab_list = root.getElementsByTagName('sublab')
+					# for l in sublab_list:
+					# 	if (l.getAttribute("status") == 'true') & (l.getAttribute("id") == xmlid[lab]):
+					# 		sublab = l
 				except Exception as e:
 					# raise e
 					pass
-				latex_body = __import__('p'+lab).handler(sublab)#(sys.argv[2])
+				latex_body = __import__('p'+lab).handler(root)#(sys.argv[2])
 				flag = False
 				break
 		if (flag):
