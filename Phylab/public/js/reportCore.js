@@ -278,11 +278,13 @@ $('#lab-select li').click(function () {
   $('#button-generate-report').removeAttr("disabled");
   $.ajax('./table', {
     data: CUR_SUBLAB,
-    dataType: html
+    dataType: 'html'
   }).done(function (data) {
     $('#labdoc').append(data);
   }).fail(function () {
     alert('无法获取' + CUR_SUBLAB + '实验数据表格');
+  }).always(function () {
+    alert('AJAX通讯失败');
   });
 });
 $('#button-view-preparation').click(function () {
