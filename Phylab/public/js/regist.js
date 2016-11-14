@@ -98,11 +98,11 @@
       var patterns = "^([a-zA-Z0-9_]|[\u4E00-\u9FA5]){1,20}$";
       if(!(new RegExp(patterns)).test($('#name').val())){
         $('#alert-name').text("请您输入1至20位的中文、字母或数字组合作为用户名。");
-        $('#alert-name').show();
+        $('#alert-name').fadeIn();
         return -1;
       }
       else{
-        $('#alert-name').hide();
+        $('#alert-name').fadeIn();
         return 0;
       }
     }
