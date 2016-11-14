@@ -147,7 +147,7 @@
                 </div>
               </div>
               <div class="submit">
-                <input class="btn btn-primary" id="submit" type="button" value="注册">
+                <input class="btn btn-primary" id="submit" type="button" value="注册" onclick="submit_register()">
               </div>
             </form>
             <div class="have-user">

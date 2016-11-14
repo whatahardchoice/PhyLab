@@ -91,7 +91,7 @@
 			$("#captcha-img").src=G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);
 		});
 
-		$('#submit').click(function () {
+		function submit_register() {
 			$.ajax(G_BASIC_URL + '/account/ajax/register_process/', {
 				method: 'POST',
 				data: {
