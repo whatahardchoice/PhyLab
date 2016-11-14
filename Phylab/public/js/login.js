@@ -8,7 +8,7 @@
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                window.location.href="/buaaphylab/public/index";
+                window.location.href="/index";
             }
             else{
                 $('#alert-message').text(jsonText["message"]);
