@@ -292,7 +292,10 @@ $('#button-generate-report').click(function () {
   var xmlString = SetXMLDoc_lab(CUR_SUBLAB);
   if (xmlString === null)
     return;
-  var postData = "xml="+encodeURI(xmlString)+"&id="+CUR_SUBLAB;
+  var postData = {
+    'id': CUR_SUBLAB,
+    'xml': encodeURI(xmlString)
+  };
   PostAjax("./report",postData,function(){
     if (this.readyState==4 && this.status==200){
       var jsonText = eval("(" + this.responseText + ")");
