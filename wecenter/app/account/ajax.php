@@ -157,6 +157,7 @@ class ajax extends AWS_CONTROLLER
 		else
 		{
 			$uid = $this->model('account')->user_register($_POST['user_name'], $_POST['password'], $_POST['email']);
+			if ($uid==0||$uid==false) H::ajax_json_output(AWS_APP::RSM(null, -1, AWS_APP::lang()->_t('注册的人太多啦~')));
 		}
 
 
