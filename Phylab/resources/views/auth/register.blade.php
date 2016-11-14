@@ -7,11 +7,11 @@
   <title>PhyLab</title>
 
   <!-- Bootstrap -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/bootstrap-tour.min.css" rel="stylesheet">
-  <link href="../css/font-awesome.min.css" rel="stylesheet">
-  <link href="../css/styles.css" rel="stylesheet">
-  <link href="../css/phylab.css" rel="stylesheet">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/bootstrap-tour.min.css" rel="stylesheet">
+  <link href="./css/font-awesome.min.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link href="./css/phylab.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -228,7 +228,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
 </body>
 </html>
