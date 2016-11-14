@@ -25,10 +25,8 @@ import xml.dom.minidom
 from math import sqrt
 
 from jinja2 import Environment
-
-from tex import latex2pdf
 from handler import texdir
-
+from handler import handledir
 # 原始数据
 n = 0
 angle_a1 = []
@@ -42,7 +40,6 @@ average_angle_A = 0
 ua_A = 0
 ub_A = 0
 re_u = 0
-u_a = 0
 answer = []  # 三元组，经过位数处理的(期望真值，误差， 幂次)
 # 输出数据
 N = 0
@@ -109,7 +106,7 @@ def regulation():
     N = n
     AVERAGE_A = toScience(average_angle_A)
     UA_A = toScience(ua_A)
-    U_A = toScience(u_a)
+    U_A = toScience(u_A)
     RE_U = toScience(re_u)
     RESULT_A = answer[0]
     RESULT_UA = answer[1]
@@ -130,10 +127,6 @@ def readXML(sublab_root):
             angle_a2.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
             angle_b1.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
             angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
-    print angle_a1
-    print angle_a2
-    print angle_b1
-    print angle_b2
 
 
 # 将得到的结果填入模板
@@ -215,30 +208,14 @@ def toScience(number):
 
 
 if __name__ == '__main__':
-    '''
-    n = 6
-    angle_a1 = [66.15, 55.59, 0.29, 72.03, 47.15, 155.08]
-    angle_b1 = [246.07, 235.55, 180.20, 252.02, 227.09, 335.05]
-    angle_a2 = [186.10, 175.58, 120.24, 191.58, 167.18, 275.04]
-    angle_b2 = [6.10, 355.52, 300.19, 11.56, 347.10, 95.09]
-    for i in range(n):
-        angle_a1[i] = angleTransfer(angle_a1[i])
-        angle_b1[i] = angleTransfer(angle_b1[i])
-        angle_a2[i] = angleTransfer(angle_a2[i])
-        angle_b2[i] = angleTransfer(angle_b2[i])
-    print angle_theta
-    print angle_A
-    print average_angle_A
-    print answer
-    print ANGLE_A
-    '''
+
 
     def ReadXmlTop():
-        latex_head_file = open('./Head.tex', 'r')
+        latex_head_file = open(texdir+'Head.tex', 'r')
         latex_head = latex_head_file.read().decode('utf-8', 'ignore')
         latex_tail = "\n\\end{document}"
         latex_body = ""
-        dom = xml.dom.minidom.parse('./1070212test/1071.xml')
+        dom = xml.dom.minidom.parse(handledir+'test/1070212test/1071.xml')
         root = dom.documentElement
         sublab_list = root.getElementsByTagName('sublab')
         for sublab in sublab_list:
@@ -247,8 +224,9 @@ if __name__ == '__main__':
             if (sublab_status == 'true') & (sublab_id == '10711'):
                 latex_body += handler(sublab)
         return latex_head + latex_body + latex_tail
-    fileTex = open('./1070212test/1070212test.tex', 'w')
+    fileTex = open(handledir+'test/1070212test/1070212test.tex', 'w')
     text = ReadXmlTop().encode('utf-8')
     fileTex.write(text)
     fileTex.close()
+    print u_A, U_A
 
