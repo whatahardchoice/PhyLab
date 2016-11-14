@@ -85,6 +85,7 @@ class ReportController extends Controller
         }else{
             $data["status"]=FAIL_MESSAGE;
             $data["message"]="生成脚本生成失败";
+            $data["test"]= $test;
         }
         // if($scriptLink!=null){
 		// 	$output = array();
