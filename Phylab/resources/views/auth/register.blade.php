@@ -18,14 +18,45 @@
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-  
-  <script>
-   var G_BASE_URL='<?php echo G_BASE_URL;?>';
-  </script>
+ 
   <![endif]-->
 </head>
 <body>
-
+<header id="site-header">
+  <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{URL::route('index')}}">
+          <img id="header-logo" src="./img/phylab_logo_single.svg"/>
+          <span>PhyLab</span>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <a  href="{{URL::route('report')}}">实验</a>
+          </li>
+          <li>
+            <a href="{{URL::route('wc_login')}}">社区</a>
+          </li>
+          <li>
+            <a href="#">反馈</a>
+          </li>
+        </ul>
+        <div class="navbar-right btns">
+          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
+          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <div class="container layout layout-margin-top">
   <div class="row">
