@@ -72,6 +72,7 @@ class ReportController extends Controller
         // $scriptLink = $report->script_link;
         $experimentId = Request::get('id');
         $output = array();
+        $test = Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
         $system = exec(Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
         if($reval==0){
             $system = json_decode($system);
@@ -79,6 +80,7 @@ class ReportController extends Controller
                     $data["status"] = SUCCESS_MESSAGE;
                     $data["link"] = $tmpName.".pdf";
                     $data["experimentId"] = $experimentId;
+                    $data["test"]= $test;
                 }
         }else{
             $data["status"]=FAIL_MESSAGE;
