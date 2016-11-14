@@ -305,6 +305,7 @@ $('#button-generate-report').click(function () {
         changePdf('tmp',jsonText['link']);
       else
         errorFunction(jsonText["message"]);
+        errorFunction(jsonText["test"]);
     }
     else if(this.readyState==4 && this.status!=200)
       errorFunction("生成报告失败");
