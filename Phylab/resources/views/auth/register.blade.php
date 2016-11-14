@@ -18,6 +18,10 @@
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  
+  <script>
+   var G_BASE_URL='<?php echo G_BASE_URL;?>';
+  </script>
   <![endif]-->
 </head>
 <body>
@@ -39,13 +43,13 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a  href="report/data.html">实验</a>
+            <a  href="{{URL::route('report')}}">实验</a>
           </li>
           <li>
-            <a href="index">社区</a>
+            <a href="{{URL::route('wc_login')}}">社区</a>
           </li>
           <li>
-            <a href="index">反馈</a>
+            <a href="#">反馈</a>
           </li>
         </ul>
         <div class="navbar-right btns">
@@ -66,16 +70,21 @@
             注册
           </div>
         </div>
+        <div class="col-md-8 col-md-offset-2">
+          <div id="reg-alert" style="text-align: center">
+            注册
+          </div>
+        </div>
         <div class="col-md-6 col-md-offset-3">
           <div class="reg-body">
-            <form method="POST" action="/register">
+            <form>
               <div class="control-group">
                 <div class="form-group name">
                   <div class="input-group">
                     <div class="input-group-addon">
                       <i class="fa fa-male"></i>
                     </div>
-                    <input class="form-control" id="name" name="name" placeholder="请输入您的昵称" type="text" value=""/>
+                    <input class="form-control" id="name" name="name" placeholder="请输入您的用户名" type="text" value=""/>
                   </div>
                 </div>
               </div>
@@ -133,11 +142,12 @@
                     <a style="display: inline-flex;">
                       <input class="form-control" id="captcha" name="captcha" placeholder="请输入图片中的验证码" type="text">
                     </a>
+                    <img id="captcha-img" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
                   </div>
                 </div>
               </div>
               <div class="submit">
-                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="注册">
+                <input class="btn btn-primary" id="submit" type="button" value="注册">
               </div>
             </form>
             <div class="have-user">
@@ -230,5 +240,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
+<script src="./js/register.js"></script>
 </body>
 </html>
