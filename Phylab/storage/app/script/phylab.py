@@ -3,43 +3,17 @@
 from math import sqrt
 
 #将二维列表x中的每一个值保留b位小数（带四舍五入）
-def RoundTwo(x,b):
+def RoundTwo(x,b = 2):
 	for i in range(len(x)):
 		for j in range(len(x[i])):
 			x[i][j] = round(x[i][j],b)
-			if b == 0:
-				x[i][j] = ("%d" %x[i][j])
-			elif b == 1:
-				x[i][j] = ("%.1f" %x[i][j])
-			elif b == 2:
-				x[i][j] = ("%.2f" %x[i][j])
-			elif b == 3:
-				x[i][j] = ("%.3f" %x[i][j])
-			elif b == 4:
-				x[i][j] = ("%.4f" %x[i][j])
-			elif b == 5:
-				x[i][j] = ("%.5f" %x[i][j])
-			elif b == 6:
-				x[i][j] = ("%.6f" %x[i][j])
+			x[i][j] = "%.*f"%(b, x[i][j])
 
 #将一维列表x中的每一个值保留b位小数（带四舍五入）
 def RoundOne(x,b):
 	for i in range(len(x)):
 		x[i] = round(x[i],b)
-		if b == 0:
-			x[i] = ("%d" %x[i])
-		elif b == 1:
-			x[i] = ("%.1f" %x[i])
-		elif b == 2:
-			x[i] = ("%.2f" %x[i])
-		elif b == 3:
-			x[i] = ("%.3f" %x[i])
-		elif b == 4:
-			x[i] = ("%.4f" %x[i])
-		elif b == 5:
-			x[i] = ("%.5f" %x[i])
-		elif b == 6:
-			x[i] = ("%.6f" %x[i])
+		x[i] = "%.*f"%(b, x[i])
 
 #计算a类不确定度：x是一个列表，aver是x的平均值，k是数据的组数（不一定等于len(x)，
 #               因为x后面可能添加了x的平均值）
@@ -84,33 +58,6 @@ def BitAdapt(x,u_x) :
 		x = round(float(x),bit)
 		u_x = ("%.*f"%(bit, u_x))
 		x = ("%.*f"%(bit, x))
-		# if bit == 0:
-		# 	u_x = ("%d" % u_x)
-		# 	x = ("%d" % x)
-		# elif bit == 1:
-		# 	u_x = ("%.1f" % u_x)
-		# 	x = ("%.1f" % x)
-		# elif bit == 2:
-		# 	u_x = ("%.2f" % u_x)
-		# 	x = ("%.2f" % x)
-		# elif bit == 3:
-		# 	u_x = ("%.3f" % u_x)
-		# 	x = ("%.3f" % x)
-		# elif bit == 4:
-		# 	u_x = ("%.4f" % u_x)
-		# 	x = ("%.4f" % x)
-		# elif bit == 5:
-		# 	u_x = ("%.5f" % u_x)
-		# 	x = ("%.5f" % x)
-		# elif bit == 6:
-		# 	u_x = ("%.6f" % u_x)
-		# 	x = ("%.6f" % x)
-		# elif bit == 7:
-		# 	u_x = ("%.7f" % u_x)
-		# 	x = ("%.7f" % x)
-		# elif bit == 8:
-		# 	u_x = ("%.8f" % u_x)
-		# 	x = ("%.8f" % x)
 		i = 0
 		while(1):
 			temp = float(u_x)*(10**i)
