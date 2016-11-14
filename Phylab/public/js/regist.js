@@ -109,4 +109,4 @@
 			}).fail(function (xhr, status) {
 				alert('注册失败: ' + xhr.status + ', 原因: ' + status);
 			})
-		});
+		}
