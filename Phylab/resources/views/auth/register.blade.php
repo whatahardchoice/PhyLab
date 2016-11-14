@@ -159,7 +159,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-4 clearfix footer-col">
           <div class="col-lx-12 text-center">
-            <img id="footer-logo" src="../img/phylab_logo_single.svg"/>
+            <img id="footer-logo" src="./img/phylab_logo_single.svg"/>
             <div class="footer-slogan">PhyLab</div>
           </div>
           <div class="col-xs-4">
