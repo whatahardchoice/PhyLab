@@ -36,6 +36,3 @@ $('#login_form input').keydown(function (e) {
             $('#login-submit').click();
         }
     });
-$('#quick-regist').click(function () {
-  window.location.href = "/register";
-});

@@ -89,6 +89,9 @@
   //PhyLab2.0注册界面
     $(document).ready(function () {
 			$("#captcha-img").attr('src', G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000));
+      $('#name').val(sessionStorage.getItem('name'));
+      $('#email').val(sessionStorage.getItem('email'));
+      $('#password1').val(sessionStorage.getItem('password'));
 		});
 
     $('#name').change(function () {
@@ -163,3 +166,9 @@
 				alert('注册失败: ' + xhr.status + ', 原因: ' + status);
 			})
 		}
+    $('#quick-regist').click(function () {
+      sessionStorage.setItem('name', $('#name').val());
+      sessionStorage.setItem('email', $('#email').val());
+      sessionStorage.setItem('password', $('#password').val());
+      window.location.href = "/register";
+    });

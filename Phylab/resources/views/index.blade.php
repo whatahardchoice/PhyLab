@@ -73,7 +73,7 @@
         <div class="col-xs-12 col-md-5" @if (!$auth) style="display: block" @else style="display: none" @endif>
           <form method="post">
             <div class="form-group">
-              <input class="form-control" name="name" id="name" type="text" placeholder="昵称">
+              <input class="form-control" name="name" id="name" type="text" placeholder="用户名">
             </div>
             <div class="form-group">
               <input class="form-control" name="email" id="email" type="email" placeholder="邮箱">
@@ -171,5 +171,6 @@
 <script src="./js/login.js"></script>
 <script type="text/javascript">$('.carousel').carousel()</script>
 <script src="./js/statistics.js"></script>
+<script src="./js/regist.js"></script>
 </body>
 </html>
