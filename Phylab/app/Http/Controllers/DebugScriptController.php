@@ -9,7 +9,7 @@ class DebugScriptController extends Controller {
         $id = $_GET['id'];
         $xml = '/var/www/buaaphylab/storage/app/script/test/'.$id.'test/'.$id.'.xml';
         $pdf = "/tmp/tmp_pdf/".$id;
-        $res = exec("python /var/www/buaaphylab/storage/app/script/handler.py ".$id.' '.$xml." $pdf 2>&1 ", $output,$rval);
+        $res = exec("/var/www/buaaphylab/storage/app/script/handler.py ".$id.' '.$xml." $pdf 2>&1 ", $output,$rval);
         if($rval!=0) {
             foreach ($output as $i => $o) {
                 $o = preg_replace('/ /', '&nbsp;', $o);
