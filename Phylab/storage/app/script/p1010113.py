@@ -4,8 +4,22 @@ from math import pi
 import phylab
 from jinja2 import Environment
 from handler import texdir
+import xml.dom.minidom
+
 #texdir = "./tex/"
 env = Environment()
+
+def readXML(root):
+	table_list = root.getElementsByTagName("table")
+	for table in table_list:
+		data = []
+		# table_name = table.getAttribute("name")
+		table_tr_list = table.getElementsByTagName("tr")
+		for tr in table_tr_list:
+			tr_td_list = tr.getElementsByTagName("td")
+			data += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
+		return data
+
 def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	# m为等差数列，一般从10到24    单位：kg
 	# C     单位：cm
@@ -69,22 +83,12 @@ def handler(XML):
 	#将模板作为字符串存储在template文件中
 	source = file_object.read().decode('utf-8', 'ignore')
 	file_object.close()
-	m = [10.000,12.000,14.000,16.000,18.000,20.000,22.000,24.000]
-	C_plus = [6.72, 7.21, 7.65, 8.11, 8.55, 8.99, 9.47, 9.91]
-	C_sub = [6.74, 7.22, 7.64, 8.12, 8.57, 9.02, 9.48, 9.90]
-	D = [0.796, 0.796, 0.796, 0.796, 0.796]
-	L = 39.61
-	H = 111.12
-	b = 8.50
-	res = SteelWire(m, C_plus, C_sub, D, L, H, b, source)
-	# result = env.from_string(source).render(
-	# 		L = 1,
-	# 		H = 2,
-	# 		b = 3,
-	# 		D = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
-	# 		ave_D = 0.35
-	# 		)
-	#print(res)
-	return res
+	data = readXML(XML)
+	return SteelWire(data[0], data[1], data[2], data[3], data[4][0], data[4][1], data[4][1], source)
+	
 if __name__ == '__main__':
-	handler('')
+	handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
+	texdir = handledir + 'tex/'
+	dom = xml.dom.minidom.parse('D:\\Apache24\\htdocs\\PhyLabs\\Phylab\\storage\\app\\script\\test\\1010113test\\1010113.xml')
+	root = dom.documentElement
+	print handler(root)
