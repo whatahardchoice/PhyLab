@@ -58,7 +58,7 @@ class ReportController extends Controller
                 'id'  => '生成报告ID',
                 'xml' => '模板xml文件'
             );
-        postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         //ToDo
         //$xmlLink = getRandName().".xml";
         $tmpName = getRandName();
