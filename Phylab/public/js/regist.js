@@ -97,7 +97,7 @@
     function check_name() {
       var patterns = "^([a-zA-Z0-9_]|[\u4E00-\u9FA5]){1,20}$";
       if(!(new RegExp(patterns)).test($('#name').val())){
-        $('#alert-name').text("用户名输入不符合要求。");
+        $('#alert-name').text("请您输入1至20位的中文、字母或数字组合作为用户名。");
         $('#alert-name').show();
         return -1;
       }
@@ -111,7 +111,7 @@
     function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
       if(!(new RegExp(patterns)).test($('#email').val())){
-        $('#alert-email').text("邮件输入不符合要求。");
+        $('#alert-email').text("请您输入正确的邮箱。");
         $('#alert-email').show();
         return -1;
       }
@@ -123,8 +123,8 @@
     $('#email').change(check_email).blur(check_email);
 
     function check_grade() {
-      if($('#grade').val() === 'none') {
-        $('#alert-grade').text("未选择年级。");
+      if($('#grade option[selected]').val() === 'none') {
+        $('#alert-grade').text("请您选择您的年级。");
         $('#alert-grade').show();
         return -1;
       }
@@ -138,7 +138,7 @@
     function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
       if(!(new RegExp(patterns)).test($('#password1').val())) {
-        $('#alert-password1').text("密码应该为6至12位的字母与数字组合。");
+        $('#alert-password1').text("您的密码应该为6至12位的字母与数字组合。");
         $('#alert-password1').show();
         return -1;
       }
@@ -151,7 +151,7 @@
 
     function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
-        $('#alert-password2').text("两次密码输入不一致。");
+        $('#alert-password2').text("您两次输入的密码不一致。");
         $('#alert-password2').show();
         return -1;
       }
