@@ -278,7 +278,7 @@ $('#lab-select li').click(function () {
   $('#button-generate-report').removeAttr("disabled");
   $.ajax('./table', {
     data: CUR_SUBLAB,
-    dataType: html
+    dataType: 'html'
   }).done(function (data) {
     $('#labdoc').append(data);
   }).fail(function () {
