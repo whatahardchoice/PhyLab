@@ -4,18 +4,20 @@ from math import pi
 import phylab
 from jinja2 import Environment
 from handler import texdir
+import xml.dom.minidom
+
 #texdir = "./tex/"
 env = Environment()
 
 def readXML(root):
-	table_list = sublab_root.getElementsByTagName("table")
+	table_list = root.getElementsByTagName("table")
 	for table in table_list:
 		data = []
 		# table_name = table.getAttribute("name")
 		table_tr_list = table.getElementsByTagName("tr")
 		for tr in table_tr_list:
 			tr_td_list = tr.getElementsByTagName("td")
-			data += [map(float, tr_td_list)]
+			data += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
 		return data
 
 def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
@@ -85,4 +87,8 @@ def handler(XML):
 	return SteelWire(data[0], data[1], data[2], data[3], data[4][0], data[4][1], data[4][1], source)
 	
 if __name__ == '__main__':
-	handler('')
+	handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
+	texdir = handledir + 'tex/'
+	dom = xml.dom.minidom.parse('D:\\Apache24\\htdocs\\PhyLabs\\Phylab\\storage\\app\\script\\test\\1010113test\\1010113.xml')
+	root = dom.documentElement
+	print handler(root)
