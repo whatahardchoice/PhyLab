@@ -97,6 +97,8 @@
 }
 td input {
   min-width: 60px;
+}
+td input.form-control {
   padding: 2px 4px;
 }
 /*登录页CSS*/
