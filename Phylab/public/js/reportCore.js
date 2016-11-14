@@ -294,7 +294,7 @@ $('#button-generate-report').click(function () {
     return;
   var postData = {
     'id': CUR_SUBLAB,
-    'xml': encodeURI(xmlString)
+    'xml': xmlString
   };
   PostAjax("./report",postData,function(){
     if (this.readyState==4 && this.status==200){
