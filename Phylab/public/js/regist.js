@@ -123,7 +123,7 @@
     $('#email').change(check_email).blur(check_email);
 
     function check_grade() {
-      if($('#grade option[selected]').val() === 'none') {
+      if($('#grade option：selected').val() === 'none') {
         $('#alert-grade').text("请您选择您的年级。");
         $('#alert-grade').show();
         return -1;
