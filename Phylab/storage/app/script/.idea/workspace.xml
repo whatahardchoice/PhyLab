@@ -28,14 +28,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1070322.tex" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Handle1070322.tex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tex/Handle1070322.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1070322.tex" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handle1070322.tex" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Temp/scp23114/var/www/buaaphylab/storage/app/script/tex/Handle1070322.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
@@ -148,8 +148,8 @@
         <option value="$PROJECT_DIR$/tex/Handle1080215.tex" />
         <option value="$PROJECT_DIR$/tex/Handle1080225.tex" />
         <option value="$PROJECT_DIR$/handler.py" />
-        <option value="$PROJECT_DIR$/tex/Handle1070322.tex" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp23114/var/www/buaaphylab/storage/app/script/tex/Handle1070322.tex" />
+        <option value="$PROJECT_DIR$/tex/Handle1070322.tex" />
       </list>
     </option>
   </component>
@@ -868,12 +868,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tex/Handle1070322.tex">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp23114/var/www/buaaphylab/storage/app/script/tex/Handle1070322.tex">
       <provider selected="true" editor-type-id="LaTeXFileEditor">
         <state />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp23114/var/www/buaaphylab/storage/app/script/tex/Handle1070322.tex">
+    <entry file="file://$PROJECT_DIR$/tex/Handle1070322.tex">
       <provider selected="true" editor-type-id="LaTeXFileEditor">
         <state />
       </provider>
