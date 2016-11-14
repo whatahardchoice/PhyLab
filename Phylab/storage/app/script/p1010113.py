@@ -9,14 +9,14 @@ env = Environment()
 
 def readXML(root):
 	table_list = sublab_root.getElementsByTagName("table")
-    for table in table_list:
-    	data = []
-        # table_name = table.getAttribute("name")
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            tr_td_list = tr.getElementsByTagName("td")
-            data += [map(float, tr_td_list)]
-        return data
+	for table in table_list:
+		data = []
+		# table_name = table.getAttribute("name")
+		table_tr_list = table.getElementsByTagName("tr")
+		for tr in table_tr_list:
+			tr_td_list = tr.getElementsByTagName("td")
+			data += [map(float, tr_td_list)]
+		return data
 
 def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	# m为等差数列，一般从10到24    单位：kg
