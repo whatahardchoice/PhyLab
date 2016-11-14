@@ -110,7 +110,7 @@
 
     function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
-      if(!(new RegExp(patterns)).test($('#alert-email').val())){
+      if(!(new RegExp(patterns)).test($('#email').val())){
         $('#alert-email').text("邮件输入不符合要求。");
         $('#alert-email').show();
         return -1;
@@ -137,7 +137,7 @@
 
     function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
-      if(!(new RegExp(patterns)).test($('#alert-password1').val())) {
+      if(!(new RegExp(patterns)).test($('#password1').val())) {
         $('#alert-password1').text("密码应该为6至12位的字母与数字组合。");
         $('#alert-password1').show();
         return -1;
