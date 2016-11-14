@@ -129,7 +129,7 @@
         </div>
       </div>
       <div class="container tab-content" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin-bottom: 2px;min-height: 500px;">
-        <div class="tab-pane active " role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;max-height: 704px;text-align: center;">
+        <div class="tab-pane active " role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;max-height: 680px;text-align: center;">
           <h1 style="margin: 200px 0;">未选择子实验</h1>
         </div>
         <div class="labdoc-btns">
