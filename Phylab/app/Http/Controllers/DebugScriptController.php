@@ -5,9 +5,9 @@ use App\Http\Controllers\Controller;
 class DebugScriptController extends Controller {
 
     public function debug(){
-        echo "debug";
+        echo 'debug';
         $id = $_GET['id'];
-        $xml = 'null';
+        $xml = '/var/www/buaaphylab/storage/app/script/test/'.$id.'test/'.$id.'.xml';
         $pdf = "/var/www/buaaphylab/tmp_pdf/".$id;
         $res = exec("python /var/www/buaaphylab/storage/app/script/handler.py ".$id.' '.$xml." $pdf 2>&1 ", $output,$rval);
         if($rval!=0) {
