@@ -102,7 +102,7 @@
         return -1;
       }
       else{
-        $('#alert-name').fadeIn();
+        $('#alert-name').fadeOut();
         return 0;
       }
     }
@@ -112,11 +112,11 @@
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
       if(!(new RegExp(patterns)).test($('#email').val())){
         $('#alert-email').text("请您输入正确的邮箱。");
-        $('#alert-email').show();
+        $('#alert-email').fadeIn();
         return -1;
       }
       else{
-        $('#alert-email').hide();
+        $('#alert-email').fadeOut();
         return 0;
       }
     }
@@ -125,11 +125,11 @@
     function check_grade() {
       if($('#grade option:selected').val() === 'none') {
         $('#alert-grade').text("请您选择您的年级。");
-        $('#alert-grade').show();
+        $('#alert-grade').fadeIn();
         return -1;
       }
       else {
-        $('#alert-grade').hide();
+        $('#alert-grade').fadeOut();
         return 0;
       }
     }
@@ -139,11 +139,11 @@
       var patterns = "^[0-9a-zA-z]{6,12}$";
       if(!(new RegExp(patterns)).test($('#password1').val())) {
         $('#alert-password1').text("您的密码应该为6至12位的字母与数字组合。");
-        $('#alert-password1').show();
+        $('#alert-password1').fadeIn();
         return -1;
       }
       else {
-        $('#alert-password1').hide();
+        $('#alert-password1').fadeOut();
         return 0;
       }
     }
@@ -152,11 +152,11 @@
     function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
         $('#alert-password2').text("您两次输入的密码不一致。");
-        $('#alert-password2').show();
+        $('#alert-password2').fadeIn();
         return -1;
       }
       else {
-        $('#alert-password2').hide();
+        $('#alert-password2').fadeOut();
         return 0;
       }
     }
