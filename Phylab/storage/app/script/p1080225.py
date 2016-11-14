@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
-# -*- coding:utf-8 -*-
-# 1080124 激光劳埃镜干涉
+# 1080225 钠光劳埃镜干涉
 """
 input:
 output:
@@ -74,7 +73,7 @@ def niconiconi():
     average_delta_x = sum(delta_x) / len(delta_x) / len(delta_x)
     ua_10delta_x = Ua(delta_x, 10 * average_delta_x, len(delta_x))
     ub_10delta_x = 0.00289
-    u_10delta_x = sqrt(pow(ua_10delta_x, 2)+pow(ub_10delta_x, 2))
+    u_10delta_x = sqrt(pow(ua_10delta_x, 2) + pow(ub_10delta_x, 2))
     u_delta_x = u_10delta_x / 10
 
     b_small = (data_small[0] - data_small[1] + data_small[2] - data_small[3]) / 2
@@ -91,8 +90,9 @@ def niconiconi():
 
     u_s1 = 0.5 / sqrt(3)
     u_s1s2 = sqrt(2) * u_s1
-    u_lam = sqrt(pow(u_delta_x / average_delta_x, 2) + 1 / 4 * pow(u_b1 / b_small, 2) + 1 / 4 * pow(u_b2 / b_big, 2) + pow(
-        u_s1s2 / (s_small + s_big), 2)) * lam
+    u_lam = sqrt(
+        pow(u_delta_x / average_delta_x, 2) + 1 / 4 * pow(u_b1 / b_small, 2) + 1 / 4 * pow(u_b2 / b_big, 2) + pow(
+            u_s1s2 / (s_small + s_big), 2)) * lam
     re_u = u_lam / lam
     bitAdapt(lam, u_lam, 2, -3)
 
@@ -160,6 +160,7 @@ def ToScience(number):
         return index_str[0] + '{\\times}10^{' + str(int(index_str[1])) + '}'
     else:
         return Tempstr
+
 
 # 计算a类不确定度
 def Ua(x, aver, k):
@@ -259,3 +260,5 @@ if __name__ == '__main__':
     fileTex.close()
     print lam
     print u_lam
+# -*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
