@@ -279,7 +279,7 @@ $('#lab-select li').click(function () {
   $.ajax('./table', {
     data: {"id": CUR_SUBLAB},
   }).done(function (data) {
-    $('#labdoc').append(data);
+    $('#labdoc').text(data);
   }).fail(function (xhr, status) {
     alert('失败: ' + xhr.status + ', 原因: ' + status);
   });
