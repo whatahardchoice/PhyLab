@@ -178,3 +178,5 @@ Route::get('/zichen',
 	'as' => 'DebugScript',
 	'uses' => 'DebugScriptController@debug'
 	]);
+Route::get('/table',['uses' => 'DebugScriptController@getTable']);
+

@@ -269,6 +269,7 @@ $('#lab-group-select li').click(function () {
   $('#lab-' + CUR_LAB_GROUP + '-list').show();
   $('#button-generate-report').attr('disabled', 'disabled');
   $('#button-view-preparation').removeAttr("disabled");
+  $('#labdoc').html('<h1 style="margin: 200px 0;">未选择子实验</h1>');
   if(SelectLab(CUR_LAB_GROUP,'lab-status'))
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
 });
@@ -277,10 +278,11 @@ $('#lab-select li').click(function () {
   $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
   $('#button-generate-report').removeAttr("disabled");
   $.ajax('./table', {
-    data: CUR_SUBLAB,
-    dataType: html
+    data: {'id': CUR_SUBLAB},
   }).done(function (data) {
     $('#labdoc').html(data);
+  }).fail(function (xhr, status) {
+    alert('失败: ' + xhr.status + ', 原因: ' + status);
   });
 });
 $('#button-view-preparation').click(function () {

@@ -93,15 +93,14 @@ def niconiconi():
         return
     for i in range(k):
         angle_delta.append((((angle_a2[i] - angle_a1[i]) + (angle_b2[i] - angle_b1[i])) % 360) / 2)
-
     average_delta_a = sum(angle_delta) / k
     average_delta_r = average_delta_a / 180 * pi
     n1 = sin((average_delta_r + angle_A_r) / 2) / sin(angle_A_r / 2)
-    ua_delta_a = Ua(angle_delta, average_delta_a, k) * pi / 180
-    ua_delta_r = ua_delta_a / 180 * pi
-    ub_delta = 0.00016794
-    u_delta = sqrt(pow(ua_delta_r, 2) + pow(ub_delta, 2))
-    temp1 = cos((average_delta_r + angle_A_r) / 2) * u_delta / 2 / sin(angle_A_r / 2)
+    ua_delta_a = Ua(angle_delta, average_delta_a, k)
+    ub_delta = 0.009622
+    u_delta = sqrt(pow(ua_delta_a, 2) + pow(ub_delta, 2))
+    u_delta_r = u_delta*pi/180
+    temp1 = cos((average_delta_r + angle_A_r) / 2) * u_delta_r / 2 / sin(angle_A_r / 2)
     temp2 = sin(average_delta_r / 2) * u_A_r / 2 / pow(sin(angle_A_r / 2), 2)
     u_n1 = sqrt(pow(temp1, 2) + pow(temp2, 2))
     bitAdapt(n1, u_n1, -1, -5)

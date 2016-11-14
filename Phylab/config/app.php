@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost/buaaphylab',
+    'url' => 'http://localhost/buaaphylab/',
 
     /*
     |--------------------------------------------------------------------------

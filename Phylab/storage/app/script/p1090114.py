@@ -25,7 +25,8 @@ u_lam = 0
 re_u = 0
 answer = []
 
-D_LIST = []
+D_LIST1 = []
+D_LIST2 = []
 DELTA_D = []
 AVERAGE_DELTA_D = ""
 LAM = ""
@@ -73,9 +74,10 @@ def niconiconi():
 
 def regulation():
     global d_list, delta_d, average_delta_d, lam, ua_delta_d, u_delta_d, u_lam, re_u, \
-        D_LIST, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
-    for d in d_list:
-        D_LIST.append(toScience(d))
+        D_LIST1, D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
+    for i in range(5):
+        D_LIST1.append(toScience(d_list[i]))
+        D_LIST2.append(toScience(d_list[i+5]))
     for delta in delta_d:
         DELTA_D.append(toScience(delta))
     AVERAGE_DELTA_D = toScience(average_delta_d)
@@ -90,14 +92,15 @@ def regulation():
 
 
 def lexFiller(lex):
-    global D_LIST, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
+    global D_LIST1,D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
     result = env.from_string(lex).render(
-        D_LIST=D_LIST,
+        D_LIST1=D_LIST1,
+        D_LIST2=D_LIST2,
         DELTA_D=DELTA_D,
         AVERAGE_DELTA_D=AVERAGE_DELTA_D,
         LAM=LAM,
-        UA_DELTA_D=UA_DELTA_D,
-        U_DELTA_D=U_DELTA_D,
+        UA_DELTA=UA_DELTA_D,
+        U_DELTA=U_DELTA_D,
         U_LAM=U_LAM,
         RE_U=RE_U,
         RESULT_LAM=answer[0],
@@ -174,4 +177,3 @@ if __name__ == '__main__':
     print u_delta_d
     print u_lam
     print answer
-    print D_LIST
