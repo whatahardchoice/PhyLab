@@ -142,7 +142,7 @@
                     <a style="display: inline-flex;">
                       <input class="form-control" id="captcha" name="captcha" placeholder="请输入图片中的验证码" type="text">
                     </a>
-                    <img id="captcha-img" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
+                    <img id="captcha-img" onclick="this.src = G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
                   </div>
                 </div>
               </div>
