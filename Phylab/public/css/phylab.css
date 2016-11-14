@@ -60,7 +60,7 @@
   position: relative;
   left: 180px;
 }
-.banner-container form .tip {
+.tip {
   color: black;
 }
 /*数据处理页CSS*/
@@ -94,6 +94,9 @@
 }
 .lab-name-list {
   display: none;
+}
+td input {
+  min-width: 60px;
 }
 /*登录页CSS*/
 #auto-login {
