@@ -185,11 +185,11 @@
 			$.ajax(G_BASE_URL + '/wecenter/?/account/ajax/register_process/', {
 				method: 'POST',
 				data: {
-					user_name: $('#name').val(),
-					password: $('#password1').val(),
-					agreement_chk: true,
-					seccode_verify: $('#captcha').val(),
-					email: $('#email').val(),
+					'user_name': $('#name').val(),
+					'password': $('#password1').val(),
+					'agreement_chk': true,
+					'seccode_verify': $('#captcha').val(),
+					'email': $('#email').val(),
 				}
 			}).done(function (data) {
 				if (data['errno'] === 1)
