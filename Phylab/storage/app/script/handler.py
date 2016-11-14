@@ -1,3 +1,4 @@
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 
 import subprocess
@@ -7,7 +8,7 @@ import os
 import platform
 import xml.dom.minidom
 
-available_lab = ['1010113', '1010212', '1070212', '1070312', '1070322', '1080114', '1080124', '1090114']
+available_lab = ['1010113', '1010212', '1020113', '1060111', '1060213', '1070212', '1070312', '1070322', '1080114', '1080124', '1080215', '1080225', '1090114']
 xmlid = {'1010113': '', '1010212': '', '1070212': '10711', '1070312': '10712', '1070322': '', '1080114': '10811',
          '1080124': '', '1090114': ''}
 handledir = '/var/www/buaaphylab/storage/app/script/' if platform.system() == 'Linux' else 'C:/Users/CFREE/Documents/Github/auto-deploy-phylab/Phylab/storage/app/script/'
