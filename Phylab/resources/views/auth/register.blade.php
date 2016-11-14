@@ -18,11 +18,11 @@
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
- 
- 	<script>
-    var G_BASE_URL='<?php echo G_BASE_URL;?>';
-  </script>
+
   <![endif]-->
+  <script>
+  	var G_BASE_URL='<?php echo url('/');?>';
+  </script>
 </head>
 <body>
 <header id="site-header">
@@ -240,6 +240,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
-<script src="./js/register.js"></script>
+<script src="./js/regist.js"></script>
 </body>
 </html>
