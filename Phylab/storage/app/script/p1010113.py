@@ -9,16 +9,16 @@ import xml.dom.minidom
 #texdir = "./tex/"
 env = Environment()
 
-def readXML(root):
+def readXml1010113(root):
 	table_list = root.getElementsByTagName("table")
-	for table in table_list:
-		data = []
-		# table_name = table.getAttribute("name")
-		table_tr_list = table.getElementsByTagName("tr")
-		for tr in table_tr_list:
-			tr_td_list = tr.getElementsByTagName("td")
-			data += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
-		return data
+	table = table_list[0]
+	data = []
+	# table_name = table.getAttribute("name")
+	table_tr_list = table.getElementsByTagName("tr")
+	for tr in table_tr_list:
+		tr_td_list = tr.getElementsByTagName("td")
+		data += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
+	return data
 
 def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	# m为等差数列，一般从10到24    单位：kg
@@ -83,12 +83,12 @@ def handler(XML):
 	#将模板作为字符串存储在template文件中
 	source = file_object.read().decode('utf-8', 'ignore')
 	file_object.close()
-	data = readXML(XML)
+	data = readXml1010113(XML)
 	return SteelWire(data[0], data[1], data[2], data[3], data[4][0], data[4][1], data[4][1], source)
 	
 if __name__ == '__main__':
 	handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
 	texdir = handledir + 'tex/'
-	dom = xml.dom.minidom.parse('D:\\Apache24\\htdocs\\PhyLabs\\Phylab\\storage\\app\\script\\test\\1010113test\\1010113.xml')
+	dom = xml.dom.minidom.parse(handledir + 'test/1010113test/1010113.xml')
 	root = dom.documentElement
 	print handler(root)
