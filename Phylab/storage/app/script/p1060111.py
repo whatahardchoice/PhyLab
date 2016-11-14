@@ -104,7 +104,8 @@ def ReadXml1060111(XML, name, source):
     exper_1 = []
     exper_2 = []
     exper_3 = []
-    sublab_table_list = sublab_root.getElementsByTagName("table")
+    sub_root = XML.getElementsByTagName("sub_root")
+    sublab_table_list = sub_root.getElementsByTagName("table")
     for table in sublab_table_list:
         table_tr_list = table.getElementsByTagName("tr")
         for tr in table_tr_list:
@@ -133,7 +134,7 @@ def ReadXml1060111(XML, name, source):
     #exper_3 = [[1400.0,410.5,716.9,715.4],
     #       [1400.0,397.1,712.8,711.0],[1400.0,370.4,674.9,672.6]]
     exper = []
-    sublab_table_list = sublab_root.getElementsByTagName("table")
+    sublab_table_list = sub_root.getElementsByTagName("table")
     for table in sublab_table_list:
         table_tr_list = table.getElementsByTagName("tr")
         for tr in table_tr_list:

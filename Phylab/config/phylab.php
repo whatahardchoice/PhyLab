@@ -1,4 +1,5 @@
 <?php
+define("G_BASE_URL","localhost/buaaphylab/");
 return [
     'starPath' => public_path()."/star_pdf/",
     'tmpReportPath'=>public_path()."/pdf_tmp/",
