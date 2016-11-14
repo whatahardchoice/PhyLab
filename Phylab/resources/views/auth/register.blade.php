@@ -19,6 +19,9 @@
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
  
+ 	<script>
+    var G_BASE_URL='<?php echo G_BASE_URL;?>';
+  </script>
   <![endif]-->
 </head>
 <body>
@@ -68,8 +71,8 @@
           </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-          <div id="reg-alert" style="text-align: center">
-            注册
+          <div id="reg-alert" class="alert alert-warning" role="alert">
+          	test
           </div>
         </div>
         <div class="col-md-6 col-md-offset-3">
