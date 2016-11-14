@@ -70,11 +70,6 @@
             注册
           </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-          <div id="reg-alert" class="alert alert-warning" role="alert">
-          	test
-          </div>
-        </div>
         <div class="col-md-6 col-md-offset-3">
           <div class="reg-body">
             <form>
@@ -86,6 +81,7 @@
                     </div>
                     <input class="form-control" id="name" name="name" placeholder="请输入您的用户名" type="text" value=""/>
                   </div>
+                  <div id="alert-name" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -96,6 +92,7 @@
                     </div>
                     <input class="form-control" id="email" name="email" placeholder="请输入您的登录邮箱" type="email" value=""/>
                   </div>
+                  <div id="alert-email" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -111,6 +108,7 @@
                       <option value="2016">2016</option>
                     </select>
                   </div>
+                  <div id="alert-grade" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -121,6 +119,7 @@
                     </div>
                     <input class="form-control" id="password1" name="password" placeholder="请输入密码" type="password" value=""/>
                   </div>
+                  <div id="alert-password1" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -131,6 +130,7 @@
                     </div>
                     <input class="form-control" id="password2" name="password" placeholder="请再次输入密码" type="password" value="">
                   </div>
+                  <div id="alert-password2" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -142,8 +142,9 @@
                     <a style="display: inline-flex;">
                       <input class="form-control" id="captcha" name="captcha" placeholder="请输入图片中的验证码" type="text">
                     </a>
-                    <img id="captcha-img" style="height:33px;margin-left: 35px;" onclick="this.src = G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
+                    <img id="captcha-img" style="height:33px;margin-left:35px;" onclick="this.src = G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
                   </div>
+                  <div id="alert-captcha" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="submit">
