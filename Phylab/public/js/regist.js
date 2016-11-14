@@ -88,7 +88,7 @@
 		});
 
     $(document).ready(function () {
-			$("#captcha-img").src=G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000);
+			$("#captcha-img").attr(src, G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000));
 		});
 
 		function submit_register() {
