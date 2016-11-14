@@ -81,24 +81,12 @@
   text-align: left;
 }
 #lab-console .nav-tabs .dropdown-menu li a, #lab-console .nav-tabs .dropdown-menu li:first-child a{
+  display: block;
   padding: 4px;
   font-size: 14px;
 }
 #lab-console .nav-tabs .dropdown-menu li a:hover{
-  background-color: RGBA(0, 0, 0, 0.3);
-  border: 1px;
-  border-radius: 10px;
-  border-color: rgb(8, 192, 147);
-}
-#lab-console .nav-tabs .lab-name-list li, #lab-console .nav-tabs .lab-name-list li:first-child {
-  width: auto;
-  text-align: left;
-}
-#lab-console .nav-tabs .lab-name-list li a, #lab-console .nav-tabs .lab-name-list li:first-child a{
-  padding: 4px;
-  font-size: 14px;
-}
-#lab-console .nav-tabs .lab-name-list li a:hover{
+  text-decoration: none;
   background-color: RGBA(0, 0, 0, 0.3);
   border: 1px;
   border-radius: 10px;
