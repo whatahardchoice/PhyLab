@@ -28,6 +28,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Head.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tex/Head.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handle1010113.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tex/Handle1010113.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="p1080114.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1080114.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,29 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1080114.tex" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp49712/var/www/buaaphylab/storage/app/script/tex/Handle1080114.tex">
-          <provider selected="true" editor-type-id="LaTeXFileEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Handle1080124.tex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tex/Handle1080124.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="p1080124.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p1080124.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding>
-                <element signature="e#88#99#0" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -95,14 +90,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1080225.tex" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handle1080225.tex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tex/Handle1080225.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1090114.tex" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Handle1090114.tex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tex/Handle1090114.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
@@ -134,15 +129,15 @@
         <option value="$PROJECT_DIR$/p1090114.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp05125/var/www/buaaphylab/storage/app/script/p1070312.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex" />
-        <option value="$PROJECT_DIR$/tex/Handle1080114.tex" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp49712/var/www/buaaphylab/storage/app/script/tex/Handle1080114.tex" />
         <option value="$PROJECT_DIR$/tex/Handle1090114.tex" />
         <option value="$PROJECT_DIR$/p1080124.py" />
         <option value="$PROJECT_DIR$/tex/p1080215.py" />
-        <option value="$PROJECT_DIR$/tex/Handle1080124.tex" />
-        <option value="$PROJECT_DIR$/tex/Handle1080215.tex" />
         <option value="$PROJECT_DIR$/p1080225.py" />
         <option value="$PROJECT_DIR$/p1080215.py" />
+        <option value="$PROJECT_DIR$/tex/Handle1080114.tex" />
+        <option value="$PROJECT_DIR$/tex/Handle1080124.tex" />
+        <option value="$PROJECT_DIR$/tex/Handle1080215.tex" />
         <option value="$PROJECT_DIR$/tex/Handle1080225.tex" />
       </list>
     </option>
@@ -480,22 +475,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tex/Handle1070312.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -805,11 +784,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tex/Handle1090114.tex">
-      <provider selected="true" editor-type-id="LaTeXFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1080124.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -838,22 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="LaTeXFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tex/Handle1080124.tex">
-      <provider selected="true" editor-type-id="LaTeXFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1080215.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -872,12 +830,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Head.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1010113.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1080124.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tex/Handle1080215.tex">
       <provider selected="true" editor-type-id="LaTeXFileEditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tex/Handle1080225.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1090114.tex">
       <provider selected="true" editor-type-id="LaTeXFileEditor">
         <state />
       </provider>
