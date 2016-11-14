@@ -164,7 +164,7 @@
 							        <h4 class="modal-title" id="myModalLabel">用户条款</h4>
 							      </div>
 							      <div class="modal-body">
-							        <pre>
+							        <pre style="text-align: left">
 当您申请用户时，表示您已经同意遵守本规章。
 欢迎您加入本站点参与交流和讨论，本站点为社区，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
 
