@@ -92,9 +92,6 @@
       $('#name').val(sessionStorage.getItem('name'));
       $('#email').val(sessionStorage.getItem('email'));
       $('#password1').val(sessionStorage.getItem('password'));
-      check_name();
-      check_email();
-      check_password1();
 		});
 
     function check_name() {
