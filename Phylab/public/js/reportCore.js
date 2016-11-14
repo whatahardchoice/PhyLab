@@ -277,7 +277,7 @@ $('#lab-select li').click(function () {
   $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
   $('#button-generate-report').removeAttr("disabled");
   $.ajax('./table', {
-    data: CUR_SUBLAB,
+    data: {"id": CUR_SUBLAB},
   }).done(function (data) {
     $('#labdoc').append(data);
   }).fail(function (xhr, status) {
