@@ -6,13 +6,11 @@ output:
 
 """
 import math
-from math import sqrt
-import subprocess
-import sys
 import xml.dom.minidom
-
+from math import sqrt
 from jinja2 import Environment
 from handler import texdir
+
 # input data
 x = []
 light_small_big = []
