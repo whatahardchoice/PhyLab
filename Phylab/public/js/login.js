@@ -2,13 +2,13 @@
     postData="email="+encodeURI($('#email').val())+"&password="+encodeURI($('#password').val());
     if($('#remember').prop('checked'))
         postData+="&remember="+$('#remember').val();
-    PostAjax("/login",postData,function(){
+    PostAjax("./login",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                window.location.href="./buaaphylab/public/index";
+                window.location.href="/index";
             }
             else{
                 $('#alert-message').text(jsonText["message"]);
