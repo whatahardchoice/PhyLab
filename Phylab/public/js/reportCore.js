@@ -280,8 +280,8 @@ $('#lab-select li').click(function () {
     data: CUR_SUBLAB,
   }).done(function (data) {
     $('#labdoc').append(data);
-  }).fail(function () {
-    alert('无法获取' + CUR_SUBLAB + '实验数据表格');
+  }).fail(function (xhr, status) {
+    alert('失败: ' + xhr.status + ', 原因: ' + status);
   });
 });
 $('#button-view-preparation').click(function () {
