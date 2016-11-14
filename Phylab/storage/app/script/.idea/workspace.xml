@@ -21,40 +21,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Handle1070212.tex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tex/Handle1070212.tex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-              <folding />
-            </state>
+      <file leaf-file-name="1080114test.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/1080114test/1080114test.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handle1070312.tex" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Handle1070312.tex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tex/Handle1070312.tex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p1080114.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p1080114.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
-              <folding>
-                <element signature="e#65#76#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="Handle1070322.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tex/Handle1070322.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handle1070312.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Handle1080114.tex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp10215/var/www/buaaphylab/storage/app/script/tex/Handle1080114.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handle1090114.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tex/Handle1090114.tex">
           <provider selected="true" editor-type-id="LaTeXFileEditor">
             <state />
           </provider>
@@ -63,32 +66,34 @@
       <file leaf-file-name="p1090114.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p1090114.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="139">
+              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p1080124.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p1080124.py">
+      <file leaf-file-name="1090114test.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/1090114test/1090114test.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p1090114.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/scp31638/var/www/buaaphylab/storage/app/script/p1090114.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p1070212.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/p1070212.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4950">
-              <caret line="230" column="18" selection-start-line="230" selection-start-column="18" selection-end-line="230" selection-end-column="18" />
-              <folding>
-                <element signature="e#476#498#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="Handle1080114.tex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -101,12 +106,17 @@
         <option value="$PROJECT_DIR$/p1070212.py" />
         <option value="$PROJECT_DIR$/tex/Handle1070212.tex" />
         <option value="$PROJECT_DIR$/p1010212.py" />
-        <option value="$PROJECT_DIR$/tex/Handle1080114.tex" />
         <option value="$PROJECT_DIR$/p1080114.py" />
         <option value="$PROJECT_DIR$/p1070312.py" />
+        <option value="$PROJECT_DIR$/tex/Handle1070312.tex" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp10215/var/www/buaaphylab/storage/app/script/tex/Handle1080114.tex" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp27641/var/www/buaaphylab/storage/app/script/tex/Handle1090114.tex" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp31638/var/www/buaaphylab/storage/app/script/p1090114.py" />
+        <option value="$PROJECT_DIR$/p1090114.py" />
+        <option value="$PROJECT_DIR$/tex/Handle1090114.tex" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp05125/var/www/buaaphylab/storage/app/script/p1070312.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex" />
-        <option value="$PROJECT_DIR$/tex/Handle1070312.tex" />
+        <option value="$PROJECT_DIR$/tex/Handle1080114.tex" />
       </list>
     </option>
   </component>
@@ -187,6 +197,42 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1090114test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1080114test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -233,7 +279,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25074404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -502,21 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p1090114.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp05125/var/www/buaaphylab/storage/app/script/p1070312.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1070312.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -524,21 +555,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="LaTeXFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p1080114.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+        <state relative-caret-position="-62">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
           <folding>
             <element signature="e#65#76#0" expanded="true" />
           </folding>
@@ -556,7 +576,51 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
+    <entry file="file://$PROJECT_DIR$/test/1080114test/1080114test.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp10215/var/www/buaaphylab/storage/app/script/tex/Handle1080114.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/1090114test/1090114test.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp31638/var/www/buaaphylab/storage/app/script/p1090114.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/p1090114.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp27641/var/www/buaaphylab/storage/app/script/tex/Handle1090114.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp05125/var/www/buaaphylab/storage/app/script/p1070312.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/scp12572/var/www/buaaphylab/storage/app/script/tex/Handle1070312.tex">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -567,14 +631,35 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1090114.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tex/Handle1070312.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="LaTeXFileEditor">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1070322.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tex/Handle1080114.tex">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
         <state />
       </provider>
     </entry>
