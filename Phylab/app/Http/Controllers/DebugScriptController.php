@@ -24,5 +24,13 @@ class DebugScriptController extends Controller {
             readfile("$pdf.pdf");
         }
     }
+    public function getTable()
+    {
+        $id=$_GET['id'];
+        $htmlFile = "/var/www/buaaphylab/resources/views/report/".$id.".html";
+        $file = fopen($htmlFile, "r");
+        $html = fread($file,filesize($htmlFile));
+        return $html;
+    }
 
 }
