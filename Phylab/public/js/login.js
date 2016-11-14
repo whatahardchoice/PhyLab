@@ -8,7 +8,7 @@
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                window.location.href="/buaaphylab/public/index";
+                window.location.href="/index";
             }
             else{
                 $('#alert-message').text(jsonText["message"]);
@@ -37,5 +37,5 @@ $('#login_form input').keydown(function (e) {
         }
     });
 $('#quick-regist').click(function () {
-  window.location.href = "{{URL::route('login')}}";
+  window.location.href = "/register";
 });
