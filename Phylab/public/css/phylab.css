@@ -97,6 +97,7 @@
 }
 td input {
   min-width: 60px;
+  padding: 2px 4px;
 }
 /*登录页CSS*/
 #auto-login {
