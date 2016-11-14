@@ -92,11 +92,14 @@
       $('#name').val(sessionStorage.getItem('name'));
       $('#email').val(sessionStorage.getItem('email'));
       $('#password1').val(sessionStorage.getItem('password'));
+      check_name();
+      check_email();
+      check_password1();
 		});
 
     function check_name() {
       var patterns = "^([a-zA-Z0-9_]|[\u4E00-\u9FA5]){1,20}$";
-      if(!(new RegExp(patterns)).test(this.value)){
+      if(!(new RegExp(patterns)).test($('#name').val())){
         $('#alert-name').text("用户名输入不符合要求。");
         $('#alert-name').show();
         return -1;
@@ -106,11 +109,11 @@
         return 0;
       }
     }
-    $('#name').change(check_name).bind('onfocus', check_name);
+    $('#name').change(check_name).click(check_name);
 
     function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
-      if(!(new RegExp(patterns)).test(this.value)){
+      if(!(new RegExp(patterns)).test($('#alert-email').val())){
         $('#alert-email').text("邮件输入不符合要求。");
         $('#alert-email').show();
         return -1;
@@ -120,7 +123,7 @@
         return 0;
       }
     }
-    $('#email').change(check_email).bind('onfocus', check_email);
+    $('#email').change(check_email).click(check_email);
 
     function check_grade() {
       if($('#grade').val() === 'none') {
@@ -133,11 +136,11 @@
         return 0;
       }
     }
-    $('#grade').change(check_grade).bind('onfocus', check_grade);
+    $('#grade').change(check_grade).click(check_grade);
 
     function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
-      if(!(new RegExp(patterns)).test(this.value)) {
+      if(!(new RegExp(patterns)).test($('#alert-password1').val())) {
         $('#alert-password1').text("密码应该为6至12位的字母与数字组合。");
         $('#alert-password1').show();
         return -1;
@@ -147,7 +150,7 @@
         return 0;
       }
     }
-    $('#password1').change(check_password1).bind('onfocus', check_password1);
+    $('#password1').change(check_password1).click(check_password1);
 
     function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
@@ -160,9 +163,9 @@
         return 0;
       }
     }
-    $('#password2').change(check_password2).bind('onfocus', check_password2);
+    $('#password2').change(check_password2).click(check_password2);
 
-		function submit_register() {
+    function check_register() {
       var error_flag = false;
       if (check_name() !== 0 )
         error_flag = true;
@@ -175,6 +178,12 @@
       if (check_password2() !== 0 )
         error_flag = true;
       if (error_flag === true)
+        return false;
+      else
+        return true;
+    }
+		function submit_register() {
+      if (check_register() === false)
         return;
 			$.ajax(G_BASE_URL + '/wecenter/?/account/ajax/register_process/', {
 				method: 'POST',
