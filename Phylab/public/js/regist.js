@@ -94,60 +94,89 @@
       $('#password1').val(sessionStorage.getItem('password'));
 		});
 
-    $('#name').change(function () {
+    function check_name() {
       var patterns = "^([a-zA-Z0-9_]|[\u4E00-\u9FA5]){1,20}$";
       if(!(new RegExp(patterns)).test(this.value)){
         $('#alert-name').text("用户名输入不符合要求。");
         $('#alert-name').show();
+        return -1;
       }
       else{
         $('#alert-name').hide();
+        return 0;
       }
-    });
+    }
+    $('#name').change(check_name()).bind('onfocus', check_name());
 
-    $('#email').change(function () {
+    function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
       if(!(new RegExp(patterns)).test(this.value)){
         $('#alert-email').text("邮件输入不符合要求。");
         $('#alert-email').show();
+        return -1;
       }
       else{
         $('#alert-email').hide();
+        return 0;
       }
-    });
+    }
+    $('#email').change(check_email()).bind('onfocus', check_email());
 
-    $('#grade').change(function () {
+    function check_grade() {
       if($('#grade').val() === 'none') {
         $('#alert-grade').text("未选择年级。");
         $('#alert-grade').show();
+        return -1;
       }
-      else
+      else {
         $('#alert-grade').hide();
-    });
+        return 0;
+      }
+    }
+    $('#grade').change(check_grade()).bind('onfocus', check_grade());
 
-    $('#password1').change(function () {
+    function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
       if(!(new RegExp(patterns)).test(this.value)) {
         $('#alert-password1').text("密码应该为6至12位的字母与数字组合。");
         $('#alert-password1').show();
+        return -1;
       }
-      else
+      else {
         $('#alert-password1').hide();
-    });
+        return 0;
+      }
+    }
+    $('#password1').change(check_password1()).bind('onfocus', check_password1());
 
-    $('#password2').change(function () {
+    function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
         $('#alert-password2').text("两次密码输入不一致。");
         $('#alert-password2').show();
+        return -1;
       }
-      else
+      else {
         $('#alert-password2').hide();
-    });
+        return 0;
+      }
+    }
 
-    $('#captcha').change(function () {
-    });
+    $('#password2').change(check_password2()).bind('onfocus', check_password2());
 
 		function submit_register() {
+      var error_flag = false;
+      if (check_name() !== 0 )
+        error_flag = true;
+      if (check_email() !== 0 )
+        error_flag = true;
+      if (check_grade() !== 0 )
+        error_flag = true;
+      if (check_password1() !== 0 )
+        error_flag = true;
+      if (check_password2() !== 0 )
+        error_flag = true;
+      if (error_flag === true)
+        return;
 			$.ajax(G_BASE_URL + '/wecenter/?/account/ajax/register_process/', {
 				method: 'POST',
 				data: {
