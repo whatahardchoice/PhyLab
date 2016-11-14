@@ -106,7 +106,7 @@
         return 0;
       }
     }
-    $('#name').change(check_name()).bind('onfocus', check_name());
+    $('#name').change(check_name).bind('onfocus', check_name);
 
     function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
@@ -120,7 +120,7 @@
         return 0;
       }
     }
-    $('#email').change(check_email()).bind('onfocus', check_email());
+    $('#email').change(check_email).bind('onfocus', check_email);
 
     function check_grade() {
       if($('#grade').val() === 'none') {
@@ -133,7 +133,7 @@
         return 0;
       }
     }
-    $('#grade').change(check_grade()).bind('onfocus', check_grade());
+    $('#grade').change(check_grade).bind('onfocus', check_grade);
 
     function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
@@ -147,7 +147,7 @@
         return 0;
       }
     }
-    $('#password1').change(check_password1()).bind('onfocus', check_password1());
+    $('#password1').change(check_password1).bind('onfocus', check_password1);
 
     function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
@@ -160,8 +160,7 @@
         return 0;
       }
     }
-
-    $('#password2').change(check_password2()).bind('onfocus', check_password2());
+    $('#password2').change(check_password2).bind('onfocus', check_password2);
 
 		function submit_register() {
       var error_flag = false;
