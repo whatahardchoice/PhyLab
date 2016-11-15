@@ -241,6 +241,6 @@ if __name__ == '__main__':
     angle_A = 60
     u_A = 0
     fileTex = open('./1070322test/1070322test.tex', 'w')
-    text = handler("").encode('utf-8')
+    text = handler().encode('utf-8')
     fileTex.write(text)
     fileTex.close()
