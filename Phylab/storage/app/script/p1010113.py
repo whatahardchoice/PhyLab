@@ -60,7 +60,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 			L = L,
 			H = H,
 			b = b,
-			D = D,
+			D = D[:-1],
 			ave_D = ave_D,
 			m = m,
 			delta_m = delta_m, 
