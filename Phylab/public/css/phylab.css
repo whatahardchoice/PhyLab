@@ -60,7 +60,7 @@
   position: relative;
   left: 180px;
 }
-.tip {
+.banner-container form .tip {
   color: black;
 }
 /*数据处理页CSS*/
@@ -124,6 +124,9 @@ td input.form-control {
   display: none;
   height:30px;
   padding:5px;
+}
+.alert {
+  display: none;
 }
 /*页脚CSS*/
 .footer-qq, .footer-blog{

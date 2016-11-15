@@ -18,8 +18,11 @@
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
- 
+
   <![endif]-->
+  <script>
+  	var G_BASE_URL='<?php echo url('/');?>';
+  </script>
 </head>
 <body>
 <header id="site-header">
@@ -67,11 +70,6 @@
             注册
           </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-          <div id="reg-alert" style="text-align: center">
-            注册
-          </div>
-        </div>
         <div class="col-md-6 col-md-offset-3">
           <div class="reg-body">
             <form>
@@ -83,6 +81,7 @@
                     </div>
                     <input class="form-control" id="name" name="name" placeholder="请输入您的用户名" type="text" value=""/>
                   </div>
+                  <div id="alert-name" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -93,6 +92,7 @@
                     </div>
                     <input class="form-control" id="email" name="email" placeholder="请输入您的登录邮箱" type="email" value=""/>
                   </div>
+                  <div id="alert-email" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -108,6 +108,7 @@
                       <option value="2016">2016</option>
                     </select>
                   </div>
+                  <div id="alert-grade" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -118,6 +119,7 @@
                     </div>
                     <input class="form-control" id="password1" name="password" placeholder="请输入密码" type="password" value=""/>
                   </div>
+                  <div id="alert-password1" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -128,6 +130,7 @@
                     </div>
                     <input class="form-control" id="password2" name="password" placeholder="请再次输入密码" type="password" value="">
                   </div>
+                  <div id="alert-password2" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="control-group">
@@ -139,19 +142,53 @@
                     <a style="display: inline-flex;">
                       <input class="form-control" id="captcha" name="captcha" placeholder="请输入图片中的验证码" type="text">
                     </a>
-                    <img id="captcha-img" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
+                    <img id="captcha-img" style="height:33px;margin-left:35px;" onclick="this.src = G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000);" src="#">
                   </div>
+                  <div id="alert-captcha" class="alert alert-warning" role="alert"></div>
                 </div>
               </div>
               <div class="submit">
-                <input class="btn btn-primary" id="submit" type="button" value="注册">
+                <input class="btn btn-primary" id="submit" type="button" value="注册" onclick="submit_register()">
               </div>
             </form>
             <div class="have-user">
               <p class="tip">
-                点击“注册”，表示您已经同意我们的<a href="/privacy" target="_blank" style="color:#6d6e6e;"> 隐私条款</a>
+                点击“注册”，表示您已经同意我们的<a data-toggle="modal" data-target="#provisions" style="color:#6d6e6e;"> 用户条款</a>
               </p>
               <span>已有账号，<a style="color:#6d6e6e;" href="/login">点击登录</a></span>
+              <div class="modal fade" id="provisions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"/>
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							        <h4 class="modal-title" id="myModalLabel">用户条款</h4>
+							      </div>
+							      <div class="modal-body">
+							        <pre style="text-align: left">
+当您申请用户时，表示您已经同意遵守本规章。
+欢迎您加入本站点参与交流和讨论，本站点为社区，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
+
+一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息：
+　（一）煽动抗拒、破坏宪法和法律、行政法规实施的；
+　（二）煽动颠覆国家政权，推翻社会主义制度的；
+　（三）煽动分裂国家、破坏国家统一的；
+　（四）煽动民族仇恨、民族歧视，破坏民族团结的；
+　（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；
+　（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；
+　（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；
+　（八）损害国家机关信誉的；
+　（九）其他违反宪法和法律行政法规的；
+　（十）进行商业广告行为的。
+
+二、互相尊重，对自己的言论和行为负责。
+三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。
+四、禁止以任何方式对本站进行各种破坏行为。
+五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
+							        </pre>
+							      </div>
+							    </div>
+							  </div>
+							</div>
             </div>
           </div>
         </div>
@@ -237,6 +274,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
-<script src="./js/register.js"></script>
+<script src="./js/regist.js"></script>
 </body>
 </html>
