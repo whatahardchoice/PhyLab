@@ -53,7 +53,7 @@ def CollimatedConvex(exper,source):
 
 def readXml1060213(root, source):
     exper = []
-    table_tr_list = root.getElementsByTagName("tr")
+    table_tr_list = root.getElementsByTagName('table')[0].getElementsByTagName("tr")
     for tr in table_tr_list:
         tr_td_list = tr.getElementsByTagName("td")
         sub_exper  =[]
