@@ -448,7 +448,7 @@ function SetXMLDoc_lab(labnum){
 							"<td>"+document.getElementById('b15').value+"</td>"+
 							"<td>"+document.getElementById('b25').value+"</td>"+
 						"</tr>"+	
-					"</table>";
+					"</table>"+
 				"</lab>";
 			break;
 		case "1070312":
