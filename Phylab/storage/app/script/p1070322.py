@@ -69,24 +69,13 @@ RESULT_U_N = ""
 
 
 def handler(xml):
-    global  angle_a1
-    global  angle_a2
-    global  angle_b1
-    global  angle_b2
-    global  angle_A
-    global  u_A
-    angle_a1 = [270.40, 16.31, 87.07, 163.27, 256.36]
-    angle_a2 = [310.15, 56.14, 126.50, 203.10, 296.18]
-    angle_b1 = [90.42, 196.30, 267.10, 343.30, 76.36]
-    angle_b2 = [130.16, 236.13, 307.52, 383.15, 116.16]
-    for i in range(5):
-        angle_a1[i] = angleTransfer(angle_a1[i])
-        angle_a2[i] = angleTransfer(angle_a2[i])
-        angle_b1[i] = angleTransfer(angle_b1[i])
-        angle_b2[i] = angleTransfer(angle_b2[i])
-    angle_A = 60
-    u_A = 0
-    # xmlReader(xml)
+    global angle_a1
+    global angle_a2
+    global angle_b1
+    global angle_b2
+    global angle_A
+    global u_A
+    xmlReader(xml)
     niconiconi()
     regulation()
     file_object = open(texdir + "/Handle1070322.tex", "r")
@@ -115,7 +104,7 @@ def niconiconi():
     sa = sin(angle_A_r)
     ci = cos(average_i_r)
     si = sin(average_i_r)
-    u_n = (ca + si) / n / si / si * sqrt(pow(ci * u_i, 2) + pow((ca*si + 1) * u_A_r / sa, 2))
+    u_n = (ca + si) / n / si / si * sqrt(pow(ci * u_i, 2) + pow((ca * si + 1) * u_A_r / sa, 2))
     re_u = u_n / n
     bitAdapt(n, u_n, -1, -5)
 
@@ -144,6 +133,19 @@ def regulation():
     RESULT_N = answer[0]
     RESULT_U_N = answer[1]
     U_A = toScience(u_A)
+
+
+def xmlReader(sublab_root):
+    global angle_a1, angle_a2, angle_b1, angle_b2
+    sublab_table_list = sublab_root.getElementsByTagName("table")
+    for table in sublab_table_list:
+        table_tr_list = table.getElementsByTagName("tr")
+        for tr in table_tr_list:
+            tr_td_list = tr.getElementsByTagName("td")
+            angle_a1.append(angleTransfer(float(tr_td_list[0].firstChild.nodeValue)))
+            angle_b1.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
+            angle_a2.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
+            angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
 
 
 def lexFiller(source):
@@ -226,12 +228,19 @@ def angleTransfer(raw):
     return int(raw) + (raw - int(raw)) * 100 / 60
 
 
-
 if __name__ == '__main__':
+    angle_a1 = [270.40, 16.31, 87.07, 163.27, 256.36]
+    angle_a2 = [310.15, 56.14, 126.50, 203.10, 296.18]
+    angle_b1 = [90.42, 196.30, 267.10, 343.30, 76.36]
+    angle_b2 = [130.16, 236.13, 307.52, 383.15, 116.16]
+    for i in range(5):
+        angle_a1[i] = angleTransfer(angle_a1[i])
+        angle_a2[i] = angleTransfer(angle_a2[i])
+        angle_b1[i] = angleTransfer(angle_b1[i])
+        angle_b2[i] = angleTransfer(angle_b2[i])
+    angle_A = 60
+    u_A = 0
     fileTex = open('./1070322test/1070322test.tex', 'w')
     text = handler("").encode('utf-8')
     fileTex.write(text)
     fileTex.close()
-    print angle_i
-    print n
-    print answer
