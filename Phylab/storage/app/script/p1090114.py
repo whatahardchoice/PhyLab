@@ -46,9 +46,9 @@ env = Environment(line_statement_prefix="#", variable_start_string="%%", variabl
 
 
 def handler(xml):
-    global  d_list
+    global d_list
     d_list = [51.05257, 51.08570, 51.11871, 51.15150, 51.18287, 51.21456, 51.25132, 51.28370, 51.31506, 51.34883]
-    # xmlReader(xml)
+    xmlReader(xml)
     niconiconi()
     regulation()
     file_object = open(texdir + "/Handle1090114.tex", "r")
@@ -77,7 +77,7 @@ def regulation():
         D_LIST1, D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
     for i in range(5):
         D_LIST1.append(toScience(d_list[i]))
-        D_LIST2.append(toScience(d_list[i+5]))
+        D_LIST2.append(toScience(d_list[i + 5]))
     for delta in delta_d:
         DELTA_D.append(toScience(delta))
     AVERAGE_DELTA_D = toScience(average_delta_d)
@@ -98,11 +98,12 @@ def xmlReader(sublab_root):
         table_tr_list = table.getElementsByTagName("tr")
         for tr in table_tr_list:
             tr_td_list = tr.getElementsByTagName("td")
-            d_list.append(float(tr_td_list[0].firstChild.nodeValue))
+            for td in tr_td_list:
+                d_list.append(float(td.firstChild.nodeValue))
 
 
 def lexFiller(lex):
-    global D_LIST1,D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
+    global D_LIST1, D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
     result = env.from_string(lex).render(
         D_LIST1=D_LIST1,
         D_LIST2=D_LIST2,
@@ -171,7 +172,6 @@ def Ua(x, aver, k):
     for i in range(k):
         sumx += (x[i] - aver) ** 2
     return sqrt(sumx / (k * (k - 1)))
-
 
 
 if __name__ == '__main__':
