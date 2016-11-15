@@ -103,6 +103,7 @@ def niconiconi():
     temp1 = cos((average_delta_r + angle_A_r) / 2) * u_delta_r / 2 / sin(angle_A_r / 2)
     temp2 = sin(average_delta_r / 2) * u_A_r / 2 / pow(sin(angle_A_r / 2), 2)
     u_n1 = sqrt(pow(temp1, 2) + pow(temp2, 2))
+    re_u = u_n1 / n1
     bitAdapt(n1, u_n1, -1, -5)
 
 
