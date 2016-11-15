@@ -19,7 +19,7 @@ import sys
 import subprocess
 import traceback
 from handler import texdir
-from handler import handledir
+from handler import scriptdir
 from phylab import *
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
@@ -82,7 +82,7 @@ def ObjectImage(exper_convex, exper_concave, source):
     RoundOne(f_concave,2)
     RoundOne(u_concave,2)
     RoundOne(v_concave,2)
-    print exper_concave
+
     result = env.from_string(source).render(
         EXPER_1 = exper_convex[0],
         EXPER_2 = exper_convex[1],
@@ -154,8 +154,8 @@ def handler(XML):
     return ReadXml1060111(XML, source)
 
 if __name__ == '__main__':
-    handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
-    texdir = handledir + 'tex/'
-    dom = xml.dom.minidom.parse(handledir + 'test/1060111test/1060111.xml')
+    scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
+    texdir = scriptdir + 'tex/'
+    dom = xml.dom.minidom.parse(scriptdir + 'test/1060111test/1060111.xml')
     root = dom.documentElement
     print handler(root)

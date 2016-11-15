@@ -7,7 +7,7 @@ import os
 
 available_lab = ['1010113']
 texdir = '/var/www/phylab/script/tex/'
-handledir = '/var/www/phylab/script/'
+scriptdir = '/var/www/phylab/script/'
 
 if __name__ == '__main__':
 	# 三个命令行参数
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 		flag = True
 		for lab in available_lab:
 			if (lab == sys.argv[1]):
-				sys.path.append(handledir)
+				sys.path.append(scriptdir)
 				from p1010113 import handler
 				#eval('from p' + lab + ' import handler')
 				latex_body = handler(sys.argv[2])

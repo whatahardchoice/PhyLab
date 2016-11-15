@@ -11,9 +11,9 @@ import xml.dom.minidom
 available_lab = ['1010113', '1010212', '1020113', '1060111', '1060213', '1070212', '1070312', '1070322', '1080114', '1080124', '1080215', '1080225', '1090114']
 xmlid = {'1010113': '', '1010212': '', '1070212': '10711', '1070312': '10712', '1070322': '', '1080114': '10811',
          '1080124': '', '1090114': ''}
-handledir = '/var/www/buaaphylab/storage/app/script/' if platform.system() == 'Linux' else 'C:/Users/CFREE/Documents/Github/auto-deploy-phylab/Phylab/storage/app/script/'
-texdir = handledir + 'tex/'
-sys.path.append(handledir)
+scriptdir = '/var/www/buaaphylab/storage/app/script/' if platform.system() == 'Linux' else 'C:/Users/CFREE/Documents/Github/auto-deploy-phylab/Phylab/storage/app/script/'
+texdir = scriptdir + 'tex/'
+sys.path.append(scriptdir)
 
 if __name__ == '__main__':
     # 三个命令行参数
@@ -34,7 +34,7 @@ if __name__ == '__main__':
             if (lab == sys.argv[1]):
                 # from p1010113 import handler
                 # eval('from p' + lab + ' import handler')
-                # testxml = handledir + 'test/' + lab + 'test/' + lab + '.xml'
+                # testxml = scriptdir + 'test/' + lab + 'test/' + lab + '.xml'
                 try:
                     root = ''
                     dom = xml.dom.minidom.parse(sys.argv[2])

@@ -26,7 +26,7 @@ from math import sqrt
 
 from jinja2 import Environment
 from handler import texdir
-from handler import handledir
+from handler import scriptdir
 # 原始数据
 n = 0
 angle_a1 = []
@@ -215,7 +215,7 @@ if __name__ == '__main__':
         latex_head = latex_head_file.read().decode('utf-8', 'ignore')
         latex_tail = "\n\\end{document}"
         latex_body = ""
-        dom = xml.dom.minidom.parse(handledir+'test/1070212test/1071.xml')
+        dom = xml.dom.minidom.parse(scriptdir+'test/1070212test/1071.xml')
         root = dom.documentElement
         sublab_list = root.getElementsByTagName('sublab')
         for sublab in sublab_list:
@@ -224,7 +224,7 @@ if __name__ == '__main__':
             if (sublab_status == 'true') & (sublab_id == '10711'):
                 latex_body += handler(sublab)
         return latex_head + latex_body + latex_tail
-    fileTex = open(handledir+'test/1070212test/1070212test.tex', 'w')
+    fileTex = open(scriptdir+'test/1070212test/1070212test.tex', 'w')
     text = ReadXmlTop().encode('utf-8')
     fileTex.write(text)
     fileTex.close()

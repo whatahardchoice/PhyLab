@@ -76,8 +76,8 @@ def handler(XML):
     return readXml1060213(XML, source)
 
 if __name__ == '__main__':
-    handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
-    texdir = handledir + 'tex/'
-    dom = xml.dom.minidom.parse(handledir + 'test/1060213test/1060213.xml')
+    scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
+    texdir = scriptdir + 'tex/'
+    dom = xml.dom.minidom.parse(scriptdir + 'test/1060213test/1060213.xml')
     root = dom.documentElement
     print handler(root)

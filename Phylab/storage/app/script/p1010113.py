@@ -87,8 +87,8 @@ def handler(XML):
 	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][1], source)
 	
 if __name__ == '__main__':
-	handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
-	texdir = handledir + 'tex/'
-	dom = xml.dom.minidom.parse(handledir + 'test/1010113test/1010113.xml')
+	scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
+	texdir = scriptdir + 'tex/'
+	dom = xml.dom.minidom.parse(scriptdir + 'test/1010113test/1010113.xml')
 	root = dom.documentElement
 	print handler(root)

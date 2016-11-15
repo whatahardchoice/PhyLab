@@ -7,8 +7,8 @@ import os
 
 available_lab = ['1010113', '1010212', '1070212', '1070312', '1070322', '1080114', '1080124', '1090114']
 texdir = '/var/www/phylab/script/tex/'
-handledir = '/var/www/phylab/script/'
-sys.path.append(handledir)
+scriptdir = '/var/www/phylab/script/'
+sys.path.append(scriptdir)
 
 if __name__ == '__main__':
 	# 三个命令行参数
