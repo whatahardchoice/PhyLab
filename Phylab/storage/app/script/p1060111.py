@@ -19,6 +19,7 @@ import sys
 import subprocess
 import traceback
 from handler import texdir
+from handler import handledir
 from phylab import *
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
@@ -83,9 +84,9 @@ def ObjectImage(exper_convex, exper_concave, source):
     RoundOne(v_concave,2)
 
     result = env.from_string(source).render(
-        EXPER_1 = exper_1,
-        EXPER_2 = exper_2,
-        EXPER_3 = exper_3,
+        EXPER_1 = exper_convex[0],
+        EXPER_2 = exper_convex[1],
+        EXPER_3 = exper_convex[2],
         U_Convex = u_convex,
         V_Convex = v_convex,
         F_Convex = f_convex,
@@ -99,33 +100,31 @@ def ObjectImage(exper_convex, exper_concave, source):
 
     return result
 
-def ReadXml1060111(XML, name, source):
+def ReadXml1060111(XML, source):
 
     exper_1 = []
     exper_2 = []
     exper_3 = []
-    sub_root = XML.getElementsByTagName("sub_root")
-    sublab_table_list = sub_root.getElementsByTagName("table")
-    for table in sublab_table_list:
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            index = int(tr.getAttribute("index"))
-            tr_td_list = tr.getElementsByTagName("td")
-            if (index>=1 )&(index<=3):
-                sub_exper_1 =[]
-                for td in tr_td_list:
-                    sub_exper_1.append(float(td.firstChild.nodeValue))
-                exper_1.append(sub_exper_1)
-            elif (index>=4 )& (index<=6) :
-                sub_exper_2 =[]
-                for td in tr_td_list:
-                    sub_exper_2.append(float(td.firstChild.nodeValue))
-                exper_2.append(sub_exper_2)
-            elif (index>=7) & (index<=9):
-                sub_exper_3 =[]
-                for td in tr_td_list:
-                    sub_exper_3.append(float(td.firstChild.nodeValue))
-                exper_3.append(sub_exper_3)
+    table_list = XML.getElementsByTagName("table")
+    table_tr_list = table_list[0].getElementsByTagName("tr")
+    for tr in table_tr_list:
+        index = int(tr.getAttribute("index"))
+        tr_td_list = tr.getElementsByTagName("td")
+        if (index>=1 )&(index<=3):
+            sub_exper_1 =[]
+            for td in tr_td_list:
+                sub_exper_1.append(float(td.firstChild.nodeValue))
+            exper_1.append(sub_exper_1)
+        elif (index>=4 )& (index<=6) :
+            sub_exper_2 =[]
+            for td in tr_td_list:
+                sub_exper_2.append(float(td.firstChild.nodeValue))
+            exper_2.append(sub_exper_2)
+        elif (index>=7) & (index<=9):
+            sub_exper_3 =[]
+            for td in tr_td_list:
+                sub_exper_3.append(float(td.firstChild.nodeValue))
+            exper_3.append(sub_exper_3)
 
     #exper_1 = [[1400.0,469.2,1011.5,1014.8],
     #       [1400,492.3,1001.8,1004.6],[1400.0,426.1,1040.3,1037.8]]
@@ -134,19 +133,16 @@ def ReadXml1060111(XML, name, source):
     #exper_3 = [[1400.0,410.5,716.9,715.4],
     #       [1400.0,397.1,712.8,711.0],[1400.0,370.4,674.9,672.6]]
     exper = []
-    sublab_table_list = sub_root.getElementsByTagName("table")
-    for table in sublab_table_list:
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            tr_td_list = tr.getElementsByTagName("td")
-            sub_exper=[]
-            for td in tr_td_list:
-                sub_exper.append(float(td.firstChild.nodeValue))
-            exper.append(sub_exper)
+    table_tr_list = table_list[1].getElementsByTagName("tr")
+    for tr in table_tr_list:
+        tr_td_list = tr.getElementsByTagName("td")
+        sub_exper=[]
+        for td in tr_td_list:
+            sub_exper.append(float(td.firstChild.nodeValue))
+        exper.append(sub_exper)
 
     #exper = [[949.1,990.3,988.8,808.1],
     #     [950.8,989.9,986.2,841.7],[949.8,987.1,987.9,834.5]]
-        
     source = ObjectImage([exper_1, exper_2, exper_3], exper,source)
 
     return source
@@ -156,21 +152,11 @@ def handler(XML):
     #将模板作为字符串存储在template文件中
     source = file_object.read().decode('utf-8', 'ignore')
     file_object.close()
-    return ReadXml1060111(XML, sys.argv[3], source)
+    return ReadXml1060111(XML, source)
 
 if __name__ == '__main__':
     handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
     texdir = handledir + 'tex/'
-    exper_1 = [[1400.0,469.2,1011.5,1014.8],
-          [1400,492.3,1001.8,1004.6],[1400.0,426.1,1040.3,1037.8]]
-    exper_2 = [[1400.0,507.1,934.1,936.9],
-          [1400.0,531.2,947.8,947.6],[1400.0,539.8,952.9,954.1]]
-    exper_3 = [[1400.0,410.5,716.9,715.4],
-          [1400.0,397.1,712.8,711.0],[1400.0,370.4,674.9,672.6]]
-    exper = [[949.1,990.3,988.8,808.1],
-        [950.8,989.9,986.2,841.7],[949.8,987.1,987.9,834.5]]
-    file_object = open(texdir + "Handle1060111.tex","r")
-    #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
-    file_object.close()
-    print ObjectImage([exper_1, exper_2, exper_3], exper,source)
+    dom = xml.dom.minidom.parse(handledir + 'test/1060111test/1060111.xml')
+    root = dom.documentElement
+    print handler(root)

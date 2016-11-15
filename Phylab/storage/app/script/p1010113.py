@@ -38,7 +38,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	ave_delta_C = sum(delta_C) / 4
 	delta_C.append(round(ave_delta_C,2))
 
-	ave_D = sum(D) / 5
+	ave_D = sum(D) / len(D)
 	D.append(ave_D)
 	delta_m = m[4] - m[0];
 
@@ -46,7 +46,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	ua_delta_C = phylab.Ua(delta_C,ave_delta_C,4)#cm
 	ub_delta_C = 0.05 / sqrt(3)#cm
 	u_delta_C = sqrt(ua_delta_C**2 + ub_delta_C**2)#cm
-	ua_D = phylab.Ua(D,ave_D,5)#mm
+	ua_D = phylab.Ua(D,ave_D,len(D)-1)#mm
 	ub_D = 0.005 / sqrt(3)#mm
 	u_D = sqrt(ua_D**2 + ub_D**2)#mm
 	u_b = 0.02 / sqrt(3)#cm
@@ -84,7 +84,7 @@ def handler(XML):
 	source = file_object.read().decode('utf-8', 'ignore')
 	file_object.close()
 	data = readXml1010113(XML)
-	return SteelWire(data[0], data[1], data[2], data[3], data[4][0], data[4][1], data[4][1], source)
+	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][1], source)
 	
 if __name__ == '__main__':
 	handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
