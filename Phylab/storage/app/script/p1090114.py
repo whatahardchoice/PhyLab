@@ -91,6 +91,16 @@ def regulation():
     pass
 
 
+def xmlReader(sublab_root):
+    global d_list
+    sublab_table_list = sublab_root.getElementsByTagName("table")
+    for table in sublab_table_list:
+        table_tr_list = table.getElementsByTagName("tr")
+        for tr in table_tr_list:
+            tr_td_list = tr.getElementsByTagName("td")
+            d_list.append(float(tr_td_list[0].firstChild.nodeValue))
+
+
 def lexFiller(lex):
     global D_LIST1,D_LIST2, DELTA_D, AVERAGE_DELTA_D, LAM, UA_DELTA_D, U_DELTA_D, U_LAM, RE_U, RESULT_LAM, RESULT_U_LAM
     result = env.from_string(lex).render(
