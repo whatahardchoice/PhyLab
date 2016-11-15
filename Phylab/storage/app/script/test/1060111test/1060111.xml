@@ -59,21 +59,21 @@
 	<table name="10611_2" raw="3" column="5">
 		<tr index="1">
 			<td>949.1</td>
-			<td>990.3</td>
 			<td>988.8</td>
 			<td>808.1</td>
+			<td>990.3</td>
 		</tr>
 		<tr index="2">
 			<td>950.8</td>
-			<td>989.9</td>
 			<td>986.2</td>
 			<td>841.7</td>
+			<td>989.9</td>
 		</tr>
 		<tr index="3">
 			<td>949.8</td>
-			<td>987.1</td>
 			<td>987.9</td>
 			<td>834.5</td>
+			<td>987.1</td>
 		</tr>
 	</table>
 </lab>

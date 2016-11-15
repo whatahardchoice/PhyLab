@@ -82,7 +82,7 @@ def ObjectImage(exper_convex, exper_concave, source):
     RoundOne(f_concave,2)
     RoundOne(u_concave,2)
     RoundOne(v_concave,2)
-
+    print exper_concave
     result = env.from_string(source).render(
         EXPER_1 = exper_convex[0],
         EXPER_2 = exper_convex[1],
@@ -101,7 +101,6 @@ def ObjectImage(exper_convex, exper_concave, source):
     return result
 
 def ReadXml1060111(XML, source):
-
     exper_1 = []
     exper_2 = []
     exper_3 = []

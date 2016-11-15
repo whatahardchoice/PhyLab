@@ -51,29 +51,25 @@ def CollimatedConvex(exper,source):
         )
     return result
 
-def readXml1060213(root):
+def readXml1060213(root, source):
     exper = []
-    sublab_table_list = root.getElementsByTagName("table")
-
-    for table in sublab_table_list:
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            tr_td_list = tr.getElementsByTagName("td")
-            sub_exper  =[]
-            for td in tr_td_list:
-                sub_exper.append(float(td.firstChild.nodeValue))
-            exper.append(sub_exper)
+    table_tr_list = root.getElementsByTagName("tr")
+    for tr in table_tr_list:
+        tr_td_list = tr.getElementsByTagName("td")
+        sub_exper  =[]
+        for td in tr_td_list:
+            sub_exper.append(float(td.firstChild.nodeValue))
+        exper.append(sub_exper)
 
     #exper = [[1400,1315.2,1311.9],[1300.0,1213.9,1209.9],
     #     [1200.0,1116.1,1118.3],[1100.0,1014.8,1013.9],
     #     [1000.0,916.7,918.2]]
-    
     source = CollimatedConvex(exper,source)
 
     return source
 
 def handler(XML):
-    file_object = open(texdir + "Handle1060111.tex","r")
+    file_object = open(texdir + "Handle1060213.tex","r")
     #将模板作为字符串存储在template文件中
     source = file_object.read().decode('utf-8', 'ignore')
     file_object.close()
@@ -82,11 +78,6 @@ def handler(XML):
 if __name__ == '__main__':
     handledir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
     texdir = handledir + 'tex/'
-    exper = [[1400,1315.2,1311.9],[1300.0,1213.9,1209.9],
-        [1200.0,1116.1,1118.3],[1100.0,1014.8,1013.9],
-        [1000.0,916.7,918.2]]
-    file_object = open(texdir + "Handle1060213.tex","r")
-    #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
-    file_object.close()
-    print CollimatedConvex(exper, source)
+    dom = xml.dom.minidom.parse(handledir + 'test/1060213test/1060213.xml')
+    root = dom.documentElement
+    print handler(root)
