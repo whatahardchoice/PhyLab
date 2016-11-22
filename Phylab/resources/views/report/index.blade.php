@@ -7,7 +7,7 @@
 	});
 </script>
 
-<div id="lab-console" class="row" style="margin-top: 55px;" >
+<div id="lab-console" class="row" style="margin-top: 45px;" >
   <div class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 1px;">
     <div id="lab-container">
       <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;">
