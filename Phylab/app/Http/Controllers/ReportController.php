@@ -23,7 +23,8 @@ class ReportController extends Controller
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
         $data = ["reportTemplates"=>[],
-                 "username"=>Auth::user()->name];
+                 "username"=>Auth::user()->name,
+				 "Auth"=>true];
         $reports = Report::orderBy('experiment_id')->get();
         foreach ($reports as $report) {
             $rearr = array(
