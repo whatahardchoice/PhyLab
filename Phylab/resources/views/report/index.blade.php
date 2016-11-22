@@ -20,7 +20,7 @@
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body onload="check()">
+<body>
 <header id="site-header">
   <nav class="navbar navbar-default header" role="navigation">
     <div class="container">
@@ -55,6 +55,12 @@
     </div>
   </nav>
 </header>
+
+<script>
+	$(function(){
+		check();
+	});
+</script>
 
 <div id="lab-console" class="row">
   <div class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 1px;">
