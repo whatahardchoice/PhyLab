@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
   <meta charset="utf-8">
@@ -39,22 +39,22 @@
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>ÊµÑé</a>
+            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>å®éªŒ</a>
           </li>
           <li>
-            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>ÉçÇø</a>
+            <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>ç¤¾åŒº</a>
           </li>
           <li>
-            <a href="#">·´À¡</a>
+            <a href="#">åé¦ˆ</a>
           </li>
         </ul>
         <div class="navbar-right btns">
           @if (!$auth)
-          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">µÇÂ¼</a>
-          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">×¢²á</a>
+          <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">ç™»å½•</a>
+          <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">æ³¨å†Œ</a>
           @else
 		  <span id="userName">{{$username}}</span>
-          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">µÇ³ö</a>
+          <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">ç™»å‡º</a>
           @endif
         </div>
       </div>
