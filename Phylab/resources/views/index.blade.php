@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('contents')
+
 <div class="navbar-banner layout-no-margin-top">
   <div class="banner-container">
     <div class="container">
@@ -114,4 +114,3 @@
 <script src="./js/regist.js"></script>
 </body>
 </html>
-@stop

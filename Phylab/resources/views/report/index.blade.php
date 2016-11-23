@@ -1,7 +1,5 @@
 ﻿@extends('layout.main')
-
 @section('contents')
-
 
 <div id="lab-console" class="row" style="margin-top: 50px;" >
   <div class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 1px;">
