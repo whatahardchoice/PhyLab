@@ -24,7 +24,7 @@
 .navbar-brand span, .header .navbar-nav>li>a {
   color: RGB(200, 200, 200);
 }
-.header .btns .sign-out, .header .btns username {
+.header .btns .sign-out, .header .btns .username {
   color:black;
   border:1px solid hsla(0,0%,100%,.5);
   border-radius:4px

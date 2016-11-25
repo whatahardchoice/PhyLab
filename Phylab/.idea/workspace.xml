@@ -70,8 +70,8 @@
       <file leaf-file-name="phylab.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="437">
+              <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -319,12 +319,12 @@
       <option name="presentableId" value="Default" />
       <updated>1480005575562</updated>
       <workItem from="1480005576919" duration="15616000" />
-      <workItem from="1480082208060" duration="2456000" />
+      <workItem from="1480082208060" duration="2616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18072000" />
+    <option name="totallyTimeSpent" value="18232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -466,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="437">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding />
         </state>
       </provider>
