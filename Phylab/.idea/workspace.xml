@@ -32,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="376">
@@ -60,18 +60,18 @@
       <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="627">
+              <caret line="63" column="55" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phylab.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="phylab.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-494">
-              <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="46" selection-end-column="25" />
+            <state relative-caret-position="304">
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -83,9 +83,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/phylab.css" />
-        <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/phylab.css" />
       </list>
     </option>
   </component>
@@ -319,12 +319,12 @@
       <option name="presentableId" value="Default" />
       <updated>1480005575562</updated>
       <workItem from="1480005576919" duration="15616000" />
-      <workItem from="1480082208060" duration="2121000" />
+      <workItem from="1480082208060" duration="2425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17737000" />
+    <option name="totallyTimeSpent" value="18041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -435,19 +435,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="45" column="2" lean-forward="false" selection-start-line="45" selection-start-column="2" selection-end-line="46" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="376">
+          <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+          <folding>
+            <element signature="e#5393#5413#0#HTML" expanded="true" />
+            <element signature="e#5447#5481#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -461,14 +456,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-          <folding>
-            <element signature="e#5393#5413#0#HTML" expanded="true" />
-            <element signature="e#5447#5481#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="627">
+          <caret line="63" column="55" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
