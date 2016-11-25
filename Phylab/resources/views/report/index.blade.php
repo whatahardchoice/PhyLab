@@ -99,7 +99,6 @@
               <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
             </object>
           </div>
-          <div id="chrom_pdf" style="width:100%;height:92%;min-height:500px;display:none"></div>
         </div>
       </div>
     </div>
@@ -123,11 +122,6 @@
 <script src="./js/test.js"></script>
 <script src="./js/statistics.js"></script>
 <script src="./js/reportCore.js"></script>
-<script>
-	$(function(){
-		check();
-	});
-</script>
 </body>
 </html>
 @stop
