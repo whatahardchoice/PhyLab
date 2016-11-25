@@ -1,4 +1,6 @@
-.idea/workspace.xml
-.idea/PhyLab.iml
-.idea/modules.xml
-.idea/vcs.xml
+.idea
+Phylab/.idea
+Phylab/.idea/php.xml
+Phylab/.idea/php.xml
+Phylab/.idea/workspace.xml
+Phylab/.idea/Phylab.iml

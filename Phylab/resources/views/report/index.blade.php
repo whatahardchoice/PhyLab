@@ -94,7 +94,7 @@
           </div>
         </div>
         <div class="panel-body" style="padding:5px;">
-          <div id="firefox_pdf" style="width: 100%; height: 100%; display: block;">
+          <div id="firefox_pdf" style="width: 100%; height: 100%;">
             <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:800px;">
               <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
             </object>
