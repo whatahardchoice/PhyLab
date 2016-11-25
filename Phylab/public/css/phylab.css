@@ -9,9 +9,6 @@
   src: url("../fonts/logo-font.ttf");
 }
 /*导航栏CSS*/
-.header {
-  background-color: RGBA(47, 79, 79, 0.3);
-}
 #header-logo {
   float:left;
   height:50px;
@@ -25,7 +22,7 @@
   font-size: 30px;
 }
 .navbar-brand span, .header .navbar-nav>li>a {
-  color: RGB(32, 32, 32);
+  color: RGB(200, 200, 200);
 }
 .header .btns .sign-out {
   color:black;
@@ -38,18 +35,18 @@
 }
 /*首页CSS*/
 .banner-container {
-  min-height:700px;
+  min-height:612px;
 }
 .banner-container form {
   padding: 40px 0 10px 0;
   background-color: RGBA(0, 0, 0, 0.1);
 }
 .navbar-banner {
-  margin-top: 50px;
-  background: url("../img/phylab_navbar_banner.png");
-  background-size: 100%;
-  background-position: center;
-  backgtound-repeat: no-repeat;
+  margin-top: 45px;
+  background-image: url("../img/phylab_navbar_banner4.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat:no-repeat;
 }
 .navbar-brand span:hover {
   color: white;
@@ -61,7 +58,17 @@
   left: 180px;
 }
 .banner-container form .tip {
-  color: black;
+  color: RGBA(255, 255, 255, 1);;
+}
+.path-item .path-name, .path-item .path-course-num  {
+  padding: 0;
+
+}
+.path-item .path-name {
+  font-size: 14px;
+}
+.path-item div {
+  padding: 0;
 }
 /*数据处理页CSS*/
 #lab-console {

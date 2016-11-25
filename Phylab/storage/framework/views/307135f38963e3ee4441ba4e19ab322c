@@ -1,0 +1,10 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!--<h1>error: <?php echo e($message); ?>, code: <?php echo e($code); ?>, httpCode: <?php echo e($httpCode); ?></h1>-->
+<script src="/js/global.js"></script>
+<script>//error();</script>
+</body>
+</html>

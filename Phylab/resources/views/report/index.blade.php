@@ -24,11 +24,6 @@
               <li id="lab-group-1082"><a href="#">1082 光的干涉实验I（分波阵面法）2</a></li>
               <li id="lab-group-1091"><a href="#">1091 光的干涉实验II（分振幅法）</a></li>
             </ul>
-            <div style="display:none" id="back_info">
-              @foreach ($reportTemplates as $rept)
-              <a index="{{$rept['experimentId']}}" prepareLink="{{$rept['prepareLink']}}" db-id="{{$rept['id']}}"></a>
-              @endforeach
-            </div>
           </div>
           <div class="btn-group labdoc-btns col-xs-12"  id="lab-select">
             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" style="width: 100%;margin-top: 1px">
