@@ -1,11 +1,9 @@
-@extends('layout.main')
-
-@section('contents')
+<?php $__env->startSection('contents'); ?>
 <div class="navbar-banner layout-no-margin-top">
   <div class="banner-container">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-5 col-md-offset-7" @if (!$auth) style="display: block" @else style="display: none" @endif>
+        <div class="col-xs-12 col-md-5 col-md-offset-7" <?php if(!$auth): ?> style="display: block" <?php else: ?> style="display: none" <?php endif; ?>>
           <form method="post">
             <div class="form-group">
               <input class="form-control" name="name" id="name" type="text" placeholder="用户名">
@@ -58,7 +56,7 @@
     <div class="tab-content">
       <div class="tab-pane clearfix active" id="study-line">
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1011-mechanics-lab.png" style="background-color: #3b3b7e">
@@ -76,7 +74,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1021-thermology-lab.png" style="background-color: #3b3b7e">
@@ -94,7 +92,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1031-oscillograph-lab.png" style="background-color: #3b3b7e">
@@ -112,7 +110,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1061-lens-lab.png" style="background-color: #3b3b7e">
@@ -130,7 +128,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1071-spectrometer-lab.png" style="background-color: #3b3b7e">
@@ -148,7 +146,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1081-interference1-lab.png" style="background-color: #3b3b7e">
@@ -166,7 +164,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1082-interference2-lab.png" style="background-color: #3b3b7e">
@@ -184,7 +182,7 @@
           </a>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <a href="{{URL::route('report')}}">
+          <a href="<?php echo e(URL::route('report')); ?>">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
                 <img src="./img/1091-interference-lab.png" style="background-color: #3b3b7e">
@@ -290,4 +288,5 @@
 <script src="./js/regist.js"></script>
 </body>
 </html>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
