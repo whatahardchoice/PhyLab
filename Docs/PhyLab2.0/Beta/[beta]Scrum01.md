@@ -17,7 +17,7 @@
 
 # Burn down chart
 
-
+![](http://images2015.cnblogs.com/blog/1033756/201611/1033756-20161127132418596-1129641964.png)
 
 # Photo
 
