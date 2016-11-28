@@ -23,7 +23,6 @@ output:
 '''
 import xml.dom.minidom
 from math import sqrt
-
 from jinja2 import Environment
 from handler import texdir
 from handler import scriptdir
