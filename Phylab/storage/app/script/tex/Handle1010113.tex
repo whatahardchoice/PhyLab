@@ -5,7 +5,7 @@
 \noindent
 钢丝长度 $L = {{L}}cm$ \\
 平面镜距标尺的距离 $H = {{H}}cm$ \\
-光杠杆前后足间距 $b = {{b}}mm$ \\
+光杠杆前后足间距 $b = {{b}}cm$ \\
 钢丝直径 D/mm
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -48,7 +48,7 @@ $\Delta C_i=(C_{i+4}-C_i)/cm$ {% for i in range(4) -%} & {{C[i+4] - C[i]}} {%- e
 \end{center}
 由$E = \frac{16FLH}{\pi D^2b\Delta C_i}$可得$$E = \frac{16 \times \Delta m \times L \times H}{\pi D^2b\overline{\Delta C_i} }$$($\Delta m={{delta_m}}kg$, 北京地区$g = 9.8012m/s^2$) \\
 代入数据 \\
-$$E = \frac{16\times {{delta_m}} \times9.8012\times{{L}}\times{{H}} }{3.1416\times({{ave_D}})^2\times{{b}}\times{{ave_delta_C}} } = {{E}}Pa$$
+$$E = \frac{16\times {{delta_m}} \times9.8012\times{{L}}\times10^{-2}\times{{H}}\times10^{-2} }{3.1416\times({{ave_D}}\times10^{-3})^2\times{{b}}\times10^{-2}\times{{ave_delta_C}}\times10^{-2} } = {{E}}Pa$$
 
 \subsubsection*{(3)不确定度的计算}
 \noindent

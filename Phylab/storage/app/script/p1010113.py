@@ -26,7 +26,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	# D     单位：mm
 	# L     单位：cm
 	# H     单位：cm
-	# b     单位：mm
+	# b     单位：cm
 	C = []
 	for i in range(0,len(C_plus),1):
 		C.append((C_plus[i] + C_sub[i]) / 2)
@@ -39,7 +39,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	delta_C.append(round(ave_delta_C,2))
 
 	ave_D = sum(D) / len(D)
-	D.append(ave_D)
+	D.append(round(ave_D,3))
 	delta_m = m[4] - m[0];
 
 	E = 16 * 9.8 * L * delta_m * H * pow(10,6) / (pi * pow(ave_D,2) * b * ave_delta_C)
@@ -69,12 +69,12 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 			C = C,
 			ave_delta_C = ave_delta_C,
 			E = phylab.ToScience(E),
-			ua_D = ua_D,
-			u_D = u_D,
-			ua_C = ua_delta_C,
-			u_C = u_delta_C,
-			u_E_E = u_E_E,
-			u_E = u_E,
+			ua_D = phylab.ToScience(ua_D),
+			u_D = phylab.ToScience(u_D),
+			ua_C = phylab.ToScience(ua_delta_C),
+			u_C = phylab.ToScience(u_delta_C),
+			u_E_E = phylab.ToScience(u_E_E),
+			u_E = phylab.ToScience(u_E),
 			final = final
 			)
 
@@ -84,7 +84,7 @@ def handler(XML):
 	source = file_object.read().decode('utf-8', 'ignore')
 	file_object.close()
 	data = readXml1010113(XML)
-	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][1], source)
+	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][2], source)
 	
 if __name__ == '__main__':
 	scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'

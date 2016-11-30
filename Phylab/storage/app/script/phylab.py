@@ -90,6 +90,8 @@ def ToScience(number):
     # 如果发现Tempstr中含有e的话，说明是科学计数法
     if 'e' in Tempstr:
         index_str = Tempstr.split('e')
+        if (index_str[1][0] == '+'):
+            index_str[1] = index_str[1][1:]
         if index_str[0] == '1':
             return '10^{' + str(int(index_str[1])) + '}'
         else:
