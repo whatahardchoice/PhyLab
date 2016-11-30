@@ -1,4 +1,4 @@
-# -*- coding: cp936 -*-
+# -*- coding: utf-8 -*-
 from math import sqrt
 from math import pi
 import phylab

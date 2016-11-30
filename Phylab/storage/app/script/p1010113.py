@@ -38,8 +38,8 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 	ave_delta_C = sum(delta_C) / 4
 	delta_C.append(round(ave_delta_C,2))
 
-	ave_D = sum(D) / len(D)
-	D.append(round(ave_D,3))
+	ave_D = round(sum(D) / len(D), 3)
+	D.append(ave_D)
 	delta_m = m[4] - m[0];
 
 	E = 16 * 9.8 * L * delta_m * H * pow(10,6) / (pi * pow(ave_D,2) * b * ave_delta_C)
