@@ -58,7 +58,22 @@
 - app/article/main.php中的index_action()函数设置获取相关文章。
 - 需要往index_action()通过GET方式传输id(article的id),item_id(评论的id)。
 - app/article/ajax.php中定义了各种交互函数。
-    - article_vote_action()赞同文章。
+
+    - article_vote_action()赞同文章或评论。
+        - type 文章类型"article" or "comment"
+        - item_id 目标id
+        - rating 排名
+
     - remove_comment_action()删除评论。
+        - comment_id 评论id
+
     - remove_article_action()删除文章。
+        - article_id 文章id
+
     - save_comment_action()存储评论。
+        - article_id 文章id
+        - message 消息
+        - seccode_verify 验证码
+        - post_hash hash值
+        - at_uid 存储的目标id
+        - _is_mobile 是否为手机
