@@ -260,26 +260,16 @@ function Post_lab(postErrorFunc){
 }
 
 //PhyLab2.0新增脚本
-$('#lab-group-select li').click(function () {
-  CUR_LAB_GROUP = /lab-group-(\d{4})/.exec(this.id)[1];
-  $('#default-lab-name').hide();
-  $('.lab-name-list').hide();
-  $('#lab-group-select button').text($(this).children().text()).append('<span class="caret"></span>');
-  $('#lab-select button').text('题目编号').append('<span class="caret"></span>');
-  $('#lab-' + CUR_LAB_GROUP + '-list').show();
-  $('#button-generate-report').attr('disabled', 'disabled');
-  $('#button-view-preparation').removeAttr("disabled");
-  $('#labdoc').html('<h1 style="margin: 200px 0;">未选择子实验</h1>');
-  if(SelectLab(CUR_LAB_GROUP,'lab-status'))
-    changePdf('prepare',CUR_LAB_GROUP + ".pdf");
-});
-$('#lab-select li').click(function () {
+$('#lab-select-modal .list-group li').click(function () {
   CUR_SUBLAB = /lab-(\d{7})/.exec(this.id)[1];
   $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
-  $('#button-generate-report').removeAttr("disabled");
+  $('#lab-name').text($(this).text());
+  $('#lab-select-modal').modal('hide');
   $.ajax('./table', {
     data: {'id': CUR_SUBLAB},
   }).done(function (data) {
+    $('#button-view-preparation').removeAttr("disabled");
+    $('#button-generate-report').removeAttr("disabled");
     $('#labdoc').html(data);
   }).fail(function (xhr, status) {
     alert('失败: ' + xhr.status + ', 原因: ' + status);

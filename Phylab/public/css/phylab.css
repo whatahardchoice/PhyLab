@@ -107,6 +107,12 @@ td input {
 td input.form-control {
   padding: 2px 4px;
 }
+#lab-select-modal .panel-group .panel-heading {
+    width: 100%;
+    color: white;
+    background-color: #08c093;
+    border-radius: 4px;
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;
