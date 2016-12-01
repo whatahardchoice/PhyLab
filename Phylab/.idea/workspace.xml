@@ -35,8 +35,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="120" column="91" lean-forward="false" selection-start-line="120" selection-start-column="83" selection-end-line="120" selection-end-column="91" />
+            <state relative-caret-position="427">
+              <caret line="121" column="86" lean-forward="false" selection-start-line="121" selection-start-column="86" selection-end-line="121" selection-end-column="86" />
               <folding>
                 <element signature="e#943#1047#0#HTML" expanded="true" />
                 <element signature="e#1184#1287#0#HTML" expanded="true" />
@@ -61,8 +61,18 @@
       <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="264" column="39" lean-forward="false" selection-start-line="264" selection-start-column="39" selection-end-line="264" selection-end-column="39" />
+            <state relative-caret-position="184">
+              <caret line="267" column="39" lean-forward="true" selection-start-line="267" selection-start-column="39" selection-end-line="267" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -75,6 +85,7 @@
       <find>headingOne</find>
       <find>button-view-preparation</find>
       <find>CUR_LAB_GROUP</find>
+      <find>child</find>
       <find>labdoc</find>
     </findStrings>
   </component>
@@ -364,12 +375,12 @@
       <workItem from="1480082208060" duration="3210000" />
       <workItem from="1480419130209" duration="1348000" />
       <workItem from="1480493510079" duration="3579000" />
-      <workItem from="1480590126620" duration="15392000" />
+      <workItem from="1480590126620" duration="16107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39145000" />
+    <option name="totallyTimeSpent" value="39860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -621,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-831">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -786,10 +790,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="120" column="91" lean-forward="false" selection-start-line="120" selection-start-column="83" selection-end-line="120" selection-end-column="91" />
+        <state relative-caret-position="427">
+          <caret line="121" column="86" lean-forward="false" selection-start-line="121" selection-start-column="86" selection-end-line="121" selection-end-column="86" />
           <folding>
             <element signature="e#943#1047#0#HTML" expanded="true" />
             <element signature="e#1184#1287#0#HTML" expanded="true" />
@@ -810,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="264" column="39" lean-forward="false" selection-start-line="264" selection-start-column="39" selection-end-line="264" selection-end-column="39" />
+        <state relative-caret-position="184">
+          <caret line="267" column="39" lean-forward="true" selection-start-line="267" selection-start-column="39" selection-end-line="267" selection-end-column="39" />
           <folding />
         </state>
       </provider>

@@ -262,7 +262,7 @@ function Post_lab(postErrorFunc){
 //PhyLab2.0新增脚本
 $('#lab-select-modal .list-group li').click(function () {
   CUR_SUBLAB = /lab-(\d{7})/.exec(this.id)[1];
-  CUR_LAB_GROUP = /lab-(\d{4})-collapse/.exec($(this).parent().id);
+  CUR_LAB_GROUP = /lab-(\d{4})-collapse/.exec($(this).parent()[0].id)[1];
   $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
   $('#lab-name').text($(this).text());
   $('#lab-select-modal').modal('hide');
