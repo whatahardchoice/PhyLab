@@ -278,6 +278,7 @@ $('#lab-select-modal .list-group li').click(function () {
 });
 $('#button-view-preparation').click(function () {
   changePdf('prepare',CUR_LAB_GROUP + ".pdf");
+  $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 });
 $('#button-generate-report').click(function () {
   var xmlString = SetXMLDoc_lab(CUR_SUBLAB);
@@ -289,8 +290,10 @@ $('#button-generate-report').click(function () {
       var jsonText = eval("(" + this.responseText + ")");
       //alert(this.responseText);
       //alert(jsonText["status"]);
-      if(jsonText["status"]=='success')
+      if(jsonText["status"]=='success') {
         changePdf('tmp',jsonText['link']);
+        $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+      }
       else
         errorFunction(jsonText["message"]);
         errorFunction(jsonText["test"]);
