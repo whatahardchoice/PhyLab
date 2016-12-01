@@ -75,7 +75,10 @@
   height: auto;
 }
 #lab-console #lab-container {
-  width: auto;
+  width: 100%;
+}
+#lab-console #lab-container .tab-content .tab-pane {
+  height: 94%;
 }
 #lab-console .nav-tabs .dropdown-menu {
   background-color: rgb(8, 192, 147);
