@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-    <div id="doc" class="col-xs-12 col-md-9 hidden-xs" style="padding-left: 1px;;margin-top: 20px;margin-bottom: 30px">
+    <div id="doc" class="col-xs-12 col-md-9" style="padding-left: 1px;;margin-top: 20px;margin-bottom: 30px">
       <div class="panel-group" id="lab-report" style="margin-right: 15px;">
         <div class="panel panel-default pannel-autoscroll">
           <div class="panel-heading"  style="border: solid;border-width: 0px;">
