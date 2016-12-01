@@ -266,6 +266,8 @@ $('#lab-select-modal .list-group li').click(function () {
   $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
   $('#lab-name').text($(this).text());
   $('#lab-select-modal').modal('hide');
+  changePdf('prepare',CUR_LAB_GROUP + ".pdf");
+  $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
   $.ajax('./table', {
     data: {'id': CUR_SUBLAB},
   }).done(function (data) {
