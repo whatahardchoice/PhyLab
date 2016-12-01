@@ -35,14 +35,14 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="145" column="139" lean-forward="false" selection-start-line="145" selection-start-column="139" selection-end-line="145" selection-end-column="139" />
+            <state relative-caret-position="427">
+              <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
               <folding>
                 <element signature="e#943#1047#0#HTML" expanded="true" />
                 <element signature="e#1184#1287#0#HTML" expanded="true" />
-                <element signature="e#9484#9546#0#HTML" expanded="true" />
-                <element signature="e#9737#9764#0#HTML" expanded="true" />
-                <element signature="e#9916#9943#0#HTML" expanded="true" />
+                <element signature="e#9488#9550#0#HTML" expanded="true" />
+                <element signature="e#9741#9768#0#HTML" expanded="true" />
+                <element signature="e#9920#9947#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +61,8 @@
       <file leaf-file-name="phylab.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="91" column="46" lean-forward="false" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+            <state relative-caret-position="665">
+              <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>headingOne</find>
-      <find>labdoc</find>
       <find>button-view-preparation</find>
+      <find>labdoc</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -363,12 +363,12 @@
       <workItem from="1480082208060" duration="3210000" />
       <workItem from="1480419130209" duration="1348000" />
       <workItem from="1480493510079" duration="3579000" />
-      <workItem from="1480590126620" duration="13823000" />
+      <workItem from="1480590126620" duration="14869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37576000" />
+    <option name="totallyTimeSpent" value="38622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -412,9 +412,9 @@
           <folding>
             <element signature="e#943#1047#0#HTML" expanded="true" />
             <element signature="e#1184#1287#0#HTML" expanded="true" />
-            <element signature="e#9484#9546#0#HTML" expanded="true" />
-            <element signature="e#9737#9764#0#HTML" expanded="true" />
-            <element signature="e#9916#9943#0#HTML" expanded="true" />
+            <element signature="e#9488#9550#0#HTML" expanded="true" />
+            <element signature="e#9741#9768#0#HTML" expanded="true" />
+            <element signature="e#9920#9947#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -499,9 +499,9 @@
           <folding>
             <element signature="e#943#1047#0#HTML" expanded="true" />
             <element signature="e#1184#1287#0#HTML" expanded="true" />
-            <element signature="e#9484#9546#0#HTML" expanded="true" />
-            <element signature="e#9737#9764#0#HTML" expanded="true" />
-            <element signature="e#9916#9943#0#HTML" expanded="true" />
+            <element signature="e#9488#9550#0#HTML" expanded="true" />
+            <element signature="e#9741#9768#0#HTML" expanded="true" />
+            <element signature="e#9920#9947#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -544,9 +544,9 @@
           <folding>
             <element signature="e#943#1047#0#HTML" expanded="true" />
             <element signature="e#1184#1287#0#HTML" expanded="true" />
-            <element signature="e#9484#9546#0#HTML" expanded="true" />
-            <element signature="e#9737#9764#0#HTML" expanded="true" />
-            <element signature="e#9916#9943#0#HTML" expanded="true" />
+            <element signature="e#9488#9550#0#HTML" expanded="true" />
+            <element signature="e#9741#9768#0#HTML" expanded="true" />
+            <element signature="e#9920#9947#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,9 +589,9 @@
           <folding>
             <element signature="e#943#1047#0#HTML" expanded="true" />
             <element signature="e#1184#1287#0#HTML" expanded="true" />
-            <element signature="e#9484#9546#0#HTML" expanded="true" />
-            <element signature="e#9737#9764#0#HTML" expanded="true" />
-            <element signature="e#9916#9943#0#HTML" expanded="true" />
+            <element signature="e#9488#9550#0#HTML" expanded="true" />
+            <element signature="e#9741#9768#0#HTML" expanded="true" />
+            <element signature="e#9920#9947#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -785,20 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="145" column="139" lean-forward="false" selection-start-line="145" selection-start-column="139" selection-end-line="145" selection-end-column="139" />
-          <folding>
-            <element signature="e#943#1047#0#HTML" expanded="true" />
-            <element signature="e#1184#1287#0#HTML" expanded="true" />
-            <element signature="e#9484#9546#0#HTML" expanded="true" />
-            <element signature="e#9737#9764#0#HTML" expanded="true" />
-            <element signature="e#9916#9943#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -807,10 +793,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <element signature="e#943#1047#0#HTML" expanded="true" />
+            <element signature="e#1184#1287#0#HTML" expanded="true" />
+            <element signature="e#9488#9550#0#HTML" expanded="true" />
+            <element signature="e#9741#9768#0#HTML" expanded="true" />
+            <element signature="e#9920#9947#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="91" column="46" lean-forward="false" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+        <state relative-caret-position="665">
+          <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
           <folding />
         </state>
       </provider>
