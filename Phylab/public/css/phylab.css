@@ -120,6 +120,11 @@ td input.form-control {
 #lab-select-modal .panel-group .panel-heading h4 div{
   padding: 10px 15px;
 }
+#chrom_pdf object {
+  width:100%;
+  height:100%;
+  min-height:780px;
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;

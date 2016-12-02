@@ -174,7 +174,7 @@
               </object>
             </div>
             <div id="chrom_pdf" style="width: 100%; height: 100%;display: none;">
-              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" style="width:100%;height:100%;min-height:780px;"></object>
+              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
           </div>
         </div>
