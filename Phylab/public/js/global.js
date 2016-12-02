@@ -82,6 +82,6 @@
                         alert("Please use the above version of IE8 or other browsers");
                 }
                 else {
-                        document.getElementById('chrom_pdf').style.display='block';
+                        document.getElementById('firefox_pdf').style.display='block';
                 }
         }
