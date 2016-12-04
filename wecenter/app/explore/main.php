@@ -155,10 +155,7 @@ class main extends AWS_CONTROLLER
 		TPL::assign('posts_list_bit', TPL::output('explore/ajax/list', false));
 
 		TPL::output('explore/index');
-	}
-	
-	public function test_action() {
 		echo get_setting('upload_dir');
 	}
-
+	
 }
