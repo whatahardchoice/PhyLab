@@ -39,8 +39,8 @@
 						<div class="aw-upload-img-list">
 						<?php foreach ($this->question_info['attachs'] AS $key => $attach) { ?>
 						<?php if ($attach['is_image'] AND !in_array($attach['id'], $this->question_info['attachs_ids'])) { ?>
-							<a href="<?php echo $attach['attachment']; ?>" target="_blank">
-							<img src="<?php echo $attach['attachment']; ?>" alt="<?php echo $attach['attach_name']; ?>" class="img-thumbnail" /></a>
+							<a href="<?php echo base_url().$attach['attachment']; ?>" target="_blank">
+							<img src="<?php echo base_url().$attach['attachment']; ?>" alt="<?php echo $attach['attach_name']; ?>" class="img-thumbnail" /></a>
 						<?php } ?>
 						<?php } ?>
 						</div>
@@ -50,7 +50,7 @@
 					<ul class="aw-upload-file-list">
 						<?php foreach ($this->question_info['attachs'] AS $attach) { ?>
 						<?php if (!$attach['is_image'] AND !in_array($attach['id'], $this->question_info['attachs_ids'])) { ?>
-							<li><a href="<?php echo download_url($attach['file_name'], $attach['attachment']); ?>"><i class="icon icon-attach"></i> <?php echo $attach['file_name']; ?></a></li>
+							<li><a href="<?php echo download_url($attach['file_name'], base_url().$attach['attachment']); ?>"><i class="icon icon-attach"></i> <?php echo $attach['file_name']; ?></a></li>
 						<?php } ?>
 						<?php } ?>
 					</ul>
@@ -122,7 +122,7 @@
 								<div class="aw-upload-img-list">
 								<?php foreach ($val['attachs'] AS $attach) { ?>
 								<?php if ($attach['is_image'] AND !($val['insert_attach_ids'] AND in_array($attach['id'], $val['insert_attach_ids']))) { ?>
-								<a href="<?php echo $attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo $attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a>
+								<a href="<?php echo base_url().$attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php base_url().echo $attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a>
 								<?php } ?>
 								<?php } ?>
 								</div>
