@@ -12,7 +12,7 @@
 <blockquote class="aw-upload-img-list">
 <?php foreach ($this->approval_item['attachs'] AS $attach) { ?>
 <?php if ($attach['is_image']) { ?>
-    <p><a href="<?php echo base_url().$attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo base_url().$attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a></p>
+    <p><a href="<?php echo $attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo $attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a></p>
 <?php } ?>
 <?php } ?>
 </blockquote>
@@ -21,7 +21,7 @@
     <ul class="aw-upload-file-list">
         <?php foreach ($this->approval_item['attachs'] AS $attach) { ?>
         <?php if (!$attach['is_image']) { ?>
-            <li><a href="<?php echo download_url($attach['file_name'], base_url().$attach['attachment']); ?>"><em class="aw-icon i-upload-file"></em><?php echo $attach['file_name']; ?></a></li>
+            <li><a href="<?php echo download_url($attach['file_name'], $attach['attachment']); ?>"><em class="aw-icon i-upload-file"></em><?php echo $attach['file_name']; ?></a></li>
         <?php } ?>
         <?php } ?>
     </ul>

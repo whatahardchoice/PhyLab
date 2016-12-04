@@ -66,7 +66,7 @@
                                         <li>
                                             <input name="attachs[]" type="hidden" value="<?php echo $attach['id']; ?>" />
 
-                                            <a href="<?php echo base_url().$attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo base_url().$attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a>
+                                            <a href="<?php echo $attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo $attach['attachment']; ?>" class="img-polaroid" alt="<?php echo $attach['attach_name']; ?>" /></a>
 
                                             <a href="javascript:;" class="btn btn-danger" ><?php _e('删除'); ?></a>
                                         </li>
@@ -82,7 +82,7 @@
                                         <li>
                                             <input name="attachs[]" type="hidden" value="<?php echo $attach['id']; ?>" />
 
-                                            <a href="<?php echo download_url($attach['file_name'], base_url().$attach['attachment']); ?>"><em class="aw-icon i-upload-file"></em><?php echo $attach['file_name']; ?></a>
+                                            <a href="<?php echo download_url($attach['file_name'], $attach['attachment']); ?>"><em class="aw-icon i-upload-file"></em><?php echo $attach['file_name']; ?></a>
 
                                             <a class="btn btn-danger btn-sm" href="javascript:;" ><?php _e('删除'); ?></a>
                                         </li>
