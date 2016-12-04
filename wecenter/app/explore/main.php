@@ -157,7 +157,4 @@ class main extends AWS_CONTROLLER
 		TPL::output('explore/index');
 	}
 	
-	public function test_action() {
-		echo get_setting('upload_dir');
-	}
 }

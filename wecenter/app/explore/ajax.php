@@ -83,4 +83,9 @@ class ajax extends AWS_CONTROLLER
 			TPL::output('explore/ajax/list');
 		}
 	}
+
+	public function test_action() {
+		echo get_setting('upload_dir');
+	}
+	
 }
