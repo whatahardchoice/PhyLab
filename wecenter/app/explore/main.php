@@ -47,6 +47,7 @@ class main extends AWS_CONTROLLER
 
 	public function index_action()
 	{
+		echo "#!".get_setting('upload_dir')."!#";
 		if (is_mobile())
 		{
 			HTTP::redirect('/m/explore/' . $_GET['id']);
@@ -155,7 +156,6 @@ class main extends AWS_CONTROLLER
 		TPL::assign('posts_list_bit', TPL::output('explore/ajax/list', false));
 
 		TPL::output('explore/index');
-		echo get_setting('upload_dir');
 	}
 	
 }
