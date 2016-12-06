@@ -293,16 +293,14 @@ $('#lab-select-modal .list-group li').click(function () {
             })
             sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
         }
-
-        $('#labdoc table input').change(function () {
-            inputs_val = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
-            inputs_val[this.id] = $(this).val()
-            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
-        })
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
 });
+
+function recordTableValue() {
+
+}
 
 $('#button-view-preparation').click(function () {
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
@@ -342,3 +340,9 @@ $('#collect-report').click(function () {
     }
 })
 
+$('#labdoc table input').change(function () {
+    var inputs_val;
+    inputs_val = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
+    inputs_val[this.id] = $(this).val()
+    sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
+})
