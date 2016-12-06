@@ -271,8 +271,8 @@ $('#lab-select-modal .list-group li').click(function () {
     $('#lab-select-modal').modal('hide');
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
-    if ($.cookie(CUR_SUBLAB + '-table'))
-        $('#labdoc').html($.cookie('sublab' + CUR_SUBLAB));
+    if (sessionStorage.getItem(CUR_SUBLAB + '-table'))
+        $('#labdoc').html(sessionStorage.getItem('sublab' + CUR_SUBLAB));
     else {
         $.ajax('./table', {
             data: {'id': CUR_SUBLAB},
@@ -286,7 +286,7 @@ $('#lab-select-modal .list-group li').click(function () {
         });
     }
     $('#labdoc table input').change(function () {
-        $.cookie(CUR_SUBLAB + '-table', $('#labdoc').html());
+        sessionStorage.setItem(CUR_SUBLAB + '-table', $('#labdoc').html());
     })
 });
 
