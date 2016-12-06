@@ -42,10 +42,10 @@ def Inertia(m, d, T, l, T2, source):
     I.append(pow(T[2][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
     J.append(m[1] * (d[1] ** 2 + d[2] ** 2) * pow(10, -9) / 8)
     # 球转动惯量
-    I.append(pow(T[3][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
+    I.append(pow(T[3][-1], 2) * k / (4 * pow(pi, 2)))
     J.append(m[2] * pow(d[3], 2) * pow(10, -9) / 10)
     # 细杆转动惯量
-    I.append(pow(T[4][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
+    I.append(pow(T[4][-1], 2) * k / (4 * pow(pi, 2)))
     J.append(m[3] * pow(d[4], 2) * pow(10, -9) / 12)
     for i in range(2, 5):
         delta.append(abs(J[i] - I[i]) * 100 / J[i])  # 百分之多少
@@ -77,6 +77,7 @@ def Inertia(m, d, T, l, T2, source):
     # a1 = (J[3] + I1 + I2) * 4 * pi ** 2 / k
     # res = [r, b]
     phylab.RoundTwo(T, 2)
+    phylab.RoundOne(delta, 2)
     return env.from_string(source).render(
         m=m,
         d=d,
