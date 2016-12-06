@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <lab id="1070312">
+	<sublab id="10621" status="true">
 	<table name="10712_1" raw="5" column="4">
 		<tr index="1">
 			<td>16.18</td>
@@ -32,4 +33,11 @@
 			<td>177.55</td>
 		</tr>
 	</table>
+	<table name="10712_2">
+		<tr index="1">
+			<td>60.00</td>
+			<td>0.01</td>
+		</tr>
+	</table>
+	</sublab>
 </lab>

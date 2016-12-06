@@ -21,7 +21,7 @@ u_f_list = []  # 10 4 2 1
 
 average_f = 0
 u_f = 0
-result = []
+answer = []
 
 D_LIST_1 = []
 D_LIST_2 = []
@@ -40,8 +40,8 @@ def handler(sublab_root):
     xmlReader(sublab_root)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1060513.tex", "r")
-    latex = file_object.read().decode('utf-8', 'ignore')
+    # file_object = open(texdir + "/Handle1060513.tex", "r")
+    # latex = file_object.read().decode('utf-8', 'ignore')
     # return lexFiller(latex)
 
 
@@ -83,7 +83,7 @@ def niconiconi():
 
 def regulation():
     global d_list_1, d_list_2, average_d_list, d_list, f_list, u_f_list, average_f, u_f
-    global D_LIST_1, D_LIST_2, AVERAGE_D_LIST, D_LIST, F_LIST, U_F_LIST, AVERAGE_F, U_F, result
+    global D_LIST_1, D_LIST_2, AVERAGE_D_LIST, D_LIST, F_LIST, U_F_LIST, AVERAGE_F, U_F, answer
     for i in range(8):
         D_LIST_1.append(toScience(d_list_1[i]))
     for i in range(8):
@@ -97,8 +97,8 @@ def regulation():
     for i in range(4):
         U_F_LIST.append(toScience(u_f_list[i]))
     bitAdapt(average_f, u_f, 1, -3)
-    AVERAGE_F = result[0]
-    U_F = result[1]
+    AVERAGE_F = answer[0]
+    U_F = answer[1]
     pass
 
 
@@ -167,8 +167,8 @@ if __name__ == '__main__':
     for sublab in sublab_list:
         sublab_status = sublab.getAttribute("status")
         sublab_id = sublab.getAttribute("id")
-        if (sublab_status == 'true') & (sublab_id == '10622'):
+        if (sublab_status == 'true') & (sublab_id == '10621'):
             handler(sublab)
-    print(result)
+    print(answer)
     print(D_LIST)
     print(d_list)
