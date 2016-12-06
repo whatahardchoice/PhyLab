@@ -285,7 +285,7 @@ $('#lab-select-modal .list-group li').click(function () {
             $('#collect-report').attr("disabled", true);
             $('#labdoc').html(data);
 
-            var all_input_val;
+            var all_input_val = {};
             $('#labdoc table input').each(function () {
                 alert(this.id);
                 all_input_val[this.id] = $(this).val();
