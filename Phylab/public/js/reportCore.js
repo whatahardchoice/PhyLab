@@ -287,6 +287,7 @@ $('#lab-select-modal .list-group li').click(function () {
 
             var all_input_val;
             $('#labdoc table input').each(function () {
+                alert($(this).id);
                 all_input_val[$(this).id] = $(this).val();
             })
             sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(all_input_val));
