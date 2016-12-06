@@ -285,7 +285,7 @@ $('#lab-select-modal .list-group li').click(function () {
                 temp_inputs[this.id] = $(this).val();
             })
             sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(all_input_val));
-
+            alert('test0');
             $('#labdoc table input').change(function () {
                 alert('test');
                 var temp_inputs;
