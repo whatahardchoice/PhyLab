@@ -271,8 +271,11 @@ $('#lab-select-modal .list-group li').click(function () {
     $('#lab-select-modal').modal('hide');
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
-    if (sessionStorage.getItem(CUR_SUBLAB + '-table'))
-        $('#labdoc').html(sessionStorage.getItem(CUR_SUBLAB + '-table'));
+    if (sessionStorage.getItem(CUR_SUBLAB + '-table')) {
+        $('#button-view-preparation').removeAttr("disabled");
+        $('#button-generate-report').removeAttr("disabled");
+        $('#collect-report').attr("disabled", true);
+    }
     else {
         $.ajax('./table', {
             data: {'id': CUR_SUBLAB},
@@ -281,15 +284,23 @@ $('#lab-select-modal .list-group li').click(function () {
             $('#button-generate-report').removeAttr("disabled");
             $('#collect-report').attr("disabled", true);
             $('#labdoc').html(data);
+
+            var all_input_val;
+            for (var input_val of $('#labdoc table input'))
+                all_input_val[$(input_val).id] = $(input_val).val();
+            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(all_input_val));
+
+            $('#labdoc table input').change(function () {
+                alert('test');
+                var temp_inputs;
+                temp_inputs = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
+                temp_inputs[$(this).id] = $(this).val()
+                sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(temp_inputs));
+            })
         }).fail(function (xhr, status) {
             alert('失败: ' + xhr.status + ', 原因: ' + status);
         });
     }
-    
-    $('#labdoc table input').change(function () {
-        alert('test');
-        sessionStorage.setItem(CUR_SUBLAB + '-table', $('#labdoc').html());
-    })
 });
 
 $('#button-view-preparation').click(function () {
