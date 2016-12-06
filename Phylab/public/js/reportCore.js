@@ -1,7 +1,7 @@
 ﻿
 var labDoc3dot1415926;
-var CUR_LAB_GROUP;
-var CUR_SUBLAB;
+var CUR_LAB_GROUP = null;
+var CUR_SUBLAB = null;
 function lab(index){
   this.index = index;
   this.dbId = getDbId(index);
@@ -271,16 +271,20 @@ $('#lab-select-modal .list-group li').click(function () {
   $('#lab-select-modal').modal('hide');
   changePdf('prepare',CUR_LAB_GROUP + ".pdf");
   $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
-  $.ajax('./table', {
-    data: {'id': CUR_SUBLAB},
-  }).done(function (data) {
-    $('#button-view-preparation').removeAttr("disabled");
-    $('#button-generate-report').removeAttr("disabled");
-    $('#collect-report').attr("disabled", true);
-    $('#labdoc').html(data);
-  }).fail(function (xhr, status) {
-    alert('失败: ' + xhr.status + ', 原因: ' + status);
-  });
+  if ($.cookie(CUR_SUBLAB + '-table'))
+    $('#labdoc').html($.cookie('sublab' + CUR_SUBLAB));
+  else {
+      $.ajax('./table', {
+          data: {'id': CUR_SUBLAB},
+      }).done(function (data) {
+          $('#button-view-preparation').removeAttr("disabled");
+          $('#button-generate-report').removeAttr("disabled");
+          $('#collect-report').attr("disabled", true);
+          $('#labdoc').html(data);
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
+      });
+  }
 });
 
 $('#button-view-preparation').click(function () {
@@ -306,7 +310,6 @@ $('#button-generate-report').click(function () {
       }
       else
         errorFunction(jsonText["message"]);
-        errorFunction(jsonText["test"]);
     }
     else if(this.readyState==4 && this.status!=200)
       errorFunction("生成报告失败");
@@ -320,4 +323,8 @@ $('#collect-report').click(function () {
     else {
       createStar();
     }
+})
+
+$('#labdoc input').change(function () {
+    $.cookie('sublab' + CUR_SUBLAB, $('#labdoc').html())
 })

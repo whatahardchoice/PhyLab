@@ -530,6 +530,12 @@ function SetXMLDoc_lab(labnum){
                 "<td>"+document.getElementById('rb25').value+"</td>\n"+
                 "</tr>"+
                 "</table>\n"+
+                "<table name=\"10712_2\">"+
+                	"<tr index=\"1\">"+
+                		"<td>"+document.getElementById('1070312_A').value+"</td>"+
+                		"<td>"+document.getElementById('1070312_uA').value+"</td>"+
+                	"</tr>"+
+				"</table>"+
                 "</lab>";
             break;
 		
