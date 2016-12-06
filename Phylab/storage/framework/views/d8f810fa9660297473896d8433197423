@@ -146,7 +146,7 @@
             </div>
           </div>
           <div class="tab-pane panel-body active" role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;;text-align: center;">
-            <h1 style="margin: 65% 0;">未选择子实验</h1>
+            <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
         </div>
         <div class="labdoc-btns" >
