@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('contents'); ?>
-<div class="navbar-banner layout-no-margin-top">
+<div class="navbar-banner layout-no-margin-top" style="margin-top: -20px">
   <div class="banner-container">
     <div class="container">
       <div class="row">
@@ -196,7 +196,7 @@
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1090114 钠光劳埃镜干涉<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+                <div class="center">1090114 迈克尔逊干涉（必做）<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
               </div>
             </div>
           </a>

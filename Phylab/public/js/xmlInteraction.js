@@ -488,20 +488,16 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 					"<table name=\"10712_2\">"+
 						"<tr index=\"1\">"+
-<<<<<<< HEAD
 							"<td>"+document.getElementById('1070312_A').value+"</td>"+
 							"<td>"+document.getElementById('1070312_uA').value+"</td>"+
-=======
 							"<td>"+document.getElementById('1071_A').value+"</td>"+
 							"<td>"+document.getElementById('1071_uA').value+"</td>"+
->>>>>>> d864e4afe88b4b0a3dfe76d9d275a9bb5a4f98f7
 						"</tr>"+
 					"</table>"+
 				"</lab>";
 			break;
 
         case "1070322":
-<<<<<<< HEAD
             str +=
                 "<lab id=\"1070322\">\n"+
                 "<table name=\"10712_1\" raw=\"5\" column=\"4\">\n"+
@@ -544,7 +540,6 @@ function SetXMLDoc_lab(labnum){
 				"</table>"+
                 "</lab>";
             break;
-=======
             str +=	
 				"<lab id=\"1070322\">\n"+
 					"<table name=\"10712_1\" raw=\"5\" column=\"4\">\n"+
@@ -587,8 +582,7 @@ function SetXMLDoc_lab(labnum){
 					"</table>"+
 				"</lab>";
 			break;
->>>>>>> d864e4afe88b4b0a3dfe76d9d275a9bb5a4f98f7
-		
+
 		case "1090114":
 			str +=
 				"<lab id=\"1090114\">\n"+

@@ -224,6 +224,7 @@
   <script src="./js/test.js"></script>
   <script src="./js/statistics.js"></script>
   <script src="./js/reportCore.js"></script>
+  <script src="./js/jquery.cookie.js"></script>
   <script>
         check();
         $(document).ready(function(){

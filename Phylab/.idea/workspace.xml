@@ -25,10 +25,10 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="174" column="52" lean-forward="false" selection-start-line="174" selection-start-column="52" selection-end-line="174" selection-end-column="59" />
+            <state relative-caret-position="57">
+              <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
               <folding>
-                <marker date="1481039538254" expanded="false" signature="4061:4086" ph="..." />
+                <marker date="1481045773508" expanded="false" signature="4087:4112" ph="..." />
               </folding>
             </state>
           </provider>
@@ -44,21 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phylab.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="phylab.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+            <state relative-caret-position="684">
+              <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xmlInteraction.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="xmlInteraction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/xmlInteraction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10222">
-              <caret line="538" column="16" lean-forward="false" selection-start-line="538" selection-start-column="16" selection-end-line="538" selection-end-column="16" />
+            <state relative-caret-position="510">
+              <caret line="494" column="32" lean-forward="true" selection-start-line="494" selection-start-column="32" selection-end-line="494" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -107,14 +107,14 @@
         <option value="$PROJECT_DIR$/public/js/global.js" />
         <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/resources/views/star/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/xmlInteraction.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
         <option value="$PROJECT_DIR$/resources/views/report/1070312.html" />
         <option value="$PROJECT_DIR$/resources/views/report/1070322.html" />
         <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/reportCore.js" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/xmlInteraction.js" />
       </list>
     </option>
   </component>
@@ -550,12 +550,12 @@
       <workItem from="1480688944735" duration="3007000" />
       <workItem from="1481019022925" duration="17815000" />
       <workItem from="1481038374529" duration="5790000" />
-      <workItem from="1481045207191" duration="18000" />
+      <workItem from="1481045207191" duration="1015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67957000" />
+    <option name="totallyTimeSpent" value="68954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -894,28 +894,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/xmlInteraction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10222">
-          <caret line="538" column="16" lean-forward="false" selection-start-line="538" selection-start-column="16" selection-end-line="538" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="174" column="52" lean-forward="false" selection-start-line="174" selection-start-column="52" selection-end-line="174" selection-end-column="59" />
-          <folding>
-            <marker date="1481039538254" expanded="false" signature="4061:4086" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -928,10 +910,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <folding>
+            <marker date="1481045773508" expanded="false" signature="4087:4112" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+        <state relative-caret-position="684">
+          <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/xmlInteraction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="494" column="32" lean-forward="true" selection-start-line="494" selection-start-column="32" selection-end-line="494" selection-end-column="32" />
           <folding />
         </state>
       </provider>
