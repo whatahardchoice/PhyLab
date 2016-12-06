@@ -2,7 +2,7 @@
 @section('contents')
 
   <div id="lab-console" class="row" style="margin-top: 50px;background-color: rgb(228, 228, 228);" >
-    <div id="report-data" class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
+    <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
       <div id="lab-container" class="container" style="background-color: transparent;">
         <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;padding: 0;background-color: transparent;">
           <div class="nav nav-tabs row" role="tablist" style="border-radius: inherit;padding-top: 2px;padding-bottom: 2px;background-color: transparent;">
@@ -135,7 +135,7 @@
                         </h4>
                       </div>
                       <div class="panel-collapse collapse list-group" id="lab-1091-collapse" role="tabpanel" aria-labelledby="lab-1091-heading">
-                        <li class="list-group-item btn" id="lab-1090114">1090114 钠光劳埃镜干涉</li>
+                        <li class="list-group-item btn" id="lab-1090114">1090114 迈克尔逊干涉（必做）</li>
                         <!--li class="list-group-item btn" id="lab-1090212">1090212 牛顿环干涉</li>
                         <li class="list-group-item btn" id="lab-1090312">1090312 劈尖干涉</li-->
                       </div>
@@ -159,12 +159,12 @@
         </div>
       </div>
     </div>
-    <div id="doc" class="col-xs-12 col-md-9" style="padding-left: 1px;;margin-top: 20px;margin-bottom: 30px">
+    <div id="doc" class="col-xs-12 col-md-8" style="padding-left: 1px;;margin-top: 20px;margin-bottom: 30px">
       <div class="panel-group" id="lab-report" style="margin-right: 15px;">
         <div class="panel panel-default pannel-autoscroll">
           <div class="panel-heading"  style="border: solid;border-width: 0px;height: 40px;">
             <div class="panel-title row">
-              <div class="btn-group col-xs-12 col-md-3">
+              <div class="btn-group col-xs-12 col-md-5">
                 <button id="collection" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px 0 0 4px;">
                   <i class="fa fa-folder"></i>
                   收藏夹
@@ -185,7 +185,7 @@
                 </div>
                 <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;"><span class="sr-only">y</span><i class="fa fa-bookmark-o"></i>收藏此报告</button>
               </div>
-              <div class="col-md-1 col-md-offset-2 hidden-xs">
+              <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
                   <span id="lab-status" class="badge">物理实验选择策略</span>
                 </h4>

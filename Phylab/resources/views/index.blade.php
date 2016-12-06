@@ -196,7 +196,7 @@
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1090114 钠光劳埃镜干涉<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+                <div class="center">1090114 迈克尔逊干涉（必做）<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
               </div>
             </div>
           </a>
