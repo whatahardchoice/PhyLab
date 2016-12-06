@@ -279,27 +279,25 @@ $('#lab-select-modal .list-group li').click(function () {
         $('#collect-report').attr("disabled", true);
         $('#labdoc').html(data);
 
-        if (sessionStorage.getItem(CUR_SUBLAB + '-table')) {
-            var temp_inputs;
-            temp_inputs = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
+        var inputs_val = sessionStorage.getItem(CUR_SUBLAB + '-table');
+        if (inputs_val) {
+            inputs_val = JSON.parse(inputs_val);
             $('#labdoc table input').each(function () {
-                 $(this).val(temp_inputs[this.id]);
+                 $(this).val(inputs_val[this.id]);
             })
         }
         else {
-            var temp_inputs = {};
+            inputs_val = {};
             $('#labdoc table input').each(function () {
-                temp_inputs[this.id] = $(this).val();
+                inputs_val[this.id] = $(this).val();
             })
-            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(temp_inputs));
+            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
         }
 
         $('#labdoc table input').change(function () {
-            alert('test');
-            var temp_inputs;
-            temp_inputs = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
-            temp_inputs[this.id] = $(this).val()
-            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(temp_inputs));
+            inputs_val = JSON.parse(sessionStorage.getItem(CUR_SUBLAB + '-table'));
+            inputs_val[this.id] = $(this).val()
+            sessionStorage.setItem(CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
         })
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
