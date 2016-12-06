@@ -285,7 +285,8 @@ $('#lab-select-modal .list-group li').click(function () {
             alert('失败: ' + xhr.status + ', 原因: ' + status);
         });
     }
-    $('#labdoc table input').focus(function () {
+    $('#labdoc table input').change(function () {
+        alert('test');
         sessionStorage.setItem(CUR_SUBLAB + '-table', $('#labdoc').html());
     })
 });
