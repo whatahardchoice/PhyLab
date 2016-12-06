@@ -337,7 +337,7 @@
 										<div class="aw-upload-img-list">
 										<?php foreach ($val['attachs'] AS $attach) { ?>
 										<?php if ($attach['is_image'] AND (!$val['insert_attach_ids'] OR !in_array($attach['id'], $val['insert_attach_ids']))) { ?>
-											<a href="<?php echo $attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="<?php echo $attach['attachment']; ?>" class="img-thumbnail" alt="<?php echo $attach['attach_name']; ?>" /></a>
+											<a href="<?php echo $attach['attachment']; ?>" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="base<?php echo $attach['attachment']; ?>" class="img-thumbnail" alt="<?php echo $attach['attach_name']; ?>" /></a>
 										<?php } ?>
 										<?php } ?>
 										</div>

@@ -156,4 +156,5 @@ class main extends AWS_CONTROLLER
 
 		TPL::output('explore/index');
 	}
+	
 }

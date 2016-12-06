@@ -83,4 +83,5 @@ class ajax extends AWS_CONTROLLER
 			TPL::output('explore/ajax/list');
 		}
 	}
+	
 }
