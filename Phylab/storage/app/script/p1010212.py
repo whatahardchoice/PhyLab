@@ -37,21 +37,17 @@ def Inertia(m, d, T, l, T2, source):
     I.append(temp)
     J.append(temp)
     k = 4 * pow(pi, 2) * temp / (pow(T[1][-1], 2) - pow(T[0][-1], 2))
+    I[0] = pow(T[0][-1], 2) * k / (4 * pow(pi, 2))
+    # 圆筒转动惯量
+    I.append(pow(T[2][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
+    J.append(m[1] * (d[1] ** 2 + d[2] ** 2) * pow(10, -9) / 8)
+    # 球转动惯量
+    I.append(pow(T[3][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
+    J.append(m[2] * pow(d[3], 2) * pow(10, -9) / 10)
+    # 细杆转动惯量
+    I.append(pow(T[4][-1], 2) * k / (4 * pow(pi, 2)) - I[0])
+    J.append(m[3] * pow(d[4], 2) * pow(10, -9) / 12)
     for i in range(2, 5):
-        # 圆筒转动惯量
-        if i == 1:
-            temp1 = (pow(T[2][-1], 2) - pow(T[0][-1], 2)) * k / (4 * pow(pi, 2))
-            temp2 = m[1] * (d[1] ** 2 + d[2] ** 2) * pow(10, -9) / 8
-        # 球转动惯量
-        elif i == 2:
-            temp1 = pow(T[3][-1], 2) * k / (4 * pow(pi, 2))
-            temp2 = m[2] * pow(d[3], 2) * pow(10, -9) / 10
-        # 细杆转动惯量
-        else:
-            temp1 = pow(T[4][-1], 2) * k / (4 * pow(pi, 2))
-            temp2 = m[3] * pow(d[4], 2) * pow(10, -9) / 12
-        I.append(temp1)
-        J.append(temp2)
         delta.append(abs(J[i] - I[i]) * 100 / J[i])  # 百分之多少
 
     # # 验证平行轴定理
