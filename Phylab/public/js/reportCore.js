@@ -36,6 +36,9 @@ function check(){
   $('#lab_collapse').collapse({
     toggle: false
   })
+  $('#button-view-preparation').attr("disabled", true);
+  $('#button-generate-report').attr("disabled", true);
+  $('#collect-report').attr("disabled", true);
 }
 function eleDisable(){
   SetDisable('importBtn',true);
@@ -274,14 +277,17 @@ $('#lab-select-modal .list-group li').click(function () {
     $('#button-view-preparation').removeAttr("disabled");
     $('#button-generate-report').removeAttr("disabled");
     $('#labdoc').html(data);
+    $('#collect-report').attr("disabled", true);
   }).fail(function (xhr, status) {
     alert('失败: ' + xhr.status + ', 原因: ' + status);
   });
 });
+
 $('#button-view-preparation').click(function () {
   changePdf('prepare',CUR_LAB_GROUP + ".pdf");
   $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 });
+
 $('#button-generate-report').click(function () {
   var xmlString = SetXMLDoc_lab(CUR_SUBLAB);
   if (xmlString === null)
@@ -295,6 +301,8 @@ $('#button-generate-report').click(function () {
       if(jsonText["status"]=='success') {
         changePdf('tmp',jsonText['link']);
         $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+        $('#collect-report').attr('link',jsonText['link']);
+        $('#collect-report').removeAttr("disabled");
       }
       else
         errorFunction(jsonText["message"]);
@@ -304,3 +312,12 @@ $('#button-generate-report').click(function () {
       errorFunction("生成报告失败");
   });
 });
+
+$('#collect-report').click(function () {
+    if($(this).children('.sr-only').text()=='y'){
+      deleteReportStar();
+    }
+    else {
+      createStar();
+    }
+})

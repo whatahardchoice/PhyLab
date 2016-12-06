@@ -80,27 +80,6 @@
 #lab-console #lab-container .tab-content .tab-pane {
   height: 94%;
 }
-#lab-console .nav-tabs .dropdown-menu {
-  background-color: rgb(8, 192, 147);
-  margin-top: 4px;
-  border-radius: 10px;
-}
-#lab-console .nav-tabs .dropdown-menu li, #lab-console .nav-tabs .dropdown-menu li:first-child {
-  width: auto;
-  text-align: left;
-}
-#lab-console .nav-tabs .dropdown-menu li a, #lab-console .nav-tabs .dropdown-menu li:first-child a{
-  display: block;
-  padding: 4px;
-  font-size: 14px;
-}
-#lab-console .nav-tabs .dropdown-menu li a:hover{
-  text-decoration: none;
-  background-color: RGBA(0, 0, 0, 0.3);
-  border: 1px;
-  border-radius: 10px;
-  border-color: rgb(8, 192, 147);
-}
 .lab-name-list {
   display: none;
 }
@@ -119,6 +98,16 @@ td input.form-control {
 }
 #lab-select-modal .panel-group .panel-heading h4 div{
   padding: 10px 15px;
+}
+#lab-report .panel-title .btn {
+  color: white;
+  background-color: #08c093;
+  position: relative;
+  top: -5px;
+}
+#report-num {
+  left: 5px;
+  background-color: rgb(25, 30, 41);
 }
 #chrom_pdf object {
   width:100%;

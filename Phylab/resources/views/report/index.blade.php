@@ -162,11 +162,34 @@
     <div id="doc" class="col-xs-12 col-md-9" style="padding-left: 1px;;margin-top: 20px;margin-bottom: 30px">
       <div class="panel-group" id="lab-report" style="margin-right: 15px;">
         <div class="panel panel-default pannel-autoscroll">
-          <div class="panel-heading"  style="border: solid;border-width: 0px;">
-            <div class="panel-title">
-              <h4 class="panel-title text-center">
-                <span id="lab-status" class="badge">物理实验选择策略</span>
-              </h4>
+          <div class="panel-heading"  style="border: solid;border-width: 0px;height: 40px;">
+            <div class="panel-title row">
+              <div class="btn-group col-xs-12 col-md-3">
+                <button id="collection" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px 0 0 4px;">
+                  <i class="fa fa-folder"></i>
+                  收藏夹
+                  <span id="report-num" class="badge">4</span>
+                </button>
+                <div class="modal fade" id="collection-folder" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
+                      </div>
+                      <div class="modal-body" style="width: auto;height: auto;">
+                        <iframe id="collect-iframe" src="http://buaaphylab.com/user/star" style="width:100%;height:75%" frameborder="0"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;"><span class="sr-only">y</span><i class="fa fa-bookmark-o"></i>收藏此报告</button>
+              </div>
+              <div class="col-md-1 col-md-offset-2 hidden-xs">
+                <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
+                  <span id="lab-status" class="badge">物理实验选择策略</span>
+                </h4>
+              </div>
             </div>
           </div>
           <div class="panel-body" style="padding:5px;">

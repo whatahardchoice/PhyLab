@@ -29,13 +29,14 @@ from numpy import cos
 from numpy import pi
 from numpy import sin
 from handler import texdir
+from handler import scriptdir
 
 # 输入数据
 angle_a1 = []
 angle_a2 = []
 angle_b1 = []
 angle_b2 = []
-angle_A = 60
+angle_A = 0
 u_A = 0
 # 数据处理得到数据
 k = 0
@@ -83,8 +84,6 @@ def handler(xml):
 def niconiconi():
     global angle_a1, angle_a2, angle_b1, angle_b2, angle_A, u_A, \
         k, angle_delta, average_delta_a, average_delta_r, n1, ua_delta_a, ua_delta_r, u_delta, u_n1, re_u
-    angle_A = 60  # assumption
-    u_A = 0  # assumption
     angle_A_r = angle_A * pi / 180
     u_A_r = u_A * pi / 180
     k = len(angle_a1)
@@ -108,16 +107,22 @@ def niconiconi():
 
 
 def xmlReader(sublab_root):
-    global angle_a1, angle_a2, angle_b1, angle_b2
+    global angle_a1, angle_a2, angle_b1, angle_b2, angle_A, u_A
     sublab_table_list = sublab_root.getElementsByTagName("table")
-    for table in sublab_table_list:
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            tr_td_list = tr.getElementsByTagName("td")
-            angle_a1.append(angleTransfer(float(tr_td_list[0].firstChild.nodeValue)))
-            angle_b1.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
-            angle_a2.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
-            angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
+    table = sublab_table_list[0]
+    table_tr_list = table.getElementsByTagName("tr")
+    for tr in table_tr_list:
+        tr_td_list = tr.getElementsByTagName("td")
+        angle_a1.append(angleTransfer(float(tr_td_list[0].firstChild.nodeValue)))
+        angle_b1.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
+        angle_a2.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
+        angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
+    table_2 = sublab_table_list[1]
+    tr_list = table_2.getElementsByTagName("tr")
+    tr = tr_list[0]
+    td_list = tr.getElementsByTagName("td")
+    angle_A = float(td_list[0].firstChild.nodeValue)
+    u_A = float(td_list[1].firstChild.nodeValue)
 
 
 def lexFiller(source):
@@ -229,35 +234,9 @@ def angleTransfer(raw):
 
 
 if __name__ == '__main__':
-    def ReadXmlTop():
-        latex_head_file = open('./Head.tex', 'r')
-        latex_head = latex_head_file.read().decode('utf-8', 'ignore')
-        latex_tail = "\n\\end{document}"
-        latex_body = ""
-        dom = xml.dom.minidom.parse('./1070312test/1071.xml')
-        root = dom.documentElement
-        sublab_list = root.getElementsByTagName('sublab')
-        for sublab in sublab_list:
-            sublab_status = sublab.getAttribute("status")
-            sublab_id = sublab.getAttribute("id")
-            if (sublab_status == 'true') & (sublab_id == '10712'):
-                latex_body += handler(sublab)
-        return latex_head + latex_body + latex_tail
-
-
-    fileTex = open('./1070312test/1070312test.tex', 'w')
-    text = ReadXmlTop().encode('utf-8')
-    fileTex.write(text)
-    fileTex.close()
-    print "Raw data:"
-    print angle_a1
-    print angle_a2
-    print angle_b1
-    print angle_b2
-    print "delta:"
-    print angle_delta
-    print "average_delta: ", average_delta_a
-    print "n1: ", n1
-    print "u_delta: ", u_delta
-    print "u_n1; ", u_n1
-    print "answer(n1, u_n1, mi): ", answer
+    dom = xml.dom.minidom.parse(scriptdir + 'test/1070312test/1070312.xml')
+    root = dom.documentElement
+    sublab_list = root.getElementsByTagName('sublab')
+    for sublab in sublab_list:
+        handler(sublab)
+    print(answer)

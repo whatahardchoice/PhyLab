@@ -3,20 +3,21 @@ function errorAlert(xmessage){
     message = message==null ? "未知错误,该收藏可能已被删除":message;
     alert("操作失败："+message);
 }
-function createStar(ico,txt){
+function createStar(){
     var url="/user/star";
-    var postData = "link="+encodeURI($('#collectBtn').attr('link'))+"&reportId="+labDoc3dot1415926.getDbId();
+    var postData = "link="+encodeURI($('#collect-report').attr('link'))+"&reportId="+CUR_SUBLAB;
     PostAjax(url,postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                $('#collectBtn').attr('dbid',jsonText['id']);
-                ico.setAttribute("class","glyphicon glyphicon-star");
-                txt.innerHTML = "取消收藏";
+                $('#collect-report').attr('dbid',jsonText['id']);
+                $('#collect-report i').attr("class","fa fa-bookmark");
+                $('#collect-report').text('取消收藏');
+                $('#collect-report .sr-only').text("n");
                 alert("已添加至个人收藏夹！");
-                document.getElementById('starIframe').contentWindow.location.reload(true);
+                $('#collect-iframe').contentWindow.location.reload(true);
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -27,19 +28,20 @@ function createStar(ico,txt){
         }
     });
 }
-function deleteReportStar(ico,txt){
+function deleteReportStar(){
     var url="/user/star";
-    var postData = "_method=DELETE&id="+encodeURI($('#collectBtn').attr('dbid'));
+    var postData = "_method=DELETE&id="+encodeURI($('#collect-report').attr('dbid'));
     PostAjax(url,postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                ico.setAttribute("class","glyphicon glyphicon-star-empty");
-                txt.innerHTML = "收藏";
-                alert("已取消收藏");
-                document.getElementById('starIframe').contentWindow.location.reload(true);
+                $('#collect-report i').attr('clas','fa fa-bookmark-o');
+                $('#collect-report').text('收藏此报告');
+                $('#collect-report .sr-only').text("y");
+                alert("已取消收藏！");
+                $('#collect-iframe').contentWindow.location.reload(true);
             }
             else{
                 errorAlert(jsonText["message"]);
