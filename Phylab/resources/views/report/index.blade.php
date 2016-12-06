@@ -230,6 +230,9 @@
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
+        $('#labdoc table input').change(function () {
+            $.cookie(CUR_SUBLAB + '-table', $('#labdoc').html())
+        })
   </script>
 </body>
 </html>

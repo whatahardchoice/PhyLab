@@ -324,7 +324,3 @@ $('#collect-report').click(function () {
       createStar();
     }
 })
-
-$('#labdoc input').change(function () {
-    $.cookie('sublab' + CUR_SUBLAB, $('#labdoc').html())
-})
