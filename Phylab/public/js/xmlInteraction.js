@@ -64,11 +64,11 @@ function SetXMLDoc_lab(labnum){
 						"<tr index=\"2\">\n"+
 							"<td>"+document.getElementById('1011_2_chicunyuanzhu').value+"</td>\n"+
 							"<td>"+document.getElementById('1011_2_wchicunmyuantong').value+"</td>\n"+
+							"<td>"+document.getElementById('1011_2_nchicunyuantong').value+"</td>\n"+
 							"<td>"+document.getElementById('1011_2_chicunqiu').value+"</td>\n"+
 							"<td>"+document.getElementById('1011_2_chicunxigan').value+"</td>\n"+
 						"</tr>\n"+
 						"<tr index=\"3\">\n"+
-							"<td>"+document.getElementById('1011_2_nchicunyuantong').value+"</td>\n"+
 						"</tr>\n"+
 					"</table>\n"+
 					"<table name=\"10112_2\" raw=\"5\" column=\"5\">\n"+

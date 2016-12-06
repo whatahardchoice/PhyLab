@@ -1,0 +1,54 @@
+<lab id="1010212">
+	<table name="10112_1" raw="3" column="4">
+		<tr index="1">
+			<td>711.71</td>
+			<td>697.76</td>
+			<td>1242.40</td>
+			<td>131.50</td>
+		</tr>
+		<tr index="2">
+			<td>99.95</td>
+			<td>99.95</td>
+			<td>93.85</td>
+			<td>114.60</td>
+			<td>610.00</td>
+		</tr>
+	</table>
+	<table name="10112_2" raw="5" column="5">
+		<tr index="1">
+			<td>13.07</td>
+			<td>13.07</td>
+			<td>13.07</td>
+			<td>13.07</td>
+			<td>13.06</td>
+		</tr>
+		<tr index="2">
+			<td>16.86</td>
+			<td>16.86</td>
+			<td>16.88</td>
+			<td>16.87</td>
+			<td>16.88</td>
+		</tr>
+		<tr index="3">
+			<td>21.79</td>
+			<td>21.82</td>
+			<td>21.83</td>
+			<td>21.84</td>
+			<td>21.84</td>
+		</tr>
+		<tr index="4">
+			<td>27.28</td>
+			<td>27.28</td>
+			<td>27.29</td>
+			<td>27.27</td>
+			<td>27.27</td>
+		</tr>
+		<tr index="5">
+			<td>32.96</td>
+			<td>32.96</td>
+			<td>32.96</td>
+			<td>32.97</td>
+			<td>32.96</td>
+		</tr>
+	</table>
+</lab>
