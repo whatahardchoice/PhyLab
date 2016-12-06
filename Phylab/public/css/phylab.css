@@ -77,6 +77,9 @@
 #lab-console #lab-container {
   width: 100%;
 }
+#lab-console #lab-container .tab-content .tab-pane {
+  height: 94%;
+}
 #lab-console .nav-tabs .dropdown-menu {
   background-color: rgb(8, 192, 147);
   margin-top: 4px;
@@ -106,6 +109,21 @@ td input {
 }
 td input.form-control {
   padding: 2px 4px;
+}
+#lab-select-modal .panel-group .panel-heading {
+  width: 100%;
+  color: white;
+  background-color: #08c093;
+  border-radius: 4px;
+  padding: 0;
+}
+#lab-select-modal .panel-group .panel-heading h4 div{
+  padding: 10px 15px;
+}
+#chrom_pdf object {
+  width:100%;
+  height:100%;
+  min-height:780px;
 }
 /*登录页CSS*/
 #auto-login {

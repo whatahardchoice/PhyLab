@@ -488,6 +488,44 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 				"</lab>";
 			break;
+
+        case "1070322":
+            str +=
+                "<lab id=\"1070322\">\n"+
+                "<table name=\"10712_1\" raw=\"5\" column=\"4\">\n"+
+                "<tr index=\"1\">\n"+
+                "<td>"+document.getElementById('ra11').value+"</td>\n"+
+                "<td>"+document.getElementById('rb11').value+"</td>\n"+
+                "<td>"+document.getElementById('ra21').value+"</td>\n"+
+                "<td>"+document.getElementById('rb21').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"2\">\n"+
+                "<td>"+document.getElementById('ra12').value+"</td>\n"+
+                "<td>"+document.getElementById('rb12').value+"</td>\n"+
+                "<td>"+document.getElementById('ra22').value+"</td>\n"+
+                "<td>"+document.getElementById('rb22').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"3\">\n"+
+                "<td>"+document.getElementById('ra13').value+"</td>\n"+
+                "<td>"+document.getElementById('rb13').value+"</td>\n"+
+                "<td>"+document.getElementById('ra23').value+"</td>\n"+
+                "<td>"+document.getElementById('rb23').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"4\">\n"+
+                "<td>"+document.getElementById('ra14').value+"</td>\n"+
+                "<td>"+document.getElementById('rb14').value+"</td>\n"+
+                "<td>"+document.getElementById('ra24').value+"</td>\n"+
+                "<td>"+document.getElementById('rb24').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"5\">\n"+
+                "<td>"+document.getElementById('ra15').value+"</td>\n"+
+                "<td>"+document.getElementById('rb15').value+"</td>\n"+
+                "<td>"+document.getElementById('ra25').value+"</td>\n"+
+                "<td>"+document.getElementById('rb25').value+"</td>\n"+
+                "</tr>"+
+                "</table>\n"+
+                "</lab>";
+            break;
 		
 		case "1090114":
 			str +=
@@ -797,6 +835,66 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 				"</lab>";
 			break;
+
+        case "1080124":
+            str +=
+                "<lab id=\"1080124\">\n"+
+                "<table name=\"10811_1\" raw=\"1\" column=\"5\">\n"+
+                "<tr index=\"1\">\n"+
+                "<td>"+document.getElementById('1081_kuoshu').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_shuangleng').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_guangyuan').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_xiaoxiang').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_daxiang').value+"</td>\n"+
+                "</tr>\n"+
+                "</table>\n"+
+                "<table name=\"10811_2\" raw=\"2\" column=\"4\">\n"+
+                "<tr index=\"1\">\n"+
+                "<td>"+document.getElementById('1081_dzuo1').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_dyou1').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_dzuo2').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_dyou2').value+"</td>\n"+
+                "</tr>\n"+
+                "<tr index=\"2\">\n"+
+                "<td>"+document.getElementById('1081_xzuo1').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_xyou1').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_xzuo2').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_xyou2').value+"</td>\n"+
+                "</tr>\n"+
+                "</table>\n"+
+                "<table name=\"10811_3\" raw=\"4\" column=\"5\">\n"+
+                "<tr index=\"1\">\n"+
+                "<td>"+document.getElementById('1081_x1').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x2').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x3').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x4').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x5').value+"</td>\n"+
+                "</tr>\n"+
+                "<tr index=\"2\">\n"+
+                "<td>"+document.getElementById('1081_x6').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x7').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x8').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x9').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x10').value+"</td>\n"+
+                "</tr>\n"+
+                "<tr index=\"3\">\n"+
+                "<td>"+document.getElementById('1081_x11').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x12').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x13').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x14').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x15').value+"</td>\n"+
+                "</tr>\n"+
+                "<tr index=\"4\">\n"+
+                "<td>"+document.getElementById('1081_x16').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x17').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x18').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x19').value+"</td>\n"+
+                "<td>"+document.getElementById('1081_x20').value+"</td>\n"+
+                "</tr>\n"+
+                "</table>\n"+
+                "</lab>";
+            break;
+
 		case "1080215":
 			str +=
 				"<lab id=\"1080215\">\n"+

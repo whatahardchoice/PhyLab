@@ -1,5 +1,5 @@
-﻿@extends('layout.main')
-@section('contents')
+﻿
+<?php $__env->startSection('contents'); ?>
 
   <div id="lab-console" class="row" style="margin-top: 50px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-3"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
@@ -206,4 +206,5 @@
   </script>
 </body>
 </html>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
