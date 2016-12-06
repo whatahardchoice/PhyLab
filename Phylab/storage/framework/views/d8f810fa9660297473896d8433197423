@@ -50,11 +50,11 @@
                       </div>
                       <div class="panel-collapse collapse list-group" id="lab-1021-collapse" role="tabpanel" aria-labelledby="lab-1021-heading">
                         <li class="list-group-item btn" id="lab-1020113">1020113 测量冰的溶解热实验</li>
-                        <li class="list-group-item btn" id="lab-1020212">1020212 电热法测量焦耳热功当量实验</li>
+                        <!--li class="list-group-item btn" id="lab-1020212">1020212 电热法测量焦耳热功当量实验</li-->
                       </div>
                     </div>
 
-                    <div class="panel panel-default" id="lab-group-1031">
+                    <!--div class="panel panel-default" id="lab-group-1031">
                       <div class="panel-heading btn" id="lab-1031-heading" role="tab">
                         <h4 class="panel-title">
                           <div data-toggle="collapse" data-parent="#accordion" href="#lab-1031-collapse" aria-expanded="false" aria-controls="lab-1031-collapse">
@@ -65,7 +65,7 @@
                       <div class="panel-collapse collapse list-group" id="lab-1031-collapse" role="tabpanel" aria-labelledby="lab-1031-heading">
                         <li class="list-group-item btn" id="lab-1030113">1030113 模拟示波器的使用（必做）</li>
                       </div>
-                    </div>
+                    </div-->
 
                     <div class="panel panel-default" id="lab-group-1061">
                       <div class="panel-heading btn" id="lab-1061-heading" role="tab">
@@ -78,8 +78,8 @@
                       <div class="panel-collapse collapse list-group" id="lab-1061-collapse" role="tabpanel" aria-labelledby="lab-1061-heading">
                         <li class="list-group-item btn" id="lab-1060111">1060111 物距像距法测量透镜焦距</li>
                         <li class="list-group-item btn" id="lab-1060213">1060213 自准直法测量透镜焦距</li>
-                        <li class="list-group-item btn" id="lab-1060312">1060312 共轭法测量凸透镜焦距</li>
-                        <li class="list-group-item btn" id="lab-1060412">1060412 单球面镜焦距的测量</li>
+                        <!--li class="list-group-item btn" id="lab-1060312">1060312 共轭法测量凸透镜焦距</li>
+                        <li class="list-group-item btn" id="lab-1060412">1060412 单球面镜焦距的测量</li-->
                       </div>
                     </div>
 
@@ -94,6 +94,7 @@
                       <div class="panel-collapse collapse list-group" id="lab-1071-collapse" role="tabpanel" aria-labelledby="lab-1071-heading">
                         <li class="list-group-item btn" id="lab-1070212">1070212 测量三棱镜的顶角（必选）</li>
                         <li class="list-group-item btn" id="lab-1070312">1070312 最小偏向角法测量棱镜的折射率</li>
+                        <li class="list-group-item btn" id="lab-1070322">1070322 掠入射法测量棱镜的折射率</li>
                       </div>
                     </div>
 
@@ -107,6 +108,7 @@
                       </div>
                       <div class="panel-collapse collapse list-group" id="lab-1081-collapse" role="tabpanel" aria-labelledby="lab-1081-heading">
                         <li class="list-group-item btn" id="lab-1080114">1080114 激光双棱镜干涉</li>
+                        <li class="list-group-item btn" id="lab-1080124">1080124 激光劳埃镜干涉</li>
                       </div>
                     </div>
 
@@ -134,8 +136,8 @@
                       </div>
                       <div class="panel-collapse collapse list-group" id="lab-1091-collapse" role="tabpanel" aria-labelledby="lab-1091-heading">
                         <li class="list-group-item btn" id="lab-1090114">1090114 钠光劳埃镜干涉</li>
-                        <li class="list-group-item btn" id="lab-1090212">1090212 牛顿环干涉</li>
-                        <li class="list-group-item btn" id="lab-1090312">1090312 劈尖干涉</li>
+                        <!--li class="list-group-item btn" id="lab-1090212">1090212 牛顿环干涉</li>
+                        <li class="list-group-item btn" id="lab-1090312">1090312 劈尖干涉</li-->
                       </div>
                     </div>
                   </div>

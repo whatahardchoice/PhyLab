@@ -84,16 +84,16 @@
               <div class="col-xs-7 col-sm-8">
                 <div class="path-name"><h4>1021</h4>热学系列实验</div>
                 <div class="path-course-num">
-                  2 个子实验
+                  1 个子实验
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1020113 测量冰的溶解热实验<br/>1020212 电热法测量焦耳热功当量实验</div>
+                <div class="center">1020113 测量冰的溶解热实验<!--br/>1020212 电热法测量焦耳热功当量实验--></div>
               </div>
             </div>
           </a>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <!--div class="col-xs-12 col-sm-6 col-md-4">
           <a href="{{URL::route('report')}}">
             <div class="path-item">
               <div class="col-xs-5 col-sm-4 path-img">
@@ -102,15 +102,15 @@
               <div class="col-xs-7 col-sm-8">
                 <div class="path-name"><h4>1031</h4>示波器的应用</div>
                 <div class="path-course-num">
-                  1 个子实验
+                  0 个子实验
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1030113 模拟示波器的使用（必做）</div>
+                <div class="center"><1030113 模拟示波器的使用（必做）></div>
               </div>
             </div>
           </a>
-        </div>
+        </div-->
         <div class="col-xs-12 col-sm-6 col-md-4">
           <a href="{{URL::route('report')}}">
             <div class="path-item">
@@ -120,11 +120,11 @@
               <div class="col-xs-7 col-sm-8">
                 <div class="path-name"><h4>1061</h4>薄透镜和单球面镜焦距的测量</div>
                 <div class="path-course-num">
-                  4 个子实验
+                  2 个子实验
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1060111 物距像距法测量透镜焦距<br/>1060213 自准直法测量透镜焦距<br/>1060312 共轭法测量凸透镜焦距<br/>1060412 单球面镜焦距的测量</div>
+                <div class="center">1060111 物距像距法测量透镜焦距<br/>1060213 自准直法测量透镜焦距<!--br/>1060312 共轭法测量凸透镜焦距<br/>1060412 单球面镜焦距的测量--></div>
               </div>
             </div>
           </a>
@@ -138,11 +138,11 @@
               <div class="col-xs-7 col-sm-8">
                 <div class="path-name"><h4>1071</h4>分光仪的调整及其应用</div>
                 <div class="path-course-num">
-                  2 个子实验
+                  3 个子实验
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1070212 测量三棱镜的顶角（必选）<br/>1070312 最小偏向角法测量棱镜的折射率</div>
+                <div class="center">1070212 测量三棱镜的顶角（必选）<br/>1070312 最小偏向角法测量棱镜的折射率1070322<br/>掠入射法测量棱镜的折射率</div>
               </div>
             </div>
           </a>
@@ -160,7 +160,7 @@
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1080114 激光双棱镜干涉</div>
+                <div class="center">1080114 激光双棱镜干涉<br/>1080124 激光劳埃镜干涉</div>
               </div>
             </div>
           </a>
@@ -192,11 +192,11 @@
               <div class="col-xs-7 col-sm-8">
                 <div class="path-name"><h4>1091</h4>光的干涉实验II（分振幅法）</div>
                 <div class="path-course-num">
-                  3 个子实验
+                  1 个子实验
                 </div>
               </div>
               <div class="desc-layer">
-                <div class="center">1090114 钠光劳埃镜干涉<br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉</div>
+                <div class="center">1090114 钠光劳埃镜干涉<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
               </div>
             </div>
           </a>
