@@ -277,6 +277,7 @@ $('#lab-select-modal .list-group li').click(function () {
     $('#button-view-preparation').removeAttr("disabled");
     $('#button-generate-report').removeAttr("disabled");
     $('#labdoc').html(data);
+    $('#collect-report').attr("disabled", true);
   }).fail(function (xhr, status) {
     alert('失败: ' + xhr.status + ', 原因: ' + status);
   });

@@ -12,7 +12,7 @@ function createStar(){
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                $('#collectBtn').attr('dbid',jsonText['id']);
+                $('#collect-report').attr('dbid',jsonText['id']);
                 $('#collect-report i').attr("class","fa fa-bookmark");
                 $('#collect-report').text('取消收藏');
                 $('#collect-report .sr-only').text("n");
