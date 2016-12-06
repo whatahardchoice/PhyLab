@@ -33,7 +33,7 @@ from handler import texdir
 
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
-angle_A = 60
+angle_A = 0
 u_A = 0
 angle_a1 = []
 angle_a2 = []
@@ -136,16 +136,22 @@ def regulation():
 
 
 def xmlReader(sublab_root):
-    global angle_a1, angle_a2, angle_b1, angle_b2
+    global angle_a1, angle_a2, angle_b1, angle_b2, angle_A, u_A
     sublab_table_list = sublab_root.getElementsByTagName("table")
-    for table in sublab_table_list:
-        table_tr_list = table.getElementsByTagName("tr")
-        for tr in table_tr_list:
-            tr_td_list = tr.getElementsByTagName("td")
-            angle_a1.append(angleTransfer(float(tr_td_list[0].firstChild.nodeValue)))
-            angle_b1.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
-            angle_a2.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
-            angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
+    table = sublab_table_list[0]
+    table_tr_list = table.getElementsByTagName("tr")
+    for tr in table_tr_list:
+        tr_td_list = tr.getElementsByTagName("td")
+        angle_a1.append(angleTransfer(float(tr_td_list[0].firstChild.nodeValue)))
+        angle_b1.append(angleTransfer(float(tr_td_list[1].firstChild.nodeValue)))
+        angle_a2.append(angleTransfer(float(tr_td_list[2].firstChild.nodeValue)))
+        angle_b2.append(angleTransfer(float(tr_td_list[3].firstChild.nodeValue)))
+    table_2 = sublab_table_list[1]
+    tr_list = table_2.getElementsByTagName("tr")
+    tr = tr_list[0]
+    td_list = tr.getElementsByTagName("td")
+    angle_A = float(td_list[0].firstChild.nodeValue)
+    u_A = float(td_list[1].firstChild.nodeValue)
 
 
 def lexFiller(source):
