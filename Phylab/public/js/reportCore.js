@@ -272,7 +272,7 @@ $('#lab-select-modal .list-group li').click(function () {
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
     if (sessionStorage.getItem(CUR_SUBLAB + '-table'))
-        $('#labdoc').html(sessionStorage.getItem('sublab' + CUR_SUBLAB));
+        $('#labdoc').html(sessionStorage.getItem(CUR_SUBLAB + '-table'));
     else {
         $.ajax('./table', {
             data: {'id': CUR_SUBLAB},
