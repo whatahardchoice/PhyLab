@@ -52,7 +52,7 @@ class StarController extends Controller
                  "id"=>""];
         $validatorRules = array(
                 'link' => 'required',
-                'reportId'  =>  'required|integer|exists:reports,id'
+                'reportId'  =>  'required|integer'
             );
         $validatorAttributes = array(
                 'link' => '临时报告链接',
