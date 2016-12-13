@@ -8,10 +8,10 @@ use Auth;
 class ConsoleController extends Controller {
 
 	public function index() {
-		if (Auth::check())
-		return Auth::user()->email;
-		else return "false";
-		$exists=Auth::check()&&Console::where('email','=','565418945@qq.com')->get()->count()>0;
+		if (Auth::check()) {
+			var_dump(Console::where('email','=',Auth::user()->email)->get());
+		} else return "fasle";
+		$exists=Auth::check()&&Console::where('email','=',Auth::user()->email)->get()->count()>0;
 		$isAdmin=$exists;
 		if (!$isAdmin) {
 			header("Location:".URL::to('/'));
