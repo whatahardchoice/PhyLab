@@ -4,7 +4,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Console;
 use Auth;
-use URL;
 
 class ConsoleController extends Controller {
 
@@ -12,8 +11,7 @@ class ConsoleController extends Controller {
 		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
 		$isAdmin=$exists;
 		if (!$isAdmin) {
-			header("Location:".URL::to('/'));
-			return "";
+			return redirect('/index');
 		}
 		$ad=Console::where('email','=',Auth::user()->email)->first();
 		$st=$ad->status;
