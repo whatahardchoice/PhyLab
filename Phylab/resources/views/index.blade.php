@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('contents')
-<div class="navbar-banner layout-no-margin-top">
+<div class="navbar-banner layout-no-margin-top" style="margin-top: 0px">
   <div class="banner-container">
     <div class="container">
       <div class="row">

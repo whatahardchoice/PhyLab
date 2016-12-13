@@ -1,13 +1,13 @@
-﻿
-<?php $__env->startSection('contents'); ?>
-
+﻿@extends('layout.main')
+@section('contents')
+	admin
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
       <div id="lab-container" class="container" style="background-color: transparent;">
         <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;padding: 0;background-color: transparent;">
           <div class="nav nav-tabs row" role="tablist" style="border-radius: inherit;padding-top: 2px;padding-bottom: 2px;background-color: transparent;">
             <h1 class="text-left col-md-12">
-              <span>物理实验<small>数据报告中心</small></span>
+              <span>物理实验<small>报告管理中心</small></span>
               <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
             </h1>
           </div>
@@ -178,7 +178,7 @@
                         <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
                       </div>
                       <div class="modal-body" style="width: auto;height: auto;">
-                        <iframe id="collection-iframe" src="<?php echo e(URL::route('star')); ?>" style="width:100%;height: 320px;" frameborder="0"></iframe>
+                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 320px;" frameborder="0"></iframe>
                       </div>
                     </div>
                   </div>
@@ -233,5 +233,4 @@
   </script>
 </body>
 </html>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@stop

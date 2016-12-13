@@ -1,7 +1,7 @@
 ﻿@extends('layout.main')
 @section('contents')
 
-  <div id="lab-console" class="row" style="margin-top: 50px;background-color: rgb(228, 228, 228);" >
+  <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
       <div id="lab-container" class="container" style="background-color: transparent;">
         <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;padding: 0;background-color: transparent;">
@@ -146,7 +146,7 @@
             </div>
           </div>
           <div class="tab-pane panel-body active" role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;;text-align: center;">
-            <h1 style="margin: 65% 0;">未选择子实验</h1>
+            <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
         </div>
         <div class="labdoc-btns" >
@@ -224,6 +224,7 @@
   <script src="./js/test.js"></script>
   <script src="./js/statistics.js"></script>
   <script src="./js/reportCore.js"></script>
+  <script src="./js/jquery.cookie.js"></script>
   <script>
         check();
         $(document).ready(function(){

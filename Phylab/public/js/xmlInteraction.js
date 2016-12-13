@@ -488,6 +488,8 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 					"<table name=\"10712_2\">"+
 						"<tr index=\"1\">"+
+							"<td>"+document.getElementById('1070312_A').value+"</td>"+
+							"<td>"+document.getElementById('1070312_uA').value+"</td>"+
 							"<td>"+document.getElementById('1071_A').value+"</td>"+
 							"<td>"+document.getElementById('1071_uA').value+"</td>"+
 						"</tr>"+
@@ -496,6 +498,48 @@ function SetXMLDoc_lab(labnum){
 			break;
 
         case "1070322":
+            str +=
+                "<lab id=\"1070322\">\n"+
+                "<table name=\"10712_1\" raw=\"5\" column=\"4\">\n"+
+                "<tr index=\"1\">\n"+
+                "<td>"+document.getElementById('ra11').value+"</td>\n"+
+                "<td>"+document.getElementById('rb11').value+"</td>\n"+
+                "<td>"+document.getElementById('ra21').value+"</td>\n"+
+                "<td>"+document.getElementById('rb21').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"2\">\n"+
+                "<td>"+document.getElementById('ra12').value+"</td>\n"+
+                "<td>"+document.getElementById('rb12').value+"</td>\n"+
+                "<td>"+document.getElementById('ra22').value+"</td>\n"+
+                "<td>"+document.getElementById('rb22').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"3\">\n"+
+                "<td>"+document.getElementById('ra13').value+"</td>\n"+
+                "<td>"+document.getElementById('rb13').value+"</td>\n"+
+                "<td>"+document.getElementById('ra23').value+"</td>\n"+
+                "<td>"+document.getElementById('rb23').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"4\">\n"+
+                "<td>"+document.getElementById('ra14').value+"</td>\n"+
+                "<td>"+document.getElementById('rb14').value+"</td>\n"+
+                "<td>"+document.getElementById('ra24').value+"</td>\n"+
+                "<td>"+document.getElementById('rb24').value+"</td>\n"+
+                "</tr>"+
+                "<tr index=\"5\">\n"+
+                "<td>"+document.getElementById('ra15').value+"</td>\n"+
+                "<td>"+document.getElementById('rb15').value+"</td>\n"+
+                "<td>"+document.getElementById('ra25').value+"</td>\n"+
+                "<td>"+document.getElementById('rb25').value+"</td>\n"+
+                "</tr>"+
+                "</table>\n"+
+                "<table name=\"10712_2\">"+
+                	"<tr index=\"1\">"+
+                		"<td>"+document.getElementById('1070312_A').value+"</td>"+
+                		"<td>"+document.getElementById('1070312_uA').value+"</td>"+
+                	"</tr>"+
+				"</table>"+
+                "</lab>";
+            break;
             str +=	
 				"<lab id=\"1070322\">\n"+
 					"<table name=\"10712_1\" raw=\"5\" column=\"4\">\n"+
@@ -538,7 +582,7 @@ function SetXMLDoc_lab(labnum){
 					"</table>"+
 				"</lab>";
 			break;
-		
+
 		case "1090114":
 			str +=
 				"<lab id=\"1090114\">\n"+
