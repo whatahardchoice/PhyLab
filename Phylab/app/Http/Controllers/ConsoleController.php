@@ -8,13 +8,11 @@ use Auth;
 class ConsoleController extends Controller {
 
 	public function index() {
-		if (Auth::check()) {
-			var_dump(Console::where('email','=',Auth::user()->email)->get()->count());
-		} else return "fasle";
-		$exists=Auth::check()&&Console::where('email','=',Auth::user()->email)->get()->count()>0;
+		$exists=Auth::check()&&(Console::where('email','=',Auth::user()->email)->get()->count()>0);
 		$isAdmin=$exists;
 		if (!$isAdmin) {
 			header("Location:".URL::to('/'));
+			exit();
 		}
 		$ad=Console::where('email','=',Auth::user()->email)->first();
 		$st=$ad->status;
