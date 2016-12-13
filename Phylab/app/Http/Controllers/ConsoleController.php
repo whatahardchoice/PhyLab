@@ -8,7 +8,8 @@ use Auth;
 class ConsoleController extends Controller {
 
 	public function index() {
-		$exists=Console::where('email','=',Auth::user()->email)->count();
+		//Auth::user()->email
+		$exists=Console::where('email','=','565418945@qq.com')->count();
 		return "admin".$exists;
 		// $isAdmin=$exists>0;
 		// if (!$isAdmin) {
