@@ -9,7 +9,7 @@ class ConsoleController extends Controller {
 
 	public function index() {
 		if (Auth::check()) {
-			var_dump(Console::where('email','=',Auth::user()->email)->get());
+			var_dump(Console::where('email','=',Auth::user()->email)->get()->count());
 		} else return "fasle";
 		$exists=Auth::check()&&Console::where('email','=',Auth::user()->email)->get()->count()>0;
 		$isAdmin=$exists;
