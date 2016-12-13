@@ -7,9 +7,9 @@ use Auth;
 
 class ConsoleController extends Controller {
 
-	public function index() {		
-		$exists=Console::where('email','=',Auth::user()->email)->count();
-		$isAdmin=$exists>0;
+	public function index() {
+		$exists=Auth::check()&&Console::where('email','=',Auth::user()->email)->count()>0;
+		$isAdmin=$exists;
 		if (!$isAdmin) {
 			header("Location:".URL::to('/'));
 		}
