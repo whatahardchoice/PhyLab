@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Console;
 use Auth;
+use URL;
 
 class ConsoleController extends Controller {
 
