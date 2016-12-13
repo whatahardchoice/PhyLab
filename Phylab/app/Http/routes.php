@@ -180,4 +180,9 @@ Route::get('/zichen',
 	]);
 Route::get('/table',['uses' => 'DebugScriptController@getTable']);
 
-Route::get('/console',['uses' => 'ConsoleController@index']);
+Route::get('/console',
+	[
+	'as' => 'console',
+	'uses' => 'ConsoleController@index',
+	'middleware' => 'auth'
+	]);
