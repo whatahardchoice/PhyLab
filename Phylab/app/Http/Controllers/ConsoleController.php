@@ -11,9 +11,7 @@ class ConsoleController extends Controller {
 		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
 		$isAdmin=$exists;
 		if (!$isAdmin) {
-			return "false";
 			header("Location:".URL::to('/'));
-			exit();
 			return "";
 		}
 		$ad=Console::where('email','=',Auth::user()->email)->first();
