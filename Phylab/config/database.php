@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost',
+            'host'      => '121.42.204.94',
             'database'  => 'Phylab_db',
             'username'  => 'root',
             'password'  => 'default2014',
