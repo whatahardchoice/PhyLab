@@ -61,6 +61,7 @@ class StarController extends Controller
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             //$report = Report::find(Request::get('reportId'));
+            
             $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
             if($report->count() == 0){
                 $data["status"] = FAIL_MESSAGE;
