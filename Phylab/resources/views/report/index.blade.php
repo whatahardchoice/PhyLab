@@ -265,10 +265,8 @@
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
         $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
-            data: {
-                'article_id': 7,
-                'message': 'lala'
-            }
+            'article_id': 7,
+            'message': 'test'
         }).done(function (data) {
             alert('成功, 收到的数据: ' + JSON.parse(data)['err']);
         }).fail(function (xhr, status) {
