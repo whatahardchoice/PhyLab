@@ -31,7 +31,7 @@ class AddTheForeignIdOfStarsAndUsers extends Migration
         Schema::table('stars', function(Blueprint $table) {
             $table->dropForeign('stars_report_experiment_id_foreign');
             $table->dropColumn('user_id');
-            $table->dropColumn('report_id');
+            $table->dropColumn('report_experiment_id');
         });
 
     }
