@@ -47,9 +47,10 @@ class StarController extends Controller
      */
     public function create()
     {
-        $data = ["status"=>"",
-                 "message"=>"",
+        $data = ["status"=>FAIL_MESSAGE,
+                 "message"=>"访问正常",
                  "id"=>""];
+        return response()->json($data);
         $validatorRules = array(
                 'link' => 'required',
                 'reportId'  =>  'required|integer'
@@ -61,7 +62,7 @@ class StarController extends Controller
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             //$report = Report::find(Request::get('reportId'));
-            
+
             $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
             if($report->count() == 0){
                 $data["status"] = FAIL_MESSAGE;
