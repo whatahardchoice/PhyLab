@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/070f8c70fad6131df25f747d0f496fef9c189be3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2a201f17fb9cf0bb86b8e83238fbb47891812de2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6dadeac8210e56d26d3b1979ff206bd65d9f4321" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/115ccb54ad02f0a993002e1a310b58e7" afterPath="$PROJECT_DIR$/storage/framework/views/115ccb54ad02f0a993002e1a310b58e7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" afterPath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -370,12 +362,12 @@
       <workItem from="1481046673897" duration="10799000" />
       <workItem from="1481532831304" duration="11000" />
       <workItem from="1481532885008" duration="7286000" />
-      <workItem from="1481702564894" duration="8939000" />
+      <workItem from="1481702564894" duration="9203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95989000" />
+    <option name="totallyTimeSpent" value="96253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
