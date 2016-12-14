@@ -50,7 +50,7 @@ class StarController extends Controller
         $data = ["status"=>FAIL_MESSAGE,
                  "message"=>"访问正常",
                  "id"=>""];
-        return response()->json($data);
+        //return response()->json($data);
         $validatorRules = array(
                 'link' => 'required',
                 'reportId'  =>  'required|integer'
