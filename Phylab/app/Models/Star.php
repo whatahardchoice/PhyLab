@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Star extends Model
 {
-    //
+    //表名为stars
     protected $table = 'stars';
     protected $fillable = ['name','link','user_id','report_id'];
     public function user(){
