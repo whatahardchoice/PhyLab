@@ -61,6 +61,10 @@ class StarController extends Controller
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             $report = Report::find(Request::get('reportId'));
+            if($report){
+                $data["status"] = "test";
+                return response()->json($data);
+            }
             $experimentName = $report->experiment_name;
             if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
             {
