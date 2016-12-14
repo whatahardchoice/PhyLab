@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="267" column="65" lean-forward="false" selection-start-line="267" selection-start-column="65" selection-end-line="267" selection-end-column="65" />
+            <state relative-caret-position="254">
+              <caret line="262" column="14" lean-forward="true" selection-start-line="262" selection-start-column="14" selection-end-line="262" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -54,44 +55,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StarController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StarController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StarController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1439">
-              <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-              <folding>
-                <marker date="1481731740438" expanded="true" signature="448:6157" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="1251:1261" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="1890:3402" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2019:2174" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2314:3297" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="2366:2645" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2367:2644" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2674:3141" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2699:2847" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="2888:3026" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="3164:3282" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="3314:3393" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="3417:3471" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="3556:3623" ph=" Delete the Star ..." />
-                <marker date="1481731740438" expanded="true" signature="3655:4562" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="3673:3717" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="3752:3850" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="3890:3935" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="4046:4417" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="4168:4255" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="4288:4361" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="4446:4517" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="4571:4688" ph=" Display the specified resource. ..." />
-                <marker date="1481731740438" expanded="true" signature="4720:5578" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="4744:4969" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="5060:5403" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="5418:5472" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="5587:5685" ph="Download the stared report ..." />
-                <marker date="1481731740438" expanded="true" signature="5721:6154" ph="{...}" />
-                <marker date="1481731740438" expanded="true" signature="5870:5976" ph="..." />
-                <marker date="1481731740438" expanded="true" signature="5991:6045" ph="..." />
-              </folding>
+            <state relative-caret-position="14">
+              <caret line="80" column="2" lean-forward="false" selection-start-line="80" selection-start-column="2" selection-end-line="80" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -513,12 +482,12 @@
       <workItem from="1481532831304" duration="11000" />
       <workItem from="1481532885008" duration="7286000" />
       <workItem from="1481702564894" duration="19579000" />
-      <workItem from="1481725031682" duration="5426000" />
+      <workItem from="1481725031682" duration="6323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112055000" />
+    <option name="totallyTimeSpent" value="112952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -869,54 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1439">
-          <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-          <folding>
-            <marker date="1481731740438" expanded="true" signature="448:6157" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="1251:1261" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="1890:3402" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2019:2174" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2314:3297" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="2366:2645" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2367:2644" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2674:3141" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2699:2847" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="2888:3026" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="3164:3282" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="3314:3393" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="3417:3471" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="3556:3623" ph=" Delete the Star ..." />
-            <marker date="1481731740438" expanded="true" signature="3655:4562" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="3673:3717" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="3752:3850" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="3890:3935" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="4046:4417" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="4168:4255" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="4288:4361" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="4446:4517" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="4571:4688" ph=" Display the specified resource. ..." />
-            <marker date="1481731740438" expanded="true" signature="4720:5578" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="4744:4969" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="5060:5403" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="5418:5472" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="5587:5685" ph="Download the stared report ..." />
-            <marker date="1481731740438" expanded="true" signature="5721:6154" ph="{...}" />
-            <marker date="1481731740438" expanded="true" signature="5870:5976" ph="..." />
-            <marker date="1481731740438" expanded="true" signature="5991:6045" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/App/UnkownException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
@@ -935,10 +856,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/App/UnkownException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="267" column="65" lean-forward="false" selection-start-line="267" selection-start-column="65" selection-end-line="267" selection-end-column="65" />
+        <state relative-caret-position="254">
+          <caret line="262" column="14" lean-forward="true" selection-start-line="262" selection-start-column="14" selection-end-line="262" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="80" column="2" lean-forward="false" selection-start-line="80" selection-start-column="2" selection-end-line="80" selection-end-column="2" />
           <folding />
         </state>
       </provider>
