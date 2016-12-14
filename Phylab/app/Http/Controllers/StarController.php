@@ -110,9 +110,8 @@ class StarController extends Controller
             //throw new NoResourceException();
         }
         }
-        catch(Exception $e)
-        {
-            return response()->json($data);
+        catch(Exception $e){
+            
         }
         //注意通过传入的临时文件地址来转移文件
         return response()->json($data);
