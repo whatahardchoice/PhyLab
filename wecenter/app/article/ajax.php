@@ -38,7 +38,7 @@ class ajax extends AWS_CONTROLLER
 	}
 	
 	public function phash_action() {
-		echo new_post_hash();
+		H::ajax_json_output(AWS_APP::RSM(array('new_post_hash'=>new_post_hash()), 1, null));
 	}
 
 	public function save_comment_action()
