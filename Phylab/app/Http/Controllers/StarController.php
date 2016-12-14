@@ -97,11 +97,15 @@ class StarController extends Controller
             }
             else
             {
-                throw new ReachCeilingException();
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "超过收藏最大值";
+                //throw new ReachCeilingException();
             }
         }
         else{
-            throw new NoResourceException();
+            $data["status"] = FAIL_MESSAGE;
+            $data["message"] = "不存在pdf文件";
+            //throw new NoResourceException();
         }
         //注意通过传入的临时文件地址来转移文件
         return response()->json($data);
