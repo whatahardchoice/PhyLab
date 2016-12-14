@@ -15,7 +15,6 @@ class AddTheForeignIdOfStarsAndUsers extends Migration
         //
         Schema::table('stars', function($table){
             $table->integer('user_id')->unsigned()->index();
-            
             $table->integer('report_id')->unsigned()->index();
             $table->foreign('report_id')->references('id')->on('reports')->onDelete('restrict')->onUpdate('restrict');
         });
@@ -30,7 +29,6 @@ class AddTheForeignIdOfStarsAndUsers extends Migration
     {
         //
         Schema::table('stars', function(Blueprint $table) {
-            
             $table->dropForeign('stars_report_id_foreign');
             $table->dropColumn('user_id');
             $table->dropColumn('report_id');
