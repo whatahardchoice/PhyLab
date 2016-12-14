@@ -52,7 +52,6 @@ class StarController extends Controller
                  "message"=>"访问正常",
                  "id"=>""];
         //return response()->json($data);
-        try{
         $validatorRules = array(
                 'link' => 'required',
                 'reportId'  =>  'required|integer'
@@ -61,10 +60,17 @@ class StarController extends Controller
                 'link' => '临时报告链接',
                 'reportId'  =>  '报告模板类别'
             );
+        try{
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        }
+            catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "检查失败";
+                return response()->json($data);
+            }
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             //$report = Report::find(Request::get('reportId'));
-
+            try{
             $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
             if($report->count() == 0){
                 $data["status"] = FAIL_MESSAGE;
@@ -72,6 +78,13 @@ class StarController extends Controller
                 return response()->json($data);
             }
             $experimentName = $report->experiment_name;
+            }
+            catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "报告查询失败";
+                return response()->json($data);
+            }
+            try{
             if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
             {
                 $star = Star::create([
@@ -103,16 +116,19 @@ class StarController extends Controller
                 $data["message"] = "超过收藏最大值";
                 //throw new ReachCeilingException();
             }
+            }
+            catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "收藏创建失败";
+                return response()->json($data);
+            }
         }
         else{
             $data["status"] = FAIL_MESSAGE;
             $data["message"] = "不存在pdf文件";
             //throw new NoResourceException();
         }
-        }
-        catch(Exception $e){
-            
-        }
+        
         //注意通过传入的临时文件地址来转移文件
         return response()->json($data);
     }
