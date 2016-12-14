@@ -61,25 +61,24 @@ class StarController extends Controller
                 'reportId'  =>  '报告模板类别'
             );
         try{
-        postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+            postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         }
             catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
                 $data["message"] = "检查失败";
                 return response()->json($data);
-            }
+        }
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             //$report = Report::find(Request::get('reportId'));
             try{
-            $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
-            if($report->count() == 0){
-                $data["status"] = FAIL_MESSAGE;
-                $data["message"] = "没有此类型报告";
-                return response()->json($data);
-            }
-            $experimentName = $report->first()->experiment_name;
-            }
-            catch(Exception $e){
+                $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
+                if($report->count() == 0){
+                    $data["status"] = FAIL_MESSAGE;
+                    $data["message"] = "没有此类型报告";
+                    return response()->json($data);
+                }
+                $experimentName = $report->first()->experiment_name;
+            }catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
                 $data["message"] = "报告查询失败";
                 $data['reportnumber']= $report->count();
@@ -87,39 +86,39 @@ class StarController extends Controller
                 return response()->json($data);
             }
             try{
-            if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
-            {
-                $star = Star::create([
-                    'link' => Request::get('link'),
-                    'name' => 'Lab_'.Request::get('reportId').'_'.$experimentName.'_report',
-                    'user_id' => Auth::user()->id,
-                    'report_id' => Request::get('reportId')
-                    ]);
-                if($star){
-                    try{
-                        Storage::disk('local_public')->copy('pdf_tmp/'.Request::get('link'),'star_pdf/'.Request::get('link'));
+                if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
+                {
+                    $star = Star::create([
+                        'link' => Request::get('link'),
+                        'name' => 'Lab_'.Request::get('reportId').'_'.$experimentName.'_report',
+                        'user_id' => Auth::user()->id,
+                        'report_id' => Request::get('reportId')
+                        ]);
+                    if($star){
+                        try{
+                            Storage::disk('local_public')->copy('pdf_tmp/'.Request::get('link'),'star_pdf/'.Request::get('link'));
+                        }
+                        catch(Exception $e)
+                        {
+                            $star->delete();
+                            throw new FileIOException();
+                        }
+                        $data["status"] = SUCCESS_MESSAGE;
+                        $data["id"]=$star->id;
+                        $data["message"] = "收藏报告成功";
                     }
-                    catch(Exception $e)
-                    {
-                        $star->delete();
-                        throw new FileIOException();
+                    else{
+                        $data["status"] = FAIL_MESSAGE;
+                        $data["message"] = "收藏报告失败";
                     }
-                    $data["status"] = SUCCESS_MESSAGE;
-                    $data["id"]=$star->id;
                 }
-                else{
+                else
+                {
                     $data["status"] = FAIL_MESSAGE;
-                    $data["message"] = "收藏报告失败";
+                    $data["message"] = "超过收藏最大值";
+                    //throw new ReachCeilingException();
                 }
-            }
-            else
-            {
-                $data["status"] = FAIL_MESSAGE;
-                $data["message"] = "超过收藏最大值";
-                //throw new ReachCeilingException();
-            }
-            }
-            catch(Exception $e){
+            }catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
                 $data["message"] = "收藏创建失败";
                 return response()->json($data);
