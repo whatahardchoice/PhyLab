@@ -264,6 +264,11 @@
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
+      $.post(G_BASE_URL + '/wecenter/?/article/ajax/phash/').done(function (data) {
+          alert('成功, 收到的数据: ' + JSON.parse(data)['err']);
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
+      });
         $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
             'article_id': 7,
             'message': 'test'
