@@ -260,27 +260,9 @@
   <script src="./js/jquery.cookie.js"></script>
   <script>
       var G_BASE_URL='<?php echo url('/');?>';
-      var post_hash = 0;
       check();
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-      });
-      $.ajax(G_BASE_URL + '/wecenter/?/article/ajax/phash/', {
-          method: 'post',
-          async: false
-      }).done(function (data) {
-          post_hash = JSON.parse(data)['rsm']['new_post_hash'];
-      }).fail(function (xhr, status) {
-          alert('失败: ' + xhr.status + ', 原因: ' + status);
-      });
-      $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
-          'post_hash': post_hash,
-          'article_id': 7,
-          'message': 'test'
-      }).done(function (data) {
-          alert('成功, 收到的数据: ' + JSON.parse(data));
-      }).fail(function (xhr, status) {
-          alert('失败: ' + xhr.status + ', 原因: ' + status);
       });
   </script>
 </body>
