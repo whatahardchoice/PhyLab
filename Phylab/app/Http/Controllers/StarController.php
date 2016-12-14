@@ -77,7 +77,7 @@ class StarController extends Controller
                 $data["message"] = "没有此类型报告";
                 return response()->json($data);
             }
-            $experimentName = $report->experiment_name;
+            $experimentName = $report->first()->experiment_name;
             }
             catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
