@@ -265,8 +265,11 @@
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
       });
-      $.post(G_BASE_URL + '/wecenter/?/article/ajax/phash/').done(function (data) {
-          window.post_hash = JSON.parse(data)['rsm']['new_post_hash'];
+      $.ajax(G_BASE_URL + '/wecenter/?/article/ajax/phash/', {
+          method: 'post',
+          async: false
+      }).done(function (data) {
+          post_hash = JSON.parse(data)['rsm']['new_post_hash'];
       }).fail(function (xhr, status) {
           alert('失败: ' + xhr.status + ', 原因: ' + status);
       });
