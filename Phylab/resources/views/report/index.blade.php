@@ -226,7 +226,6 @@
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
         <div class="aw-mod aw-editor-box">
           <form>
-            <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>" />
             <textarea name="editor1" id="editor1" rows="10" cols="80">
                 This is my textarea to be replaced with CKEditor.
             </textarea>
@@ -265,9 +264,8 @@
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
-        $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
-            'article_id': 7,
-            'message': 'test'
+        $.get(G_BASE_URL + '/wecenter/?/article/ajax/index/', {
+            'id': 7,
         }).done(function (data) {
             alert('成功, 收到的数据: ' + JSON.parse(data)['err']);
         }).fail(function (xhr, status) {
