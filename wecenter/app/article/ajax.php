@@ -44,7 +44,7 @@ class ajax extends AWS_CONTROLLER
 			H::ajax_json_output(AWS_APP::RSM(null, '-1', AWS_APP::lang()->_t('指定文章不存在')));
 		}
 
-		$comments = $this->model('article')->get_comments($article_info['id'], $_GET['page'], 100);
+		$comments = $this->model('article')->get_comments($article_info['id'], $_POST['page'], 100);
 
 		if ($comments AND $this->user_id)
 		{
