@@ -11,7 +11,7 @@ function createStar(){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
-            if(jsonText["status"]=='success'){
+            if(jsonText["status"]=='SUCCESS_MESSAGE'){
                 $('#collect-report').attr('dbid',jsonText['id']);
                 $('#collect-report i').attr("class","fa fa-bookmark");
                 $('#collect-report').text('取消收藏');
@@ -36,7 +36,7 @@ function deleteReportStar(){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
-            if(jsonText["status"]=='success'){
+            if(jsonText["status"]=='SUCCESS_MESSAGE'){
                 $('#collect-report i').attr('clas','fa fa-bookmark-o');
                 $('#collect-report').text('收藏此报告');
                 $('#collect-report .sr-only').text("y");
