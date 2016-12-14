@@ -47,10 +47,12 @@ class StarController extends Controller
      */
     public function create()
     {
+       
         $data = ["status"=>FAIL_MESSAGE,
                  "message"=>"访问正常",
                  "id"=>""];
         //return response()->json($data);
+        try{
         $validatorRules = array(
                 'link' => 'required',
                 'reportId'  =>  'required|integer'
@@ -106,6 +108,7 @@ class StarController extends Controller
             $data["status"] = FAIL_MESSAGE;
             $data["message"] = "不存在pdf文件";
             //throw new NoResourceException();
+        }
         }
         //注意通过传入的临时文件地址来转移文件
         return response()->json($data);
