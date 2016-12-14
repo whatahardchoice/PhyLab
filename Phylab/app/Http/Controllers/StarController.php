@@ -72,18 +72,19 @@ class StarController extends Controller
             //$report = Report::find(Request::get('reportId'));
             try{
             $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
-            if($report->count() == 0){
-                $data["status"] = FAIL_MESSAGE;
-                $data["message"] = "没有此类型报告";
-                return response()->json($data);
-            }
-            $experimentName = $report->experiment_name;
             }
             catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
                 $data["message"] = "报告查询失败";
                 return response()->json($data);
             }
+            if($report->count() == 0){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "没有此类型报告";
+                return response()->json($data);
+            }
+            $experimentName = $report->experiment_name;
+            
             try{
             if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
             {
