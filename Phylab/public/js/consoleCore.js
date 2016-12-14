@@ -320,9 +320,11 @@ $('#button-view-preparation').click(function () {
 	if (!showCode) {
         $('#labdoc').hide();
 		$('#labCode').show();
+		showCode=1;
 	} else {
         $('#labdoc').show();
 		$('#labCode').hide();
+		showCode=0;
 	}
 });
 

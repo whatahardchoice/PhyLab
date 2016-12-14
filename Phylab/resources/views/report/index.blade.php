@@ -207,6 +207,39 @@
     </div>
   </div>
 
+  <div style="border-width: 2px;border-color: black; background-color: rgb(228, 228, 228);padding-bottom: 10px;">
+    <div style="margin: 0 15px;">
+      <h1 style="margin-top: 0;">
+        <span>评论区</span>
+        <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
+      </h1>
+    </div>
+    <div class="row well" style="margin: 0 15px;">
+      <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
+        <table class="table table-hover">
+          <tr>
+            <th>用户名</th>
+            <th>评论</th>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-12 col-md-5" style="padding-right: 0;">
+        <div class="aw-mod aw-editor-box">
+          <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer id="site-footer">
     <div class="text-center copyright" style="margin-top: 0">
       <span>Copyright @2016-2016 物理实验报告平台</span>
@@ -226,10 +259,26 @@
   <script src="./js/reportCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
-        check();
-        $(document).ready(function(){
-            $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-        });
+      var G_BASE_URL='<?php echo url('/');?>';
+      var post_hash;
+      check();
+      $(document).ready(function(){
+          $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
+      });
+      $.post(G_BASE_URL + '/wecenter/?/article/ajax/phash/').done(function (data) {
+          post_hash = JSON.parse(data)['rsm']['new_post_hash'];
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
+      });
+      $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
+          'post_hash': post_hash,
+          'article_id': 7,
+          'message': 'test'
+      }).done(function (data) {
+          alert('成功, 收到的数据: ' + JSON.parse(data));
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
+      });
   </script>
 </body>
 </html>

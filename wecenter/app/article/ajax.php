@@ -36,6 +36,10 @@ class ajax extends AWS_CONTROLLER
 	{
 		HTTP::no_cache_header();
 	}
+	
+	public function phash_action() {
+		H::ajax_json_output(AWS_APP::RSM(array('new_post_hash'=>new_post_hash()), 1, null));
+	}
 
 	public function save_comment_action()
 	{

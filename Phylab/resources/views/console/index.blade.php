@@ -149,7 +149,7 @@
             <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
           <div class="tab-pane panel-body active" role="tabpanel" id="labCode" style="overflow-x: auto;overflow-y: auto;;text-align: center; display: hidden;"> 
-			<textarea id="labCode_val">
+			<textarea id="labCode_val" style="margin:0% 0%;">
 			
 			</textarea>
 		  </div>
