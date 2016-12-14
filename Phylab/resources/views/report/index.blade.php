@@ -264,7 +264,7 @@
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
-        $.get(G_BASE_URL + '/wecenter/?/article/main/index', {
+        $.get('http://buaaphylab.com/' + '/wecenter/?/article/main/index', {
             data: {
                 'id': 7,
                 'item_id': 1
