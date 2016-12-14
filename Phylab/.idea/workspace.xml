@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="" />
+    <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="603">
-              <caret line="273" column="33" lean-forward="true" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
+              <caret line="273" column="25" lean-forward="false" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -385,12 +387,12 @@
       <workItem from="1481532831304" duration="11000" />
       <workItem from="1481532885008" duration="7286000" />
       <workItem from="1481702564894" duration="19579000" />
-      <workItem from="1481725031682" duration="1704000" />
+      <workItem from="1481725031682" duration="1940000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108333000" />
+    <option name="totallyTimeSpent" value="108569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -761,7 +763,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="603">
-          <caret line="273" column="33" lean-forward="true" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
+          <caret line="273" column="25" lean-forward="false" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
           <folding />
         </state>
       </provider>
