@@ -264,10 +264,10 @@
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
-        $.post(G_BASE_URL + '/wecenter/?/account/ajax/register_process/', {
+        $.post(G_BASE_URL + '/wecenter/?/account/ajax/article_comments/', {
             data: {
-                'article_id': 7,
-                'item_id': 1
+                'id': 7,
+                'page': 1
             }
         }).done(function (data) {
             alert('成功, 收到的数据: ' + JSON.stringify(data));
