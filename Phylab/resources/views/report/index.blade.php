@@ -226,9 +226,10 @@
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
         <div class="aw-mod aw-editor-box">
           <form>
-          <textarea name="editor1" id="editor1" rows="10" cols="80">
-              This is my textarea to be replaced with CKEditor.
-          </textarea>
+            <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>" />
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
