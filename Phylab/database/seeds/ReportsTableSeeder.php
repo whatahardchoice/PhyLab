@@ -37,7 +37,7 @@ class ReportsTableSeeder extends Seeder{
             ]);
         Report::create([
             "experiment_id" => 1070212,
-            "experiment_name" =>"测量三棱镜的顶角（必选）",
+            "experiment_name" =>"测量三棱镜的顶角",
             "prepare_link"  =>  "1071.pdf",
             "experiment_tag" => 1071
             ]);
@@ -79,7 +79,7 @@ class ReportsTableSeeder extends Seeder{
             ]);
         Report::create([
             "experiment_id" => 1090114  ,
-            "experiment_name" =>"迈克尔逊干涉（必做）",
+            "experiment_name" =>"迈克尔逊干涉",
             "prepare_link"  =>  "1091.pdf",
             "experiment_tag" => 1091
             ]);   
