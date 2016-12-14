@@ -36,6 +36,10 @@ class ajax extends AWS_CONTROLLER
 	{
 		HTTP::no_cache_header();
 	}
+	
+	public function phash_action() {
+		echo new_post_hash();
+	}
 
 	public function save_comment_action()
 	{
