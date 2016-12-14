@@ -60,7 +60,14 @@ class StarController extends Controller
             );
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
-            $report = Report::find(Request::get('reportId'));
+            //$report = Report::find(Request::get('reportId'));
+            
+            $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
+            if($report->count() == 0){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "没有此类型报告";
+                return response()->json($data);
+            }
             $experimentName = $report->experiment_name;
             if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
             {
