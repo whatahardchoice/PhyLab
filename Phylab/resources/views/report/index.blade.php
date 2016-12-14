@@ -259,10 +259,17 @@
   <script src="./js/reportCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
-      var G_BASE_URL='<?php echo url('/');?>';
+      var G_BASE_URL = '<?php echo url('/');?>';
       check();
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
+      });
+      $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments', {
+          'article_id': 7
+      }).done(function (data) {
+          alert('成功, 收到的数据: ' + JSON.parse(data));
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
       });
   </script>
 </body>
