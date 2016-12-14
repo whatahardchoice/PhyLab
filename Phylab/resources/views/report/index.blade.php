@@ -266,7 +266,8 @@
       });
       sendMessange();
       $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments', {
-          'article_id': 7
+          'article_id': 7,
+          'page': 0
       }).done(function (data) {
           alert('成功, 收到的数据: ' + JSON.parse(data));
       }).fail(function (xhr, status) {
