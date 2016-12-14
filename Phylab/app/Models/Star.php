@@ -13,6 +13,6 @@ class Star extends Model
         return $this->belongsTo('App\Models\User','user_id','id');
     }
     public function report(){
-        return $this->belongsTo('App\Models\Report','report_id','id');
+        return $this->belongsTo('App\Models\Report','report_id','experiment_id');
     }
 }
