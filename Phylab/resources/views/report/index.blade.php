@@ -271,7 +271,7 @@
           alert('失败: ' + xhr.status + ', 原因: ' + status);
       });
       $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
-          'post_hash': post_hash,
+          'post_hash': 12,
           'article_id': 7,
           'message': 'test'
       }).done(function (data) {
