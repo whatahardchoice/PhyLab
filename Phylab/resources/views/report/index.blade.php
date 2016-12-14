@@ -266,7 +266,7 @@
         });
         $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
             data: {
-                'article_id': 6,
+                'article_id': [7],
                 'message': 'lala'
             }
         }).done(function (data) {
