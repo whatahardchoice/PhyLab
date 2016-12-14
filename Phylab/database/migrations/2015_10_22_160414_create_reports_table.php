@@ -15,8 +15,9 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('experiment_id')->index();
-            $table->string('experiment_name');
             $table->string('experiment_tag');
+            $table->string('experiment_name');
+            $table->string('prepare_link');
             $table->timestamps();
         });
     }
