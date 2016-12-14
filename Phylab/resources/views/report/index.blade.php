@@ -268,7 +268,7 @@
           'article_id': 7,
           'page': 0
       }).done(function (data) {
-          alert('成功, 收到的数据: ' + JSON.parse(data));
+          JSON.parse(data);
       }).fail(function (xhr, status) {
           alert('失败: ' + xhr.status + ', 原因: ' + status);
       });
