@@ -148,6 +148,11 @@
           <div class="tab-pane panel-body active" role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;;text-align: center;">
             <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
+          <div class="tab-pane panel-body active" role="tabpanel" id="labCode" style="overflow-x: auto;overflow-y: auto;;text-align: center; display: hidden;"> 
+			<textarea id="labCode_val">
+			
+			</textarea>
+		  </div>
         </div>
         <div class="labdoc-btns" >
           <button id="button-view-preparation" class="btn btn-success" style="margin-bottom: 5px;" disabled>
@@ -223,7 +228,7 @@
   <script src="./js/star.js"></script>
   <script src="./js/test.js"></script>
   <script src="./js/statistics.js"></script>
-  <script src="./js/reportCore.js"></script>
+  <script src="./js/consoleCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
         check();
