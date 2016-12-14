@@ -339,10 +339,10 @@ $('#button-generate-report').click(function () {
 
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
-        deleteReportStar();
+        createStar();
     }
     else {
-        createStar();
+        deleteReportStar();
     }
 })
 
