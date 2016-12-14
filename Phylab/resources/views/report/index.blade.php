@@ -264,6 +264,7 @@
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
       });
+      sendMessange();
       $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments', {
           'article_id': 7
       }).done(function (data) {
