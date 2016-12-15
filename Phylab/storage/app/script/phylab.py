@@ -21,6 +21,8 @@ def RoundOne(x, b):
 # 计算a类不确定度：x是一个列表，aver是x的平均值，k是数据的组数（不一定等于len(x)，
 #               因为x后面可能添加了x的平均值）
 def Ua(x, aver, k):
+    if (k <= 1):
+        return 0
     sumx = 0
     for i in range(k):
         sumx += (x[i] - aver) ** 2

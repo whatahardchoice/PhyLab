@@ -71,4 +71,4 @@ def GetTheGraph1022(y_init):
 	fig.savefig("1022.png")
 	
 if __name__ == '__main__':
-	GetTheGraph1022()
+	GetTheGraph1022([2.25, 2.17, 2.10, 2.00, 1.93, 1.86, 1.79, 1.73, 1.67, 1.61, 1.56])

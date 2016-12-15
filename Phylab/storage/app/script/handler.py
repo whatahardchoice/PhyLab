@@ -8,9 +8,6 @@ import os
 import platform
 import xml.dom.minidom
 
-available_lab = ['1010113', '1010212', '1020113', '1060111', '1060213', '1070212', '1070312', '1070322', '1080114', '1080124', '1080215', '1080225', '1090114']
-xmlid = {'1010113': '', '1010212': '', '1070212': '10711', '1070312': '10712', '1070322': '', '1080114': '10811',
-         '1080124': '', '1090114': ''}
 scriptdir = '/var/www/buaaphylab/storage/app/script/' if platform.system() == 'Linux' else 'C:/Users/CFREE/Documents/Github/auto-deploy-phylab/Phylab/storage/app/script/'
 texdir = scriptdir + 'tex/'
 sys.path.append(scriptdir)
@@ -29,27 +26,15 @@ if __name__ == '__main__':
         latex_tail = "\n\\end{document}"
         latex_body = ""
 
-        flag = True
-        for lab in available_lab:
-            if (lab == sys.argv[1]):
-                # from p1010113 import handler
-                # eval('from p' + lab + ' import handler')
-                # testxml = scriptdir + 'test/' + lab + 'test/' + lab + '.xml'
-                try:
-                    root = ''
-                    dom = xml.dom.minidom.parse(sys.argv[2])
-                    root = dom.documentElement
-                # sublab_list = root.getElementsByTagName('sublab')
-                # for l in sublab_list:
-                # 	if (l.getAttribute("status") == 'true') & (l.getAttribute("id") == xmlid[lab]):
-                # 		sublab = l
-                except Exception as e:
-                    # raise e
-                    pass
-                latex_body = __import__('p' + lab).handler(root)  # (sys.argv[2])
-                flag = False
-                break
-        if (flag):
+        try:
+            root = ''
+            dom = xml.dom.minidom.parse(sys.argv[2])
+            root = dom.documentElement
+        except Exception as e:
+            # raise e
+            pass
+        latex_body = __import__('p' + lab).handler(root)  # (sys.argv[2])
+        if (os.path.isfile(scriptdir + 'p' + lab + '.py')):
             print('{"status":"fail", "msg":"no handler"}')
             exit(1)
 
