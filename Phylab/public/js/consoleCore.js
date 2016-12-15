@@ -281,7 +281,7 @@ $('#lab-select-modal .list-group li').click(function () {
         $('#button-generate-report').removeAttr("disabled");
         $('#collect-report').attr("disabled", true);
         $('#labdoc').html(data);
-		$('#labCode_val').val(data);
+		myCodeMirror.setValue(data);
 		$('#labdoc').show();
 		$('#labCode').hide();
 		showCode=0;
