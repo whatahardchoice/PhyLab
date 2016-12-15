@@ -25,121 +25,6 @@
                 </div>
                 <div class="modal-body">
                   <div class="panel-group" id="lab-list" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default" id="lab-group-1011">
-                      <div class="panel-heading btn" id="lab-1011-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1011-collapse" aria-expanded="true" aria-controls="lab-1011-collapse">
-                            1011 力学系列实验
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group in" id="lab-1011-collapse" role="tabpanel" aria-labelledby="lab-1011-heading">
-                        <li class="list-group-item btn" id="lab-1010113">1010113 拉伸法测钢丝弹性模量</li>
-                        <li class="list-group-item btn" id="lab-1010212">1010212 扭摆法测量转动惯量</li>
-                      </div>
-                    </div>
-
-                    <div class="panel panel-default" id="lab-group-1021">
-                      <div class="panel-heading btn" id="lab-1021-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1021-collapse" aria-expanded="false" aria-controls="lab-1021-collapse">
-                            1021 热学系列实验
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1021-collapse" role="tabpanel" aria-labelledby="lab-1021-heading">
-                        <li class="list-group-item btn" id="lab-1020113">1020113 测量冰的溶解热实验</li>
-                        <!--li class="list-group-item btn" id="lab-1020212">1020212 电热法测量焦耳热功当量实验</li-->
-                      </div>
-                    </div>
-
-                    <!--div class="panel panel-default" id="lab-group-1031">
-                      <div class="panel-heading btn" id="lab-1031-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1031-collapse" aria-expanded="false" aria-controls="lab-1031-collapse">
-                            1031 示波器的应用
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1031-collapse" role="tabpanel" aria-labelledby="lab-1031-heading">
-                        <li class="list-group-item btn" id="lab-1030113">1030113 模拟示波器的使用（必做）</li>
-                      </div>
-                    </div-->
-
-                    <div class="panel panel-default" id="lab-group-1061">
-                      <div class="panel-heading btn" id="lab-1061-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1061-collapse" aria-expanded="false" aria-controls="lab-1061-collapse">
-                            1061 薄透镜和单球面镜焦距的测量
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1061-collapse" role="tabpanel" aria-labelledby="lab-1061-heading">
-                        <li class="list-group-item btn" id="lab-1060111">1060111 物距像距法测量透镜焦距</li>
-                        <li class="list-group-item btn" id="lab-1060213">1060213 自准直法测量透镜焦距</li>
-                        <!--li class="list-group-item btn" id="lab-1060312">1060312 共轭法测量凸透镜焦距</li>
-                        <li class="list-group-item btn" id="lab-1060412">1060412 单球面镜焦距的测量</li-->
-                      </div>
-                    </div>
-
-                    <div class="panel panel-default" id="lab-group-1071">
-                      <div class="panel-heading btn" id="lab-1071-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1071-collapse" aria-expanded="false" aria-controls="lab-1071-collapse">
-                            1071 分光仪的调整及其应
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1071-collapse" role="tabpanel" aria-labelledby="lab-1071-heading">
-                        <li class="list-group-item btn" id="lab-1070212">1070212 测量三棱镜的顶角（必选）</li>
-                        <li class="list-group-item btn" id="lab-1070312">1070312 最小偏向角法测量棱镜的折射率</li>
-                        <li class="list-group-item btn" id="lab-1070322">1070322 掠入射法测量棱镜的折射率</li>
-                      </div>
-                    </div>
-
-                    <div class="panel panel-default" id="lab-group-1081">
-                      <div class="panel-heading btn" id="lab-1081-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1081-collapse" aria-expanded="false" aria-controls="lab-1081-collapse">
-                            1081 光的干涉实验I（分波阵面法）1
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1081-collapse" role="tabpanel" aria-labelledby="lab-1081-heading">
-                        <li class="list-group-item btn" id="lab-1080114">1080114 激光双棱镜干涉</li>
-                        <li class="list-group-item btn" id="lab-1080124">1080124 激光劳埃镜干涉</li>
-                      </div>
-                    </div>
-
-                    <div class="panel panel-default" id="lab-group-1082">
-                      <div class="panel-heading btn" id="lab-1082-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1082-collapse" aria-expanded="false" aria-controls="lab-1082-collapse">
-                            1082 光的干涉实验I（分波阵面法）2
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1082-collapse" role="tabpanel" aria-labelledby="lab-1082-heading">
-                        <li class="list-group-item btn" id="lab-1080215">1080215 钠光双棱镜干涉</li>
-                        <li class="list-group-item btn" id="lab-1080225">1080225 钠光劳埃镜干涉</li>
-                      </div>
-                    </div>
-
-                    <div class="panel panel-default" id="lab-group-1091">
-                      <div class="panel-heading btn" id="lab-1091-heading" role="tab">
-                        <h4 class="panel-title">
-                          <div data-toggle="collapse" data-parent="#accordion" href="#lab-1091-collapse" aria-expanded="false" aria-controls="lab-1091-collapse">
-                            1091 光的干涉实验II（分振幅法）
-                          </div>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse list-group" id="lab-1091-collapse" role="tabpanel" aria-labelledby="lab-1091-heading">
-                        <li class="list-group-item btn" id="lab-1090114">1090114 迈克尔逊干涉（必做）</li>
-                        <!--li class="list-group-item btn" id="lab-1090212">1090212 牛顿环干涉</li>
-                        <li class="list-group-item btn" id="lab-1090312">1090312 劈尖干涉</li-->
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -221,7 +106,7 @@
         <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
       </h1>
     </div>
-    <div class="row well" style="margin: 0 15px;">
+    <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
         <table class="table table-hover">
           <tr>
@@ -231,18 +116,18 @@
         </table>
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
-        <div class="aw-mod aw-editor-box">
-          <form>
-            <textarea name="editor1" id="editor1" rows="10" cols="80">
-                This is my textarea to be replaced with CKEditor.
-            </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-            </script>
-          </form>
+        <div id="comment-area">
+          <div id="reply-notice">
+            <div id="reply-notice-check-group">
+              <i id="reply-notice-check" class="fa fa-check"></i>
+              <span>评论成功</span>
+            </div>
+          </div>
+          <textarea rows="3" name="message" id="comment-editor" class="form-control autosize" placeholder="写下你的评论..."></textarea>
         </div>
+        <button id="button-comment-reply" class="btn btn-success pull-right">
+          回复
+        </button>
       </div>
     </div>
   </div>
@@ -267,18 +152,8 @@
   <script src="./js/jquery.cookie.js"></script>
   <script>
       var G_BASE_URL = '<?php echo url('/');?>';
-      check();
-      $(document).ready(function(){
-          $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-      });
-      /*$.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
-          'article_id': 7,
-          'page': 0
-      }).done(function (data) {
-          JSON.parse(data);
-      }).fail(function (xhr, status) {
-          alert('失败: ' + xhr.status + ', 原因: ' + status);
-      });*/
+      initReportPage();
+
   </script>
 </body>
 </html>
