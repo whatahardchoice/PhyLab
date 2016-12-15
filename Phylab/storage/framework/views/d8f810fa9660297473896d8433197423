@@ -102,7 +102,7 @@
   <div style="border-width: 2px;border-color: black; background-color: rgb(228, 228, 228);padding-bottom: 10px;">
     <div style="margin: 0 15px;">
       <h1 style="margin-top: 0;">
-        <span>评论区</span>
+        <span id="comment-area-title">评论区</span>
         <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
       </h1>
     </div>
@@ -125,7 +125,7 @@
           </div>
           <textarea rows="3" name="message" id="comment-editor" class="form-control autosize" placeholder="写下你的评论..."></textarea>
         </div>
-        <button id="button-comment-reply" class="btn btn-success pull-right">
+        <button id="button-comment-reply" class="btn btn-success pull-right" disabled>
           回复
         </button>
       </div>

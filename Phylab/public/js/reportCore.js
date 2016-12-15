@@ -315,6 +315,9 @@ function initReportPage() {
                     inputs_val[this.id] = $(this).val()
                     localStorage.setItem($('#username').text() + CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
                 })
+
+                $('#button-comment-reply').removeAttr('disabled');
+                $('#comment-area-title').text(CUR_SUBLAB + '评论区');
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
@@ -384,7 +387,7 @@ $('#collect-report').click(function () {
 });
 
 $('#button-comment-reply').click(function () {
-    sendComment(sessionStorage.getItem(CUR_SUBLAB + '_article_id', $('#comment-editor').val()));
+    sendComment(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), $('#comment-editor').val());
 });
 
 function sendComment(article_id, message) {
