@@ -151,9 +151,8 @@ Route::get('/report',
     'middleware'    =>  'auth'
 	]);
 
-Route::get('/report',
+Route::get('/getreport',
 	[
-    'as'    =>  'getReport',
     'uses'  =>  'ReportController@getAllReport',
     'middleware'    =>  'auth'
 	]);
