@@ -155,3 +155,39 @@ def Mistake(x, y):
         return 0
     else:
         return 1
+
+
+# 规约最终结果，进行有效位数限定
+def bitAdapt(x, u_x, up, low):
+    global answer
+    answer = [0, 0, 0]
+    maxu = 10 ** up
+    minu = 10 ** low
+    if u_x > maxu:
+        print ("误差过大233")
+        return
+    if u_x < minu:
+        print ("误差过小233")
+        return
+    for i in range(low, up):
+        if 10 ** i < u_x < 10 ** (i + 1):
+            break
+    if u_x > (10 ** (i + 1) - 10 ** i):
+        bit = i + 1
+        u_x = 10 ** bit
+    else:
+        bit = i
+        u_x += 10 ** bit
+    if int(x / (10 ** (bit - 1))) % 10 > 5:
+        x += 10 ** bit
+    elif int(x / (10 ** (bit - 1))) % 10 == 5 and int(x / (10 ** bit)) % 2 == 1:
+        x += 10 ** bit
+    if bit < 0:
+        answer[0] = str(int(x / (10 ** bit)) * (10 ** bit))[0:len(str(10 ** bit)) + len(str(int(x))) - 1]
+        answer[1] = str(int(u_x / (10 ** bit)) * (10 ** bit))[0:len(str(10 ** bit))]
+        answer[2] = 0
+    else:
+        answer[0] = str(int(x / (10 ** bit)))
+        answer[1] = str(int(u_x / (10 ** bit)))
+        answer[2] = bit
+    return

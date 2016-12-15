@@ -36,6 +36,43 @@ class ajax extends AWS_CONTROLLER
 	{
 		HTTP::no_cache_header();
 	}
+	
+	public function get_comments_action() {
+
+		if (!$article_info = $this->model('article')->get_article_info_by_id($_POST['article_id']))
+		{
+			H::ajax_json_output(AWS_APP::RSM(null, '-1', AWS_APP::lang()->_t('指定文章不存在')));
+		}
+
+		$comments = $this->model('article')->get_comments($article_info['id'], $_POST['page'], 100);
+
+		if ($comments AND $this->user_id)
+		{
+			foreach ($comments AS $key => $val)
+			{
+				$comments[$key]['vote_info'] = $this->model('article')->get_article_vote_by_id('comment', $val['id'], 1, $this->user_id);
+				$comments[$key]['message'] = $this->model('question')->parse_at_user($val['message']);
+
+			}
+		}
+
+		$this->model('article')->update_views($article_info['id']);
+
+		// TPL::assign('comments', $comments);
+		// TPL::assign('comments_count', $article_info['comments']);
+		// TPL::assign('pagination', AWS_APP::pagination()->initialize(array(
+			// 'base_url' => get_js_url('/article/id-' . $article_info['id']),
+			// 'total_rows' => $article_info['comments'],
+			// 'per_page' => 100
+		// ))->create_links());
+
+		H::ajax_json_output(AWS_APP::RSM(array('comments'=>$comments,'comments_count'=>$article_info['comments']), 1, null));
+		
+	}
+	
+	public function phash_action() {
+		H::ajax_json_output(AWS_APP::RSM(array('new_post_hash'=>new_post_hash()), 1, null));
+	}
 
 	public function save_comment_action()
 	{

@@ -1,6 +1,13 @@
 ﻿@extends('layout.main')
 @section('contents')
-	admin
+	
+	<script src="./codemirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+	<script src="./codemirror/mode/javascript/javascript.js"></script>
+	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="./codemirror/mode/python/python.js"></script>
+	<script src="./codemirror/mode/markdown/markdown.js"></script>
+
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
       <div id="lab-container" class="container" style="background-color: transparent;">
@@ -148,6 +155,9 @@
           <div class="tab-pane panel-body active" role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;;text-align: center;">
             <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
+          <div class="tab-pane panel-body active" role="tabpanel" id="labCode" style="overflow-x: auto;overflow-y: auto;;text-align: center; display: hidden;"> 
+		  
+		  </div>
         </div>
         <div class="labdoc-btns" >
           <button id="button-view-preparation" class="btn btn-success" style="margin-bottom: 5px;" disabled>
@@ -223,13 +233,15 @@
   <script src="./js/star.js"></script>
   <script src="./js/test.js"></script>
   <script src="./js/statistics.js"></script>
-  <script src="./js/reportCore.js"></script>
+  <script src="./js/consoleCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
         check();
         $(document).ready(function(){
             $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
         });
+		var myCodeMirror = CodeMirror(document.getElementById('labCode'),{value:'',mode:'htmlmixed'});
+		
   </script>
 </body>
 </html>

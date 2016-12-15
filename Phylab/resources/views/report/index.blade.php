@@ -183,7 +183,11 @@
                     </div>
                   </div>
                 </div>
-                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;"><span class="sr-only">y</span><i class="fa fa-bookmark-o"></i>收藏此报告</button>
+                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;">
+                  <span class="sr-only">y</span>
+                  <i class="fa fa-bookmark-o"></i>
+                  <span id="collect-report-text">收藏此报告</span>
+                </button>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
@@ -193,6 +197,9 @@
             </div>
           </div>
           <div class="panel-body" style="padding:5px;">
+            <div id="wait-report">
+              <i id="wait-report-spinner" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            </div>
             <div id="firefox_pdf" style="width: 100%; height: 100%;display: none;">
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:780px;">
                 <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
@@ -202,6 +209,39 @@
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-width: 2px;border-color: black; background-color: rgb(228, 228, 228);padding-bottom: 10px;">
+    <div style="margin: 0 15px;">
+      <h1 style="margin-top: 0;">
+        <span>评论区</span>
+        <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
+      </h1>
+    </div>
+    <div class="row well" style="margin: 0 15px;">
+      <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
+        <table class="table table-hover">
+          <tr>
+            <th>用户名</th>
+            <th>评论</th>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-12 col-md-5" style="padding-right: 0;">
+        <div class="aw-mod aw-editor-box">
+          <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+          </form>
         </div>
       </div>
     </div>
@@ -226,10 +266,19 @@
   <script src="./js/reportCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
-        check();
-        $(document).ready(function(){
-            $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-        });
+      var G_BASE_URL = '<?php echo url('/');?>';
+      check();
+      $(document).ready(function(){
+          $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
+      });
+      /*$.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
+          'article_id': 7,
+          'page': 0
+      }).done(function (data) {
+          JSON.parse(data);
+      }).fail(function (xhr, status) {
+          alert('失败: ' + xhr.status + ', 原因: ' + status);
+      });*/
   </script>
 </body>
 </html>

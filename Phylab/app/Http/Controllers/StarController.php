@@ -47,54 +47,89 @@ class StarController extends Controller
      */
     public function create()
     {
-        $data = ["status"=>"",
-                 "message"=>"",
+       
+        $data = ["status"=>FAIL_MESSAGE,
+                 "message"=>"访问正常",
                  "id"=>""];
+        //return response()->json($data);
         $validatorRules = array(
                 'link' => 'required',
-                'reportId'  =>  'required|integer|exists:reports,id'
+                'reportId'  =>  'required|integer'
             );
         $validatorAttributes = array(
                 'link' => '临时报告链接',
                 'reportId'  =>  '报告模板类别'
             );
-        postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        try{
+            postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        }
+            catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "检查失败";
+                return response()->json($data);
+        }
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
-            $report = Report::find(Request::get('reportId'));
-            $experimentName = $report->experiment_name;
-            if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
-            {
-                $star = Star::create([
-                    'link' => Request::get('link'),
-                    'name' => 'Lab_'.Request::get('reportId').'_'.$experimentName.'_report',
-                    'user_id' => Auth::user()->id,
-                    'report_id' => Request::get('reportId')
-                    ]);
-                if($star){
-                    try{
-                        Storage::disk('local_public')->copy('pdf_tmp/'.Request::get('link'),'star_pdf/'.Request::get('link'));
-                    }
-                    catch(Exception $e)
-                    {
-                        $star->delete();
-                        throw new FileIOException();
-                    }
-                    $data["status"] = SUCCESS_MESSAGE;
-                    $data["id"]=$star->id;
-                }
-                else{
+            //$report = Report::find(Request::get('reportId'));
+            try{
+                $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
+                if($report->count() == 0){
                     $data["status"] = FAIL_MESSAGE;
-                    $data["message"] = "收藏报告失败";
+                    $data["message"] = "没有此类型报告";
+                    return response()->json($data);
                 }
+                $experimentName = $report->first()->experiment_name;
+            }catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "报告查询失败";
+                $data['reportnumber']= $report->count();
+                $data['reportId'] = Request::get('reportId');
+                return response()->json($data);
             }
-            else
-            {
-                throw new ReachCeilingException();
+            try{
+                if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
+                {
+                    $star = Star::create([
+                        'link' => Request::get('link'),
+                        'name' => 'Lab_'.Request::get('reportId').'_'.$experimentName.'_report',
+                        'user_id' => Auth::user()->id,
+                        'report_id' => Request::get('reportId')
+                        ]);
+                    if($star){
+                        try{
+                            Storage::disk('local_public')->copy('pdf_tmp/'.Request::get('link'),'star_pdf/'.Request::get('link'));
+                        }
+                        catch(Exception $e)
+                        {
+                            $star->delete();
+                            throw new FileIOException();
+                        }
+                        $data["status"] = SUCCESS_MESSAGE;
+                        $data["id"]=$star->id;
+                        $data["message"] = "收藏报告成功";
+                    }
+                    else{
+                        $data["status"] = FAIL_MESSAGE;
+                        $data["message"] = "收藏报告失败";
+                    }
+                }
+                else
+                {
+                    $data["status"] = FAIL_MESSAGE;
+                    $data["message"] = "超过收藏最大值";
+                    //throw new ReachCeilingException();
+                }
+            }catch(Exception $e){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "收藏创建失败";
+                return response()->json($data);
             }
         }
         else{
-            throw new NoResourceException();
+            $data["status"] = FAIL_MESSAGE;
+            $data["message"] = "不存在pdf文件";
+            //throw new NoResourceException();
         }
+        
         //注意通过传入的临时文件地址来转移文件
         return response()->json($data);
     }

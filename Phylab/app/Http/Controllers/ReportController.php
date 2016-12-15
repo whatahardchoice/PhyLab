@@ -22,23 +22,50 @@ class ReportController extends Controller
     public function index()
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
-        $data = ["reportTemplates"=>[],
-                 "username"=>Auth::user()->name,
-				 "auth"=>true];
-        $reports = Report::orderBy('experiment_id')->get();
+        
+        $data = ['reports'=>array(),
+                'username'=>Auth::user()->name,
+                'auth'=>true];
+        $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
             $rearr = array(
-                "id"=>$report->id,
-                "experimentId"=>$report->experiment_id,
+                "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
-                "prepareLink"=>$report->prepare_link
+                "relatedArticle"=>$report->related_article
                 );
-            array_push($data["reportTemplates"],$rearr);
+            if(array_key_exists($report->experiment_tag,$data['reports'])){
+                array_push($data['reports'][$report->experiment_tag],$rearr);
+            }else{
+                $data['reports'][$report->experiment_tag]=array($rearr);
+            }
         }
+        // return view("report.index",$data);
         return view("report.index",$data);
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * Show all reports file.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getAllReport(){
+        $data = ['reports'=>array()];
+        $reports = Report::orderBy('experiment_tag')->get();
+        foreach ($reports as $report) {
+            $rearr = array(
+                "id"=>$report->experiment_id,
+                "experimentName"=>$report->experiment_name,
+                "relatedArticle"=>$report->related_article
+                );
+            if(array_key_exists($report->experiment_tag,$data['reports'])){
+                array_push($data['reports'][$report->experiment_tag],$rearr);
+            }else{
+                $data['reports'][$report->experiment_tag]=array($rearr);
+            }
+        }
+        return response()->json($data);
+    }
     /**
      * Show the form for creating a new resource.
      *

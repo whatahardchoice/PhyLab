@@ -318,6 +318,7 @@ $('#button-generate-report').click(function () {
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+    $('#wait-report').show();
     PostAjax("./report",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -331,18 +332,41 @@ $('#button-generate-report').click(function () {
             }
             else
                 errorFunction(jsonText["message"]);
+            $('#wait-report').hide();
         }
-        else if(this.readyState==4 && this.status!=200)
+        else if(this.readyState==4 && this.status!=200) {
+            $('#wait-report').hide();
             errorFunction("生成报告失败");
+        }
     });
 });
 
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
-        deleteReportStar();
+        createStar();
     }
     else {
-        createStar();
+        deleteReportStar();
     }
 })
 
+function sendMessange() {
+    var post_hash = 0;
+    $.ajax(G_BASE_URL + '/wecenter/?/article/ajax/phash/', {
+        method: 'post',
+        async: false
+    }).done(function (data) {
+        post_hash = JSON.parse(data)['rsm']['new_post_hash'];
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
+    $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
+        'post_hash': post_hash,
+        'article_id': 7,
+        'message': 'test'
+    }).done(function (data) {
+        alert('成功, 收到的数据: ' + JSON.parse(data));
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
+}
