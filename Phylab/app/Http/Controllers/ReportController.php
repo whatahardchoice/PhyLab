@@ -45,6 +45,28 @@ class ReportController extends Controller
     }
 
     /**
+     * Show all reports file.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getAllReport(){
+        $data = ['reports'=>array()];
+        $reports = Report::orderBy('experiment_tag')->get();
+        foreach ($reports as $report) {
+            $rearr = array(
+                "id"=>$report->experiment_id,
+                "experimentName"=>$report->experiment_name,
+                "relatedArticle"=>$report->related_article
+                );
+            if(array_key_exists($report->experiment_tag,$data['reports'])){
+                array_push($data['reports'][$report->experiment_tag],$rearr);
+            }else{
+                $data['reports'][$report->experiment_tag]=array($rearr);
+            }
+        }
+        return response()->json($data);
+    }
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -150,6 +150,13 @@ Route::get('/report',
     'uses'  =>  'ReportController@index',
     'middleware'    =>  'auth'
 	]);
+
+Route::get('/report',
+	[
+    'as'    =>  'getReport',
+    'uses'  =>  'ReportController@getAllReport',
+    'middleware'    =>  'auth'
+	]);
 Route::get('/report/{id}',
 	[
     'uses'  =>  'ReportController@show',
