@@ -13,11 +13,11 @@ function createStar(){
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
                 $('#collect-report').attr('dbid',jsonText['id']);
-                $('#collect-report i').attr("class","fa fa-bookmark");
-                $('#collect-report').text('取消收藏');
+                $('#collect-report i').attr('class','fa fa-bookmark');
+                $('#collect-report-text').text('取消收藏');
                 $('#collect-report .sr-only').text("n");
                 alert("已添加至个人收藏夹！");
-                $('#collect-iframe').contentWindow.location.reload(true);
+                $('#collection-iframe').contentWindow.location.reload(true);
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -36,12 +36,12 @@ function deleteReportStar(){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
-            if(jsonText["status"]=='success'){
+            if(jsonText["status"]=='SUCCESS_MESSAGE'){
                 $('#collect-report i').attr('clas','fa fa-bookmark-o');
-                $('#collect-report').text('收藏此报告');
+                $('#collect-report-text').text('收藏此报告');
                 $('#collect-report .sr-only').text("y");
                 alert("已取消收藏！");
-                $('#collect-iframe').contentWindow.location.reload(true);
+                $('#collection-iframe').contentWindow.location.reload(true);
             }
             else{
                 errorAlert(jsonText["message"]);

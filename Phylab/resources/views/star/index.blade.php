@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/mystyle.css">
 </head>
 <body>
-	<div class="table-autoscroll well">
+	<div>
     <table class="table table-condensed table-striped table-hover">
         <thead>
             <tr>
@@ -19,7 +19,7 @@
                 <th>编辑</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="collection-list">
             @for ($i=0;$i < count($stars);$i++)
                 <tr id="star_{{$stars[$i]['id']}}">
                     <th scope="row">{{$i+1}}</th>
