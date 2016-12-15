@@ -22,7 +22,10 @@ class ReportController extends Controller
     public function index()
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
-        $data = [];
+        
+        $data = ['reports'=>array(),
+                'username'=>Auth::user()->name,
+                'auth'=>true];
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
             $rearr = array(
@@ -30,10 +33,10 @@ class ReportController extends Controller
                 "experimentName"=>$report->experiment_name,
                 "relatedArticle"=>$report->related_article
                 );
-            if(array_key_exists($report->experiment_tag,$data)){
-                array_push($data[$report->experiment_tag],$rearr);
+            if(array_key_exists($report->experiment_tag,$data['reports'])){
+                array_push($data['reports'][$report->experiment_tag],$rearr);
             }else{
-                $data[$report->experiment_tag]=array($rearr);
+                $data['reports'][$report->experiment_tag]=array($rearr);
             }
         }
         // return view("report.index",$data);
