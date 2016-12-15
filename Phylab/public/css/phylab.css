@@ -116,8 +116,6 @@ td input.form-control {
 }
 #wait-report {
   position: absolute;
-  height: 100%;
-  width: 100%;
   background-color: RGBA(0, 0, 0, 0.5);
   display: none;
 }
@@ -126,6 +124,32 @@ td input.form-control {
   top: 50%;
   left: 45%;
   color: RGB(200, 200, 200);
+}
+#comment-editor {
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 200px;
+  overflow-y: auto;
+}
+#button-comment-reply {
+  border-radius: 4px;
+  background-color: #08c093;
+  margin-top: 5px;
+  width: 10%;
+}
+#reply-notice {
+  position: absolute;
+  border-radius: 4px;
+  background-color: RGBA(0, 0, 0, 0.5);
+  display: none;
+}
+#reply-notice-check-group {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  color: white;
+  font-size: 20px;
 }
 /*登录页CSS*/
 #auto-login {
