@@ -309,10 +309,8 @@ function recordTableValue() {
 }
 
 $('#button-view-preparation').click(function () {
-    $('#wait-report').show();
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
-    $('#wait-report').hide();
 });
 
 $('#button-generate-report').click(function () {

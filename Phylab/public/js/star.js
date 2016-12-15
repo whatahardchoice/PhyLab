@@ -11,7 +11,7 @@ function createStar(){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
-            if(jsonText["status"]=='SUCCESS_MESSAGE'){
+            if(jsonText["status"]=='success'){
                 $('#collect-report').attr('dbid',jsonText['id']);
                 $('#collect-report i').attr("class","fa fa-bookmark");
                 $('#collect-report').text('取消收藏');

@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/sessions/1c54641d1ec8254c6ab1cdc6512a7b7a147e6740" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/phylab.css" afterPath="$PROJECT_DIR$/public/css/phylab.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportCore.js" afterPath="$PROJECT_DIR$/public/js/reportCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/star.js" afterPath="$PROJECT_DIR$/public/js/star.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" afterPath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/115ccb54ad02f0a993002e1a310b58e7" afterPath="$PROJECT_DIR$/storage/framework/views/115ccb54ad02f0a993002e1a310b58e7" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" afterPath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,13 +30,11 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="195" column="137" lean-forward="false" selection-start-line="195" selection-start-column="137" selection-end-line="195" selection-end-column="137" />
+            <state relative-caret-position="174">
+              <caret line="202" column="18" lean-forward="true" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
               <folding>
                 <element signature="e#12498#12518#0#HTML" expanded="true" />
-                <element signature="e#12554#12658#0#HTML" expanded="true" />
-                <element signature="e#12719#12791#0#HTML" expanded="true" />
-                <element signature="e#13221#13269#0#HTML" expanded="true" />
+                <element signature="e#13068#13116#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,7 +43,7 @@
       <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="-423">
               <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
               <folding />
             </state>
@@ -61,28 +53,28 @@
       <file leaf-file-name="phylab.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="898">
-              <caret line="153" column="40" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
+            <state relative-caret-position="632">
+              <caret line="127" column="2" lean-forward="false" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="314" column="29" lean-forward="false" selection-start-line="314" selection-start-column="29" selection-end-line="314" selection-end-column="29" />
+            <state relative-caret-position="289">
+              <caret line="310" column="49" lean-forward="false" selection-start-line="310" selection-start-column="49" selection-end-line="310" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="star.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="star.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/star.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="55" />
+            <state relative-caret-position="247">
+              <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -129,12 +121,12 @@
         <option value="$PROJECT_DIR$/public/js/xmlInteraction.js" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/regist.js" />
-        <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StarController.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/reportCore.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
         <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/reportCore.js" />
+        <option value="$PROJECT_DIR$/public/js/star.js" />
       </list>
     </option>
   </component>
@@ -523,12 +515,12 @@
       <workItem from="1481532885008" duration="7286000" />
       <workItem from="1481702564894" duration="19579000" />
       <workItem from="1481725031682" duration="7318000" />
-      <workItem from="1481803758672" duration="3167000" />
+      <workItem from="1481803758672" duration="3547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117114000" />
+    <option name="totallyTimeSpent" value="117494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -585,9 +577,7 @@
           <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="e#12498#12518#0#HTML" expanded="true" />
-            <element signature="e#12554#12658#0#HTML" expanded="true" />
-            <element signature="e#12719#12791#0#HTML" expanded="true" />
-            <element signature="e#13221#13269#0#HTML" expanded="true" />
+            <element signature="e#13068#13116#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -887,30 +877,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/star.js">
+    <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="55" />
+        <state relative-caret-position="289">
+          <caret line="310" column="49" lean-forward="false" selection-start-line="310" selection-start-column="49" selection-end-line="310" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="195" column="137" lean-forward="false" selection-start-line="195" selection-start-column="137" selection-end-line="195" selection-end-column="137" />
-          <folding>
-            <element signature="e#12498#12518#0#HTML" expanded="true" />
-            <element signature="e#12554#12658#0#HTML" expanded="true" />
-            <element signature="e#12719#12791#0#HTML" expanded="true" />
-            <element signature="e#13221#13269#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="-423">
           <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
           <folding />
         </state>
@@ -918,16 +895,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="898">
-          <caret line="153" column="40" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
+        <state relative-caret-position="632">
+          <caret line="127" column="2" lean-forward="false" selection-start-line="127" selection-start-column="2" selection-end-line="127" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="314" column="29" lean-forward="false" selection-start-line="314" selection-start-column="29" selection-end-line="314" selection-end-column="29" />
+        <state relative-caret-position="174">
+          <caret line="202" column="18" lean-forward="true" selection-start-line="202" selection-start-column="18" selection-end-line="202" selection-end-column="18" />
+          <folding>
+            <element signature="e#12498#12518#0#HTML" expanded="true" />
+            <element signature="e#13068#13116#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/star.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
         </state>
       </provider>

@@ -114,6 +114,19 @@ td input.form-control {
   height:100%;
   min-height:780px;
 }
+#wait-report {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: RGBA(0, 0, 0, 0.5);
+  display: none;
+}
+#wait-report-spinner {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  color: RGB(200, 200, 200);
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;
