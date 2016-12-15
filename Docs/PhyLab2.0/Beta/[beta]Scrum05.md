@@ -10,11 +10,11 @@
 # Task Report
 | Name | Issue                                    | Rate | Difficulties | Time | Expect |
 | ---- | ---------------------------------------- | ---- | ------------ | ---- | ------ |
-| 岳桐宇  | #99 https://github.com/default1406/PhyLab/issues/99 服务发布 #101 | 50%  | 无            | -    | -      |
-| 冯炜韬  | #85 https://github.com/default1406/PhyLab/issues/85 日常管理制定任务&回应用户提问 #100 设计管理后台 | 50%  | 无            | -    | -      |
-| 杨子琛  | #92 测试新的物理实验                             | 10%  | 无            | -    | -      |
-| 程富瑞  | #90 https://github.com/default1406/PhyLab/issues/90 新增实验 | 10%  | 无            | -    | -      |
-| 邓楚云  | #102 https://github.com/default1406/PhyLab/issues/102 缓存输入的数据、#89 增加评论区 | 50%  | 无            | -    | -      |
+| 岳桐宇  | #99 https://github.com/default1406/PhyLab/issues/99 服务发布 #101 | 50%  | 无            | 2   | 4     |
+| 冯炜韬  | #85 https://github.com/default1406/PhyLab/issues/85 日常管理制定任务&回应用户提问 #100 设计管理后台 | 50%  | 无            | 2   | 4     |
+| 杨子琛  | #92 测试新的物理实验                         | 10%  | 无            | 0   | 4     |
+| 程富瑞  | #90 https://github.com/default1406/PhyLab/issues/90 新增实验 | 10%  | 无            | 1   | 4     |
+| 邓楚云  | #102 https://github.com/default1406/PhyLab/issues/102 缓存输入的数据、#89 增加评论区 | 50%  | 无            | 5   | 4     |
 
 # Burn down chart
 
