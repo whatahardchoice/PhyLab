@@ -9,17 +9,11 @@ output:
     物距u = []  像距v = []
     焦距f = []
 '''
-from jinja2 import Template
-from jinja2 import Environment
-from math import sqrt
 import xml.dom.minidom
-import os
-import json
-import sys
-import subprocess
-import traceback
+from jinja2 import Environment
 from handler import texdir
 from phylab import *
+
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
 def CollimatedConvex(exper,source):
