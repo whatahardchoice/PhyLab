@@ -10,7 +10,7 @@ from handler import texdir
 from jinja2 import Environment
 import xml.dom.minidom
 import sys
-env = Environment()
+env = Environment(variable_start_string="||", variable_end_string="||")
 
 def GetTheGraph1022(y_init, theta2):
 	
@@ -78,14 +78,14 @@ def readXml1020314(root):
 	return data
 
 def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, source):
-	# theta1 	单位：mV
-	# theta2 	单位：mV
-	# mp		单位：g
-	# hp		单位：mm
-	# dp		单位：mm
-	# hb		单位：mm
-	# db		单位：mm
-	# theta 	单位：mV
+	# theta1 	鍗曚綅锛歮V
+	# theta2 	鍗曚綅锛歮V
+	# mp		鍗曚綅锛歡
+	# hp		鍗曚綅锛歮m
+	# dp		鍗曚綅锛歮m
+	# hb		鍗曚綅锛歮m
+	# db		鍗曚綅锛歮m
+	# theta 	鍗曚綅锛歮V
 	c = 0.368 #constant 0.368 J/g*K
 	ave_hp = sum(hp) / len(hp)
 	ave_dp = sum(dp) / len(dp)
