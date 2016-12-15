@@ -22,20 +22,22 @@ class ReportController extends Controller
     public function index()
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
-        $data = ["reportTemplates"=>[],
-                 "username"=>Auth::user()->name,
-				 "auth"=>true];
-        $reports = Report::orderBy('experiment_id')->get();
+        $data = [];
+        $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
             $rearr = array(
-                "id"=>$report->id,
-                "experimentId"=>$report->experiment_id,
+                "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
-                "prepareLink"=>$report->prepare_link
+                "relatedArticle"=>$report->related_article
                 );
-            array_push($data["reportTemplates"],$rearr);
+            if(array_key_exists($report->experiment_tag,$data)){
+                array_push($data[$report->experiment_tag],$rearr);
+            }else{
+                $data[$report->experiment_tag]=array($rearr);
+            }
         }
-        return view("report.index",$data);
+        // return view("report.index",$data);
+        return response()->json($data);
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 
