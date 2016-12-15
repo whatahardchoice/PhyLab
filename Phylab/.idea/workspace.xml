@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportCore.js" afterPath="$PROJECT_DIR$/public/js/reportCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
+            <state relative-caret-position="1010">
               <caret line="127" column="85" lean-forward="false" selection-start-line="127" selection-start-column="85" selection-end-line="127" selection-end-column="85" />
               <folding>
                 <element signature="e#5073#5093#0#HTML" expanded="true" />
@@ -76,17 +75,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="318" column="63" lean-forward="false" selection-start-line="318" selection-start-column="55" selection-end-line="318" selection-end-column="63" />
+            <state relative-caret-position="511">
+              <caret line="413" column="66" lean-forward="true" selection-start-line="413" selection-start-column="66" selection-end-line="413" selection-end-column="66" />
               <folding>
-                <marker date="1481824147034" expanded="true" signature="9223:9910" ph="..." />
-                <marker date="1481824147034" expanded="true" signature="9321:9688" ph="..." />
-                <marker date="1481824147034" expanded="true" signature="9370:9659" ph="..." />
-                <marker date="1481824147034" expanded="true" signature="9553:9629" ph="..." />
-                <marker date="1481824147034" expanded="true" signature="9855:9883" ph="..." />
+                <marker date="1481824651091" expanded="true" signature="9223:9910" ph="..." />
+                <marker date="1481824651091" expanded="true" signature="9321:9688" ph="..." />
+                <marker date="1481824651091" expanded="true" signature="9370:9659" ph="..." />
+                <marker date="1481824651091" expanded="true" signature="9553:9629" ph="..." />
+                <marker date="1481824651091" expanded="true" signature="9855:9883" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,8 +150,8 @@
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
         <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
-        <option value="$PROJECT_DIR$/public/js/reportCore.js" />
         <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/reportCore.js" />
       </list>
     </option>
   </component>
@@ -537,15 +536,15 @@
       <workItem from="1481532885008" duration="7286000" />
       <workItem from="1481702564894" duration="19579000" />
       <workItem from="1481725031682" duration="7318000" />
-      <workItem from="1481803758672" duration="18542000" />
+      <workItem from="1481803758672" duration="19030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132489000" />
+    <option name="totallyTimeSpent" value="132977000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -917,6 +916,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="127" column="85" lean-forward="false" selection-start-line="127" selection-start-column="85" selection-end-line="127" selection-end-column="85" />
+          <folding>
+            <element signature="e#5073#5093#0#HTML" expanded="true" />
+            <element signature="e#5272#5320#0#HTML" expanded="true" />
+            <element signature="e#5643#5691#0#HTML" expanded="true" />
+            <element signature="e#5877#5982#0#HTML" expanded="true" />
+            <element signature="e#5993#6016#0#HTML" expanded="true" />
+            <element signature="e#6028#6050#0#HTML" expanded="true" />
+            <element signature="e#6113#6172#0#HTML" expanded="true" />
+            <element signature="e#6223#6266#0#HTML" expanded="true" />
+            <element signature="e#6317#6341#0#HTML" expanded="true" />
+            <element signature="e#6533#6558#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2926">
@@ -935,33 +953,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="318" column="63" lean-forward="false" selection-start-line="318" selection-start-column="55" selection-end-line="318" selection-end-column="63" />
+        <state relative-caret-position="511">
+          <caret line="413" column="66" lean-forward="true" selection-start-line="413" selection-start-column="66" selection-end-line="413" selection-end-column="66" />
           <folding>
-            <marker date="1481824147034" expanded="true" signature="9223:9910" ph="..." />
-            <marker date="1481824147034" expanded="true" signature="9321:9688" ph="..." />
-            <marker date="1481824147034" expanded="true" signature="9370:9659" ph="..." />
-            <marker date="1481824147034" expanded="true" signature="9553:9629" ph="..." />
-            <marker date="1481824147034" expanded="true" signature="9855:9883" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="127" column="85" lean-forward="false" selection-start-line="127" selection-start-column="85" selection-end-line="127" selection-end-column="85" />
-          <folding>
-            <element signature="e#5073#5093#0#HTML" expanded="true" />
-            <element signature="e#5272#5320#0#HTML" expanded="true" />
-            <element signature="e#5643#5691#0#HTML" expanded="true" />
-            <element signature="e#5877#5982#0#HTML" expanded="true" />
-            <element signature="e#5993#6016#0#HTML" expanded="true" />
-            <element signature="e#6028#6050#0#HTML" expanded="true" />
-            <element signature="e#6113#6172#0#HTML" expanded="true" />
-            <element signature="e#6223#6266#0#HTML" expanded="true" />
-            <element signature="e#6317#6341#0#HTML" expanded="true" />
-            <element signature="e#6533#6558#0#HTML" expanded="true" />
+            <marker date="1481824651091" expanded="true" signature="9223:9910" ph="..." />
+            <marker date="1481824651091" expanded="true" signature="9321:9688" ph="..." />
+            <marker date="1481824651091" expanded="true" signature="9370:9659" ph="..." />
+            <marker date="1481824651091" expanded="true" signature="9553:9629" ph="..." />
+            <marker date="1481824651091" expanded="true" signature="9855:9883" ph="..." />
           </folding>
         </state>
       </provider>

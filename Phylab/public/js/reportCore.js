@@ -405,8 +405,14 @@ function sendComment(article_id, message) {
         'article_id': article_id,
         'message': message
     }).done(function (data) {
-        $('#reply-notice-check').attr('class', 'fa fa-check');
-        $('#reply-notice-text').text('评论成功');
+        if (JSON.parse(data)['errno'] !== -1) {
+            $('#reply-notice-check').attr('class', 'fa fa-check');
+            $('#reply-notice-text').text('评论成功');
+        }
+        else {
+            $('#reply-notice-check').attr('class', 'fa fa-exclamation');
+            $('#reply-notice-text').text(JSON.parse(data)['err']);
+        }
         //loadComments();
         //alert('成功, 收到的数据: ' + JSON.parse(data));
     }).fail(function (xhr, status) {
