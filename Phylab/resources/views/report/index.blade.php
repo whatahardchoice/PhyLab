@@ -183,7 +183,11 @@
                     </div>
                   </div>
                 </div>
-                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;"><span class="sr-only">y</span><i class="fa fa-bookmark-o"></i>收藏此报告</button>
+                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;">
+                  <span class="sr-only">y</span>
+                  <i class="fa fa-bookmark-o"></i>
+                  <span id="collect-report-text">收藏此报告</span>
+                </button>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
@@ -193,6 +197,9 @@
             </div>
           </div>
           <div class="panel-body" style="padding:5px;">
+            <div id="wait-report">
+              <i id="wait-report-spinner" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            </div>
             <div id="firefox_pdf" style="width: 100%; height: 100%;display: none;">
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:780px;">
                 <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
@@ -264,14 +271,14 @@
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
       });
-      $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
+      /*$.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
           'article_id': 7,
           'page': 0
       }).done(function (data) {
           JSON.parse(data);
       }).fail(function (xhr, status) {
           alert('失败: ' + xhr.status + ', 原因: ' + status);
-      });
+      });*/
   </script>
 </body>
 </html>

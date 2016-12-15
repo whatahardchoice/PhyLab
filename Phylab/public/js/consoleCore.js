@@ -281,7 +281,8 @@ $('#lab-select-modal .list-group li').click(function () {
         $('#button-generate-report').removeAttr("disabled");
         $('#collect-report').attr("disabled", true);
         $('#labdoc').html(data);
-		$('#labCode_val').val(data);
+		myCodeMirror.setValue(data);
+		myCodeMirror.
 		$('#labdoc').show();
 		$('#labCode').hide();
 		showCode=0;
@@ -322,6 +323,7 @@ $('#button-view-preparation').click(function () {
 		$('#labCode').show();
 		showCode=1;
 	} else {
+		$('#labdoc').html(myCodeMirror.getValue());
         $('#labdoc').show();
 		$('#labCode').hide();
 		showCode=0;

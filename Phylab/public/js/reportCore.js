@@ -318,6 +318,7 @@ $('#button-generate-report').click(function () {
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+    $('#wait-report').show();
     PostAjax("./report",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -331,9 +332,12 @@ $('#button-generate-report').click(function () {
             }
             else
                 errorFunction(jsonText["message"]);
+            $('#wait-report').hide();
         }
-        else if(this.readyState==4 && this.status!=200)
+        else if(this.readyState==4 && this.status!=200) {
+            $('#wait-report').hide();
             errorFunction("生成报告失败");
+        }
     });
 });
 

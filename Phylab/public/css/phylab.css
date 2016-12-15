@@ -58,7 +58,7 @@
   left: 180px;
 }
 .banner-container form .tip {
-  color: RGBA(255, 255, 255, 1);;
+  color: RGBA(255, 255, 255, 1);
 }
 .path-item .path-name, .path-item .path-course-num  {
   padding: 0;
@@ -114,6 +114,19 @@ td input.form-control {
   height:100%;
   min-height:780px;
 }
+#wait-report {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: RGBA(0, 0, 0, 0.5);
+  display: none;
+}
+#wait-report-spinner {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  color: RGB(200, 200, 200);
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;
@@ -151,7 +164,7 @@ td input.form-control {
   padding:6px;
   background:#1f2532;
   text-align:center;
-  box-shadow:0 5px 10px 0 rgba(0,0,0,.75)
+  box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.75);
 }
 .footer-qq-item:hover .footer-qq, .footer-blog-item:hover .footer-blog {
   display: block;
