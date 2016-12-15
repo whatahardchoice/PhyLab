@@ -57,7 +57,7 @@ def GetTheGraph1022(y_init, theta2):
 	tangent_line = np.polyfit(res_x, res_y, 1)
 	line_func = np.poly1d(tangent_line)
 	plt.plot([0, X_SIZE * 10],[(line_func(0) - Y_LOW) / Y_TIMES * 10, (line_func(X_SIZE * X_TIMES) - Y_LOW) / Y_TIMES * 10], linestyle='-', c="gray", linewidth=1)
-	fig.savefig(sys.argv[2] + ".png")
+	fig.savefig(sys.argv[3] + ".png")
 
 	return res_x, res_y
 
@@ -139,7 +139,7 @@ def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, 
 			u_k_k = ToScience(u_k_k), 
 			u_k = ToScience(u_k), 
 			final = final,
-			figurename = sys.argv[2]
+			figurename = sys.argv[3]
 			)
 
 def handler(XML):
@@ -154,5 +154,5 @@ if __name__ == '__main__':
 	texdir = scriptdir + 'tex/'
 	dom = xml.dom.minidom.parse(scriptdir + 'test/1020314test/1020314.xml')
 	root = dom.documentElement
-	sys.argv = ['', '', 'D:/Apache24/htdocs/tmp/1022']
+	sys.argv = ['', '', '', 'D:/Apache24/htdocs/tmp/1022']
 	print handler(root)
