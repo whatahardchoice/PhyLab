@@ -289,6 +289,7 @@ function initReportPage() {
                   </div>');
             for (var sublab in data.reports[labgroup]) {
                 $('#lab-' + labgroup+ '-collapse').append('<li class="list-group-item btn" id="lab-' + data.reports[labgroup][sublab]['id'] + '">' + data.reports[labgroup][sublab]['id'] + ' ' + data.reports[labgroup][sublab]['experimentName'] + '</li>')
+                sessionStorage.setItem(data.reports[labgroup][sublab]['id'] + '_article_id', data.reports[labgroup][sublab]['relatedArticle']);
             }
         }
         $('#lab-select-modal .list-group li').click(function () {
@@ -383,7 +384,7 @@ $('#collect-report').click(function () {
 });
 
 $('#button-comment-reply').click(function () {
-    sendComment();
+    sendComment(sessionStorage.getItem(CUR_SUBLAB + '_article_id', $('#comment-editor').val()));
 });
 
 function sendComment(article_id, message) {
