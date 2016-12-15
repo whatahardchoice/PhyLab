@@ -17,7 +17,7 @@ function createStar(){
                 $('#collect-report-text').text('取消收藏');
                 $('#collect-report .sr-only').text("n");
                 alert("已添加至个人收藏夹！");
-                $('#collection-iframe').contentWindow.location.reload(true);
+                $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -36,12 +36,12 @@ function deleteReportStar(){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
-            if(jsonText["status"]=='SUCCESS_MESSAGE'){
+            if(jsonText["status"]=='success'){
                 $('#collect-report i').attr('clas','fa fa-bookmark-o');
                 $('#collect-report-text').text('收藏此报告');
                 $('#collect-report .sr-only').text("y");
                 alert("已取消收藏！");
-                $('#collection-iframe').contentWindow.location.reload(true);
+                $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
             }
             else{
                 errorAlert(jsonText["message"]);

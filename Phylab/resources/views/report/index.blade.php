@@ -271,14 +271,14 @@
       $(document).ready(function(){
           $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
       });
-      $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
+      /*$.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
           'article_id': 7,
           'page': 0
       }).done(function (data) {
           JSON.parse(data);
       }).fail(function (xhr, status) {
           alert('失败: ' + xhr.status + ', 原因: ' + status);
-      });
+      });*/
   </script>
 </body>
 </html>
