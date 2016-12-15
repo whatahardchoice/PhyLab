@@ -183,7 +183,11 @@
                     </div>
                   </div>
                 </div>
-                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;"><span class="sr-only">y</span><i class="fa fa-bookmark-o"></i>收藏此报告</button>
+                <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;">
+                  <span class="sr-only">y</span>
+                  <i class="fa fa-bookmark-o"></i>
+                  <span id="collect-report-text">收藏此报告</span>
+                </button>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
