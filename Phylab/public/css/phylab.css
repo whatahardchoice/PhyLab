@@ -117,12 +117,12 @@ td input.form-control {
 #wait-report {
   position: absolute;
   background-color: RGBA(0, 0, 0, 0.5);
+  text-align:center;
   display: none;
 }
 #wait-report-spinner {
-  position: absolute;
-  top: 50%;
-  left: 45%;
+  position: relative;
+  top: 45%;
   color: RGB(200, 200, 200);
 }
 #comment-editor {
@@ -140,14 +140,14 @@ td input.form-control {
 }
 #reply-notice {
   position: absolute;
+  text-align:center;
   border-radius: 4px;
   background-color: RGBA(0, 0, 0, 0.5);
   display: none;
 }
 #reply-notice-check-group {
-  position: absolute;
+  position: relative;
   top: 45%;
-  left: 43%;
   color: white;
   font-size: 20px;
 }

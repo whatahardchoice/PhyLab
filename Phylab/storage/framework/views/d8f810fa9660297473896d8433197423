@@ -119,8 +119,8 @@
         <div id="comment-area">
           <div id="reply-notice">
             <div id="reply-notice-check-group">
-              <i id="reply-notice-check" class="fa fa-check"></i>
-              <span id="reply-notice-text"></span>
+              <i id="reply-notice-check" class="fa fa-tag"></i>
+              <span id="reply-notice-text">评论</span>
             </div>
           </div>
           <textarea rows="3" name="message" id="comment-editor" class="form-control autosize" placeholder="写下你的评论..."></textarea>
