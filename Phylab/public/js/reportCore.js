@@ -351,7 +351,7 @@ $('#button-generate-report').click(function () {
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
-    $('#wait-report').show();
+    $('#wait-report').fadeIn();
     PostAjax("./report",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -365,10 +365,10 @@ $('#button-generate-report').click(function () {
             }
             else
                 errorFunction(jsonText["message"]);
-            $('#wait-report').hide();
+            $('#wait-report').fadeOut();
         }
         else if(this.readyState==4 && this.status!=200) {
-            $('#wait-report').hide();
+            $('#wait-report').fadeOut();
             errorFunction("生成报告失败");
         }
     });
@@ -402,10 +402,16 @@ function sendComment(article_id, message) {
         'article_id': article_id,
         'message': message
     }).done(function (data) {
-        loadComments();
-        alert('成功, 收到的数据: ' + JSON.parse(data));
+        $('#reply-notice-check').attr('class', 'fa fa-check');
+        $('#reply-notice-text').text('评论成功');
+        //loadComments();
+        //alert('成功, 收到的数据: ' + JSON.parse(data));
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        $('#reply-notice-check').attr('class', 'fa fa-exclamation');
+        $('#reply-notice-text').text('评论失败');
+    }).always(function () {
+        $('#reply-notice').fadeIn();
+        setTimeout('$(\'#reply-notice\').fadeOut()', 1500);
     });
 }
 

@@ -120,7 +120,7 @@
           <div id="reply-notice">
             <div id="reply-notice-check-group">
               <i id="reply-notice-check" class="fa fa-check"></i>
-              <span>评论成功</span>
+              <span id="reply-notice-text"></span>
             </div>
           </div>
           <textarea rows="3" name="message" id="comment-editor" class="form-control autosize" placeholder="写下你的评论..."></textarea>
@@ -153,7 +153,6 @@
   <script>
       var G_BASE_URL = '<?php echo url('/');?>';
       initReportPage();
-
   </script>
 </body>
 </html>
