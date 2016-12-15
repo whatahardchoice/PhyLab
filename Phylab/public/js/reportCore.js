@@ -309,8 +309,10 @@ function recordTableValue() {
 }
 
 $('#button-view-preparation').click(function () {
+    $('#wait-report').show();
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
+    $('#wait-report').hide();
 });
 
 $('#button-generate-report').click(function () {
@@ -318,6 +320,7 @@ $('#button-generate-report').click(function () {
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+    $('#wait-report').show();
     PostAjax("./report",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -331,9 +334,12 @@ $('#button-generate-report').click(function () {
             }
             else
                 errorFunction(jsonText["message"]);
+            $('#wait-report').hide();
         }
-        else if(this.readyState==4 && this.status!=200)
+        else if(this.readyState==4 && this.status!=200) {
+            $('#wait-report').hide();
             errorFunction("生成报告失败");
+        }
     });
 });
 

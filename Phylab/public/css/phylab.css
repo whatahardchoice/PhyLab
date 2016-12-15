@@ -58,7 +58,7 @@
   left: 180px;
 }
 .banner-container form .tip {
-  color: RGBA(255, 255, 255, 1);;
+  color: RGBA(255, 255, 255, 1);
 }
 .path-item .path-name, .path-item .path-course-num  {
   padding: 0;
@@ -151,7 +151,7 @@ td input.form-control {
   padding:6px;
   background:#1f2532;
   text-align:center;
-  box-shadow:0 5px 10px 0 rgba(0,0,0,.75)
+  box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.75);
 }
 .footer-qq-item:hover .footer-qq, .footer-blog-item:hover .footer-blog {
   display: block;

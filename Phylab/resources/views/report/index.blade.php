@@ -193,6 +193,9 @@
             </div>
           </div>
           <div class="panel-body" style="padding:5px;">
+            <div id="wait-report" style="position: absolute;height: 100%;width: 100%;background-color: RGBA(0, 0, 0, 0.5); display: none;">
+              <i class="fa fa-spinner fa-spin fa-3x fa-fw" style="position: absolute;top: 50%;left: 45%;color: RGB(200, 200, 200);"></i>
+            </div>
             <div id="firefox_pdf" style="width: 100%; height: 100%;display: none;">
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_object" style="width:100%;height:100%;min-height:780px;">
                 <embed src="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_embed">
