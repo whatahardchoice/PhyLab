@@ -19,6 +19,7 @@ output:
 import xml.dom.minidom
 from jinja2 import Environment
 from handler import texdir
+from handler import scriptdir
 from phylab import *
 
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
@@ -49,20 +50,20 @@ u_f = 0
 
 S_POS = ""
 P_POS = ""
-BIG11 = ""
-BIG12 = ""
-BIG21 = ""
-BIG22 = ""
-SMALL11 = ""
-SMALL12 = ""
-SMALL21 = ""
-SMALL22 = ""
+BIG11 = []
+BIG12 = []
+BIG21 = []
+BIG22 = []
+SMALL11 = []
+SMALL12 = []
+SMALL21 = []
+SMALL22 = []
 B = ""
-A = ""
+A = []
 AVERAGE_A = ""
 UA_A = ""
 U_A = ""
-RESULT = []
+answer = []
 
 
 def handler(sublab_root):
@@ -79,7 +80,7 @@ def xmlReader(sublab_root):
     table_list = sublab_root.getElementsByTagName("table")
     table1 = table_list[0]
     table2 = table_list[1]
-    row1 = table1.getElementByTagName("tr")
+    row1 = (table1.getElementsByTagName("tr"))[0]
     row1_elements = row1.getElementsByTagName("td")
     s_pos = float(row1_elements[0].firstChild.nodeValue)
     p_pos = float(row1_elements[1].firstChild.nodeValue)
@@ -124,25 +125,26 @@ def niconiconi():
     size = len(big_1_1)
     sum_a = 0
     for i in range(size):
-        a.append(abs(small_1_1 + small_1_2 + small_2_1 + small_2_2 - big_1_1 - big_1_2 - big_2_1 - big_2_2) / 4)
+        a.append(abs(small_1_1[i] + small_1_2[i] + small_2_1[i] + small_2_2[i] - big_1_1[i] - big_1_2[i] - big_2_1[i] \
+                     - big_2_2[i]) / 4)
         sum_a += a[i]
     if size > 0:
         average_a = sum_a / size
     else:
         print "no data!"
     b = abs(p_pos - s_pos)
-    f = (b*b-a*a)/(4*b)
+    f = (pow(b, 2) - pow(average_a, 2))/(4*b)
     ua_a = Ua(a, average_a, size)
     ub_a = 0.5774
     u_a = sqrt(ua_a*ua_a+ub_a*ub_a)
     ua_b = 0
     ub_b = 0.5774
     u_b = sqrt(ua_b*ua_b+ub_b*ub_b)
-    u_f = sqrt(pow(((b*b+a*a)/(4*b*b)*u_a), 2)+pow((a/b/2*u_b), 2))
+    u_f = sqrt(pow(((pow(b, 2) + pow(average_a, 2))/(4*pow(b, 2))*u_a), 2)+pow((average_a/b/2*u_b), 2))
 
 
 def regulation():
-    global S_POS, P_POS, BIG11, BIG12, BIG21, BIG22, SMALL11, SMALL12, SMALL21, SMALL22, B, AVERAGE_A, UA_A, U_A, \
+    global S_POS, P_POS, BIG11, BIG12, BIG21, BIG22, SMALL11, SMALL12, SMALL21, SMALL22, B, AVERAGE_A, UA_A, U_A,\
         p_pos, s_pos, big_1_1, big_1_2, big_2_1, big_2_2, small_1_1, small_2_1, small_1_2, small_2_2, \
         b, a, average_a, f, ua_a, ua_b, ub_a, ub_b, u_f, u_a, u_b
     P_POS = ToScience(p_pos)
@@ -186,7 +188,59 @@ def lexFiller(source):
         SMALL22=SMALL22,
         UA_A=UA_A,
         U_A=U_A,
-        F=RESULT[0],
-        UF=RESULT[1],
+        F=answer[0],
+        UF=answer[1],
     )
     return complete_file
+
+
+# 规约最终结果，进行有效位数限定
+def bitAdapt(x, u_x, up, low):
+    global answer
+    answer = [0, 0, 0]
+    maxu = 10 ** up
+    minu = 10 ** low
+    if u_x > maxu:
+        print ("误差过大")
+        return
+    if u_x < minu:
+        print ("误差过小")
+        return
+    for i in range(low, up):
+        if 10 ** i < u_x < 10 ** (i + 1):
+            break
+    if u_x > (10 ** (i + 1) - 10 ** i):
+        bit = i + 1
+        u_x = 10 ** bit
+    else:
+        bit = i
+        u_x += 10 ** bit
+    if int(x / (10 ** (bit - 1))) % 10 > 5:
+        x += 10 ** bit
+    elif int(x / (10 ** (bit - 1))) % 10 == 5 and int(x / (10 ** bit)) % 2 == 1:
+        x += 10 ** bit
+    if bit < 0:
+        answer[0] = str(int(x / (10 ** bit)) * (10 ** bit))[0:len(str(10 ** bit)) + len(str(int(x))) - 1]
+        answer[1] = str(int(u_x / (10 ** bit)) * (10 ** bit))[0:len(str(10 ** bit))]
+        answer[2] = 0
+    else:
+        answer[0] = str(int(x / (10 ** bit)))
+        answer[1] = str(int(u_x / (10 ** bit)))
+        answer[2] = bit
+    return
+
+
+
+if __name__ == '__main__':
+    dom = xml.dom.minidom.parse(scriptdir + 'test/1060312test/1060312.xml')
+    root = dom.documentElement
+    sublab_list = root.getElementsByTagName('sublab')
+    for sublab in sublab_list:
+        sublab_status = sublab.getAttribute("status")
+        sublab_id = sublab.getAttribute("id")
+        if (sublab_status == 'true') & (sublab_id == '10613'):
+            handler(sublab)
+    print(big_1_1)
+    print(f)
+    print(u_f)
+    print(answer)
