@@ -37,7 +37,7 @@ class ReportController extends Controller
             }
         }
         // return view("report.index",$data);
-        return response()->json($data);
+        return view("report.index",$data);
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 
