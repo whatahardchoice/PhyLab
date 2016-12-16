@@ -440,16 +440,22 @@ function loadComments(article_id, page, group_id) {
     }).done(function (data) {
         data = JSON.parse(data);
         if (data['errno'] === 1) {
-            var group_comments_num;
-            if (group_id < parseInt(data['rsm']['comments_count'] / 5))
-                group_comments_num = 5;
-            else
-                group_comments_num = parseInt(data['rsm']['comments_count'] % 5);
-            for (var i = 0; i < group_comments_num; i++) {
+            var i;
+            var groups_num = Math.ceil(data['rsm']['comments_count'] / 5);
+            var last_group_comments_num = data['rsm']['comments_count'] % 5;
+            if (group_id === groups_num - 1)
+                if (last_group_comments_num > 0)
+                    i = last_group_comments_num;
+                else
+                    i = 4;
+            else {
+                i = 4;
+            }
+            for (; i >= 0; i--) {
                 $('#table-comment-area').append(
                     '<tr> \
-                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['user_info']['user_name'] + '</td> \
-                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['message'] + '</td> \
+                        <td>' + data['rsm']['comments'][((groups_num - 1 - group_id) * 5 + i).toString()]['user_info']['user_name'] + '</td> \
+                        <td>' + data['rsm']['comments'][((groups_num - 1 - group_id) * 5 + i).toString()]['message'] + '</td> \
                     </tr>');
             }
         }
