@@ -427,8 +427,8 @@ function sendComment(article_id, message) {
 }
 
 function loadComments(article_id, page, group_id) {
-    $('#comment-area').text(
-        '<table id="comment-area" class="table table-hover"> \
+    $('#comment-area').html(
+        '<table id="table-comment-area" class="table table-hover"> \
             <tr> \
                 <th style="width: 10%;">用户名</th> \
                 <th style="width: 90%;">评论</th> \
@@ -446,11 +446,11 @@ function loadComments(article_id, page, group_id) {
             else
                 group_comments_num = parseInt(data['rsm']['comments_count'] % 5);
             for (var i = 0; i < group_comments_num; i++) {
-                $('#comment-area').append(
+                $('#table-comment-area').append(
                     '<tr> \
                         <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['user_info']['user_name'] + '</td> \
-                    <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['message'] + '</td> \
-                </tr>');
+                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['message'] + '</td> \
+                    </tr>');
             }
         }
         else

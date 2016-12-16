@@ -108,12 +108,12 @@
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
-        <table id="comment-area" class="table table-hover">
-          <span style="text-align: center;">未选择子实验（无法显示评论区）</span>
-        </table>
+        <div id="comment-area">
+          <h1 style="text-align: center">未选择子实验（无法显示评论区）</h1>
+        </div>
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
-        <div id="comment-area">
+        <div id="reply-area">
           <div id="reply-notice">
             <div id="reply-notice-check-group">
               <i id="reply-notice-check" class="fa fa-tag"></i>
