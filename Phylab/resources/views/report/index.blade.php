@@ -108,10 +108,30 @@
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
-        <table class="table table-hover">
+        <table id="comment-area" class="table table-hover">
           <tr>
             <th style="width: 10%;">用户名</th>
             <th style="width: 90%;">评论</th>
+          </tr>
+          <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+          </tr>
+          <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+          </tr>
+          <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+          </tr>
+          <tr>
+            <td>asdf</td>
+            <td>asdf</td>
+          </tr>
+          <tr>
+            <td>asdf</td>
+            <td>asdf</td>
           </tr>
         </table>
       </div>

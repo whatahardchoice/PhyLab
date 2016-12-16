@@ -318,7 +318,7 @@ function initReportPage() {
 
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
-                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0);
+                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
@@ -406,13 +406,14 @@ function sendComment(article_id, message) {
         'article_id': article_id,
         'message': message
     }).done(function (data) {
-        if (JSON.parse(data)['errno'] !== -1) {
+        data = JSON.parse(data);
+        if (data['errno'] === 1) {
             $('#reply-notice-check').attr('class', 'fa fa-check');
             $('#reply-notice-text').text('评论成功');
         }
         else {
             $('#reply-notice-check').attr('class', 'fa fa-exclamation');
-            $('#reply-notice-text').text(JSON.parse(data)['err']);
+            $('#reply-notice-text').text(data['err']);
         }
         //loadComments();
         //alert('成功, 收到的数据: ' + JSON.parse(data));
@@ -425,12 +426,33 @@ function sendComment(article_id, message) {
     });
 }
 
-function loadComments(article_id, page) {
-    $.post('http://120.27.125.156' + '/wecenter/?/article/ajax/get_comments/', {
+function loadComments(article_id, page, group_id) {
+    $('#comment-area').html(
+        '<tr> \
+            <th style="width: 10%;">用户名</th> \
+            <th style="width: 90%;">评论</th> \
+        </tr>');
+    $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
         'article_id': article_id,
         'page': page
     }).done(function (data) {
         data = JSON.parse(data);
+        if (data['errno'] === 1) {
+            var group_comments_num;
+            if (group_id < parseInt(data['rsm']['comments_count'] / 5))
+                group_comments_num = 5;
+            else
+                group_comments_num = parseInt(data['rsm']['comments_count'] % 5);
+            for (var i = 0; i < group_comments_num; i++) {
+                $('#comment-area').append(
+                    '<tr> \
+                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['usrt_info']['user_name'] + '</td> \
+                    <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['message'] + '</td> \
+                </tr>');
+            }
+        }
+        else
+            alert('失败: ' + data['errno'] + ', 原因: ' + data['err']);
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
