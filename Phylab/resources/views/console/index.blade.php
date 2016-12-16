@@ -2,6 +2,7 @@
 @section('contents')
 	<script src="./codemirror/lib/codemirror.js"></script>
 	<link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+	<script src="./codemirror/mode/htmlembedded/htmlembedded.js"></script>
 	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
 	<script src="./codemirror/mode/javascript/javascript.js"></script>
 	<script src="./codemirror/mode/python/python.js"></script>
@@ -123,12 +124,13 @@
   <script src="./js/star.js"></script>
   <script src="./js/test.js"></script>
   <script src="./js/statistics.js"></script>
-  <script src="./js/reportCore.js"></script>
+  <script src="./js/consoleCore.js"></script>
   <script src="./js/jquery.cookie.js"></script>
   <script>
       var G_BASE_URL = '<?php echo url('/');?>';
       initReportPage();
-	  var myCodeMirror=CodeMirror.fromTextArea(document.getElementById('html_editor'),{mode:'htmlmixed',value:'code here...'});
+	  var myCodeMirror=CodeMirror.fromTextArea(document.getElementById('html_editor'),{mode:'htmlembedded',value:'code here...'});
+	  myCodeMirror.setSize(400,600);
   </script>
 </body>
 </html>
