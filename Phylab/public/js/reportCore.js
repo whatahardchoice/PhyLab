@@ -1,8 +1,9 @@
 
 var labDoc3dot1415926;
-var CUR_LAB_GROUP = null;
-var CUR_SUBLAB = null;
-var CUR_PDF = null;
+var CUR_LAB_GROUP;
+var CUR_SUBLAB;
+var CUR_PDF;
+var CUR_GROUPS_NUM;
 function lab(index){
     this.index = index;
     this.dbId = getDbId(index);
@@ -441,9 +442,10 @@ function loadComments(article_id, page, group_id) {
         data = JSON.parse(data);
         if (data['errno'] === 1) {
             var i;
-            var groups_num = Math.ceil(data['rsm']['comments_count'] / 5);
-            var last_group_comments_num = data['rsm']['comments_count'] % 5;
-            if (group_id === groups_num - 1)
+            var comments_count = data['rsm']['comments_count'];
+            CUR_GROUPS_NUM = Math.ceil(comments_count / 5);
+            var last_group_comments_num = comments_count % 5;
+            if (group_id === CUR_GROUPS_NUM - 1)
                 if (last_group_comments_num > 0)
                     i = last_group_comments_num;
                 else
@@ -454,8 +456,8 @@ function loadComments(article_id, page, group_id) {
             for (; i >= 0; i--) {
                 $('#table-comment-area').append(
                     '<tr> \
-                        <td>' + data['rsm']['comments'][((groups_num - 1 - group_id) * 5 + i).toString()]['user_info']['user_name'] + '</td> \
-                        <td>' + data['rsm']['comments'][((groups_num - 1 - group_id) * 5 + i).toString()]['message'] + '</td> \
+                        <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['user_info']['user_name'] + '</td> \
+                        <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['message'] + '</td> \
                     </tr>');
             }
         }
