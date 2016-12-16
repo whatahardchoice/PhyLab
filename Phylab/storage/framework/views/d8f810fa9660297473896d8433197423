@@ -110,8 +110,8 @@
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
         <table class="table table-hover">
           <tr>
-            <th>用户名</th>
-            <th>评论</th>
+            <th style="width: 10%;">用户名</th>
+            <th style="width: 90%;">评论</th>
           </tr>
         </table>
       </div>

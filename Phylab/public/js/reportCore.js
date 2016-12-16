@@ -318,6 +318,7 @@ function initReportPage() {
 
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
+                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0);
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
@@ -425,7 +426,7 @@ function sendComment(article_id, message) {
 }
 
 function loadComments(article_id, page) {
-    $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
+    $.post('http://120.27.125.156' + '/wecenter/?/article/ajax/get_comments/', {
         'article_id': article_id,
         'page': page
     }).done(function (data) {
