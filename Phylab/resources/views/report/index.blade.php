@@ -107,16 +107,14 @@
       </h1>
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
-      <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
+      <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;margin-bottom: 0px;">
         <div id="comment-area" style="height: 205px;">
           <h1 style="text-align: center">未选择子实验（无法显示评论区）</h1>
         </div>
-        <nav class="pull-right" style="display: none;">
-          <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li><a href="#">&raquo;</a></li>
-          </ul>
-        </nav>
+        <div id="btn-group-comment-group" class="btn-group pagination pull-right" style="margin: 0;display: none;">
+          <button id="button-prev-comment-group" type="button" class="btn btn-default" disabled>&laquo;</button>
+          <button id="button-next-comment-group" type="button" class="btn btn-default" disabled>&raquo;</button>
+        </div>
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
         <div id="reply-area">

@@ -3,7 +3,8 @@ var labDoc3dot1415926;
 var CUR_LAB_GROUP;
 var CUR_SUBLAB;
 var CUR_PDF;
-var CUR_GROUPS_NUM;
+var CUR_COMMENT_GROUPS_NUM;
+var CUR_COMMENT_GROUPS_INDEX;
 function lab(index){
     this.index = index;
     this.dbId = getDbId(index);
@@ -320,6 +321,8 @@ function initReportPage() {
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
                 loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
+                $('#btn-group-comment-group').show();
+                CUR_COMMENT_GROUPS_INDEX = 0;
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
@@ -392,6 +395,28 @@ $('#button-comment-reply').click(function () {
     sendComment(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), $('#comment-editor').val());
 });
 
+$('#button-next-comment-group').click(function () {
+    CUR_COMMENT_GROUPS_INDEX++;
+    if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 1) {
+        $(this).attr('disabled', true);
+    }
+    if (CUR_COMMENT_GROUPS_INDEX === 1) {
+        $('#button-prev-comment-group').removeAttr('disabled');
+    }
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, CUR_COMMENT_GROUPS_INDEX);
+});
+
+$('#button-prev-comment-group').click(function () {
+    CUR_COMMENT_GROUPS_INDEX--;
+    if (CUR_COMMENT_GROUPS_INDEX === 0) {
+        $(this).attr('disabled', true);
+    }
+    if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 2) {
+        $('#button-next-comment-group').removeAttr('disabled');
+    }
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, CUR_COMMENT_GROUPS_INDEX);
+});
+
 function sendComment(article_id, message) {
     var post_hash = 0;
     $.ajax(G_BASE_URL + '/wecenter/?/article/ajax/phash/', {
@@ -416,7 +441,7 @@ function sendComment(article_id, message) {
             $('#reply-notice-check').attr('class', 'fa fa-exclamation');
             $('#reply-notice-text').text(data['err']);
         }
-        //loadComments();
+        loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
         //alert('成功, 收到的数据: ' + JSON.parse(data));
     }).fail(function (xhr, status) {
         $('#reply-notice-check').attr('class', 'fa fa-exclamation');
@@ -443,9 +468,9 @@ function loadComments(article_id, page, group_id) {
         if (data['errno'] === 1) {
             var i;
             var comments_count = data['rsm']['comments_count'];
-            CUR_GROUPS_NUM = Math.ceil(comments_count / 5);
+            CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
             var last_group_comments_num = comments_count % 5;
-            if (group_id === CUR_GROUPS_NUM - 1)
+            if (group_id === CUR_COMMENT_GROUPS_NUM - 1)
                 if (last_group_comments_num > 0)
                     i = last_group_comments_num;
                 else
@@ -460,7 +485,9 @@ function loadComments(article_id, page, group_id) {
                         <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['message'] + '</td> \
                     </tr>');
             }
-            $('#comment nav').show();
+            $('#btn-group-comment-group').show();
+            if (CUR_COMMENT_GROUPS_NUM > 0)
+                $('#button-next-comment-group').removeAttr('disabled');
         }
         else
             alert('失败: ' + data['errno'] + ', 原因: ' + data['err']);

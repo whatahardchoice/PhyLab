@@ -151,6 +151,12 @@ td input.form-control {
   color: white;
   font-size: 20px;
 }
+#button-prev-comment-group {
+  border-radius: 4px 0 0 4px;
+}
+#button-next-comment-group {
+  border-radius: 0 4px 4px 0;
+}
 /*登录页CSS*/
 #auto-login {
   padding: 0px;
