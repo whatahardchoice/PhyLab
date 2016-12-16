@@ -1,7 +1,4 @@
-
-var labDoc3dot1415926;
-var CUR_LAB_GROUP = null;
-var CUR_SUBLAB = null;
+var CUR_PDF = null;
 function lab(index){
     this.index = index;
     this.dbId = getDbId(index);
@@ -25,12 +22,14 @@ function getDbId(index){
 function check(){
     if(browser()=="FF"){
         document.getElementById('firefox_pdf').style.display='block';
+        CUR_PDF = 'firefox_pdf';
     }
     else if(browser()=="IE6"||browser()=="IE7"){
         alert("Please use the above version of IE8 or other browsers");
     }
     else {
         document.getElementById('chrom_pdf').style.display='block';
+        CUR_PDF = 'chrom_pdf';
         cp('./prepare_pdf/phylab_test.pdf');
     }
     $('#lab_collapse').collapse({
@@ -262,6 +261,7 @@ function Post_lab(postErrorFunc){
     });
 }
 
+
 //PhyLab2.0新增脚本
 
 var showCode=0;
@@ -330,6 +330,7 @@ function initReportPage() {
     });
 }
 
+
 function recordTableValue() {
     var inputs_val = localStorage.getItem($('#username').text() + CUR_SUBLAB + '-table');
     if (inputs_val) {
@@ -369,6 +370,7 @@ $('#button-generate-report').click(function () {
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+    $('#wait-report').fadeIn();
     PostAjax("./report",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
@@ -382,11 +384,14 @@ $('#button-generate-report').click(function () {
             }
             else
                 errorFunction(jsonText["message"]);
+            $('#wait-report').fadeOut();
         }
-        else if(this.readyState==4 && this.status!=200)
+        else if(this.readyState==4 && this.status!=200) {
+            $('#wait-report').fadeOut();
             errorFunction("生成报告失败");
+        }
     });
-});
+});;
 
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
