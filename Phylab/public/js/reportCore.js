@@ -428,10 +428,12 @@ function sendComment(article_id, message) {
 
 function loadComments(article_id, page, group_id) {
     $('#comment-area').text(
-        '<tr> \
-            <th style="width: 10%;">用户名</th> \
-            <th style="width: 90%;">评论</th> \
-        </tr>');
+        '<table id="comment-area" class="table table-hover"> \
+            <tr> \
+                <th style="width: 10%;">用户名</th> \
+                <th style="width: 90%;">评论</th> \
+            </tr> \
+        </table>');
     $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
         'article_id': article_id,
         'page': page

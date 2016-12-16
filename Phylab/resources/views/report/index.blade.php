@@ -108,9 +108,8 @@
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
-        <table id="comment-area" class="table table-hover">
-          <h1 style="text-align: center;">未选择子实验（无法显示评论区）</h1>
-        </table>
+        <h1 style="text-align: center">未选择子实验（无法显示评论区）</h1>
+
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
         <div id="comment-area">
