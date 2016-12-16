@@ -108,31 +108,8 @@
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
-        <table class="table table-hover">
-          <tr>
-            <th style="width: 10%;">用户名</th>
-            <th style="width: 90%;">评论</th>
-          </tr>
-          <tr>
-            <td>asdf</td>
-            <td>asdf</td>
-          </tr>
-          <tr>
-            <td>asdf</td>
-            <td>asdf</td>
-          </tr>
-          <tr>
-            <td>asdf</td>
-            <td>asdf</td>
-          </tr>
-          <tr>
-            <td>asdf</td>
-            <td>asdf</td>
-          </tr>
-          <tr>
-            <td>asdf</td>
-            <td>asdf</td>
-          </tr>
+        <table id="comment-area" class="table table-hover">
+          <h1 style="text-align: center;">未选择子实验（无法显示评论区）</h1>
         </table>
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">

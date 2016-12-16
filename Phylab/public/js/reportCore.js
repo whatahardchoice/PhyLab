@@ -446,7 +446,7 @@ function loadComments(article_id, page, group_id) {
             for (var i = 0; i < group_comments_num; i++) {
                 $('#comment-area').append(
                     '<tr> \
-                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['usrt_info']['user_name'] + '</td> \
+                        <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['user_info']['user_name'] + '</td> \
                     <td>' + data['rsm']['comments'][(group_id * 5 + i).toString()]['message'] + '</td> \
                 </tr>');
             }

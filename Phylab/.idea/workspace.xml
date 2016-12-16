@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/resources/views/report/index.blade.php" line="139" />
+    <bookmark url="file://$PROJECT_DIR$/resources/views/report/index.blade.php" line="116" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportCore.js" afterPath="$PROJECT_DIR$/public/js/reportCore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" afterPath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" />
@@ -31,14 +30,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="114" selection-end-column="15" />
+            <state relative-caret-position="-90">
+              <caret line="111" column="14" lean-forward="false" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
               <folding>
-                <element signature="e#6434#6453#0#HTML" expanded="true" />
-                <element signature="e#6479#6498#0#HTML" expanded="true" />
+                <element signature="e#6417#6444#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,22 +72,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="432" column="12" lean-forward="false" selection-start-line="432" selection-start-column="12" selection-end-line="432" selection-end-column="12" />
+            <state relative-caret-position="2878">
+              <caret line="448" column="92" lean-forward="false" selection-start-line="448" selection-start-column="92" selection-end-line="448" selection-end-column="92" />
               <folding>
-                <marker date="1481899810804" expanded="true" signature="9223:9910" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="9321:9688" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="9370:9659" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="9553:9629" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="9855:9883" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="15632:15678" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="15632:15741" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="15659:15670" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="15706:15717" ph="..." />
-                <marker date="1481899810804" expanded="true" signature="16340:16593" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="9223:9910" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="9321:9688" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="9370:9659" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="9553:9629" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="9855:9883" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="15632:15678" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="15632:15741" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="15659:15670" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="15706:15717" ph="..." />
+                <marker date="1481900082222" expanded="true" signature="16340:16593" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,8 +152,8 @@
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
         <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
-        <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
         <option value="$PROJECT_DIR$/public/js/reportCore.js" />
+        <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
       </list>
     </option>
   </component>
@@ -541,12 +539,12 @@
       <workItem from="1481702564894" duration="19579000" />
       <workItem from="1481725031682" duration="7318000" />
       <workItem from="1481803758672" duration="21397000" />
-      <workItem from="1481897303058" duration="2504000" />
+      <workItem from="1481897303058" duration="2884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137848000" />
+    <option name="totallyTimeSpent" value="138228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -588,8 +586,7 @@
         <state relative-caret-position="475">
           <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
-            <element signature="e#6434#6453#0#HTML" expanded="true" />
-            <element signature="e#6479#6498#0#HTML" expanded="true" />
+            <element signature="e#6417#6444#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -911,17 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="111" column="10" lean-forward="false" selection-start-line="111" selection-start-column="10" selection-end-line="114" selection-end-column="15" />
-          <folding>
-            <element signature="e#6434#6453#0#HTML" expanded="true" />
-            <element signature="e#6479#6498#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/star.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -932,19 +918,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="432" column="12" lean-forward="false" selection-start-line="432" selection-start-column="12" selection-end-line="432" selection-end-column="12" />
+        <state relative-caret-position="2878">
+          <caret line="448" column="92" lean-forward="false" selection-start-line="448" selection-start-column="92" selection-end-line="448" selection-end-column="92" />
           <folding>
-            <marker date="1481899810804" expanded="true" signature="9223:9910" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="9321:9688" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="9370:9659" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="9553:9629" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="9855:9883" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="15632:15678" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="15632:15741" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="15659:15670" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="15706:15717" ph="..." />
-            <marker date="1481899810804" expanded="true" signature="16340:16593" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="9223:9910" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="9321:9688" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="9370:9659" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="9553:9629" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="9855:9883" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="15632:15678" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="15632:15741" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="15659:15670" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="15706:15717" ph="..." />
+            <marker date="1481900082222" expanded="true" signature="16340:16593" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="111" column="14" lean-forward="false" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+          <folding>
+            <element signature="e#6417#6444#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
