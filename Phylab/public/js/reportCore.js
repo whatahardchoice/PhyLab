@@ -427,7 +427,7 @@ function sendComment(article_id, message) {
 }
 
 function loadComments(article_id, page, group_id) {
-    $('#comment-area').html(
+    $('#comment-area').text(
         '<tr> \
             <th style="width: 10%;">用户名</th> \
             <th style="width: 90%;">评论</th> \
