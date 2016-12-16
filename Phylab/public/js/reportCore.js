@@ -460,6 +460,7 @@ function loadComments(article_id, page, group_id) {
                         <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['message'] + '</td> \
                     </tr>');
             }
+            $('#comment nav').show();
         }
         else
             alert('失败: ' + data['errno'] + ', 原因: ' + data['err']);

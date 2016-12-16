@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <div style="border-width: 2px;border-color: black; background-color: rgb(228, 228, 228);padding-bottom: 10px;">
+  <div id="comment" style="border-width: 2px;border-color: black; background-color: rgb(228, 228, 228);padding-bottom: 10px;">
     <div style="margin: 0 15px;">
       <h1 style="margin-top: 0;">
         <span id="comment-area-title">评论区</span>
@@ -108,9 +108,15 @@
     </div>
     <div class="row well" style="margin: 0 15px;padding-bottom: 5px;">
       <div class="col-xs-12 col-md-7 list-group" style="padding-left: 0;">
-        <div id="comment-area">
+        <div id="comment-area" style="height: 205px;">
           <h1 style="text-align: center">未选择子实验（无法显示评论区）</h1>
         </div>
+        <nav class="pull-right" style="display: none;">
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="col-xs-12 col-md-5" style="padding-right: 0;">
         <div id="reply-area">
