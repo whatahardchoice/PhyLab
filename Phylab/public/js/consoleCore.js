@@ -270,10 +270,10 @@ var showCode=0;
 function initReportPage() {
     check();
     $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-    // $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
-    // $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
-    // $('#reply-notice').css('height', $('#comment-editor').outerHeight());
-    // $('#reply-notice').css('width', $('#comment-editor').outerWidth());
+    $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
+    $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
+    $('#reply-notice').css('height', $('#comment-editor').outerHeight());
+    $('#reply-notice').css('width', $('#comment-editor').outerWidth());
     $.get('./getreport').done(function (data) {
         for (var labgroup in data.reports) {
             $('#lab-list').append(
