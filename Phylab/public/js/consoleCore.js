@@ -309,6 +309,7 @@ function initReportPage() {
                 $('#collect-report').attr("disabled", true);
                 $('#labdoc').html(data);
 				myCodeMirror.setValue(data);
+				$(myCodeMirror.getWrapperElement()).hide();
 				$('#pv-button-text').html('预览数据表');
 				showCode=0;
                 recordTableValue();
@@ -353,13 +354,13 @@ $('#button-view-preparation').click(function () {
     //$('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 	if (!showCode) {
         $('#labdoc').hide();
-		$('#labCode').show();
+		$(myCodeMirror.getWrapperElement()).show();
 		showCode=1;
 		$('#pv-button-text').html('查看数据表代码');
 	} else {
 		$('#labdoc').html(myCodeMirror.getValue());
         $('#labdoc').show();
-		$('#labCode').hide();
+		$(myCodeMirror.getWrapperElement()).hide();
 		$('#pv-button-text').html('预览数据表');
 		showCode=0;
 	}

@@ -147,7 +147,6 @@
 		foldGutter: true,
 		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 	  });
-	  myCodeMirror.setSize(400,600);
   </script>
 </body>
 </html>
