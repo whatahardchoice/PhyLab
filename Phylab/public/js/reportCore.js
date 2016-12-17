@@ -273,9 +273,9 @@ function initReportPage() {
     $(document).ready(function () {
         $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
     });
-    window.onLoad(function () {
+    window.onLoad = function () {
         $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
-    });
+    };
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
