@@ -20,18 +20,18 @@ function getDbId(index){
     return $('#back_info a[index='+index+']').attr('db-id');
 }
 function check(){
-    if(browser()=="FF"){
-        document.getElementById('firefox_pdf').style.display='block';
-        CUR_PDF = 'firefox_pdf';
-    }
-    else if(browser()=="IE6"||browser()=="IE7"){
-        alert("Please use the above version of IE8 or other browsers");
-    }
-    else {
-        document.getElementById('chrom_pdf').style.display='block';
-        CUR_PDF = 'chrom_pdf';
-        cp('./prepare_pdf/phylab_test.pdf');
-    }
+    // if(browser()=="FF"){
+        // document.getElementById('firefox_pdf').style.display='block';
+        // CUR_PDF = 'firefox_pdf';
+    // }
+    // else if(browser()=="IE6"||browser()=="IE7"){
+        // alert("Please use the above version of IE8 or other browsers");
+    // }
+    // else {
+        // document.getElementById('chrom_pdf').style.display='block';
+        // CUR_PDF = 'chrom_pdf';
+        // cp('./prepare_pdf/phylab_test.pdf');
+    // }
     $('#lab_collapse').collapse({
         toggle: false
     })
@@ -268,12 +268,12 @@ var showCode=0;
 
 //PhyLab2.0新增脚本
 function initReportPage() {
-    //check();
+    check();
     $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-    $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
-    $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
-    $('#reply-notice').css('height', $('#comment-editor').outerHeight());
-    $('#reply-notice').css('width', $('#comment-editor').outerWidth());
+    // $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
+    // $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
+    // $('#reply-notice').css('height', $('#comment-editor').outerHeight());
+    // $('#reply-notice').css('width', $('#comment-editor').outerWidth());
     $.get('./getreport').done(function (data) {
         for (var labgroup in data.reports) {
             $('#lab-list').append(
@@ -299,7 +299,7 @@ function initReportPage() {
             $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
             $('#lab-name').text($(this).text());
             $('#lab-select-modal').modal('hide');
-            changePdf('prepare',CUR_LAB_GROUP + ".pdf");
+            //changePdf('prepare',CUR_LAB_GROUP + ".pdf");
             $('#lab-status').text('实验' + CUR_SUBLAB + '计算脚本');
             $.ajax('./table', {
                 data: {'id': CUR_SUBLAB},

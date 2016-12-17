@@ -121,6 +121,7 @@
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
           </div>-->
+		  <div style="clear:both;"/>
 		  <textarea id="py_editor">
 		  </textarea>
         </div>
