@@ -373,7 +373,7 @@ $('#button-view-preparation').click(function () {
 		showCode=0;
 	}
 });
-
+/*
 $('#button-generate-report').click(function () {
     var xmlString = SetXMLDoc_lab(CUR_SUBLAB);
     if (xmlString === null)
@@ -401,7 +401,7 @@ $('#button-generate-report').click(function () {
         }
     });
 });;
-
+*/
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
         deleteReportStar();

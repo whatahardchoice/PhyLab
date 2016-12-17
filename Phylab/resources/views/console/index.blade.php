@@ -59,15 +59,15 @@
           <div class="tab-pane panel-body active" role="tabpanel" id="labdoc" style="overflow-x: auto;overflow-y: auto;;text-align: center;">
             <h1 style="margin: 50% 0;">未选择子实验</h1>
           </div>
-		  <textarea id='html_editor'></textarea>
+		  <textarea id='html_editor' style="display:none;"></textarea>
         </div>
         <div class="labdoc-btns" >
           <button id="button-view-preparation" class="btn btn-success" style="margin-bottom: 5px;" disabled>
             <i class="fa fa-file-pdf-o"></i><span id="pv-button-text">预览数据表</span>
           </button>
-          <button id="button-generate-report" class="btn btn-success" style="margin-bottom: 5px;" type="submit" disabled>
+          <!--<button id="button-generate-report" class="btn btn-success" style="margin-bottom: 5px;" type="submit" disabled>
             <i class="fa fa-area-chart"></i>生成数据报告
-          </button>
+          </button>-->
         </div>
       </div>
     </div>
@@ -121,7 +121,7 @@
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
           </div>-->
-		  <textarea id="py_editor">
+		  <textarea id="py_editor" style="display:none;">
 		  </textarea>
         </div>
       </div>
