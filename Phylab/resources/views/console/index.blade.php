@@ -183,6 +183,7 @@
 	  var pyedit_div=pyedit.getWrapperElement();
 	  pyedit_div=$(pyedit_div);
 	  pyedit_div.height(500);
+	  pyedit_div.css('clear','both');
   </script>
 </body>
 </html>
