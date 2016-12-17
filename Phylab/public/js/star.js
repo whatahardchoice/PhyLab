@@ -56,7 +56,7 @@ function deleteStar(id){
     var url="/user/star";
     var postData = "_method=DELETE&id="+id;
     PostAjax(url,postData,function(){
-        if (this.readyState==4 && this.status==200){
+        if (this.readyState==4 && this.status==507){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
@@ -67,7 +67,7 @@ function deleteStar(id){
                 errorAlert(jsonText["message"]);
             }
         }
-        else if(this.readyState==4 && this.status!=200){
+        else if(this.readyState==4 && this.status!=507){
             errorAlert(null);
         }
     });

@@ -330,6 +330,13 @@ function initReportPage() {
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
+    $.post('./user/star', {
+        'id': $('#username').text()
+    }).done(function (data) {
+        data = JSON.parse(data);
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
 }
 
 function recordTableValue() {
