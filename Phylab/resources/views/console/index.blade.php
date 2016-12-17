@@ -12,6 +12,7 @@
 	<script src="./codemirror/addon/edit/matchbrackets.js"></script>
 	<script src="./codemirror/mode/javascript/javascript.js"></script>
 	<script src="./codemirror/mode/xml/xml.js"></script>
+	<script src="./codemirror/mode/python/python.js"></script>
 	<script src="./codemirror/mode/markdown/markdown.js"></script>
 	<script src="./codemirror/mode/css/css.js"></script>
 	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
@@ -166,7 +167,7 @@
 	  });
 	  var pyedit_div=pyedit.getWrapperElement();
 	  pyedit_div=$(pyedit_div);
-	  cmdiv.height(400);
+	  pyedit_div.height(500);
   </script>
 </body>
 </html>

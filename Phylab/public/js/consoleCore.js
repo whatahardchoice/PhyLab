@@ -300,7 +300,7 @@ function initReportPage() {
             $('#lab-name').text($(this).text());
             $('#lab-select-modal').modal('hide');
             changePdf('prepare',CUR_LAB_GROUP + ".pdf");
-            $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
+            $('#lab-status').text('实验' + CUR_SUBLAB + '计算脚本');
             $.ajax('./table', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
@@ -321,8 +321,6 @@ function initReportPage() {
                     localStorage.setItem($('#username').text() + CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
                 })
 
-                $('#button-comment-reply').removeAttr('disabled');
-                $('#comment-area-title').text(CUR_SUBLAB + '评论区');
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
