@@ -268,7 +268,7 @@ var showCode=0;
 
 //PhyLab2.0新增脚本
 function initReportPage() {
-    check();
+    //check();
     $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
