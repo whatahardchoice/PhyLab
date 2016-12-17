@@ -20,12 +20,12 @@
 	<script src="./codemirror/mode/css/css.js"></script>
 	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
 	
-<script src="../addon/search/searchcursor.js"></script>
-<script src="../addon/search/search.js"></script>
-<script src="../addon/dialog/dialog.js"></script>
-<script src="../addon/comment/comment.js"></script>
-<script src="../addon/wrap/hardwrap.js"></script>
-<script src="../keymap/sublime.js"></script>
+<script src="./codemirror/addon/search/searchcursor.js"></script>
+<script src="./codemirror/addon/search/search.js"></script>
+<script src="./codemirror/addon/dialog/dialog.js"></script>
+<script src="./codemirror/addon/comment/comment.js"></script>
+<script src="./codemirror/addon/wrap/hardwrap.js"></script>
+<script src="./codemirror/keymap/sublime.js"></script>
 
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
