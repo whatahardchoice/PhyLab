@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/phylab.css" afterPath="$PROJECT_DIR$/public/css/phylab.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportCore.js" afterPath="$PROJECT_DIR$/public/js/reportCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" afterPath="$PROJECT_DIR$/storage/framework/sessions/4d517c3668d4310bb9fa470f5d055569d60da690" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" afterPath="$PROJECT_DIR$/storage/framework/views/d8f810fa9660297473896d8433197423" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/star.js" afterPath="$PROJECT_DIR$/public/js/star.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,16 +32,19 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="475">
               <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-              <folding>
-                <element signature="e#6330#6373#0#HTML" expanded="true" />
-                <element signature="e#6406#6428#0#HTML" expanded="true" />
-                <element signature="e#6444#6470#0#HTML" expanded="true" />
-                <element signature="e#6589#6621#0#HTML" expanded="true" />
-                <element signature="e#6719#6726#0#HTML" expanded="true" />
-                <element signature="e#6832#6839#0#HTML" expanded="true" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,28 +52,8 @@
       <file leaf-file-name="phylab.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="157" column="28" lean-forward="false" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReportController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="163" column="24" lean-forward="false" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Report.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Report.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="157" column="28" lean-forward="false" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -82,21 +62,21 @@
       <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="323" column="53" lean-forward="false" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+            <state relative-caret-position="570">
+              <caret line="337" column="55" lean-forward="true" selection-start-line="337" selection-start-column="55" selection-end-line="337" selection-end-column="55" />
               <folding>
-                <marker date="1481905737724" expanded="true" signature="9260:9947" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="9358:9725" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="9407:9696" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="9590:9666" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="9892:9920" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="16702:16860" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="16702:16861" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="16721:16842" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="16752:16763" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="16803:16814" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="17666:17697" ph="..." />
-                <marker date="1481905737724" expanded="true" signature="17666:17973" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="9260:9947" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="9358:9725" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="9407:9696" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="9590:9666" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="9892:9920" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="16930:17088" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="16930:17089" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="16949:17070" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="16980:16991" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="17031:17042" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="17894:17925" ph="..." />
+                <marker date="1481982952475" expanded="true" signature="17894:18201" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,8 +85,8 @@
       <file leaf-file-name="star.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/star.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="43" column="89" lean-forward="false" selection-start-line="43" selection-start-column="89" selection-end-line="43" selection-end-column="89" />
+            <state relative-caret-position="1311">
+              <caret line="69" column="54" lean-forward="false" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -144,6 +124,7 @@
       <find>btn</find>
       <find>comment-area</find>
       <find>loadComments</find>
+      <find>deleteStar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,9 +142,9 @@
         <option value="$PROJECT_DIR$/public/js/regist.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StarController.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/main.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
         <option value="$PROJECT_DIR$/resources/views/report/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/public/js/reportCore.js" />
       </list>
     </option>
@@ -268,7 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,6 +287,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Phylab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Phylab" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="star" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,7 +454,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -550,12 +553,13 @@
       <workItem from="1481702564894" duration="19579000" />
       <workItem from="1481725031682" duration="7318000" />
       <workItem from="1481803758672" duration="21397000" />
-      <workItem from="1481897303058" duration="8426000" />
+      <workItem from="1481897303058" duration="8620000" />
+      <workItem from="1481981980480" duration="971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143770000" />
+    <option name="totallyTimeSpent" value="144935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -596,14 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="e#6330#6373#0#HTML" expanded="true" />
-            <element signature="e#6406#6428#0#HTML" expanded="true" />
-            <element signature="e#6444#6470#0#HTML" expanded="true" />
-            <element signature="e#6589#6621#0#HTML" expanded="true" />
-            <element signature="e#6719#6726#0#HTML" expanded="true" />
-            <element signature="e#6832#6839#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -764,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/star/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="90" lean-forward="true" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/xmlInteraction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -847,7 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,33 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-499">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="157" column="28" lean-forward="false" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="2926">
           <caret line="163" column="24" lean-forward="false" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/star.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="43" column="89" lean-forward="false" selection-start-line="43" selection-start-column="89" selection-end-line="43" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -934,38 +899,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/star/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="92" lean-forward="false" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/star.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="69" column="54" lean-forward="false" selection-start-line="69" selection-start-column="54" selection-end-line="69" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="157" column="28" lean-forward="false" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="64" column="27" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/report/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="475">
           <caret line="113" column="17" lean-forward="false" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
-          <folding>
-            <element signature="e#6330#6373#0#HTML" expanded="true" />
-            <element signature="e#6406#6428#0#HTML" expanded="true" />
-            <element signature="e#6444#6470#0#HTML" expanded="true" />
-            <element signature="e#6589#6621#0#HTML" expanded="true" />
-            <element signature="e#6719#6726#0#HTML" expanded="true" />
-            <element signature="e#6832#6839#0#HTML" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="323" column="53" lean-forward="false" selection-start-line="323" selection-start-column="53" selection-end-line="323" selection-end-column="53" />
+        <state relative-caret-position="570">
+          <caret line="337" column="55" lean-forward="true" selection-start-line="337" selection-start-column="55" selection-end-line="337" selection-end-column="55" />
           <folding>
-            <marker date="1481905737724" expanded="true" signature="9260:9947" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="9358:9725" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="9407:9696" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="9590:9666" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="9892:9920" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="16702:16860" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="16702:16861" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="16721:16842" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="16752:16763" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="16803:16814" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="17666:17697" ph="..." />
-            <marker date="1481905737724" expanded="true" signature="17666:17973" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="9260:9947" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="9358:9725" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="9407:9696" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="9590:9666" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="9892:9920" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="16930:17088" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="16930:17089" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="16949:17070" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="16980:16991" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="17031:17042" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="17894:17925" ph="..." />
+            <marker date="1481982952475" expanded="true" signature="17894:18201" ph="..." />
           </folding>
         </state>
       </provider>
