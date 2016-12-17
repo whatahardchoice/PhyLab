@@ -1,17 +1,20 @@
 ﻿@extends('layout.main')
 @section('contents')
-  <link rel="stylesheet" href="./codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css" />
-  <script src="./codemirror/lib/codemirror.js"></script>
-  <script src="./codemirror/addon/fold/foldcode.js"></script>
-  <script src="./codemirror/addon/fold/foldgutter.js"></script>
-  <script src="./codemirror/addon/fold/brace-fold.js"></script>
-  <script src="./codemirror/addon/fold/xml-fold.js"></script>
-  <script src="./codemirror/addon/fold/markdown-fold.js"></script>
-  <script src="./codemirror/addon/fold/comment-fold.js"></script>
-  <script src="./codemirror/mode/javascript/javascript.js"></script>
-  <script src="./codemirror/mode/xml/xml.js"></script>
-  <script src="./codemirror/mode/markdown/markdown.js"></script>
+	<link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+	<script src="./codemirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css" />
+	<script src="./codemirror/addon/fold/foldcode.js"></script>
+	<script src="./codemirror/addon/fold/foldgutter.js"></script>
+	<script src="./codemirror/addon/fold/brace-fold.js"></script>
+	<script src="./codemirror/addon/fold/xml-fold.js"></script>
+	<script src="./codemirror/addon/fold/markdown-fold.js"></script>
+	<script src="./codemirror/addon/fold/comment-fold.js"></script>
+	<script src="./codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="./codemirror/mode/javascript/javascript.js"></script>
+	<script src="./codemirror/mode/xml/xml.js"></script>
+	<script src="./codemirror/mode/markdown/markdown.js"></script>
+	<script src="./codemirror/mode/css/css.js"></script>
+	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
@@ -134,11 +137,13 @@
   <script>
       var G_BASE_URL = '<?php echo url('/');?>';
       initReportPage();
+	  te_html=document.getElementById('html_editor');
 	  var myCodeMirror = CodeMirror.fromTextArea(te_html, {
 		mode: "text/html",
 		lineNumbers: true,
 		lineWrapping: true,
 		extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+		matchBrackets: true,
 		foldGutter: true,
 		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 	  });
