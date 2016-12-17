@@ -147,6 +147,10 @@
 		foldGutter: true,
 		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
 	  });
+	  var cmdiv=myCodeMirror.getWrapperElement();
+	  cmdiv=$(cmdiv);
+	  cmdiv.hide();
+	  cmdiv.height(720);
   </script>
 </body>
 </html>
