@@ -270,7 +270,7 @@ function Post_lab(postErrorFunc){
 //PhyLab2.0新增脚本
 function initReportPage() {
     check();
-    $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
+    $(document).ready($('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length));
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
@@ -327,13 +327,6 @@ function initReportPage() {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
         });
-    }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
-    });
-    $.post('./user/star', {
-        'id': $('#username').text()
-    }).done(function (data) {
-        data = JSON.parse(data);
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });

@@ -18,6 +18,7 @@ function createStar(){
                 $('#collect-report .sr-only').text("n");
                 alert("已添加至个人收藏夹！");
                 $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
+                $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -42,6 +43,7 @@ function deleteReportStar(){
                 $('#collect-report .sr-only').text("y");
                 alert("已取消收藏！");
                 $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
+                $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -56,7 +58,7 @@ function deleteStar(id){
     var url="/user/star";
     var postData = "_method=DELETE&id="+id;
     PostAjax(url,postData,function(){
-        if (this.readyState==4 && this.status==507){
+        if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
             //alert(jsonText["status"]);
@@ -67,7 +69,7 @@ function deleteStar(id){
                 errorAlert(jsonText["message"]);
             }
         }
-        else if(this.readyState==4 && this.status!=507){
+        else if(this.readyState==4 && this.status!=200){
             errorAlert(null);
         }
     });
