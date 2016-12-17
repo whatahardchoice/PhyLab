@@ -97,7 +97,7 @@
               </div>
             </div>
           </div>
-          <div class="panel-body" style="padding:5px;">
+          <div class="panel-body" style="padding:5px;display:none;" id="pdf_pv">
             <div id="wait-report">
               <i id="wait-report-spinner" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
             </div>
@@ -110,6 +110,8 @@
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
           </div>
+		  <textarea id="py_editor">
+		  </textarea>
         </div>
       </div>
     </div>
@@ -150,7 +152,21 @@
 	  var cmdiv=myCodeMirror.getWrapperElement();
 	  cmdiv=$(cmdiv);
 	  cmdiv.hide();
-	  cmdiv.height(720);
+	  cmdiv.height(670);
+	  $('#pdf_pv').hide();
+	  te_py=document.getElementById('py_editor');
+	  var pyedit = CodeMirror.fromTextArea(te_py, {
+		mode: "python",
+		lineNumbers: true,
+		lineWrapping: true,
+		extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+		matchBrackets: true,
+		foldGutter: true,
+		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+	  });
+	  var pyedit_div=pyedit.getWrapperElement();
+	  pyedit_div=$(pyedit_div);
+	  cmdiv.height(400);
   </script>
 </body>
 </html>

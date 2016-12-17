@@ -309,6 +309,7 @@ function initReportPage() {
                 $('#collect-report').attr("disabled", true);
                 $('#labdoc').html(data);
 				myCodeMirror.setValue(data);
+				$('#labdoc').show();
 				cmdiv.hide();
 				$('#pv-button-text').html('查看数据表代码');
 				showCode=0;
@@ -322,6 +323,14 @@ function initReportPage() {
 
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
+            }).fail(function (xhr, status) {
+                alert('失败: ' + xhr.status + ', 原因: ' + status);
+            });
+            $.ajax('./table', {
+                data: {'id': CUR_SUBLAB},
+            }).done(function (data) {
+				pyedit.setValue("import random");
+				pyedit.refresh();
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
@@ -355,6 +364,7 @@ $('#button-view-preparation').click(function () {
 	if (!showCode) {
         $('#labdoc').hide();
 		cmdiv.show();
+		myCodeMirror.refresh();
 		showCode=1;
 		$('#pv-button-text').html('预览数据表');
 	} else {
