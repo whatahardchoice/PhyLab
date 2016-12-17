@@ -1,14 +1,17 @@
 ﻿@extends('layout.main')
 @section('contents')
-	<link rel="stylesheet" href="./codemirror/lib/codemirror.css">
+	<link rel="stylesheet" href="./codemirror/lib/codemirror.css"/>
+	<link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css"/>
+	<link rel="stylesheet" href="./codemirror/theme/monokai.css"/>
+
 	<script src="./codemirror/lib/codemirror.js"></script>
-	<link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css" />
 	<script src="./codemirror/addon/fold/foldcode.js"></script>
 	<script src="./codemirror/addon/fold/foldgutter.js"></script>
 	<script src="./codemirror/addon/fold/brace-fold.js"></script>
 	<script src="./codemirror/addon/fold/xml-fold.js"></script>
 	<script src="./codemirror/addon/fold/markdown-fold.js"></script>
 	<script src="./codemirror/addon/fold/comment-fold.js"></script>
+	<script src="./codemirror/addon/edit/closebrackets.js"></script>
 	<script src="./codemirror/addon/edit/matchbrackets.js"></script>
 	<script src="./codemirror/mode/javascript/javascript.js"></script>
 	<script src="./codemirror/mode/xml/xml.js"></script>
@@ -16,6 +19,13 @@
 	<script src="./codemirror/mode/markdown/markdown.js"></script>
 	<script src="./codemirror/mode/css/css.js"></script>
 	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	
+<script src="../addon/search/searchcursor.js"></script>
+<script src="../addon/search/search.js"></script>
+<script src="../addon/dialog/dialog.js"></script>
+<script src="../addon/comment/comment.js"></script>
+<script src="../addon/wrap/hardwrap.js"></script>
+<script src="../keymap/sublime.js"></script>
 
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="padding-right: 1px;margin-top: 10px;background-color: transparent;">
@@ -88,17 +98,17 @@
                 <button id="collect-report" class="btn btn-success" style="border-radius: 0 4px 4px 0;">
                   <span class="sr-only">y</span>
                   <i class="fa fa-bookmark-o"></i>
-                  <span id="collect-report-text">收藏此报告</span>
+                  <span id="collect-report-text">保存脚本</span>
                 </button>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
-                  <span id="lab-status" class="badge">物理实验选择策略</span>
+                  <span id="lab-status" class="badge">物理实验脚本管理</span>
                 </h4>
               </div>
             </div>
           </div>
-          <div class="panel-body" style="padding:5px;display:none;" id="pdf_pv">
+          <!--<div class="panel-body" style="padding:5px;display:none;" id="pdf_pv">
             <div id="wait-report">
               <i id="wait-report-spinner" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
             </div>
@@ -110,7 +120,7 @@
             <div id="chrom_pdf" style="width: 100%; height: 100%;display: none;">
               <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf"></object>
             </div>
-          </div>
+          </div>-->
 		  <textarea id="py_editor">
 		  </textarea>
         </div>
@@ -161,6 +171,11 @@
 		lineNumbers: true,
 		lineWrapping: true,
 		extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+		keyMap: "sublime",
+		autoCloseBrackets: true,
+		showCursorWhenSelecting: true,
+		theme: "monokai",
+		tabSize: 4,
 		matchBrackets: true,
 		foldGutter: true,
 		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
