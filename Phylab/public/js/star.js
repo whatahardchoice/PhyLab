@@ -18,7 +18,7 @@ function createStar(){
                 $('#collect-report .sr-only').text("n");
                 alert("已添加至个人收藏夹！");
                 $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
-                $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
+                $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'))
             }
             else{
                 errorAlert(jsonText["message"]);
@@ -43,7 +43,7 @@ function deleteReportStar(){
                 $('#collect-report .sr-only').text("y");
                 alert("已取消收藏！");
                 $('#collection-iframe').attr('src', $('#collection-iframe').attr('src'));
-                $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
+                $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'))
             }
             else{
                 errorAlert(jsonText["message"]);

@@ -271,7 +271,7 @@ function Post_lab(postErrorFunc){
 function initReportPage() {
     check();
     $(document).ready(function () {
-        $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
+        $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'))
     });
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
