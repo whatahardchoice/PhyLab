@@ -19,7 +19,7 @@
                 <th>编辑</th>
             </tr>
         </thead>
-        <tbody id="collection-list" num="count($stars)">
+        <tbody id="collection-list" num="{{count($stars)}}">
             @for ($i=0;$i < count($stars);$i++)
                 <tr id="star_{{$stars[$i]['id']}}">
                     <th scope="row">{{$i+1}}</th>
