@@ -270,7 +270,9 @@ function Post_lab(postErrorFunc){
 //PhyLab2.0新增脚本
 function initReportPage() {
     check();
-    $(document).ready($('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length));
+    $(document).ready(function () {
+        $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length)
+    });
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
