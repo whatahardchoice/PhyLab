@@ -1,6 +1,18 @@
 ﻿@extends('layout.main')
 @section('contents')
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PhyLabReportTools</title>
+	<link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/seven-style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/mystyle.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('css/3d-layout.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('css/canvas-normalize.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('css/canvas-style.css')}}">
+</head> 
 
 <div class="modal fade" id="successive-difference-modalOk">
     <div class="modal-dialog modal-lab">
@@ -388,22 +400,25 @@
 					<button class="art-btn" data-toggle="modal" data-target="#linear-regression-modal" type="button">立即使用</button>
 				</div>
 			  </div>
-			  <div class="elem">
-				<div class="inner inner-3">
-					<h2 class="art-heading ch"><span class="glyphicon glyphicon-pushpin"></span>&nbsp 逐差法计算器</h2>
-					<button class="art-btn" data-toggle="modal" data-target="#successive-difference-modal" type="button">立即使用</button>
-				</div>
-			  </div>
-			  <div class="elem">
-				<div class="inner inner-4">
-				  <h2 class="art-heading ch"><span class="glyphicon glyphicon-pushpin"></span>&nbsp 线性回归分析</h2>
-					<button class="art-btn" data-toggle="modal" data-target="#linear-regression-modal" type="button">立即使用</button>
-				</div>
-			  </div>
-			
+
 			</div>
 		  </div>
 	</div>
+		<div class="nav-top" style="margin-top:12vh;">
+		<button class="btn btn-danger" id="btnTitle">
+			<h2 class="nav-top__heading" style="text-aligh:center;">
+				<span class="nav-top__btn up ch"></span>
+				<span class="glyphicon glyphicon-wrench"></span><span class="ch">小工具</span>
+				<span class="nav-top__btn down"></span>
+			</h2>
+		</button>
+		</div>
+		<div class="nav-bot" style="margin-bottom:8vh">
+			 <span class="nav-bot__btn left"></span>
+			 <span class="nav-bot__pagi active" data-page="1"></span>
+			 <span class="nav-bot__pagi" data-page="2"></span>
+			 <span class="nav-bot__btn right"></span>
+		</div>
 	
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
