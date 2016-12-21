@@ -11,6 +11,7 @@ class ToolsController extends Controller {
             $data["username"] = Auth::user()->name;
         }
 	return view('tools.index',$data);		
+	}
 
 	public function main(){
 	$data = ["auth" => false ,"username"    =>  ""];
@@ -19,8 +20,8 @@ class ToolsController extends Controller {
             $data["auth"] = true;
             $data["username"] = Auth::user()->name;
         }
-	return view('tools.main',$data);		
+	return view('tools.main',$data);
+	}
 }
 
-}
 
