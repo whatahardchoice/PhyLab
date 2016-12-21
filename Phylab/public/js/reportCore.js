@@ -273,9 +273,6 @@ function initReportPage() {
     $(document).ready(function () {
         $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
     });
-    window.onLoad = function () {
-        $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
-    };
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
@@ -471,23 +468,20 @@ function loadComments(article_id, page, group_id) {
     }).done(function (data) {
         data = JSON.parse(data);
         if (data['errno'] === 1) {
-            var i;
+            var i = 4;
             var comments_count = data['rsm']['comments_count'];
-            CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
+            var comment_groups_base = comments_count - (group_id + 1) * 5;
             var last_group_comments_num = comments_count % 5;
-            if (group_id === CUR_COMMENT_GROUPS_NUM - 1)
-                if (last_group_comments_num > 0)
-                    i = last_group_comments_num;
-                else
-                    i = 4;
-            else {
-                i = 4;
+            CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
+            if (group_id === CUR_COMMENT_GROUPS_NUM - 1 || last_group_comments_num > 0) {
+                i = last_group_comments_num;
+                comment_groups_base = 0;
             }
             for (; i >= 0; i--) {
                 $('#table-comment-area').append(
                     '<tr> \
-                        <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['user_info']['user_name'] + '</td> \
-                        <td>' + data['rsm']['comments'][(comments_count - (group_id + 1) * 5 + i).toString()]['message'] + '</td> \
+                        <td>' + data['rsm']['comments'][(comment_groups_base + i).toString()]['user_info']['user_name'] + '</td> \
+                        <td>' + data['rsm']['comments'][(comment_groups_base + i).toString()]['message'] + '</td> \
                     </tr>');
             }
             $('#btn-group-comment-group').show();
