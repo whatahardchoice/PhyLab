@@ -384,6 +384,8 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div style="postion:relative;"><br/><br/><br/><br/><br/></div>
+
 <canvas id = 'canv' style="position:absolute;top:0px;"></canvas>
 		<div class="scene">
 		  <div class="level level-1 active">
