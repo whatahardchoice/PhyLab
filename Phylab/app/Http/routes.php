@@ -141,6 +141,9 @@ Route::get('/tools',[
     'as'=>'tools',
     'uses'=>'ToolsController@index',
     'middleware' => 'auth']);
+// Route::get('/tool2',[
+    // 'uses'=>'ToolsController@main',
+    // 'middleware' => 'auth']);
 /***
 //Report routes
 ***/
