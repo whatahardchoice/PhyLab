@@ -147,7 +147,7 @@ class StarController extends Controller
         $validatorAttributes = array(
                 'id' => '收藏的对象'
             );
-        postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         try{
             $link = Star::find(Request::get('id'))->link;
             Star::destroy(Request::get('id'));
@@ -156,13 +156,17 @@ class StarController extends Controller
             }
             catch(Exception $e)
             {
-                throw new FileIOException();
+                $data["status"] = FAIL_MESSAGE;
+                //return response()->json($data);
+                //throw new FileIOException();
             }
             $data["status"] = SUCCESS_MESSAGE;
         }
         catch(Exception $e)
         {
-            throw new DatabaseOperatorException();
+            $data["status"] = FAIL_MESSAGE;
+            //return response()->json($data);
+            //throw new DatabaseOperatorException();
         }
         return response()->json($data);
     }
