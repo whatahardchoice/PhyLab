@@ -54,6 +54,9 @@
               <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
             </li>
             <li>
+              <a href="{{URL::route('tool2')}}">工具</a>
+            </li>
+            <li>
               <a href="#">反馈</a>
             </li>
           </ul>

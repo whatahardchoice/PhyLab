@@ -137,9 +137,13 @@ Route::get('/user/star/download/{id}',[
 /***
 tools routes
 ***/
-Route::get('/tools',[
+// Route::get('/tools',[
+    // 'as'=>'tools',
+    // 'uses'=>'ToolsController@index',
+    // 'middleware' => 'auth']);
+Route::get('/tool2',[
     'as'=>'tools',
-    'uses'=>'ToolsController@index',
+    'uses'=>'ToolsController@main',
     'middleware' => 'auth']);
 /***
 //Report routes
