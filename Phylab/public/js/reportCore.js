@@ -322,7 +322,7 @@ function initReportPage() {
                 $('#button-next-comment-group').attr('disabled', true);
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
-                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
+                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
                 $('#btn-group-comment-group').show();
                 CUR_COMMENT_GROUPS_INDEX = 0;
             }).fail(function (xhr, status) {
@@ -405,7 +405,7 @@ $('#button-next-comment-group').click(function () {
     if (CUR_COMMENT_GROUPS_INDEX === 1) {
         $('#button-prev-comment-group').removeAttr('disabled');
     }
-    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, CUR_COMMENT_GROUPS_INDEX);
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
 });
 
 $('#button-prev-comment-group').click(function () {
@@ -416,7 +416,7 @@ $('#button-prev-comment-group').click(function () {
     if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 2) {
         $('#button-next-comment-group').removeAttr('disabled');
     }
-    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, CUR_COMMENT_GROUPS_INDEX);
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
 });
 
 function sendComment(article_id, message) {
@@ -443,7 +443,8 @@ function sendComment(article_id, message) {
             $('#reply-notice-check').attr('class', 'fa fa-exclamation');
             $('#reply-notice-text').text(data['err']);
         }
-        loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
+        CUR_COMMENT_GROUPS_NUM = 0;
+        loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
         //alert('成功, 收到的数据: ' + JSON.parse(data));
     }).fail(function (xhr, status) {
         $('#reply-notice-check').attr('class', 'fa fa-exclamation');
@@ -454,7 +455,7 @@ function sendComment(article_id, message) {
     });
 }
 
-function loadComments(article_id, page, group_id) {
+function loadComments(article_id) {
     $('#comment-area').html(
         '<table id="table-comment-area" class="table table-hover"> \
             <tr> \
@@ -464,16 +465,16 @@ function loadComments(article_id, page, group_id) {
         </table>');
     $.post(G_BASE_URL + '/wecenter/?/article/ajax/get_comments/', {
         'article_id': article_id,
-        'page': page
+        'page': 0
     }).done(function (data) {
         data = JSON.parse(data);
         if (data['errno'] === 1) {
             var i = 4;
             var comments_count = data['rsm']['comments_count'];
-            var comment_groups_base = comments_count - (group_id + 1) * 5;
+            var comment_groups_base = comments_count - (CUR_COMMENT_GROUPS_INDEX + 1) * 5;
             var last_group_comments_num = comments_count % 5;
             CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
-            if (group_id === CUR_COMMENT_GROUPS_NUM - 1 && last_group_comments_num > 0) {
+            if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 1 && last_group_comments_num > 0) {
                 i = last_group_comments_num - 1;
                 comment_groups_base = 0;
             }
