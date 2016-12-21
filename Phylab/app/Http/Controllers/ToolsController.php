@@ -13,15 +13,15 @@ class ToolsController extends Controller {
 	return view('tools.index',$data);		
 	}
 
-	public function main(){
-	$data = ["auth" => false ,"username"    =>  ""];
-	if(Auth::check()){
-            //ToDo
-            $data["auth"] = true;
-            $data["username"] = Auth::user()->name;
-        }
-	return view('tools.main',$data);
-	}
+	// public function main(){
+	// $data = ["auth" => false ,"username"    =>  ""];
+	// if(Auth::check()){
+            // //ToDo
+            // $data["auth"] = true;
+            // $data["username"] = Auth::user()->name;
+        // }
+	// return view('tools.main',$data);
+	// }
 }
 
 
