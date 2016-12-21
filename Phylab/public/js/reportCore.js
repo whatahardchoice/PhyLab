@@ -322,7 +322,7 @@ function initReportPage() {
                 $('#button-next-comment-group').attr('disabled', true);
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
-                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
+                loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0);
                 $('#btn-group-comment-group').show();
                 CUR_COMMENT_GROUPS_INDEX = 0;
             }).fail(function (xhr, status) {
