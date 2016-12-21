@@ -474,7 +474,7 @@ function loadComments(article_id, page, group_id) {
             var last_group_comments_num = comments_count % 5;
             CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
             if (group_id === CUR_COMMENT_GROUPS_NUM - 1 || last_group_comments_num > 0) {
-                i = last_group_comments_num;
+                i = last_group_comments_num - 1;
                 comment_groups_base = 0;
             }
             for (; i >= 0; i--) {
