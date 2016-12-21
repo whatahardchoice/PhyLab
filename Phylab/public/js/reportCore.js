@@ -319,7 +319,7 @@ function initReportPage() {
                     inputs_val[this.id] = $(this).val()
                     localStorage.setItem($('#username').text() + CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
                 })
-
+                $('#button-next-comment-group').attr('disabled', true);
                 $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
                 loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0, 0);
