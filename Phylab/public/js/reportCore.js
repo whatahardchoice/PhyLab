@@ -405,7 +405,7 @@ $('#button-next-comment-group').click(function () {
     if (CUR_COMMENT_GROUPS_INDEX === 1) {
         $('#button-prev-comment-group').removeAttr('disabled');
     }
-    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), CUR_COMMENT_GROUPS_INDEX);
 });
 
 $('#button-prev-comment-group').click(function () {
@@ -416,7 +416,7 @@ $('#button-prev-comment-group').click(function () {
     if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 2) {
         $('#button-next-comment-group').removeAttr('disabled');
     }
-    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
+    loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), CUR_COMMENT_GROUPS_INDEX);
 });
 
 function sendComment(article_id, message) {
@@ -443,8 +443,7 @@ function sendComment(article_id, message) {
             $('#reply-notice-check').attr('class', 'fa fa-exclamation');
             $('#reply-notice-text').text(data['err']);
         }
-        CUR_COMMENT_GROUPS_NUM = 0;
-        loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'));
+        loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0);
         //alert('成功, 收到的数据: ' + JSON.parse(data));
     }).fail(function (xhr, status) {
         $('#reply-notice-check').attr('class', 'fa fa-exclamation');
@@ -455,7 +454,7 @@ function sendComment(article_id, message) {
     });
 }
 
-function loadComments(article_id) {
+function loadComments(article_id, group_id) {
     $('#comment-area').html(
         '<table id="table-comment-area" class="table table-hover"> \
             <tr> \
@@ -471,10 +470,10 @@ function loadComments(article_id) {
         if (data['errno'] === 1) {
             var i = 4;
             var comments_count = data['rsm']['comments_count'];
-            var comment_groups_base = comments_count - (CUR_COMMENT_GROUPS_INDEX + 1) * 5;
+            var comment_groups_base = comments_count - (group_id + 1) * 5;
             var last_group_comments_num = comments_count % 5;
             CUR_COMMENT_GROUPS_NUM = Math.ceil(comments_count / 5);
-            if (CUR_COMMENT_GROUPS_INDEX === CUR_COMMENT_GROUPS_NUM - 1 && last_group_comments_num > 0) {
+            if (group_id === CUR_COMMENT_GROUPS_NUM - 1 && last_group_comments_num > 0) {
                 i = last_group_comments_num - 1;
                 comment_groups_base = 0;
             }
@@ -486,7 +485,7 @@ function loadComments(article_id) {
                     </tr>');
             }
             $('#btn-group-comment-group').show();
-            if (CUR_COMMENT_GROUPS_NUM > 1 && CUR_COMMENT_GROUPS_INDEX < CUR_COMMENT_GROUPS_NUM - 1)
+            if (CUR_COMMENT_GROUPS_NUM > 1 && group_id < CUR_COMMENT_GROUPS_NUM - 1)
                 $('#button-next-comment-group').removeAttr('disabled');
         }
         else
