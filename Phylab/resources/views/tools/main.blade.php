@@ -406,15 +406,6 @@
 			</div>
 		  </div>
 	</div>
-		<div class="nav-top" style="margin-top:12vh;">
-		<button class="btn btn-danger" id="btnTitle">
-			<h2 class="nav-top__heading" style="text-aligh:center;">
-				<span class="nav-top__btn up ch"></span>
-				<span class="glyphicon glyphicon-wrench"></span><span class="ch">小工具</span>
-				<span class="nav-top__btn down"></span>
-			</h2>
-		</button>
-		</div>
 		<div class="nav-bot" style="margin-bottom:8vh">
 			 <span class="nav-bot__btn left"></span>
 			 <span class="nav-bot__pagi active" data-page="1"></span>
@@ -441,9 +432,6 @@
       })();
     </script>
 	<script src="js/3d-layout.js"></script>
-	<script type="text/javascript">
-		document.getElementById("btnTitle").setAttribute("disabled","disabled")
-	</script>
 	<script src="js/canvas-draw.js"></script>
   <footer id="site-footer">
     <div class="text-center copyright" style="margin-top: 0">
