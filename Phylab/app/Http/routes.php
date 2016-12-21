@@ -192,3 +192,9 @@ Route::get('/console',
 	'uses' => 'ConsoleController@index',
 	'middleware' => 'auth'
 	]);
+
+Route::get('/getScript',
+	[
+	'uses' => 'ConsoleController@getScript',
+	'middleware' => 'auth'
+	]);

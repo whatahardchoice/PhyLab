@@ -42,4 +42,21 @@ class ConsoleController extends Controller {
         return $html;
     }
 
+    public function getScript()
+    {
+		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+		$isAdmin=$exists;
+		if (!$isAdmin) {
+			return redirect('/index');
+		}
+		$ad=Console::where('email','=',Auth::user()->email)->first();
+		$st=$ad->status;
+        $id=$_GET['id'];
+        $htmlFile = "/var/www/buaaphylab/storage/app/script/p".$id.".py";
+        $file = fopen($htmlFile, "r");
+		if ($file==FALSE) $sc=""; else
+        $sc = fread($file,filesize($htmlFile));
+        return $sc;
+    }
+
 }

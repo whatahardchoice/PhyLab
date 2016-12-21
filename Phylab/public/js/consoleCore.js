@@ -324,10 +324,10 @@ function initReportPage() {
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
-            $.ajax('./table', {
+            $.ajax('./getScript', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
-				pyedit.setValue("import random");
+				pyedit.setValue(data);
 				pyedit.refresh();
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
