@@ -277,6 +277,9 @@ function initReportPage() {
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
     $('#reply-notice').css('width', $('#comment-editor').outerWidth());
+    $.get('./report').done(function (data) {
+        data = JSON.parse(data);
+    });
     $.get('./getreport').done(function (data) {
         for (var labgroup in data.reports) {
             $('#lab-list').append(

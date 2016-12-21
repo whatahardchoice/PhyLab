@@ -54,6 +54,9 @@
               <a data-toggle="modal" <?php if(!$auth): ?> href="<?php echo e(URL::route('login')); ?>" <?php else: ?> href="<?php echo e(URL::route('wc_login')); ?>"<?php endif; ?>>社区</a>
             </li>
             <li>
+              <a href="<?php echo e(URL::route('tool2')); ?>">工具</a>
+            </li>
+            <li>
               <a href="#">反馈</a>
             </li>
           </ul>
