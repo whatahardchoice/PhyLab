@@ -485,7 +485,7 @@ function loadComments(article_id, page, group_id) {
                     </tr>');
             }
             $('#btn-group-comment-group').show();
-            if (CUR_COMMENT_GROUPS_NUM > 0)
+            if (CUR_COMMENT_GROUPS_NUM > 1)
                 $('#button-next-comment-group').removeAttr('disabled');
         }
         else
