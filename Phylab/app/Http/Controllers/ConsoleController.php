@@ -58,5 +58,29 @@ class ConsoleController extends Controller {
         $sc = fread($file,filesize($htmlFile));
         return $sc;
     }
+	
+	public function createSublab() {
+		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+		$isAdmin=$exists;
+		if (!$isAdmin) {
+			return redirect('/index');
+		}
+		$ad=Console::where('email','=',Auth::user()->email)->first();
+		$st=$ad->status;
+        $lab_id=$_GET['LId'];
+        $lab_name=$_GET['LName'];
+        $lab_tag=$_GET['LTag'];
+		$result=array('status'=>-1,'msg'=>"该报告号码已经存在");
+		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
+			$ret=Report::create(array(
+				'experiment_id'=>$lab_id,
+				'experiment_name'=>$lab_name,
+				'experiment_tag'=>$lab_tag
+			));
+			$result['status']=0;
+			$result['msg']="ok";
+		}
+		return response()->json($result);
+	}
 
 }
