@@ -8,7 +8,7 @@ class Report extends Model
 {
     //
     protected $table = 'reports';
-    protected $fillable = ['experiment_id','experiment_name','prepare_link','experiment_tag','relatedArticle'];
+    protected $fillable = ['experiment_id','experiment_name','prepare_link','experiment_tag','relatedArticle','status'];
     public function stars(){
         return $this->hasMany('App\Models\Star','report_id','experiment_id');
     }

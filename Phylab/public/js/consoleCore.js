@@ -289,7 +289,7 @@ function initReportPage() {
                     </div> \
                   </div>');
             for (var sublab in data.reports[labgroup]) {
-                $('#lab-' + labgroup+ '-collapse').append('<li class="list-group-item btn" id="lab-' + data.reports[labgroup][sublab]['id'] + '">' + data.reports[labgroup][sublab]['id'] + ' ' + data.reports[labgroup][sublab]['experimentName'] + '</li>')
+                $('#lab-' + labgroup+ '-collapse').append('<li class="list-group-item btn" id="lab-' + data.reports[labgroup][sublab]['id'] + '">' + data.reports[labgroup][sublab]['id'] + ' ' + data.reports[labgroup][sublab]['experimentName'] + ((parseInt(data.reports[labgroup][sublab]['status'])&1)?'':'(未发布)') + '</li>');
                 sessionStorage.setItem(data.reports[labgroup][sublab]['id'] + '_article_id', data.reports[labgroup][sublab]['relatedArticle']);
             }
         }
@@ -409,5 +409,25 @@ $('#collect-report').click(function () {
     else {
         createStar();
     }
-})
+});
+
+var testa=0;
+
+$('#create_sublab').click(function (){
+	var lid=$('#l_id').val();
+	var lname=$('#l_name').val();
+	var ltag=$('#l_tag').val();
+	if (isNaN(lid)||isNaN(ltag)||lname.length<4||lid.length>8||ltag.length>6) {
+		alert('输入有误');
+		return;
+	}
+	$.ajax('./createLab', {
+		data: {'LId': lid, 'LName': lname, 'LTag': ltag },
+	}).done(function (data) {
+		testa=data;
+		if (data.status==0) alert('创建成功'); else alert(data.msg);
+	}).fail(function (xhr, status) {
+		alert('失败: ' + xhr.status + ', 原因: ' + status);
+	});	
+});
 

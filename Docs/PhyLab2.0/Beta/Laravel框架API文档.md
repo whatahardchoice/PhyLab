@@ -29,11 +29,11 @@
 
 ### 获取收藏
 - url: ```/user/star```
-- 请求方式：POST
-- 内容：```"id"=>'用户的id'```
+- 请求方式：GET
+- 内容：无参数
 - 返回方式：Json
 - 内容：```"id" =>'报告id',"name" =>'报告名字',"link" =>'报告路径',"time" =>'报告生成时间'```
-- 说明：上述返回Json实际上为一个实验报告条目的Json数组，实际返回Json格式为{'0'=>[一个报告],'1'=>[一个报告]}。
+- 说明：上述返回Json实际上为一个实验报告条目的Json数组，实际返回Json格式为{'0'=>[一个报告],'1'=>[一个报告]}，并且这个数组在数据的“stars”键里。
 
 ## 个人信息的获取以及更新
 
@@ -46,7 +46,7 @@
 
 ### 更新
 - url: ```/user/edit```
-- 请求方式：POST
+- 请求方式：GET
 - 内容：```"id"=>'用户的id','password'=>'密码','username'=>'用户名','birthday'=>'生日','sex'=>'性别','company'=>'公司','companyAddr'=>'公司地址','introduction'=>'介绍'```
 - 返回方式：Json
 - 内容：```"status"=>SUCCESS_MESSAGE```
@@ -64,7 +64,7 @@
 ### 获取
 - url: ```/report```
 - 请求方式：POST
-- 内容：```"id"=>'实验报告的id'```
+- 内容：无请求内容
 - 返回方式：Json
 - 内容：```"status"=> "生成状态","experimentId" => "生成实验id","experimentName"  => "实验的名字","prepareLink" => "报告的地址"```
 
