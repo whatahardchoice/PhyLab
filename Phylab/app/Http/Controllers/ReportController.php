@@ -27,8 +27,11 @@ class ReportController extends Controller
         $data = ['reports'=>array(),
                 'username'=>Auth::user()->name,
                 'auth'=>true];
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+		$isAdmin=$exists;
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
+            if (!$isAdmin&&($report->status&1)==0) continue;
             $rearr = array(
                 "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
