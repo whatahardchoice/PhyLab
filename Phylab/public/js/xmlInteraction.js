@@ -392,6 +392,7 @@ function SetXMLDoc_lab(labnum){
 						"</tr>"+
 					"</table>"+
 				"</lab>";
+			break;
 
 
 		case "1030113":
