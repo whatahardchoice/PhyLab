@@ -201,3 +201,9 @@ Route::get('/getScript',
 	'uses' => 'ConsoleController@getScript',
 	'middleware' => 'auth'
 	]);
+
+Route::get('/createLab',
+	[
+	'uses' => 'ConsoleController@createSublab',
+	'middleware' => 'auth'
+	]);

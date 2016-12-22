@@ -91,15 +91,15 @@
                       </div>
                       <div class="modal-body" style="width: auto;height: auto;">
 						<label>实验号(number)</label>
-						<input class="para form-control" type="input"/>
+						<input class="para form-control" id="l_id" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/>
 						<label>实验名称</label>
-						<input class="para form-control" type="input"/>
+						<input class="para form-control" id="l_name" type="input"/>
 						<label>实验分组(number)</label>
-						<input class="para form-control" type="input"/>
+						<input class="para form-control" id="l_tag" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/>
                       </div>
 						<div class="modal-footer span4">
 							<div style="float:right">
-								<button class="btn btn-large btn-danger s-btn-create">
+								<button class="btn btn-large btn-danger" id="create_sublab">
 									提交
 								</button>
 							</div>

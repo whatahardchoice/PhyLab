@@ -62,7 +62,8 @@ class ReportController extends Controller
             $rearr = array(
                 "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
-                "relatedArticle"=>$report->related_article
+                "relatedArticle"=>$report->related_article,
+                "status"=>$report->status
                 );
             if(array_key_exists($report->experiment_tag,$data['reports'])){
                 array_push($data['reports'][$report->experiment_tag],$rearr);
