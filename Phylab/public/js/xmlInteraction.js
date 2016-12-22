@@ -1,7 +1,7 @@
 function SetXMLDoc_lab(labnum){
 	var str = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 	switch(labnum){
-		case '1010113':
+		case "1010113":
 			str +=
 				"<lab id=\"1010113\">\n"+
 					"<table name=\"10111_1\" raw=\"1\" column=\"3\">\n"+
@@ -51,7 +51,7 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 				"</lab>";
 				break;
-		case '1010212':
+		case "1010212":
 			str +=
 				"<lab id=\"1010212\">\n"+
 					"<table name=\"10112_1\" raw=\"3\" column=\"4\">\n"+
@@ -226,7 +226,7 @@ function SetXMLDoc_lab(labnum){
 					"</table>\n"+
 				"</lab>";
 			break;
-		case '1020212':
+		case "1020212":
 			str +=
 				"<lab id=\"1020212\">\n"+
 					"<table name=\"10212_1\" raw=\"1\" column=\"5\">\n"+
@@ -336,6 +336,64 @@ function SetXMLDoc_lab(labnum){
 				"</lab>";
 			break;
 		
+		case "1020314":
+			str +=
+				"<lab id=\"1020314\">"+
+					"<table>"+
+						"<tr index=\"1\">"+
+							"<td>"+document.getElementById('1022_stable_up').value+"</td>"+
+							"<td>"+document.getElementById('1022_stable_down').value+"</td>"+
+							"<td>"+document.getElementById('1022_m').value+"</td>"+
+						"</tr>"+
+						"<tr index=\"2\">"+
+							"<td>"+document.getElementById('1022_hp1').value+"</td>"+
+							"<td>"+document.getElementById('1022_hp2').value+"</td>"+
+							"<td>"+document.getElementById('1022_hp3').value+"</td>"+
+							"<td>"+document.getElementById('1022_hp4').value+"</td>"+
+							"<td>"+document.getElementById('1022_hp5').value+"</td>"+
+						"</tr>"+
+						"<tr index=\"3\">"+
+							"<td>"+document.getElementById('1022_dp1').value+"</td>"+
+							"<td>"+document.getElementById('1022_dp2').value+"</td>"+
+							"<td>"+document.getElementById('1022_dp3').value+"</td>"+
+							"<td>"+document.getElementById('1022_dp4').value+"</td>"+
+							"<td>"+document.getElementById('1022_dp5').value+"</td>"+
+						"</tr>"+
+						"<tr index=\"4\">"+
+							"<td>"+document.getElementById('1022_hb1').value+"</td>"+
+							"<td>"+document.getElementById('1022_hb2').value+"</td>"+
+							"<td>"+document.getElementById('1022_hb3').value+"</td>"+
+							"<td>"+document.getElementById('1022_hb4').value+"</td>"+
+							"<td>"+document.getElementById('1022_hb5').value+"</td>"+
+						"</tr>"+
+						"<tr index=\"5\">"+
+							"<td>"+document.getElementById('1022_db1').value+"</td>"+
+							"<td>"+document.getElementById('1022_db2').value+"</td>"+
+							"<td>"+document.getElementById('1022_db3').value+"</td>"+
+							"<td>"+document.getElementById('1022_db4').value+"</td>"+
+							"<td>"+document.getElementById('1022_db5').value+"</td>"+
+						"</tr>"+
+						"<tr index=\"5\">"+
+							"<td>"+document.getElementById('1022_cool_down_0').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_30').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_60').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_90').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_120').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_150').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_180').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_210').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_240').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_270').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_300').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_330').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_360').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_390').value+"</td>"+
+							"<td>"+document.getElementById('1022_cool_down_420').value+"</td>"+
+						"</tr>"+
+					"</table>"+
+				"</lab>";
+
+
 		case "1030113":
 			str +=
 				"<lab id=\"1030113\">\n"+
