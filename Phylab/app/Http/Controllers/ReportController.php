@@ -7,6 +7,7 @@ use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Report;
+use App\Models\Console;
 use Storage;
 use App\Exceptions\App\FileIOException;
 use App\Exceptions\App\NoResourceException;
@@ -50,9 +51,14 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getAllReport(){
+		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+		$isAdmin=$exists;
+		$ad=Console::where('email','=',Auth::user()->email)->first();
+		$st=$ad->status;
         $data = ['reports'=>array()];
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
+			if (!$isAdmin&&($report->status&1)==0) continue;
             $rearr = array(
                 "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
