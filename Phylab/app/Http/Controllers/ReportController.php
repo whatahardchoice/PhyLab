@@ -53,8 +53,10 @@ class ReportController extends Controller
     public function getAllReport(){
 		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
 		$isAdmin=$exists;
-		$ad=Console::where('email','=',Auth::user()->email)->first();
-		$st=$ad->status;
+		if ($isAdmin) {
+			$ad=Console::where('email','=',Auth::user()->email)->first();
+			$st=$ad->status;
+		} else $st=0;
         $data = ['reports'=>array()];
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
