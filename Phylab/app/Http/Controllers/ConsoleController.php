@@ -79,6 +79,10 @@ class ConsoleController extends Controller {
 			));
 			$result['status']=0;
 			$result['msg']="ok";
+			$pysrc="/var/www/buaaphylab/storage/app/script/p".$lab_id.".py";;
+			$htmsrc = "/var/www/buaaphylab/resources/views/report/".$lab_id.".html";
+			file_put_contents($pysrc,"# coding here...");
+			file_put_contents($htmsrc,"<table><tr><td>半径</td><td>高度</td></tr><tr><td> <input class='para form-control' type='number'/></td><td><input class='para form-control' type='number'/></td></tr></table>");
 		}
 		return response()->json($result);
 	}
