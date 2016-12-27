@@ -327,7 +327,7 @@ function initReportPage() {
             $.ajax('./getScript', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
-				pyedit.setValue(data);
+				pyedit.setValue(data['contents']);
 				pyedit.refresh();
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);

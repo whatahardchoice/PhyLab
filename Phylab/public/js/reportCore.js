@@ -310,7 +310,7 @@ function initReportPage() {
                 $('#button-view-preparation').removeAttr("disabled");
                 $('#button-generate-report').removeAttr("disabled");
                 $('#collect-report').attr("disabled", true);
-                $('#labdoc').html(data['contents']);
+                $('#labdoc').html(data);
 
                 recordTableValue();
 
