@@ -4,7 +4,7 @@ function lab(index){
     this.dbId = getDbId(index);
     this.xmlTxt;
     this.flush = function(){
-        this.xmlTxt=SetXMLDoc_lab(index);
+        this.xmlTxt=SetXMLDoc_lab();
     }
     this.getIndex = function(){
         return this.index;
@@ -375,7 +375,7 @@ $('#button-view-preparation').click(function () {
 });
 /*
 $('#button-generate-report').click(function () {
-    var xmlString = SetXMLDoc_lab(CUR_SUBLAB);
+    var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
