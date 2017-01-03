@@ -79,7 +79,7 @@
               <div class="btn-group col-xs-12 col-md-5">
                 <button id="collection" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px 0 0 4px;">
                   <i class="fa fa-folder"></i>
-                  收藏夹
+                  新增实验
                   <span id="report-num" class="badge"></span>
                 </button>
                 <div class="modal fade" id="collection-folder" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
@@ -87,11 +87,23 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
+                        <h4 class="modal-title" id="collection-folder-label">新增实验</h4>
                       </div>
                       <div class="modal-body" style="width: auto;height: auto;">
-                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 320px;" frameborder="0"></iframe>
+						<label>实验号(number)</label>
+						<input class="para form-control" id="l_id" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/>
+						<label>实验名称</label>
+						<input class="para form-control" id="l_name" type="input"/>
+						<label>实验分组(number)</label>
+						<input class="para form-control" id="l_tag" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/>
                       </div>
+						<div class="modal-footer span4">
+							<div style="float:right">
+								<button class="btn btn-large btn-danger" id="create_sublab">
+									提交
+								</button>
+							</div>
+						</div>
                     </div>
                   </div>
                 </div>

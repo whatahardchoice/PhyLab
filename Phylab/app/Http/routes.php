@@ -137,14 +137,13 @@ Route::get('/user/star/download/{id}',[
 /***
 tools routes
 ***/
-// Route::get('/tools',[
-    // 'as'=>'tools',
-    // 'uses'=>'ToolsController@index',
-    // 'middleware' => 'auth']);
-Route::get('/tool2',[
+Route::get('/tools',[
     'as'=>'tools',
-    'uses'=>'ToolsController@main',
+    'uses'=>'ToolsController@index',
     'middleware' => 'auth']);
+// Route::get('/tool2',[
+    // 'uses'=>'ToolsController@main',
+    // 'middleware' => 'auth']);
 /***
 //Report routes
 ***/
@@ -200,5 +199,11 @@ Route::get('/console',
 Route::get('/getScript',
 	[
 	'uses' => 'ConsoleController@getScript',
+	'middleware' => 'auth'
+	]);
+
+Route::get('/createLab',
+	[
+	'uses' => 'ConsoleController@createSublab',
 	'middleware' => 'auth'
 	]);
