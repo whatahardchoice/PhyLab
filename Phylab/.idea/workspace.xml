@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/consoleCore.js" afterPath="$PROJECT_DIR$/public/js/consoleCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" afterPath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,14 +40,14 @@
       <file leaf-file-name="consoleCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+            <state relative-caret-position="826">
+              <caret line="422" column="8" lean-forward="false" selection-start-line="422" selection-start-column="8" selection-end-line="422" selection-end-column="8" />
               <folding>
-                <marker date="1483565785181" expanded="true" signature="9241:9928" ph="..." />
-                <marker date="1483565785181" expanded="true" signature="9339:9706" ph="..." />
-                <marker date="1483565785181" expanded="true" signature="9388:9677" ph="..." />
-                <marker date="1483565785181" expanded="true" signature="9571:9647" ph="..." />
-                <marker date="1483565785181" expanded="true" signature="9873:9901" ph="..." />
+                <marker date="1483566211907" expanded="true" signature="9241:9928" ph="..." />
+                <marker date="1483566211907" expanded="true" signature="9339:9706" ph="..." />
+                <marker date="1483566211907" expanded="true" signature="9388:9677" ph="..." />
+                <marker date="1483566211907" expanded="true" signature="9571:9647" ph="..." />
+                <marker date="1483566211907" expanded="true" signature="9873:9901" ph="..." />
               </folding>
             </state>
           </provider>
@@ -479,12 +477,12 @@
       <workItem from="1483377988564" duration="20000" />
       <workItem from="1483384818234" duration="140000" />
       <workItem from="1483456389592" duration="6104000" />
-      <workItem from="1483564649502" duration="1152000" />
+      <workItem from="1483564649502" duration="1561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162677000" />
+    <option name="totallyTimeSpent" value="163086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -870,14 +868,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        <state relative-caret-position="826">
+          <caret line="422" column="8" lean-forward="false" selection-start-line="422" selection-start-column="8" selection-end-line="422" selection-end-column="8" />
           <folding>
-            <marker date="1483565785181" expanded="true" signature="9241:9928" ph="..." />
-            <marker date="1483565785181" expanded="true" signature="9339:9706" ph="..." />
-            <marker date="1483565785181" expanded="true" signature="9388:9677" ph="..." />
-            <marker date="1483565785181" expanded="true" signature="9571:9647" ph="..." />
-            <marker date="1483565785181" expanded="true" signature="9873:9901" ph="..." />
+            <marker date="1483566211907" expanded="true" signature="9241:9928" ph="..." />
+            <marker date="1483566211907" expanded="true" signature="9339:9706" ph="..." />
+            <marker date="1483566211907" expanded="true" signature="9388:9677" ph="..." />
+            <marker date="1483566211907" expanded="true" signature="9571:9647" ph="..." />
+            <marker date="1483566211907" expanded="true" signature="9873:9901" ph="..." />
           </folding>
         </state>
       </provider>

@@ -410,8 +410,7 @@ $('#button-save-script').click(function () {
         'reportHtml': $('#table_editor').text(),
         'reportTex': $('#latex_editor').text(),
     }).done(function (data) {
-        testa=data;
-        if (data.status==0) alert('创建成功'); else alert(data.message);
+        alert(data.message);
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
@@ -421,8 +420,7 @@ $('#button-push-script').click(function () {
     $.post('/report/confirmReport', {
         'reportId': lid
     }).done(function (data) {
-        testa=data;
-        if (data.status==0) alert('创建成功'); else alert(data.message);
+        alert(data.message);
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
