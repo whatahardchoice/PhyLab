@@ -19,7 +19,7 @@
                 <th>编辑</th>
             </tr>
         </thead>
-        <tbody id="collection-list">
+        <tbody id="collection-list" num="<?php echo e(count($stars)); ?>">
             <?php for($i=0;$i < count($stars);$i++): ?>
                 <tr id="star_<?php echo e($stars[$i]['id']); ?>">
                     <th scope="row"><?php echo e($i+1); ?></th>

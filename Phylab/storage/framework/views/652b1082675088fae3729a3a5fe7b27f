@@ -1,5 +1,5 @@
-﻿@extends('layout.main')
-@section('contents')
+﻿
+<?php $__env->startSection('contents'); ?>
 	<link rel="stylesheet" href="./codemirror/lib/codemirror.css"/>
 	<link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css"/>
 	<link rel="stylesheet" href="./codemirror/theme/monokai.css"/>
@@ -228,4 +228,5 @@
   </script>
 </body>
 </html>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
