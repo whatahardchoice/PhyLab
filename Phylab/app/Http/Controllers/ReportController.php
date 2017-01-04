@@ -306,16 +306,22 @@ class ReportController extends Controller
     {
         $data = ["status"   =>  "",
                  "message"  =>  ""];
+        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        if(!$isAdmin){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "没有权限";
+            return response()->json($data);
+        }
         $report = Report::find(Request::get('reportId'));
         if($report){
             $report->status = 1;
             $report->save();
             $data['status'] = SUCCESS_MESSAGE;
-            $data['message'] = "更新成功";
+            $data['message'] = "发布成功";
         }
         else{
             $data['status'] = FAIL_MESSAGE;
-            $data['message'] = "更新失败";
+            $data['message'] = "发布失败";
         }
         return response()->json($data);
         //return view("report.show",$data);
