@@ -1,4 +1,5 @@
 var CUR_PDF = null;
+var lid = 0;
 function lab(index){
     this.index = index;
     this.dbId = getDbId(index);
@@ -373,35 +374,6 @@ $('#button-view-preparation').click(function () {
 		showCode=0;
 	}
 });
-/*
-$('#button-generate-report').click(function () {
-    var xmlString = SetXMLDoc_lab();
-    if (xmlString === null)
-        return;
-    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
-    $('#wait-report').fadeIn();
-    PostAjax("./report",postData,function(){
-        if (this.readyState==4 && this.status==200){
-            var jsonText = eval("(" + this.responseText + ")");
-            //alert(this.responseText);
-            //alert(jsonText["status"]);
-            if(jsonText["status"]=='success') {
-                changePdf('tmp',jsonText['link']);
-                $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
-                $('#collect-report').attr('link',jsonText['link']);
-                $('#collect-report').removeAttr("disabled");
-            }
-            else
-                errorFunction(jsonText["message"]);
-            $('#wait-report').fadeOut();
-        }
-        else if(this.readyState==4 && this.status!=200) {
-            $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
-        }
-    });
-});;
-*/
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
         deleteReportStar();
@@ -414,7 +386,7 @@ $('#collect-report').click(function () {
 var testa=0;
 
 $('#create_sublab').click(function (){
-	var lid=$('#l_id').val();
+	lid=$('#l_id').val();
 	var lname=$('#l_name').val();
 	var ltag=$('#l_tag').val();
 	if (isNaN(lid)||isNaN(ltag)||lname.length<4||lid.length>8||ltag.length>6) {
@@ -424,10 +396,34 @@ $('#create_sublab').click(function (){
 	$.ajax('./createLab', {
 		data: {'LId': lid, 'LName': lname, 'LTag': ltag },
 	}).done(function (data) {
-		testa=data;
 		if (data.status==0) alert('创建成功'); else alert(data.msg);
+		$('#collection-folder').modal('hide');
 	}).fail(function (xhr, status) {
 		alert('失败: ' + xhr.status + ', 原因: ' + status);
 	});	
 });
 
+$('#button-save-script').click(function () {
+    $.post('/report/updatereport', {
+        'reportId': lid,
+        'reportScript': $('#py_editor').text(),
+        'reportHtml': $('#table_editor').text(),
+        'reportTex': $('#latex_editor').text(),
+    }).done(function (data) {
+        testa=data;
+        if (data.status==0) alert('创建成功'); else alert(data.message);
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
+})
+
+$('#button-push-script').click(function () {
+    $.post('/report/confirmReport', {
+        'reportId': lid
+    }).done(function (data) {
+        testa=data;
+        if (data.status==0) alert('创建成功'); else alert(data.message);
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
+})
