@@ -216,4 +216,109 @@ class ReportController extends Controller
     {
         return response()->download(Config::get('phylab.tmpReportPath').$link, $experimentId.".pdf");
     }
+
+    /**
+    * new a report.
+    * 
+    * @return \Illuminate\Http\Response
+    */
+    public function newReport()
+    {
+        $data = ["status"   =>  "",
+                 "message"  =>  ""];
+        try{
+            $reports = Report::where('experiment_id','=',Request::get('reportId'))->get();
+            if($reports->count() > 0){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "实验Id已存在";
+            }else{
+                $system1 = exec("touch ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval1);
+                $system2 = exec("touch ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval2);
+                $system3 = exec("touch ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
+
+                if($reval1==0&&$reval2==0&&$reval3==0){    
+                    $newRep = Report::create([
+                        'experiment_id' => Request::get('reportId'),
+                        'experiment_tag' => Request::get('reportTag'),
+                        'experiment_name' => Request::get('reportName'),
+                        'prepare_link' => '',
+                        'related_article' => 5,
+                        'status' => 0
+                    ]);
+                    if($newRep){
+                        $data["status"] = SUCCESS_MESSAGE;
+                        $data["message"] = "创建新报告成功";
+                    }
+                    else{
+                        $data["status"] = FAIL_MESSAGE;
+                        $data["message"] = "创建新报告失败";
+                    }
+                }else{
+                    $data["status"]=FAIL_MESSAGE;
+                    $data["message"] = "创建新报告失败";
+                }
+            }
+        }
+        catch(Exception $e){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "未知错误";
+        }
+        return response()->json($data);
+    }
+
+    /**
+    * update a report.
+    * 
+    * @return \Illuminate\Http\Response
+    */
+    public function updateReport()
+    {
+        $data = ["status"   =>  "",
+                 "message"  =>  ""];
+        $report = Report::find(Request::get('reportId'));
+        if($report){
+            $system1 = exec("echo -e \"".Request::get('reportScript')."\" > ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval1);
+            $system2 = exec("echo -e \"".Request::get('reportHtml')."\" > ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval2);
+            $system3 = exec("echo -e \"".Request::get('reportTex')."\" > ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
+            if($reval1==0&&$reval2==0&&$reval3==0){
+                $data['status'] = SUCCESS_MESSAGE;
+                $data['message'] = "更新成功";
+            }else{
+                $data['status'] = FAIL_MESSAGE;
+                $data['message'] = "更新失败";
+            }
+        }
+        else{
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "更新失败";
+        }
+        return response()->json($data);        
+        //return view("report.show",$data);
+        //return json_encode($data,JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+    * update a report.
+    * 
+    * @return \Illuminate\Http\Response
+    */
+    public function confirmReport()
+    {
+        $data = ["status"   =>  "",
+                 "message"  =>  ""];
+        $report = Report::find(Request::get('reportId'));
+        if($report){
+            $report->status = 1;
+            $report->save();
+            $data['status'] = SUCCESS_MESSAGE;
+            $data['message'] = "更新成功";
+        }
+        else{
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "更新失败";
+        }
+        return response()->json($data);
+        //return view("report.show",$data);
+        //return json_encode($data,JSON_UNESCAPED_UNICODE);
+    }
 }
