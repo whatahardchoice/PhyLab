@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Report;
 use App\Models\Console;
 use Auth;
+use Config;
+
 
 class ConsoleController extends Controller {
 
@@ -64,7 +66,7 @@ class ConsoleController extends Controller {
 		$st=$ad->status;
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."p".$id.".py";
-        return $htmlFile;
+        //return $htmlFile;
         $file = fopen($htmlFile, "r");
 		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
 		{
