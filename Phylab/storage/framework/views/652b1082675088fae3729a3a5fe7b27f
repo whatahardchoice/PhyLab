@@ -68,6 +68,10 @@
           <div class="panel-heading"  style="border: solid;border-width: 0px;height: 40px;">
             <div class="panel-title row">
               <div class="btn-group col-xs-12 col-md-5">
+                <button id="new-sublab-btn" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px;">
+                  <i class="fa fa-folder"></i>
+                  新增实验
+                </button>
                   <div class="modal fade" id="collection-folder" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
                       <div class="modal-dialog" style="width: 38%;">
                           <div class="modal-content">
@@ -76,24 +80,20 @@
                                   <h4 class="modal-title" id="collection-folder-label">新增实验</h4>
                               </div>
                               <div class="modal-body" style="width: auto;height: auto;text-align: center;">
-                                  <label>实验号<input class="para form-control" id="l_id" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/></label>
-                                  <label>实验名称<input class="para form-control" id="l_name" type="input"/></label>
-                                  <label>实验分组号<input class="para form-control" id="l_tag" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/></label>
+                                  <label>实验号(7位)<input class="para form-control" id="l_id" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/></label>
+                                  <label>实验名称(2~12字)<input class="para form-control" id="l_name" type="input"/></label>
+                                  <label>实验分组号(4位)<input class="para form-control" id="l_tag" type="input" onkeyup="value=value.replace(/[^\d]/g,'')"/></label>
                               </div>
-                              <div class="modal-footer">
+                              <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
                                   <div style="float:right">
-                                      <button id="create_sublab" class="btn btn-large btn-danger">
+                                      <a id="create_sublab" class="btn btn-large btn-danger">
                                           提交
-                                      </button>
+                                      </a>
                                   </div>
                               </div>
                           </div>
                       </div>
                   </div>
-                <button id="collection" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px;">
-                  <i class="fa fa-folder"></i>
-                  新增实验
-                </button>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">

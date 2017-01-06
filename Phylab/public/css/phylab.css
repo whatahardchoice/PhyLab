@@ -222,3 +222,7 @@ td input.form-control {
   position: relative;
   right: 60%;
 }
+/*后台管理CSS*/
+#create_sublab {
+    border-radius: 4px;
+}
