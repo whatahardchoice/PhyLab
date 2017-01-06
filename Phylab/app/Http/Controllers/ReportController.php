@@ -273,6 +273,12 @@ class ReportController extends Controller
     */
     public function updateReport()
     {
+        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        if(!$isAdmin){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "没有权限";
+            return response()->json($data);
+        }
         $data = ["status"   =>  "",
                  "message"  =>  ""];
         $report = Report::find(Request::get('reportId'));

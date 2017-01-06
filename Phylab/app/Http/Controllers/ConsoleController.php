@@ -39,7 +39,7 @@ class ConsoleController extends Controller {
 			'status'=>'',
 			'contents'=>''];
         $id=$_GET['id'];
-        $htmlFile = "/var/www/buaaphylab/resources/views/report/".$id.".html";
+        $htmlFile = Config::get('phylab.experimentViewPath').$id.".html";
 		try{
 			$file = fopen($htmlFile, "r");
 			$result['status'] = SUCCESS_MESSAGE;
@@ -63,7 +63,31 @@ class ConsoleController extends Controller {
 		$ad=Console::where('email','=',Auth::user()->email)->first();
 		$st=$ad->status;
         $id=$_GET['id'];
-        $htmlFile = "/var/www/buaaphylab/storage/app/script/p".$id.".py";
+        $htmlFile = Config::get('phylab.scriptPath')."p".$id.".py";
+        $file = fopen($htmlFile, "r");
+		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
+		{
+			$result['status'] = SUCCESS_MESSAGE;
+			$result['contents'] = fread($file,filesize($htmlFile));
+		}
+        return response()->json($result);
+    }
+	
+
+    public function getTex()
+    {
+		$result = [
+			'status'=>'',
+			'contents'=>''];
+		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+		$isAdmin=$exists;
+		if (!$isAdmin) {
+			return redirect('/index');
+		}
+		$ad=Console::where('email','=',Auth::user()->email)->first();
+		$st=$ad->status;
+        $id=$_GET['id'];
+        $htmlFile = Config::get('phylab.scriptPath')."tex/Handle".$id.".tex";
         $file = fopen($htmlFile, "r");
 		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
 		{
