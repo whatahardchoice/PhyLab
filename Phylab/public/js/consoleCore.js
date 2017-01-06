@@ -401,6 +401,7 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
+    lid=$('#l_id').val();
     $.post('./report/updatereport', {
         'reportId': lid,
         'reportScript': pyedit.getValue(),
