@@ -267,14 +267,9 @@ function Post_lab(postErrorFunc){
 
 var showCode=0;
 
-//PhyLab2.0新增脚本
 function initReportPage() {
     check();
     $('#report-num').text($('#collection-iframe').contents().find('#collection-list').children().length);
-    // $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
-    // $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
-    // $('#reply-notice').css('height', $('#comment-editor').outerHeight());
-    // $('#reply-notice').css('width', $('#comment-editor').outerWidth());
     $.get('./getreport').done(function (data) {
         for (var labgroup in data.reports) {
             $('#lab-list').append(
@@ -358,8 +353,6 @@ function recordTableValue() {
 }
 
 $('#button-view-preparation').click(function () {
-    //changePdf('prepare',CUR_LAB_GROUP + ".pdf");
-    //$('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 	if (!showCode) {
         $('#labdoc').hide();
 		cmdiv.show();
@@ -374,6 +367,7 @@ $('#button-view-preparation').click(function () {
 		showCode=0;
 	}
 });
+
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
         deleteReportStar();
@@ -389,14 +383,17 @@ $('#create_sublab').click(function (){
 	lid=$('#l_id').val();
 	var lname=$('#l_name').val();
 	var ltag=$('#l_tag').val();
-	if (isNaN(lid)||isNaN(ltag)||lname.length<4||lid.length>8||ltag.length>6) {
+	if (isNaN(lid)||isNaN(ltag)||lname.length<=2||lname.length>=12||lid.length!=7||ltag.length!=4) {
 		alert('输入有误');
 		return;
 	}
 	$.ajax('./createLab', {
 		data: {'LId': lid, 'LName': lname, 'LTag': ltag },
 	}).done(function (data) {
-		if (data.status==0) alert('创建成功'); else alert(data.msg);
+		if (data.status=='success')
+		    alert('创建成功');
+		else
+		    alert(data.msg);
 		$('#collection-folder').modal('hide');
 	}).fail(function (xhr, status) {
 		alert('失败: ' + xhr.status + ', 原因: ' + status);
