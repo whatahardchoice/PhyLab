@@ -45,7 +45,8 @@ class ConsoleController extends Controller {
 		try{
 			$file = fopen($htmlFile, "r");
 			$result['status'] = SUCCESS_MESSAGE;
-        	$result['contents'] = fread($file,filesize($htmlFile));
+			$result['contents'] = file_get_contents($htmlFile);
+			fclose($file);
 		}catch(Exception $e) {
 			$result['status']=FAIL_MESSAGE;
 		}
@@ -71,7 +72,8 @@ class ConsoleController extends Controller {
 		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
 		{
 			$result['status'] = SUCCESS_MESSAGE;
-			$result['contents'] = fread($file,filesize($htmlFile));
+			$result['contents'] = file_get_contents($htmlFile);
+			fclose($file);
 		}
         return response()->json($result);
     }
@@ -95,7 +97,8 @@ class ConsoleController extends Controller {
 		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
 		{
 			$result['status'] = SUCCESS_MESSAGE;
-			$result['contents'] = fread($file,filesize($htmlFile));
+			$result['contents'] = file_get_contents($htmlFile);
+			fclose($file);
 		}
         return response()->json($result);
     }

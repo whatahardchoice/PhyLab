@@ -305,6 +305,7 @@ function initReportPage() {
                 $('#collect-report').attr("disabled", true);
                 $('#labdoc').html(data['contents']);
                 tableedit.setValue(data['contents']);
+                tableedit.refresh();
 				//myCodeMirror.setValue(data);
 				$('#labdoc').show();
 				//cmdiv.hide();
@@ -324,8 +325,16 @@ function initReportPage() {
             $.ajax('./getScript', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
-				pyedit.setValue(data['contents']);
-				pyedit.refresh();
+                pyedit.setValue(data['contents']);
+                pyedit.refresh();
+            }).fail(function (xhr, status) {
+                alert('失败: ' + xhr.status + ', 原因: ' + status);
+            });
+            $.ajax('./getTex', {
+                data: {'id': CUR_SUBLAB},
+            }).done(function (data) {
+				latexedit.setValue(data['contents']);
+				latexedit.refresh();
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
