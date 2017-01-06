@@ -281,7 +281,7 @@ class ReportController extends Controller
         }
         $data = ["status"   =>  "",
                  "message"  =>  ""];
-        $report = Report::find(Request::get('reportId'));
+        $report = Report::where('experiment_id','=',Request::get('reportId'))->get()->count();
         if($report){
             $system1 = exec("echo -e \"".Request::get('reportScript')."\" > ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval1);
             $system2 = exec("echo -e \"".Request::get('reportHtml')."\" > ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval2);
