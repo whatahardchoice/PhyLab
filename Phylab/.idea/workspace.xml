@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/consoleCore.js" afterPath="$PROJECT_DIR$/public/js/consoleCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" afterPath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="phylab.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="793">
-              <caret line="226" column="22" lean-forward="false" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="22" />
+            <state relative-caret-position="470">
+              <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -41,8 +40,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/console/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="169" column="16" lean-forward="false" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="16" />
+            <state relative-caret-position="250">
+              <caret line="168" column="11" lean-forward="false" selection-start-line="168" selection-start-column="6" selection-end-line="168" selection-end-column="11" />
               <folding>
                 <element signature="e#5203#5255#0#HTML" expanded="true" />
                 <element signature="e#5787#5826#0#HTML" expanded="true" />
@@ -58,14 +57,37 @@
       <file leaf-file-name="consoleCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
+            <state relative-caret-position="511">
               <caret line="410" column="36" lean-forward="true" selection-start-line="410" selection-start-column="36" selection-end-line="410" selection-end-column="36" />
               <folding>
-                <marker date="1483725805614" expanded="true" signature="8931:9618" ph="..." />
-                <marker date="1483725805614" expanded="true" signature="9029:9396" ph="..." />
-                <marker date="1483725805614" expanded="true" signature="9078:9367" ph="..." />
-                <marker date="1483725805614" expanded="true" signature="9261:9337" ph="..." />
-                <marker date="1483725805614" expanded="true" signature="9563:9591" ph="..." />
+                <marker date="1483727863034" expanded="true" signature="8931:9618" ph="..." />
+                <marker date="1483727863034" expanded="true" signature="9029:9396" ph="..." />
+                <marker date="1483727863034" expanded="true" signature="9078:9367" ph="..." />
+                <marker date="1483727863034" expanded="true" signature="9261:9337" ph="..." />
+                <marker date="1483727863034" expanded="true" signature="9563:9591" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportCore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="302" column="22" lean-forward="false" selection-start-line="302" selection-start-column="12" selection-end-line="302" selection-end-column="22" />
+              <folding>
+                <marker date="1483725106244" expanded="true" signature="9395:10082" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="9493:9860" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="9542:9831" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="9725:9801" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="10027:10055" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="16880:17038" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="16880:17039" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="16899:17020" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="16930:16941" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="16981:16992" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="17855:17886" ph="..." />
+                <marker date="1483725106244" expanded="true" signature="17855:18130" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,7 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>1080114</find>
       <find>collectBtnClick()</find>
       <find>starIframe</find>
       <find>lab</find>
@@ -112,6 +133,7 @@
       <find>getValue</find>
       <find>button-view-preparation</find>
       <find>pyedit</find>
+      <find>CUR_SUBLAB</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -500,12 +522,12 @@
       <workItem from="1483456389592" duration="6104000" />
       <workItem from="1483564649502" duration="1744000" />
       <workItem from="1483575515895" duration="250000" />
-      <workItem from="1483707474186" duration="9345000" />
+      <workItem from="1483707474186" duration="10676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172864000" />
+    <option name="totallyTimeSpent" value="174195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -854,10 +876,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/console/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="168" column="11" lean-forward="false" selection-start-line="168" selection-start-column="6" selection-end-line="168" selection-end-column="11" />
+          <folding>
+            <element signature="e#5203#5255#0#HTML" expanded="true" />
+            <element signature="e#5787#5826#0#HTML" expanded="true" />
+            <element signature="e#5867#5886#0#HTML" expanded="true" />
+            <element signature="e#6703#6724#0#HTML" expanded="true" />
+            <element signature="e#6853#6874#0#HTML" expanded="true" />
+            <element signature="e#7007#7028#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/reportCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3221">
-          <caret line="287" column="47" lean-forward="true" selection-start-line="287" selection-start-column="47" selection-end-line="287" selection-end-column="47" />
+        <state relative-caret-position="295">
+          <caret line="302" column="22" lean-forward="false" selection-start-line="302" selection-start-column="12" selection-end-line="302" selection-end-column="22" />
           <folding>
             <marker date="1483725106244" expanded="true" signature="9395:10082" ph="..." />
             <marker date="1483725106244" expanded="true" signature="9493:9860" ph="..." />
@@ -875,39 +920,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/phylab.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="793">
-          <caret line="226" column="22" lean-forward="false" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/console/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="169" column="16" lean-forward="false" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="16" />
-          <folding>
-            <element signature="e#5203#5255#0#HTML" expanded="true" />
-            <element signature="e#5787#5826#0#HTML" expanded="true" />
-            <element signature="e#5867#5886#0#HTML" expanded="true" />
-            <element signature="e#6703#6724#0#HTML" expanded="true" />
-            <element signature="e#6853#6874#0#HTML" expanded="true" />
-            <element signature="e#7007#7028#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="511">
           <caret line="410" column="36" lean-forward="true" selection-start-line="410" selection-start-column="36" selection-end-line="410" selection-end-column="36" />
           <folding>
-            <marker date="1483725805614" expanded="true" signature="8931:9618" ph="..." />
-            <marker date="1483725805614" expanded="true" signature="9029:9396" ph="..." />
-            <marker date="1483725805614" expanded="true" signature="9078:9367" ph="..." />
-            <marker date="1483725805614" expanded="true" signature="9261:9337" ph="..." />
-            <marker date="1483725805614" expanded="true" signature="9563:9591" ph="..." />
+            <marker date="1483727863034" expanded="true" signature="8931:9618" ph="..." />
+            <marker date="1483727863034" expanded="true" signature="9029:9396" ph="..." />
+            <marker date="1483727863034" expanded="true" signature="9078:9367" ph="..." />
+            <marker date="1483727863034" expanded="true" signature="9261:9337" ph="..." />
+            <marker date="1483727863034" expanded="true" signature="9563:9591" ph="..." />
           </folding>
         </state>
       </provider>
