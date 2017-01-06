@@ -283,15 +283,18 @@ class ReportController extends Controller
                  "message"  =>  ""];
         $report = Report::where('experiment_id','=',Request::get('reportId'))->get()->count();
         if($report){
-            $system1 = exec("echo -e \"".Request::get('reportScript')."\" > ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval1);
-            $system2 = exec("echo -e \"".Request::get('reportHtml')."\" > ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval2);
-            $system3 = exec("echo -e \"".Request::get('reportTex')."\" > ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
+            // $system1 = exec("echo -e \"".Request::get('reportScript')."\" > ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval1);
+            // $system2 = exec("echo -e \"".Request::get('reportHtml')."\" > ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval2);
+            // $system3 = exec("echo -e \"".Request::get('reportTex')."\" > ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
+            file_put_contents(Config::get('phylab.scriptPath')."p".Request::get('reportId').".py", Request::get('reportScript'));
+            file_put_contents(Config::get('phylab.experimentViewPath').Request::get('reportId').".html", Request::get('reportHtml'));
+            file_put_contents(Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex", Request::get('reportTex'));
             if($reval1==0&&$reval2==0&&$reval3==0){
                 $data['status'] = SUCCESS_MESSAGE;
-                $data['message'] = "更新成功(write_err)";
+                $data['message'] = "更新成功";
             }else{
                 $data['status'] = FAIL_MESSAGE;
-                $data['message'] = "更新失败";
+                $data['message'] = "更新失败(write_err)";
             }
         }
         else{

@@ -208,7 +208,7 @@
 
       te_table=document.getElementById('table_editor');
       var tableedit = CodeMirror.fromTextArea(te_table, {
-          mode: "html",
+          mode: "xml",
           lineNumbers: true,
           lineWrapping: true,
           extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
