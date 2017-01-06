@@ -209,8 +209,20 @@ Route::get('/console',
 	]);
 
 Route::get('/getScript',
+    [
+    'uses' => 'ConsoleController@getScript',
+    'middleware' => 'auth'
+    ]);
+
+Route::get('/getTable',
+    [
+    'uses' => 'ConsoleController@getTable',
+    'middleware' => 'auth'
+    ]);
+
+Route::get('/getTex',
 	[
-	'uses' => 'ConsoleController@getScript',
+	'uses' => 'ConsoleController@getTex',
 	'middleware' => 'auth'
 	]);
 
