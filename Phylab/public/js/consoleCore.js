@@ -403,9 +403,9 @@ $('#create_sublab').click(function (){
 $('#button-save-script').click(function () {
     $.post('/report/updatereport', {
         'reportId': lid,
-        'reportScript': py_editor.getValue(),
-        'reportHtml': table_editor.getValue(),
-        'reportTex': latex_editor.getValue(),
+        'reportScript': pyedit.getValue(),
+        'reportHtml': tableedit.getValue(),
+        'reportTex': latexedit.getValue(),
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {
