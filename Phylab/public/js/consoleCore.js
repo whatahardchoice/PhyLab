@@ -401,7 +401,7 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
-    $.post('/report/updatereport', {
+    $.post('./report/updatereport', {
         'reportId': lid,
         'reportScript': pyedit.getValue(),
         'reportHtml': tableedit.getValue(),
@@ -414,7 +414,7 @@ $('#button-save-script').click(function () {
 })
 
 $('#button-push-script').click(function () {
-    $.post('/report/confirmReport', {
+    $.post('./report/confirmReport', {
         'reportId': lid
     }).done(function (data) {
         alert(data.message);
