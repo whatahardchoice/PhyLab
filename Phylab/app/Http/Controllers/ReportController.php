@@ -321,7 +321,7 @@ class ReportController extends Controller
             $data['message'] = "没有权限";
             return response()->json($data);
         }
-        $report = Report::find(Request::get('reportId'));
+        $report = Report::where('experiment_id','=',Request::get('reportId'))->get()->count();
         if($report){
             $report->status = 1;
             $report->save();
