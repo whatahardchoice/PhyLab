@@ -289,7 +289,7 @@ class ReportController extends Controller
             file_put_contents(Config::get('phylab.scriptPath')."p".Request::get('reportId').".py", Request::get('reportScript'));
             file_put_contents(Config::get('phylab.experimentViewPath').Request::get('reportId').".html", Request::get('reportHtml'));
             file_put_contents(Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex", Request::get('reportTex'));
-            if($reval1==0&&$reval2==0&&$reval3==0){
+            if(true){
                 $data['status'] = SUCCESS_MESSAGE;
                 $data['message'] = "更新成功";
             }else{
