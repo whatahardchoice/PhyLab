@@ -304,9 +304,9 @@ function initReportPage() {
                 $('#button-generate-report').removeAttr("disabled");
                 $('#collect-report').attr("disabled", true);
                 $('#labdoc').html(data);
-				myCodeMirror.setValue(data);
+				//myCodeMirror.setValue(data);
 				$('#labdoc').show();
-				cmdiv.hide();
+				//cmdiv.hide();
 				$('#pv-button-text').html('查看数据表代码');
 				showCode=0;
                 recordTableValue();
