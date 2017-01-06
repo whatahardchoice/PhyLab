@@ -86,17 +86,28 @@ class ConsoleController extends Controller {
         $lab_tag=$_GET['LTag'];
 		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
-			$ret=Report::create(array(
-				'experiment_id'=>$lab_id,
-				'experiment_name'=>$lab_name,
-				'experiment_tag'=>$lab_tag
-			));
-			$result['status']=SUCCESS_MESSAGE;
-			$result['msg']="";
-			$pysrc="/var/www/buaaphylab/storage/app/script/p".$lab_id.".py";;
-			$htmsrc = "/var/www/buaaphylab/resources/views/report/".$lab_id.".html";
-			file_put_contents($pysrc,"# coding here...");
-			file_put_contents($htmsrc,"<table><tr><td>半径</td><td>高度</td></tr><tr><td> <input class='para form-control' type='number'/></td><td><input class='para form-control' type='number'/></td></tr></table>");
+            $system1 = exec("touch ".Config::get('phylab.experimentViewPath').$lab_id.".html",$output,$reval1);
+            $system2 = exec("touch ".Config::get('phylab.scriptPath')."p".$lab_id.".py",$output,$reval2);
+            $system3 = exec("touch ".Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex",$output,$reval3);
+            if($reval1==0&&$reval2==0&&$reval3==0){    
+				$ret=Report::create(array(
+					'experiment_id'=>$lab_id,
+					'experiment_name'=>$lab_name,
+					'experiment_tag'=>$lab_tag,
+	                'prepare_link' => '',
+	                'related_article' => 5,
+	                'status' => 0
+				));
+				$result['status']=SUCCESS_MESSAGE;
+				$result['msg']="";
+				$pysrc=Config::get('phylab.scriptPath')."p".$lab_id.".py";
+				$htmsrc = Config::get('phylab.experimentViewPath').$lab_id.".html";
+				file_put_contents($pysrc,"# coding here...");
+				file_put_contents($htmsrc,"<table><tr><td>半径</td><td>高度</td></tr><tr><td> <input class='para form-control' type='number'/></td><td><input class='para form-control' type='number'/></td></tr></table>");
+			} else {
+                $data["status"]=FAIL_MESSAGE;
+                $data["message"] = "创建新报告失败";				
+			}
 		}
 		return response()->json($result);
 	}
