@@ -129,8 +129,10 @@ class ConsoleController extends Controller {
 				$result['msg']="";
 				$pysrc=Config::get('phylab.scriptPath')."p".$lab_id.".py";
 				$htmsrc = Config::get('phylab.experimentViewPath').$lab_id.".html";
+				$texsrc = Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
 				file_put_contents($pysrc,"# coding here...");
 				file_put_contents($htmsrc,"<table><tr><td>半径</td><td>高度</td></tr><tr><td> <input class='para form-control' type='number'/></td><td><input class='para form-control' type='number'/></td></tr></table>");
+				file_put_contents($texsrc,"tex...");
 			} else {
                 $data["status"]=FAIL_MESSAGE;
                 $data["message"] = "创建新报告失败";				
