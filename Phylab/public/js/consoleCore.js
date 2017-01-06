@@ -297,7 +297,7 @@ function initReportPage() {
             $('#lab-select-modal').modal('hide');
             //changePdf('prepare',CUR_LAB_GROUP + ".pdf");
             $('#lab-status').text('实验' + CUR_SUBLAB + '计算脚本');
-            $.ajax('./table', {
+            $.ajax('./getTable', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
                 $('#button-view-preparation').removeAttr("disabled");
