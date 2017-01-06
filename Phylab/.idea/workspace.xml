@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bca79ec7-bcef-4b87-806d-8ba6c9e67fa9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/phylab.css" afterPath="$PROJECT_DIR$/public/css/phylab.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/consoleCore.js" afterPath="$PROJECT_DIR$/public/js/consoleCore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/console/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/console/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" afterPath="$PROJECT_DIR$/storage/framework/sessions/5c063c77a46a7410ddae6b79701a48d777709887" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/652b1082675088fae3729a3a5fe7b27f" afterPath="$PROJECT_DIR$/storage/framework/views/652b1082675088fae3729a3a5fe7b27f" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel.log" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,14 +56,14 @@
       <file leaf-file-name="consoleCore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1047">
-              <caret line="310" column="26" lean-forward="false" selection-start-line="310" selection-start-column="26" selection-end-line="310" selection-end-column="26" />
+            <state relative-caret-position="606">
+              <caret line="406" column="46" lean-forward="true" selection-start-line="406" selection-start-column="46" selection-end-line="406" selection-end-column="46" />
               <folding>
-                <marker date="1483718538180" expanded="true" signature="8931:9618" ph="..." />
-                <marker date="1483718538180" expanded="true" signature="9029:9396" ph="..." />
-                <marker date="1483718538180" expanded="true" signature="9078:9367" ph="..." />
-                <marker date="1483718538180" expanded="true" signature="9261:9337" ph="..." />
-                <marker date="1483718538180" expanded="true" signature="9563:9591" ph="..." />
+                <marker date="1483724020615" expanded="true" signature="8931:9618" ph="..." />
+                <marker date="1483724020615" expanded="true" signature="9029:9396" ph="..." />
+                <marker date="1483724020615" expanded="true" signature="9078:9367" ph="..." />
+                <marker date="1483724020615" expanded="true" signature="9261:9337" ph="..." />
+                <marker date="1483724020615" expanded="true" signature="9563:9591" ph="..." />
               </folding>
             </state>
           </provider>
@@ -84,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CUR_LAB_GROUP</find>
       <find>child</find>
       <find>labdoc</find>
       <find>pdf_object</find>
@@ -114,6 +109,7 @@
       <find>cmdiv</find>
       <find>button-save-script</find>
       <find>button-view-preparation</find>
+      <find>setValue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,8 +131,8 @@
         <option value="$PROJECT_DIR$/public/js/star.js" />
         <option value="$PROJECT_DIR$/public/js/reportCore.js" />
         <option value="$PROJECT_DIR$/public/css/phylab.css" />
-        <option value="$PROJECT_DIR$/public/js/consoleCore.js" />
         <option value="$PROJECT_DIR$/resources/views/console/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/consoleCore.js" />
       </list>
     </option>
   </component>
@@ -502,12 +498,12 @@
       <workItem from="1483456389592" duration="6104000" />
       <workItem from="1483564649502" duration="1744000" />
       <workItem from="1483575515895" duration="250000" />
-      <workItem from="1483707474186" duration="6957000" />
+      <workItem from="1483707474186" duration="7481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170476000" />
+    <option name="totallyTimeSpent" value="171000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -894,14 +890,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/consoleCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1047">
-          <caret line="310" column="26" lean-forward="false" selection-start-line="310" selection-start-column="26" selection-end-line="310" selection-end-column="26" />
+        <state relative-caret-position="606">
+          <caret line="406" column="46" lean-forward="true" selection-start-line="406" selection-start-column="46" selection-end-line="406" selection-end-column="46" />
           <folding>
-            <marker date="1483718538180" expanded="true" signature="8931:9618" ph="..." />
-            <marker date="1483718538180" expanded="true" signature="9029:9396" ph="..." />
-            <marker date="1483718538180" expanded="true" signature="9078:9367" ph="..." />
-            <marker date="1483718538180" expanded="true" signature="9261:9337" ph="..." />
-            <marker date="1483718538180" expanded="true" signature="9563:9591" ph="..." />
+            <marker date="1483724020615" expanded="true" signature="8931:9618" ph="..." />
+            <marker date="1483724020615" expanded="true" signature="9029:9396" ph="..." />
+            <marker date="1483724020615" expanded="true" signature="9078:9367" ph="..." />
+            <marker date="1483724020615" expanded="true" signature="9261:9337" ph="..." />
+            <marker date="1483724020615" expanded="true" signature="9563:9591" ph="..." />
           </folding>
         </state>
       </provider>
