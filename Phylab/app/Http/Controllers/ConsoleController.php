@@ -64,6 +64,7 @@ class ConsoleController extends Controller {
 		$st=$ad->status;
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."p".$id.".py";
+        return $htmlFile;
         $file = fopen($htmlFile, "r");
 		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
 		{
