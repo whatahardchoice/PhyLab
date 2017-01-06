@@ -288,7 +288,7 @@ class ReportController extends Controller
             $system3 = exec("echo -e \"".Request::get('reportTex')."\" > ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
             if($reval1==0&&$reval2==0&&$reval3==0){
                 $data['status'] = SUCCESS_MESSAGE;
-                $data['message'] = "更新成功";
+                $data['message'] = "更新成功(write_err)";
             }else{
                 $data['status'] = FAIL_MESSAGE;
                 $data['message'] = "更新失败";
@@ -296,7 +296,7 @@ class ReportController extends Controller
         }
         else{
             $data['status'] = FAIL_MESSAGE;
-            $data['message'] = "更新失败";
+            $data['message'] = "更新失败(wrong_id)";
         }
         return response()->json($data);        
         //return view("report.show",$data);
