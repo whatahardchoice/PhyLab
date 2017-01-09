@@ -10,11 +10,11 @@
 # Task Report
 | Name | Issue                                    | Rate | Difficulties | Time | Expect |
 | ---- | ---------------------------------------- | ---- | ------------ | ---- | ------ |
-| 岳桐宇  | #103 [报告管理后台后端实现](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | -    | -      |
-| 冯炜韬  | #103 [设计管理后台](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | -    | -      |
-| 杨子琛  | 整体测试                                     | 20%  | 无            | -    | -      |
-| 程富瑞  | 调整实验                                     | 20%  | 无            | -    | -      |
-| 邓楚云  | #103 [负责报告管理后台的前端实现](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | -    | -      |
+| 岳桐宇  | #103 [报告管理后台后端实现](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | 2    | 2      |
+| 冯炜韬  | #103 [设计管理后台](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | 2    | 2      |
+| 杨子琛  | 整体测试                                     | 20%  | 无            | 2    | 2      |
+| 程富瑞  | 调整实验                                     | 20%  | 无            | 2    | 2      |
+| 邓楚云  | #103 [负责报告管理后台的前端实现](https://github.com/default1406/PhyLab/issues/103) | 10%  | 无            | 2    | 2      |
 
 # Burn down chart
 

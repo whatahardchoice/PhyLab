@@ -10,11 +10,11 @@
 # Task Report
 | Name | Issue                                    | Rate | Difficulties | Time | Expect |
 | ---- | ---------------------------------------- | ---- | ------------ | ---- | ------ |
-| 岳桐宇  | #103 [报告管理后台后端实现](https://github.com/default1406/PhyLab/issues/103) | 80%  | 无            | -    | -      |
-| 冯炜韬  | #103 [设计管理后台](https://github.com/default1406/PhyLab/issues/103) #88 #91 恢复小工具 | 80%  | 无            | -    | -      |
-| 杨子琛  | #95 [测试物理实验脚本](https://github.com/default1406/PhyLab/issues/95) | 100% | 无            | -    | -      |
-| 程富瑞  | #90 [新增实验](https://github.com/default1406/PhyLab/issues/90) | 80%  | 无            | -    | -      |
-| 邓楚云  | #103 [负责报告管理后台的前端实现](https://github.com/default1406/PhyLab/issues/103) | 80%  | 无            | -    | -      |
+| 岳桐宇  | #103 [报告管理后台后端实现](https://github.com/default1406/PhyLab/issues/103) | 80%  | 无            | 4    | 4      |
+| 冯炜韬  | #103 [设计管理后台](https://github.com/default1406/PhyLab/issues/103) #88 #91 恢复小工具 | 80%  | 无            | 4    | 4      |
+| 杨子琛  | #95 [测试物理实验脚本](https://github.com/default1406/PhyLab/issues/95) | 100% | 无            | 4    | 4      |
+| 程富瑞  | #90 [新增实验](https://github.com/default1406/PhyLab/issues/90) | 80%  | 无            | 4    | 4      |
+| 邓楚云  | #103 [负责报告管理后台的前端实现](https://github.com/default1406/PhyLab/issues/103) | 80%  | 无            | 4    | 4      |
 
 # Burn down chart
 
