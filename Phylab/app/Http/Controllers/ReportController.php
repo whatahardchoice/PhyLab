@@ -13,7 +13,7 @@ use App\Exceptions\App\FileIOException;
 use App\Exceptions\App\NoResourceException;
 use Exception;
 use Config;
-use DB;
+use Illuminate\Support\Facades\DB;
 class ReportController extends Controller
 {
     /**
