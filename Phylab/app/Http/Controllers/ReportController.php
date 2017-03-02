@@ -324,10 +324,10 @@ class ReportController extends Controller
         $report = Report::where('experiment_id','=',Request::get('reportId'))->first();
         if($report){
             $report->status = 1;
-            // $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
-			// if ($results->count() == 0) {
-            //     DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
-			// }
+            $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
+			if ($results->count() == 0) {
+                DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
+			}
 			// $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
 			// $category_id = $results->first()->id;
             // $time = time();
