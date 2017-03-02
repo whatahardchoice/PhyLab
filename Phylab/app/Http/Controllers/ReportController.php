@@ -329,10 +329,10 @@ class ReportController extends Controller
                 DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
 			}
 			$results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
-			$category_id = $results->first()['id'];
+			$category_id = $results->first()->id;
             $time = time();
 			DB::insert('insert into wc_article (uid, title, message, comments, views, add_time, has_attach, lock, votes, title_fulltext, category_id, is_recommend, sort) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [26, $lab_id.'总评论贴',$lab_id.'总评论贴',0,0,$time,0,0,0,$report->experiment_id." 3578035770",$category_id,0,0]);
-            $report->related_article = DB::select('select * from wc_article where uid = 26 and add_time = ?', [$time])->first()['id'];
+            $report->related_article = DB::select('select * from wc_article where uid = 26 and add_time = ?', [$time])->first()->id;
 
             $report->save();
             $data['status'] = SUCCESS_MESSAGE;
@@ -341,6 +341,7 @@ class ReportController extends Controller
         else{
             $data['status'] = FAIL_MESSAGE;
             $data['message'] = "发布失败";
+            exec("touch ".Config::get('phylab.experimentViewPath')."haveBug.html",$output,$reval1);
         }
         return response()->json($data);
         //return view("report.show",$data);
