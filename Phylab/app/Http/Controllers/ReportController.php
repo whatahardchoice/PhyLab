@@ -326,7 +326,7 @@ class ReportController extends Controller
         if($report){
             DB::transaction(function () {
                 $report->status = 1;
-                $results = DB::table('wc_category')->select('title',$report->experiment_tag)->get();
+                // $results = DB::table('wc_category')->select('title',$report->experiment_tag)->get();
                 // $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
                 // if ($results->count() == 0) {
                 //     DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
