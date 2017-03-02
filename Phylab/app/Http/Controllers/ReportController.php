@@ -327,14 +327,14 @@ class ReportController extends Controller
             DB::transaction(function () {
                 $report->status = 1;
                 $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
-                if ($results->count() == 0) {
-                    DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
-                }
-                $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
-                $category_id = $results->first()->id;
-                $time = time();
-                DB::insert('insert into wc_article (uid, title, message, comments, views, add_time, has_attach, lock, votes, title_fulltext, category_id, is_recommend, sort) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [26, $lab_id.'总评论贴',$lab_id.'总评论贴',0,0,$time,0,0,0,$report->experiment_id." 3578035770",$category_id,0,0]);
-                $report->related_article = DB::select('select * from wc_article where uid = 26 and add_time = ?', [$time])->first()->id;
+                // if ($results->count() == 0) {
+                //     DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
+                // }
+                // $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
+                // $category_id = $results->first()->id;
+                // $time = time();
+                // DB::insert('insert into wc_article (uid, title, message, comments, views, add_time, has_attach, lock, votes, title_fulltext, category_id, is_recommend, sort) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [26, $lab_id.'总评论贴',$lab_id.'总评论贴',0,0,$time,0,0,0,$report->experiment_id." 3578035770",$category_id,0,0]);
+                // $report->related_article = DB::select('select * from wc_article where uid = 26 and add_time = ?', [$time])->first()->id;
                 $report->save();
             });
             $data['status'] = SUCCESS_MESSAGE;
