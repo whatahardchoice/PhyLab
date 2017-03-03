@@ -323,7 +323,6 @@ function initReportPage() {
                     localStorage.setItem($('#username').text() + CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
                 })
                 $('#button-next-comment-group').attr('disabled', true);
-                $('#button-comment-reply').removeAttr('disabled');
                 $('#comment-area-title').text(CUR_SUBLAB + '评论区');
                 loadComments(sessionStorage.getItem(CUR_SUBLAB + '_article_id'), 0);
                 $('#btn-group-comment-group').show();
@@ -471,6 +470,7 @@ function loadComments(article_id, group_id) {
     }).done(function (data) {
         data = JSON.parse(data);
         if (data['errno'] === 1) {
+			$('#button-comment-reply').removeAttr('disabled');
             var i = 4;
             var comments_count = data['rsm']['comments_count'];
             var comment_groups_base = comments_count - (group_id + 1) * 5;
@@ -492,7 +492,7 @@ function loadComments(article_id, group_id) {
                 $('#button-next-comment-group').removeAttr('disabled');
         }
         else
-            alert('失败: ' + data['errno'] + ', 原因: ' + data['err']);
+			$('#button-comment-reply').attr('disabled','1');
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
