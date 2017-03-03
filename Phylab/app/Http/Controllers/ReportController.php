@@ -324,8 +324,7 @@ class ReportController extends Controller
         }
         $report = Report::where('experiment_id','=',Request::get('reportId'))->first();
         if($report){
-            $report->status = 1;
-            $results = DB::table('wc_category')->select('title',$report->experiment_tag)->get();
+            // $results = DB::table('wc_category')->select('title',$report->experiment_tag)->get();
             // $results = DB::select('select * from wc_category where title = ?', [$report->experiment_tag]);
             // if ($results->count() == 0) {
             //     DB::insert('insert into wc_category (title, type, parent_id, sort) values (?, ?, ?, ?)', [$report->experiment_tag, 'question', 1, 0]);
@@ -335,6 +334,15 @@ class ReportController extends Controller
             // $time = time();
             // DB::insert('insert into wc_article (uid, title, message, comments, views, add_time, has_attach, lock, votes, title_fulltext, category_id, is_recommend, sort) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [26, $lab_id.'总评论贴',$lab_id.'总评论贴',0,0,$time,0,0,0,$report->experiment_id." 3578035770",$category_id,0,0]);
             // $report->related_article = DB::select('select * from wc_article where uid = 26 and add_time = ?', [$time])->first()->id;
+            $remote_server = G_BASE_URL.'wecenter/?/publish/ajax/gen_article';
+            $post_string = 'token=fFD*(U3jfj5f4&title='.$lab_id.'总讨论帖&message=有关'.$lab_id.'实验的问题都可以在这里讨论&user_id=27&category_id=1';
+            $ch = curl_init();
+            curl_setopt($ch,CURLOPT_URL,$remote_server);
+            curl_setopt($ch,CURLOPT_POSTFIELDS,$post_string);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+            curl_exec($ch);
+            curl_close($ch);
+            $report->status = 1;
             $report->save();
             $data['status'] = SUCCESS_MESSAGE;
             $data['message'] = "发布成功";
