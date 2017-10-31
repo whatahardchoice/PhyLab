@@ -7,9 +7,9 @@ class DebugScriptController extends Controller {
     public function debug(){
         echo 'debug';
         $id = $_GET['id'];
-        $xml = '/var/www/buaaphylab/storage/app/script/test/'.$id.'test/'.$id.'.xml';
+        $xml = '/var/www/Phylab/storage/app/script/test/'.$id.'test/'.$id.'.xml';
         $pdf = "/tmp/tmp_pdf/".$id;
-        $res = exec("/var/www/buaaphylab/storage/app/script/handler.py ".$id.' '.$xml." $pdf 2>&1 ", $output,$rval);
+        $res = exec("/var/www/Phylab/storage/app/script/handler.py ".$id.' '.$xml." $pdf 2>&1 ", $output,$rval);
         if($rval!=0) {
             foreach ($output as $i => $o) {
                 $o = preg_replace('/ /', '&nbsp;', $o);
@@ -27,7 +27,7 @@ class DebugScriptController extends Controller {
     public function getTable()
     {
         $id=$_GET['id'];
-        $htmlFile = "/var/www/buaaphylab/resources/views/report/".$id.".html";
+        $htmlFile = "/var/www/Phylab/resources/views/report/".$id.".html";
         $file = fopen($htmlFile, "r");
         $html = fread($file,filesize($htmlFile));
         return $html;

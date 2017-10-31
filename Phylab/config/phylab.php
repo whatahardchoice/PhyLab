@@ -1,12 +1,12 @@
 <?php
-define("G_BASE_URL","localhost/buaaphylab/");
+define("G_BASE_URL","localhost/Phylab/");
 return [
     'starPath' => public_path()."/star_pdf/",
     'tmpReportPath'=>public_path()."/pdf_tmp/",
     'latexTemplatePath'=>storage_path()."/app/latex_template/",
     'scriptPath'=>storage_path()."/app/script/",
     'tmpXmlPath'=>storage_path()."/app/xml_tmp/",
-    'experimentViewPath'=> "/var/www/buaaphylab/resources/views/report/",
+    'experimentViewPath'=> "/var/www/Phylab/resources/views/report/",
     'defaultAvatarPath'   => "default.jpg",
     'avatarPath'    =>  public_path()."/avatar/",
     'videoPath'     =>  public_path()."/video/",
