@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '121.42.204.94',
-            'database'  => 'Phylab_db',
-            'username'  => 'root',
-            'password'  => 'default2014',
+            'host'      => '127.0.0.1',
+            'database'  => 'test2',
+            'username'  => 'manager',
+            'password'  => 'phylabdb',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
