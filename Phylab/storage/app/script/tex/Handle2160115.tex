@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{CJK}
+\usepackage{slashbox} %添加了一个宏包
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\section*{五、数据处理}
+$\rho=981kg/m^3,g=9.792m/s^2,\eta=1.83\times10^{-5}kg/m\cdot s,$
+$b=8.22\times 10^{-3}m\cdot pa $
+\par $P_{20}=1.0133\times 10^{-5}Pa,d=5.00\times 10^{-3}m,\theta =1.6021733\times 10^{-19}C$
+\subsubsection*{1、原始数据列表} %原始数据
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+ \multicolumn{1}{| c |}{\textbf{电压} }&\multicolumn{5}{| c |}{\textbf{时间}}&\multicolumn{1}{| c |}{\textbf{平均}} \\
+
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+$xV$&0&0&0&0&0&0\\
+\hline
+\end{tabular}
+\vspace{10pt}
+\end {center}
+
+\subsubsection*{2、数据计算} %原始数据
+$$q=ne=\frac{0.927\times 10^{-14}}{[t(1+2.26\times10^{-2}\sqrt{t})]^{3/2}} \cdot \frac{1}{V}$$
+所以通过代入计算我们可以得到：
+\par 第一组：$q_1=xC,n_1=\frac{q_1}{e_0}\simeq x,e_1=\frac{q_1}{n_1}xC,\eta=x \%$
+\par 第二组：$q_2=xC,n_2=\frac{q_2}{e_0}\simeq x,e_2=\frac{q_2}{n_2}xC,\eta=x \%$
+\par 第三组：$q_3=xC,n_3=\frac{q_3}{e_0}\simeq x,e_3=\frac{q_3}{n_3}xC,\eta=x \%$
+
+ $$\overline{e}=\frac{\sum_{i=1}^{n=6}e_i}{6}=xC$$
+ $$\eta=|\frac{\overline{e}-e_0}{e_0}|=x\%$$
+ 不确定度计算：
+ \par $U_a(e)=xC$
+ \par
+$\therefore $最终表述为：$e\pm U(e)=(x\pm y)\times 10^{-19}C$
+
+\subsubsection*{3、作图} %原始数据
+（请大家发挥想象力自行作图，相信大家的聪明才智……）
+\subsection*{六、误差分析}
+1、由于油滴质量小，可能出现热运动，布朗运动引入误差。
+2、由于时间和电压的范围限定，导致油滴所带电荷数比较集中，从而数据分布比较密集，在作图的时候会产生一定的误差。
+3、油滴在上升或者下降的过程中因为温度等因素使质量产生改变，导致误差。
+
+
+\end{CJK*}
+\end{document}

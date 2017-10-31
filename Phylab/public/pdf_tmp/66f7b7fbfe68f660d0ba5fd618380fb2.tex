@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{diagbox}
+\usepackage{slashbox}
+\begin{document}
+\section*{五、实验数据处理}
+\subsection*{实验1.迈克尔逊干涉}
+\subsubsection*{(1)原始数据记录表格}
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+i/100环 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+d$_i$/mm
+&100&104&108&112&116
+\\
+\hline
+i/100环 & 6 & 7 & 8 & 9 & 10 \\
+\hline
+d$_i$/mm
+&120&124&128&132&136
+\\
+\hline
+\end{tabular}
+\\
+\vspace{10pt}
+逐差法处理数据，其中 ${\Delta}d_i$=$d_{5+i}-d_i$
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+i/100环 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+${\Delta}d_i$/mm
+&20&20&20&20&20
+\\
+\hline
+\end{tabular}
+\vspace{10pt}
+
+\end{center}
+
+\subsubsection*{(2)数据处理}
+
+$$\bar{{\Delta}d_i} =\frac{1}{5}\sum\limits_{i=1}^{5}{{\Delta}d_i}=20 mm$$
+$\lambda$的值为：$$\lambda=\frac{2\bar{{\Delta}d_i}}{N}=80000 nm$$
+${\Delta}d_i$不确定度计算：\\
+${\Delta}d_i$的A类误差：$$u_a({{\Delta}d_i})=\sqrt{\displaystyle\frac{\sum\limits_{i=1}^{5} ({{\Delta}d_i}_i-\bar{{\Delta}d_i})^2}{5{\times}(5-1)}}=0 mm$$
+${\Delta}d_i$的B类误差：$$u_b({A})=\displaystyle\frac{\bigtriangleup\text{仪}}{\sqrt{3}}
+= \frac{5 \times 10^{-5}}{\sqrt{3}} =  2.89 \times 10^{-5} mm$$
+${{\Delta}d_i}$不确定度：$$u({{\Delta}d_i})=\sqrt{{u_a({{\Delta}d_i})}^2+{u_b({{\Delta}d_i})}^2}=\sqrt{ 0^2 + 0.009622^2} = 2.89{\times}10^{-5} $$
+N不确定度计算：\\
+条纹连续读数的最大判断误差为${\Delta}N$=1\\
+N的不确定度：$$u(N)=u_b(N)=\frac{{\Delta}N}{\sqrt{3}}=0.577$$
+$\lambda$的不确定度：$$\frac{u(\lambda)}{\lambda}=\sqrt{(\frac{u({\Delta}d)}{{\Delta}d})^2+(\frac{u(N)}{N})^2}$$
+$$ u(\lambda) = 92.32007 nm$$
+相对不确定度：$$\displaystyle\frac{u(\lambda)}{\lambda}=0.001154001$$
+最终结果为：$$A{\pm}u(A) = 800 {\pm} 1 nm$$
+\end{document}

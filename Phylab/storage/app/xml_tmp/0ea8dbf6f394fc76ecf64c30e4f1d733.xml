@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><lab id="1080114">
+<table name="10811_1" raw="1" column="5">
+<tr index="1">
+<td>15.8</td>
+<td>35</td>
+<td>108.80</td>
+<td>42.6</td>
+<td>83.4</td>
+</tr>
+</table>
+<table name="10811_2" raw="2" column="4">
+<tr index="1">
+<td>7.273</td>
+<td>2.690</td>
+<td>7.125</td>
+<td>2.685</td>
+</tr>
+<tr index="2">
+<td>4.845</td>
+<td>3.825</td>
+<td>4.876</td>
+<td>3.892</td>
+</tr>
+</table>
+<table name="10811_3" raw="4" column="5">
+<tr index="1">
+<td>6.855</td>
+<td>6.578</td>
+<td>6.321</td>
+<td>6.024</td>
+<td>5.705</td>
+</tr>
+<tr index="2">
+<td>5.476</td>
+<td>5.234</td>
+<td>4.932</td>
+<td>4.633</td>
+<td>4.382</td>
+</tr>
+<tr index="3">
+<td>4.160</td>
+<td>3.820</td>
+<td>3.538</td>
+<td>3.275</td>
+<td>2.972</td>
+</tr>
+<tr index="4">
+<td>2.720</td>
+<td>2.458</td>
+<td>2.219</td>
+<td>1.932</td>
+<td>1.612</td>
+</tr>
+</table>
+</lab>

@@ -1,0 +1,134 @@
+\subsection*{实验1.利用多普勒测速仪测量物体通过光电门处的速度}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\multicolumn{9}{r}{u=340.0m/s}
+	\\\hline
+	\multirow{2}{*}{电机速度设置\(\%\)}
+	{%- for a in zidong_dianjisudu -%}
+		&\multicolumn{2}{|c|}{ {{ a }} } 
+	{%- endfor -%}
+		\\\cline{2-9}
+	&靠近&远离&靠近&远离&靠近&远离&靠近&远离
+	\\\hline
+	多普勒速度\(m/s\)
+	{%- for a in zidong_duopulesudu -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	误差\(m/s\)
+	{%- for a in zidong_wucha -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	平均误差\(m/s\)
+	{%- for a in zidong_pingjunwucha -%}
+		& \multicolumn{2}{|c|}{ {{ a }} }
+	{%- endfor -%}
+	\\\hline
+\end{tabular}
+\end{center}
+产生的误差较小，在要求的精度范围内。
+产生误差的原因:
+\begin{enumerate}
+	\itemsep=-5pt
+	\item 带动小车的电机转速不稳定。
+	\item 光电门测量误差
+	\item 温度对声速有影响，从而影响测量结果
+\end{enumerate}
+
+
+\subsection*{实验2.加入温度校正后运动物体速度的测量}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\multicolumn{9}{r}{T={{xiuzheng_wendu}}$^{\circ}$C\ u={{xiuzheng_shengsu}}m/s}
+	\\\hline
+	\multirow{2}{*}{电机速度设置\(\%\)}
+	{%- for a in xiuzheng_dianjisudu -%}
+		&\multicolumn{2}{|c|}{ {{ a }} } 
+	{%- endfor -%}
+		\\\cline{2-9}
+	&靠近&远离&靠近&远离&靠近&远离&靠近&远离
+	\\\hline
+	多普勒速度\(m/s\)
+	{%- for a in xiuzheng_duopulesudu -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	误差\(m/s\)
+	{%- for a in xiuzheng_wucha -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	平均误差\(m/s\)
+	{%- for a in xiuzheng_pingjunwucha -%}
+		&\multicolumn{2}{|c|}{ {{ a }} }
+	{%- endfor -%}
+	\\\hline
+\end{tabular}
+\end{center}
+加入温度校正后，误差比未加入温度校正之前小，说明声速受温度影响。
+产生误差的原因:
+\begin{enumerate}
+	\itemsep=-5pt
+		\item 温度在测量过程中发生变化。
+\end{enumerate}
+
+
+\subsection*{实验3.手动测量运动物体通过光电门处的速度}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\multicolumn{9}{r}{$f_0$={{shoudong_pinlv}}kHz\ u={{shoudong_shengsu}}m/s}
+	\\\hline
+	\multirow{2}{*}{电机速度设置\(\%\)}
+	{%- for a in shoudong_dianjisudu -%}
+		&\multicolumn{2}{|c|}{ {{ a }} } 
+	{%- endfor -%}
+		\\\cline{2-9}
+	&靠近&远离&靠近&远离&靠近&远离&靠近&远离
+	\\\hline
+	通过光电门时间\(ms\)
+	{%- for a in shoudong_guangdian -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	光电门测得速度\(m/s\)
+	{%- for a in shoudong_guangdiansudu -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	多普勒频移\(Hz\)
+	{%- for a in shoudong_pinyi -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	多普勒测得速度\(m/s\)
+	{%- for a in shoudong_duopulesudu -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+	相对误差
+	{%- for a in shoudong_wucha -%}
+		& {{ a }} 
+	{%- endfor -%}
+	\\\hline
+\end{tabular}
+\end{center}
+产生误差的原因:
+\begin{enumerate}
+	\itemsep=-5pt
+		\item 温度在测量过程中发生变化。
+		\item 光电门测量值存在误差。
+		\item 多普勒频移的测量不准确。
+\end{enumerate}
+
+
+\subsection*{实验4.环境声速的测量}
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+	\hline
+		路径长度\(m\)&传播时间\(s\)&环境声速\(m/s\)
+	\\\hline
+	1.58&{{shengsu_shijian}}&{{shengsu_shengsu}}
+	\\\hline
+	\end{tabular}
+\end{center}

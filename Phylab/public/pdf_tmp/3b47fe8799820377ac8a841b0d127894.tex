@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{diagbox}
+\usepackage{slashbox}
+\begin{document}
+\section*{五、实验数据处理}
+\subsection*{实验2.三棱镜顶角的测量}
+\subsubsection*{(1)原始数据记录表格}
+
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+i & 1 & 2 & 3 & 4 & 5 \\
+\hline
+${\alpha}_1$
+&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'
+\\
+\hline
+${\beta}_1$
+&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'
+\\
+\hline
+${\alpha}_2$
+&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'
+\\
+\hline
+${\beta}_2$
+&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'&2$^{\circ}$0'
+\\
+\hline
+${\theta}$
+&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'&1$^{\circ}$0'
+\\
+\hline
+$A$
+&0$^{\circ}$30'&0$^{\circ}$30'&0$^{\circ}$30'&0$^{\circ}$30'&0$^{\circ}$30'
+\\
+\hline
+\end{tabular}
+\vspace{10pt}
+
+其中$\theta$ = $\displaystyle\frac{1}{2}[({\alpha}_2-{\alpha_1})+({\beta}_2-{\beta}_1)]$,$A=\displaystyle\frac{1}{2}{\theta}$
+
+\end{center}
+
+\subsubsection*{(2)不确定度的计算}
+
+$$\bar{A} =\frac{1}{5}\sum\limits_{i=1}^{5}{A_i}=0.5 ^{\circ} $$
+A类误差：$$u_a({A})=\sqrt{\displaystyle\frac{\sum\limits_{i=1}^{5} ({A}_i-\bar{A})^2}{5{\times}(5-1)}}=0 ^{\circ}$$
+B类误差：$$u_b({A})=\displaystyle\frac{\bigtriangleup\text{仪}}{\sqrt{3}}
+= \frac{1'}{\sqrt{3}} = (9.622 \times 10^{-3})^{\circ} $$
+不确定度：$$u({A})=\sqrt{{u_a({A})}^2+{u_b({A})}^2}=\sqrt{ 0^2 + 0.009622^2} = 0.009622 ^{\circ}$$
+相对不确定度：$$\displaystyle\frac{u(A)}{A}=0.019244$$
+最终结果为：$$A{\pm}u(A) = (0.5 {\pm} 0.01) ^{\circ}$$
+\end{document}

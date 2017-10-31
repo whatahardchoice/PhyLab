@@ -1,0 +1,230 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{diagbox}
+\usepackage{slashbox}
+\begin{document}
+\section*{五、实验数据处理}
+\subsection*{1.计算光栅常数d，并计算不确定度u(d)}
+\subsubsection*{(1)原始数据记录表格}
+\begin{center}
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}*{\diagbox{测量次数}{测量级次}} &
+\multicolumn{2}{c|}{$-1$级} & \multicolumn{2}{c|}{$+1$级} &
+\multirow{2}*{$2{\theta}_1 = \displaystyle\frac{1}{2}\left[({\alpha}_1-{\beta}_1)-({\alpha}_2-{\beta}_2)\right]$}  \\
+\cline{2-5}
+& ${\alpha}_1$ & ${\beta}_1$ & ${\alpha}_2$ & ${\beta}_2$ & \\ \hline
+1 & $156.47^{\circ}$ & $336.5^{\circ}$ & $136.37^{\circ}$ & $316.3^{\circ}$ & $20.250^{\circ}$ \\ \hline
+2 & $219.05^{\circ}$ & $39.04^{\circ}$ & $198.42^{\circ}$ & $18.42^{\circ}$ & $20.375^{\circ}$  \\ \hline
+3 & $290.59^{\circ}$ & $110.55^{\circ}$ & $270.37^{\circ}$ & $90.33^{\circ}$ & $20.367^{\circ}$  \\ \hline
+4 & $353.24^{\circ}$ & $173.23^{\circ}$ & $333.01^{\circ}$ & $153.0^{\circ}$ & $20.383^{\circ}$  \\ \hline
+5 & $52.05^{\circ}$ & $232.08^{\circ}$ & $31.45^{\circ}$ & $211.46^{\circ}$ & $20.350^{\circ}$ \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!hbp]
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{$-2$级} & \multicolumn{2}{c|}{$+2$级} &
+\multirow{2}*{$2{\theta}_2 = \frac{1}{2}\left[({\alpha}_1-{\beta}_1)-({\alpha}_2-{\beta}_2)\right]$}  \\
+\cline{1-4}
+${\alpha}_1$ & ${\beta}_1$ & ${\alpha}_2$ & ${\beta}_2$ & \\ \hline
+$62.35^{\circ}$ &$242.29^{\circ}$ &$21.1^{\circ}$ &$201.12^{\circ}$ &$41.35^{\circ}$ \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\subsubsection*{(2)计算光栅常数d}
+
+$$\overline{2{\theta}_1} = \displaystyle\frac{\sum_{k=1}^5 2{\theta}_1}{5} = 20.345^{\circ} $$
+$$\overline{ {\theta}_1} = \displaystyle\frac12\ \overline{2{\theta}_1} = 0.1775rad $$
+$$\overline{ {\theta}_2} = \displaystyle\frac12\ \overline{2{\theta}_2} = 0.3608rad$$
+$$\text{由\ }d\sin{\theta} = k{\lambda}\text{\ ,取\ }k = 1\text{\ 得\ }d = \frac{\lambda}{\sin{\theta}_1}$$
+又钠黄光\ ${\lambda} = 589.3mm$
+$$\therefore \ d = \displaystyle\frac{\lambda}{\sin{\theta}_1}=3.337\mu m$$
+$$\text{取\ }k=2 \displaystyle\text{得\ }d' = \frac{2\lambda}{\sin{\theta}_2}= 3.338\mu m$$
+ 
+\subsubsection*{(3)计算不确定度u(d)}
+\begin{enumerate}
+  \item $\pm1$级d的不确定度
+    $$u_a(\overline{2\theta}) = \displaystyle\sqrt{\frac{\sum_{i=1}^5{(2{\theta}_i-\overline{2{\theta}_1}})^2}{5\times4}}=0.000426rad$$
+    $$u_b(\overline{2\theta}) = \displaystyle\frac{1}{\sqrt3} = 0.000168rad$$
+    $$\text{不确定度合成为\ }u(\overline{2\theta}) = \sqrt{u_a^2(\overline{2\theta})+u_b^2(\overline{2\theta})} = 0.000457rad$$
+    $$u(\overline{ {\theta}_1})= \displaystyle\frac12\ u(\overline{2{\theta}_1}) = 2.287{\times}10^{-4}rad$$
+    $$\text{由\ }d = \frac{\lambda}{\sin{ {\theta}_1}} \text{有\ } \ln d = \ln{\lambda}-\ln{\sin{ {\theta}_1} }$$
+    $$\text{相对不确定度\ }\frac{u(d)}{d} = \displaystyle\sqrt{ {\left[\frac{\partial{\ln{\sin{ {\theta}_1}}}}{\partial{ {\theta}_1} }\ u({\theta}_1)\right]}^2} = \sqrt{ {\left[\frac{u({\theta}_1)}{\tan{ {\theta}_1}}\right]}^2} = 1.275{\times}10^{-3}rad$$
+    $$\therefore \ u(d) = \displaystyle d\ \frac{u(d)}{d} = 0.00425\mu m $$
+  \item $\pm2$级d的不确定度
+    $$\text{由\ }d' = \frac{\lambda}{\sin{ {\theta}_2}} \text{有\ } \ln d' = \ln{\lambda}-\ln{\sin{ {\theta}_2}}$$
+    $$\text{而\ }u(2{\theta}_2) = u_b(2{\theta}_2) = \displaystyle\frac{1'}{\sqrt3} = {0.00962}^\circ = 0.000168rad $$
+    $$\therefore u({\theta}_2) = \displaystyle\frac{1}{2}\ u(2{\theta}_2) = {0.00481}^{\circ} = 8.395\times 10^{-5}rad $$
+    $$\therefore \text{相对不确定度\ }\frac{u(d')}{d'} = \displaystyle\sqrt{ {\left[\frac{\partial{\ln{\sin{ {\theta}_2}}}}{\partial{  {\theta}_2} }\ u({\theta}_2)\right]}^2} = \sqrt{ {\left[\frac{u({\theta}_2)}{\tan{ {\tan}_2}}\right]}^2} = 2.225{\times}10^{-4}$$
+    $$\therefore \ u(d') = \displaystyle d'\ \frac{u(d')}{d'} = 0.0007428\mu m$$
+\end{enumerate}
+
+\subsubsection*{(4)测量结果加权平均求d最佳值}
+  测量结果： $$d \pm u(d) = (3.337\pm0.004)\mu m $$
+  $$d' \pm u(d') = (3.338\pm0.001)\mu m $$
+  $$\overline{d} = \displaystyle\frac{\frac{d}{u^2(d)}\ +\ \frac{d'}{u^2(d')}}{\frac{1}{u^2(d)}\ +\ \frac{1}{u^2(d')}} = 3.338\mu m $$
+  $$u^2(\overline{d}) = \displaystyle\frac{1}{\frac{1}{u^2(d)}\ +\ \frac{1}{u^2(d')}} = 5.354{\times}10^{-7}\mu m^2 $$
+  $$\therefore\ u(\overline{d}) = 7.3{\times}10^{-4}\mu m $$
+  $$\therefore\text{光栅常数d的最终表达式为\ }\overline{d} \pm u(\overline{d}) = (3.338\pm0.001)\mu m $$
+
+\subsection*{2.计算氢原子的里德伯常数$R_H + u(R_H)$;并通过加权平均获得$R_H$的最佳值$\overline{R_H} \pm u(\overline{R_H})$}
+巴耳末系: $$ \displaystyle \frac{1}{\lambda} = R_H \ \left(\frac{1}{2^2}-\frac{1}{n^2}\right) (n = 3,4,5,6\dots) $$ 
+当\ $n = 3$\ 时，光谱颜色为红光; 当\ $n = 5$\ 时，光谱颜色为蓝光; 当\ $n = 6$\ 时，光谱颜色为紫光; \\
+以下将分别计算红光，蓝光，紫光对应的$R_H$:
+\subsubsection*{(1)红光}
+\begin{center}
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}*{\diagbox{测量次数}{测量级次}} &
+\multicolumn{2}{c|}{$-1$级} & \multicolumn{2}{c|}{$+1$级} &
+\multirow{2}*{$2{\theta}_{\gamma} = \displaystyle\frac{1}{2}\left[({\alpha}_1-{\beta}_1)-({\alpha}_2-{\beta}_2)\right]$}  \\
+\cline{2-5}
+& ${\alpha}_1$ & ${\beta}_1$ & ${\alpha}_2$ & ${\beta}_2$ & \\ \hline
+1 & $53.15^{\circ}$ & $233.19^{\circ}$ & $30.33^{\circ}$ & $210.34^{\circ}$ & $22.725^{\circ}$ \\ \hline
+2 & $117.55^{\circ}$ & $297.59^{\circ}$ & $95.17^{\circ}$ & $275.16^{\circ}$ & $22.675^{\circ}$  \\ \hline
+3 & $183.11^{\circ}$ & $3.12^{\circ}$ & $160.29^{\circ}$ & $340.31^{\circ}$ & $22.692^{\circ}$  \\ \hline
+4 & $249.01^{\circ}$ & $69.0^{\circ}$ & $226.19^{\circ}$ & $46.18^{\circ}$ & $22.700^{\circ}$  \\ \hline
+5 & $311.31^{\circ}$ & $131.29^{\circ}$ & $288.49^{\circ}$ & $108.47^{\circ}$ &  $22.700^{\circ}$ \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\begin{enumerate}
+  \item { }
+      $$\overline{2{\theta}_{\gamma}} = \displaystyle\frac{\sum_{k=1}^5 2{\theta}_{\gamma}}{5} = 0.3962rad$$
+      $$\displaystyle\text{由\ }d\sin{\theta} = {\lambda}\text{\ 得\ }{\lambda}_{\gamma} = d\sin{\theta}_{\gamma} = d\sin{\frac{\overline{2{\theta}_{\gamma}}}{2}} = 656.904 nm $$
+      $$\displaystyle\text{在巴耳末系中对应n取3，有\ }\frac{1}{\lambda}_{\gamma} = R_{H_1}\left(\frac{1}{2^2}-\frac{1}{3^2}\right)$$
+      $$\therefore\ \displaystyle R_{H_{1}} = \frac{1}{ {\lambda}_{\gamma}}\left(\frac{1}{2^2}-\frac{1}{3^2}\right) = 1.096051{\times}10^{7}m^{-1}$$
+  \item {不确定度的计算}
+      $$u_a(\overline{2{\theta}_{\gamma}}) = \displaystyle\sqrt{\frac{\sum_{i=1}^{5} {(2{\theta}_{ {\gamma}_{i}}-\overline{2{\theta}_{\gamma]}}})^2}{5\times4}}=1.4101{\times}10^{-4}rad$$
+      $$u_b(\overline{2\theta}) = \displaystyle\frac{1}{\sqrt3} = 9.6225\times10^{-3} = 1.679 \times 10^{-4} rad$$
+      $$\therefore\text{不确定度合成为\ }u(\overline{2{\theta}_{\gamma}}) = \sqrt{u_a^2(\overline{2{\theta}_{\gamma}})+u_b^2(\overline{2{\theta}_{\gamma}})} = 2.1929{\times}10^{-4}rad$$
+      $$u(\overline{ {\theta}_{\gamma}})= \displaystyle\frac12\ u(\overline{2{\theta}_{\gamma}}) = 1.0965{\times}10^{-4}rad$$
+      $$\therefore{\theta}_{\gamma} \pm u({\theta}_{\gamma}) = (0.1981\pm0.0001)rad$$
+      $$\text{而\ }\displaystyle R_{H_1} = \frac{1}{ {\lambda}_{\gamma}}\left(\frac{1}{2^2}-\frac{1}{3^2}\right) = \frac{7.2}{d\sin{\theta}_{\gamma}}$$
+      $$\therefore\ln{R_{H_1}} = \ln{7.2} -\ln{d} - \ln{d\sin{\theta}_{\gamma}}$$
+      $$\therefore\displaystyle \frac{u(R_{H_1})}{R_{H_1}} = \sqrt{ {\left[\frac{\partial{\ln{d}}}{\partial{d}}\ u(d)\right]}^2 + {\left[\frac{\partial{\ln{\sin{ {\theta}_{\gamma}}}}}{\partial{ {\theta}_{\gamma}}}\ u({\theta}_{\gamma})\right]}^2} = \sqrt{  {\left[\frac{u(d)}{d}\right]}^2 + {\left[\frac{u({\theta}_{\gamma})}{\tan{ {\theta}_{\gamma}}}\right]}^2} = 5.8863{\times}10^{-4}$$
+      $$\therefore \ u(R_{H_1}) = \displaystyle R_{H_1}\ \frac{u(R_{H_1})}{R_{H_1}} = 6.45167818{\times}10^{3}$$ 
+      $$R_{H_1} \pm u(R_{H_1}) = (1.0961\pm0.0006){\times}10^{7}m^{-1}$$
+\end{enumerate}
+
+\subsubsection*{(2)蓝光(深绿)}
+\begin{center}
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}*{\diagbox{测量次数}{测量级次}} &
+\multicolumn{2}{c|}{$-1$级} & \multicolumn{2}{c|}{$+1$级} &
+\multirow{2}*{$2{\theta}_b = \displaystyle\frac{1}{2}\left[({\alpha}_1-{\beta}_1)-({\alpha}_2-{\beta}_2)\right]$}  \\
+\cline{2-5}
+& ${\alpha}_1$ & ${\beta}_1$ & ${\alpha}_2$ & ${\beta}_2$ & \\ \hline
+1 & $50.18^{\circ}$ & $230.2^{\circ}$ & $33.31^{\circ}$ & $213.33^{\circ}$ &$ 16.783^{\circ}$ \\ \hline
+2 & $114.57^{\circ}$ & $295.0^{\circ}$ & $98.1^{\circ}$ & $278.12^{\circ}$ & $16.792^{\circ}$  \\ \hline
+3 & $180.15^{\circ}$ & $0.14^{\circ}$ & $163.28^{\circ}$ & $343.29^{\circ}$ & $16.767^{\circ}$  \\ \hline
+4 & $246.04^{\circ}$ & $66.02^{\circ}$ & $229.18^{\circ}$ & $49.16^{\circ}$ & $16.767^{\circ}$  \\ \hline
+5 & $308.32^{\circ}$ & $128.31^{\circ}$ & $291.48^{\circ}$ & $111.42^{\circ}$ & $ 16.775^{\circ}$\\ \hline 
+\end{tabular}
+\end{table}
+\end{center}
+
+\begin{enumerate}
+  \item { }
+      $$\overline{2{\theta}_b} = \displaystyle\frac{\sum_{k=1}^5 2{\theta}_b}{5} = 0.29281rad$$
+      $$\displaystyle\text{由\ }d\sin{\theta} = {\lambda}\text{\ 得\ }{\lambda}_b = d\sin{\theta}_b = d\sin{\frac{\overline{2{\theta}_b}}{2}} = 486.973\mu m $$
+      $$\displaystyle\text{在巴耳末系中对应n取4，有\ }\frac{1}{\lambda}_b = R_{H_2}\left(\frac{1}{2^2}-\frac{1}{4^2}\right)$$
+      $$\therefore\ \displaystyle R_{H_2} = \frac{1}{ {\lambda}_b}\left(\frac{1}{2^2}-\frac{1}{4^2}\right) = 1.0952{\times}10^{7}m^{-1}$$
+  \item {不确定度的计算}
+      $$u_a(\overline{2{\theta}_b}) = \displaystyle\sqrt{\frac{\sum_{i=1}^5{(2{\theta}_{b_{i}}-\overline{2{\theta}_{\gamma]}}})^2}{5\times4}}=8.48078{\times}10^{-5}rad$$
+      $$u_b(\overline{2\theta}) = \displaystyle\frac{1}{\sqrt3} = 9.6225\times10^{-3} = 1.679 \times 10^{-4} rad$$
+      $$\therefore\text{不确定度合成为\ }u(\overline{2{\theta}_b}) = \sqrt{u_a^2(\overline{2{\theta}_b})+u_b^2(\overline{2{\theta}_b})} = 1.88143{\times}10^{-4}rad$$
+      $$u(\overline{ {\theta}_b})= \displaystyle\frac12\ u(\overline{2{\theta}_b}) = 9.40713{\times}10^{-5}rad$$
+      $$\therefore{\theta}_b \pm u({\theta}_b) = (0.14640\pm0.00009)$$
+      $$\text{而\ }\displaystyle R_{H_2} = \frac{1}{ {\lambda}_b}\left(\frac{1}{2^2}-\frac{1}{4^2}\right) = \frac{5.333}{d\sin{\theta}_b}$$
+      $$\therefore\ln{R_{H_2}} = \ln{5.333} -\ln{d} - \ln{d\sin{\theta}_b}$$
+      $$\therefore\displaystyle \frac{u(R_{H_2})}{R_{H_2}} = \sqrt{ {\left[\frac{\partial{\ln{d}}}{\partial{d}}\ u(d)\right]}^2 + {\left[\frac{\partial{\ln{\sin{ {\theta}_b}}}}{\partial{ {\theta}_b}}\ u({\theta}_b)\right]}^2} = \sqrt{ {\left[\frac{u(d)}{d}\right]}^2 + {\left[\frac{u({\theta}_b)}{\tan{ {\theta}_b}}\right]}^2} = 6.7456{\times}10^{-4}$$
+      $$\therefore \ u(R_{H_2}) = \displaystyle R_{H_2}\ \frac{u(R_{H_2})}{R_{H_2}} = 7.3877809{\times}10^{3}m^{-1}$$ 
+      $$R_{H_2} \pm u(R_{H_2}) = (1.0952\pm0.0007){\times}10^{7}m^{-1}$$
+\end{enumerate}
+
+\subsubsection*{(3)紫光(青)}
+\begin{center}
+\begin{table}[htbp]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}*{\diagbox{测量次数}{测量级次}} &
+\multicolumn{2}{c|}{$-1$级} & \multicolumn{2}{c|}{$+1$级} &
+\multirow{2}*{$2{\theta}_p = \displaystyle\frac{1}{2}\left[({\alpha}_1-{\beta}_1)-({\alpha}_2-{\beta}_2)\right]$}  \\
+\cline{2-5}
+& ${\alpha}_1$ & ${\beta}_1$ & ${\alpha}_2$ & ${\beta}_2$ & \\ \hline
+1 & $49.22^{\circ}$ &$ 229.25^{\circ}$ &$ 34.28^{\circ}$ & $214.29^{\circ}$ &$ 14.917^{\circ}$ \\ \hline
+2 &$ 114.0^{\circ}$ &$ 294.04^{\circ}$ & $99.04^{\circ}$ &$ 279.08^{\circ}$ &$ 14.933^{\circ} $ \\ \hline
+3 &$ 179.2^{\circ}$ &$ 359.2^{\circ}$ &$ 164.23^{\circ}$ &$ 344.23^{\circ}$ &$ 14.950^{\circ}$  \\ \hline
+4 &$ 245.09^{\circ}$ &$ 65.05^{\circ}$&$ 230.12^{\circ}$ &$ 50.1^{\circ}$ &$ 14.933^{\circ} $ \\ \hline
+5 &$ 307.39^{\circ}$ &$ 127.37^{\circ}$ &$ 292.42^{\circ}$ &$ 112.39^{\circ}$ & $ 14.958^{\circ}$ \\ \hline 
+\end{tabular}
+\end{table}
+\end{center}
+
+\begin{enumerate}
+  \item { }
+      $$\overline{2{\theta}_p} = \displaystyle\frac{\sum_{k=1}^5 2{\theta}_p}{5} = 0.13036rad$$
+      $$\displaystyle\text{由\ }d\sin{\theta} = {\lambda}\text{\ 得\ }{\lambda}_p = d\sin{\theta}_p = d\sin{\frac{\overline{2{\theta}_p}}{2}} = 433.93306nm$$
+      $$\displaystyle\text{在巴耳末系中对应n取5，有\ }\frac{1}{\lambda}_p = R_{H_3}\left(\frac{1}{2^2}-\frac{1}{5^2}\right)$$
+      $$\therefore\ \displaystyle R_{H_3} = \frac{1}{ {\lambda}_p}\left(\frac{1}{2^2}-\frac{1}{5^2}\right) = 1.097382{\times}10^{7}m^{-1}$$
+  \item {不确定度的计算}
+      $$u_a(\overline{2{\theta}_p}) = \displaystyle\sqrt{\frac{\sum_{i=1}^5{(2{\theta}_{p_{i}}-\overline{2{\theta}_{\gamma]}}})^2}{5\times4}}=1.2680{\times}10^{-4} rad$$
+      $$u_b(\overline{2\theta}) = \displaystyle\frac{1}{\sqrt3} = 9.6225\times10^{-3} = 1.679 \times 10^{-4} rad$$
+      $$\therefore\text{不确定度合成为\ }u(\overline{2{\theta}_p}) = \sqrt{u_a^2(\overline{2{\theta}_p})+u_b^2(\overline{2{\theta}_p})} = 2.1043{\times}10^{-4}rad$$
+      $$u(\overline{ {\theta}_p})= \displaystyle\frac12\ u(\overline{2{\theta}_p}) = 1.0522{\times}10^{-4}rad$$
+      $$\therefore{\theta}_p \pm u({\theta}_p) = (0.1304\pm0.0001)rad$$
+      $$\text{而\ }\displaystyle R_{H_3} = \frac{1}{ {\lambda}_p}\left(\frac{1}{2^2}-\frac{1}{5^2}\right) = \frac{1}{0.21}\ \frac{1}{d\sin{\theta}_p}$$
+      $$\therefore\ln{R_{H_3}} = \ln{\frac{1}{0.21}} -\ln{d} - \ln{d\sin{\theta}_p}$$
+      $$\therefore\displaystyle \frac{u(R_{H_3})}{R_{H_3}} = \sqrt{ {\left[\frac{\partial{\ln{d}}}{\partial{d}}\ u(d)\right]}^2 + {\left[\frac{\partial{\ln{\sin{ {\theta}_p}}}}{\partial{ {\theta}_p}}\ u({\theta}_p)\right]}^2} = \sqrt{ {\left[\frac{u(d)}{d}\right]}^2 + {\left[\frac{u({\theta}_p)}{\tan{ {\theta}_p}}\right]}^2} = 8.3194{\times}10^{-4}$$
+      $$\therefore \ u(R_{H_3}) = \displaystyle R_{H_3}\ \frac{u(R_{H_3})}{R_{H_3}} = 1.09738234{\times}10^{7}m^{-1}$$ 
+      $$R_{H_3} \pm u(R_{H_3}) = ((1.0974\pm0.0009){\times}10^{7})m^{-1}$$
+  \item{加权平均求$R_H$的最佳值}
+      $$\overline{R_H} = \displaystyle\frac{\frac{R_{H_1}}{u^2{R_{H_1}}}+\frac{R_{H_2}}{u^2{R_{H_2}}}+\frac{R_{H_3}}{u^2{R_{H_3}}}}{\frac{1}{u^2{R_{H_1}}}+\frac{1}{u^2{R_{H_2}}}+\frac{1}{u^2{R_{H_3}}}} = 1.0961{\times}10^{7}m^{-1}$$
+      $$u^2(\overline{R_H}) = \displaystyle\frac{1}{\frac{1}{u^2{R_{H_1}}}+\frac{1}{u^2{R_{H_2}}}+\frac{1}{u^2{R_{H_3}}}} = m^{-1}$$
+      $$\therefore \ u(\overline{R_H}) = 4289.66027208m^{-1} $$
+      $$\therefore\text{最佳测量值 \ } \overline{R_H} \pm u(\overline{R_H}) = (1.0961\pm0.0004){\times}10^{7} m^{-1}$$   
+\end{enumerate}
+
+\subsection*{3.分别计算钠黄光k=1,2级的角散射率和分辨本领，并由此说明钠黄光双线能否被分开}
+\subsubsection*{(1)色分辨本领}
+$$\because\ N = \displaystyle\frac{D}{d} = 659.05$$
+$$\therefore\ R = \displaystyle\frac{\lambda}{ {\delta}_{\lambda}} = kN = \begin{cases} 659.05, & k=1 \\ 1318.10 ,& k=2 \end{cases} $$
+\subsubsection*{(2)角色散率}
+由前面实验，$ \overline{ {\theta}_1} = 0.1775^{\circ}, \overline{ {\theta}_1} = 0.3608^{\circ}$
+由公式$D_{\theta} = \displaystyle\frac{k}{ds\sin{\theta}}$,求解可得\\
+$$k=1\text{ \ 时,\ } D_{ {\theta}_1} = \displaystyle\frac{1}{d\sin{\overline{ {\theta}_1}}} = 1.69619{\times}10^{0}rad/m$$
+$$k=2\text{ \ 时,\ } D_{ {\theta}_2} = \displaystyle\frac{2}{d\sin{\overline{ {\theta}_2}}} = 1.69695{\times}10^{0}rad/m$$
+\subsubsection*{(3)钠黄光双线}
+$${\theta}_1 = \arcsin{\frac{ {\lambda}_1}{d}} = 0.177^{\circ}$$
+$${\theta}_2 = \arcsin{\frac{ {\lambda}_2}{d}} = 0.178^{\circ}$$
+$$\Delta{\theta} = {\theta}_1 - {\theta}_2 = 0.000^{\circ}$$
+根据谱线的半角宽度计算公式可得
+$${\delta}_{\theta} = \arcsin{\frac{2\lambda N_0}{Nd}} = 0.000183^{\circ}$$
+$\because {\Delta}_{\theta} > {\delta}_{\theta} $ \\
+$\therefore$本实验可将钠黄光的双线分开。
+\end{document}

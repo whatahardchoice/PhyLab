@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><lab id="2121">
+<table name="2121_1" row="5" column="4">
+<tr index="1">
+<td>156.47</td>
+<td>336.50</td>
+<td>136.37</td>
+<td>316.30</td>
+</tr>
+<tr index="2">
+<td>219.05</td>
+<td>39.04</td>
+<td>198.42</td>
+<td>18.42</td>
+</tr>
+<tr index="3">
+<td>290.59</td>
+<td>110.55</td>
+<td>270.37</td>
+<td>90.33</td>
+</tr>
+<tr index="4">
+<td>353.24</td>
+<td>173.23</td>
+<td>333.01</td>
+<td>153</td>
+</tr>
+<tr index="5">
+<td>52.05</td>
+<td>232.08</td>
+<td>31.45</td>
+<td>211.46</td>
+</tr>
+</table>
+<table name="2121_2" row="1" column="4">
+<tr index="1">
+<td>62.35</td>
+<td>242.29</td>
+<td>21.10</td>
+<td>201.12</td>
+</tr>
+</table>
+<table name="2121_3" row="5" column="4">
+<tr index="1">
+<td>53.15</td>
+<td>233.19</td>
+<td>30.33</td>
+<td>210.34</td>
+</tr>
+<tr index="2">
+<td>117.55</td>
+<td>297.59</td>
+<td>45.17</td>
+<td>275.16</td>
+</tr>
+<tr index="3">
+<td>183.11</td>
+<td>3.12</td>
+<td>160.29</td>
+<td>340.31</td>
+</tr>
+<tr index="4">
+<td>249.01</td>
+<td>69</td>
+<td>226.19</td>
+<td>46.18</td>
+</tr>
+<tr index="5">
+<td>311.31</td>
+<td>131.29</td>
+<td>288.49</td>
+<td>108.47</td>
+</tr>
+</table>
+<table name="2121_4" row="5" column="4">
+<tr index="1">
+<td>50.18</td>
+<td>230.20</td>
+<td>33.31</td>
+<td>213.33</td>
+</tr>
+<tr index="2">
+<td>114.57</td>
+<td>296</td>
+<td>98.10</td>
+<td>278.12</td>
+</tr>
+<tr index="3">
+<td>180.15</td>
+<td>0.14</td>
+<td>163.28</td>
+<td>343.29</td>
+</tr>
+<tr index="4">
+<td>246.04</td>
+<td>66.02</td>
+<td>229.18</td>
+<td>49.16</td>
+</tr>
+<tr index="5">
+<td>308.32</td>
+<td>128.31</td>
+<td>291.48</td>
+<td>111.42</td>
+</tr>
+</table>
+<table name="2121_5" row="5" column="4">
+<tr index="1">
+<td>49.22</td>
+<td>229.25</td>
+<td>34.28</td>
+<td>214.29</td>
+</tr>
+<tr index="2">
+<td>114</td>
+<td>294.04</td>
+<td>99.04</td>
+<td>229.08</td>
+</tr>
+<tr index="3">
+<td>179.20</td>
+<td>359.20</td>
+<td>164.23</td>
+<td>344.23</td>
+</tr>
+<tr index="4">
+<td>245.09</td>
+<td>65.05</td>
+<td>230.12</td>
+<td>50.10</td>
+</tr>
+<tr index="5">
+<td>307.39</td>
+<td>127.37</td>
+<td>292.42</td>
+<td>112.39</td>
+</tr>
+</table>
+</lab>

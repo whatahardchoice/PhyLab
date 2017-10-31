@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><lab id="2130014">
+<table name="21311_1" raw="1" column="1">
+<tr index="1">
+<td>589.3</td>
+</tr>
+</table>
+<table name="21311_2" raw="10" column="1">
+<tr index="1">
+<td>342</td>
+</tr>
+<tr index="2">
+<td>432</td>
+</tr>
+<tr index="3">
+<td>42</td>
+</tr>
+<tr index="4">
+<td>234</td>
+</tr>
+<tr index="5">
+<td>423</td>
+</tr>
+<tr index="6">
+<td>234</td>
+</tr>
+<tr index="7">
+<td>243</td>
+</tr>
+<tr index="8">
+<td>234</td>
+</tr>
+<tr index="9">
+<td>242</td>
+</tr>
+<tr index="10">
+<td>4234</td>
+</tr>
+</table>
+<table name="21311_3" raw="1" column="2">
+<tr index="1">
+<td>32</td>
+<td>42</td>
+</tr>
+</table>
+<table name="21311_4" raw="8" column="2">
+<tr index="1">
+<td>14</td>
+<td>23</td>
+</tr>
+<tr index="2">
+<td>32</td>
+<td>34</td>
+</tr>
+<tr index="3">
+<td>234</td>
+<td>234</td>
+</tr>
+<tr index="4">
+<td>324</td>
+<td>324</td>
+</tr>
+<tr index="5">
+<td>2</td>
+<td>42</td>
+</tr>
+<tr index="6">
+<td>2</td>
+<td>42</td>
+</tr>
+<tr index="7">
+<td>42</td>
+<td>42</td>
+</tr>
+<tr index="8">
+<td>4</td>
+<td>44</td>
+</tr>
+</table>
+</lab>

@@ -1,0 +1,115 @@
+\section*{五、数据处理}
+
+\subsection*{（一）测定钠光波长差}
+
+\subsubsection*{1、原始数据列表} %原始数据
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+i&1&2&3&4&5&6&7&8&9&10\\
+\hline
+$ d_i / mm $ {%for m1 in y -%} & %% m1 %% {%- endfor %} \\ %需要数组名称m/kg
+\hline
+\end{tabular}
+\vspace{10pt}
+\end {center}
+\subsubsection*{2、数据处理——用一元线性回归法计算}
+由原理可知:
+${{\rm{d}}_{\rm{i}}}{\rm{ = }}\frac{{{{\bar \lambda }^{\rm{2}}}}}{{{\rm{2}}\Delta \lambda }}{\rm{i + }}{{\rm{d}}_{\rm{0}}}  $
+令 $i\equiv x,d_i\equiv y$ 则
+${\rm{b=}}\frac{{{{\bar \lambda }^{\rm{2}}}}}{{{\rm{2}}\Delta \lambda }}$
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\backslashbox{项目}{i}&1&2&3&4&5&6\\
+\hline
+$ x_i $ &1&2&3&4&5&6\\
+\hline
+$ y_i/ mm $ {% for i in range(6) -%} & %% y[i] %% {%- endfor %} \\   % 数组yi
+\hline
+$ x_i^2 $ &1&4&9&16&25&36\\
+\hline
+$ y_i^2 / {mm}^2 $  {% for i in range(6) -%} & %% y2[i] %% {%- endfor %}  \\% 数组yi^2
+\hline
+$ x_i y_i /{mm}^2 $  {% for i in range(6) -%} & %% xy[i] %% {%- endfor %}  \\% 数组xi*yi
+\hline
+\end{tabular}
+\vspace{3pt}
+\end{center}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\backslashbox{项目}{i}&7&8&9&10&平均\\
+\hline
+$ x_i $ &7&8&9&10&5.5\\
+\hline
+$ y_i/ mm $ {% for i in range(4) -%} & %% y[i+6] %% {%- endfor %} & %%y_aver%%\\   % 数组yi
+\hline
+$ x_i^2 $ &49&64&81&100&38.5\\
+\hline
+$ y_i^2 / {mm}^2 $  {% for i in range(4) -%} & %% y2[i+6] %% {%- endfor %} & %% y2_aver %%  \\% 数组yi^2
+\hline
+$ x_i y_i /{mm}^2 $  {% for i in range(4) -%} & %% xy[i+6] %% {%- endfor %} & %% xy_aver %%  \\% 数组xi*yi
+\hline
+\end{tabular}
+\vspace{10pt}
+
+
+而$\bar \lambda  = \rm{ %% Lambda * 1000000000 %% nm:}$
+\[\therefore {\rm{b = }}\frac{{{{\bar \lambda }^{\rm{2}}}}}{{{\rm{2}}\Delta \lambda }}{\rm{ = }}\frac{{\overline {{\rm{xy}}}  - \bar x\bar y}}{{\overline {{{\rm{x}}^{\rm{2}}}} {\rm{ - }}{{\bar x}^{\rm{2}}}}}{\rm{ = %%b%% \times 10^{-4}m}}\] %b的计算
+
+\[\therefore \Delta \lambda {\rm{ = }}\frac{{{{\bar \lambda }^{\rm{2}}}}}{{{\rm{2b}}}}{\rm{ = %%delta_lambda%% nm}}\] %△λ计算
+
+相关系数：
+\[{\rm{r = }}\frac{{\overline {{\rm{xy}}}  - \bar x\bar y}}{{\sqrt {{\rm{(}}{{\bar x}^{\rm{2}}}{\rm{ - }}\overline {{{\rm{x}}^{\rm{2}}}} {\rm{)}}{\rm{(}}{{\overline {\rm{y}} }^{\rm{2}}}{\rm{ - }}\overline {{{\rm{y}}^{\rm{2}}}}{\rm{)}} } }}{\rm{ = %%r%%}}\] %r的计算
+
+$\therefore$ 有强烈的线性相关性
+
+\subsubsection*{3、不确定度计算}
+略去其他不确定度分量的贡献，
+\[u\left( b \right) = b\sqrt {\frac{1}{{10 - 2}}\left( {\frac{1}{{{r^2}}} - 1} \right)} = %% u_b %% \times {10}^{-7}m\] %u（b）
+\[\because \ln b = \ln \frac{{{{\bar \lambda }^{\rm{2}}}}}{2} - \ln \Delta \lambda \]
+\[\therefore u\left( {\Delta \lambda } \right) = \Delta \lambda \frac{{u\left( b \right)}}{b} = %%u_delta_lambda%% nm\] %u（△λ）
+
+最终表述为：$\Delta \lambda  \pm u\left( {\Delta \lambda } \right) = %% delta_lambda_u_delta_lambda %% nm$
+
+\subsubsection*{4、计算相对误差}
+理论值：$\Delta\lambda=0.6nm$ %△λ
+\par
+相对误差：$\sigma={\frac{0.6 - %% delta_lambda_normal %%}{0.6} } = %%delta%% \%$  %σ
+
+\subsection*{(二)用一元线性回归法验证常数}
+\subsubsection*{1、原始数据表}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+i&1&2&3&4&5&6&7&8\\
+\hline
+$d_l/ mm$  {%for d_li in d_l -%}  & %% d_li %% {%- endfor %}\\
+\hline
+$d_r/ mm$  {%for d_ri in d_r -%}  & %% d_ri %% {%- endfor %}\\
+\hline
+$D_i/ mm$  {%for Di in D -%}    & %% Di %% {%- endfor %}\\
+\hline
+$D_i^2/ mm^2$ {%for D2i in D2 -%} & %% D2i %% {%- endfor %}\\
+\hline
+\end{tabular}
+\vspace{10pt}
+\end{center}
+
+\subsubsection*{2、数据处理}
+由$D_k^2-D_{k+1}^2=\frac{4\lambda f^2}{nd}$ ，令  %这里公式没有问题吧
+$k=i+k$，有$D_i^2=\frac{4\lambda f^2}{nd}i+\Delta$
+\par
+令$y=D_i^2$，$x=i$，有$y=a+bx$，$b=\frac{4\lambda f^2}{nd}$
+\par
+利用一元线性回归法可以处理得到结果：
+\[\therefore {\rm{b = }}\frac{{{{\bar \lambda }^{\rm{2}}}}}{{{\rm{2}}\Delta \lambda }}{\rm{ = }}\frac{{\overline {{\rm{xy}}}  - \bar x\bar y}}{{\overline {{{\rm{x}}^{\rm{2}}}} {\rm{ - }}{{\bar x}^{\rm{2}}}}}{\rm{ =%%bb%% \times 10^{-5} m^2}}\] %b的计算
+
+\[{\rm{r = }}\frac{{\overline {{\rm{xy}}}  - \bar x\bar y}}{{\sqrt {{\rm{(}}{{\bar x}^{\rm{2}}}{\rm{ - }}\overline {{{\rm{x}}^{\rm{2}}}} {\rm{)}}{\rm{(}}{{\overline {\rm{y}} }^{\rm{2}}}{\rm{ - }}\overline {{{\rm{y}}^{\rm{2}}}}{\rm{)}} } }}{\rm{ = %%rr%%}}\] %r的计算
+$\therefore$线性关系强烈
+
+$$d=\frac{4\lambda f^2}{n|b|}= \frac{4 \times %% lambdaa %% \times 10^{-9} \times { ( %% f %% \times 10^{-3})}^2 }{2} = %% d %% m$$
+又因为$|r|\approx 1$ 知i与$D_i^2$线性关系强烈，由此验证$D_{i+1}^2-D_i^2=C$

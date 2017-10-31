@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{diagbox}
+\usepackage{slashbox}
+\begin{document}
+\section*{五、实验数据处理}
+\subsection*{实验1.稳态法测量不良导体的热导率实验}
+\subsubsection*{(1)原始数据记录}
+
+%theta1, theta2, (ave, ua, u)_(hp, dp, hb, db), theta, dt_t, dt_theta, tt
+\noindent
+$m_p = 3.0g$ \\
+$c = 368 J/(kg\cdot K)$ \\ 
+稳定状态下$\displaystyle \Theta_1 = 1.0mV, \Theta_2 = 2.0mV$ \\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+i & 1 &2 &3 &4 &5 & 平均 \\
+\hline
+$h_P/mm$ & 1.0 &2.0 &3.0 &4.0 &5.0 & 3 \\
+\hline
+$d_P/mm$ & 11.0 &22.0 &33.0 &44.0 &55.0 & 33 \\
+\hline
+$h_B/mm$ & 111.0 &222.0 &333.0 &444.0 &555.0 & 333 \\
+\hline
+$d_B/mm$ & 1111.0 &2222.0 &3333.0 &4444.0 &5555.0 & 3333 \\
+\hline
+\end{tabular} 
+\end{center}
+
+散热过程中$\Theta_2$随时间的变化:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+时间t/s & 0& 30& 60& 90& 120& 150& 180& 210& 240& 270& 300& 330& 360& 390 \\
+\hline
+$\Theta_2/mV$ & 1.0& 2.0& 3.0& 4.0& 5.0& 6.0& 7.0& 8.0& 9.0& 10.0& 11.0& 12.0& 13.0& 14.0 \\
+\hline
+\end{tabular} 
+\end{center}
+
+\subsubsection*{(2)计算热导率}
+\noindent
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=13cm]{/var/www/buaaphylab/public/pdf_tmp/31e8c92d0983bea9a46b23b0d80f5213.png}
+\end{figure}
+
+$$\frac{\delta\Theta}{\delta t} = mV/s$$
+$$k = m_pc\frac{\delta\Theta}{\delta t}\frac{d_P+4h_P}{d_P+2h_P}\frac{h_B}{\Theta_1-\Theta_2}\frac{2}{\pi d_B^2} = 0.0008103 W/(m\cdot s)$$
+
+\subsubsection*{(3)不确定度的计算}
+\noindent
+$\displaystyle u(m_P) = \frac{0.01}{\sqrt3}g = 5.7735\times 10^{-6}kg$ \\
+
+\noindent
+$\displaystyle u_a(h_P) = \sqrt{\frac{\Sigma(h_{Pi} - \overline{d_P})^2}{ 5 \times 4 } } = 0.0007071m$ \\
+$\displaystyle u_a(d_P) = \sqrt{\frac{\Sigma(d_{Pi} - \overline{d_P})^2}{ 5 \times 4 } } = 0.007778m$ \\
+$\displaystyle u_a(h_B) = \sqrt{\frac{\Sigma(h_{Bi} - \overline{d_B})^2}{ 5 \times 4 } } = 0.07849m$ \\
+$\displaystyle u_a(d_B) = \sqrt{\frac{\Sigma(d_{Bi} - \overline{d_B})^2}{ 5 \times 4 } } = 0.7856m$ \\
+$\displaystyle u_b(h_P) = u_b(d_P) = u_b(h_B) = u_b(d_B) = \frac{0.02}{\sqrt 3}mm = 1.1547\times10^{-5}m$ \\
+
+\noindent
+$\displaystyle u(h_P) = \sqrt{u_a(h_P)^2 + u_b(h_P)^2} = 0.0007072m$ \\
+$\displaystyle u(d_P) = \sqrt{u_a(d_P)^2 + u_b(d_P)^2} = 0.007778m$ \\
+$\displaystyle u(h_B) = \sqrt{u_a(h_B)^2 + u_b(h_B)^2} = 0.07849m$ \\
+$\displaystyle u(d_B) = \sqrt{u_a(d_B)^2 + u_b(d_B)^2} = 0.7856m$ \\
+
+\noindent
+$\frac{u(k)}{k} = \sqrt{(\frac{u(m_P}{m_P})^2 + ((\frac{1}{d_P + 4h_P} - \frac{1}{d_P + 2h_P}) * u(d_P))^2 + ((\frac{4}{d_P + 4h_P} - \frac{2}{d_P + 2h_P}) * u(h_P))^2 + (\frac{u(h_B)}{h_B})^2 + (\frac{2u(d_B)}{d_B})^2} \\ \qquad = 0.5284$ \\
+
+\noindent
+$\displaystyle u(k) = k\cdot\frac{u(k)}{k} = 0.0004282W/(m\cdot s)$ \\
+
+
+\subsubsection*{(4)最终结果}
+\noindent
+$$k \pm u(k) = (8\pm4){\times}10^{-4} W/(m\cdot s)$$
+\end{document}
