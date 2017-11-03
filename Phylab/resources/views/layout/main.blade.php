@@ -31,38 +31,33 @@
 </head>
 <body>
   <header id="site-header">
-    <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
-      <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
+      
         <div class="navbar-header">
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{URL::route('index')}}">
-            <img id="header-logo" src="./img/phylab_logo_single.svg"/>
-            <span>PhyLab</span>
-          </a>
+            <img  id="header-logo" src="./img/phylab_logo_single.svg"/>
+			<a class="navbar-brand" href="{{URL::route('index')}}"><span>PhyLab</span></a>
         </div>
-        <div class="collapse navbar-collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
+		
+        <nav class="collapse navbar-collapse navbar-responsive-collapse">
+		<div class="container">
+          <ul class="nav navbar-nav navbar-left">
             <li>
-              <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
+              <a style="font-size:16px" data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('report')}}"@endif>实验</a>
             </li>
             <li>
-              <a data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
+              <a style="font-size:16px" data-toggle="modal" @if (!$auth) href="{{URL::route('login')}}" @else href="{{URL::route('wc_login')}}"@endif>社区</a>
             </li>
             <li>
-              <a href="{{URL::route('tools')}}">工具</a>
+              <a style="font-size:16px" href="{{URL::route('tools')}}">工具</a>
             </li>
             <li>
-              <a href="#">反馈</a>
+              <a style="font-size:16px" href="#">反馈</a>
             </li>
+		
           </ul>
           <div class="navbar-right btns">
             @if (!$auth)
-            <a class="btn btn-default navbar-btn sign-in" href="{{URL::route('login')}}">登录</a>
+            <a class="btn btn-default navbar-btn sign-in " href="{{URL::route('login')}}" >登录</a>
             <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
             @else
             <a id="username" class="btn btn-default navbar-btn username" href="#">{{$username}}</a>
@@ -70,8 +65,10 @@
             @endif
           </div>
         </div>
-      </div>
-    </nav>
+		</nav>
+		
+      
+    </div>
   </header>
 
 @yield('contents')
