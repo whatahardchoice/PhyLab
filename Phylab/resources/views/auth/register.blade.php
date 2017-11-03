@@ -27,8 +27,7 @@
 <body>
 <header id="site-header">
   <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
+    <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="sr-only">Toggle Navigation</span>
           <span class="icon-bar"></span>
@@ -40,6 +39,8 @@
           <span>PhyLab</span>
         </a>
       </div>
+	<div class="container">
+      
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
           <li>
