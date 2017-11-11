@@ -54,6 +54,20 @@
               });
             });
           </script>
+		  <script src="./tikuqimo_files/pdfobject.js"></script>
+		  <script type="text/javascript">
+       window.onload = function (){
+			  var adress = "./tikuxulun_files/doc/物理实验绪论考试模拟题.pdf";
+              var success = new PDFObject({ url:adress  }).embed("showbox");
+       };
+	   //此处加入新加入的pdf的代码
+	   function changepdf(ad){
+			var adress = ad;
+			success = new PDFObject({ url:adress  }).embed("showbox");
+	   };
+     </script>
+	 <div id="showbox" style="width:800px;height:1000px;margin:0 auto">
+	 </div>
           <div class="right_side">
             <div class="page_content">
               <!--<h3 class="title_h3"> ▪ 原创</h3>-->
@@ -64,11 +78,11 @@
                       
               
                         <li class="">
-  <a href="./tikuxulun_files/doc/物理实验绪论考试模拟题.doc"> 
+  <a href=javascript:changepdf("./tikuxulun_files/doc/物理实验绪论考试模拟题.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuxulun_files/1.jpg" title="xulun1"><span class="redbg">绪论考题            </span></a> </li><li class="hover">
-  <a href="./tikuxulun_files/doc/北航物理实验绪论考试真题(4套题含答案).docx"> 
+  <a href=javascript:changepdf("./tikuxulun_files/doc/北航物理实验绪论考试真题(4套题含答案).pdf")> 
               <img style="top: 0px; position: relative;" src="./tikuxulun_files/2.png" title="xulun2"><span class="redbg">绪论真题及答案              </span></a> </li><li class="">
-			  <a href="./tikuxulun_files/doc/物理绪论II.docx"> 
+			  <a href=javascript:changepdf("./tikuxulun_files/doc/物理绪论II.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuxulun_files/3.png" title="xulun3"><span class="redbg">绪论考题2            </span></a> </li>
               </ul>
   <div class="clear"></div>
