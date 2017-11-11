@@ -55,6 +55,20 @@
               });
             });
           </script>
+		  <script src="./tikuqimo_files/pdfobject.js"></script>
+		  <script type="text/javascript">
+       window.onload = function (){
+			  var adress = "./tikuqimo_files/doc/2009级物理实验试题.pdf";
+              var success = new PDFObject({ url:adress  }).embed("showbox");
+       };
+	   //此处加入新加入的pdf的代码
+	   function changepdf(ad){
+			var adress = ad;
+			success = new PDFObject({ url:adress  }).embed("showbox");
+	   };
+     </script>
+	 <div id="showbox" style="width:800px;height:1000px;margin:0 auto">
+	 </div>
           <div class="right_side">
             <div class="page_content">
               <!--<h3 class="title_h3"> ▪ 原创</h3>-->
@@ -65,19 +79,19 @@
                       
               
                         <li class="">
-  <a href="./tikuqimo_files/doc/1994级物理实验试题.doc"> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/1.png" title="qimo1"><span class="redbg">94级期末考题            </span></a> </li><li class="hover">
-  <a href="./tikuqimo_files/doc/1995级物理实验试题.doc"> 
+  <a href=javascript:changepdf("./tikuqimo_files/doc/1994级物理实验试题.pdf")> 
+              <img style="top: 66px; position: relative;" src="./tikuqimo_files/1.png" title="qimo1" ><span class="redbg">94级期末考题            </span></a> </li><li class="hover">
+  <a href=javascript:changepdf("./tikuqimo_files/doc/1995级物理实验试题.pdf")> 
               <img style="top: 0px; position: relative;" src="./tikuqimo_files/2.png" title="qimo2"><span class="redbg">95级期末考题              </span></a> </li><li class="">
-			  <a href="./tikuqimo_files/doc/1996级物理实验试题.doc"> 
+			  <a href=javascript:changepdf("./tikuqimo_files/doc/1996级物理实验试题.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuqimo_files/3.png" title="qimo3"><span class="redbg">96级期末考题            </span></a> </li><li class="">
-			  <a href="./tikuqimo_files/doc/1999级物理实验试题.doc"> 
+			  <a href=javascript:changepdf("./tikuqimo_files/doc/1999级物理实验试题.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuqimo_files/4.png" title="qimo4"><span class="redbg">99级期末考题            </span></a> </li><li class="">
-			  <a href="./tikuqimo_files/doc/2001级物理实验试题.doc"> 
+			  <a href=javascript:changepdf("./tikuqimo_files/doc/2001级物理实验试题.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuqimo_files/5.png" title="qimo5"><span class="redbg">2001级期末考题            </span></a> </li><li class="">
-			  <a href="./tikuqimo_files/doc/2002级物理实验试题.doc"> 
+			  <a href=javascript:changepdf("./tikuqimo_files/doc/2002级物理实验试题.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuqimo_files/6.png" title="qimo6"><span class="redbg">2002级期末考题            </span></a> </li><li class="">
-			  <a href="./tikuqimo_files/doc/物理实验试题选编.doc"> 
+			  <a href=javascript:changepdf("./tikuqimo_files/doc/物理实验试题选编.pdf")> 
               <img style="top: 66px; position: relative;" src="./tikuqimo_files/7.png" title="qimo7"><span class="redbg">期末考题整理            </span></a> </li>
               </ul>
   <div class="clear"></div>
@@ -138,6 +152,8 @@
    }
  }
  DY_scroll('.img-scroll','.prev','.next','.original_list',3,true);// true为自动播放，不加此参数或false就默认不自动
+ 
+ 
 </script> 
 
 
