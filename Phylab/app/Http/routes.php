@@ -135,6 +135,13 @@ Route::get('/user/star/download/{id}',[
     'uses'  =>  'StarController@download',
     'middleware'    =>  'auth']);
 /***
+tiku routes
+***/
+Route::get('/tiku/tikuxulun.html',[
+    'as'=>'tiku',
+    'uses'=>'TikuController@index',
+    'middleware' => 'auth']);
+/***
 tools routes
 ***/
 Route::get('/tools',[
