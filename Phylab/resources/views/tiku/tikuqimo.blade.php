@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
 
-  <title> tikuqimo</title>
+  <title> 期末题库</title>
   <!-- <link href="/index.php?m=Format&a=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" /> -->
-  <script type="text/javascript" src="./tikuqimo_files/jquery.js"></script>
-  <link type="text/css" rel="stylesheet" href="./tikuqimo_files/layout.css">
+  <script type="text/javascript" src="{{URL::asset('tikuqimo_files')}}/jquery.js"></script>
+  <link type="text/css" rel="stylesheet" href="{{URL::asset('tikuqimo_files')}}/layout.css">
 
   <script>
     jQuery(function () {
@@ -30,10 +30,10 @@
         <div class="left_logo_nav">
           
           <ul id="nav_all">
-          <li class=""><a href="tikuxulun.html" class="yiji"> ▪ 绪论</a>
+          <li class=""><a href="tikuxulun" class="yiji"> ▪ 绪论</a>
               <dl style="display: none;">
               </dl>
-            </li><li class=""><a href="tikuqimo.html" class="yiji" id="current"> ▪ 期末</a>
+            </li><li class=""><a href="tikuqimo" class="yiji" id="current"> ▪ 期末</a>
             <dl style="display: none;">
             </dl>
           </li>       </ul>
@@ -43,11 +43,11 @@
     <div class="right_side_1">
       
             <style>
-              body { background:url('images/bg_1.png') no-repeat fixed center 0; }
+              body { background:url('{{URL::asset('images')}}/bg_1.png') no-repeat fixed center 0; }
             }
           </style>
-          <script src="./tikuqimo_files/jquery.min.js"></script>
-          <script src="./tikuqimo_files/jQuery.BlackAndWhite.js"></script>
+          <script src="{{URL::asset('tikuqimo_files')}}/jquery.min.js"></script>
+          <script src="{{URL::asset('tikuqimo_files')}}/jQuery.BlackAndWhite.js"></script>
           <script>
             jQuery(window).load(function(){
               jQuery('.bwlanrenzhijia').BlackAndWhite({
@@ -55,10 +55,10 @@
               });
             });
           </script>
-		  <script src="./tikuqimo_files/pdfobject.js"></script>
+		  <script src="{{URL::asset('tikuqimo_files')}}/pdfobject.js"></script>
 		  <script type="text/javascript">
        window.onload = function (){
-			  var adress = "./tikuqimo_files/doc/2009级物理实验试题.pdf";
+			  var adress = "{{URL::asset('tikuqimo_files')}}/doc/2009级物理实验试题.pdf";
               var success = new PDFObject({ url:adress  }).embed("showbox");
        };
 	   //此处加入新加入的pdf的代码
@@ -79,20 +79,20 @@
                       
               
                         <li class="">
-  <a href=javascript:changepdf("./tikuqimo_files/doc/1994级物理实验试题.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/1.png" title="qimo1" ><span class="redbg">94级期末考题            </span></a> </li><li class="hover">
-  <a href=javascript:changepdf("./tikuqimo_files/doc/1995级物理实验试题.pdf")> 
-              <img style="top: 0px; position: relative;" src="./tikuqimo_files/2.png" title="qimo2"><span class="redbg">95级期末考题              </span></a> </li><li class="">
-			  <a href=javascript:changepdf("./tikuqimo_files/doc/1996级物理实验试题.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/3.png" title="qimo3"><span class="redbg">96级期末考题            </span></a> </li><li class="">
-			  <a href=javascript:changepdf("./tikuqimo_files/doc/1999级物理实验试题.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/4.png" title="qimo4"><span class="redbg">99级期末考题            </span></a> </li><li class="">
-			  <a href=javascript:changepdf("./tikuqimo_files/doc/2001级物理实验试题.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/5.png" title="qimo5"><span class="redbg">2001级期末考题            </span></a> </li><li class="">
-			  <a href=javascript:changepdf("./tikuqimo_files/doc/2002级物理实验试题.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/6.png" title="qimo6"><span class="redbg">2002级期末考题            </span></a> </li><li class="">
-			  <a href=javascript:changepdf("./tikuqimo_files/doc/物理实验试题选编.pdf")> 
-              <img style="top: 66px; position: relative;" src="./tikuqimo_files/7.png" title="qimo7"><span class="redbg">期末考题整理            </span></a> </li>
+  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/1994级物理实验试题.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/1.png" title="qimo1" ><span class="redbg">94级期末考题            </span></a> </li><li class="hover">
+  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/1995级物理实验试题.pdf")>
+              <img style="top: 0px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/2.png" title="qimo2"><span class="redbg">95级期末考题              </span></a> </li><li class="">
+			  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/1996级物理实验试题.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/3.png" title="qimo3"><span class="redbg">96级期末考题            </span></a> </li><li class="">
+			  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/1999级物理实验试题.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/4.png" title="qimo4"><span class="redbg">99级期末考题            </span></a> </li><li class="">
+			  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/2001级物理实验试题.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/5.png" title="qimo5"><span class="redbg">2001级期末考题            </span></a> </li><li class="">
+			  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/2002级物理实验试题.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/6.png" title="qimo6"><span class="redbg">2002级期末考题            </span></a> </li><li class="">
+			  <a href=javascript:changepdf("{{URL::asset('tikuqimo_files')}}/doc/物理实验试题选编.pdf")>
+              <img style="top: 66px; position: relative;" src="{{URL::asset('tikuqimo_files')}}/7.png" title="qimo7"><span class="redbg">期末考题整理            </span></a> </li>
               </ul>
   <div class="clear"></div>
 </div>

@@ -137,10 +137,31 @@ Route::get('/user/star/download/{id}',[
 /***
 tiku routes
 ***/
-Route::get('/tiku/tikuxulun.html',[
-    'as'=>'tiku',
-    'uses'=>'TikuController@index',
-    'middleware' => 'auth']);
+//Route::get('/tiku', ['as' => 'tiku', 'middleware' => 'auth', function () {
+//    $data = ["auth" => false, "username" => ""];
+//    if (Auth::check()) {
+//        $data["auth"] = true;
+//        $data["username"] = Auth::user()->name;
+//    }
+//    return view('tiku.tikuqimo', $data);
+//}]);
+Route::get('/tikuxulun', ['as'=>'tikuxulun','middleware' => 'auth', function () {
+    $data = ["auth" => false, "username" => ""];
+    if (Auth::check()) {
+        $data["auth"] = true;
+        $data["username"] = Auth::user()->name;
+    }
+    return view('tiku.tikuxulun', $data);
+}]);
+Route::get('/tikuqimo', ['middleware' => 'auth', function () {
+    $data = ["auth" => false, "username" => ""];
+    if (Auth::check()) {
+        $data["auth"] = true;
+        $data["username"] = Auth::user()->name;
+    }
+    return view('tiku.tikuqimo', $data);
+}]);
+
 /***
 tools routes
 ***/

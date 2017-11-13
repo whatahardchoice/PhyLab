@@ -58,7 +58,7 @@
               <a href="{{URL::route('tools')}}">工具</a>
             </li>
 			<li>
-              <a href="{{URL::route('tiku')}}">题库</a>
+              <a href="{{URL::route('tikuxulun')}}">题库</a>
             </li>
             <li>
               <a href="#">反馈</a>
