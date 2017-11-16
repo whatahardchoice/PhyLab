@@ -11,7 +11,7 @@ use App\Models\User;
 |
 */
 //社区登陆入口
-Route::get('/wecenter/?/account/login/ ',['as'=>'wc_login']);
+Route::get('/wecenter/?/account/login/ ',['as'=>'wc_login','middleware'=>'stat']);
 /**
 * 本地认证接口
 */
@@ -24,7 +24,7 @@ Route::get('/74315b7de788c2b24',function(){
         $re['email'] = null;
     }
     return Response::json($re);
-});
+})->middleware(['stat']);
 // 加密密码接口
 Route::get('password/encrypt/{pwd}', function($pwd){
     return bcrypt($pwd);
@@ -55,6 +55,7 @@ Route::get('/35c1be3941950874315b7de788c2b244',function(){
 ***/
 Route::get('/index',[
     'as'    =>  'index',
+    'middleware'=>'stat',
     'uses'  =>  'IndexController@index']);
 
 /***
@@ -66,7 +67,8 @@ Route::get('/login', [
     'middleware'    =>  'guest']);
 Route::post('/login', [
     'uses'  =>  'Auth\PhylabAuthController@postLogin',
-    'middleware'    =>  'guest']);
+    'middleware'    =>  ['guest','stat']]
+);
 Route::get('/logout', [
     'as'    =>  'logout',
     'uses'  =>  'Auth\AuthController@getLogout',
@@ -145,7 +147,7 @@ tiku routes
 //    }
 //    return view('tiku.tikuqimo', $data);
 //}]);
-Route::get('/tikuxulun', ['as'=>'tikuxulun','middleware' => 'auth', function () {
+Route::get('/tikuxulun', ['as'=>'tikuxulun','middleware' => ['auth','stat'], function () {
     $data = ["auth" => false, "username" => ""];
     if (Auth::check()) {
         $data["auth"] = true;
@@ -153,7 +155,7 @@ Route::get('/tikuxulun', ['as'=>'tikuxulun','middleware' => 'auth', function () 
     }
     return view('tiku.tikuxulun', $data);
 }]);
-Route::get('/tikuqimo', ['middleware' => 'auth', function () {
+Route::get('/tikuqimo', ['middleware' => ['auth','stat'], function () {
     $data = ["auth" => false, "username" => ""];
     if (Auth::check()) {
         $data["auth"] = true;
@@ -168,7 +170,7 @@ tools routes
 Route::get('/tools',[
     'as'=>'tools',
     'uses'=>'ToolsController@index',
-    'middleware' => 'auth']);
+    'middleware' => ['auth','stat']]);
 // Route::get('/tool2',[
     // 'uses'=>'ToolsController@main',
     // 'middleware' => 'auth']);
@@ -179,7 +181,7 @@ Route::get('/report',
 	[
     'as'    =>  'report',
     'uses'  =>  'ReportController@index',
-    'middleware'    =>  'auth'
+    'middleware'    =>  ['auth','stat']
 	]);
 
 Route::get('/getreport',
@@ -201,7 +203,7 @@ Route::get('/report/edit/{id}',
 Route::post('/report',
 	[
     'uses'  =>  'ReportController@create',
-    'middleware'    =>  'auth'
+    'middleware'    =>  ['auth','stat']
 	]);
 Route::get('/report/download/{experimentId}/{link}',
 	[

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStarsTable extends Migration
+class CreateUserStatModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateStarsTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('stars', function (Blueprint $table) {
+        Schema::create('UserStat', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('link');
+            $table->integer('uid')->nullable();
+            $table->string('path');
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateStarsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('stars');
+        Schema::drop('user_stat_models');
     }
 }
