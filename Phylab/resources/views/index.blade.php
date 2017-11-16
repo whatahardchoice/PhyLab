@@ -219,7 +219,7 @@
             <div class="social-item footer-weixin-item">
               <i class="fa fa-weixin" aria-hidden="true"></i>
               <div class="footer-weixin">
-                <img src="http://www.buaaphylab.com/img/1447574686560.jpg">
+                <img src="./img/1447574686560.jpg">
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@
           </div>
           <div class="col-xs-4">
             <div class="social-item footer-blog-item">
-              <a href="http://www.cnblogs.com/Default1406/" target="_blank ">
+              <a href="http://www.cnblogs.com/sigma-rg/" target="_blank ">
                 <i class="fa fa-rss"></i>
               </a>
               <div class="footer-blog">
@@ -246,8 +246,8 @@
           <div class="col-title ">团队</div>
           <a href="#" target="_blank">关于我们</a><br>
           <a href="#" target="_blank">联系我们</a><br>
-          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">加入我们</a><br>
-          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">技术博客</a><br>
+          <a href="http://www.cnblogs.com/sigma-rg/" target="_blank ">加入我们</a><br>
+          <a href="http://www.cnblogs.com/sigma-rg/" target="_blank ">技术博客</a><br>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
           <div class="col-title ">合作</div>
@@ -273,7 +273,7 @@
       </div>
     </div>
     <div class="text-center copyright">
-      <span>Copyright @2016-2016 物理实验报告平台</span>
+      <span>Copyright @2016-2017 物理实验报告平台</span>
     </div>
   </div>
 </footer>
