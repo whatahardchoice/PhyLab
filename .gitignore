@@ -1,0 +1,11 @@
+*~
+phylab_env/
+Spirit/
+
+# Django
+
+__pycache__/
+*.pyc
+*.log
+
+db.sqlite3
