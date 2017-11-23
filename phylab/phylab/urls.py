@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 import spirit.urls
+import report.urls
 
 # Override admin login for security purposes
 from django.contrib.auth.decorators import login_required
@@ -15,7 +16,8 @@ admin.site.login = login_required(admin.site.login)
 
 
 urlpatterns = [
-    url(r'^', include(spirit.urls)),
+    url(r'^report/', include(report.urls)),
+    url(r'^spirit/', include(spirit.urls)),
 
     # Examples:
     # url(r'^$', 'example.views.home', name='home'),

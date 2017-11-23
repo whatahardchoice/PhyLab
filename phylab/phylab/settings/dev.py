@@ -21,11 +21,11 @@ ADMINS = (('Leo Jacob', 'john@example.com'), )  # Log email to console when DEBU
 
 SECRET_KEY = "DEV"
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.103', '192.168.0.102', '10.138.47.165', ]
 
 # Django Debug Toolbar settings
 
-INTERNAL_IPS = ['127.0.0.1', ]
+INTERNAL_IPS = ['127.0.0.1', '192.168.0.103', '192.168.0.102', '10.138.47.165', ]
 
 
 DEBUG_TOOLBAR_CONFIG = {

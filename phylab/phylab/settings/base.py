@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'spirit.comment.like',
     'spirit.comment.poll',
 
+    'report',
+
     'djconfig',
     'haystack',
 ]

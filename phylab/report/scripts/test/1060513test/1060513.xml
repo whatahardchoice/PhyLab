@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lab id="1062">
+	<sublab id="10621" status="true">
+		<table name="10621_1" raw="5" column="4">
+			<tr index="1">
+				<td>5.900</td>
+				<td>4.815</td>
+				<td>4.450</td>
+				<td>4.250</td>
+                <td>3.870</td>
+				<td>3.672</td>
+				<td>3.340</td>
+				<td>2.218</td>
+			</tr>
+			<tr index="2">
+				<td>5.838</td>
+				<td>4.768</td>
+				<td>4.358</td>
+				<td>4.185</td>
+                <td>3.822</td>
+				<td>3.640</td>
+				<td>3.292</td>
+				<td>2.156</td>
+			</tr>
+		</table>
+	</sublab>
+</lab>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lab id="1061">
+	<sublab id="10613" status="true">
+		<table name="10613_1" raw="1" column="2">
+			<tr index="1">
+				<td>267.0</td>
+				<td>1227.0</td>
+			</tr>
+		</table>
+        <table name="10613_2" raw="8" column="5">
+			<tr index="1">
+				<td>591.1</td>
+				<td>590.3</td>
+				<td>592.4</td>
+				<td>588.2</td>
+                <td>592.3</td>
+			</tr>
+			<tr index="2">
+				<td>604.0</td>
+				<td>603.2</td>
+				<td>602.5</td>
+				<td>602.3</td>
+                <td>600.2</td>
+			</tr>
+            <tr index="3">
+				<td>850.0</td>
+				<td>850.2</td>
+				<td>851.7</td>
+				<td>853.4</td>
+                <td>854.2</td>
+			</tr>
+            <tr index="4">
+				<td>915.1</td>
+				<td>916.7</td>
+				<td>915.3</td>
+				<td>912.4</td>
+                <td>917.6</td>
+			</tr>
+            <tr index="5">
+				<td>589.3</td>
+				<td>590.2</td>
+				<td>593.4</td>
+				<td>592.6</td>
+                <td>590.2</td>
+			</tr>
+            <tr index="6">
+				<td>600.0</td>
+				<td>601.5</td>
+				<td>602.7</td>
+				<td>603.2</td>
+                <td>603.9</td>
+			</tr>
+            <tr index="7">
+				<td>860.5</td>
+				<td>858.2</td>
+				<td>861.7</td>
+				<td>862.2</td>
+                <td>859.4</td>
+			</tr>
+            <tr index="8">
+				<td>915.2</td>
+				<td>914.2</td>
+				<td>916.4</td>
+				<td>918.5</td>
+                <td>915.6</td>
+			</tr>
+		</table>
+	</sublab>
+</lab>
