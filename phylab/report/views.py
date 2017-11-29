@@ -6,17 +6,21 @@ import json
 import os
 import random
 import string
+from collections import OrderedDict
 
 # Create your views here.
 
 SUCCEED = 'success'
 FAILED = 'fail'
 
+module_dir = os.path.dirname(__file__)
+
 def test_index(request):
     return render(request, 'report/base.html')
 
 def list(request):
-    return render(request, 'report/list.html')
+    reports = json.loads(open(os.path.join(module_dir, 'templates/report/example.json'), 'r').read(), object_pairs_hook=OrderedDict)
+    return render(request, 'report/list.html', {'reports': reports['reports']})
 
 def all(request):
     return render(request, 'report/example.json', content_type='application/json')
@@ -45,6 +49,9 @@ def generate(request):
         if res['status'] == SUCCEED:
             res_json['status'] = SUCCEED
             res_json['link'] = '/media/tmp/{0}.pdf'.format(rand_name)
+        else:
+            res_json['status'] = FAILED
+            res_json['message'] = res['msg']
     except Exception as e:
         res_json['status'] = FAILED
         res_json['message'] = '生成脚本失败'
