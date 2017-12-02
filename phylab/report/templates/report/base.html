@@ -15,6 +15,9 @@
     <link href="{% static "report/css/styles.css" %}" rel="stylesheet" type="text/css">
     <link href="{% static "report/css/phylab.css" %}" rel="stylesheet" type="text/css">
 
+    {% block stylesheet %}
+    {% endblock %}
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,7 +53,7 @@
 	  <div class="collapse navbar-collapse navbar-responsive-collapse">
 	    <ul class="nav navbar-nav">
 	      <li>
-		<a data-toggle="modal" href="{% url 'report:list' %}">实验</a>
+		<a data-toggle="modal" href="{% url 'report:index' %}">实验</a>
 	      </li>
 	      {% comment %}
 	      <li>
@@ -84,38 +87,12 @@
 	<span>Copyright @2016-2017 物理实验报告平台</span>
       </div>
     </footer>
+    {% block base_scripts %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'report/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'report/js/global.js' %}"></script>
-    <script src="{% static 'report/js/pdfobject.js' %}"></script>
-    <script src="{% static 'report/js/xmlInteraction.js' %}"></script>
-    <script src="{% static 'report/js/star.js' %}"></script>
-    <script src="{% static 'report/js/test.js' %}"></script>
-    <script src="{% static 'report/js/statistics.js' %}"></script>
-    <script src="{% static 'report/js/reportCore.js' %}"></script>
-    <script src="{% static 'report/js/jquery.cookie.js' %}"></script>
-    <script>
-      var G_BASE_URL = '';
-      var BASE_URL = '{% url 'report:index' %}'
-      var REPORT_LIST_URL = '{% url 'report:list' %}'
-      var REPORT_DATA_TABLE_URL = '{% url 'report:data-table' %}'
-      var REPORT_GENERATE_URL = '{% url 'report:generate' %}'
-      var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-      function csrfSafeMethod(method) {
-	  // these HTTP methods do not require CSRF protection
-	  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-      }
-      $.ajaxSetup({
-	  beforeSend: function(xhr, settings) {
-	      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-		  xhr.setRequestHeader("X-CSRFToken", csrftoken);
-	      }
-	  }
-      });
-      initReportPage();
-    </script>
+    {% endblock %}
     {% block scripts %}
     {% endblock %}
   </body>

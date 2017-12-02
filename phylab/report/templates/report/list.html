@@ -153,3 +153,32 @@
   </div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script src="{% static 'report/js/global.js' %}"></script>
+<script src="{% static 'report/js/pdfobject.js' %}"></script>
+<script src="{% static 'report/js/xmlInteraction.js' %}"></script>
+<script src="{% static 'report/js/star.js' %}"></script>
+<script src="{% static 'report/js/test.js' %}"></script>
+<script src="{% static 'report/js/statistics.js' %}"></script>
+<script src="{% static 'report/js/reportCore.js' %}"></script>
+<script src="{% static 'report/js/jquery.cookie.js' %}"></script>
+<script>
+var BASE_URL = '{% url 'report:index' %}'
+var REPORT_DATA_TABLE_URL = '{% url 'report:data-table' %}'
+var REPORT_GENERATE_URL = '{% url 'report:generate' %}'
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+function csrfSafeMethod(method) {
+  // these HTTP methods do not require CSRF protection
+  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+  beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+	  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+  }
+});
+initReportPage();
+</script>
+{% endblock %}
