@@ -34,12 +34,6 @@ function changePdf(type,pdfName){
     if(type=="prepare"){
         path = "/static/report/pdf/prepare_pdf/";
     }
-    else if(type=="tmp"){
-        path = "";
-    }
-    else if(type=="star"){
-        path = "./star_pdf/"
-    }
     $("#pdf_object").attr("data",path+pdfName);
     $('#pdf_embed').attr("src",path+pdfName);
     cp(path+pdfName);

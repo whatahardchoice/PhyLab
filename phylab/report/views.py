@@ -15,18 +15,17 @@ FAILED = 'fail'
 
 module_dir = os.path.dirname(__file__)
 
+reports = json.loads(open(os.path.join(module_dir, 'templates/report/example.json'), 'r').read(), object_pairs_hook=OrderedDict)
+
 def test_index(request):
     return render(request, 'report/base.html')
 
 def list(request):
-    reports = json.loads(open(os.path.join(module_dir, 'templates/report/example.json'), 'r').read(), object_pairs_hook=OrderedDict)
     return render(request, 'report/list.html', {'reports': reports['reports']})
-
-def all(request):
-    return render(request, 'report/example.json', content_type='application/json')
 
 def table(request):
     experiment_id = request.GET.get('id', None)
+    # TODO: check whether experiment_id is valid
     return render(request, 'report/experiment_data_table/{0}.html'.format(experiment_id))
 
 def generate(request):
