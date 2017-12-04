@@ -13,7 +13,7 @@ $(document).ready(function() {
     $botPagi = $(".nav-bot__pagi"),
     $navBot = $(".nav-bot"),
     SCENEPERS = 200,
-    MULTI_Z = 13,
+    MULTI_Z = 0,
     LEVELANIM = 1000,
     SIDEANIM = 500,
     animating = false;
