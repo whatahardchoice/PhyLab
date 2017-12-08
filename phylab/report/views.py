@@ -17,6 +17,9 @@ module_dir = os.path.dirname(__file__)
 
 reports = json.loads(open(os.path.join(module_dir, 'templates/report/example.json'), 'r').read(), object_pairs_hook=OrderedDict)
 
+def index(request):
+    return render(request, 'report/index.html')
+
 def test_index(request):
     return render(request, 'report/base.html')
 

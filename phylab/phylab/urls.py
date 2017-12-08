@@ -9,6 +9,7 @@ from django.contrib import admin
 
 import spirit.urls
 import report.urls
+import report.views
 import tool.urls
 
 # Override admin login for security purposes
@@ -17,6 +18,7 @@ admin.site.login = login_required(admin.site.login)
 
 
 urlpatterns = [
+    url(r'^$', report.views.index, name='index'),
     url(r'^report/', include(report.urls)),
     url(r'^tool/', include(tool.urls)),
     url(r'^spirit/', include(spirit.urls)),

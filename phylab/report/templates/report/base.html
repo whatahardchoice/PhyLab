@@ -80,21 +80,28 @@
 	</div>
       </nav>
     </header>
+
     {% block content %}
     {% endblock %}
+
+    {% block footer %}
     <footer id="site-footer">
       <div class="text-center copyright" style="margin-top: 0">
 	<span>Copyright @2016-2017 物理实验报告平台</span>
       </div>
     </footer>
+    {% endblock footer %}
+
     {% block base_scripts %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'report/js/bootstrap.min.js' %}"></script>
     {% endblock %}
+
     {% block scripts %}
     {% endblock %}
+
   </body>
 </html>
 
