@@ -45,7 +45,7 @@
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-	    <a class="navbar-brand" href="{% url 'report:index' %}">
+	    <a class="navbar-brand" href="{% url 'index' %}">
 	      <img id="header-logo" src="{% static 'report/img/phylab_logo_single.svg' %}"/>
 	      <span>PhyLab</span>
 	    </a>
@@ -55,25 +55,20 @@
 	      <li>
 		<a data-toggle="modal" href="{% url 'report:index' %}">实验</a>
 	      </li>
-	      {% comment %}
 	      <li>
-		<a data-toggle="modal" @if (!$auth) href="{% url 'login' %}" @else href="{% url 'wc_login' %}"@endif>社区</a>
+		<a data-toggle="modal" href="{% url 'spirit:index' %}">社区</a>
 	      </li>
 	      <li>
-		<a href="{% url 'tools' %}">工具</a>
-	      </li>
-	      {% endcomment %}
-	      <li>
-		<a href="#">反馈</a>
+		<a href="{% url 'tool:index' %}">小工具</a>
 	      </li>
 	    </ul>
 	    <div class="navbar-right btns">
 	      {% if not user.is_authenticated %}
-	      <a class="btn btn-default navbar-btn sign-in" href="{# {% url 'login' %} #}">登录</a>
+	      <a class="btn btn-default navbar-btn sign-in" href="/spirit/user/login/?next={{ request.path }}">登录</a>
 	      <a class="btn btn-default navbar-btn sign-up" href="{# {% url 'register' %} #}">注册</a>
 	      {% else %}
 	      <a id="username" class="btn btn-default navbar-btn username" href="#">{{ user.username }}</a>
-	      <a class="btn btn-default navbar-btn sign-out" href="{# {% url 'logout' %} #}">登出</a>
+	      <a class="btn btn-default navbar-btn sign-out" href="{% url 'logout' %}">登出</a>
 	      {% endif %}
 	    </div>
 	  </div>

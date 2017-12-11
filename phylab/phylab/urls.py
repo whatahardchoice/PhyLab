@@ -16,9 +16,12 @@ import tool.urls
 from django.contrib.auth.decorators import login_required
 admin.site.login = login_required(admin.site.login)
 
+from django.contrib.auth import views as auth
+
 
 urlpatterns = [
     url(r'^$', report.views.index, name='index'),
+    url(r'^logout/$', auth.LogoutView.as_view(next_page='/'), name='logout'),
     url(r'^report/', include(report.urls)),
     url(r'^tool/', include(tool.urls)),
     url(r'^spirit/', include(spirit.urls)),
