@@ -4,6 +4,7 @@
 <title> tikuqimo</title>
 	<link href="./tikubeta_files/bootstrap.min.css" rel="stylesheet">
 	<link href="./tikubeta_files/layoutit.css" rel="stylesheet">
+	<link rel="stylesheet" href="./tikubeta_files/font-awesome-4.7.0/css/font-awesome.min.css">
 
 	<script type="text/javascript" src="./tikubeta_files/jquery.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/jquery.min.js"></script>
@@ -18,7 +19,7 @@
 
 
 		
-</div>
+
 <div class="col-md-12 colum">
 	<div class="container">
 		<div class="col-md-2 column">
@@ -26,7 +27,7 @@
 		<div class="panel-group" id="panel-list">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-01">练习</a>
+					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-01"><i class="fa fa-cubes" aria-hidden="true"></i>练习</a>
 				</div>
 				<div id="panel-element-01" class="panel-collapse collapse">
 					<div class="panel-body">
@@ -38,7 +39,7 @@
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-02">真题演练</a>
+					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-02"><i class="fa fa-flag-checkered" aria-hidden="true"></i>真题演练</a>
 				</div>
 				<div id="panel-element-02" class="panel-collapse collapse">
 					<div class="panel-body">
@@ -50,7 +51,7 @@
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-03">我的收藏</a>
+					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-03"><i class="fa fa-heart" aria-hidden="true"></i>我的收藏</a>
 				</div>
 				<div id="panel-element-03" class="panel-collapse collapse">
 					<div class="panel-body">
@@ -84,17 +85,25 @@
 										</div>
 									</div>
 									<div class="row clearfix">
-										<div class="col-md-8 column">
+										<div class="col-md-8 column" style="height:50px">
 											<div class="alert alert-success alert-dismissable" id="alertbox">
-												<div id="result">an apple a day keep the doctor away</div> 
+												<div id="result"><i class="fa fa-check" aria-hidden="true"></i>an apple a day keep the doctor away</div> 
 											</div>
 										</div>
 										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()">提交</button>
+											 <button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()"><i class="fa fa-paw" aria-hidden="true"></i>提交</button>
 										</div>
 										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()">下一题</button>
+											 <button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()"><i class="fa fa-share" aria-hidden="true"></i>下一题</button>
 										</div>
+										
+									</div>
+									
+									
+									
+									<div class="col-md-12 column">
+									
+									<div class="row clearfix col-md-12 column">
 										<ul class="pagination pagination-sm">
 											<li onclick="alterprevQuestion()">
 												 <a href="#">Prev</a>
@@ -118,6 +127,7 @@
 												 <a href="#">Next</a>
 											</li>
 										</ul>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -171,6 +181,7 @@
 							</div>
 						</div>
 						<div class="tab-pane" id="panel3">
+							
 							<h3>
 								我的收藏.
 							</h3>
