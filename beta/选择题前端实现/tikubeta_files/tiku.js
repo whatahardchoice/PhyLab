@@ -176,3 +176,7 @@ var r=r1;
 		);
 		return response;
 	}
+	
+	//以下js，fork from cs.kenji-special.info
+		
+	//
