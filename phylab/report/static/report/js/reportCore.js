@@ -105,7 +105,6 @@ $('#button-view-preparation').click(function () {
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 });
 
-/*
 $('#button-generate-report').click(function () {
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
@@ -137,6 +136,7 @@ $('#button-generate-report').click(function () {
     });
 });
 
+/*
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
         createStar();
