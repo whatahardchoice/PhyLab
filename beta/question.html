@@ -5,6 +5,7 @@
 </head>
 
 <body>
+
     <div id="question">
         <p qid="0">题目题目题目题目</p>
     </div>
@@ -19,10 +20,20 @@
             <input type="radio" name="option" value="D">D. </li>
     </div>
     <div id="result"></div>
+    <div id="testMath">${}$
+        <div id="math1"></div>
+    </div>
     <button type="button" onclick="alterQuestion(r)">更换题目</button>
     <button type="button" onclick="checkAnswer()">检查答案</button>
-
-
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [["$","$"],["\\(","\\)"]]
+    }
+  });
+</script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script type="text/javascript">
         var r =
@@ -63,8 +74,7 @@
         function checkAnswer() {
             var checkAnswerUrl = "";
             var ans = $("#options :radio:checked");
-            if(ans.length==0)
-            {
+            if (ans.length == 0) {
                 console.log("must select one");
                 return;
             }
@@ -103,6 +113,19 @@
             );
             return response;
         }
+
+        function display(tex) {
+            var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
+            var math = null;                // the element jax for the math output.
+
+            QUEUE.Push(function () {
+                math = MathJax.Hub.getAllJax("testMath")[0];
+            });
+            QUEUE.Push(["Text", math, tex]);
+
+        }
+
+
     </script>
 
 
