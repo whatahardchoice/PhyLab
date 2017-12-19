@@ -5,6 +5,9 @@
 	<link href="./tikubeta_files/bootstrap.min.css" rel="stylesheet">
 	<link href="./tikubeta_files/layoutit.css" rel="stylesheet">
 	<link rel="stylesheet" href="./tikubeta_files/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+	<link href="./tikubeta_files/jsq.css" rel="stylesheet">
+	
 
 	<script type="text/javascript" src="./tikubeta_files/jquery.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/jquery.min.js"></script>
@@ -14,6 +17,7 @@
 	<script type="text/javascript" src="./tikubeta_files/jquery.htmlClean.js"></script>
 	
 	<script type="text/javascript" src="./tikubeta_files/tiku.js"></script>
+	<script type="text/javascript" src="./tikubeta_files/jsq.js"></script>
 	
 </head>
 
@@ -23,7 +27,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
 <script  src="./tikubeta_files/canvas.js"></script>
-<div class="col-md-12 colum">
+<div class="col-md-12 colum" style="position:relative">
 	<div class="container">
 		<div class="col-md-2 column">
 
@@ -267,6 +271,91 @@
 				
 			</div>
 		</div>
+	</div>
+	<div  class="jsq">
+
+		<div class="calBox">	
+
+			<div class="calu">
+
+				<input type="text" id="text">    	
+
+				<ul class="one clearfix uls">
+
+					<li class="orange libutton on" style="color:#000000;">开机</li>
+
+					<li class="orange off libutton" style="color:#000000;">关机</li>
+
+					<li class="orange clea libutton" style="color:#000000;">清屏</li>
+
+					<li class="black zheng libutton">+/-</li>
+
+					<li class="black rec libutton">1/x</li>
+
+					<li class="num libutton">7</li>
+
+					<li class="num libutton">8</li>
+
+					<li class="num libutton">9</li>
+
+					<li class="gray oper libutton" style="color:#000000;">/</li>
+
+					<li class="black oper libutton" >%</li>
+
+					<li class="num libutton">4</li>
+
+					<li class="num libutton">5</li>
+
+					<li class="num libutton">6</li>
+
+					<li class="gray oper libutton" style="color:#000000;">*</li>
+
+					<li class="black sq libutton">√</li>           
+
+					<!--  -->           
+
+				</ul>
+
+				<div class="clearfix">
+
+					<div class="twoBox fl">
+
+						<ul class="one fl two uls">
+
+							<li class="num libutton">1</li>
+
+							<li class="num libutton">2</li>
+
+							<li class="num libutton">3</li>
+
+							<li class="gray oper libutton" style="color:#000000;">-</li>
+
+							<li class="zero num libutton">0</li>
+
+							<li class="num libutton" >.</li>
+
+							<li class="gray oper libutton" style="color:#000000;">+</li>
+
+						</ul>
+
+					</div>
+
+					<ul class="one three clearfix fl uls">
+
+						<li class="black deng fl libutton">=</li>
+
+					</ul>        
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<input type="text" id="per" style="display:none">
+
+		<input type="text" id="text1" style="display:none">
+
 	</div>
 </div>
 
