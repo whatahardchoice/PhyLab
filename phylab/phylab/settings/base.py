@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 
     'report',
     'tool',
+    'problem',
 
     'djconfig',
     'haystack',

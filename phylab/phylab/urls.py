@@ -11,6 +11,7 @@ import spirit.urls
 import report.urls
 import report.views
 import tool.urls
+import problem.urls
 
 # Override admin login for security purposes
 from django.contrib.auth.decorators import login_required
@@ -25,6 +26,7 @@ urlpatterns = [
     url(r'^report/', include(report.urls)),
     url(r'^tool/', include(tool.urls)),
     url(r'^spirit/', include(spirit.urls)),
+    url(r'^problem/', include(problem.urls)),
 
     # Examples:
     # url(r'^$', 'example.views.home', name='home'),

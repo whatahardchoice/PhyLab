@@ -21,7 +21,7 @@ ADMINS = (('Leo Jacob', 'john@example.com'), )  # Log email to console when DEBU
 
 SECRET_KEY = "DEV"
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.103', '192.168.0.102', '10.138.47.165', ]
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.0.103', '192.168.0.102', '10.138.47.165', '10.138.30.192']
 
 # Django Debug Toolbar settings
 
