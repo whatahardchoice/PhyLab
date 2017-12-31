@@ -43,7 +43,7 @@
 
 }
 
-input{ width:406px; height:82px; margin:10px 7px 0px; border-radius:5px; border:1px solid #64655F; box-shadow:0px 5px 2px rgba(157,157,145,0.8) inset; -webkit-box-shadow:0px 5px 2px rgba(157,157,145,0.8) inset; outline:none; background:#FCFDEB; text-align:right; font-family:"Î¢ÈíÑÅºÚ"; font-size:40px; padding:0px 10px;}
+.calu input{ width:406px; height:82px; margin:10px 7px 0px; border-radius:5px; border:1px solid #64655F; box-shadow:0px 5px 2px rgba(157,157,145,0.8) inset; -webkit-box-shadow:0px 5px 2px rgba(157,157,145,0.8) inset; outline:none; background:#FCFDEB; text-align:right; font-family:"Î¢ÈíÑÅºÚ"; font-size:40px; padding:0px 10px;}
 
 ul{}
 

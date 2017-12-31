@@ -32,6 +32,17 @@ $(".time-start").click(function () {
 	$(this).hide();
 	$(".time-stop").show();
 });
+/*答题卡*/
+function showcard() {
+        $("#closeCard").show();
+        $("#answerCard").slideDown();
+        $("#openCard").hide();
+    }
+function closecard(){
+        $("#openCard").show();
+        $("#answerCard").slideUp();
+        $("#closeCard").hide();
+    }
 
 
 
@@ -42,6 +53,7 @@ var r1 =
 		qid: 0,
 		question: "这是第1题",
 		options: { "A": "hello", "B": "yo", "C": "greetings" },
+		answer: "第一题答案",
 		type: ""
 	};
 var r = r1;
@@ -50,6 +62,7 @@ var r2 =
 		qid: 1,
 		question: "这是第2题",
 		options: { "A": "你好", "B": "qaq", "C": "123" },
+		answer: "第二题答案",
 		type: ""
 	};
 
@@ -58,6 +71,7 @@ var r3 =
 		qid: 2,
 		question: "这是第3题",
 		options: { "A": "red", "B": "yellow", "C": "green" },
+		answer: "第三题答案",
 		type: ""
 	};
 
@@ -67,6 +81,7 @@ var r4 =
 		qid: 3,
 		question: "这是第4题",
 		options: { "A": "2", "B": "4", "C": "6" },
+		answer: "第四题答案",
 		type: ""
 	};
 
@@ -75,6 +90,7 @@ var r5 =
 		qid: 4,
 		question: "这是第5题",
 		options: { "A": "f", "B": "u", "C": "c*" },
+		answer: "第五题答案",
 		type: ""
 	};
 
@@ -151,14 +167,21 @@ function checkAnswer() {
 	// );
 	if (response.right == 1) {
 		document.getElementById("alertbox").setAttribute("class", "alert alert-danger");
-		$("#result").text("正确");
+		$("#result1-1").text("正确");
 	}
 	else {
 		document.getElementById("alertbox").setAttribute("class", "alert alert-danger");
-		$("#result").text("错误");
+		$("#result1-1").text("错误");
 	}
 
 }
+
+function reAnswer(){
+	r = eval("r" + i);
+	$("#result1-2").text(r.answer);
+}
+
+
 function getAnswer() {
 	var getAnswerUrl = "";
 	var qid = $("#question p").attr("qid");
