@@ -61,11 +61,10 @@ for (var i = 0; i < 10; i++) {
 function generateList(qs) {
 	var r = "";
 	var maxLength = 30;
-	for (var i = 0; i < qs.length;i++)
-	{
+	for (var i = 0; i < qs.length; i++) {
 		var a = "<li onclick=\"alterQuestion(qs[" + i + "])\">";
-		r += a + qs[i].question.substring(0, maxLength)+"</li>";
-	}	
+		r += a + qs[i].question.substring(0, maxLength) + "</li>";
+	}
 	return "<div>" + r + "</div>";
 }
 
@@ -256,7 +255,39 @@ function getBlankAnswer() {
 	);
 	return response;
 }
+function getCalQuestion() {
+	var calQuestionUrl = "";
+	var result;
+	$.ajax(
+		{
+			url: calQuestionUrl,
+			type: "get",
+			data: {},
+			success: function (re) {
+				result = re;
+			}
+		}
+	);
+	return result;
+}
 
+function alterCalQuestion(quest) {
+	$("#question p").text(render(quest.question)).attr("qid", quest.qid);
+}
+function getCalAnswer() {
+	var getCalAnsUrl = "";
+	var qid = $("#question p").attr("qid");
+	var response;
+	$.ajax(
+		{
+			url: getCalAnsUrl,
+			type: "get",
+			data: { "qid": qid },
+			success: function (re) { response = re; }
+		}
+	);
+	return response;
+}
 function starQuestion(uid) {
 	var starUrl = "";
 	var qid = $("#question p").attr("qid");
