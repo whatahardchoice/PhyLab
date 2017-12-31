@@ -34,19 +34,41 @@ $(".time-start").click(function () {
 });
 /*答题卡*/
 function showcard() {
-        $("#closeCard").show();
-        $("#answerCard").slideDown();
-        $("#openCard").hide();
-    }
-function closecard(){
-        $("#openCard").show();
-        $("#answerCard").slideUp();
-        $("#closeCard").hide();
-    }
+	$("#closeCard").show();
+	$("#answerCard").slideDown();
+	$("#openCard").hide();
+}
+function closecard() {
+	$("#openCard").show();
+	$("#answerCard").slideUp();
+	$("#closeCard").hide();
+}
 
 
 
 var i = 0;
+var qs = [];
+var ops = ["A", "B", "C", "D"];
+for (var i = 0; i < 10; i++) {
+	opts = {};
+	for (o in ops) {
+		opts[o] = "q " + i + "op " + o;
+	}
+	qs.push({ qid: i, question: "question " + i, options: opts, answer: "answer of " + i, type: "" });
+}
+
+//根据参数qs生成列表，每个列表项可点击切换
+function generateList(qs) {
+	var r = "";
+	var maxLength = 30;
+	for (var i = 0; i < qs.length;i++)
+	{
+		var a = "<li onclick=\"alterQuestion(qs[" + i + "])\">";
+		r += a + qs[i].question.substring(0, maxLength)+"</li>";
+	}	
+	return "<div>" + r + "</div>";
+}
+
 
 var r1 =
 	{
@@ -180,7 +202,7 @@ function checkAnswer() {
 
 }
 
-function reAnswer(){
+function reAnswer() {
 	r = eval("r" + i);
 	$("#result1-2").text(r.answer);
 }
@@ -235,7 +257,50 @@ function getBlankAnswer() {
 	return response;
 }
 
+function starQuestion(uid) {
+	var starUrl = "";
+	var qid = $("#question p").attr("qid");
+	var response;
+	$.ajax(
+		{
+			url: starUrl,
+			type: "get",
+			data: { "qid": qid, star: 1, "uid": uid },
+			success: function (re) { response = re; }
+		}
+	);
+	return response;
+}
 
+function cancelStar(uid) {
+	var starUrl = "";
+	var qid = $("#question p").attr("qid");
+	var response;
+	$.ajax(
+		{
+			url: starUrl,
+			type: "get",
+			data: { "qid": qid, star: 0, "uid": uid },
+			success: function (re) { response = re; }
+		}
+	);
+	return response;
+}
+
+function getAllStar(uid, type) {
+	var getAllStarUrl = "";
+	var uid = "";
+	var response;
+	$.ajax(
+		{
+			url: getAllStarUrl,
+			type: "get",
+			data: { "uid": uid, "type": type },
+			success: function (re) { response = re; }
+		}
+	);
+	return response;
+}
 	//以下js，fork from cs.kenji-special.info
 
 
