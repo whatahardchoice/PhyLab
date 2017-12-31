@@ -109,16 +109,20 @@ function getQuestion() {
 	);
 	return result;
 }
-
+// 需要渲染的公式使用两对大括号包裹
+function render(text) {
+	return text.replace(/\{\{\w*\}\}/g, function (word) {
+		return katex.renderToString(word);
+	})
+}
 function alterQuestion(quest) {
-	$("#alertbox").hide();
-	$("#question p").text(quest.question).attr("qid", quest.qid);
+	$("#question p").html(render(quest.question), { displayMode: true }).attr("qid", quest.qid);
 	$("#options").empty();
 	var a = "<li><input type = \"radio\" name = \"option\" value = \"";
-	var b = "\">"
+	var b = "\">";
 	var c = "</li>"
 	for (op in quest.options) {
-		$("#options").append(a + op + b + quest.options[op] + c);
+		$("#options").append(a + op + b + render(quest.options[op]) + c);
 	}
 }
 

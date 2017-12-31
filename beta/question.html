@@ -22,7 +22,7 @@
     <div id="result"></div>
     <button type="button" onclick="alterQuestion(r)">更换题目</button>
     <button type="button" onclick="checkAnswer()">检查答案</button>
-</script>
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h"
@@ -32,8 +32,8 @@
         var r =
             {
                 qid: 0,
-                question: "123123123123",
-                options: { "A": "hello", "B": "yo", "C": "greetings" },
+                question: "你好123123123123",
+                options: { "A": "hello", "B": "yo", "C": "{{gr}}eetings" },
                 type: ""
             };
 
@@ -54,13 +54,13 @@
         }
 
         function alterQuestion(quest) {
-            $("#question p").html(katex.renderToString(quest.question)).attr("qid",quest.qid);
+            $("#question p").html(render(quest.question), { displayMode: true }).attr("qid", quest.qid);
             $("#options").empty();
             var a = "<li><input type = \"radio\" name = \"option\" value = \"";
             var b = "\">";
             var c = "</li>"
             for (op in quest.options) {
-                $("#options").append(a + op + b + katex.renderToString(quest.options[op]) + c);
+                $("#options").append(a + op + b + render(quest.options[op]) + c);
             }
         }
 
@@ -105,6 +105,11 @@
                 }
             );
             return response;
+        }
+        function render(text) {
+            return text.replace(/\{\{\w*\}\}/g, function (word) {
+                return katex.renderToString(word);
+            })
         }
         alterQuestion(r);
     </script>
