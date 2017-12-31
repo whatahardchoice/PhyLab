@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 
 <head>
     <title>GetQuestion</title>
@@ -20,20 +20,13 @@
             <input type="radio" name="option" value="D">D. </li>
     </div>
     <div id="result"></div>
-    <div id="testMath">${}$
-        <div id="math1"></div>
-    </div>
     <button type="button" onclick="alterQuestion(r)">更换题目</button>
     <button type="button" onclick="checkAnswer()">检查答案</button>
-    <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [["$","$"],["\\(","\\)"]]
-    }
-  });
 </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h"
+        crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script type="text/javascript">
         var r =
@@ -61,13 +54,13 @@
         }
 
         function alterQuestion(quest) {
-            $("#question p").text(quest.question).attr("qid", quest.qid);
+            $("#question p").html(katex.renderToString(quest.question)).attr("qid",quest.qid);
             $("#options").empty();
             var a = "<li><input type = \"radio\" name = \"option\" value = \"";
-            var b = "\">"
+            var b = "\">";
             var c = "</li>"
             for (op in quest.options) {
-                $("#options").append(a + op + b + quest.options[op] + c);
+                $("#options").append(a + op + b + katex.renderToString(quest.options[op]) + c);
             }
         }
 
@@ -113,19 +106,7 @@
             );
             return response;
         }
-
-        function display(tex) {
-            var QUEUE = MathJax.Hub.queue;  // shorthand for the queue
-            var math = null;                // the element jax for the math output.
-
-            QUEUE.Push(function () {
-                math = MathJax.Hub.getAllJax("testMath")[0];
-            });
-            QUEUE.Push(["Text", math, tex]);
-
-        }
-
-
+        alterQuestion(r);
     </script>
 
 
