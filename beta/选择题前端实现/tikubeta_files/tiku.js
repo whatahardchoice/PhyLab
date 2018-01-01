@@ -181,6 +181,10 @@ function checkAnswer() {
 
 }
 
+function showqslist(){
+	$("#panel-list4").show();
+}
+
 function reAnswer() {
 	$("#alertbox1").show();
 	$("#result1-2").text(qslist[i].answer);
