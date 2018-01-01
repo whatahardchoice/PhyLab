@@ -45,7 +45,7 @@ function closecard() {
 }
 
 
-var qslist = new Array();
+var qslist;
 var i = 0;
 var qs = [];
 var ops = ["A", "B", "C", "D"];
@@ -70,56 +70,52 @@ function generateList(qs) {
 }
 
 
-var r1 =
+qslist=[
 	{
-		qid: 0,
-		question: "这是第1题",
-		options: { "A": "hello", "B": "yo", "C": "greetings" },
-		answer: "第一题答案",
-		type: ""
-	};
-var r = r1;
-var r2 =
-	{
-		qid: 1,
-		question: "这是第2题",
-		options: { "A": "你好", "B": "qaq", "C": "123" },
-		answer: "第二题答案",
-		type: ""
-	};
-
-var r3 =
-	{
-		qid: 2,
-		question: "这是第3题",
-		options: { "A": "red", "B": "yellow", "C": "green" },
-		answer: "第三题答案",
-		type: ""
-	};
+		"qid": 0,
+		"question": "这是第1题",
+		"options": { "A": "hello", "B": "yo", "C": "greetings" },
+		"answer": "第一题答案",
+		"type": ""
+	},
 
 
-var r4 =
 	{
-		qid: 3,
-		question: "这是第4题",
-		options: { "A": "2", "B": "4", "C": "6" },
-		answer: "第四题答案",
-		type: ""
-	};
+		"qid": 1,
+		"question": "这是第2题",
+		"options": { "A": "你好", "B": "qaq", "C": "123" },
+		"answer": "第二题答案",
+		"type": ""
+	},
 
-var r5 =
+
 	{
-		qid: 4,
-		question: "这是第5题",
-		options: { "A": "f", "B": "u", "C": "c*" },
-		answer: "第五题答案",
-		type: ""
-	};
-qslist[0]=r1;
-qslist[1]=r2;
-qslist[2]=r3;
-qslist[3]=r4;
-qslist[4]=r5;
+		"qid": 2,
+		"question": "这是第3题",
+		"options": { "A": "red", "B": "yellow", "C": "green" },
+		"answer": "第三题答案",
+		"type": ""
+	},
+
+
+
+	{
+		"qid": 3,
+		"question": "这是第4题",
+		"options": { "A": "2", "B": "4", "C": "6" },
+		"answer": "第四题答案",
+		"type": ""
+	},
+
+
+	{
+		"qid": 4,
+		"question": "这是第5题",
+		"options": { "A": "f", "B": "u", "C": "c*" },
+		"answer": "第五题答案",
+		"type": ""
+	}
+]
 	
 function getQuestion() {
 	var getQuestionUrl = "";
