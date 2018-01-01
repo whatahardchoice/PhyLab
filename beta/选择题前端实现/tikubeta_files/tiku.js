@@ -74,7 +74,18 @@ function generateList(qs) {
 	}
 	return r;
 }
-
+function getNewQuestionList(type)
+{
+	if (type == "choice")
+		qs = getQuestion(10).question;
+	else if (type == "blank")
+		qs = getBlankQuestion(10).question;
+	else if (type == "cal")
+		qs = getCalQuestion(10).question;
+	else {//error
+	}
+	return generateList(qs);
+}
 function getQ(qid, type) {
 	if (type == "choice") {
 		if (qid < qs.length && qid >= 0)
@@ -93,15 +104,16 @@ function getQ(qid, type) {
 	return null;
 }
 
-function getQuestion() {
+function getQuestion(num) {
 	var getQuestionUrl = "";
 	var result;
 	$.ajax(
 		{
 			url: getQuestionUrl,
 			type: "get",
-			data: {},
+			data: {"num":num},
 			success: function (re) {
+				//expect json {questions:[questions(like qs)]}
 				result = re;
 			}
 		}
@@ -207,14 +219,14 @@ function getAnswer() {
 	return response;
 }
 
-function getBlankQuestion() {
+function getBlankQuestion(num) {
 	var blankQuestionUrl = "";
 	var result;
 	$.ajax(
 		{
 			url: blankQuestionUrl,
 			type: "get",
-			data: {},
+			data: {"num":num},
 			success: function (re) {
 				result = re;
 			}

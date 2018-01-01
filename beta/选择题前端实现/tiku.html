@@ -1,13 +1,13 @@
 <html>
-  
+
 <head>
-<title> tikuqimo</title>
+	<title> tikuqimo</title>
 	<link href="./tikubeta_files/bootstrap.min.css" rel="stylesheet">
 	<link href="./tikubeta_files/layoutit.css" rel="stylesheet">
 	<link rel="stylesheet" href="./tikubeta_files/font-awesome-4.7.0/css/font-awesome.min.css">
-	
+
 	<link href="./tikubeta_files/jsq.css" rel="stylesheet">
-	
+
 
 	<script type="text/javascript" src="./tikubeta_files/jquery.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/jquery.min.js"></script>
@@ -15,404 +15,423 @@
 	<script type="text/javascript" src="./tikubeta_files/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/jquery.htmlClean.js"></script>
-	
+
 	<script type="text/javascript" src="./tikubeta_files/tiku.js"></script>
 	<script type="text/javascript" src="./tikubeta_files/jsq.js"></script>
-	
+
 </head>
 
 
-<body>		
-<canvas style="position:absolute;z-index:-1" id="c" ></canvas>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
-<script  src="./tikubeta_files/canvas.js"></script>
+<body>
+	<canvas style="position:absolute;z-index:-1" id="c"></canvas>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
+	<script src="./tikubeta_files/canvas.js"></script>
 
 
-<div class="col-md-12 colum" style="position:relative">
-	<div class="container">
-		<div class="col-md-2 column">
+	<div class="col-md-12 colum" style="position:relative">
+		<div class="container">
+			<div class="col-md-2 column">
 
-		<div class="panel-group" id="panel-list">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-01"><i class="fa fa-cubes" aria-hidden="true"></i>练习</a>
-				</div>
-				<div id="panel-element-01" class="panel-collapse collapse">
-					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-1" data-toggle="tab" onclick="showqslist()">选择题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">填空题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">计算题</button>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-02"><i class="fa fa-flag-checkered" aria-hidden="true"></i>真题演练</a>
-				</div>
-				<div id="panel-element-02" class="panel-collapse collapse">
-					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2017届真题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2016届真题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2015届真题</button>
-					</div>
-				</div>
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-03"><i class="fa fa-heart" aria-hidden="true"></i>我的收藏</a>
-				</div>
-				<div id="panel-element-03" class="panel-collapse collapse">
-					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">选择题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">填空题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">计算题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel3" data-toggle="tab">历届真题</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="col-md-8 row clearfix">
-					
-			<div class="col-md-12 column box1" style="border-left:2px solid #666666  ;border-right:2px solid #666666" >
-				<div class="tabbable" id="tabs">
-					<div class="tab-content">
-						<div class="col-md-12 column tab-pane active" id="panel0">
-							<div class="carousel slide" id="carousel-666666">
-								<ol class="carousel-indicators">
-									<li data-slide-to="0" data-target="#carousel-666666">
-									</li>
-									<li data-slide-to="1" data-target="#carousel-666666">
-									</li>
-									<li data-slide-to="2" data-target="#carousel-666666" class="active">
-									</li>
-								</ol>
-								<div class="carousel-inner">
-									<div class="item">
-										<img alt="" src="images/img1.jpg" />
-										<div class="carousel-caption">
-											<h4 >
-												练习题库
-											</h4>
-											<p >
-												收录并分类了各届绪论和期末的选择题、填空题、计算题，并有检查答案的功能。
-											</p>
-										</div>
-									</div>
-									<div class="item">
-										<img alt="" src="images/img3.jpg" />
-										<div class="carousel-caption">
-											<h4 style="color:#FBE251">
-												真题演练
-											</h4>
-											<p style="color:#FBE251">
-												近几年的真题都被收录，且有答案，能够让同学们系统的练习解题能力。
-											</p>
-										</div>
-									</div>
-									<div class="item active">
-										<img alt="" src="images/img2.jpg" />
-										<div class="carousel-caption">
-											<h4 style="color:#005CAF">
-												收藏功能
-											</h4 >
-											<p style="color:#005CAF">
-												为对题目非常感兴趣的同学提供，能够收藏自己喜欢和重视的题目，以便同学们以后复习。
-											</p>
-										</div>
-									</div>
-								</div> <a class="left carousel-control" href="#carousel-666666" data-slide="prev"></a> <a class="right carousel-control" href="#carousel-666666" data-slide="next"></a>
-							</div>
-						</div>
-						<div class="tab-pane"  id="panel1-1">
-							<div style="border-bottom:2px solid #666666">
-								<h3>
-									练习题库.
-								</h3>
-							</div>
-							<div class="row clearfix">
-								<div class="col-md-12 column">
-									<div class="row clearfix">
-										<div class="col-md-12 column" >
-											<div id="question">
-												<p qid="0">点击下一题开始做题</p>
-											</div>
-											<div id="options">
-											</div>
-										</div>
-									</div>
-									<div class="row clearfix" style="height:60px">
-										<div class="col-md-6 column" >
-											<div class="alert alert-success alert-dismissable" id="alertbox">
-												<div id="result1-1"><i class="fa fa-check" aria-hidden="true"></i>an apple a day keep the doctor away</div> 
-											</div>
-										</div>
-										<div class="col-md-2 column">
-											<button type="button" class="btn btn-block btn-warning btn-default"><i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()"><i class="fa fa-paw" aria-hidden="true"></i>提交</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()"><i class="fa fa-share" aria-hidden="true"></i>下一题</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane"  id="panel1-2">
-							<div style="border-bottom:2px solid #666666">
-								<h3>
-									练习题库.
-								</h3>
-							</div>
-							<div class="row clearfix">
-								<div class="col-md-12 column">
-									<div class="row clearfix">
-										<div class="col-md-12 column" >
-											<div id="question">
-												<p qid="0">点击下一题开始做题</p>
-											</div>
-											<div id="options">
-											</div>
-										</div>
-									</div>
-									<div class="row clearfix" style="height:60px">
-										<div class="col-md-6 column" >
-											<div class="alert alert-success alert-dismissable" id="alertbox1">
-												<div id="result1-2"><i class="fa fa-check" aria-hidden="true"></i>an apple a day keep the doctor away</div> 
-											</div>
-										</div>
-										<div class="col-md-2 column">
-											<button type="button" class="btn btn-block btn-warning btn-default"><i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-block btn-primary btn-default" onclick="reAnswer()"><i class="fa fa-paw" aria-hidden="true"></i>显示答案</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()"><i class="fa fa-share" aria-hidden="true"></i>下一题</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane" id="panel2">
-							
-							<h3>
-								真题演练.
-							</h3>
-							<div class="col-md-10 column progress">
-								<div class="progress-bar progress-success"></div>
-							</div>
-							<div class="col-md-2 column">
-								<div class="time">00:00:00</div>
-							</div>
-
-							<div class="row clearfix" >
-								<div class="col-md-12 column">
-									<div class="row clearfix" style="margin-top:40px">
-										<div class="col-md-12 column" >
-											<div id="question">
-												<p qid="0">点击下一题开始做题</p>
-											</div>
-											<div id="options">
-											</div>
-										</div>
-									</div>
-									<div class="row clearfix">
-										<div class="col-md-6 column">
-											<div class="alert alert-success alert-dismissable">
-												 An apppel a day, keep the doctor away. 
-											</div>
-										</div>
-										<div class="col-md-2 column">
-											<button type="button" class="btn btn-block btn-warning btn-default"><i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()"><i class="fa fa-paw" aria-hidden="true"></i>提交</button>
-										</div>
-										<div class="col-md-2 column">
-											 <button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()"><i class="fa fa-share" aria-hidden="true"></i>下一题</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane"  id="panel3">
-							
-							<h3>
-								我的收藏.
-							</h3>
-							<table class="table">
-								<thead>
-									<tr>
-										<th>
-											收藏时间
-										</th>
-										<th>
-											题目
-										</th>
-										<th>
-											进入
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											01/04/2012
-										</td>
-										<td href="#panel4">
-											2017真题
-										</td>
-										<td>
-											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
-										</td>
-									</tr>
-									<tr class="success" >
-										<td>
-											01/04/2012
-										</td>
-										<td href="#panel4">
-											2016真题
-										</td>
-										<td>
-											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
-										</td>
-									</tr>
-									<tr class="error">
-										<td>
-											02/04/2012
-										</td>
-										<td href="#panel4">
-											2015真题
-										</td>
-										<td>
-											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="tab-pane" id="panel4">
-							<h3>我的收藏.</h3>
-						</div>
-					</div>
-				</div>
-				
-				
-			</div>
-		</div>
-		<div class="col-md-2 column" id="list_div">
-
-			<div class="panel-group" style="display:none" id="panel-list4">
-				<div class="panel panel-default">
+				<div class="panel-group" id="panel-list">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-04"><i class="fa fa-folder-open" aria-hidden="true"></i>题目</a>
+							<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-01">
+								<i class="fa fa-cubes" aria-hidden="true"></i>练习</a>
 						</div>
-						<div id="panel-element-04" class="panel-collapse collapse">
-							<div class="row clearfix col-md-12 column">
-								<ul class="list-group" id="question_list">
-								</ul>
+						<div id="panel-element-01" class="panel-collapse collapse">
+							<div class="panel-body">
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-1" data-toggle="tab" onclick="showqslist()">选择题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">填空题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">计算题</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-02">
+								<i class="fa fa-flag-checkered" aria-hidden="true"></i>真题演练</a>
+						</div>
+						<div id="panel-element-02" class="panel-collapse collapse">
+							<div class="panel-body">
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2017届真题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2016届真题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2015届真题</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-03">
+								<i class="fa fa-heart" aria-hidden="true"></i>我的收藏</a>
+						</div>
+						<div id="panel-element-03" class="panel-collapse collapse">
+							<div class="panel-body">
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">选择题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">填空题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">计算题</button>
+								<button type="button" class="btn btn-info btn-default btn-block" href="#panel3" data-toggle="tab">历届真题</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 row clearfix">
+
+				<div class="col-md-12 column box1" style="border-left:2px solid #666666  ;border-right:2px solid #666666">
+					<div class="tabbable" id="tabs">
+						<div class="tab-content">
+							<div class="col-md-12 column tab-pane active" id="panel0">
+								<div class="carousel slide" id="carousel-666666">
+									<ol class="carousel-indicators">
+										<li data-slide-to="0" data-target="#carousel-666666">
+										</li>
+										<li data-slide-to="1" data-target="#carousel-666666">
+										</li>
+										<li data-slide-to="2" data-target="#carousel-666666" class="active">
+										</li>
+									</ol>
+									<div class="carousel-inner">
+										<div class="item">
+											<img alt="" src="images/img1.jpg" />
+											<div class="carousel-caption">
+												<h4>
+													练习题库
+												</h4>
+												<p>
+													收录并分类了各届绪论和期末的选择题、填空题、计算题，并有检查答案的功能。
+												</p>
+											</div>
+										</div>
+										<div class="item">
+											<img alt="" src="images/img3.jpg" />
+											<div class="carousel-caption">
+												<h4 style="color:#FBE251">
+													真题演练
+												</h4>
+												<p style="color:#FBE251">
+													近几年的真题都被收录，且有答案，能够让同学们系统的练习解题能力。
+												</p>
+											</div>
+										</div>
+										<div class="item active">
+											<img alt="" src="images/img2.jpg" />
+											<div class="carousel-caption">
+												<h4 style="color:#005CAF">
+													收藏功能
+												</h4>
+												<p style="color:#005CAF">
+													为对题目非常感兴趣的同学提供，能够收藏自己喜欢和重视的题目，以便同学们以后复习。
+												</p>
+											</div>
+										</div>
+									</div>
+									<a class="left carousel-control" href="#carousel-666666" data-slide="prev"></a>
+									<a class="right carousel-control" href="#carousel-666666" data-slide="next"></a>
+								</div>
+							</div>
+							<div class="tab-pane" id="panel1-1">
+								<div style="border-bottom:2px solid #666666">
+									<h3>
+										练习题库.
+									</h3>
+								</div>
+								<div class="row clearfix">
+									<div class="col-md-12 column">
+										<div class="row clearfix">
+											<div class="col-md-12 column">
+												<div id="question">
+													<p qid="0">点击下一题开始做题</p>
+												</div>
+												<div id="options">
+												</div>
+											</div>
+										</div>
+										<div class="row clearfix" style="height:60px">
+											<div class="col-md-6 column">
+												<div class="alert alert-success alert-dismissable" id="alertbox">
+													<div id="result1-1">
+														<i class="fa fa-check" aria-hidden="true"></i>an apple a day keep the doctor away</div>
+												</div>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-warning btn-default">
+													<i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()">
+													<i class="fa fa-paw" aria-hidden="true"></i>提交</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()">
+													<i class="fa fa-share" aria-hidden="true"></i>下一题</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="panel1-2">
+								<div style="border-bottom:2px solid #666666">
+									<h3>
+										练习题库.
+									</h3>
+								</div>
+								<div class="row clearfix">
+									<div class="col-md-12 column">
+										<div class="row clearfix">
+											<div class="col-md-12 column">
+												<div id="question">
+													<p qid="0">点击下一题开始做题</p>
+												</div>
+												<div id="options">
+												</div>
+											</div>
+										</div>
+										<div class="row clearfix" style="height:60px">
+											<div class="col-md-6 column">
+												<div class="alert alert-success alert-dismissable" id="alertbox1">
+													<div id="result1-2">
+														<i class="fa fa-check" aria-hidden="true"></i>an apple a day keep the doctor away</div>
+												</div>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-warning btn-default">
+													<i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-primary btn-default" onclick="reAnswer()">
+													<i class="fa fa-paw" aria-hidden="true"></i>显示答案</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()">
+													<i class="fa fa-share" aria-hidden="true"></i>下一题</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="panel2">
+
+								<h3>
+									真题演练.
+								</h3>
+								<div class="col-md-10 column progress">
+									<div class="progress-bar progress-success"></div>
+								</div>
+								<div class="col-md-2 column">
+									<div class="time">00:00:00</div>
+								</div>
+
+								<div class="row clearfix">
+									<div class="col-md-12 column">
+										<div class="row clearfix" style="margin-top:40px">
+											<div class="col-md-12 column">
+												<div id="question">
+													<p qid="0">点击下一题开始做题</p>
+												</div>
+												<div id="options">
+												</div>
+											</div>
+										</div>
+										<div class="row clearfix">
+											<div class="col-md-6 column">
+												<div class="alert alert-success alert-dismissable">
+													An apppel a day, keep the doctor away.
+												</div>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-warning btn-default">
+													<i class="fa fa-suitcase" aria-hidden="true"></i>收藏</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-block btn-primary btn-default" onclick="checkAnswer()">
+													<i class="fa fa-paw" aria-hidden="true"></i>提交</button>
+											</div>
+											<div class="col-md-2 column">
+												<button type="button" class="btn btn-default btn-success btn-block" onclick="alternextQuestion()">
+													<i class="fa fa-share" aria-hidden="true"></i>下一题</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="panel3">
+
+								<h3>
+									我的收藏.
+								</h3>
+								<table class="table">
+									<thead>
+										<tr>
+											<th>
+												收藏时间
+											</th>
+											<th>
+												题目
+											</th>
+											<th>
+												进入
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												01/04/2012
+											</td>
+											<td href="#panel4">
+												2017真题
+											</td>
+											<td>
+												<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
+											</td>
+										</tr>
+										<tr class="success">
+											<td>
+												01/04/2012
+											</td>
+											<td href="#panel4">
+												2016真题
+											</td>
+											<td>
+												<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
+											</td>
+										</tr>
+										<tr class="error">
+											<td>
+												02/04/2012
+											</td>
+											<td href="#panel4">
+												2015真题
+											</td>
+											<td>
+												<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-pane" id="panel4">
+								<h3>我的收藏.</h3>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+			<div class="col-md-2 column" id="list_div">
+
+				<div class="panel-group" style="display:none" id="panel-list4">
+					<div class="panel panel-default">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-01" href="#panel-element-04">
+									<i class="fa fa-folder-open" aria-hidden="true"></i>题目</a>
+							</div>
+							<div id="panel-element-04" class="panel-collapse collapse">
+								<div class="row clearfix col-md-12 column">
+									<ul class="list-group" id="question_list">
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div  class="jsq">
+		<div class="jsq">
 
-		<div class="calBox">	
+			<div class="calBox">
 
-			<div class="calu">
+				<div class="calu">
 
-				<input type="text" id="text">    	
+					<input type="text" id="text">
 
-				<ul class="one clearfix uls">
+					<ul class="one clearfix uls">
 
-					<li class="orange libutton on" style="color:#000000;">开机</li>
+						<li class="orange libutton on" style="color:#000000;">开机</li>
 
-					<li class="orange off libutton" style="color:#000000;">关机</li>
+						<li class="orange off libutton" style="color:#000000;">关机</li>
 
-					<li class="orange clea libutton" style="color:#000000;">清屏</li>
+						<li class="orange clea libutton" style="color:#000000;">清屏</li>
 
-					<li class="black zheng libutton">+/-</li>
+						<li class="black zheng libutton">+/-</li>
 
-					<li class="black rec libutton">1/x</li>
+						<li class="black rec libutton">1/x</li>
 
-					<li class="num libutton">7</li>
+						<li class="num libutton">7</li>
 
-					<li class="num libutton">8</li>
+						<li class="num libutton">8</li>
 
-					<li class="num libutton">9</li>
+						<li class="num libutton">9</li>
 
-					<li class="gray oper libutton" style="color:#000000;">/</li>
+						<li class="gray oper libutton" style="color:#000000;">/</li>
 
-					<li class="black oper libutton" >%</li>
+						<li class="black oper libutton">%</li>
 
-					<li class="num libutton">4</li>
+						<li class="num libutton">4</li>
 
-					<li class="num libutton">5</li>
+						<li class="num libutton">5</li>
 
-					<li class="num libutton">6</li>
+						<li class="num libutton">6</li>
 
-					<li class="gray oper libutton" style="color:#000000;">*</li>
+						<li class="gray oper libutton" style="color:#000000;">*</li>
 
-					<li class="black sq libutton">√</li>           
+						<li class="black sq libutton">√</li>
 
-					<!--  -->           
+						<!--  -->
 
-				</ul>
+					</ul>
 
-				<div class="clearfix">
+					<div class="clearfix">
 
-					<div class="twoBox fl">
+						<div class="twoBox fl">
 
-						<ul class="one fl two uls">
+							<ul class="one fl two uls">
 
-							<li class="num libutton">1</li>
+								<li class="num libutton">1</li>
 
-							<li class="num libutton">2</li>
+								<li class="num libutton">2</li>
 
-							<li class="num libutton">3</li>
+								<li class="num libutton">3</li>
 
-							<li class="gray oper libutton" style="color:#000000;">-</li>
+								<li class="gray oper libutton" style="color:#000000;">-</li>
 
-							<li class="zero num libutton">0</li>
+								<li class="zero num libutton">0</li>
 
-							<li class="num libutton" >.</li>
+								<li class="num libutton">.</li>
 
-							<li class="gray oper libutton" style="color:#000000;">+</li>
+								<li class="gray oper libutton" style="color:#000000;">+</li>
+
+							</ul>
+
+						</div>
+
+						<ul class="one three clearfix fl uls">
+
+							<li class="black deng fl libutton">=</li>
 
 						</ul>
 
 					</div>
 
-					<ul class="one three clearfix fl uls">
-
-						<li class="black deng fl libutton">=</li>
-
-					</ul>        
-
 				</div>
 
 			</div>
 
+			<input type="text" id="per" style="display:none">
+
+			<input type="text" id="text1" style="display:none">
+
 		</div>
-
-		<input type="text" id="per" style="display:none">
-
-		<input type="text" id="text1" style="display:none">
-
 	</div>
-</div>
 </body>
 <script>
-	$("#question_list").html(generateList(qs));
-	
+	function alterQuestionList(type) {
+		$("#question_list").html(getNewQuestionList(type));
+	}
+
 </script>
 
 </html>
