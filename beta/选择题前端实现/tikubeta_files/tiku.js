@@ -21,28 +21,20 @@ var time = setInterval(function () {
 		$(".time").text(str);
 	}
 }, 1000);
-/*开启或者停止时间*/
-$(".time-stop").click(function () {
-	timeState = false;
-	$(this).hide();
-	$(".time-start").show();
-});
-$(".time-start").click(function () {
-	timeState = true;
-	$(this).hide();
-	$(".time-stop").show();
-});
-/*答题卡*/
-function showcard() {
-	$("#closeCard").show();
-	$("#answerCard").slideDown();
-	$("#openCard").hide();
+/*重新开始时间*/
+function timerestart(){
+	HH=0;
+	mm=0;
+	ss=0;
+	str += HH < 10 ? "0" + HH : HH;
+		str += ":";
+		str += mm < 10 ? "0" + mm : mm;
+		str += ":";
+		str += ss < 10 ? "0" + ss : ss;
 }
-function closecard() {
-	$("#openCard").show();
-	$("#answerCard").slideUp();
-	$("#closeCard").hide();
-}
+
+	
+
 
 
 var qs = [];
@@ -78,6 +70,12 @@ function alterQuestionList(type) {
 	showqslist();
 	$("#question_list").html(getNewQuestionList(type));
 }
+
+function alterZTQuestion(){
+	timerestart();
+	showqslist();
+}
+
 function getNewQuestionList(type)
 {
 	if (type == "choice")
@@ -145,6 +143,8 @@ function alterQuestion(question) {
 
 
 function alterQuestionbyNum(num) {
+	$("#alertbox").hide();
+	$("#alertbox1").hide();
 	current_index = parseInt(num);
 	alterQuestion(qs[current_index]);
 }
