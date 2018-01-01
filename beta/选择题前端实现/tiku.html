@@ -40,9 +40,9 @@
 				</div>
 				<div id="panel-element-01" class="panel-collapse collapse">
 					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-1" data-toggle="tab">选择题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab">填空题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab">计算题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-1" data-toggle="tab" onclick="showqslist()">选择题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">填空题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel1-2" data-toggle="tab" onclick="showqslist()">计算题</button>
 					</div>
 				</div>
 			</div>
@@ -52,9 +52,9 @@
 				</div>
 				<div id="panel-element-02" class="panel-collapse collapse">
 					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab">2017届真题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab">2016届真题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab">2015届真题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2017届真题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2016届真题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel2" data-toggle="tab" onclick="showqslist()">2015届真题</button>
 					</div>
 				</div>
 			</div>
@@ -64,9 +64,9 @@
 				</div>
 				<div id="panel-element-03" class="panel-collapse collapse">
 					<div class="panel-body">
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab">选择题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab">填空题</button>
-						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab">计算题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">选择题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">填空题</button>
+						<button type="button" class="btn btn-info btn-default btn-block" href="#panel4" data-toggle="tab" onclick="showqslist()">计算题</button>
 						<button type="button" class="btn btn-info btn-default btn-block" href="#panel3" data-toggle="tab">历届真题</button>
 					</div>
 				</div>
@@ -267,7 +267,7 @@
 											2017真题
 										</td>
 										<td>
-											<a href="#panel4" data-toggle="tab">GO!</a>
+											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
 										</td>
 									</tr>
 									<tr class="success" >
@@ -278,7 +278,7 @@
 											2016真题
 										</td>
 										<td>
-											<a href="#panel4" data-toggle="tab">GO!</a>
+											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
 										</td>
 									</tr>
 									<tr class="error">
@@ -289,7 +289,7 @@
 											2015真题
 										</td>
 										<td>
-											<a href="#panel4" data-toggle="tab">GO!</a>
+											<a href="#panel4" data-toggle="tab" onclick="showqslist()">GO!</a>
 										</td>
 									</tr>
 								</tbody>
@@ -306,7 +306,7 @@
 		</div>
 		<div class="col-md-2 column" id="list_div">
 
-			<div class="panel-group" id="panel-list">
+			<div class="panel-group" style="display:none" id="panel-list4">
 				<div class="panel panel-default">
 					<div class="panel panel-default">
 						<div class="panel-heading">
