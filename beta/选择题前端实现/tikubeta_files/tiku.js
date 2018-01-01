@@ -272,7 +272,7 @@ function getCalAnswer() {
 		}
 	);
 	return response;
-}a
+}
 function starQuestion(uid) {
 	var starUrl = "";
 	var qid = $("#question p").attr("qid");
