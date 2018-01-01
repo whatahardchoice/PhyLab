@@ -320,7 +320,7 @@
 				
 			</div>
 		</div>
-		<div class="col-md-2 column">
+		<div class="col-md-2 column" id="list_div">
 
 			<div class="panel-group" id="panel-list">
 				<div class="panel panel-default">
@@ -330,22 +330,7 @@
 						</div>
 						<div id="panel-element-04" class="panel-collapse collapse">
 							<div class="row clearfix col-md-12 column">
-								<ul class="list-group">
-									<li >
-										 <a href="#">1</a>
-									</li>
-									<li >
-										 <a href="#">2</a>
-									</li>
-									<li >
-										 <a href="#">3</a>
-									</li>
-									<li >
-										 <a href="#">4</a>
-									</li>
-									<li >
-										 <a href="#">5</a>
-									</li>
+								<ul class="list-group" id="question_list">
 								</ul>
 							</div>
 						</div>
@@ -441,6 +426,9 @@
 	</div>
 </div>
 </body>
-
+<script>
+	$("#question_list").html(generateList(qs));
+	
+</script>
 
 </html>

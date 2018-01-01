@@ -45,8 +45,6 @@ function closecard() {
 }
 
 
-var qslist;
-var i = 0;
 var qs = [];
 var ops = ["A", "B", "C", "D"];
 for (var i = 0; i < 10; i++) {
@@ -56,7 +54,6 @@ for (var i = 0; i < 10; i++) {
 	}
 	qs.push({ qid: i, question: "question " + i, options: opts, answer: "answer of " + i, type: "" });
 }
-i=-1;
 
 var blank_qs = [];
 for (var i = 0; i < 10; i++) {
@@ -72,10 +69,10 @@ function generateList(qs) {
 	var r = "";
 	var maxLength = 30;
 	for (var i = 0; i < qs.length; i++) {
-		var a = "<li onclick=\"alterQuestion(qs[" + i + "])\">";
-		r += a + qs[i].question.substring(0, maxLength) + "</li>";
+		var a = "<li><a herf=\"#\" onclick=\"alterQuestionbyNum(" + i + ")\">";
+		r += a + qs[i].question.substring(0, maxLength) + "</a></li>";
 	}
-	return "<div>" + r + "</div>";
+	return r;
 }
 
 function getQ(qid, type) {
@@ -96,53 +93,6 @@ function getQ(qid, type) {
 	return null;
 }
 
-qslist=[
-	{
-		"qid": 0,
-		"question": "这是第1题",
-		"options": { "A": "hello", "B": "yo", "C": "greetings" },
-		"answer": "第一题答案",
-		"type": ""
-	},
-
-
-	{
-		"qid": 1,
-		"question": "这是第2题",
-		"options": { "A": "你好", "B": "qaq", "C": "123" },
-		"answer": "第二题答案",
-		"type": ""
-	},
-
-
-	{
-		"qid": 2,
-		"question": "这是第3题",
-		"options": { "A": "red", "B": "yellow", "C": "green" },
-		"answer": "第三题答案",
-		"type": ""
-	},
-
-
-
-	{
-		"qid": 3,
-		"question": "这是第4题",
-		"options": { "A": "2", "B": "4", "C": "6" },
-		"answer": "第四题答案",
-		"type": ""
-	},
-
-
-	{
-		"qid": 4,
-		"question": "这是第5题",
-		"options": { "A": "f", "B": "u", "C": "c*" },
-		"answer": "第五题答案",
-		"type": ""
-	}
-]
-	
 function getQuestion() {
 	var getQuestionUrl = "";
 	var result;
@@ -164,20 +114,22 @@ function render(text) {
 		return katex.renderToString(word);
 	})
 }
-function alterQuestion(number) {
-	$("#question p").html(render(qslist[number].question), { displayMode: true }).attr("qid", qslist[number].qid);
+var current_index = -1;
+function alterQuestion(question) {
+	$("#question p").html(render(question.question), { displayMode: true }).attr("qid", question.qid);
 	$("#options").empty();
 	var a = "<li><input type = \"radio\" name = \"option\" value = \"";
 	var b = "\">";
 	var c = "</li>"
-	for (op in qslist[number].options) {
-		$("#options").append(a + op + b + render(qslist[number].options[op]) + c);
+	for (op in question.options) {
+		$("#options").append(a + op + b + render(question.options[op]) + c);
 	}
 }
 
-function alterQuestionbynum(num) {
-	i = parseInt(num);
-	alterQuestion(i);
+
+function alterQuestionbyNum(num) {
+	current_index = parseInt(num);
+	alterQuestion(qs[current_index]);
 }
 
 function alterprevQuestion() {
@@ -186,9 +138,11 @@ function alterprevQuestion() {
 }
 
 function alternextQuestion() {
-	i = i + 1;
+	current_index++;
 	$("#alertbox").hide();
-	alterQuestion(i);
+	if (current_index < qs.length)
+		alterQuestionbyNum(current_index);
+	else current_index--;
 }
 
 function checkAnswer() {
