@@ -57,6 +57,15 @@ for (var i = 0; i < 10; i++) {
 	qs.push({ qid: i, question: "question " + i, options: opts, answer: "answer of " + i, type: "" });
 }
 
+var blank_qs = [];
+for (var i = 0; i < 10; i++) {
+	blank_qs.push({ qid: i, question: "blank question " + i, answer: "answer of " + i, type: "blank" });
+}
+
+var cal_qs = [];
+for (var i = 0; i < 10; i++) {
+	cal_qs.push({ qid: i, question: "cal question " + i, answer: "answer of " + i, type: "cal" });
+}
 //根据参数qs生成列表，每个列表项可点击切换
 function generateList(qs) {
 	var r = "";
@@ -68,6 +77,23 @@ function generateList(qs) {
 	return "<div>" + r + "</div>";
 }
 
+function getQ(qid, type) {
+	if (type == "choice") {
+		if (qid < qs.length && qid >= 0)
+			return qs[qid];
+		else return null;
+	} else if (type == "blank") {
+		if (qid < blank_qs.length && qid >= 0)
+			return blank_qs[qid];
+		else return null;
+	}
+	else if (type == "cal") {
+		if (qid < cal_qs.length && qid >= 0)
+			return cal_qs[qid];
+		else return null;
+	}
+	return null;
+}
 
 var r1 =
 	{
@@ -148,21 +174,21 @@ function alterQuestion(quest) {
 }
 
 function alterQuestionbynum(num) {
-	i = parseInt(num);
-	r = eval("r" + i);
-	alterQuestion(r);
+	// i = parseInt(num);
+	// r = eval("r" + i);
+	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
 }
 
 function alterprevQuestion() {
-	i = i - 1;
-	r = eval("r" + i);
-	alterQuestion(r);
+	// i = i - 1;
+	// r = eval("r" + i);
+	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
 }
 
 function alternextQuestion() {
-	i = i + 1;
-	r = eval("r" + i);
-	alterQuestion(r);
+	// i = i + 1;
+	// r = eval("r" + i);
+	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
 }
 
 function checkAnswer() {
