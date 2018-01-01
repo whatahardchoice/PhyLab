@@ -188,6 +188,7 @@ function alterprevQuestion() {
 function alternextQuestion() {
 	i = i + 1;
 	$("#alertbox").hide();
+	$("#alertbox1").hide();
 	alterQuestion(i);
 }
 
@@ -228,6 +229,7 @@ function checkAnswer() {
 }
 
 function reAnswer() {
+	$("#alertbox1").show();
 	$("#result1-2").text(qslist[i].answer);
 }
 
