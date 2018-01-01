@@ -75,6 +75,7 @@ function generateList(qs) {
 	return r;
 }
 function alterQuestionList(type) {
+	showqslist();
 	$("#question_list").html(getNewQuestionList(type));
 }
 function getNewQuestionList(type)
