@@ -140,6 +140,7 @@ function alterprevQuestion() {
 function alternextQuestion() {
 	current_index++;
 	$("#alertbox").hide();
+	$("#alertbox1").hide();
 	if (current_index < qs.length)
 		alterQuestionbyNum(current_index);
 	else current_index--;
@@ -187,7 +188,7 @@ function showqslist(){
 
 function reAnswer() {
 	$("#alertbox1").show();
-	$("#result1-2").text(qslist[i].answer);
+	$("#result1-2").text(getAnswer());
 }
 
 
