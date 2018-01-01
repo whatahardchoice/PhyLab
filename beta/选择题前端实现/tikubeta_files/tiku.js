@@ -118,6 +118,7 @@ function getQuestion(num) {
 			}
 		}
 	);
+	result = { question: qs };
 	return result;
 }
 // 需要渲染的公式使用两对大括号包裹
