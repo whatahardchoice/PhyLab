@@ -45,7 +45,7 @@ function closecard() {
 }
 
 
-
+var qslist = new Array();
 var i = 0;
 var qs = [];
 var ops = ["A", "B", "C", "D"];
@@ -56,6 +56,7 @@ for (var i = 0; i < 10; i++) {
 	}
 	qs.push({ qid: i, question: "question " + i, options: opts, answer: "answer of " + i, type: "" });
 }
+i=-1;
 
 var blank_qs = [];
 for (var i = 0; i < 10; i++) {
@@ -140,7 +141,12 @@ var r5 =
 		answer: "第五题答案",
 		type: ""
 	};
-
+qslist[0]=r1;
+qslist[1]=r2;
+qslist[2]=r3;
+qslist[3]=r4;
+qslist[4]=r5;
+	
 function getQuestion() {
 	var getQuestionUrl = "";
 	var result;
@@ -162,33 +168,31 @@ function render(text) {
 		return katex.renderToString(word);
 	})
 }
-function alterQuestion(quest) {
-	$("#question p").html(render(quest.question), { displayMode: true }).attr("qid", quest.qid);
+function alterQuestion(number) {
+	$("#question p").html(render(qslist[number].question), { displayMode: true }).attr("qid", qslist[number].qid);
 	$("#options").empty();
 	var a = "<li><input type = \"radio\" name = \"option\" value = \"";
 	var b = "\">";
 	var c = "</li>"
-	for (op in quest.options) {
-		$("#options").append(a + op + b + render(quest.options[op]) + c);
+	for (op in qslist[number].options) {
+		$("#options").append(a + op + b + render(qslist[number].options[op]) + c);
 	}
 }
 
 function alterQuestionbynum(num) {
-	// i = parseInt(num);
-	// r = eval("r" + i);
-	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
+	i = parseInt(num);
+	alterQuestion(i);
 }
 
 function alterprevQuestion() {
-	// i = i - 1;
-	// r = eval("r" + i);
-	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
+	i = i - 1;
+	alterQuestion(i);
 }
 
 function alternextQuestion() {
-	// i = i + 1;
-	// r = eval("r" + i);
-	alterQuestion(getQ(Math.floor(Math.random()*10),"choice"));
+	i = i + 1;
+	$("#alertbox").hide();
+	alterQuestion(i);
 }
 
 function checkAnswer() {
@@ -228,8 +232,7 @@ function checkAnswer() {
 }
 
 function reAnswer() {
-	r = eval("r" + i);
-	$("#result1-2").text(r.answer);
+	$("#result1-2").text(qslist[i].answer);
 }
 
 
