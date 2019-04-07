@@ -17,7 +17,7 @@
               <input class="form-control" name="password" id="password" type="password" placeholder="密码">
             </div>
             <button id='quick-regist' class="btn register" type="button">注册</button>
-            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款。</P>
+            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</P>
           </form>
         </div>
       </div>
