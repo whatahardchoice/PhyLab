@@ -18,3 +18,5 @@ storage/*.key
 .env
 
 wecenter/system/config/database.php
+
+.idea/
