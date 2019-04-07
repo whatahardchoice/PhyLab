@@ -1,0 +1,36 @@
+<?php TPL::output('global/header_meta.tpl.htm'); ?>
+
+<div id="wrapper">
+	<div class="aw-login-box">
+		<div class="mod-body clearfix">
+			<div class="content pull-left">
+				<h1 class="logo"><a href=""></a></h1>
+				<h2><?php echo get_setting('site_name'); ?></h2>
+				<form id="login_form" method="post" onsubmit="return false" action="account/ajax/login_process/">
+					<input type="hidden" name="return_url" value="<?php echo $this->return_url; ?>" />
+					<ul>
+						<li>
+							<input type="text" id="aw-login-user-name" disabled="disabled" class="form-control" value="<?php echo $this->xel_auth; ?>" placeholder="<?php _e('邮箱'); ?> / <?php _e('用户名'); ?>" name="user_name" />
+						</li>
+						<li>
+							<input type="password" id="aw-login-user-password" disabled="disabled" value="cai_zhong_you_jiang" class="form-control" placeholder="<?php _e('密码'); ?>" name="password" />
+						</li>
+						<li class="alert alert-danger hide error_message">
+							<i class="icon icon-delete"></i> <em></em>
+						</li>
+						<li class="last">
+							<a href="javascript:;"  style="display:none" onclick="AWS.ajax_post($('#login_form'), AWS.ajax_processer, 'error_message');" id="login_submit" class="pull-right btn btn-large btn-primary"><?php _e('登录'); ?></a>
+							<label>
+								<input type="checkbox" style="display:none" value="1" name="net_auto_login" />
+							</label>
+						</li>
+					</ul>
+				</form>
+			</div>
+			<h1 style="margin-top:70px">正在登陆请稍后...</h1>
+	</div>
+</div>
+
+<script type="text/javascript" src="<?php echo G_STATIC_URL; ?>/js/app/login.js"></script>
+
+<?php TPL::output('global/footer.tpl.htm'); ?>
