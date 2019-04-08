@@ -23,7 +23,7 @@ if __name__ == '__main__':
         latex_head_file = open(texdir + 'Head.tex', 'r')
         latex_head = latex_head_file.read().decode('utf-8', 'ignore')
         latex_head_file.close();
-        latex_tail = "\n\\end{document}"
+        latex_tail = "\n\end{CJK*}\n\\end{document}"
         latex_body = ""
 
         try:
@@ -45,8 +45,8 @@ if __name__ == '__main__':
 
         os.chdir(os.path.dirname(sys.argv[3]))
         # 等于１时是错误
-        # use xelatex instead of pdflatex
-        ret = subprocess.call("xelatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
+
+        ret = subprocess.call("pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".aux", shell=True)
         # file not exist
         #subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
