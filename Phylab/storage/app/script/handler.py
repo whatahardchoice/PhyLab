@@ -46,7 +46,7 @@ if __name__ == '__main__':
         os.chdir(os.path.dirname(sys.argv[3]))
         # 等于１时是错误
 
-        ret = subprocess.call("pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
+        ret = subprocess.call("/usr/local/texlive/2018/bin/x86_64-linux/pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".aux", shell=True)
         # file not exist
         #subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
@@ -56,7 +56,7 @@ if __name__ == '__main__':
             print('{"status":"success"}')
         else:
             print('{"status":"fail", "msg":"fail to handle"}')
-            exit(1)
+            exit(ret)
 
     except Exception as e:
         # print(e.getTraceAsString())
