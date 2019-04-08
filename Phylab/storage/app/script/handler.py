@@ -23,7 +23,7 @@ if __name__ == '__main__':
         latex_head_file = open(texdir + 'Head.tex', 'r')
         latex_head = latex_head_file.read().decode('utf-8', 'ignore')
         latex_head_file.close();
-        latex_tail = "\n\\end{document}"
+        latex_tail = "\n\end{CJK*}\n\\end{document}"
         latex_body = ""
 
         try:
@@ -45,16 +45,18 @@ if __name__ == '__main__':
 
         os.chdir(os.path.dirname(sys.argv[3]))
         # 等于１时是错误
-        ret = subprocess.call("pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
+
+        ret = subprocess.call("/usr/local/texlive/2018/bin/x86_64-linux/pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".aux", shell=True)
-        subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
+        # file not exist
+        #subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".log", shell=True)
 
         if ret == 0:
             print('{"status":"success"}')
         else:
             print('{"status":"fail", "msg":"fail to handle"}')
-            exit(1)
+            exit(ret)
 
     except Exception as e:
         # print(e.getTraceAsString())
