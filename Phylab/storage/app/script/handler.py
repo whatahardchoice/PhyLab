@@ -45,9 +45,11 @@ if __name__ == '__main__':
 
         os.chdir(os.path.dirname(sys.argv[3]))
         # 等于１时是错误
-        ret = subprocess.call("pdflatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
+        # use xelatex instead of pdflatex
+        ret = subprocess.call("xelatex -interaction=nonstopmode " + sys.argv[3] + ".tex", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".aux", shell=True)
-        subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
+        # file not exist
+        #subprocess.call("rm " + sys.argv[3] + ".synctex*", shell=True)
         subprocess.call("rm " + sys.argv[3] + ".log", shell=True)
 
         if ret == 0:
