@@ -60,7 +60,7 @@
             <a class="btn btn-default navbar-btn sign-in " href="{{URL::route('login')}}" >登录</a>
             <a class="btn btn-default navbar-btn sign-up" href="{{URL::route('register')}}">注册</a>
             @else
-            <a id="username" class="btn btn-default navbar-btn username" href="../resources/views/user/">{{$username}}</a>
+            <a id="username" class="btn btn-default navbar-btn username" href="{{URL::route('user')}}">{{$username}}</a>
             <a class="btn btn-default navbar-btn sign-out" href="{{URL::route('logout')}}">登出</a>
             @endif
           </div>
