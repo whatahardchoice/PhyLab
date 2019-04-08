@@ -95,10 +95,13 @@ Route::get('/register', [
 /***
 // User routes
 ***/
+
 Route::get('/user',[
     'as'    =>  'user',
     'uses'  =>  'UserController@index',
     'middleware'    =>  'auth']);
+
+
 // user infomation edit
 Route::get('/user/edit',[
     'as'    =>  'userEdit',
