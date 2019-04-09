@@ -13,6 +13,8 @@
             <excludedPath path="/Phylab/vendor" />
             <excludedPath path="/Phylab/storage/framework/" />
             <excludedPath path="/wecenter/uploads" />
+            <excludedPath path="/Phylab/storage/app/xml_tmp" />
+            <excludedPath path="/Phylab/public/pdf_tmp" />
           </excludedPaths>
         </serverdata>
       </paths>
