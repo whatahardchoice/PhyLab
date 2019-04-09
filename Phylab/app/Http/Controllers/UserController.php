@@ -43,7 +43,8 @@ class UserController extends Controller
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
         #return view("user.index",$data);
-        return json_encode($data,JSON_UNESCAPED_UNICODE);
+        //return json_encode($data,JSON_UNESCAPED_UNICODE);
+        return view('user.index' , $data) ;
     }
 
     /**
