@@ -10,7 +10,7 @@
 
     <div class="row" style="margin-top:30px;padding:30px">
         <div style = "text-align: center ; padding-top:40px" class="col-xs-12 col-md-4">
-            <img src = "" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
+            <img src = "{{$avatarPath}}" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
 
             <h3>{{$username}}</h3>
 

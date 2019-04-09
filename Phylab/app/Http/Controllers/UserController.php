@@ -40,9 +40,10 @@ class UserController extends Controller
                  "companyAddr" =>  "",
                  "birthday"     =>  "",
                  "introduction" =>  "",
-                 "auth" => $authed];
+                 "auth" => $authed,
+                 "userId" => ""];
         $auth = Auth::user();
-        $data["avatarPath"] = $auth->avatar_path;
+        //$data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
         $data["studentId"] = $auth->student_id;
         $data["grade"] = $auth->grade ;
@@ -52,6 +53,25 @@ class UserController extends Controller
         $data["companyAddr"] = $auth->company_addr;
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
+        //$data["userId"] = $auth->id;
+
+        $uid = sprintf("%09d", $auth->id);
+        $dir1 = substr($uid, 0, 3);
+        $dir2 = substr($uid, 3, 2);
+        $dir3 = substr($uid, 5, 2);
+        $size = "max";
+
+
+        if (file_exists("/var/www/wecenter/uploads" . '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg'))
+        {
+            $data["avatarPath"] =  "http://47.94.228.157:8080/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
+        }
+        else
+        {
+            $data["avatarPath"] = "http://47.94.228.157:8080/wecenter/static" . '/common/avatar-' . $size . '-img.png';
+        }
+
+
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
         return view('user.index' , $data) ;
     }
