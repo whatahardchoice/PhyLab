@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="aliyun" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore" filePermissions="511" folderPermissions="511">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="aliyun" uploadOnCheckin="3abac7c6-6b02-42e1-b3d9-5aa98bbb8721" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore" filePermissions="511" folderPermissions="511" compareModeInSync="TIMESTAMP">
     <serverData>
       <paths name="aliyun">
         <serverdata>
@@ -12,9 +12,11 @@
             <excludedPath path="/Phylab/node_modules" />
             <excludedPath path="/Phylab/vendor" />
             <excludedPath path="/Phylab/storage/framework/" />
+            <excludedPath path="/wecenter/uploads" />
           </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="aliyun" />
   </component>
 </project>

@@ -140,7 +140,7 @@ class StarController extends Controller
     */
     public function delete(){
         $data = ["status"=>"",
-                 "messgae"=>""];
+                 "messgae"=>""]; //dont fix this
         $validatorRules = array(
                 'id' => 'required|integer|exists:stars,id,user_id,'.Auth::user()->id
             );
