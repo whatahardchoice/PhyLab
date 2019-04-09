@@ -24,12 +24,14 @@ class ReportController extends Controller
     public function index()
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
-        
-        $data = ['reports'=>array(),
-                'username'=>Auth::user()->name,
-                'auth'=>true];
+
         $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
 		$isAdmin=$exists;
+
+        $data = ['reports'=>array(),
+            'username'=>Auth::user()->name,
+            'auth'=>true,
+            'admin' => $isAdmin];
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
             if (!$isAdmin&&($report->status&1)==0) continue;

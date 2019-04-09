@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Console;
 use Auth;
 use Request;
 use App\Http\Requests;
@@ -17,11 +18,15 @@ class IndexController extends Controller
     public function index()
     {
         //显示主页
-        $data = ["auth" => false ,"username"    =>  ""];
+        $data = ["auth" => false ,"username"    =>  "", "admin"=>false];
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;
             $data["username"] = Auth::user()->name;
+            $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+            $isAdmin=$exists;
+            if ($isAdmin)
+                $data["admin"] = true;
         }
         else{
             //ToDo

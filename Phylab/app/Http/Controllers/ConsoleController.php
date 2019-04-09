@@ -20,7 +20,8 @@ class ConsoleController extends Controller {
         $data = ["reportTemplates"=>[],
                  "username"=>Auth::user()->name,
 				 "auth"=>$isAdmin,
-				 "status"=>SUCCESS_MESSAGE
+				 "status"=>SUCCESS_MESSAGE,
+                 "admin"=>$isAdmin
 				 ];
         $reports = Report::orderBy('experiment_id')->get();
         foreach ($reports as $report) {

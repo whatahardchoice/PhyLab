@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Console;
 use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -30,6 +31,8 @@ class UserController extends Controller
             return redirect('/index');
         }
 
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=$exists;
         $data = ["avatarPath"   =>  "",
                  "username"     =>  "",
                  "studentId"    =>  "",
@@ -41,7 +44,8 @@ class UserController extends Controller
                  "birthday"     =>  "",
                  "introduction" =>  "",
                  "auth" => $authed,
-                 "userId" => ""];
+                 "userId" => "",
+                 "admin" => $isAdmin];
         $auth = Auth::user();
         //$data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;

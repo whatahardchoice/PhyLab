@@ -60,6 +60,12 @@
             <li>
               <a style="font-size:16px" href="#">反馈</a>
             </li>
+            @if ($admin)
+            <li>
+              <a style="font-size:16px" href="{{URL::route('console')}}">控制台</a>
+            </li>
+            @endif
+
 		
           </ul>
           <div class="navbar-right btns">
