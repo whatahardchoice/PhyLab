@@ -31,7 +31,7 @@
         <div class="tab-pane fade in active" id="home">
             <div style="background-color: #ececf6;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding : 20px;">
 
-                <form class="form-horizontal" action="" >
+                <form class="form-horizontal" action="/user" >
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">名字</label>
                         <div class="col-sm-8">
@@ -41,12 +41,16 @@
                     <div class="form-group">
                         <label for = "sex" class = "col-sm-2 control-label" >性别</label>
                         <div id = "sex" class = "col-sm-8">
-                            <label class = "radio-inline col-sm-3">
+                            <label class = "radio-inline col-sm-2">
+                                <input type = "radio" name = "sex" id = "sex_radio1" value = "1"><span style = "margin-left: 5px">男</span>
+                            </label>
 
-                                <input type = "radio" name = "sex" id = "sex_radio1" value = "man"><span style = "margin-left: 5px">男</span></label>
-
-                            <label class = "radio-inline">
-                                <input type = "radio" name = "sex" id = "sex_radio2" value = "woman"><span style = "margin-left: 5px">女</span></label>
+                            <label class = "radio-inline col-sm-2" >
+                                <input type = "radio" name = "sex" id = "sex_radio2" value = "2"><span style = "margin-left: 5px">女</span>
+                            </label>
+                            <label class = "radio-inline col-sm-2"  >
+                                <input type = "radio" name = "sex" id = "sex_radio3" value = "3"><span style = "margin-left: 5px">保密</span>
+                            </label>
 
                         </div>
                     </div>
@@ -66,7 +70,7 @@
                     <div class="form-group">
                         <label for="email" class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="email" placeholder={{$email}}>
+                            <input type="text" class="form-control" id="email" placeholder={{$email}} readonly>
                         </div>
                     </div>
                     <div class = "form-group">
@@ -108,11 +112,8 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
 <!--自定义js脚本-->
-<script src="./js/global.js"></script>
-<script src="./js/login.js"></script>
-<script type="text/javascript">$('.carousel').carousel()</script>
-<script src="./js/statistics.js"></script>
-<script src="./js/regist.js"></script>
+<script src="./js/user.js"></script>
+
 
 
 </body>
