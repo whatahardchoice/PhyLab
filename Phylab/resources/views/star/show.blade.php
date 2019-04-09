@@ -1,6 +1,6 @@
 <html>
 <head>
-<script type="text/javascript" src="../js/pdfobject.js"></script>
+<script type="text/javascript" src="/js/pdfobject.js"></script>
 </head>
 <body>
 <div id="firefox_pdf" style="display:none">
@@ -10,10 +10,10 @@
 </div>
 <div id="chrom_pdf" style="width:100%;height:100%;display:none">
 </div>
-<script src="../js/global.js"></script>
+<script src="/js/global.js"></script>
 <script>
     cp("/star_pdf/{{$link}}");
 </script>
-<script src="../js/statistics.js"></script>
+<script src="/js/statistics.js"></script>
 </body>
 </html>

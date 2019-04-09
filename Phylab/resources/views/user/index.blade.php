@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>个人中心</title>
     <link rel = "stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -111,7 +111,7 @@
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">邮箱</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                        <input type="text" class="form-control" id="email" placeholder={{$email}}>
                     </div>
                 </div>
                 <div class = "form-group">
@@ -131,5 +131,23 @@
     </div>
 </div>
 
+<?php
+    $mysqli = mysqli_connect("localhost","manager" , "password" , "Phylab_db") ;
+
+    if (mysqli_connect_errno()){
+        echo "asd" ;
+    }
+    else{
+        $sql = "SELECT * FROM wc_users" ;
+        $res = mysqli_query($mysqli , $sql) ;
+
+        if ($res)
+            printf("%d" , mysqli_num_rows($res)) ;
+        else
+            echo "asd" ;
+    }
+
+?>
+<p>{{$username}}</p>
 </body>
 </html>
