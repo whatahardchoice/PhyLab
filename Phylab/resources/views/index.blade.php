@@ -273,7 +273,7 @@
       </div>
     </div>
     <div class="text-center copyright">
-      <span>Copyright @2016-2019 物理实验报告平台</span>
+      <span>Copyright @2016-2019 物理实验报告平台 {{$username}}</span>
     </div>
   </div>
 </footer>

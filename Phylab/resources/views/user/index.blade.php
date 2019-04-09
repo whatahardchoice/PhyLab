@@ -1,74 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>个人中心</title>
-    <link rel = "stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-</head>
-<body>
 
-<div class = "text-center" style = "margin-bottom: 0 ; height: 80px ; padding : 20px ; background-color: #ececf6">
-    <h1>PHYLAB</h1>
-</div>
-<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+@extends('layout.main')
 
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav" style = "margin-left: 50px">
-            <li class="nav-item">
-                <a class="nav-link" href="#">个人信息</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">收藏夹</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+@section('contents')
+
+
 <div class="container" style = "margin: 20px">
-    <!--
-    <div class = "row">
-        <h1 style = "margin-left: 30px ; margin-bottom: 30px;">PHYLAB</h1>
-    </div>
-    -->
-
-    <!--
-    <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            <a style = "width: 120px ; background-color: #5bc0de" class="p-2 text-muted" href="#">个人信息</a>
-            <a style = "width: 120px ; background-color: #5bc0de" class="p-2 text-muted" href="#">收藏夹</a>
-
-            <a class="p-2 text-muted" href="#"></a>
-            <a class="p-2 text-muted" href="#"></a>
-
-
-        </nav>
-    </div>
-    -->
-    <!--
-    <div class = "row">
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">菜鸟教程</a>
-                </div>
-                <div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">iOS</a></li>
-                        <li><a href="#">SVN</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    -->
 
     <div class="row">
 
         <div style = "text-align: center ; padding-top:40px" class="col-md-4 col-lg-4">
-            <img src = "" , alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
+            <img src = "" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
 
-            <h3>名字</h3>
+            <h3>{{$username}}</h3>
 
-            <h4>2016级</h4>
+            <h4>{{$grade}}级</h4>
         </div>
 
         <div class="col-md-8 col-lg-8" style="background-color: #ececf6;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding : 20px;">
@@ -82,32 +27,34 @@
                 <div class="form-group">
                     <label for="firstname" class="col-lg-3 control-label">名字</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                        <input type="text" class="form-control" id="firstname" placeholder={{$username}}>
                     </div>
                 </div>
                 <div>
                     <label for = "sex" class = "col-md-2 control-label" >性别</label>
                     <div id = "sex" class = "col-md-8">
                         <label class = "radio-inline col-md-3">
+
                             <input type = "radio" name = "sex" id = "sex_radio1" value = "man"><span style = "margin-left: 5px">男</span></label>
-                        </label>
+
                         <label class = "radio-inline">
                             <input type = "radio" name = "sex" id = "sex_radio2" value = "woman"><span style = "margin-left: 5px">女</span></label>
-                        </label>
+
                     </div>
                 </div>
                 <div class = "form-group">
                     <label for = "grade" class = "col-md-2 control-label">年级</label>
                     <div class="col-lg-8">
-                        <select class = "form-control" id = "grade">
-                            <option>2016级</option>
-                            <option>2017级</option>
-                            <option>2018级</option>
-                            <option>2019级</option>
-                            <option>2020级</option>
+                        <select class = "form-control" id = "grade" name = "grade">
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
                         </select>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">邮箱</label>
                     <div class="col-sm-8">
@@ -117,7 +64,7 @@
                 <div class = "form-group">
                     <label for = "intro" class = "col-md-2 control-label">简介</label>
                     <div class = "col-md-8">
-                        <textarea id="intro" class = "form-control" row = 4></textarea>
+                        <textarea id="intro" class = "form-control" row = 4 placeholder={{$introduction}}></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -131,23 +78,92 @@
     </div>
 </div>
 
-<?php
-    $mysqli = mysqli_connect("localhost","manager" , "password" , "Phylab_db") ;
+<footer id="site-footer">
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-4 clearfix footer-col">
+                    <div class="col-lx-12 text-center">
+                        <img id="footer-logo" src="./img/phylab_logo_single.svg"/>
+                        <div class="footer-slogan">PhyLab</div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="social-item footer-weixin-item">
+                            <i class="fa fa-weixin" aria-hidden="true"></i>
+                            <div class="footer-weixin">
+                                <img src="http://www.buaaphylab.com/img/1447574686560.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="social-item footer-qq-item">
+                            <i class="fa fa-qq"></i>
+                            <div class="footer-qq">
+                                QQ: 229407702 (实验网站交流群)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="social-item footer-blog-item">
+                            <a href="http://www.cnblogs.com/Default1406/" target="_blank ">
+                                <i class="fa fa-rss"></i>
+                            </a>
+                            <div class="footer-blog">
+                                Default2014
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+                    <div class="col-title ">团队</div>
+                    <a href="#" target="_blank">关于我们</a><br>
+                    <a href="#" target="_blank">联系我们</a><br>
+                    <a href="http://www.cnblogs.com/Default1406/" target="_blank ">加入我们</a><br>
+                    <a href="http://www.cnblogs.com/Default1406/" target="_blank ">技术博客</a><br>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+                    <div class="col-title ">合作</div>
+                    <a href="#" target="_blank ">上传资源</a><br>
+                    <a href="#" target="_blank ">教师合作</a><br>
+                    <a href="#" target="_blank ">友情链接</a>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+                    <div class="col-title ">模块</div>
+                    <a href="#" target="_blank ">实验</a><br>
+                    <a href="#" target="_blank ">社区</a><br>
+                    <a href="#" target="_blank ">反馈</a><br>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+                    <div class="col-title ">支持实验</div>
+                    <a href="./report" target="_blank ">1011</a><br>
+                    <a href="./report" target="_blank ">1021</a><br>
+                    <a href="./report" target="_blank ">1071</a><br>
+                    <a href="./report" target="_blank ">1081</a><br>
+                    <a href="./report" target="_blank ">1091</a><br>
+                    <a href="./report" , target="_blank ">全部</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center copyright">
+            <span>Copyright @2016-2019 物理实验报告平台 {{$username}}</span>
+        </div>
+    </div>
+</footer>
 
-    if (mysqli_connect_errno()){
-        echo "asd" ;
-    }
-    else{
-        $sql = "SELECT * FROM wc_users" ;
-        $res = mysqli_query($mysqli , $sql) ;
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./js/bootstrap.min.js"></script>
+<!--自定义js脚本-->
+<script src="./js/global.js"></script>
+<script src="./js/login.js"></script>
+<script type="text/javascript">$('.carousel').carousel()</script>
+<script src="./js/statistics.js"></script>
+<script src="./js/regist.js"></script>
 
-        if ($res)
-            printf("%d" , mysqli_num_rows($res)) ;
-        else
-            echo "asd" ;
-    }
 
-?>
-<p>{{$username}}</p>
 </body>
 </html>
+
+
+@stop

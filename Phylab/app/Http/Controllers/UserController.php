@@ -22,27 +22,36 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {       
+    {
+
+        $authed=Auth::check();
+
+        if (!$authed) {
+            return redirect('/index');
+        }
+
         $data = ["avatarPath"   =>  "",
                  "username"     =>  "",
                  "studentId"    =>  "",
                  "email"        =>  "",
                  "sex"          =>  "",
+                 "grade"        =>  "",
                  "company"      =>  "",
                  "companyAddr" =>  "",
                  "birthday"     =>  "",
-                 "introduction" =>  ""];
+                 "introduction" =>  "",
+                 "auth" => $authed];
         $auth = Auth::user();
         $data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
         $data["studentId"] = $auth->student_id;
+        $data["grade"] = $auth->grade ;
         $data["email"] = $auth->email;
         $data["sex"] = $auth->sex;
         $data["company"] = $auth->company;
         $data["companyAddr"] = $auth->company_addr;
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
-        #return view("user.index",$data);
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
         return view('user.index' , $data) ;
     }
@@ -60,7 +69,8 @@ class UserController extends Controller
                  "company"      =>  "",
                  "companyAddr" =>  "",
                  "birthday"     =>  "",
-                 "introduction" =>  ""];
+                 "introduction" =>  "" ,
+                 "student_id"    =>  ""];
         $auth = Auth::user();
         $data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
@@ -69,6 +79,7 @@ class UserController extends Controller
         $data["companyAddr"] = $auth->company_addr;
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
+        $data["student_id"] = $auth->student_id ;
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
         return view("user.edit",$data);
     }
