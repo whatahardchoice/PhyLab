@@ -107,7 +107,7 @@ Route::get('/user/edit',[
     'as'    =>  'userEdit',
     'uses'  =>  'UserController@edit',
     'middleware'    =>  'auth']);
-Route::put('/user',[
+Route::post('/user',[
     'uses'  =>  'UserController@update',
     'middleware'    =>  'auth']);
 // user's avatar upload

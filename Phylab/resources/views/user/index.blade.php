@@ -31,25 +31,24 @@
         <div class="tab-pane fade in active" id="home">
             <div style="background-color: #ececf6;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding : 20px;">
 
-                <form class="form-horizontal" action="/user" >
+                <form class="form-horizontal" action="/user" method="post" id="user-form" >
                     <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">名字</label>
+                        <label for="username" class="col-sm-2 control-label">名字</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="firstname" placeholder={{$username}}>
+                            <input type="text" class="form-control" id="username" name="username" value={{$username}}>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for = "sex" class = "col-sm-2 control-label" >性别</label>
                         <div id = "sex" class = "col-sm-8">
                             <label class = "radio-inline col-sm-2">
-                                <input type = "radio" name = "sex" id = "sex_radio1" value = "1"><span style = "margin-left: 5px">男</span>
+                                <input type = "radio" name = "sex" id = "sex_radio1" value = "1" @if($sex==1) checked @endif><span style = "margin-left: 5px">男</span>
                             </label>
-
                             <label class = "radio-inline col-sm-2" >
-                                <input type = "radio" name = "sex" id = "sex_radio2" value = "2"><span style = "margin-left: 5px">女</span>
+                                <input type = "radio" name = "sex" id = "sex_radio2" value = "2" @if($sex==2) checked @endif><span style = "margin-left: 5px">女</span>
                             </label>
                             <label class = "radio-inline col-sm-2"  >
-                                <input type = "radio" name = "sex" id = "sex_radio3" value = "3"><span style = "margin-left: 5px">保密</span>
+                                <input type = "radio" name = "sex" id = "sex_radio3" value = "3" @if($sex==3) checked @endif><span style = "margin-left: 5px">保密</span>
                             </label>
 
                         </div>
@@ -58,11 +57,12 @@
                         <label for = "grade" class = "col-sm-2 control-label">年级</label>
                         <div class="col-sm-8">
                             <select class = "form-control" id = "grade" name = "grade">
-                                <option>2016</option>
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                                <option>2020</option>
+                                <option value="" @if($grade==0) selected @endif disabled hidden>Choose here</option>
+                                <option @if($grade==2016) selected @endif value="2016">2016</option>
+                                <option @if($grade==2017) selected @endif value="2017">2017</option>
+                                <option @if($grade==2018) selected @endif value="2018">2018</option>
+                                <option @if($grade==2019) selected @endif value="2019">2019</option>
+                                <option @if($grade==2020) selected @endif value="2020">2020</option>
                             </select>
                         </div>
                     </div>
@@ -70,19 +70,19 @@
                     <div class="form-group">
                         <label for="email" class="col-sm-2 control-label">邮箱</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="email" placeholder={{$email}} readonly>
+                            <input type="text" class="form-control" id="email" value={{$email}} readonly>
                         </div>
                     </div>
                     <div class = "form-group">
                         <label for = "intro" class = "col-sm-2 control-label">简介</label>
                         <div class = "col-sm-8">
-                            <textarea id="intro" class = "form-control" row = 4 placeholder={{$introduction}}></textarea>
+                            <textarea id="intro" class = "form-control" row = 4 name="introduction" >{{$introduction}}</textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for = "update" class = "col-md-2 control-label"></label>
                         <div class="col-sm-8">
-                            <button id = "update" type="button" class="btn btn-success" style = "width: 100px">更新</button>
+                            <button id = "update" type="submit" class="btn btn-success" style = "width: 100px">更新</button>
                         </div>
                     </div>
                 </form>

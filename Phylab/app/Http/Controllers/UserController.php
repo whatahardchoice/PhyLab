@@ -133,7 +133,8 @@ class UserController extends Controller
                      'sex'=>'sex',
                      'company'=>'company',
                      'companyAddr'=>'company_addr',
-                     'introduction'=>'introduction'];
+                     'introduction'=>'introduction',
+                     'grade'=>'grade'];
         try{
             foreach ($userAttr as $key => $value) {
                 if(Request::has($key)){
