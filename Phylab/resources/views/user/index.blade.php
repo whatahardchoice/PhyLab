@@ -17,7 +17,7 @@
             <h4>{{$grade}}级</h4>
         </div>
 
-        <div class="col-md-8 col-xs-12" >
+        <div class="col-md-6 col-xs-12" >
     <ul id="myTab" class="nav nav-tabs">
         <li class="active">
             <a href="#home" data-toggle="tab">
@@ -29,7 +29,7 @@
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="home">
-            <div style="background-color: #ececf6;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding : 20px;">
+            <div style="background-color: #e4e4e4;padding:20px;">
 
                 <form class="form-horizontal" action="/user" method="post" id="user-form" >
                     <div class="form-group">

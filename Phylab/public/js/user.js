@@ -8,9 +8,9 @@ $(function() {
             data: form.serialize()
         }).done(function(data) {
             // Optionally alert the user of success here...
-            alert('update success')
+            alert('更新成功');
         }).fail(function(data) {
-            // Optionally alert the user of an error here...
+            alert("更新失败");
         });
     });
 });
