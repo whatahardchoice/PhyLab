@@ -65,14 +65,14 @@ def Holograph (loca,l,b,h,wl,m,source):
         n = abs((E - 70)/70)
 
         return env.from_string(source).render(
-			X = ,
-			Y = ,
-			B = ,
-			E = ,
-			u_B = ,
-			u_E = ,
-			final = , 
-			n = 
+			X = X,
+			Y = Y,
+			B = B,
+			E = phylab.ToScience(E),
+			u_B = phylab.ToScience(u_B),
+			u_E = phylab.ToScience(u_E),
+			final = final, 
+			n = n
 			)
         
         #print(X)
