@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller;
 
 class ToolsController extends Controller {
 	public function index(){
-	$data = ["auth" => false ,"username"    =>  ""];
+	$data = ["auth" => false ,"username"    =>  "","admin"=>false];
 	if(Auth::check()){
             //ToDo
             $data["auth"] = true;

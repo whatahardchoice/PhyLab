@@ -32,13 +32,20 @@
 <body>
   <header id="site-header">
     <div class="navbar navbar-inverse navbar-fixed-top header" role="navigation">
-      
-        <div class="navbar-header">
+
+        <div class="navbar-header" >
             <img  id="header-logo" src="./img/phylab_logo_single.svg"/>
 			<a class="navbar-brand" href="{{URL::route('index')}}"><span>PhyLab</span></a>
+
+
+          <button class="navbar-toggle" type="button" data-toggle="collapse"  data-target="#navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
-		
-        <nav class="collapse navbar-collapse navbar-responsive-collapse">
+
+        <nav class="collapse navbar-collapse navbar-responsive-collapse" id="navbar-collapse">
 		<div class="container">
           <ul class="nav navbar-nav navbar-left">
             <li>
@@ -53,6 +60,12 @@
             <li>
               <a style="font-size:16px" href="#">反馈</a>
             </li>
+            @if ($admin)
+            <li>
+              <a style="font-size:16px" href="{{URL::route('console')}}">控制台</a>
+            </li>
+            @endif
+
 		
           </ul>
           <div class="navbar-right btns">
@@ -66,8 +79,8 @@
           </div>
         </div>
 		</nav>
-		
-      
+
+
     </div>
   </header>
 

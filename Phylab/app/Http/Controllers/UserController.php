@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Console;
 use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -22,27 +23,59 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {       
+    {
+
+        $authed=Auth::check();
+
+        if (!$authed) {
+            return redirect('/index');
+        }
+
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=$exists;
         $data = ["avatarPath"   =>  "",
                  "username"     =>  "",
                  "studentId"    =>  "",
                  "email"        =>  "",
                  "sex"          =>  "",
+                 "grade"        =>  "",
                  "company"      =>  "",
                  "companyAddr" =>  "",
                  "birthday"     =>  "",
-                 "introduction" =>  ""];
+                 "introduction" =>  "",
+                 "auth" => $authed,
+                 "userId" => "",
+                 "admin" => $isAdmin];
         $auth = Auth::user();
-        $data["avatarPath"] = $auth->avatar_path;
+        //$data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
         $data["studentId"] = $auth->student_id;
+        $data["grade"] = $auth->grade ;
         $data["email"] = $auth->email;
         $data["sex"] = $auth->sex;
         $data["company"] = $auth->company;
         $data["companyAddr"] = $auth->company_addr;
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
-        #return view("user.index",$data);
+        //$data["userId"] = $auth->id;
+
+        $uid = sprintf("%09d", $auth->id);
+        $dir1 = substr($uid, 0, 3);
+        $dir2 = substr($uid, 3, 2);
+        $dir3 = substr($uid, 5, 2);
+        $size = "max";
+
+
+        if (file_exists("/var/www/wecenter/uploads" . '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg'))
+        {
+            $data["avatarPath"] =  "http://47.94.228.157:8080/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
+        }
+        else
+        {
+            $data["avatarPath"] = "http://47.94.228.157:8080/wecenter/static" . '/common/avatar-' . $size . '-img.png';
+        }
+
+
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
         return view('user.index' , $data) ;
     }
@@ -60,7 +93,8 @@ class UserController extends Controller
                  "company"      =>  "",
                  "companyAddr" =>  "",
                  "birthday"     =>  "",
-                 "introduction" =>  ""];
+                 "introduction" =>  "" ,
+                 "student_id"    =>  ""];
         $auth = Auth::user();
         $data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
@@ -69,6 +103,7 @@ class UserController extends Controller
         $data["companyAddr"] = $auth->company_addr;
         $data["birthday"] = $auth->birthday;
         $data["introduction"] = $auth->introduction;
+        $data["student_id"] = $auth->student_id ;
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
         return view("user.edit",$data);
     }
@@ -98,7 +133,8 @@ class UserController extends Controller
                      'sex'=>'sex',
                      'company'=>'company',
                      'companyAddr'=>'company_addr',
-                     'introduction'=>'introduction'];
+                     'introduction'=>'introduction',
+                     'grade'=>'grade'];
         try{
             foreach ($userAttr as $key => $value) {
                 if(Request::has($key)){
