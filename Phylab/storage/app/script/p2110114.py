@@ -15,7 +15,7 @@ def readXml2110114(root):
                 data += [trdata]
         return data
 
-def Holograph (loca,l,b,h,wl,m):
+def Holograph (loca,l,b,h,wl,m,source):
         #loca为一维数组，长度为8 单位：cm
         #l为铝板长，单位：mm
         #b为铝板宽，单位：mm
@@ -64,7 +64,16 @@ def Holograph (loca,l,b,h,wl,m):
         #求相对误差
         n = abs((E - 70)/70)
 
-        return final
+        return env.from_string(source).render(
+			X = ,
+			Y = ,
+			B = ,
+			E = ,
+			u_B = ,
+			u_E = ,
+			final = , 
+			n = 
+			)
         
         #print(X)
         #print(Y)
@@ -81,7 +90,7 @@ def handler(XML):
         source = file_object.read().decode('utf-8', 'ignore')
 	file_object.close()
 	data = readXml2110114(XML)
-	return Holograph(data[0][0] , data[1][0][0] , data[1][0][1] , data[1][0][2] , data[1][0][3] , data[1][0][4])
+	return Holograph(data[0][0] , data[1][0][0] , data[1][0][1] , data[1][0][2] , data[1][0][3] , data[1][0][4] , source)
 
 if __name__ == '__main__':
         scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
