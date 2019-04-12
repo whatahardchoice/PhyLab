@@ -2,6 +2,11 @@
 
 import phylab
 from math import sqrt
+from jinja2 import Environment
+from handler import texdir
+from handler import scriptdir
+
+env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
 LOCA = []
 LEN = 0
