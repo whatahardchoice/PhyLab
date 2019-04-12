@@ -69,7 +69,7 @@ def Holograph (loca,l,b,h,wl,m,source):
         Y.append((LEN3 - loca[i] * pow(10,-2)) * pow(loca[i],2) * pow(10,-4))
 
 
-    yi_n = Y
+    yi_n = [i for i in Y]
     yi_n.append(sum(Y))
     yi_n.append(sum(Y)/len(Y))
     YI = [phylab.ToScience(i) for i in yi_n]

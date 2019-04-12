@@ -20,3 +20,7 @@ storage/*.key
 wecenter/system/config/database.php
 
 .idea/
+
+star_pdf/
+xml_tmp/
+pdf_tmp/
