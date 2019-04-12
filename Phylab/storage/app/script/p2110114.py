@@ -44,17 +44,42 @@ def Holograph (loca,l,b,h,wl,m,source):
     #wl为激光波长，单位：nm
     #m为砝码质量，单位：g
 
+
+    LOCA = loca
+
+    FY = WEIGHT*9.8*0.001
+    LEN = l*0.001
+    LEN3 = LEN*3
+    LASER = phylab.ToScience(wl*1e-9)
+    WID = b*0.001
+    THIC = h*0.001
+
+    TEMP_RES_1 = phylab.ToScience(8*FY/LASER/WID/(pow(THIC,3)))
+
     X = []
     for i in range(1,9,1):
         X.append(2 * i - 1)
+
+    xi_n = [1,3,5,7,9,11,13,15,64,8]
 
     X.append(sum(X)/len(X))
 
     Y = []
     for i in range(0,len(loca),1):
-        Y.append((3 * l * pow(10,-3) - loca[i] * pow(10,-2)) * pow(loca[i],2) * pow(10,-4))
+        Y.append((LEN3 - loca[i] * pow(10,-2)) * pow(loca[i],2) * pow(10,-4))
+
+
+    yi_n = Y
+    yi_n.append(sum(Y))
+    yi_n.append(sum(Y)/len(Y))
+    YI = [phylab.ToScience(i) for i in yi_n]
+
+    XIYI = [phylab.ToScience(i*j) for i,j in zip(xi_n, yi_n)]
+    
 
     Y.append(sum(Y)/len(Y))
+
+
 
     #一元线性回归计算
     res = phylab.ULR(X,Y)
