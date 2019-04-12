@@ -3,6 +3,27 @@
 import phylab
 from math import sqrt
 
+LOCA = []
+LEN = 0
+WID = 0
+THIC = 0
+LASER = 0
+WEIGHT = 0
+
+FY = 0
+LEN3 = 0
+TEMP_RES_1 = 0
+YI = []
+XIYI = []
+A = 0
+E = 0
+SY = 0
+SA = 0
+UE = 0
+E_INT = 0
+ETA = 0
+
+
 def readXml2110114(root):
     table_list = root.getElementsByTagName("table")
     data = []
