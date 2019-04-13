@@ -60,7 +60,7 @@ def Holograph (loca,l,b,h,wl,m,source):
     WID = b*0.001
     THIC = h*0.001
 
-    TEMP_RES_1 = phylab.ToScience(8*FY/LASER/WID/(pow(THIC,3)))
+    TEMP_RES_1 = 8*FY/LASER/WID/(pow(THIC,3))
 
     X = []
     for i in range(1,9,1):
@@ -118,9 +118,7 @@ def Holograph (loca,l,b,h,wl,m,source):
 
     #求相对误差
     n = abs((E - 70)/70)
-    ETA = str(n*100)+"%"
-
-    
+    ETA = "%.2f %%" % (n*100)
 
     print X
     print Y
