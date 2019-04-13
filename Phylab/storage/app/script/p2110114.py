@@ -118,7 +118,8 @@ def Holograph (loca,l,b,h,wl,m,source):
 
     #求相对误差
     n = abs((E - 70)/70)
-    ETA = "%.2f %%" % (n*100)
+    ETA = "%.2f" % (n*100)
+    ETA =  ETA+"\%"
 
     print X
     print Y
