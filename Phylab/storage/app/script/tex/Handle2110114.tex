@@ -32,11 +32,11 @@
     \begin{equation}
     \begin{split}
     E&=\displaystyle\frac{8\times%%FY%%\timesx^2(3\times%%LEN%%-x)}{(2k-1)%%LASER%%\times%%WID%%\times%%THIC%%^3} Pa\\
-    &=\displaystyle\frac{%%TEMP_RES_1%%\dot x^2 (%%LEN3%% -x)}{2k-1} Pa
+    &=\displaystyle\frac{ %%TEMP_RES_1%%\dot x^2 (%%LEN3%% -x)}{2k-1} Pa
     \end{split}
     \end{equation}
-	则可得$x^2(%%LEN3%%-x)= \displaystyle\frac{E}{%%TEMP_RES_1%%}{(2k-1)}$(数值)\\
-	令$Y = x^2(%%LEN3%%-x)$，$X= 2k-1$，则$Y=\displaystyle\frac{E}{%%TEMP_RES_1%%}{X}$，令$Y = AX$\\
+	则可得$x^2(%%LEN3%%-x)= \displaystyle\frac{E}{ %%TEMP_RES_1%% }{(2k-1)}$(数值)\\
+	令$Y = x^2(%%LEN3%%-x)$，$X= 2k-1$，则$Y=\displaystyle\frac{E}{ %%TEMP_RES_1%% }{X}$，令$Y = AX$\\
 	知Y与X成线性关系，则可用一元线性回归法求解。\\
 	由原始数据可求得X，Y，XY列表如下\\
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -56,8 +56,8 @@
 	\end{tabular}\\
 	由一元线性回归法可知：\\
 	$A= \displaystyle\frac{\bar{X}\bar{Y}- \bar{XY}}{\bar{X}^2-\bar{X^2}}=%%A%%$\\
-	即$\displaystyle\frac{E}{%%TEMP_RES_1%%}=A=%%A%%$\\
-	则$E={%%TEMP_RES_1%%}×%%A%%=%%E%%$
+	即$\displaystyle\frac{E}{ %%TEMP_RES_1%% }=A=%%A%%$\\
+	则$E={ %%TEMP_RES_1%% }×%%A%%=%%E%%$
 	\item 计算不确定度(不要求)\\
 	$S(Y) = \sqrt{\displaystyle\frac{\sum (Y_i-Ax_i)^2}{k-2}} = %%SY%%$\\
 	$S(A) = S(Y)\cdot\sqrt{\displaystyle\frac{1}{k(\bar{x^2}-\bar{x}^2)}} = %%SA%%$\\
