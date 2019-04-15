@@ -12,6 +12,7 @@ output:
 import xml.dom.minidom
 from jinja2 import Environment
 from handler import texdir
+from handler import scriptdir
 from phylab import *
 
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
@@ -155,8 +156,7 @@ def handler(XML):
 
 
 if __name__ == '__main__':
-    scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'
-    texdir = scriptdir + 'tex/'
+
     dom = xml.dom.minidom.parse(scriptdir + 'test/1060111test/1060111.xml')
     root = dom.documentElement
     print handler(root)
