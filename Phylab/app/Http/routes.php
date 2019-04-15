@@ -216,6 +216,12 @@ Route::get('/console',
 	'middleware' => 'auth'
 	]);
 
+Route::post('/console/uploadPre',
+    [
+       'uses' => 'ConsoleController@uploadPreparePdf',
+       'middleware' => 'auth'
+    ]);
+
 Route::get('/getScript',
     [
     'uses' => 'ConsoleController@getScript',

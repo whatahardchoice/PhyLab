@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Phylab/app" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/.vscode" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/classpreloader/classpreloader" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/danielstjules/stringy" />

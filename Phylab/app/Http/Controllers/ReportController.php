@@ -116,7 +116,7 @@ class ReportController extends Controller
         $experimentId = Request::get('id');
         $output = array();
         $test = Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
-        $system = exec('python '. Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+        $system = exec('timeout 120 python '. Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
         if($reval==0){
             $system = json_decode($system);
                 if($system->status== SUCCESS_MESSAGE){
@@ -127,7 +127,7 @@ class ReportController extends Controller
                 }
         }else{
             $data["status"]=FAIL_MESSAGE;
-            $data["message"]="生成脚本生成失败";
+            $data["message"]="生成脚本生成失败: ". $reval;
             $data["test"]= $test;
         }
         // if($scriptLink!=null){

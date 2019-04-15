@@ -145,4 +145,13 @@ class ConsoleController extends Controller {
 		return response()->json($result);
 	}
 
+    public function uploadPreparePdf()
+    {
+        $exists = Auth::check() && ((Console::where('email', '=', Auth::user()->email)->get()->count()) > 0);
+        $isAdmin = $exists;
+        if (!$isAdmin) {
+            return redirect('/index');
+        }
+    }
+
 }

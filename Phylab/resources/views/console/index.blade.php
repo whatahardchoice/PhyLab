@@ -94,6 +94,36 @@
                           </div>
                       </div>
                   </div>
+                <button id="add-labpreview-btn" class="btn btn-success" data-toggle="modal" data-target="#upload_preview_modal" style="border-radius: 4px;">
+                    <i class="fa fa-folder"></i>
+                    上传实验预习报告
+                </button>
+                <div class="modal fade" id="upload_preview_modal" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+                  <div class="modal-dialog" style="width: 38%;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="collection-folder-label">上传实验预习报告</h4>
+                      </div>
+                      <form action="/console/uploadPre" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                          <input type="file" id="input-prepare-pdf" name="prepare-pdf">
+                          <p class="help-block">请务必先选择一个实验，文件类型限制为PDF，大小不能超过5M</p>
+                        </div>
+
+                        <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
+                          <div style="float:right">
+                            <button type="submit" id="btn-upload-preview" class="btn btn-large btn-danger">
+                              上传
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+
+
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-md-1 hidden-md">
                 <h4 class="panel-title text-center" style="position: absolute; left: 45%;">
