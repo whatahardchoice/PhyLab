@@ -10,24 +10,24 @@ import xml.dom.minidom
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
 LOCA = []
-LEN = 0
-WID = 0
-THIC = 0
-LASER = 0
-WEIGHT = 0
+LEN = 0.0
+WID = 0.0
+THIC = 0.0
+LASER = 0.0
+WEIGHT = 0.0
 
-FY = 0
-LEN3 = 0
-TEMP_RES_1 = 0
+FY = 0.0
+LEN3 = 0.0
+TEMP_RES_1 = 0.0
 YI = []
 XIYI = []
-A = 0
-E = 0
-SY = 0
-SA = 0
-UE = 0
-E_INT = 0
-ETA = 0
+A = 0.0
+E = 0.0
+SY = 0.0
+SA = 0.0
+UE = 0.0
+E_INT = 0.0
+ETA = 0.0
 
 
 def readXml2110114(root):
@@ -52,7 +52,7 @@ def Holograph (loca,l,b,h,wl,m,source):
 
 
     LOCA = loca
-
+    WEIGHT = m
     FY = WEIGHT*9.8*0.001
     LEN = l*0.001
     LEN3 = LEN*3
@@ -60,7 +60,14 @@ def Holograph (loca,l,b,h,wl,m,source):
     WID = b*0.001
     THIC = h*0.001
 
+    print FY
+    print LEN
+    print WID
+    print LASER
+    print THIC
+
     TEMP_RES_1 = 8*FY/LASER/WID/(pow(THIC,3))
+    print TEMP_RES_1
 
     X = []
     for i in range(1,9,1):
@@ -133,22 +140,27 @@ def Holograph (loca,l,b,h,wl,m,source):
 
     return env.from_string(source).render(
         LOCA = LOCA,
+        LEN_O = l,
+        WID_O = b,
+        THIC_O = h,
+        LASER_O = wl,
+        WEIGHT_O = m,
         LEN = LEN,
         WID = WID,
         THIC = THIC,
-        LASER = LASER,
+        LASER = phylab.ToScience(LASER),
         WEIGHT=WEIGHT,
         FY = FY,
         LEN3 = LEN3,
-        TEMP_RES_1 = TEMP_RES_1,
+        TEMP_RES_1 = phylab.ToScience(TEMP_RES_1),
         YI = YI,
         XIYI = XIYI,
-        A = A,
-        E = E,
-        SA = SA,
-        SY = SY,
-        E_INT = round(E),
-        UE = UE,
+        A = phylab.ToScience(A),
+        E = phylab.ToScience(E),
+        SA = phylab.ToScience(SA),
+        SY = phylab.ToScience(SY),
+        E_INT = int(round(E)),
+        UE = int(round(UE)),
         ETA = ETA)
 
         # E = phylab.ToScience(E),

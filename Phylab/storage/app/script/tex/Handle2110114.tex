@@ -21,7 +21,7 @@
 		\hline
 		铝板长l(mm) & 铝板宽b(mm) & 铝板厚h(mm) & 激光波长(nm) & 砝码质量(g) \\
 		\hline
-		%%LEN%% & %%WID%% & %%THIC%% & %%LASER%% & %%WEIGHT%% \\
+		%%LEN_O%% & %%WID_O%% & %%THIC_O%% & %%LASER_O%% & %%WEIGHT_O%% \\
 		\hline
 	\end{tabular}
 	\item 数据计算\\
@@ -33,7 +33,7 @@
     &=\displaystyle\frac{ %%TEMP_RES_1%%\dot x^2 (%%LEN3%% -x)}{2k-1} Pa
     \end{split}
     \end{equation}
-	则可得$x^2(%%LEN3%%-x)= \displaystyle\frac{E}{ %%TEMP_RES_1%% }{(2k-1)}$(数值)\\
+	则可得$x^2(%%LEN3%%-x)= \displaystyle\frac{E}{ %%TEMP_RES_1%% }{(2k-1)}$	(数值)\\
 	令$Y = x^2(%%LEN3%%-x)$，$X= 2k-1$，则$Y=\displaystyle\frac{E}{ %%TEMP_RES_1%% }{X}$，令$Y = AX$\\
 	知Y与X成线性关系，则可用一元线性回归法求解。\\
 	由原始数据可求得X，Y，XY列表如下\\
