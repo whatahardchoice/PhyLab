@@ -444,7 +444,15 @@ $("#btn-upload-preview").click(function () {
     let file = $("#input-prepare-pdf").get(0).files[0];
     formData.append("prepare-pdf", file);
     formData.append("labID", CUR_LAB_GROUP);
-    $.post('./console/uploadPre', formData)
+    $.ajax({
+        type:"POST",
+        url:"./console/uploadPre",
+        data:formData,
+        contentType:'multipart/form-data',
+        mimeType:'multipart/form-data',
+        processData:false
+        }
+    )
         .done(function (data) {
             alert(data.message);
         })
