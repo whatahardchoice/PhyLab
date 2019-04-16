@@ -68,7 +68,7 @@
           <div class="panel-heading"  style="border: solid;border-width: 0px;height: 40px;">
             <div class="panel-title row">
               <div class="btn-group col-xs-12 col-md-5">
-                <button id="new-sublab-btn" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px;">
+                <button id="new-sublab-btn" class="btn btn-success" data-toggle="modal" data-target="#collection-folder" style="border-radius: 4px 0 0 4px;">
                   <i class="fa fa-folder"></i>
                   新增实验
                 </button>
@@ -94,7 +94,7 @@
                           </div>
                       </div>
                   </div>
-                <button id="add-labpreview-btn" class="btn btn-success" data-toggle="modal" data-target="#upload_preview_modal" style="border-radius: 4px;">
+                <button id="add-labpreview-btn" class="btn btn-success" data-toggle="modal" data-target="#upload_preview_modal" style="border-radius: 0 4px 4px 0;">
                     <i class="fa fa-folder"></i>
                     上传实验预习报告
                 </button>
@@ -162,6 +162,11 @@
                     <span class="sr-only">y</span>
                     <i class="fa fa-save"></i>
                     <span id="collect-report-text">保存实验</span>
+                </button>
+                <button id="btn-test-generate" class="btn btn-success"style="border-radius: 0 0 0 0;width: 10%;">
+                    <span class="sr-only">y</span>
+                    <i class="fa fa-check"></i>
+                    <span id="collect-report-text">运行测试</span>
                 </button>
                 <button id="button-push-script" class="btn btn-success"style="border-radius: 0 4px 4px 0;width: 10%;">
                     <span class="sr-only">y</span>

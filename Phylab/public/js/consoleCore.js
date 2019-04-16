@@ -411,6 +411,7 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
+    $("#labdoc").html(tableedit.getValue());
     $.post('./report/updatereport', {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
@@ -441,7 +442,6 @@ $("#add-labpreview-btn").click(function () {
 
     if (typeof CUR_LAB_GROUP === 'undefined')
     {
-
         alert("请先选择实验！");
         return false;
     }
@@ -487,8 +487,25 @@ $("#btn-upload-preview").click(function () {
         })
         .fail(function (xhr, status) {
             alert('失败: ' + xhr.status + ', 原因: ' + status);
-        })
+        });
 
     $('#upload_preview_modal').modal('hide'); //or  $('#IDModal').modal('hide');
     return false;
+});
+
+$("#btn-test-generate").click(function () {
+
+    var xmlString = SetXMLDoc_lab();
+    if (xmlString === null)
+        return;
+    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+
+    $.post("./report", {
+        'id':CUR_SUBLAB,
+        "xml":xmlString
+    }).done(function (data) {
+        alert(data.message);
+    }).fail(function (xhr, status) {
+        alert('失败: ' + xhr.status + ', 原因: ' + status);
+    });
 });
