@@ -105,7 +105,7 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title" id="collection-folder-label">上传实验预习报告</h4>
                       </div>
-                      <form action="/console/uploadPre" method="POST" enctype="multipart/form-data">
+                      <!--form id="preview-pdf-form" action="/console/uploadPre" method="POST" enctype="multipart/form-data"-->
                         <div class="form-group">
                           <input type="file" id="input-prepare-pdf" name="prepare-pdf">
                           <p class="help-block">请务必先选择一个实验，文件类型限制为PDF，大小不能超过5M</p>
@@ -118,7 +118,7 @@
                             </button>
                           </div>
                         </div>
-                      </form>
+                      <!--/form-->
 
 
                     </div>

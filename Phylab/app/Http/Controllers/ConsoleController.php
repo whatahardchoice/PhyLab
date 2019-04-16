@@ -162,10 +162,11 @@ class ConsoleController extends Controller {
         if (Request::hasFile('prepare-pdf'))
         {
             $pdfFile = Request::file('prepare-pdf');
+            $labID = $_POST['labID'];
             if (preg_match('/^pdf$/', $pdfFile->getClientOriginalExtension()) &&
                     $pdfFile->getSize() < Config::get('phylab.maxUploadSize'))
             {
-                $fname = ''; //TODO use lab id instead
+                $fname = $labID . '.pdf'; //TODO use lab id instead
                 $pdfFile->move(Config::get('phylab.preparePath'), $fname);
 
             }

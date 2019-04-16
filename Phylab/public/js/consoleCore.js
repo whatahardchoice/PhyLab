@@ -421,7 +421,7 @@ $('#button-save-script').click(function () {
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
-})
+});
 
 $('#button-push-script').click(function () {
     $.post('./report/confirmReport', {
@@ -431,4 +431,27 @@ $('#button-push-script').click(function () {
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
-})
+});
+
+/*
+	WAHC 2019
+*/
+
+$("#btn-upload-preview").click(function () {
+
+    //e.preventDefault();
+    let formData = new FormData();
+    let file = $("#input-prepare-pdf").get(0).files[0];
+    formData.append("prepare-pdf", file);
+    formData.append("labID", CUR_LAB_GROUP);
+    $.post('./console/uploadPre', formData)
+        .done(function (data) {
+            alert(data.message);
+        })
+        .fail(function (xhr, status) {
+            alert('失败: ' + xhr.status + ', 原因: ' + status);
+        })
+
+    $('#upload_preview_modal').modal('toggle'); //or  $('#IDModal').modal('hide');
+    return false;
+});
