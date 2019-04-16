@@ -448,8 +448,7 @@ $("#btn-upload-preview").click(function () {
         type:"POST",
         url:"./console/uploadPre",
         data:formData,
-        contentType:'multipart/form-data',
-        mimeType:'multipart/form-data',
+        contentType:false,
         processData:false
         }
     )

@@ -168,7 +168,8 @@ class ConsoleController extends Controller {
             {
                 $fname = $labID . '.pdf'; //TODO use lab id instead
                 $pdfFile->move(Config::get('phylab.preparePath'), $fname);
-
+                $data['status']=SUCCESS_MESSAGE;
+                $data['message']="上传成功";
             }
             else
             {
