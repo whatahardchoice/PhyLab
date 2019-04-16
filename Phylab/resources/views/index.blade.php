@@ -219,7 +219,7 @@
             <div class="social-item footer-weixin-item">
               <i class="fa fa-weixin" aria-hidden="true"></i>
               <div class="footer-weixin">
-                <img src="http://www.buaaphylab.com/img/1447574686560.jpg">
+                <img src="./img/1447574686560.jpg">
               </div>
             </div>
           </div>

@@ -4,10 +4,15 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Phylab/app" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/.vscode" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/barryvdh/laravel-ide-helper" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/barryvdh/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/classpreloader/classpreloader" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/danielstjules/stringy" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/fzaninotto/faker" />
@@ -23,7 +28,9 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/php-diff" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/phpspec" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/prophecy" />
@@ -44,6 +51,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/sebastian/version" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/class-loader" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/debug" />
@@ -52,12 +60,17 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/polyfill-util" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,10 +1,15 @@
 <?php namespace App\Http\Controllers;
 
+use App\Exceptions\App\InvalidFileFormatException;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\Models\Report;
 use App\Models\Console;
 use Auth;
 use Config;
+use Exception;
+use Request;
+
 
 
 class ConsoleController extends Controller {
@@ -152,6 +157,29 @@ class ConsoleController extends Controller {
         if (!$isAdmin) {
             return redirect('/index');
         }
+        $data = ["status"=>"","message"=>""];
+
+        if (Request::hasFile('prepare-pdf'))
+        {
+            $pdfFile = Request::file('prepare-pdf');
+            if (preg_match('/^pdf$/', $pdfFile->getClientOriginalExtension()) &&
+                    $pdfFile->getSize() < Config::get('phylab.maxUploadSize'))
+            {
+                $fname = ''; //TODO use lab id instead
+                $pdfFile->move(Config::get('phylab.preparePath'), $fname);
+
+            }
+            else
+            {
+                throw new InvalidFileFormatException();
+            }
+        }
+        else
+        {
+            throw new InvalidFileFormatException();
+        }
+
+        return response()->json($data);
     }
 
 }

@@ -56,6 +56,19 @@
       <path value="$PROJECT_DIR$/Phylab/vendor/danielstjules/stringy" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/Phylab/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/class-loader" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
