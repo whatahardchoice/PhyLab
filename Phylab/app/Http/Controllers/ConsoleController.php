@@ -173,12 +173,14 @@ class ConsoleController extends Controller {
             }
             else
             {
-                throw new InvalidFileFormatException();
+                $data["status"]=FAIL_MESSAGE;
+                $data["message"] = "上传失败，文件格式或大小不符合要求！";
             }
         }
         else
         {
-            throw new InvalidFileFormatException();
+            $data["status"]=FAIL_MESSAGE;
+            $data["message"] = "上传失败，没有找到文件！";
         }
 
         return response()->json($data);

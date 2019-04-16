@@ -437,11 +437,41 @@ $('#button-push-script').click(function () {
 	WAHC 2019
 */
 
+$("#add-labpreview-btn").click(function () {
+
+    if (typeof CUR_LAB_GROUP === 'undefined')
+    {
+
+        alert("请先选择实验！");
+        return false;
+    }
+
+})
+
 $("#btn-upload-preview").click(function () {
 
+
+    if (typeof CUR_LAB_GROUP === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
     //e.preventDefault();
     let formData = new FormData();
     let file = $("#input-prepare-pdf").get(0).files[0];
+    if (file.name.split('.').pop() != "pdf")
+    {
+        alert("文件格式不正确！");
+        return false;
+    }
+    if (file.size > 5242800)
+    {
+        alert("文件过大了！");
+        return false;
+    }
+
+
     formData.append("prepare-pdf", file);
     formData.append("labID", CUR_LAB_GROUP);
     $.ajax({
@@ -459,6 +489,6 @@ $("#btn-upload-preview").click(function () {
             alert('失败: ' + xhr.status + ', 原因: ' + status);
         })
 
-    $('#upload_preview_modal').modal('toggle'); //or  $('#IDModal').modal('hide');
+    $('#upload_preview_modal').modal('hide'); //or  $('#IDModal').modal('hide');
     return false;
 });
