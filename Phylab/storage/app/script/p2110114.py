@@ -38,7 +38,7 @@ def readXml2110114(root):
         trdata = []
         for tr in table_tr_list:
             tr_td_list = tr.getElementsByTagName("td")
-            trdata += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
+            trdata += [[float(x.firstChild.nodeValue) for x in tr_td_list]]
         data += [trdata]
     return data
 
@@ -60,14 +60,14 @@ def Holograph (loca,l,b,h,wl,m,source):
     WID = b*0.001
     THIC = h*0.001
 
-    print FY
-    print LEN
-    print WID
-    print LASER
-    print THIC
+    print(FY)
+    print(LEN)
+    print(WID)
+    print(LASER)
+    print(THIC)
 
     TEMP_RES_1 = 8*FY/LASER/WID/(pow(THIC,3))
-    print TEMP_RES_1
+    print(TEMP_RES_1)
 
     X = []
     for i in range(1,9,1):
@@ -128,14 +128,14 @@ def Holograph (loca,l,b,h,wl,m,source):
     ETA = "%.2f" % (n*100)
     ETA =  ETA+"\%"
 
-    print X
-    print Y
-    print A
-    print E
-    print u_A
-    print u_E
-    print final
-    print ETA
+    print(X)
+    print(Y)
+    print(A)
+    print(E)
+    print(u_A)
+    print(u_E)
+    print(final)
+    print(ETA)
 
 
     return env.from_string(source).render(
@@ -145,13 +145,13 @@ def Holograph (loca,l,b,h,wl,m,source):
         THIC_O = h,
         LASER_O = wl,
         WEIGHT_O = m,
-        LEN = LEN,
-        WID = WID,
-        THIC = THIC,
+        LEN = "%.6g" % LEN,
+        WID = "%.6g" % WID,
+        THIC = "%.6g" %THIC,
         LASER = phylab.ToScience(LASER),
         WEIGHT=WEIGHT,
         FY = FY,
-        LEN3 = LEN3,
+        LEN3 = "%.6g" % LEN3,
         TEMP_RES_1 = phylab.ToScience(TEMP_RES_1),
         YI = YI,
         XIYI = XIYI,
@@ -173,8 +173,8 @@ def Holograph (loca,l,b,h,wl,m,source):
 
 
 def handler(XML):
-    file_object = open(texdir + "Handle2110114.tex" , "r")
-    source = file_object.read().decode('utf-8', 'ignore')
+    file_object = open(texdir + "Handle2110114.tex" , "r", encoding='utf-8')
+    source = file_object.read()
     file_object.close()
     data = readXml2110114(XML)
     return Holograph(data[0][0] , data[1][0][0] , data[1][0][1] , data[1][0][2] , data[1][0][3] , data[1][0][4] , source)
@@ -185,6 +185,6 @@ if __name__ == '__main__':
     root = ''
     dom=xml.dom.minidom.parse(scriptdir + 'test/2110114test/2110114.xml')
     root = dom.documentElement
-    print handler(root)
+    print(handler(root))
 
 #Holograph([0,0.35,0.63,0.92,1.12,1.30,1.41,1.63],70,40,1.54,632.8,10)

@@ -161,7 +161,7 @@ def ReadXml10611(sublab_root):
     #载入数据处理模板
     file_object = open("/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Handle10611.tex","r")
     #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
 
     exper_1 = []
     exper_2 = []
@@ -239,7 +239,7 @@ def ReadXml10613(sublab_root):
     #载入数据处理模板
     file_object = open("/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Handle10613.tex","r")
     #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     exper = []
     sublab_table_list = sublab_root.getElementsByTagName("table")
     for table in sublab_table_list:
@@ -300,7 +300,7 @@ def ReadXml10612(sublab_root):
     #载入数据处理模板
     file_object = open("/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Handle10612.tex","r")
     #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     exper = []
     sublab_table_list = sublab_root.getElementsByTagName("table")
 
@@ -329,7 +329,7 @@ def ReadXml10612(sublab_root):
 
 def ReadXmlTop():
     latex_head_file = open('/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Head.tex','r')
-    latex_head = latex_head_file.read().decode('utf-8', 'ignore')
+    latex_head = latex_head_file.read()
     latex_tail = "\n\\end{document}"
     latex_body = ""
 
@@ -356,7 +356,7 @@ if __name__ == '__main__':
     try:
         finish_str = ReadXmlTop()
         finish_file = open(sys.argv[2]+".tex","w")
-        finish_file.write(finish_str.encode('utf-8', 'ignore'))
+        finish_file.write(finish_str)
         finish_file.close()
         #等于１时是错误
         ret =  subprocess.call("pdflatex -interaction=nonstopmode "+sys.argv[2]+".tex",shell=True)

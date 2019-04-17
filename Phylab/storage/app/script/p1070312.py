@@ -76,8 +76,8 @@ def handler(xml):
     xmlReader(xml)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1070312.tex", "r")
-    latex = file_object.read().decode('utf-8', 'ignore')
+    file_object = open(texdir + "/Handle1070312.tex", "r",encoding='utf-8')
+    latex = file_object.read()
     return lexFiller(latex)
 
 
@@ -88,7 +88,7 @@ def niconiconi():
     u_A_r = u_A * pi / 180
     k = len(angle_a1)
     if k == 0:
-        print "illegal input"
+        print("illegal input")
         return
     for i in range(k):
         angle_delta.append((((angle_a2[i] - angle_a1[i]) + (angle_b2[i] - angle_b1[i])) % 360) / 2)

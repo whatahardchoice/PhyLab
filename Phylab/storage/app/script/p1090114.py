@@ -51,8 +51,8 @@ def handler(xml):
     xmlReader(xml)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1090114.tex", "r")
-    latex = file_object.read().decode('utf-8', 'ignore')
+    file_object = open(texdir + "/Handle1090114.tex", "r",encoding='utf-8')
+    latex = file_object.read()
     return lexFiller(latex)
 
 
@@ -176,14 +176,14 @@ def Ua(x, aver, k):
 
 if __name__ == '__main__':
     d_list = [51.05257, 51.08570, 51.11871, 51.15150, 51.18287, 51.21456, 51.25132, 51.28370, 51.31506, 51.34883]
-    fileTex = open('./1090114test/1090114test.tex', 'w')
-    text = handler("").encode('utf-8')
+    fileTex = open('./1090114test/1090114test.tex', 'w',encoding='utf-8')
+    text = handler("")
     fileTex.write(text)
     fileTex.close()
-    print delta_d
-    print average_delta_d
-    print lam
-    print ua_delta_d
-    print u_delta_d
-    print u_lam
-    print answer
+    print(delta_d)
+    print(average_delta_d)
+    print(lam)
+    print(ua_delta_d)
+    print(u_delta_d)
+    print(u_lam)
+    print(answer)

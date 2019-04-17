@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
 
     try:
-        latex_head_file = open(texdir + 'Head.tex', 'r')
-        latex_head = latex_head_file.read().decode('utf-8', 'ignore')
+        latex_head_file = open(texdir + 'Head.tex', 'r', encoding='utf-8')
+        latex_head = latex_head_file.read()
         latex_head_file.close();
         latex_tail = "\n\end{CJK*}\n\\end{document}"
         latex_body = ""
@@ -39,8 +39,8 @@ if __name__ == '__main__':
             exit(1)
 
         finish_str = latex_head + latex_body + latex_tail
-        finish_file = open(sys.argv[3] + ".tex", "w")
-        finish_file.write(finish_str.encode('utf-8', 'ignore'))
+        finish_file = open(sys.argv[3] + ".tex", "w", encoding='utf-8')
+        finish_file.write(finish_str)
         finish_file.close()
 
         os.chdir(os.path.dirname(sys.argv[3]))
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     except Exception as e:
         # print(e.getTraceAsString())
         exstr = traceback.format_exc()
-        print exstr
+        print(exstr)
         # raise e
         print('{"status":"fail", "msg":"exception"}')
         exit(1)

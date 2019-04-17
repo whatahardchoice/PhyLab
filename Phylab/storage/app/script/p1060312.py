@@ -71,7 +71,7 @@ def handler(sublab_root):
     niconiconi()
     regulation()
     # file_object = open(texdir + "/Handle1060312.tex", "r")
-    # latex = file_object.read().decode('utf-8', 'ignore')
+    # latex = file_object.read()
     # return lexFiller(latex)
 
 
@@ -131,7 +131,7 @@ def niconiconi():
     if size > 0:
         average_a = sum_a / size
     else:
-        print "no data!"
+        print("no data!")
     b = abs(p_pos - s_pos)
     f = (pow(b, 2) - pow(average_a, 2))/(4*b)
     ua_a = Ua(a, average_a, size)

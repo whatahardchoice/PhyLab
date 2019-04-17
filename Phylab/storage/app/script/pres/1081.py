@@ -255,7 +255,7 @@ def ReadXmlTop():
     #´ò¿ªÍ³Ò»µÄÍ·ÎÄ¼þÄ£°æ
     global source_10711
     latex_head_file = open('/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Head.tex','r')
-    latex_head = latex_head_file.read().decode('utf-8', 'ignore')
+    latex_head = latex_head_file.read()
     latex_tail = "\n\\end{document}"
     latex_body = ""
 
@@ -270,7 +270,7 @@ def ReadXmlTop():
     sublab_id = item.getAttribute("id")
     if sublab_status == "true" and sublab_id == "10811":
         file_object = open("/opt/lampp/htdocs/Phylab-Web/SE_PhysExpeRepo/storage/app/script/Handle10811.tex","r")
-        source_10711 = file_object.read().decode('utf-8', 'ignore')
+        source_10711 = file_object.read()
         datalist1 = readXml10811(item)
         datalist2 = cal_delta_X10811(datalist1[3])
         #result存放结果
@@ -281,7 +281,7 @@ if __name__ == '__main__':
     try:
         finish_str = ReadXmlTop()
 	finish_file = open(sys.argv[2]+".tex","w")
-	finish_file.write(finish_str.encode('utf-8', 'ignore'))
+	finish_file.write(finish_str)
         finish_file.close()
         #等于１时是错误
         ret =  subprocess.call("pdflatex -interaction=nonstopmode "+sys.argv[2]+".tex",shell=True)

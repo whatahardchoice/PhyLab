@@ -509,3 +509,7 @@ $("#btn-test-generate").click(function () {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
 });
+
+$("#lab_table_editor_area").keyup(function () {
+    $("#labdoc").html(tableedit.getValue());
+});

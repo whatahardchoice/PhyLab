@@ -17,7 +17,7 @@ def readXml1010113(root):
 	table_tr_list = table.getElementsByTagName("tr")
 	for tr in table_tr_list:
 		tr_td_list = tr.getElementsByTagName("td")
-		data += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
+		data += [[float(x.firstChild.nodeValue) for x in tr_td_list]]
 	return data
 
 def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
@@ -79,9 +79,9 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 			)
 
 def handler(XML):
-	file_object = open(texdir + "Handle1010113.tex","r")
+	file_object = open(texdir + "Handle1010113.tex","r", encoding='utf-8')
 	#将模板作为字符串存储在template文件中
-	source = file_object.read().decode('utf-8', 'ignore')
+	source = file_object.read()
 	file_object.close()
 	data = readXml1010113(XML)
 	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][2], source)
@@ -91,4 +91,4 @@ if __name__ == '__main__':
 	texdir = scriptdir + 'tex/'
 	dom = xml.dom.minidom.parse(scriptdir + 'test/1010113test/1010113.xml')
 	root = dom.documentElement
-	print handler(root)
+	print(handler(root))

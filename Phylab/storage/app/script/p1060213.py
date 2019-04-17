@@ -64,13 +64,13 @@ def readXml1060213(root, source):
     return source
 
 def handler(XML):
-    file_object = open(texdir + "Handle1060213.tex","r")
+    file_object = open(texdir + "Handle1060213.tex","r",encoding='utf-8')
     #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     file_object.close()
     return readXml1060213(XML, source)
 
 if __name__ == '__main__':
     dom = xml.dom.minidom.parse(scriptdir + 'test/1060213test/1060213.xml')
     root = dom.documentElement
-    print handler(root)
+    print(handler(root))

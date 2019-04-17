@@ -59,7 +59,7 @@ def ObjectImage(exper_convex, exper_concave, source):
         average_f_convex += f_convex[i][3]
     average_f_convex /= 3
 
-    map(RoundTwo, exper_convex)
+    list(map(RoundTwo, exper_convex))
     RoundTwo(u_convex)
     RoundTwo(v_convex)
     RoundTwo(f_convex)
@@ -148,9 +148,9 @@ def ReadXml1060111(XML, source):
 
 
 def handler(XML):
-    file_object = open(texdir + "Handle1060111.tex", "r")
+    file_object = open(texdir + "Handle1060111.tex", "r",encoding='utf-8')
     # 将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     file_object.close()
     return ReadXml1060111(XML, source)
 
@@ -159,4 +159,4 @@ if __name__ == '__main__':
 
     dom = xml.dom.minidom.parse(scriptdir + 'test/1060111test/1060111.xml')
     root = dom.documentElement
-    print handler(root)
+    print(handler(root))

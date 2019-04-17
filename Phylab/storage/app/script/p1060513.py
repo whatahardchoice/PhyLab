@@ -41,7 +41,7 @@ def handler(sublab_root):
     niconiconi()
     regulation()
     # file_object = open(texdir + "/Handle1060513.tex", "r")
-    # latex = file_object.read().decode('utf-8', 'ignore')
+    # latex = file_object.read()
     # return lexFiller(latex)
 
 

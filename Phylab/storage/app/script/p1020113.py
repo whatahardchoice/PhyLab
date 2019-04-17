@@ -116,7 +116,7 @@ def DrawPicture(name,envir_temp,down_straight_line_x_init,down_straight_line_y_i
     #下降的直线模拟函数
     down_straight_line_base = numpy.polyfit(down_straight_line_x_init,down_straight_line_y_init,1)
     down_straight_line_func = numpy.poly1d(down_straight_line_base)
-    down_straight_line_fit_y = map(lambda x:down_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW,down_straight_line_x_init)
+    down_straight_line_fit_y = [down_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW for x in down_straight_line_x_init]
 
     #曲线拟合准确度
     down_cicyle = 2;
@@ -133,14 +133,14 @@ def DrawPicture(name,envir_temp,down_straight_line_x_init,down_straight_line_y_i
     #    down_bend_reg = numpy.sum((down_bend_yhat-down_bend_ybar)**2)
     #    down_bend_tot = numpy.sum((down_bend_y_init-down_bend_ybar)**2)
     #    down_bend_u = down_bend_reg / down_bend_tot
-    down_bend_y_fit = map(lambda x:down_bend_func(x)*CONST_Y_MIN-CONST_Y_LOW,down_bend_x_init)
+    down_bend_y_fit = [down_bend_func(x)*CONST_Y_MIN-CONST_Y_LOW for x in down_bend_x_init]
     
     #上升直线的拟合函数
     up_straight_line_base = numpy.polyfit(up_straight_line_x_init,up_straight_line_y_init,1)
     up_straight_line_func = numpy.poly1d(up_straight_line_base)
-    up_straight_line_fit_y = map(lambda x:up_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW,up_straight_line_x_init)
+    up_straight_line_fit_y = [up_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW for x in up_straight_line_x_init]
 
-    down_bend_fit_y = map(lambda x:down_bend_func(x)*10-110,down_bend_x_init)
+    down_bend_fit_y = [down_bend_func(x)*10-110 for x in down_bend_x_init]
     #下降直线的模拟绘图
     plt.plot(down_straight_line_x,down_straight_line_y,linestyle=' ',c="black",marker=Line2D.markers.get('x'),markersize=10)
     plt.plot(down_straight_line_x,down_straight_line_fit_y,linestyle='-',c="blue",linewidth=2)
@@ -166,27 +166,27 @@ def DrawPicture(name,envir_temp,down_straight_line_x_init,down_straight_line_y_i
         s1,aber1 = integrate.quad(lambda x:down_straight_line_func(x)-down_bend_func(x),down_bend_x_init[0],vertical_line)
         s2,aber2 = integrate.quad(lambda x:down_bend_func(x) - up_straight_line_func(x),vertical_line,down_bend_x_init[-1])
         #print vertical_line
-	print down_straight_line_func(vertical_line)
-	print "down_bend_func"
-	print down_bend_func(120)
+	print(down_straight_line_func(vertical_line))
+	print("down_bend_func")
+	print(down_bend_func(120))
 	#print down_bend_x_init[0]
 	#print down_bend_x_init[-1]
-	print s1,s2
+	print(s1,s2)
 	#print vertical_line
         if s1 > s2:
             break;
 
-    not_exist_up_line_x_init = range(vertical_line,up_straight_line_x_init[0])
+    not_exist_up_line_x_init = list(range(vertical_line,up_straight_line_x_init[0]))
     not_exist_up_line_x = []
     for x in not_exist_up_line_x_init:
         not_exist_up_line_x.append(x/6)
-    not_exist_up_line_y = map(lambda x:up_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW,not_exist_up_line_x_init)
+    not_exist_up_line_y = [up_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW for x in not_exist_up_line_x_init]
 
-    not_exist_down_line_x_init = range(down_bend_x_init[0],vertical_line)
+    not_exist_down_line_x_init = list(range(down_bend_x_init[0],vertical_line))
     not_exist_down_line_x = []
     for x in not_exist_down_line_x_init:
         not_exist_down_line_x.append(x/6)
-    not_exist_down_line_y = map(lambda x:down_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW,not_exist_down_line_x_init)
+    not_exist_down_line_y = [down_straight_line_func(x)*CONST_Y_MIN-CONST_Y_LOW for x in not_exist_down_line_x_init]
 
     #绘制两条虚线
     plt.plot(not_exist_up_line_x,not_exist_up_line_y,linestyle='--',c="blue",linewidth=2)
@@ -263,12 +263,12 @@ def ReadXml1020113(sublab_root,name, source):
 
     #后面的实验中要使用的前提数据
     vertical_line = DrawPicture(name,envir_temp,down_straight_line_x_init, down_straight_line_y_init, down_bend_x_init, down_bend_y_init, up_straight_line_x_init, up_straight_line_y_init)
-    print down_straight_line_x_init
-    print down_straight_line_y_init
-    print down_bend_x_init
-    print down_bend_y_init
-    print up_straight_line_x_init
-    print up_straight_line_y_init
+    print(down_straight_line_x_init)
+    print(down_straight_line_y_init)
+    print(down_bend_x_init)
+    print(down_bend_y_init)
+    print(up_straight_line_x_init)
+    print(up_straight_line_y_init)
     result = env.from_string(source).render(
         figurename = name,
 	    vertical = vertical_line,
@@ -295,8 +295,8 @@ def RToTemperature(R):
     return T
 
 def handler(XML):
-    file_object = open(texdir + "Handle1020113.tex","r")
+    file_object = open(texdir + "Handle1020113.tex","r",, encoding='utf-8')
     #将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     file_object.close()
     return ReadXml1020113(XML, sys.argv[3], source)

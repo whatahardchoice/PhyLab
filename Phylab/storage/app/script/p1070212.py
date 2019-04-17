@@ -70,7 +70,7 @@ def handler(xml):
         angle_theta.append((((angle_a2[i] - angle_a1[i]) + (angle_b2[i] - angle_b1[i])) % 360) / 2)
         angle_A.append(angle_theta[i] / 2)
         sumA += angle_A[i]
-    print angle_A
+    print(angle_A)
     average_angle_A = sumA / n
     ua_A = Ua(angle_A, average_angle_A, n)
     ub_A = 0.009622
@@ -80,8 +80,8 @@ def handler(xml):
     # 数据规范化
     regulation()
     # 数据填入模板
-    file_object = open(texdir + "/Handle1070212.tex", "r")
-    latexAddress = file_object.read().decode('utf-8', 'ignore')
+    file_object = open(texdir + "/Handle1070212.tex", "r",encoding='utf-8')
+    latexAddress = file_object.read()
     latex_body = LatexFiller(latexAddress)
     return latex_body
 
@@ -210,8 +210,8 @@ if __name__ == '__main__':
 
 
     def ReadXmlTop():
-        latex_head_file = open(texdir+'Head.tex', 'r')
-        latex_head = latex_head_file.read().decode('utf-8', 'ignore')
+        latex_head_file = open(texdir+'Head.tex', 'r',encoding='utf-8')
+        latex_head = latex_head_file.read()
         latex_tail = "\n\\end{document}"
         latex_body = ""
         dom = xml.dom.minidom.parse(scriptdir+'test/1070212test/1071.xml')
@@ -223,9 +223,9 @@ if __name__ == '__main__':
             if (sublab_status == 'true') & (sublab_id == '10711'):
                 latex_body += handler(sublab)
         return latex_head + latex_body + latex_tail
-    fileTex = open(scriptdir+'test/1070212test/1070212test.tex', 'w')
-    text = ReadXmlTop().encode('utf-8')
+    fileTex = open(scriptdir+'test/1070212test/1070212test.tex', 'w',encoding='utf-8')
+    text = ReadXmlTop()
     fileTex.write(text)
     fileTex.close()
-    print u_A, U_A
+    print(u_A, U_A)
 

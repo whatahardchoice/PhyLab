@@ -19,7 +19,7 @@ def readXml1010212(root):
         trdata = []
         for tr in table_tr_list:
             tr_td_list = tr.getElementsByTagName("td")
-            trdata += [map(lambda x: float(x.firstChild.nodeValue), tr_td_list)]
+            trdata += [[float(x.firstChild.nodeValue) for x in tr_td_list]]
         data += [trdata]
     return data
 
@@ -84,16 +84,16 @@ def Inertia(m, d, T, l, T2, source):
         T=T,
         len_T=len_T,
         K=phylab.ToScience(k),
-        I=map(phylab.ToScience, I),
-        J=map(phylab.ToScience, J),
+        I=list(map(phylab.ToScience, I)),
+        J=list(map(phylab.ToScience, J)),
         delta = delta
     )
 
 
 def handler(XML):
-    file_object = open(texdir + "Handle1010212.tex", "r")
+    file_object = open(texdir + "Handle1010212.tex", "r", encoding='utf-8')
     # 将模板作为字符串存储在template文件中
-    source = file_object.read().decode('utf-8', 'ignore')
+    source = file_object.read()
     file_object.close()
     data = readXml1010212(XML)
     res = Inertia(data[0][0], data[0][1], data[1], [], [], source)
@@ -122,4 +122,4 @@ if __name__ == '__main__':
     root = ''
     dom = xml.dom.minidom.parse(scriptdir + 'test/1010212test/1010212.xml')
     root = dom.documentElement
-    print handler(root)
+    print(handler(root))

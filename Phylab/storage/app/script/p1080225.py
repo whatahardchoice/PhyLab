@@ -59,8 +59,8 @@ def handler(xml):
     xmlReader(xml)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1080225.tex", "r")
-    latex = file_object.read().decode('utf-8', 'ignore')
+    file_object = open(texdir + "/Handle1080225.tex", "r",encoding='utf-8')
+    latex = file_object.read()
     return lexFiller(latex)
 
 
@@ -234,13 +234,13 @@ def xmlReader(item):
     # 获取条纹位置
     for i in range(len(datalist)):
         x.append(float(datalist[i].firstChild.nodeValue))
-    print x
+    print(x)
 
 
 if __name__ == '__main__':
     def ReadXmlTop():
-        latex_head_file = open('./Head.tex', 'r')
-        latex_head = latex_head_file.read().decode('utf-8', 'ignore')
+        latex_head_file = open('./Head.tex', 'r',encoding='utf-8')
+        latex_head = latex_head_file.read()
         latex_tail = "\n\\end{document}"
         latex_body = ""
         dom = xml.dom.minidom.parse('./1080114test/1081.xml')
@@ -254,11 +254,11 @@ if __name__ == '__main__':
         return latex_head + latex_body + latex_tail
 
 
-    fileTex = open('./1080114test/1080114test.tex', 'w')
-    text = ReadXmlTop().encode('utf-8')
+    fileTex = open('./1080114test/1080114test.tex', 'w',encoding='utf-8')
+    text = ReadXmlTop()
     fileTex.write(text)
     fileTex.close()
-    print lam
-    print u_lam
+    print(lam)
+    print(u_lam)
 # -*- coding:utf-8 -*-
 # -*- coding:utf-8 -*-

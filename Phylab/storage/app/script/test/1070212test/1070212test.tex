@@ -1,5 +1,8 @@
 \documentclass[11pt,a4paper,oneside]{article}
-\usepackage[UTF8,adobefonts]{ctex}
+%deprecated
+%\usepackage[UTF8]{ctex}
+
+\usepackage{CJKutf8}
 
 \usepackage{wrapfig}
 \usepackage{indentfirst}
@@ -13,9 +16,17 @@
 \usepackage{xcolor}
 
 \usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{slashbox}
 
 \begin{document}
-\section*{五、实验数据处理}\subsection*{实验2.三棱镜顶角的测量}
+
+\begin{CJK*}{UTF8}{gbsn}
+
+\section*{五、实验数据处理}
+\subsection*{实验2.三棱镜顶角的测量}
 \subsubsection*{(1)原始数据记录表格}
 
 \begin{center}
@@ -58,10 +69,10 @@ $A$
 \subsubsection*{(2)不确定度的计算}
 
 $$\bar{A} =\frac{1}{5}\sum\limits_{i=1}^{5}{A_i}=59.988 ^{\circ} $$
-A类误差：$$u_a({A})=\sqrt{\displaystyle\frac{\sum\limits_{i=1}^{5} ({A}_i-\bar{A})^2}{5{\times}(5-1)}}=0.0054327 $$
+A类误差：$$u_a({A})=\sqrt{\displaystyle\frac{\sum\limits_{i=1}^{5} ({A}_i-\bar{A})^2}{5{\times}(5-1)}}=0.0054327 ^{\circ}$$
 B类误差：$$u_b({A})=\displaystyle\frac{\bigtriangleup\text{仪}}{\sqrt{3}}
-= \frac{1'}{\sqrt{3}} = 9.622 \times 10^{-3} $$
-${A}$不确定度：$$u({A})=\sqrt{{u_a({A})}^2+{u_b({A})}^2}=\sqrt{ 0.0054327^2 + 0.009622^2} = 0.01105 $$
+= \frac{1'}{\sqrt{3}} = (9.622 \times 10^{-3})^{\circ} $$
+不确定度：$$u({A})=\sqrt{{u_a({A})}^2+{u_b({A})}^2}=\sqrt{ 0.0054327^2 + 0.009622^2} = 0.01105 ^{\circ}$$
 相对不确定度：$$\displaystyle\frac{u(A)}{A}=0.0001842$$
 最终结果为：$$A{\pm}u(A) = (59.99 {\pm} 0.02) ^{\circ}$$
 \end{document}

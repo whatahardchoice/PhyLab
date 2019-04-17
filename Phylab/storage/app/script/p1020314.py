@@ -31,12 +31,12 @@ def GetTheGraph1022(y_init, theta2):
 	for i in np.arange(0, Y_SIZE * 10 + 1, 1):
 		plt.plot([0, X_SIZE * 10], [i,i], color = "red", linewidth = 0.75 if i % 10 == 0 else 0.25 if i % 5 == 0 else 0.10, linestyle = "-")
 
-	display_y_init =map(lambda x: 10 * (x - Y_LOW) / Y_TIMES, y_init)
+	display_y_init =[10 * (x - Y_LOW) / Y_TIMES for x in y_init]
 	
 	base_line = np.polyfit(x_init, y_init, 3)
 	line_func = np.poly1d(base_line)
-	display_x = map(lambda x: 10 * x / X_TIMES, x_init)
-	display_y = map(lambda x: 10 * (line_func(x) - Y_LOW) / Y_TIMES, x_init)
+	display_x = [10 * x / X_TIMES for x in x_init]
+	display_y = [10 * (line_func(x) - Y_LOW) / Y_TIMES for x in x_init]
 	
 	ax.set_xlabel('t/s')
 	ax.set_ylabel('$\Theta_2$/mV')
@@ -54,8 +54,8 @@ def GetTheGraph1022(y_init, theta2):
 			if (theta2 + 1e-7 > y_init[i] and theta2 - 1e-7 < y_init[i - 1]):
 				res[0] = i - 1
 				res[1] = i
-	res_x = map(lambda t:x_init[t], res)
-	res_y = map(lambda t:y_init[t], res)
+	res_x = [x_init[t] for t in res]
+	res_y = [y_init[t] for t in res]
 	tangent_line = np.polyfit(res_x, res_y, 1)
 	line_func = np.poly1d(tangent_line)
 	plt.plot([0, X_SIZE * 10],[(line_func(0) - Y_LOW) / Y_TIMES * 10, (line_func(X_SIZE * X_TIMES) - Y_LOW) / Y_TIMES * 10], linestyle='-', c="gray", linewidth=1)
@@ -145,8 +145,8 @@ def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, 
 			)
 
 def handler(XML):
-	file_object = open(texdir + "Handle1020314.tex","r")
-	source = file_object.read().decode('utf-8', 'ignore')
+	file_object = open(texdir + "Handle1020314.tex","r",encoding='utf-8')
+	source = file_object.read()
 	file_object.close()
 	data = readXml1020314(XML)
 	return coefficientOfThermalConductivity(data[0][0], data[0][1], data[0][2], data[1], data[2], data[3], data[4], data[5], source)
@@ -157,4 +157,4 @@ if __name__ == '__main__':
 	dom = xml.dom.minidom.parse(scriptdir + 'test/1020314test/1020314.xml')
 	root = dom.documentElement
 	sys.argv = ['', '', '', 'D:/Apache24/htdocs/tmp/1022']
-	print handler(root)
+	print(handler(root))
