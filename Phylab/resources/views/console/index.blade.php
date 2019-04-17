@@ -133,31 +133,27 @@
                 </h4>
               </div>
               <div class="btn-group col-xs-12 col-md-5" style="float:right">
-                <button id="btn-delete-lab" class="btn btn-danger" data-toggle="modal" data-target="#upload_preview_modal" style="border-radius: 4px; float:right;">
+                <button id="btn-delete-lab" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-confirm" style="border-radius: 4px; float:right;">
                   <i class="fa fa-trash"></i>
                   删除未发布实验
                 </button>
-                <div class="modal fade" id="upload_preview_modal" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+                <div class="modal fade" id="modal-delete-confirm" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
                   <div class="modal-dialog" style="width: 38%;">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="collection-folder-label">上传实验预习报告</h4>
+                        <h4 class="modal-title" id="collection-folder-label">你确定要删除这个实验吗？</h4>
                       </div>
-                      <!--form id="preview-pdf-form" action="/console/uploadPre" method="POST" enctype="multipart/form-data"-->
-                      <div class="form-group">
-                        <input type="file" id="input-prepare-pdf" name="prepare-pdf">
-                        <p class="help-block">请务必先选择一个实验，文件类型限制为PDF，大小不能超过5M</p>
-                      </div>
+                        <p class="help-block" style="color:#FF0000">该操作不可撤销！！！</p>
 
                       <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
                         <div style="float:right">
-                          <button type="submit" id="btn-upload-preview" class="btn btn-large btn-danger">
-                            上传
+                          <button type="submit" id="btn-delete-confirm" class="btn btn-large btn-danger">
+                            删除
                           </button>
                         </div>
                       </div>
-                      <!--/form-->
+
 
 
                     </div>
@@ -173,17 +169,17 @@
             </div>
             <ul id="editor_tab" class="nav nav-tabs" style="display: block;">
                 <li class="active" style="width: 33%;text-align: center;">
-                    <a href="#py_script_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;"">
+                    <a id="tab-pyedit-selector"  href="#py_script_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                         <div>Python脚本</div>
                     </a>
                 </li>
                 <li style="width: 33%;text-align: center;">
-                    <a href="#latex_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;"">
+                    <a id="tab-latexedit-selector" href="#latex_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                         <div>LaTeX模板</div>
                     </a>
                 </li>
                 <li style="width: 33%;text-align: center;">
-                    <a href="#lab_table_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
+                    <a id="tab-tableedit-selector" href="#lab_table_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                        <div> 实验表格HTML</div>
                     </a>
                 </li>
