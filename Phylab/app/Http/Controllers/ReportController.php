@@ -358,4 +358,68 @@ class ReportController extends Controller
         //return view("report.show",$data);
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
+
+    /**
+     * delete a report.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteUnpublishedReport()
+    {
+        $data = ["status"   =>  "",
+            "message"  =>  ""];
+        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        if(!$isAdmin){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "没有权限";
+            return response()->json($data);
+        }
+
+        $report = Report::where('experiment_id','=',Request::get('id'))->first();
+        try{
+            $report = Report::where('experiment_id','=',Request::get('id'))->first();
+            if(!$report){
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "实验Id不存在";
+                return response()->json($data);
+            }
+
+            if ($report->status != 0)
+            {
+                $data["status"] = FAIL_MESSAGE;
+                $data["message"] = "实验已发布，请联系超级管理员";
+                return response()->json($data);
+            }
+            else{
+                $system1 = exec("rm -rf ".Config::get('phylab.experimentViewPath').Request::get('id').".html",$output,$reval1);
+                $system2 = exec("rm -rf ".Config::get('phylab.scriptPath')."p".Request::get('id').".py",$output,$reval2);
+                $system3 = exec("rm -rf ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('id').".tex",$output,$reval3);
+
+                if($reval1!=0||$reval2!=0||$reval3!=0){
+                    $data["status"]=FAIL_MESSAGE;
+                    $data["message"] = "删除报告文件失败: ".$reval1.' '.$reval2.' '.$reval3;
+                    return response()->json($data);
+                }
+                else {
+                    $delete = $report->delete();
+                    if (!$delete)
+                    {
+                        $data["status"]=FAIL_MESSAGE;
+                        $data["message"] = "删除报告数据库条目失败";
+                        return response()->json($data);
+                    }
+                }
+
+            }
+            $data["status"]=SUCCESS_MESSAGE;
+            $data["message"] = "删除成功！";
+        }
+        catch(Exception $e){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "未知错误";
+        }
+        return response()->json($data);
+    }
+
+
 }

@@ -289,6 +289,8 @@ function initReportPage() {
                 sessionStorage.setItem(data.reports[labgroup][sublab]['id'] + '_article_id', data.reports[labgroup][sublab]['relatedArticle']);
             }
         }
+
+        // $("#editor_tab > li").click(function(){return false;});
         $('#lab-select-modal .list-group li').click(function () {
             CUR_SUBLAB = /lab-(\d{7})/.exec(this.id)[1];
             CUR_LAB_GROUP = /lab-(\d{4})-collapse/.exec($(this).parent()[0].id)[1];
@@ -300,6 +302,7 @@ function initReportPage() {
             $.ajax('./getTable', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+                // $("#editor_tab > li").off('click');
                 $('#button-view-preparation').removeAttr("disabled");
                 $('#button-generate-report').removeAttr("disabled");
                 $('#collect-report').attr("disabled", true);
@@ -416,7 +419,7 @@ $('#button-save-script').click(function () {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
         'reportHtml': tableedit.getValue(),
-        'reportTex': latexedit.getValue(),
+        'reportTex': latexedit.getValue()
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {
@@ -455,6 +458,12 @@ $("#btn-upload-preview").click(function () {
     {
         $('#upload_preview_modal').modal('hide');
         alert("请先选择实验！");
+        return false;
+    }
+
+    if ($("#input-prepare-pdf").get(0).files.length == 0)
+    {
+        alert("请先选择一个文件！");
         return false;
     }
     //e.preventDefault();
@@ -512,4 +521,54 @@ $("#btn-test-generate").click(function () {
 
 $("#lab_table_editor_area").keyup(function () {
     $("#labdoc").html(tableedit.getValue());
+});
+
+$("#btn-delete-lab").click(function () {
+
+    if (typeof CUR_SUBLAB=== 'undefined') {
+        $('#modal-delete-confirm').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+});
+
+$("#btn-delete-confirm").click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#modal-delete-confirm').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+    //check if this could be deleted
+    $.get('./getreport').done(function (data) {
+
+        let labToDelete= data.reports[CUR_LAB_GROUP].find(function (d) {
+            return (d.id == CUR_SUBLAB);
+        })
+
+        if (parseInt(labToDelete.status)&1)
+        {
+            $('#modal-delete-confirm').modal('hide');
+            alert("此报告已发布，请联系超级管理员");
+            return false;
+        }
+        else
+        {
+            //delete
+            $.post("./report/delete", {
+                'id':CUR_SUBLAB
+            }).done(function (data) {
+                alert(data.message);
+                location.reload();
+            }).fail(function (xhr, status) {
+                alert('失败: ' + xhr.status + ', 原因: ' + status);
+            });
+        }
+        $('#modal-delete-confirm').modal('hide');
+
+        return false;
+    });
+
 });
