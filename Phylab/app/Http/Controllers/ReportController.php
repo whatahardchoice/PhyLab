@@ -92,7 +92,8 @@ class ReportController extends Controller
         $data = ["status"=> "",
                  "experimentId" => "",
                  "link"  => "",
-                 "message" => ""];
+                 "message" => "",
+                 "errorLog"=>array()];
         $validatorRules = array(
                 'id'  => 'required|integer|exists:reports,id',
                 'xml' => 'required'
@@ -129,6 +130,7 @@ class ReportController extends Controller
             $data["status"]=FAIL_MESSAGE;
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
+            $data["errorLog"]=$output;
         }
         // if($scriptLink!=null){
 		// 	$output = array();

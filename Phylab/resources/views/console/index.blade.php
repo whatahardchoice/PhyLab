@@ -193,6 +193,29 @@
                     <i class="fa fa-save"></i>
                     <span id="collect-report-text">保存实验</span>
                 </button>
+              <div class="modal fade" id="modal-error-log" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+                <div class="modal-dialog" style="width: 38%;">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                      <h4 class="modal-title" id="collection-folder-label">Oops！运行出错了</h4>
+                    </div>
+                    <p class="help-block">错误信息如下</p>
+                    <div id='error-text' style="overflow:auto;height:500px">testtesttesttesttesttesttesttest
+                    testestestsetsetsetsetsetset
+                    setsetsetsetsetsetsets
+                    tsetsetsetsetset</div>
+
+                    <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
+                      <div style="float:right">
+                        <button type="submit" id="btn-submit-error" class="btn btn-large btn-success">
+                          提交错误至管理员
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
                 <button id="btn-test-generate" class="btn btn-success"style="border-radius: 0 0 0 0;width: 10%;">
                     <span class="sr-only">y</span>
                     <i class="fa fa-check"></i>

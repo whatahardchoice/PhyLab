@@ -513,7 +513,22 @@ $("#btn-test-generate").click(function () {
         'id':CUR_SUBLAB,
         "xml":xmlString
     }).done(function (data) {
-        alert(data.message);
+        if (data['status'] == 'fail')
+        {
+            let errStr = "";
+            for (let i = 0; i < data['errorLog'].length; i++)
+            {
+                errStr += data['errorLog'][i];
+                errStr += '<br>';
+            }
+            $('#error-text').text("").append(errStr);
+            $('#modal-error-log').modal('show');
+
+        }
+        else
+        {
+            alert(data['status']);
+        }
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
