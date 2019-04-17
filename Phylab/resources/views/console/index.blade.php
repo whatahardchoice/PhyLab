@@ -13,11 +13,13 @@
 	<script src="./codemirror/addon/fold/comment-fold.js"></script>
 	<script src="./codemirror/addon/edit/closebrackets.js"></script>
 	<script src="./codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="./codemirror/addon/display/autorefresh.js"></script>
 	<script src="./codemirror/mode/javascript/javascript.js"></script>
 	<script src="./codemirror/mode/xml/xml.js"></script>
 	<script src="./codemirror/mode/python/python.js"></script>
 	<script src="./codemirror/mode/markdown/markdown.js"></script>
 	<script src="./codemirror/mode/css/css.js"></script>
+    <script src="./codemirror/mode/stex/stex.js"></script>
 	<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
 	
 <script src="./codemirror/addon/search/searchcursor.js"></script>
@@ -246,7 +248,8 @@
 		tabSize: 4,
 		matchBrackets: true,
 		foldGutter: true,
-		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        autoRefresh:true
 	  });
 	  var pyedit_div=pyedit.getWrapperElement();
 	  pyedit_div=$(pyedit_div);
@@ -255,7 +258,7 @@
 
       te_latex=document.getElementById('latex_editor');
       var latexedit = CodeMirror.fromTextArea(te_latex, {
-          mode: "text",
+          mode: "stex",
           lineNumbers: true,
           lineWrapping: true,
           extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
@@ -266,7 +269,8 @@
           tabSize: 4,
           matchBrackets: true,
           foldGutter: true,
-          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+          autoRefresh:true
       });
       var latex_div=latexedit.getWrapperElement();
       latex_div=$(latex_div);
@@ -286,7 +290,8 @@
           tabSize: 4,
           matchBrackets: true,
           foldGutter: true,
-          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+          autoRefresh:true
       });
       var table_div=tableedit.getWrapperElement();
       table_div=$(table_div);

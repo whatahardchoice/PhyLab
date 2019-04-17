@@ -21,6 +21,25 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="huawei">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/var/www/phpmyadmin" />
+            <excludedPath path="/Phylab/node_modules" />
+            <excludedPath path="/Phylab/vendor" />
+            <excludedPath path="/Phylab/storage/framework/" />
+            <excludedPath path="/wecenter/uploads" />
+            <excludedPath path="/Phylab/storage/app/xml_tmp" />
+            <excludedPath path="/Phylab/public/pdf_tmp" />
+            <excludedPath path="/Phylab/public/codemirror" />
+            <excludedPath path="/Phylab/public/ckeditor" />
+            <excludedPath path="/Phylab/.env" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myUploadOnCheckinName" value="aliyun" />
     <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
