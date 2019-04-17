@@ -414,7 +414,7 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
-    $("#labdoc").html(tableedit.getValue());
+   // $("#labdoc").html(tableedit.getValue());
     $.post('./report/updatereport', {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),

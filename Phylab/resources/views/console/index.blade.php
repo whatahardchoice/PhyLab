@@ -209,7 +209,7 @@
                     <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
                       <div style="float:right">
                         <button type="submit" id="btn-submit-error" class="btn btn-large btn-success">
-                          提交错误至管理员
+                          好的
                         </button>
                       </div>
                     </div>
