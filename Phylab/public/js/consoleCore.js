@@ -460,6 +460,12 @@ $("#btn-upload-preview").click(function () {
         alert("请先选择实验！");
         return false;
     }
+
+    if ($("#input-prepare-pdf").get(0).files.length == 0)
+    {
+        alert("请先选择一个文件！");
+        return false;
+    }
     //e.preventDefault();
     let formData = new FormData();
     let file = $("#input-prepare-pdf").get(0).files[0];
