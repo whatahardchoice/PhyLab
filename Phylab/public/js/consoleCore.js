@@ -523,7 +523,6 @@ $("#btn-test-generate").click(function () {
             }
             $('#error-text').text("").append(errStr);
             $('#modal-error-log').modal('show');
-
         }
         else
         {
@@ -586,4 +585,10 @@ $("#btn-delete-confirm").click(function () {
         return false;
     });
 
+});
+
+$('btn-submit-error').click(function () {
+
+    //TODO upload to backend
+    $('#modal-error-log').modal('hide');
 });
