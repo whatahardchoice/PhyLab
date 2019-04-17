@@ -416,7 +416,7 @@ $('#button-save-script').click(function () {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
         'reportHtml': tableedit.getValue(),
-        'reportTex': latexedit.getValue(),
+        'reportTex': latexedit.getValue()
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {
