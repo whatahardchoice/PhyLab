@@ -517,9 +517,18 @@ $("#lab_table_editor_area").keyup(function () {
     $("#labdoc").html(tableedit.getValue());
 });
 
+$("#btn-delete-lab").click(function () {
+
+    if (typeof CUR_SUBLAB=== 'undefined') {
+        $('#modal-delete-confirm').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+});
+
 $("#btn-delete-confirm").click(function () {
 
-    if (typeof CUR_LAB_GROUP === 'undefined')
+    if (typeof CUR_SUBLAB === 'undefined')
     {
         $('#modal-delete-confirm').modal('hide');
         alert("请先选择实验！");
