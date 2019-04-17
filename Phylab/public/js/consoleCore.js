@@ -289,6 +289,8 @@ function initReportPage() {
                 sessionStorage.setItem(data.reports[labgroup][sublab]['id'] + '_article_id', data.reports[labgroup][sublab]['relatedArticle']);
             }
         }
+
+        // $("#editor_tab > li").click(function(){return false;});
         $('#lab-select-modal .list-group li').click(function () {
             CUR_SUBLAB = /lab-(\d{7})/.exec(this.id)[1];
             CUR_LAB_GROUP = /lab-(\d{4})-collapse/.exec($(this).parent()[0].id)[1];
@@ -300,6 +302,7 @@ function initReportPage() {
             $.ajax('./getTable', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+                // $("#editor_tab > li").off('click');
                 $('#button-view-preparation').removeAttr("disabled");
                 $('#button-generate-report').removeAttr("disabled");
                 $('#collect-report').attr("disabled", true);
