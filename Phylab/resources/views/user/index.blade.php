@@ -11,6 +11,13 @@
     <div class="row" style="margin-top:30px;padding:30px">
         <div style = "text-align: center ; padding-top:40px" class="col-xs-12 col-md-4">
             <img src = "{{$avatarPath}}" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
+<!--
+            <form action = "/user" method="post" enctype="multipart/form-data" id = "load-form">
+                <label for = "avatarPath">选择头像文件：</label>
+                <input type = "file" name = "avatarPath" id = "avatarPath">
+                <input type="submit" value="上传">
+            </form>
+-->
 
             <h3>{{$username}}</h3>
 
