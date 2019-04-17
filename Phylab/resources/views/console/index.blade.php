@@ -148,7 +148,7 @@
 
                       <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
                         <div style="float:right">
-                          <button type="submit" id="btn-upload-preview" class="btn btn-large btn-danger">
+                          <button type="submit" id="btn-delete-confirm" class="btn btn-large btn-danger">
                             删除
                           </button>
                         </div>

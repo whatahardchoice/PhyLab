@@ -516,3 +516,44 @@ $("#btn-test-generate").click(function () {
 $("#lab_table_editor_area").keyup(function () {
     $("#labdoc").html(tableedit.getValue());
 });
+
+$("#btn-delete-confirm").click(function () {
+
+    if (typeof CUR_LAB_GROUP === 'undefined')
+    {
+        $('#modal-delete-confirm').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+    //check if this could be deleted
+    $.get('./getreport').done(function (data) {
+
+        let labToDelete= data.reports[CUR_LAB_GROUP].find(function (d) {
+            return (d.id == CUR_SUBLAB);
+        })
+
+        if (parseInt(labToDelete.status)&1)
+        {
+            $('#modal-delete-confirm').modal('hide');
+            alert("此报告已发布，请联系超级管理员");
+            return false;
+        }
+        else
+        {
+            //delete
+            $.post("./report/delete", {
+                'id':CUR_SUBLAB
+            }).done(function (data) {
+                alert(data.message);
+                location.reload();
+            }).fail(function (xhr, status) {
+                alert('失败: ' + xhr.status + ', 原因: ' + status);
+            });
+        }
+        $('#modal-delete-confirm').modal('hide');
+
+        return false;
+    });
+
+});

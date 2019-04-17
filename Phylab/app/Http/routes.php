@@ -202,6 +202,13 @@ Route::post('/report/confirmReport',
     'middleware'    =>  'auth'
     ]);
 
+
+Route::post('/report/delete',
+    [
+        'uses'=>'ReportController@deleteUnpublishedReport',
+        'middleware' => 'auth'
+    ]);
+
 Route::get('/zichen',
 	[
 	'as' => 'DebugScript',
