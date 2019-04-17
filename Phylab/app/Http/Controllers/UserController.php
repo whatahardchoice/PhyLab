@@ -68,11 +68,11 @@ class UserController extends Controller
 
         if (file_exists("/var/www/wecenter/uploads" . '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg'))
         {
-            $data["avatarPath"] =  "http://47.94.228.157:8080/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
+            $data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
         }
         else
         {
-            $data["avatarPath"] = "http://47.94.228.157:8080/wecenter/static" . '/common/avatar-' . $size . '-img.png';
+            $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
         }
 
 

@@ -101,7 +101,7 @@ td input.form-control {
 }
 #lab-report .panel-title .btn {
   color: white;
-  background-color: #08c093;
+  /*background-color: #08c093;*/
   position: relative;
   top: -5px;
 }
@@ -157,12 +157,19 @@ td input.form-control {
 #button-next-comment-group {
   border-radius: 0 4px 4px 0;
 }
-#lab-report .panel-title .btn {
+#lab-report .panel-title .btn-success {
   color: white;
   background-color: #08c093;
   position: relative;
   top: -5px;
 }
+#lab-report .panel-title .btn-danger {
+  color: white;
+  /*background-color: #08c093;*/
+  position: relative;
+  top: -5px;
+}
+
 #button-group-script .btn {
   background-color: #08c093;
 }
