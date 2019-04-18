@@ -107,6 +107,8 @@
                       <option value="2014">2014</option>
                       <option value="2015">2015</option>
                       <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
                     </select>
                   </div>
                   <div id="alert-grade" class="alert alert-warning" role="alert"></div>
@@ -150,6 +152,7 @@
               </div>
               <div class="submit">
                 <input class="btn btn-primary" id="submit" type="button" value="注册" onclick="submit_register()">
+                <img id="loading-gif"  src="http://static.oschina.net/uploads/space/2015/0724/100832_XWND_2392582.gif" style="position: absolute; left:0;right:0;margin:0 auto;">
               </div>
             </form>
             <div class="have-user">

@@ -122,10 +122,18 @@ class ConsoleController extends Controller {
         $lab_tag=$_GET['LTag'];
 		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
-            $system1 = exec("touch ".Config::get('phylab.experimentViewPath').$lab_id.".html",$output,$reval1);
-            $system2 = exec("touch ".Config::get('phylab.scriptPath')."p".$lab_id.".py",$output,$reval2);
-            $system3 = exec("touch ".Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex",$output,$reval3);
-            if($reval1==0&&$reval2==0&&$reval3==0){    
+		    $htmlcmd = "cp ".Config::get('phylab.experimentViewPath')."template.html ".Config::get('phylab.experimentViewPath').$lab_id.".html";
+		    $pycmd = "cp ".Config::get('phylab.scriptPath')."template.py ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
+		    $latexcmd = "cp ".Config::get('phylab.scriptPath')."tex/template.tex ".Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
+
+		    $htmlsed = "sed -i 's/%%LAB_SUBLAB_ID%%/".$lab_id."/g' ".Config::get('phylab.experimentViewPath').$lab_id.".html";
+		    $pysed = "sed -i 's/%%LAB_SUBLAB_ID%%/".$lab_id."/g' ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
+		    $system1 = exec($htmlcmd,$output,$reval1);
+            $system2 = exec($pycmd,$output,$reval2);
+            $system3 = exec($latexcmd,$output,$reval3);
+            $system4 = exec($htmlsed,$output,$reval4);
+            $system5 = exec($pysed,$output,$reval5);
+            if($reval1==0&&$reval2==0&&$reval3==0 && $reval4==0&&$reval5==0){
 				$ret=Report::create(array(
 					'experiment_id'=>$lab_id,
 					'experiment_name'=>$lab_name,
@@ -139,9 +147,9 @@ class ConsoleController extends Controller {
 				$pysrc=Config::get('phylab.scriptPath')."p".$lab_id.".py";
 				$htmsrc = Config::get('phylab.experimentViewPath').$lab_id.".html";
 				$texsrc = Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
-				file_put_contents($pysrc,"# coding here...");
-				file_put_contents($htmsrc,"<table><tr><td>半径</td><td>高度</td></tr><tr><td> <input class='para form-control' type='number'/></td><td><input class='para form-control' type='number'/></td></tr></table>");
-				file_put_contents($texsrc,"tex...");
+//				file_put_contents($pysrc,"# coding here...");
+//				file_put_contents($htmsrc,"");
+//				file_put_contents($texsrc,"tex...");
 			} else {
                 $data["status"]=FAIL_MESSAGE;
                 $data["message"] = "创建新报告失败";				

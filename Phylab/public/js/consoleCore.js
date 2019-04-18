@@ -404,7 +404,11 @@ $('#create_sublab').click(function (){
 		data: {'LId': lid, 'LName': lname, 'LTag': ltag },
 	}).done(function (data) {
 		if (data.status=='success')
-		    alert('创建成功');
+        {
+            alert('创建成功');
+            location.reload();
+        }
+
 		else
 		    alert(data.msg);
 		$('#collection-folder').modal('hide');
@@ -414,7 +418,7 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
-    $("#labdoc").html(tableedit.getValue());
+   // $("#labdoc").html(tableedit.getValue());
     $.post('./report/updatereport', {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
@@ -504,18 +508,53 @@ $("#btn-upload-preview").click(function () {
 
 $("#btn-test-generate").click(function () {
 
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+
+    let valid = checkInput();
+    if (!valid)
+        return false;
+
+
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
 
-    $.post("./report", {
-        'id':CUR_SUBLAB,
-        "xml":xmlString
+    $.ajax({
+        type:"POST",
+        url:"./report",
+        data:{'id':CUR_SUBLAB, "xml":xmlString},
+        beforeSend: function () {
+            $('#error-log-title').text("").append("正在运行，请稍侯");
+            $('#error-text').text("");
+            $('#modal-error-log').modal('show');
+        }
     }).done(function (data) {
-        alert(data.message);
+        if (data['status'] == 'fail')
+        {
+            $('#error-log-title').text("").append("Oops！运行出错了");
+        }
+        else
+        {
+            $('#error-log-title').text("").append("运行成功");
+        }
+        let errStr = "";
+        for (let i = 0; i < data['errorLog'].length; i++)
+        {
+            errStr += data['errorLog'][i];
+            errStr += '<br>';
+        }
+        $('#error-text').text("").append(errStr);
+        $('#modal-error-log').modal('show');
+
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
     });
 });
 
@@ -572,3 +611,32 @@ $("#btn-delete-confirm").click(function () {
     });
 
 });
+
+$('#btn-submit-error').click(function () {
+
+    //TODO upload to backend
+    $('#modal-error-log').modal('hide');
+});
+
+
+function checkInput()
+{
+    let inputs = $("#labdoc").find("input");
+    if (inputs.length === 0)
+        return false;
+    let invalid = 0;
+    let pattern = new RegExp('^\\d+(.\\d+)?$');
+    for (let i = 0; i < inputs.length; i++)
+    {
+        if (!pattern.test(inputs[i].value)) {
+            invalid++;
+        }
+    }
+    if (invalid !== 0)
+    {
+        alert("您有"+invalid+"处输入不合法，请检查输入，输入只能为数字且不能有空格。");
+        return false;
+    }
+    else
+        return true;
+}
