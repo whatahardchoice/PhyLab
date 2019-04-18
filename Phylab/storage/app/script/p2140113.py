@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import phylab
+import matplotlib.pyplot as plt
 from math import sqrt
+import sys
 from jinja2 import Environment
 from handler import texdir
 from handler import scriptdir
@@ -22,7 +24,7 @@ def readXml2140113(root):
     return data
 
 
-def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
+def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source,name):
 
     #实验1
     #I1[] 输入电流，单位：A，长度3
@@ -78,6 +80,17 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
     #Pm2 最大输出功率 单位：mW
     #n 燃料电池最大效率
 
+    font = {
+        'size' : 30 ,
+    }
+
+    fig1 = plt.figure(figsize=(15,9))
+    pic1 = name+'_pic1'
+    plt.plot(I2 , U2)
+    plt.xlabel('I' , font)
+    plt.ylabel('U' , font)
+    fig1.savefig(pic1+'.png',bbox_inches='tight')
+
     I = 300 #电解池输入电流，计算效率
 
     P2 = []
@@ -106,11 +119,26 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
     #Pm3 最大输出功率 单位：W
     #FF 填充因子
 
+    fig2 = plt.figure(figsize=(15,9))
+    pic2 = name+'_pic2'
+    plt.plot(U3 , I3)
+    plt.xlabel('U' , font)
+    plt.ylabel('I' , font)
+    fig2.savefig(pic2+'.png',bbox_inches='tight')
+
     P3 = []
     for i in range(0,len(U3),1):
         P3.append( U3[i] * I3[i] )
 
     Pm3 = max(P3)
+
+
+    fig3 = plt.figure(figsize=(15,9))
+    pic3 = name+'_pic3'
+    plt.plot(U3 , P3)
+    plt.xlabel('U' , font)
+    plt.ylabel('P' , font)
+    fig3.savefig(pic3+'.png',bbox_inches='tight')
 
     index_m = P3.index(Pm3)
     Um3 = U3[index_m]
@@ -122,27 +150,49 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
     #print Pm3
     #print FF
 
+    Q1_b = []
+    Vl_b = []
+    A_b = []
+    P2_b = []
+    P3_b = []
+    FF_b = "%.3f" % FF
+
+    for i in range (0 , len(Q1) , 1):
+        Q1_b.append( "%.2f" % Q1[i] )
+    for i in range (0 , len(Vl) , 1):
+        Vl_b.append( "%.3f" % Vl[i] )
+    for i in range (0 , len(A) , 1):
+        A_b.append( "%.3f" % A[i] )
+    for i in range (0 , len(P2) , 1):
+        P2_b.append( "%.3f" % P2[i] )
+    for i in range (0 , len(P3) , 1):
+        P3_b.append( "%.3f" % P3[i] )
+
     return env.from_string(source).render(
+            pic1 = pic1,
+            pic2 = pic2 ,
+            pic3 = pic3 ,
             I = I1,
             t = t,
-            #U = U1,
+            U1 = U1,
             T = T,
-            It = Q1,
-            VH = Vl,
-            A = A,
+            It = Q1_b,
+            Vc = Vc,
+            VH = Vl_b,
+            A = A_b,
             U = U2,
             I2 = I2,
-            P = P2,
+            P =  P2_b,
             P_m = Pm2,
             u = U3,
             i = I3,
-            p = P3,
+            p =  P3_b,
             I_sc = Isc,
             U_oc = Uoc,
             p_m = Pm3,
             U_m = Um3,
             I_m = Im3,
-            FF = FF,
+            FF =FF_b
             )
 
 
@@ -151,7 +201,7 @@ def handler(XML):
     source = file_object.read()
     file_object.close()
     data = readXml2140113(XML)
-    return FuelCell(data[0][0] , data[0][1] , data[0][2] , data[0][3] , data[3][0][2] , data[1][0] , data[1][1] , data[2][0] , data[2][1] , data[3][0][0] , data[3][0][1] , source)
+    return FuelCell(data[0][0] , data[0][1] , data[0][2] , data[0][3] , data[3][0][2] , data[1][0] , data[1][1] , data[2][0] , data[2][1] , data[3][0][0] , data[3][0][1] , source , sys.argv[3])
 
 if __name__ == '__main__':
     scriptdir = '/home/zbw/Git/Phylab/Phylab/storage/app/script/'
