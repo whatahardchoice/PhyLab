@@ -88,6 +88,7 @@
 		});
   //PhyLab2.0注册界面
     $(document).ready(function () {
+        $("#loading-gif").css("display","none");
 			$("#captcha-img").attr('src', G_BASE_URL + '/wecenter/?/account/captcha/' + Math.floor(Math.random() * 10000));
       $('#name').val(sessionStorage.getItem('name'));
       $('#email').val(sessionStorage.getItem('email'));
@@ -189,12 +190,16 @@
 					'password': $('#password1').val(),
 					'agreement_chk': true,
 					'seccode_verify': $('#captcha').val(),
-					'email': $('#email').val(),
-				}
+					'email': $('#email').val()
+				},
+                beforeSend: function () {
+                    $("#loading-gif").css("display","block");
+                }
 			}).done(function (data) {
+                $("#loading-gif").css("display","none");
 				data = JSON.parse(data);
 				if (data.errno === 1)
-					window.location.href = data.rsm.url;
+				    window.location.href = data.rsm.url;
 				else
 					alert(data.err);
 			}).fail(function (xhr, status) {
