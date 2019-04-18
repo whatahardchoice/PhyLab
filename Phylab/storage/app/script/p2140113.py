@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import phylab
+import matplotlib.pyplot as plt
 from math import sqrt
 from jinja2 import Environment
 from handler import texdir
@@ -78,6 +79,10 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
     #Pm2 最大输出功率 单位：mW
     #n 燃料电池最大效率
 
+    pic1 = '2141_pic1.png'
+    plt.plot(I2 , U2)
+    #plt.savefig('tex/'+pic1)
+
     I = 300 #电解池输入电流，计算效率
 
     P2 = []
@@ -122,27 +127,47 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source):
     #print Pm3
     #print FF
 
+    Q1_b = []
+    Vl_b = []
+    A_b = []
+    P2_b = []
+    P3_b = []
+    FF_b = "%.3f" % FF
+
+    for i in range (0 , len(Q1) , 1):
+        Q1_b.append( "%.2f" % Q1[i] )
+    for i in range (0 , len(Vl) , 1):
+        Vl_b.append( "%.3f" % Vl[i] )
+    for i in range (0 , len(A) , 1):
+        A_b.append( "%.3f" % A[i] )
+    for i in range (0 , len(P2) , 1):
+        P2_b.append( "%.3f" % P2[i] )
+    for i in range (0 , len(P3) , 1):
+        P3_b.append( "%.3f" % P3[i] )
+
     return env.from_string(source).render(
+            pic1 = pic1,
             I = I1,
             t = t,
-            #U = U1,
+            U1 = U1,
             T = T,
-            It = Q1,
-            VH = Vl,
-            A = A,
+            It = Q1_b,
+            Vc = Vc,
+            VH = Vl_b,
+            A = A_b,
             U = U2,
             I2 = I2,
-            P = P2,
+            P =  P2_b,
             P_m = Pm2,
             u = U3,
             i = I3,
-            p = P3,
+            p =  P3_b,
             I_sc = Isc,
             U_oc = Uoc,
             p_m = Pm3,
             U_m = Um3,
             I_m = Im3,
-            FF = FF,
+            FF =FF_b
             )
 
 

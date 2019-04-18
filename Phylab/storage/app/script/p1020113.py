@@ -166,13 +166,13 @@ def DrawPicture(name,envir_temp,down_straight_line_x_init,down_straight_line_y_i
         s1,aber1 = integrate.quad(lambda x:down_straight_line_func(x)-down_bend_func(x),down_bend_x_init[0],vertical_line)
         s2,aber2 = integrate.quad(lambda x:down_bend_func(x) - up_straight_line_func(x),vertical_line,down_bend_x_init[-1])
         #print vertical_line
-	print(down_straight_line_func(vertical_line))
-	print("down_bend_func")
-	print(down_bend_func(120))
-	#print down_bend_x_init[0]
-	#print down_bend_x_init[-1]
-	print(s1,s2)
-	#print vertical_line
+        print(down_straight_line_func(vertical_line))
+        print("down_bend_func")
+        print(down_bend_func(120))
+	    #print down_bend_x_init[0]
+	    #print down_bend_x_init[-1]
+        print(s1,s2)
+	    #print vertical_line
         if s1 > s2:
             break;
 
@@ -295,7 +295,7 @@ def RToTemperature(R):
     return T
 
 def handler(XML):
-    file_object = open(texdir + "Handle1020113.tex","r",, encoding='utf-8')
+    file_object = open(texdir + "Handle1020113.tex","r",encoding='utf-8')
     #将模板作为字符串存储在template文件中
     source = file_object.read()
     file_object.close()
