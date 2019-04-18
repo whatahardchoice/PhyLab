@@ -404,7 +404,11 @@ $('#create_sublab').click(function (){
 		data: {'LId': lid, 'LName': lname, 'LTag': ltag },
 	}).done(function (data) {
 		if (data.status=='success')
-		    alert('创建成功');
+        {
+            alert('创建成功');
+            location.reload();
+        }
+
 		else
 		    alert(data.msg);
 		$('#collection-folder').modal('hide');
