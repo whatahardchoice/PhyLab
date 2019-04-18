@@ -359,6 +359,18 @@ $('#button-view-preparation').click(function () {
 });
 
 $('#button-generate-report').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+    let valid = checkInput();
+    if (!valid)
+        return false;
+
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
         return;
@@ -497,3 +509,32 @@ function loadComments(article_id, group_id) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
     });
 }
+
+
+function checkInput()
+{
+    let inputs = $("#labdoc").find("input");
+    if (inputs.length === 0)
+        return false;
+    let invalid = 0;
+    let pattern = new RegExp('^\\d+(.\\d+)?$');
+    for (let i = 0; i < inputs.length; i++)
+    {
+        if (!pattern.test(inputs[i].value)) {
+            invalid++;
+        }
+    }
+    if (invalid !== 0)
+    {
+        alert("您有"+invalid+"处输入不合法，请检查输入，输入只能为数字且不能有空格。");
+        return false;
+    }
+    else
+        return true;
+}
+
+$('btn-submit-error').click(function () {
+
+    //TODO upload to backend
+    $('#modal-error-log').modal('hide');
+});
