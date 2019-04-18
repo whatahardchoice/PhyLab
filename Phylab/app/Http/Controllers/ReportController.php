@@ -125,6 +125,7 @@ class ReportController extends Controller
                     $data["link"] = $tmpName.".pdf";
                     $data["experimentId"] = $experimentId;
                     $data["test"]= $test;
+                    $data["errorLog"]=$output;
                 }
         }else{
             $data["status"]=FAIL_MESSAGE;

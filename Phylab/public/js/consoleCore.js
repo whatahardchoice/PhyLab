@@ -522,27 +522,35 @@ $("#btn-test-generate").click(function () {
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
 
-    $.post("./report", {
-        'id':CUR_SUBLAB,
-        "xml":xmlString
+    $.ajax({
+        type:"POST",
+        url:"./report",
+        data:{'id':CUR_SUBLAB, "xml":xmlString},
+        beforeSend: function () {
+            $('#error-log-title').text("").append("正在运行，请稍侯");
+            $('#error-text').text("");
+            $('#modal-error-log').modal('show');
+        }
     }).done(function (data) {
         if (data['status'] == 'fail')
         {
-            let errStr = "";
-            for (let i = 0; i < data['errorLog'].length; i++)
-            {
-                errStr += data['errorLog'][i];
-                errStr += '<br>';
-            }
-            $('#error-text').text("").append(errStr);
-            $('#modal-error-log').modal('show');
+            $('#error-log-title').text("").append("Oops！运行出错了");
         }
         else
         {
-            alert(data['status']);
+            $('#error-log-title').text("").append("运行成功");
         }
+        let errStr = "";
+        for (let i = 0; i < data['errorLog'].length; i++)
+        {
+            errStr += data['errorLog'][i];
+            errStr += '<br>';
+        }
+        $('#error-text').text("").append(errStr);
+        $('#modal-error-log').modal('show');
+
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
     });
 });
 
@@ -600,7 +608,7 @@ $("#btn-delete-confirm").click(function () {
 
 });
 
-$('btn-submit-error').click(function () {
+$('#btn-submit-error').click(function () {
 
     //TODO upload to backend
     $('#modal-error-log').modal('hide');

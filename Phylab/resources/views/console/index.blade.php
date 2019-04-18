@@ -198,9 +198,9 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                      <h4 class="modal-title" id="collection-folder-label">Oops！运行出错了</h4>
+                      <h4 class="modal-title" id="error-log-title">Oops！运行出错了</h4>
                     </div>
-                    <p class="help-block">错误信息如下</p>
+                    <p class="help-block">信息如下</p>
                     <div id='error-text' style="overflow:auto;height:500px">testtesttesttesttesttesttesttest
                     testestestsetsetsetsetsetset
                     setsetsetsetsetsetsets
