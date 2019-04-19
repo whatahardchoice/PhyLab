@@ -294,7 +294,7 @@
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
           <div class="col-title ">模块</div>
           <a href="/report" target="_blank ">实验</a><br>
-          <a href="/wecenter/?/" target="_blank ">社区</a><br>
+          <a href="/wecenter/?/account/login/" target="_blank ">社区</a><br>
           <a href="#" target="_blank ">反馈</a><br>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
