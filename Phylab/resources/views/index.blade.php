@@ -263,7 +263,7 @@
             <div class="social-item footer-qq-item">
               <i class="fa fa-qq"></i>
               <div class="footer-qq">
-                QQ: 229407702 (实验网站交流群)
+                QQ: 1009310853(实验网站交流群)
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@
                 <i class="fa fa-rss"></i>
               </a>
               <div class="footer-blog">
-                Default2014
+                WhatAHardChoice
               </div>
             </div>
           </div>
