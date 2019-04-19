@@ -321,7 +321,7 @@ class ReportController extends Controller
     {
         $data = ["status"   =>  "",
                  "message"  =>  ""];
-        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
             $data['message'] = "没有权限";
