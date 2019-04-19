@@ -201,6 +201,42 @@
             </div>
           </a>
         </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <a href="{{URL::route('report')}}">
+            <div class="path-item">
+              <div class="col-xs-5 col-sm-4 path-img">
+                <img src="./img/1091-interference-lab.png" style="background-color: #3b3b7e">
+              </div>
+              <div class="col-xs-7 col-sm-8">
+                <div class="path-name"><h4>2111</h4>全息照相</div>
+                <div class="path-course-num">
+                  1 个子实验
+                </div>
+              </div>
+              <div class="desc-layer">
+                <div class="center">2110114 反射全息照相及其应用<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <a href="{{URL::route('report')}}">
+            <div class="path-item">
+              <div class="col-xs-5 col-sm-4 path-img">
+                <img src="./img/1091-interference-lab.png" style="background-color: #3b3b7e">
+              </div>
+              <div class="col-xs-7 col-sm-8">
+                <div class="path-name"><h4>2141</h4>燃料电池</div>
+                <div class="path-course-num">
+                  1 个子实验
+                </div>
+              </div>
+              <div class="desc-layer">
+                <div class="center">2140113 燃料电池综合特性测量<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -244,10 +280,10 @@
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
           <div class="col-title ">团队</div>
-          <a href="#" target="_blank">关于我们</a><br>
-          <a href="#" target="_blank">联系我们</a><br>
-          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">加入我们</a><br>
-          <a href="http://www.cnblogs.com/Default1406/" target="_blank ">技术博客</a><br>
+          <a href="http://www.cnblogs.com/hardchoice/" target="_blank">关于我们</a><br>
+          <a href="Mailto:hardchoice@163.com" target="_blank">联系我们</a><br>
+          <a href="http://www.cnblogs.com/hardchoice/" target="_blank ">加入我们</a><br>
+          <a href="http://www.cnblogs.com/hardchoice/" target="_blank ">技术博客</a><br>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
           <div class="col-title ">合作</div>
@@ -257,8 +293,8 @@
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
           <div class="col-title ">模块</div>
-          <a href="#" target="_blank ">实验</a><br>
-          <a href="#" target="_blank ">社区</a><br>
+          <a href="/report" target="_blank ">实验</a><br>
+          <a href="/wecenter/?/" target="_blank ">社区</a><br>
           <a href="#" target="_blank ">反馈</a><br>
         </div>
         <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
