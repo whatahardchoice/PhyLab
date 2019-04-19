@@ -288,6 +288,16 @@ class ReportController extends Controller
         $data = ["status"   =>  "",
                  "message"  =>  ""];
         $report = Report::where('experiment_id','=',Request::get('reportId'))->get()->count();
+        $isPubReport = Report::where('experiment_id','=',Request::get('reportId'))->where("status",'=','1')->get()->count();
+        $isSuperAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
+
+        if ($isPubReport && !$isSuperAdmin){
+            $data['status'] = FAIL_MESSAGE;
+            $data['message'] = "没有更新权限，请联系超级管理员";
+            return response()->json($data);
+        }
+
+
         if($report){
             // $system1 = exec("echo -e \"".Request::get('reportScript')."\" > ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval1);
             // $system2 = exec("echo -e \"".Request::get('reportHtml')."\" > ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval2);
@@ -324,7 +334,7 @@ class ReportController extends Controller
         $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data['message'] = "没有权限";
+            $data['message'] = "没有发布权限，请联系超级管理员";
             return response()->json($data);
         }
         $report = Report::where('experiment_id','=',Request::get('reportId'))->first();
