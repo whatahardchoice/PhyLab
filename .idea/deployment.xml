@@ -17,8 +17,9 @@
             <excludedPath path="/Phylab/public/pdf_tmp" />
             <excludedPath path="/Phylab/public/codemirror" />
             <excludedPath path="/Phylab/public/ckeditor" />
-            <excludedPath path="/Phylab/.env" />
             <excludedPath path="/.htaccess" />
+            <excludedPath path="/Phylab/.env" />
+            <excludedPath path="/wecenter/system/config/database.php" />
           </excludedPaths>
         </serverdata>
       </paths>
