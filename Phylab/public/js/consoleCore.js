@@ -418,6 +418,12 @@ $('#create_sublab').click(function (){
 });
 
 $('#button-save-script').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        alert("请先选择实验！");
+        return false;
+    }
    // $("#labdoc").html(tableedit.getValue());
     $.post('./report/updatereport', {
         'reportId': CUR_SUBLAB,
@@ -432,6 +438,14 @@ $('#button-save-script').click(function () {
 });
 
 $('#button-push-script').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        alert("请先选择实验！");
+        return false;
+    }
+
+
     $.post('./report/confirmReport', {
         'reportId': CUR_SUBLAB
     }).done(function (data) {
