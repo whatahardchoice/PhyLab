@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[UTF8,adobefonts]{ctex}
+
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{gensymb}
+\usepackage{diagbox}
+
+\begin{document}
+\section*{五、数据处理}
+$\rho=981kg/m^2$,\quad$g=9.792m/s^2$,\quad$\eta=1.83\times10^{-5}kg/m\cdot s$\\
+\indent $b=6.17\times10^{-6}m\cdot cmHg=8.22\times10^{-3}m\cdot Pa$\\
+\indent $P_{20}=76.0cmHg=1.0133\times10^5Pa$,\quad$d=5.00\times10^{-3} m$,\quad$e_0=1.6021773\times 10^{-19}c$\\
+\indent 原始数据记录表\\
+\indent \begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+ 编号 & \diagbox{电压(V)}{时间(s)} &  &  &  &  &  & 平均\\
+\hline
+ 1 & ||U[0]||  & {%for t0 in range(T) -%}||t0[i]|| & {%- endfor%} ||ave_t0|| \\
+\hline
+ 2 & ||U[1]||  & {%for t1 in range(T) -%}||t1[i]|| & {%- endfor%} ||ave_t1|| \\
+\hline
+ 3 & ||U[2]||  & {%for t2 in range(T) -%}||t2[i]|| & {%- endfor%} ||ave_t2|| \\
+\hline
+ 4 & ||U[3]||  & {%for t3 in range(T) -%}||t3[i]|| & {%- endfor%} ||ave_t3|| \\
+\hline
+ 5 & ||U[4]||  & {%for t4 in range(T) -%}||t4[i]|| & {%- endfor%} ||ave_t4|| \\
+\hline
+ 6 & ||U[5]||  & {%for t5 in range(T) -%}||t5[i]|| & {%- endfor%} ||ave_t5|| \\
+\hline
+\end{tabular}\\
+\indent $q=ne=\frac{0.9277\times10^{-14}}
+{\left[t\left(1+2.264\times10^{-2}\sqrt{t}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{V}$\\
+代入计算\\
+1组：\\
+\indent $q_{1}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t0||\left(1+2.264\times10^{-2}\sqrt{||ave_t0||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[0]||}=||q0||c$\\
+\indent $n_1=\frac{q_1}{e_0}\approx||n0||$,\quad$e_1=\frac{q_1}{n_1}=||e0||c$\\
+\indent $\eta_1=||eta0||\%$\\
+2组：\\
+\indent $q_{2}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t1||\left(1+2.264\times10^{-2}\sqrt{||ave_t1||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[1]||}=||q1||c$\\
+\indent $n_2=\frac{q_2}{e_0}\approx||n1||$,\quad$e_2=\frac{q_2}{n_2}=||e1||c$\\
+\indent $\eta_2=||eta1||\%$\\
+3组：\\
+\indent $q_{3}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t2||\left(1+2.264\times10^{-2}\sqrt{||ave_t2||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[2]||}=||q2||c$\\
+\indent $n_3=\frac{q_3}{e_0}\approx||n2||$,\quad$e_3=\frac{q_3}{n_3}=||e2||c$\\
+\indent $\eta_3=||eta2||\%$\\
+4组：\\
+\indent $q_{4}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t3||\left(1+2.264\times10^{-2}\sqrt{||ave_t3||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[3]||}=||q3||c$\\
+\indent $n_4=\frac{q_4}{e_0}\approx||n3||$,\quad$e_4=\frac{q_4}{n_4}=||e3||c$\\
+\indent $\eta_4=||eta3||\%$\\
+5组：\\
+\indent $q_{5}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t4||\left(1+2.264\times10^{-2}\sqrt{||ave_t4||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[4]||}=||q4||c$\\
+\indent $n_5=\frac{q_5}{e_0}\approx||n4||$,\quad$e_5=\frac{q_5}{n_5}=||e4||c$\\
+\indent $\eta_5=||eta4||\%$\\
+6组：\\
+\indent $q_{6}=ne=\frac{0.9277\times10^{-14}}
+{\left[||ave_t5||\left(1+2.264\times10^{-2}\sqrt{||ave_t5||}\right)\right]^\frac{3}{2}}
+\cdot\frac{1}{||U[5]||}=||q5||c$\\
+\indent $n_6=\frac{q_6}{e_0}\approx||n5||$,\quad$e_6=\frac{q_6}{n_6}=||e5||c$\\
+\indent $\eta_6=||eta5||\%$\\
+$\bar{e}=\frac{\sum_{i=1}^{n=6} e_i}{6}=||ave_e||c$,\quad$\eta=|\frac{\bar{e}-e_0}{e_0}|=||eta||$\\
+不确定度计算：\\
+\indent $U_a(e)=\sqrt{|\frac{\bar{e^2}-\bar{e}^2}{6-1}|}=||U_a||c$\\
+\indent $e±U(e)=\left(||ave_e||±||U_a||\right)c$\\
+%需要画表
+\begin{figure}[H]
+\centering
+  \includegraphics[width=13cm]{||figurename||.png}
+\end{figure}
+\indent 由表可知，电荷约为$e_0=1.607\times10^{-19}c$整数倍，体现带电量的不连续性\\
+\indent 元电荷$\bar{e}=\frac{\sum_{i=1}^{n} e_i}{n}=||ave_e||c$,\quad$\eta=|\frac{\bar{e}-e_0}{e_0}|=||eta||$
+\section*{六、误差分析}
+\begin{enumerate}
+\item 由于油滴质量小，可能出现热运动，布朗运动引入误差。
+\item 在时间测量上判断油滴是否达到测量距离的开始点和结束点时，人眼的主观读数误差，使测得时间有误差。
+\item 油滴在上升或下降过程中因为温度，空气流动等原因挥发，质量稍有改变。
+\end{enumerate}
+\end{document}
