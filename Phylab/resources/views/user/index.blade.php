@@ -25,44 +25,44 @@
         </div>
 
         <div class="col-md-6 col-xs-12" >
-    <ul id="myTab" class="nav nav-tabs">
+    <ul id="myTab" class="nav nav-pills col-xs-12">
         <li class="active">
             <a href="#home" data-toggle="tab">
                 个人信息
             </a>
         </li>
-        <li><a href="#favs" data-toggle="tab">收藏夹</a></li>
-
+        <li ><a href="#favs" data-toggle="tab">收藏夹</a></li>
     </ul>
+
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade in active" id="home">
             <div style="background-color: #e4e4e4;padding:20px;">
 
                 <form class="form-horizontal" action="/user" method="post" id="user-form" >
-                    <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">名字</label>
-                        <div class="col-sm-8">
+                    <div class="form-group col-xs-12">
+                        <label for="username" class="col-sm-2 control-label col-xs-4">名字</label>
+                        <div class="col-sm-8 col-xs-8">
                             <input type="text" class="form-control" id="username" name="username" value={{$username}}>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for = "sex" class = "col-sm-2 control-label" >性别</label>
-                        <div id = "sex" class = "col-sm-8">
-                            <label class = "radio-inline col-sm-2">
+                    <div class="form-group col-xs-12">
+                        <label for = "sex" class = "col-sm-2 control-label col-xs-4" >性别</label>
+                        <div id = "sex" class="col-sm-8 col-xs-8 ">
+                            <label class = "radio-inline col-sm-2 col-xs-4 text-center">
                                 <input type = "radio" name = "sex" id = "sex_radio1" value = "1" @if($sex==1) checked @endif><span style = "margin-left: 5px">男</span>
                             </label>
-                            <label class = "radio-inline col-sm-2" >
+                            <label class = "radio-inline col-sm-2 col-xs-4 text-center" >
                                 <input type = "radio" name = "sex" id = "sex_radio2" value = "2" @if($sex==2) checked @endif><span style = "margin-left: 5px">女</span>
                             </label>
-                            <label class = "radio-inline col-sm-2"  >
+                            <label class = "radio-inline col-sm-2 hidden-xs text-center"  >
                                 <input type = "radio" name = "sex" id = "sex_radio3" value = "3" @if($sex==3) checked @endif><span style = "margin-left: 5px">保密</span>
                             </label>
 
                         </div>
                     </div>
-                    <div class = "form-group">
-                        <label for = "grade" class = "col-sm-2 control-label">年级</label>
-                        <div class="col-sm-8">
+                    <div class = "form-group col-xs-12">
+                        <label for = "grade" class = "col-sm-2 col-xs-4 control-label">年级</label>
+                        <div class="col-sm-8 col-xs-8">
                             <select class = "form-control" id = "grade" name = "grade">
                                 <option value="" @if($grade==0) selected @endif disabled hidden>Choose here</option>
                                 <option @if($grade==2016) selected @endif value="2016">2016</option>
@@ -74,21 +74,21 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">邮箱</label>
-                        <div class="col-sm-8">
+                    <div class="form-group col-xs-12">
+                        <label for="email" class="col-sm-2 col-xs-4 control-label">邮箱</label>
+                        <div class="col-sm-8 col-xs-8">
                             <input type="text" class="form-control" id="email" value={{$email}} readonly>
                         </div>
                     </div>
-                    <div class = "form-group">
-                        <label for = "intro" class = "col-sm-2 control-label">简介</label>
-                        <div class = "col-sm-8">
+                    <div class = "form-group col-xs-12">
+                        <label for = "intro" class = "col-sm-2 col-xs-4 control-label">简介</label>
+                        <div class = "col-sm-8 col-xs-8">
                             <textarea id="intro" class = "form-control" row = 4 name="introduction" >{{$introduction}}</textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for = "update" class = "col-md-2 control-label"></label>
-                        <div class="col-sm-8">
+                    <div class="form-group col-xs-12 text-center">
+                        <label for = "update" class = "control-label col-sm-2 col-xs-2"></label>
+                        <div class="col-sm-8 col-xs-8 ">
                             <button id = "update" type="submit" class="btn btn-success" style = "width: 100px">更新</button>
                         </div>
                     </div>

@@ -12,14 +12,16 @@
   <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="./css/styles.css" rel="stylesheet" type="text/css">
   <link href="./css/phylab.css" rel="stylesheet" type="text/css">
+  <script src="./js/jquery-2.1.4.js"></script>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   <script src="./ckeditor/ckeditor.js"></script>
+
   <style>
     @media only screen and (max-width: 992px) {
       .navbar-banner {
@@ -83,5 +85,6 @@
 
     </div>
   </header>
+
 
 @yield('contents')
