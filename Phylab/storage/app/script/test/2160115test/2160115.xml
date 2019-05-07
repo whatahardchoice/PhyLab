@@ -1,0 +1,56 @@
+<lab id="2160115">
+	<table name="2161_1" raw="1" column="6">
+		<tr index="1">
+			<td>173</td>
+			<td>159</td>
+			<td>254</td>
+			<td>190</td>
+			<td>195</td>
+			<td>178</td>
+		</tr>
+	</table>
+	<table name="2161_2" raw="6" column="5">
+		<tr index="1">
+			<td>17.18</td>
+			<td>17.08</td>
+			<td>16.03</td>
+			<td>17.37</td>
+			<td>16.92</td>
+		</tr>
+		<tr index="2">
+			<td>11.33</td>
+			<td>11.54</td>
+			<td>11.51</td>
+			<td>11.52</td>
+			<td>11.69</td>
+		</tr>
+		<tr index="3">
+			<td>20.84</td>
+			<td>21.27</td>
+			<td>20.53</td>
+			<td>21.31</td>
+			<td>20.50</td>
+		</tr>
+		<tr index="4">
+			<td>19.23</td>
+			<td>19.54</td>
+			<td>18.81</td>
+			<td>19.03</td>
+			<td>19.50</td>
+		</tr>
+		<tr index="5">
+			<td>10.50</td>
+			<td>10.73</td>
+			<td>10.39</td>
+			<td>10.45</td>
+			<td>10.47</td>
+		</tr>
+		<tr index="6">
+			<td>16.86</td>
+			<td>17.16</td>
+			<td>17.33</td>
+			<td>16.90</td>
+			<td>17.20</td>
+		</tr>
+	</table>
+</lab>

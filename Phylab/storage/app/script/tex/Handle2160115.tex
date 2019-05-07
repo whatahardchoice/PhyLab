@@ -5,19 +5,19 @@ $\rho=981kg/m^2$,\quad$g=9.792m/s^2$,\quad$\eta=1.83\times10^{-5}kg/m\cdot s$\\
 \indent 原始数据记录表\\
 \indent \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
- 编号 & \diagbox{电压(V)}{时间(s)} &  &  &  &  &  & 平均\\
+ 编号 & 电压(V) & 时间(s) & 时间(s) & 时间(s) & 时间(s) & 时间(s) & 平均时间(s)\\
 \hline
- 1 & ||U[0]||  & {%for t0 in range(T) -%}||t0[i]|| & {%- endfor%} ||ave_t0|| \\
+ 1 & ||U[0]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t0|| \\
 \hline
- 2 & ||U[1]||  & {%for t1 in range(T) -%}||t1[i]|| & {%- endfor%} ||ave_t1|| \\
+ 2 & ||U[1]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t1|| \\
 \hline
- 3 & ||U[2]||  & {%for t2 in range(T) -%}||t2[i]|| & {%- endfor%} ||ave_t2|| \\
+ 3 & ||U[2]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t2|| \\
 \hline
- 4 & ||U[3]||  & {%for t3 in range(T) -%}||t3[i]|| & {%- endfor%} ||ave_t3|| \\
+ 4 & ||U[3]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t3|| \\
 \hline
- 5 & ||U[4]||  & {%for t4 in range(T) -%}||t4[i]|| & {%- endfor%} ||ave_t4|| \\
+ 5 & ||U[4]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t4|| \\
 \hline
- 6 & ||U[5]||  & {%for t5 in range(T) -%}||t5[i]|| & {%- endfor%} ||ave_t5|| \\
+ 6 & ||U[5]||  & {%for ti in t0 -%}||ti|| &{%- endfor%}||ave_t5|| \\
 \hline
 \end{tabular}\\
 \indent $q=ne=\frac{0.9277\times10^{-14}}
@@ -63,12 +63,13 @@ $\rho=981kg/m^2$,\quad$g=9.792m/s^2$,\quad$\eta=1.83\times10^{-5}kg/m\cdot s$\\
 $\bar{e}=\frac{\sum_{i=1}^{n=6} e_i}{6}=||ave_e||c$,\quad$\eta=|\frac{\bar{e}-e_0}{e_0}|=||eta||$\\
 不确定度计算：\\
 \indent $U_a(e)=\sqrt{|\frac{\bar{e^2}-\bar{e}^2}{6-1}|}=||U_a||c$\\
-\indent $e±U(e)=\left(||ave_e||±||U_a||\right)c$\\
+%\indent $e±U(e)=\left(||ave_e||±||U_a||\right)c$\\
+\indent $e(+-)U(e)=\left(||ave_e||(+-)||U_a||\right)c$\\
 %需要画表
-\begin{figure}[H]
-\centering
-  \includegraphics[width=13cm]{||figurename||.png}
-\end{figure}
+%\begin{figure}[H]
+%\centering
+%  \includegraphics[width=13cm]{||figurename||.png}
+%\end{figure}
 \indent 由表可知，电荷约为$e_0=1.607\times10^{-19}c$整数倍，体现带电量的不连续性\\
 \indent 元电荷$\bar{e}=\frac{\sum_{i=1}^{n} e_i}{n}=||ave_e||c$,\quad$\eta=|\frac{\bar{e}-e_0}{e_0}|=||eta||$
 \section*{六、误差分析}
