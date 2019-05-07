@@ -8,8 +8,8 @@
   <title>PhyLab</title>
 
   <!-- Bootstrap jquery-->
-  <script src="./js/bootstrap.js"></script>
-  <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+  <script src="./js/bootstrap.min.js"></script>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="./css/styles.css" rel="stylesheet" type="text/css">
   <link href="./css/phylab.css" rel="stylesheet" type="text/css">
