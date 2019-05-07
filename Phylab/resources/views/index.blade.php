@@ -17,21 +17,21 @@
               </ol>
               <!--轮播指标-->
               <!--轮播项目-->
-              <div class="carousel-inner">
+              <div class="carousel-inner" style="height: 390px">
                 <div class="item active" >
-                  <img src="{{URL::asset('/img/aa.png')}}"  alt="First slide" style="border: solid 10px;max-height: 400px;width: 100%">
+                  <img src="{{URL::asset('/img/aa.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
                   <div class="carousel-caption"><strongr>宇宙中的宇航员</strongr></div>
                 </div>
                 <div class="item">
-                  <img src="{{URL::asset('/img/bb.png')}}"  alt="First slide" style="border: solid 10px;max-height: 400px;width: 100%">
+                  <img src="{{URL::asset('/img/bb.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
                   <div class="carousel-caption"><strong>有趣的物理公式</strong></div>
                 </div>
                 <div class="item">
-                  <img src="{{URL::asset('/img/cc.png')}}"  alt="First slide"  style="border: solid 3px; max-height: 400px;width: 100%">
+                  <img src="{{URL::asset('/img/cc.png')}}"  alt="First slide"  style="border: solid 3px; height: 100%;width: 100%">
                   <div class="carousel-caption"><strong>牛顿第二定律</strong></div>
                 </div>
                 <div class="item">
-                  <img src="{{URL::asset('/img/dd.png')}}" alt="First slide" style="border: solid 3px; max-height: 400px;width: 100%">
+                  <img src="{{URL::asset('/img/dd.png')}}" alt="First slide" style="border: solid 3px; height: 100%;width: 100%">
                   <div class="carousel-caption"><strong>那些有用的物理工具</strong></div>
                 </div>
               </div>
@@ -46,7 +46,7 @@
           </div>
             </div>
         </div>
-      <div  class="col-xs-12 col-md-6 col-md-offset-7 ">
+      <div  class="col-xs-12 col-md-6 col-md-offset-7 " style="margin-top: 5px">
         <label class="col-md-12 col-xs-12 text-center" style="background-color: white" ><strong style="font-size: 20px">公告</strong>
           <marquee style=" HEIGHT: 50px; background-color: white" scrollamount="1" direction="up" Align="Middle" >
             <div style="text-align: center">
