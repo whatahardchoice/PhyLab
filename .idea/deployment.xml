@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="aliyun" uploadOnCheckinGroup="phylab" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore;" filePermissions="511" folderPermissions="511" notifyRemoteChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_CONTENT" serverName="aliyun" uploadOnCheckin="3abac7c6-6b02-42e1-b3d9-5aa98bbb8721" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore;" filePermissions="511" folderPermissions="511" notifyRemoteChanges="true" compareModeInSync="TEXT">
     <serverData>
       <paths name="aliyun">
         <serverdata>
@@ -20,6 +20,7 @@
             <excludedPath path="/.htaccess" />
             <excludedPath path="/Phylab/.env" />
             <excludedPath path="/wecenter/system/config/database.php" />
+            <excludedPath path="/Phylab/public/star_pdf" />
           </excludedPaths>
         </serverdata>
       </paths>
@@ -43,6 +44,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="aliyun" />
     <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>
 </project>
