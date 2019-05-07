@@ -5,7 +5,7 @@
   <div class="banner-container">
     <div class="container">
       <div class="row" >
-        <div class="col-xs-12 col-md-6 col-md-offset-7" @if ($auth) style="display: block" @else style="display: none" @endif>
+        <div class="col-xs-12 col-md-6 col-md-offset-6" @if ($auth) style="display: block" @else style="display: none" @endif>
             <!--轮播区域-->
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" >
               <!--轮播指标-->
@@ -46,7 +46,7 @@
           </div>
             </div>
         </div>
-      <div  class="col-xs-12 col-md-6 col-md-offset-7 " style="margin-top: 5px">
+      <div  class="col-xs-12 col-md-6 col-md-offset-6" style="margin-top: 5px">
         <label class="col-md-12 col-xs-12 text-center" style="background-color: white" ><strong style="font-size: 20px">公告</strong>
           <marquee style=" HEIGHT: 50px; background-color: white" scrollamount="1" direction="up" Align="Middle" >
             <div style="text-align: center">
