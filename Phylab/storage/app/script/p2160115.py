@@ -24,6 +24,8 @@ from handler import texdir
 from handler import scriptdir
 import xml.dom.minidom
 import math
+import sys
+import matplotlib.pyplot as plt
 import numpy as np
 
 # 以上包必须引入，否则脚本无法运行
@@ -56,7 +58,7 @@ def handler(XML):
     ################### 自由发挥分割线 #######################
     # 这里你可以自定义一些数据处理的方式，但最后一定要返回jinja2绑定好的文本！
     data = read_xml(XML)
-    return process_data(data[0][0],data[1], source)
+    return process_data(data[0][0],data[1], source , sys.argv[3])
     
 
 """
@@ -120,7 +122,7 @@ def cat_q(u , t):
     
     return data
 
-def process_data(u , t  , source):
+def process_data(u , t  , source , name):
     # 以下例子做了简单的加法
     #INPUT_A = data[0][0][0]
     #INPUT_B = data[0][0][1]
@@ -153,6 +155,18 @@ def process_data(u , t  , source):
     #eta = [0,0,0,0,0,0]
     #eta_f = 0
     #ave_e = 0
+    
+    font = {
+        'size' : 30 ,
+    }
+    
+    pic = name + '_pic1'
+    for i in range(6):
+    	plt.plot( [0,n[i]] , [0 , q[i]*1e19] ,linewidth = 1.0)
+    plt.xlabel('n' , font)
+    plt.ylabel('Q' , font)
+    plt.savefig(pic , bbox_inches='tight')
+    
     return env.from_string(source).render(
         U = u,
       	t0 = t[0],
@@ -193,7 +207,8 @@ def process_data(u , t  , source):
       	eta5 = eta[5],
       	eta = eta_f,
       	ave_e = ave_e,
-      	U_a = ua
+      	U_a = ua,
+      	figurename = pic
     )
     
 '''
