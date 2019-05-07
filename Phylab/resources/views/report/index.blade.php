@@ -69,7 +69,7 @@
     <div id="doc" class="col-xs-12 col-md-8" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin: 5px 0 5px 0;">
       <div class="panel-group" id="lab-report" style="margin-left: 15px">
         <div class="panel panel-default pannel-autoscroll">
-          <button id="preading-report" class="btn btn-success col-xs-12" >
+          <button id="preading-report" class="btn btn-success col-xs-12 visible-xs visible-sm" >
             <span class="sr-only">y</span>
             <i class="fa fa-bookmark-o"></i>
             <span >查看实验报告</span>
@@ -108,7 +108,7 @@
               </div>
             </div>
           </div>
-          <div class="panel-body hidden-xs" style="padding:5px;">
+          <div class="panel-body hidden-xs hidden-sm" style="padding:5px;">
             <div id="wait-report">
               <i id="wait-report-spinner" class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
             </div>
@@ -160,6 +160,15 @@
     </div>
   </div>
 
+  <div class="form-group">
+      <span class="required">*</span>
+      <label for="summernote">正文</label>
+      <div class="summernote-textarea">
+        <textarea id="summernote" name="content">
+           WENBEN
+        </textarea>
+      </div>
+  </div>
 
   <footer id="site-footer">
     <div class="text-center copyright" style="margin-top: 0">
@@ -185,5 +194,11 @@
       initReportPage();
   </script>
 </body>
+
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/vendor/jquery.ui.widget.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.iframe-transport.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.22.0/js/jquery.fileupload.min.js"></script>
 </html>
 @stop
