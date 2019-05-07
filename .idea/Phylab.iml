@@ -13,7 +13,6 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/event-manager" />
-      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/hamcrest/hamcrest-php" />
@@ -31,7 +30,6 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpdocumentor/type-resolver" />
-      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/php-diff" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/phpspec" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/phpunit/php-code-coverage" />
@@ -69,10 +67,16 @@
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/symfony/yaml" />
-      <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Phylab/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="summernote-zh-CN" level="application" />
+    <orderEntry type="library" name="summernote" level="application" />
+    <orderEntry type="library" name="jquery.iframe-transport" level="application" />
+    <orderEntry type="library" name="jquery.ui.widget" level="application" />
+    <orderEntry type="library" name="jquery.fileupload" level="application" />
+    <orderEntry type="library" name="html5shiv" level="application" />
+    <orderEntry type="library" name="respond" level="application" />
   </component>
 </module>

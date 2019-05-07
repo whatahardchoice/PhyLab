@@ -17,7 +17,7 @@
               <input class="form-control" name="password" id="password" type="password" placeholder="密码">
             </div>
             <button id='quick-regist' class="btn register" type="button">注册</button>
-            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款.</P>
+            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</p>
           </form>
         </div>
       </div>
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<div class="hidden-xs line-and-laboratory">
+<div class="line-and-laboratory">
   <div class="container">
     <div class="clearfix text-center item-header">
       <span class="line"></span>
@@ -278,26 +278,26 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center" >
           <div class="col-title ">团队</div>
           <a href="http://www.cnblogs.com/hardchoice/" target="_blank">关于我们</a><br>
           <a href="Mailto:hardchoice@163.com" target="_blank">联系我们</a><br>
           <a href="http://www.cnblogs.com/hardchoice/" target="_blank ">加入我们</a><br>
           <a href="http://www.cnblogs.com/hardchoice/" target="_blank ">技术博客</a><br>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center ">
           <div class="col-title ">合作</div>
           <a href="#" target="_blank ">上传资源</a><br>
           <a href="#" target="_blank ">教师合作</a><br>
           <a href="#" target="_blank ">友情链接</a>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">模块</div>
           <a href="/report" target="_blank ">实验</a><br>
           <a href="/wecenter/?/account/login/" target="_blank ">社区</a><br>
           <a href="#" target="_blank ">反馈</a><br>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">支持实验</div>
           <a href="./report" target="_blank ">1011</a><br>
           <a href="./report" target="_blank ">1021</a><br>

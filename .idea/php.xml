@@ -12,7 +12,6 @@
       <path value="$PROJECT_DIR$/Phylab/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/Phylab/vendor/composer" />
       <path value="$PROJECT_DIR$/Phylab/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/Phylab/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/Phylab/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/Phylab/vendor/symfony/finder" />
@@ -31,7 +30,6 @@
       <path value="$PROJECT_DIR$/Phylab/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpspec/phpspec" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpspec/php-diff" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-text-template" />
@@ -40,7 +38,6 @@
       <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/Phylab/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/Phylab/vendor/mtdowling/cron-expression" />
       <path value="$PROJECT_DIR$/Phylab/vendor/paragonie/random_compat" />

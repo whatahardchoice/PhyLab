@@ -149,26 +149,26 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">团队</div>
           <a href="#" target="_blank">关于我们</a><br>
           <a href="#" target="_blank">联系我们</a><br>
           <a href="http://www.cnblogs.com/Default1406/" target="_blank ">加入我们</a><br>
           <a href="http://www.cnblogs.com/Default1406/" target="_blank ">技术博客</a><br>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">合作</div>
           <a href="#" target="_blank ">上传资源</a><br>
           <a href="#" target="_blank ">教师合作</a><br>
           <a href="#" target="_blank ">友情链接</a>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">模块</div>
           <a href="#" target="_blank ">实验</a><br>
           <a href="#" target="_blank ">社区</a><br>
           <a href="#" target="_blank ">反馈</a><br>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-2 footer-col ">
+        <div class="col-xs-6 col-sm-3 col-md-2 footer-col text-center">
           <div class="col-title ">支持实验</div>
           <a href="#" target="_blank ">1011</a><br>
           <a href="#" target="_blank ">1011</a><br>
