@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>A</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>
+            <input class='para form-control' type='number' id='input-a'/>
+        </td>
+        <td>
+            <input class='para form-control' type='number' id='input-b'/>
+        </td>
+    </tr>
+</table>
+<script class="xmlInteraction">
+    "<lab id=\"%%LAB_SUBLAB_ID%%\">\n"+
+    "<table name=\"%%LAB_SUBLAB_ID%%_1\" row=\"1\" column=\"2\">\n"+
+    "<tr index=\"1\">\n"+
+    "<td>"+document.getElementById('input-a').value+"</td>\n"+
+    "<td>"+document.getElementById('input-b').value+"</td>\n"+
+    "</tr>\n"+
+    "</table>\n"+
+    "</lab>";
+</script>
