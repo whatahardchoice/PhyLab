@@ -47,14 +47,14 @@
             </div>
         </div>
       <div  class="col-xs-12 col-md-6 col-md-offset-6" style="margin-top: 5px">
-        <label class="col-md-12 col-xs-12 text-center" style="background-color: white" ><strong style="font-size: 20px">公告</strong>
-          <marquee style=" HEIGHT: 50px; background-color: white" scrollamount="1" direction="up" Align="Middle" >
-            <div style="text-align: center">
-              <p>1一大堆文字飘过～</p>
-              <p>2二大堆文字飘过～</p>
-              <p>3三大堆文字飘过～</p>
-              <p>4四大堆文字飘过～</p>
-              <p>5五大堆文字飘过～</p>
+        <label class="col-md-12 col-xs-12 text-center" style="background-color: #aeb3b9" ><strong style="font-size: 20px">公告</strong>
+          <marquee style=" HEIGHT: 50px; background-color: #aeb3b9 " scrollamount="1" direction="up" Align="Middle" >
+            <div style="text-align: center;">
+              <p > <i class="fa fa-volume-up" style="color: #9d1e15"></i>公告1：一大堆文字飘过～</p>
+              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告2：二大堆文字飘过～</p>
+              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告3：三大堆文字飘过～</p>
+              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告4：四大堆文字飘过～</p>
+              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告5：五大堆文字飘过～</p>
             </div>
           </marquee >
         </label>
