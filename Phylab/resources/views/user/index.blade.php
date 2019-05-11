@@ -18,6 +18,13 @@
                 <input type="submit" value="上传">
             </form>
 -->
+            <form method="POST" action="/user/avatar" enctype="multipart/form-data">
+
+                <input type="file" name="avatar" />
+
+                <input type="submit" name="submit" value="Submit" />
+
+            </form>
 
             <h3>{{$username}}</h3>
 
