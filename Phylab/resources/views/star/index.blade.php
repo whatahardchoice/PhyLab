@@ -6,36 +6,42 @@
     <title>PhyLabReportStar</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/mystyle.css">
+
 </head>
+
 <body>
+
 	<div style="padding:10px;">
     <table class="table table-condensed table-striped table-hover" >
         <thead>
             <tr>
                 <th>No.</th>
                 <th>实验报告</th>
-                <th>链接</th>
-                <th>收藏时间</th>
-                <th>编辑</th>
+                <th >链接</th>
+                <th >收藏时间</th>
+                <th >编辑</th>
             </tr>
         </thead>
-        <tbody id="collection-list" num="{{count($stars)}}">
+        <tbody id="collection-list" num="{{count($stars)}}" style="table-layout: fixed">
             @for ($i=0;$i < count($stars);$i++)
-                <tr id="star_{{$stars[$i]['id']}}">
+                <tr id="star_{{$stars[$i]['id']}}" >
                     <th scope="row">{{$i+1}}</th>
-                    <td>{{$stars[$i]["name"]}}</td>
-                    <td><button type="button" class="btn btn-default" onclick="window.open('{{URL::route('star').'/'.$stars[$i]['id']}}')"><a href="#">查看</a></button></td>
-                    <td>{{$stars[$i]["time"]}}</td>
-                    <td width="20%">
-						<div class="btn-group btn-block">
-							<button type="button" class="btn btn-default" onclick="window.open('{{URL::route('starDownload').'/'.$stars[$i]['id']}}')">下载</button>
-							<button type="button" class="btn btn-danger" onclick="deleteStar('{{$stars[$i]['id']}}')">删除</button>
+                    <td  >{{$stars[$i]["name"]}}</td>
+                    <td ><button type="button" class="btn btn-default " onclick="window.open('{{URL::route('star').'/'.$stars[$i]['id']}}')"><a href="#">查看</a></button></td>
+                    <td >{{$stars[$i]["time"]}}</td>
+                    <td width="20%" >
+						<div class="btn-group btn-block ">
+							<button type="button" class="btn btn-default " onclick="window.open('{{URL::route('starDownload').'/'.$stars[$i]['id']}}')">下载</button>
+							<button type="button" class="btn btn-danger " onclick="deleteStar('{{$stars[$i]['id']}}')">删除</button>
 						</div>
 					</td>
                 </tr>
             @endfor
         </tbody>
     </table>
+
+
+
 	</div>
     <script src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>

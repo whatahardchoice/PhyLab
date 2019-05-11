@@ -362,6 +362,16 @@ $('#button-generate-report').click(function () {
 
     if (typeof CUR_SUBLAB === 'undefined')
     {
+        $('#modal-report-msgbox').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+});
+
+$('#button-generate-letax').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
         $('#upload_preview_modal').modal('hide');
         alert("请先选择实验！");
         return false;
@@ -396,6 +406,7 @@ $('#button-generate-report').click(function () {
             errorFunction("生成报告失败");
         }
     });
+    $('#modal-report-msgbox').modal('hide');
 });
 
 $('#collect-report').click(function () {

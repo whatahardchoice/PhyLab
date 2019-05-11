@@ -4,7 +4,61 @@
 <div class="navbar-banner layout-no-margin-top" style="margin-top: 0px">
   <div class="banner-container">
     <div class="container">
-      <div class="row">
+      <div class="row" >
+        <div class="col-xs-12 col-md-6 col-md-offset-7" @if ($auth) style="display: block" @else style="display: none" @endif>
+            <!--轮播区域-->
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" >
+              <!--轮播指标-->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" ></li>
+                <li data-target="#myCarousel" data-slide-to="2" ></li>
+                <li data-target="#myCarousel" data-slide-to="3" ></li>
+              </ol>
+              <!--轮播指标-->
+              <!--轮播项目-->
+              <div class="carousel-inner" style="height: 390px">
+                <div class="item active" >
+                  <img src="{{URL::asset('/img/aa.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
+                  <div class="carousel-caption"><strongr>宇宙中的宇航员</strongr></div>
+                </div>
+                <div class="item">
+                  <img src="{{URL::asset('/img/bb.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
+                  <div class="carousel-caption"><strong>有趣的物理公式</strong></div>
+                </div>
+                <div class="item">
+                  <img src="{{URL::asset('/img/cc.png')}}"  alt="First slide"  style="border: solid 3px; height: 100%;width: 100%">
+                  <div class="carousel-caption"><strong>牛顿第二定律</strong></div>
+                </div>
+                <div class="item">
+                  <img src="{{URL::asset('/img/dd.png')}}" alt="First slide" style="border: solid 3px; height: 100%;width: 100%">
+                  <div class="carousel-caption"><strong>那些有用的物理工具</strong></div>
+                </div>
+              </div>
+              <!--轮播控制器-->
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+              <!--轮播控制器-->
+          </div>
+            </div>
+        </div>
+      <div  class="col-xs-12 col-md-6 col-md-offset-7 " style="margin-top: 5px">
+        <label class="col-md-12 col-xs-12 text-center" style="background-color: white" ><strong style="font-size: 20px">公告</strong>
+          <marquee style=" HEIGHT: 50px; background-color: white" scrollamount="1" direction="up" Align="Middle" >
+            <div style="text-align: center">
+              <p>1一大堆文字飘过～</p>
+              <p>2二大堆文字飘过～</p>
+              <p>3三大堆文字飘过～</p>
+              <p>4四大堆文字飘过～</p>
+              <p>5五大堆文字飘过～</p>
+            </div>
+          </marquee >
+        </label>
+      </div>
         <div class="col-xs-12 col-md-5 col-md-offset-7" @if (!$auth) style="display: block" @else style="display: none" @endif>
           <form method="post">
             <div class="form-group">
@@ -313,6 +367,7 @@
     </div>
   </div>
 </footer>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
