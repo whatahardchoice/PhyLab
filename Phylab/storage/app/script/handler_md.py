@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
 
     try:
-        html_head_file = open(mddir + 'htmlHead.txt', 'r', encoding='utf-8')
+        html_head_file = open(mddir + 'html_head.txt', 'r', encoding='utf-8')
         html_head = html_head_file.read()
         html_head_file.close()
         html_tail = "\n</body>\n</html>"
