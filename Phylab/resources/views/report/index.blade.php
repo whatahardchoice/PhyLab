@@ -37,9 +37,27 @@
           <button id="button-view-preparation" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" disabled>
             <i class="fa fa-file-pdf-o"></i>查看预习报告
           </button>
-          <button id="button-generate-report" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" type="submit" disabled>
+          <button id="button-generate-report" class="btn btn-success col-xs-6 text-center" data-toggle="modal" data-target="#modal-report-msgbox" style="margin-bottom: 5px;" disabled>
             <i class="fa fa-area-chart"></i>生成数据报告
           </button>
+
+          <div class="modal fade" id="modal-report-msgbox" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+            <div class="modal-dialog" style="width: 38%;">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">选择生成方式</h4>
+                </div>
+                <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
+                  <div style="float:bottom">
+                    <button id="button-generate-letax" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" type="submit">letax</button>
+                    <button id="button-generate-markdown" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" type="submit">markdown</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="modal fade" id="modal-error-log" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
             <div class="modal-dialog" style="width: 38%;">
               <div class="modal-content">
