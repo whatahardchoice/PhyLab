@@ -1,0 +1,103 @@
+%\documentclass[11pt,a4paper,oneside]{article}
+%\usepackage[UTF8,adobefonts]{ctex}
+\documentclass[11pt,a4paper,UTF8]{ctexart}
+\usepackage{wrapfig}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{ulem}
+
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption} 
+%\usepackage{amssymb}
+%\usepackage{diagbox}
+
+\begin{document}
+
+\section*{五、数据处理}
+\subsection*{1、定标}
+在扫描周期0.2ms下，CCD波形一帧对应于示波器上的41个小格。因此，在0.1ms扫描周期下，每格对应的实际空间距离为$\Delta S=\frac{2100}{41*2}*11um=0.3622mm$
+\subsection*{2、布拉格衍射的最大衍射效率及带宽}
+固定功率情况下，测量数据及当前频率(P为80mA)
+
+%\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+%	\hline 
+%	频率${f}_{S}/Hz$&{%for 2_fsi in 2_fs %}& ||2_fsi|| {% endfor %}  \\ 
+%	\hline 
+%	${I}_{1}/$格&{%for 2_i1i in 2_i1 %}& ||2_i1i|| {% endfor %}  \\ 
+%	\hline 
+%\end{tabular}
+${I}_{0}$ = 19格
+可知，当${f}_{c}=||fs1||$时，${I}_{1}$最大，此时有最大衍射效率$\eta=\frac{{I}_{0}}{{I}_{1}}*100\%=\frac{19}{||i1max||}*100\% = ||eta1||$
+中心频率光强为$||i1max||$格，当偏转为$\frac{||i1max||}{\sqrt{2}}=||div1||$格时，对应大致频率为||f1||MHz。
+
+所以声光器件的带宽$\Delta {f}_{s}=||fs2||-||fs1||=||f2||MHz$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=3cm]{Image/1.jpg}
+\end{figure}
+
+\subsection*{3、求超声波声速}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\hline 
+	${f}_{s}/$Hz&{%for 3_fsi in 3_fs %}& ||3_fsi|| {% endfor %}  \\ 
+	\hline 
+	间隔小格/div&{%for 3_divi in 3_div %}& ||3_divi|| {% endfor %} \\ 
+	\hline 
+	实际距离D/mm&{%for 3_Di in 3_D %}& ||3_Di|| {% endfor %}  \\ 
+	\hline 
+	偏转角度$\phi $/rad&{%for 3_phii in 3_phi %}& ||3_phii|| {% endfor %}  \\ 
+	\hline 
+	衍射角$\varphi $&{%for 3_varphii in 3_varphi %}& ||3_varphii|| {% endfor %}  \\ 
+	\hline 
+\end{tabular} 
+
+以上偏转角为空气中的测量结果，按n =$||3_n||$换算
+
+
+$\frac{\mathrm{sin}\varphi }{\mathrm{sin}\phi }=\frac{1}{n}$，算出$\varphi$填入上表
+
+根据式$\varphi =\frac{{\lambda }_{0}{f}_{s}}{n{v}_{s}}$得
+
+${f}_{s}=\frac{n{v}_{\delta }}{{\lambda }_{0}}\varphi $
+
+利用一元线性规划，设y = bx+a,y = ${f}_{s}$,x = $\varphi $,
+
+可得b =$||3_b||$ ，$r$ = $||3_r||$ 
+可见${f}_{s}$与 $\varphi $与较强线性关系，k置信度高
+
+${V}_{s}=\frac{{\lambda }_{0}{f}_{s}}{n\varphi }=\frac{{\lambda }_{0}}{n}b= \frac{{||3_lambda0 ||}}{||3_n||}||3_b||m/s = ||3_vs1||$
+相对误差：$\left|\frac{||3_vs1||-||3_vs2||}{||3_vs2||}\right|*100\%=||3_error||$
+
+\subsection*{4、声光调制}
+布拉格衍射，将频率固定在中心频率${f}_{c} = ||4_fc||MHz$
+
+测得：\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+	\hline 
+	P(mA)&{%for 4_pi in 4_p %}& ||4_pi|| {% endfor %}  \\ 
+	\hline 
+	$I_1/$格&{%for 4_i1i in 4_i1 %}& ||4_i1i|| {% endfor %}  \\ 
+	\hline 
+\end{tabular} 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=3cm]{Image/2.jpg}
+\end{figure}
+
+\subsection*{5、喇曼-纳斯衍射}
+(1)$\Delta x=\Delta s*\frac{41}{2} =||5_delta_x||mm$
+
+偏转角$\phi  =arctan\frac{\Delta x}{L} = ||5_phi||$
+衍射角$\varphi =\mathrm{arcsin}\left(\frac{\mathrm{sin}\phi }{n}\right) =||5_varphi||rad$
+(2)衍射效率
+$\eta = \frac{{I}_{1}}{{I}_{0}} = ||5_eta||\%$
+\end{document}
