@@ -37,13 +37,13 @@ if __name__ == '__main__':
             #raise e
             pass
 
-        html_body_txt = __import__('p' + sys.argv[1]).handler(root)  # (sys.argv[2])
+        html_body_txt = __import__('p' + sys.argv[1]).handler(root, 2)  # (sys.argv[2])
         if (not os.path.isfile(scriptdir + 'p' + sys.argv[1] + '.py')):
             print('{"status":"fail", "msg":"no handler"}')
             exit(1)
 
         md = markdown.Markdown(extensions=[MathExtension(enable_dollar_delimiter=True)])
-        html_body = md.convert(txt)
+        html_body = md.convert(html_body_txt)
 
         finish_str = html_head + html_body + html_tail
         finish_file = open(sys.argv[3] + ".html", "w", encoding='utf-8')

@@ -172,7 +172,7 @@ def Holograph (loca,l,b,h,wl,m,source):
 
 
 
-def handler(XML):
+def handler(XML, type):
     file_object = open(texdir + "Handle2110114.tex" , "r",encoding='utf-8')
     source = file_object.read()
     file_object.close()

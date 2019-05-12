@@ -78,7 +78,7 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 			final = final
 			)
 
-def handler(XML):
+def handler(XML, type):
 	file_object = open(texdir + "Handle1010113.tex","r", encoding='utf-8')
 	#将模板作为字符串存储在template文件中
 	source = file_object.read()
