@@ -86,22 +86,22 @@ class ReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createTex()
     {
         //post 传入 xml 模板文件
         $data = ["status"=> "",
-                 "experimentId" => "",
-                 "link"  => "",
-                 "message" => "",
-                 "errorLog"=>array()];
+            "experimentId" => "",
+            "link"  => "",
+            "message" => "",
+            "errorLog"=>array()];
         $validatorRules = array(
-                'id'  => 'required|integer|exists:reports,id',
-                'xml' => 'required'
-            );
+            'id'  => 'required|integer|exists:reports,id',
+            'xml' => 'required'
+        );
         $validatorAttributes = array(
-                'id'  => '生成报告ID',
-                'xml' => '模板xml文件'
-            );
+            'id'  => '生成报告ID',
+            'xml' => '模板xml文件'
+        );
         //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         //ToDo
         //$xmlLink = getRandName().".xml";
@@ -120,13 +120,13 @@ class ReportController extends Controller
         $system = exec('timeout 120 python3 '. Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
         if($reval==0){
             $system = json_decode($system);
-                if($system->status== SUCCESS_MESSAGE){
-                    $data["status"] = SUCCESS_MESSAGE;
-                    $data["link"] = $tmpName.".pdf";
-                    $data["experimentId"] = $experimentId;
-                    $data["test"]= $test;
-                    $data["errorLog"]=$output;
-                }
+            if($system->status== SUCCESS_MESSAGE){
+                $data["status"] = SUCCESS_MESSAGE;
+                $data["link"] = $tmpName.".pdf";
+                $data["experimentId"] = $experimentId;
+                $data["test"]= $test;
+                $data["errorLog"]=$output;
+            }
         }else{
             $data["status"]=FAIL_MESSAGE;
             $data["message"]="生成脚本生成失败: ". $system;
@@ -134,7 +134,7 @@ class ReportController extends Controller
             $data["errorLog"]=$output;
         }
         // if($scriptLink!=null){
-		// 	$output = array();
+        // 	$output = array();
         //     $system = exec(Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.' '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
         //     #echo Config::get('phylab.scriptPath')."create.sh ".Config::get('phylab.tmpReportPath')." ".Config::get('phylab.scriptPath').$scriptLink." ".Config::get('phylab.tmpXmlPath').$tmpName." ".Config::get('phylab.tmpReportPath').$tmpName;
         //     #echo $out;
@@ -164,6 +164,56 @@ class ReportController extends Controller
         //     $data["status"]=FAIL_MESSAGE;
         //     $data["message"]="暂时未有生成模板的脚本";
         // }
+        return response()->json($data);
+    }
+
+    public function createMD()
+    {
+        //post 传入 xml 模板文件
+        $data = ["status"=> "",
+            "experimentId" => "",
+            "link"  => "",
+            "message" => "",
+            "errorLog"=>array()];
+        $validatorRules = array(
+            'id'  => 'required|integer|exists:reports,id',
+            'xml' => 'required'
+        );
+        $validatorAttributes = array(
+            'id'  => '生成报告ID',
+            'xml' => '模板xml文件'
+        );
+        //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        //ToDo
+        //$xmlLink = getRandName().".xml";
+        $tmpName = getRandName();
+        try{
+            Storage::put("xml_tmp/".$tmpName.'.xml',Request::get('xml'));
+        }
+        catch(Exception $e){
+            throw new FileIOException();
+        }
+        // $report = Report::find(Request::get('id'));
+        // $scriptLink = $report->script_link;
+        $experimentId = Request::get('id');
+        $output = array();
+        $test = Config::get('phylab.scriptPath')."handler_md.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
+        $system = exec('timeout 120 python3 '. Config::get('phylab.scriptPath')."handler_md.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+        if($reval==0){
+            $system = json_decode($system);
+            if($system->status== SUCCESS_MESSAGE){
+                $data["status"] = SUCCESS_MESSAGE;
+                $data["link"] = $tmpName.".html";
+                $data["experimentId"] = $experimentId;
+                $data["test"]= $test;
+                $data["errorLog"]=$output;
+            }
+        }else{
+            $data["status"]=FAIL_MESSAGE;
+            $data["message"]="生成脚本生成失败: ". $system;
+            $data["test"]= $test;
+            $data["errorLog"]=$output;
+        }
         return response()->json($data);
     }
 
