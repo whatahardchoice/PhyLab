@@ -47,7 +47,7 @@ class UserController extends Controller
                  "userId" => "",
                  "admin" => $isAdmin];
         $auth = Auth::user();
-        //$data["avatarPath"] = $auth->avatar_path;
+        $data["avatarPath"] = $auth->avatar_path;
         $data["username"] = $auth->name;
         $data["studentId"] = $auth->student_id;
         $data["grade"] = $auth->grade ;
@@ -65,7 +65,7 @@ class UserController extends Controller
         $dir3 = substr($uid, 5, 2);
         $size = "max";
 
-
+/*
         if (file_exists("/var/www/wecenter/uploads" . '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg'))
         {
             $data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
@@ -74,6 +74,12 @@ class UserController extends Controller
         {
             $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
         }
+  */
+                if (!file_exists($data["avatarPath"]))
+                {
+                    $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
+                    //$data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
+                }
 
 
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
@@ -167,6 +173,7 @@ class UserController extends Controller
                 $fname = getRandName().'.'.$avatar->getClientOriginalExtension();
                 $avatar->move(Config::get('phylab.avatarPath'),$fname);
                 $auth = Auth::user();
+                Auth::user()->update(['avatar_path' => "avatar/".$fname]);
                 try{
                     if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath'))
                     {
@@ -178,10 +185,12 @@ class UserController extends Controller
                     throw new FileIOException();
                 }
                 try{
+                    //$auth->introduction = "asd" ;
                     $auth->avatar_path = $fname;
                     $auth->save();
                     $data["status"] = SUCCESS_MESSAGE;
                     $data["avatarPath"] = $fname;
+
                 }
                 catch(Exception $e)
                 {

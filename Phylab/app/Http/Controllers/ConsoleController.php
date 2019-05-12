@@ -47,6 +47,8 @@ class ConsoleController extends Controller {
 			'status'=>'',
 			'contents'=>''];
         $id=$_GET['id'];
+        //$id = "2160115" ;
+        //$htmlFile = "/var/www/Phylab/resources/views/report/".$id.".html";
         $htmlFile = Config::get('phylab.experimentViewPath').$id.".html";
 		try{
 			$file = fopen($htmlFile, "r");
@@ -74,13 +76,25 @@ class ConsoleController extends Controller {
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."p".$id.".py";
         //return $htmlFile;
-        $file = fopen($htmlFile, "r");
-		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
+        //
+        try{
+            $file = fopen($htmlFile, "r");
+            $result['status'] = SUCCESS_MESSAGE;
+            $result['contents'] = file_get_contents($htmlFile);
+            fclose($file);
+        }catch (Exception $e){
+            $result['status']=FAIL_MESSAGE;
+        }
+        /*
+		if ($file==FALSE)
+		    $result['status']=FAIL_MESSAGE;
+		else
 		{
 			$result['status'] = SUCCESS_MESSAGE;
 			$result['contents'] = file_get_contents($htmlFile);
 			fclose($file);
 		}
+        */
         return response()->json($result);
     }
 	
