@@ -60,7 +60,7 @@ env = Environment(line_statement_prefix="#", variable_start_string="%%", variabl
 
 
 # 入口函数
-def handler(xml):
+def handler(xml, type):
     global n, angle_theta, angle_A, average_angle_A, ua_A, ub_A, u_A, re_u
     readXML(xml)
     sumA = 0

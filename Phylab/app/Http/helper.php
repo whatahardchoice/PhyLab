@@ -37,17 +37,17 @@ function postmail($to,$subject = '',$body = ''){
     // 1 = errors and messages
     // 2 = messages only
     $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
-    //$mail->SMTPSecure = "ssl";                 // 安全协议，可以注释掉
-    $mail->Host       = 'smtp.163.com';      // SMTP 服务器
-    $mail->Port       = 25;                   // SMTP服务器的端口号
+    $mail->SMTPSecure = "ssl";                 // 安全协议，可以注释掉
+    $mail->Host       = 'smtp.zoho.com.cn';      // SMTP 服务器
+    $mail->Port       = 465;                   // SMTP服务器的端口号
     //$mail->Username   = '634208109@qq.com';  // SMTP服务器用户名，PS：我乱打的
-    $mail->Username   = 'hoerwing@163.com';
+    $mail->Username   = 'hardchoice@zoho.com.cn';
     //$mail->Password   = 'X1995811716hXel';
-    $mail->Password   = 'X1995816711hY';            // SMTP服务器密码
+    $mail->Password   = 'Zhoubowen-715';            // SMTP服务器密码
     //$mail->SetFrom('634208109@qq.com', '5z1');
-    $mail->SetFrom('hoerwing@163.com', 'hoerwing');
+    $mail->SetFrom('hardchoice@zoho.com.cn', 'hardchoice');
     //$mail->AddReplyTo('634208109@qq.com','5z1');
-    $mail->AddReplyTo('hoerwing@163.com','hoerwing');
+    $mail->AddReplyTo('hardchoice@zoho.com.cn','hardchoice');
     $mail->Subject    = $subject;
     $mail->AltBody    = 'To view the message, please use an HTML compatible email viewer!'; // optional, comment out and test
     $mail->MsgHTML($body);

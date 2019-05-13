@@ -6,7 +6,7 @@
         <div class="lab-nav-container" style="border-top-left-radius: 2px;border-top-right-radius: 2px;padding: 0;background-color: transparent;">
           <div class="nav nav-tabs row" role="tablist" style="border-radius: inherit;padding-top: 2px;padding-bottom: 2px;background-color: transparent;">
             <h1 class="text-left col-md-12">
-              <span>物理实验<small class="hidden-xs">数据报告中心</small></span>
+              <span>物理实验<small>数据报告中心</small></span>
               <hr style="border-color: #08c093;border-width: 2px;margin: 0px">
             </h1>
           </div>
@@ -37,9 +37,26 @@
           <button id="button-view-preparation" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" disabled>
             <i class="fa fa-file-pdf-o"></i>查看预习报告
           </button>
-          <button id="button-generate-report" class="btn btn-success col-xs-6 text-center" style="margin-bottom: 5px;" type="submit" disabled>
+          <button id="button-generate-report" class="btn btn-success col-xs-6 text-center" data-toggle="modal" data-target="#modal-report-select" style="margin-bottom: 5px;" disabled>
             <i class="fa fa-area-chart"></i>生成数据报告
           </button>
+          <div class="modal fade" id="modal-report-select" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
+            <div class="modal-dialog" style="width: 50%">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title">选择生成方式</h4>
+                </div>
+                <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
+                  <div style="float:bottom">
+                    <button id="button-generate-latex" class="btn btn-success  text-center col-xs-6 col-md-offset-4 " style="margin-bottom: 5px;width: 80px" type="submit">LateX</button>
+                    <button id="button-generate-markdown" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 80px" type="submit">Markdown</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="modal fade" id="modal-error-log" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
             <div class="modal-dialog" style="width: 38%;">
               <div class="modal-content">
@@ -83,7 +100,7 @@
                   <span id="report-num" class="badge"></span>
                 </button>
                 <div class="modal fade" id="collection-folder" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
-                  <div class="modal-dialog" style="width: 60%;">
+                  <div class="modal-dialog hidden-xs" style="width: 60%;">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -94,6 +111,19 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="modal-dialog visible-xs" style="width: 100%;">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
+                      </div>
+                      <div class="modal-body" style="width: auto;height: auto;">
+                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 320px;" frameborder="0"></iframe>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
                 <button id="collect-report" class="btn btn-success col-xs-6" style="border-radius: 0 4px 4px 0;">
                   <span class="sr-only">y</span>

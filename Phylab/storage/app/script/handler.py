@@ -33,7 +33,7 @@ if __name__ == '__main__':
         except Exception as e:
             # raise e
             pass
-        latex_body = __import__('p' + sys.argv[1]).handler(root)  # (sys.argv[2])
+        latex_body = __import__('p' + sys.argv[1]).handler(root, 1)  # (sys.argv[2])
         if (not os.path.isfile(scriptdir + 'p' + sys.argv[1] + '.py')):
             print('{"status":"fail", "msg":"no handler"}')
             exit(1)

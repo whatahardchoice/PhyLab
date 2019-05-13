@@ -294,7 +294,7 @@ def RToTemperature(R):
     T = (-A+math.sqrt(A**2+4*B*(float(R)-1)))/(2*B)
     return T
 
-def handler(XML):
+def handler(XML, type):
     file_object = open(texdir + "Handle1020113.tex","r",encoding='utf-8')
     #将模板作为字符串存储在template文件中
     source = file_object.read()

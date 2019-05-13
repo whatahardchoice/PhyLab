@@ -72,7 +72,7 @@ RESULT_U_N1 = ""
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
 
-def handler(xml):
+def handler(xml, type):
     xmlReader(xml)
     niconiconi()
     regulation()

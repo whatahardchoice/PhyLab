@@ -353,12 +353,66 @@ function recordTableValue() {
     }
 }
 
+$('#preading-report').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+    let valid = checkInput();
+    if (!valid)
+        return false;
+
+    var xmlString = SetXMLDoc_lab();
+    if (xmlString === null)
+        return;
+    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+
+    PostAjax("./report",postData,function(){
+        if (this.readyState==4 && this.status==200){
+            var jsonText = eval("(" + this.responseText + ")");
+            //alert(this.responseText);
+            //alert(jsonText["status"]);
+            if(jsonText["status"]=='success') {
+               // window.open("pdf_tmp/"+jsonText['link'],  "_system");
+                var $form = $('<form method="GET" ></form>');
+                $form.attr('action', "pdf_tmp/"+jsonText['link']);
+                $form.appendTo($('body'));
+                $form.submit();
+                //  $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+                $('#collect-report').attr('link',jsonText['link']);
+                $('#collect-report').removeAttr("disabled");
+            }
+            else
+                errorFunction(jsonText["message"]);
+
+        }
+        else if(this.readyState==4 && this.status!=200) {
+
+            errorFunction("生成报告失败");
+        }
+    });
+    //   $('#modal-report-msgbox').modal('hide');
+});
 $('#button-view-preparation').click(function () {
     changePdf('prepare',CUR_LAB_GROUP + ".pdf");
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 });
 
 $('#button-generate-report').click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#modal-report-select').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+});
+
+$('#button-generate-latex').click(function () {
 
     if (typeof CUR_SUBLAB === 'undefined')
     {
@@ -376,7 +430,7 @@ $('#button-generate-report').click(function () {
         return;
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
     $('#wait-report').fadeIn();
-    PostAjax("./report",postData,function(){
+    PostAjax("./report/createTex",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
             //alert(this.responseText);
@@ -396,6 +450,31 @@ $('#button-generate-report').click(function () {
             errorFunction("生成报告失败");
         }
     });
+    $('#modal-report-select').modal('hide');
+});
+
+$('#button-generate-markdown').click(function () {
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+    let valid = checkInput();
+    if (!valid)
+        return false;
+
+    var xmlString = SetXMLDoc_lab();
+    if (xmlString === null)
+        return;
+    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+    $('#wait-report').fadeIn();
+    PostAjax("./report/createMD",postData,function(){
+
+    });
+
+    $('#modal-report-select').modal('hide');
 });
 
 $('#collect-report').click(function () {
@@ -533,7 +612,7 @@ function checkInput()
         return true;
 }
 
-$('btn-submit-error').click(function () {
+$('#btn-submit-error').click(function () {
 
     //TODO upload to backend
     $('#modal-error-log').modal('hide');
