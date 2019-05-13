@@ -41,22 +41,27 @@ $(function() {
     });
 */
 });
-/*
-function load_file() {
-    var form = new FormData($( "#load_file" )[0]);
+function load_file(){
+    var form = new FormData($("#load_file")[0]);
+    console.log(form);
     $.ajax({
-        url: form.attr('action') ,
+        url:"{{URL::route('avatar')}}",
+        //url: form.attr('action'),
         type: 'post',
         data: form,
+        //dataType: 'json' ,
         async: false,
         cache: false,
         contentType: false,
         processData: false,
-        success: function (data) {
-            alert('更新成功');
+        success:function (returndata) {
+            $("#user_avatar").attr('src',returndata['avatarPath']);
         },
-        error: function (data) {
-            alert("更新失败");
+        error:function (returndata) {
+            //$("#user_avatar").attr('src',returndata);
+            //console.log(data);
+            alert(returndata['message']);
         }
+
     });
-}*/
+}
