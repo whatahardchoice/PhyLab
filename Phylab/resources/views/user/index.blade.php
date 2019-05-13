@@ -10,7 +10,7 @@
 
     <div class="row" style="margin-top:30px;padding:30px">
         <div style = "text-align: center ; padding-top:40px" class="col-xs-12 col-md-4">
-            <img src = "{{$avatarPath}}" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
+            <img src = "{{$avatarPath}}" id = "user_avatar" alt="个人头像" style = "width: 250px ; height: 250px ; background-color: #ececf6 ">
 <!--
             <form action = "/user" method="post" enctype="multipart/form-data" id = "load-form">
                 <label for = "avatarPath">选择头像文件：</label>
@@ -18,13 +18,15 @@
                 <input type="submit" value="上传">
             </form>
 -->
-            <form method="POST" action="/user/avatar" enctype="multipart/form-data">
+                <form method="POST" action="/user/avatar" enctype="multipart/form-data" id = "load_file" class="text-center form-inline" role="form" style="margin-top: 5px">
+                    <div class="form-group">
+                    <input type="file" name="avatar" style = "text-align: center"  class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                    <a name="submit" class="btn btn-primary form-control"  onclick="load_file()">上传文件</a>
+                    </div>
+                </form>
 
-                <input type="file" name="avatar" />
-
-                <input type="submit" name="submit" value="Submit" />
-
-            </form>
 
             <h3>{{$username}}</h3>
 
@@ -123,9 +125,17 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="./js/bootstrap.min.js"></script>
-<!--自定义js脚本-->
+<!--自定义js脚本
+.done(function (data) {
+                alert('更新成功');
+            }).fail(function (data) {
+                alert("更新失败");
+            })
+-->
 <script src="./js/user.js"></script>
 
 
