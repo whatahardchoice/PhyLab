@@ -36,7 +36,7 @@ function check(){
     else {
         document.getElementById('chrom_pdf').style.display='block';
         CUR_PDF = 'chrom_pdf';
-        cp('./prepare_pdf/phylab_test.pdf');
+        cp('./prepare_pdf/phylab_test.pdf',0);
     }
     $('#lab_collapse').collapse({
         toggle: false
@@ -102,7 +102,7 @@ function selectBtnClick(){
     if(SelectLab($('#InputLabIndex')[0].value,'LabText')){
         $('.alert').hide();
         $('#LabStatus')[0].innerHTML = "预览";
-        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf");
+        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf",0);
         eleEnable();
     }
     else{
@@ -136,7 +136,7 @@ $("#InputLabIndex").bind("keypress",function(){
         if(SelectLab($('#InputLabIndex')[0].value,'LabText')){
             $('.alert').hide();
             $('#LabStatus')[0].innerHTML = "预览";
-            changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf");
+            changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf",0);
             eleEnable();
             return false;
         }
@@ -151,7 +151,7 @@ $('a.lab_title').bind('click',function(){
     if(SelectLab(this.title,'LabText')){
         $('.alert').hide();
         $('#LabStatus')[0].innerHTML = "预览";
-        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf");
+        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf",0);
         eleEnable();
     }
     else $('.alert').show();
@@ -162,7 +162,7 @@ $('a.lab_index').bind('click',function(){
     if(SelectLab(this.innerHTML,'LabText')){
         $('.alert').hide();
         $('#LabStatus')[0].innerHTML = "预览";
-        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf");
+        changePdf('prepare',labDoc3dot1415926.getIndex()+".pdf",0);
         eleEnable();
     }
     else $('.alert').show();
@@ -221,7 +221,7 @@ $('button.btn-Save').bind('click',function(){
     }
 })
 
-function changePdf(type,pdfName){
+function changePdf(type,fileName,ishtml){
     var path = ""
     if(type=="prepare"){
         path = "./prepare_pdf/";
@@ -232,9 +232,9 @@ function changePdf(type,pdfName){
     else if(type=="star"){
         path = "./star_pdf/"
     }
-    $("#pdf_object").attr("data",path+pdfName);
-    $('#pdf_embed').attr("src",path+pdfName);
-    cp(path+pdfName);
+    $("#pdf_object").attr("data",path+fileName);
+    $('#pdf_embed').attr("src",path+fileName);
+    cp(path+fileName,ishtml);
 }
 function Post_lab(postErrorFunc){
     var xmlString = labDoc3dot1415926.getXML();
@@ -246,7 +246,7 @@ function Post_lab(postErrorFunc){
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
-                changePdf('tmp',jsonText['link']);
+                changePdf('tmp',jsonText['link'],0);
                 $('#collectBtn').attr('link',jsonText['link']);
                 $('#loading-container').fadeOut();
                 eleReset();
@@ -305,7 +305,7 @@ function initReportPage() {
             $('#lab-select button').text($(this).children().text()).append('<span class="caret"></span>');
             $('#lab-name').text($(this).text());
             $('#lab-select-modal').modal('hide');
-            changePdf('prepare',CUR_LAB_GROUP + ".pdf");
+            changePdf('prepare',CUR_LAB_GROUP + ".pdf",0);
             $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
             $.ajax('./table', {
                 data: {'id': CUR_SUBLAB},
@@ -395,10 +395,9 @@ $('#preading-report').click(function () {
             errorFunction("生成报告失败");
         }
     });
-    //   $('#modal-report-msgbox').modal('hide');
 });
 $('#button-view-preparation').click(function () {
-    changePdf('prepare',CUR_LAB_GROUP + ".pdf");
+    changePdf('prepare',CUR_LAB_GROUP + ".pdf",0);
     $('#lab-status').text('实验组' + CUR_LAB_GROUP + '预习报告');
 });
 
@@ -436,7 +435,7 @@ $('#button-generate-latex').click(function () {
             //alert(this.responseText);
             //alert(jsonText["status"]);
             if(jsonText["status"]=='success') {
-                changePdf('tmp',jsonText['link']);
+                changePdf('tmp',jsonText['link'],0);
                 $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
                 $('#collect-report').attr('link',jsonText['link']);
                 $('#collect-report').removeAttr("disabled");
@@ -471,7 +470,22 @@ $('#button-generate-markdown').click(function () {
     var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
     $('#wait-report').fadeIn();
     PostAjax("./report/createMD",postData,function(){
-
+        if (this.readyState==4 && this.status==200){
+            var jsonText = eval("(" + this.responseText + ")");
+            //alert(this.responseText);
+            //alert(jsonText["status"]);
+            if(jsonText["status"]=='success') {
+                changePdf('tmp',jsonText['link'],1);
+                $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+            }
+            else
+                errorFunction(jsonText["message"]);
+            $('#wait-report').fadeOut();
+        }
+        else if(this.readyState==4 && this.status!=200) {
+            $('#wait-report').fadeOut();
+            errorFunction("生成报告失败");
+        }
     });
 
     $('#modal-report-select').modal('hide');
