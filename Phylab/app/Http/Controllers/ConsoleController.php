@@ -113,13 +113,25 @@ class ConsoleController extends Controller {
 		$st=$ad->status;
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."tex/Handle".$id.".tex";
-        $file = fopen($htmlFile, "r");
-		if ($file==FALSE) $result['status']=FAIL_MESSAGE; else
+        //$file = fopen($htmlFile, "r");
+		try{
+            $file = fopen($htmlFile, "r");
+            $result['status'] = SUCCESS_MESSAGE;
+            $result['contents'] = file_get_contents($htmlFile);
+            fclose($file);
+        }catch (Exception $e){
+            $result['status']=FAIL_MESSAGE;
+        }
+        /*
+        if ($file==FALSE)
+		    $result['status']=FAIL_MESSAGE;
+		else
 		{
 			$result['status'] = SUCCESS_MESSAGE;
 			$result['contents'] = file_get_contents($htmlFile);
 			fclose($file);
 		}
+        */
         return response()->json($result);
     }
 	
@@ -134,7 +146,7 @@ class ConsoleController extends Controller {
         $lab_id=$_GET['LId'];
         $lab_name=$_GET['LName'];
         $lab_tag=$_GET['LTag'];
-		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在");
+		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
 		    $htmlcmd = "cp ".Config::get('phylab.experimentViewPath')."template.html ".Config::get('phylab.experimentViewPath').$lab_id.".html";
 		    $pycmd = "cp ".Config::get('phylab.scriptPath')."template.py ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
@@ -158,16 +170,20 @@ class ConsoleController extends Controller {
 				));
 				$result['status']=SUCCESS_MESSAGE;
 				$result['msg']="";
+				$result['message'] = "创建新报告成功" ;
 				$pysrc=Config::get('phylab.scriptPath')."p".$lab_id.".py";
 				$htmsrc = Config::get('phylab.experimentViewPath').$lab_id.".html";
 				$texsrc = Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
 //				file_put_contents($pysrc,"# coding here...");
 //				file_put_contents($htmsrc,"");
 //				file_put_contents($texsrc,"tex...");
-			} else {
+			}
+			/*
+			else {
                 $data["status"]=FAIL_MESSAGE;
                 $data["message"] = "创建新报告失败";				
 			}
+			*/
 		}
 		return response()->json($result);
 	}
