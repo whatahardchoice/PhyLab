@@ -46,7 +46,7 @@
           </div>
             </div>
         </div>
-      <div  class="col-xs-12 col-md-6 col-md-offset-6" style="margin-top: 5px">
+      <div  class="col-xs-12 col-md-6 col-md-offset-6"  @if ($auth) style="display: block; margin-top: 5px" @else style="display: none" @endif>
         <label class="col-md-12 col-xs-12 text-center" style="background-color: #aeb3b9" ><strong style="font-size: 20px">公告</strong>
           <marquee style=" HEIGHT: 50px; background-color: #aeb3b9 " scrollamount="1" direction="up" Align="Middle" >
             <div style="text-align: center;">
