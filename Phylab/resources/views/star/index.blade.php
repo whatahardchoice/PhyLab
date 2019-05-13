@@ -37,6 +37,7 @@
 					</td>
                 </tr>
             @endfor
+            <td class="text-center" colspan="5">收藏夹到底了哦！共 <strong>{{count($stars)}}</strong> 条收藏记录</td>
         </tbody>
     </table>
 
