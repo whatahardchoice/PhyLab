@@ -68,7 +68,7 @@ RESULT_N = ""
 RESULT_U_N = ""
 
 
-def handler(xml):
+def handler(xml, type):
     global angle_a1
     global angle_a2
     global angle_b1

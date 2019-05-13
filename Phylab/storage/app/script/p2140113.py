@@ -6,6 +6,7 @@ from math import sqrt
 import sys
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 from handler import scriptdir
 import xml.dom.minidom
 
@@ -196,8 +197,11 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source,name):
             )
 
 
-def handler(XML):
-    file_object = open(texdir + "Handle2140113.tex" , "r", encoding='utf-8')
+def handler(XML, type):
+    if type == 1:
+        file_object = open(texdir + "Handle2140113.tex" , "r", encoding='utf-8')
+    else:
+        file_object = open(mddir + "Handle2140113.md" , "r", encoding='utf-8')
     source = file_object.read()
     file_object.close()
     data = readXml2140113(XML)

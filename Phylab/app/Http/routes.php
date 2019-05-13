@@ -178,11 +178,16 @@ Route::get('/report/edit/{id}',
     'uses'  =>  'ReportController@getXmlForm',
     'middleware'    =>  'auth'
 	]);
-Route::post('/report',
+Route::post('/report/createTex',
 	[
-    'uses'  =>  'ReportController@create',
+    'uses'  =>  'ReportController@createTex',
     'middleware'    =>  'auth'
 	]);
+Route::post('/report/createMD',
+    [
+    'uses' =>  'ReportController@createMD',
+    'middleware'    =>  'auth'
+    ]);
 Route::get('/report/download/{experimentId}/{link}',
 	[
     'as'    =>  'downloadReport',

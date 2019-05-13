@@ -144,7 +144,7 @@ def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, 
 			figurename = sys.argv[3]
 			)
 
-def handler(XML):
+def handler(XML, type):
 	file_object = open(texdir + "Handle1020314.tex","r",encoding='utf-8')
 	source = file_object.read()
 	file_object.close()

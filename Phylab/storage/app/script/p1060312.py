@@ -66,7 +66,7 @@ U_A = ""
 answer = []
 
 
-def handler(sublab_root):
+def handler(sublab_root, type):
     xmlReader(sublab_root)
     niconiconi()
     regulation()

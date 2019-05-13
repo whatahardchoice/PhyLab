@@ -21,6 +21,7 @@
 import phylab #这里有一些定义好的工具函数可以使用
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 from handler import scriptdir
 import xml.dom.minidom
 import math
@@ -50,8 +51,11 @@ RESULT = 0
     此函数最后必须返回jinja2绑定好的数据。
 
 """
-def handler(XML):
-    file_object = open(texdir + "Handle2160115.tex" , "r",encoding='utf-8')
+def handler(XML, type):
+    if type == 1:
+        file_object = open(texdir + "Handle2160115.tex" , "r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "Handle2160115.md" , "r",encoding='utf-8')
     source = file_object.read()
     file_object.close()
     # 以上勿动！

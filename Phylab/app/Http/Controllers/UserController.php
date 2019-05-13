@@ -177,7 +177,7 @@ class UserController extends Controller
                 try{
                     if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath'))
                     {
-                        Storage::disk('local_public')->delete('avatar/'.$auth->avatar_path);
+                        Storage::disk('local_public')->delete($auth->avatar_path);
                     }
                 }
                 catch(Exception $e)
@@ -186,10 +186,11 @@ class UserController extends Controller
                 }
                 try{
                     //$auth->introduction = "asd" ;
-                    $auth->avatar_path = $fname;
+                    $auth->avatar_path = 'avatar/'.$fname;
                     $auth->save();
                     $data["status"] = SUCCESS_MESSAGE;
-                    $data["avatarPath"] = $fname;
+
+                    $data["avatarPath"] = "avatar/".$fname;
 
                 }
                 catch(Exception $e)

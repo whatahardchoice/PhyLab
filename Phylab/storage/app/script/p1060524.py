@@ -38,7 +38,7 @@ U_F = ""
 env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
 
 
-def handler(sublab_root):
+def handler(sublab_root, type):
     xmlReader(sublab_root)
     niconiconi()
     regulation()
