@@ -10,7 +10,7 @@ from handler_md import mddir
 from handler import scriptdir
 import xml.dom.minidom
 
-env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+env = Environment(line_statement_prefix="@", variable_start_string="||", variable_end_string="||")
 
 def readXml2140113(root):
     table_list = root.getElementsByTagName("table")

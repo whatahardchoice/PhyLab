@@ -232,6 +232,12 @@ function changePdf(type,fileName,ishtml){
     else if(type=="star"){
         path = "./star_pdf/"
     }
+    if(ishtml){
+        document.getElementById("show-html").style.display = 'block';
+        $('#html-iframe').attr("src",path+fileName);
+    }else{
+        document.getElementById("show-html").style.display = 'none';
+    }
     $("#pdf_object").attr("data",path+fileName);
     $('#pdf_embed').attr("src",path+fileName);
     cp(path+fileName,ishtml);

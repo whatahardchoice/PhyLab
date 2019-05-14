@@ -148,7 +148,11 @@
               </object>
             </div>
             <div id="chrom_pdf" style="width: 100%; height: 100%;display: none;">
-              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_chromobj"></object>
+              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf">
+              </object>
+            </div>
+            <div id="show-html" style="width: 100%; height: 100%;display: none;">
+              <iframe id="html-iframe" src="" scrolling="auto" style="height: 785px;width: 1232px;"></iframe>
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ import numpy as np
 
 # 此处定义jinja2模板引擎的识别符号，默认为||（两个竖线），你也可以定义自己的识别符号，仅需修改
 # variable_start_string 和　variable_end_string 即可
-env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+env = Environment(line_statement_prefix="@", variable_start_string="||", variable_end_string="||")
 
 # 在此你可以预先写好一些会被绑定至latex文本的全局变量，方便查看
 #################

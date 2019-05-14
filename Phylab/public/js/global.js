@@ -73,26 +73,22 @@
 	    xmlhttp.setRequestHeader("X-Requested-With","XMLHttpRequest");
 	    xmlhttp.send(postData);
 	}
-	function cp(pdfPath,ishtml){
-		if(ishtml){
-			$("#pdf_object").attr("type","text/html");
-			$("#pdf_embed").attr("type","text/html");
-			$('#pdf_chromobj').attr("type","text/html");
+	function cp(filePath,ishtml){
+		if(!ishtml){
+			var myPDF = new PDFObject({url: filePath}).embed("chrom_pdf");
+			if(browser()=="FF"){
+				document.getElementById('firefox_pdf').style.display='block';
+			}
+			else if(browser()=="IE6"||browser()=="IE7"){
+				alert("Please use the above version of IE8 or other browsers");
+			}
+			else {
+				document.getElementById('chrom_pdf').style.display='block';
+			}
 		}
 		else{
-			var myPDF = new PDFObject({url: pdfPath}).embed("chrom_pdf");
-			$("#pdf_object").attr("type","application/pdf");
-			$("#pdf_embed").attr("type","application/pdf");
-			$('#pdf_chromobj').attr("type","application/pdf");
-		}
-		if(browser()=="FF"){
-			document.getElementById('firefox_pdf').style.display='block';
-		}
-		else if(browser()=="IE6"||browser()=="IE7"){
-			alert("Please use the above version of IE8 or other browsers");
-		}
-		else {
-			document.getElementById('chrom_pdf').style.display='block';
+			document.getElementById('firefox_pdf').style.display='none';
+			document.getElementById('chrom_pdf').style.display='none';
 		}
 
 	}
