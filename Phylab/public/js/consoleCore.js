@@ -542,7 +542,7 @@ $("#btn-test-generate").click(function () {
 
     $.ajax({
         type:"POST",
-        url:"./report",
+        url:"./report/createTex",
         data:{'id':CUR_SUBLAB, "xml":xmlString},
         beforeSend: function () {
             $('#error-log-title').text("").append("正在运行，请稍侯");
