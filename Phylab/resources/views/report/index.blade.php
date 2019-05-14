@@ -118,8 +118,8 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
                       </div>
-                      <div class="modal-body" style="width: auto;height: auto;">
-                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 320px;" frameborder="0"></iframe>
+                      <div class="modal-body" style="width: auto;height: auto; padding:0px;">
+                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 400px;" frameborder="0"></iframe>
                       </div>
                     </div>
                   </div>
