@@ -257,3 +257,13 @@ Route::get('/createLab',
 	'uses' => 'ConsoleController@createSublab',
 	'middleware' => 'auth'
 	]);
+
+/**
+ * 设计性实验部分
+ */
+Route::get('/desexp',
+    [
+    'as' => 'desexp',
+    'uses' => 'DesexpController@index',
+    'middleware' => 'auth'
+    ]);
