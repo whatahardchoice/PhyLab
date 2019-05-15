@@ -1,4 +1,4 @@
-﻿@extends('layout.main')
+@extends('layout.main')
 @section('contents')
 	<link rel="stylesheet" href="./codemirror/lib/codemirror.css"/>
 	<link rel="stylesheet" href="./codemirror/addon/fold/foldgutter.css"/>
@@ -41,9 +41,9 @@
           </div>
         </div>
         <div class="container tab-content panel" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin: 5px 0 5px 0;height: 800px">
-          <div class="panel-heading btn btn-success dropdown-toggle" id="lab-name" data-toggle="modal" data-target="#lab-select-modal" style="width: 100%;border-top-left-radius: 4px;border-top-right-radius: 4px;background-color: #08c093;">
+          <a class="panel-heading btn btn-success dropdown-toggle" id="lab-name" data-toggle="modal" data-target="#lab-select-modal" style="width: 100%;border-top-left-radius: 4px;border-top-right-radius: 4px;background-color: #08c093;">
             点击选择已存在实验
-          </div>
+          </a>
           <div class="modal fade" id="lab-select-modal" tabindex="-1" role="dialog" aria-labelledby="labSelectModal" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -133,10 +133,10 @@
                 </h4>
               </div>
               <div class="btn-group col-xs-12 col-md-5" style="float:right">
-                <button id="btn-delete-lab" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-confirm" style="border-radius: 4px; float:right;">
+                <a id="btn-delete-lab" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-confirm" style="border-radius: 4px; float:right;">
                   <i class="fa fa-trash"></i>
                   删除未发布实验
-                </button>
+                </a>
                 <div class="modal fade" id="modal-delete-confirm" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
                   <div class="modal-dialog" style="width: 38%;">
                     <div class="modal-content">
