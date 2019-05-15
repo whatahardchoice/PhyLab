@@ -23,8 +23,7 @@ class IndexController extends Controller
             //ToDo
             $data["auth"] = true;
             $data["username"] = Auth::user()->name;
-            $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-            $isAdmin=$exists;
+            $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
             if ($isAdmin)
                 $data["admin"] = true;
         }
