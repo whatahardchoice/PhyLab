@@ -1,0 +1,86 @@
+<lab id="2200116">
+	<table name="2201_1" raw="3" column="8">
+		<tr index="1">
+			<td>0.568</td>
+		</tr>
+		<tr index="2">
+			<td>83.1</td>
+			<td>87.9</td>
+			<td>94.1</td>
+			<td>99.9</td>
+			<td>104.3</td>
+			<td>109.0</td>
+      <td>113.8</td>
+			<td>120.3</td>
+		</tr>
+		<tr index="3">
+			<td>1.8</td>
+			<td>1.9</td>
+			<td>2.0</td>
+			<td>2.1</td>
+			<td>2.2</td>
+			<td>2.3</td>
+      <td>2.4</td>
+			<td>2.6</td>
+		</tr>
+	</table>
+	<table name="2201_2" raw="2" column="8">
+		<tr index="1">
+			<td>80</td>
+			<td>85</td>
+			<td>90</td>
+			<td>95</td>
+			<td>100</td>
+			<td>105</td>
+      <td>110</td>
+			<td>115</td>
+		</tr>
+		<tr index="2">
+			<td>4.0</td>
+			<td>6.6</td>
+			<td>6.8</td>
+			<td>6.5</td>
+			<td>6.2</td>
+			<td>6.2</td>
+      <td>4.6</td>
+			<td>3.9</td>
+		</tr>
+	</table>
+  <table name="2201_3" raw="2" column="12">
+		<tr index="1">
+			<td>20</td>
+			<td>30</td>
+			<td>40</td>
+			<td>50</td>
+			<td>60</td>
+			<td>70</td>
+      <td>80</td>
+			<td>82</td>
+      <td>84</td>
+			<td>86</td>
+      <td>88</td>
+			<td>90</td>
+		</tr>
+		<tr index="2">
+			<td>0.2</td>
+			<td>0.8</td>
+			<td>1.8</td>
+			<td>3.0</td>
+			<td>4.4</td>
+			<td>5.8</td>
+      <td>7.0</td>
+			<td>7.0</td>
+      <td>7.2</td>
+			<td>7.4</td>
+      <td>7.5</td>
+			<td>7.6</td>
+		</tr>
+	</table>
+  <table name="2201_4" raw="1" column="3">
+    <tr index="1">
+      <td>3.7</td>
+      <td>8.0</td>
+      <td>2.0</td>
+    </tr>
+  </table>
+</lab>
