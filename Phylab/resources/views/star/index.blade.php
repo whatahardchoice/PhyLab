@@ -22,7 +22,7 @@
                 <th >编辑</th>
             </tr>
         </thead>
-        <tbody id="collection-list" num="{{count($stars)}}" style="table-layout: fixed">
+        <tbody id="collection-list" data-value="{{count($stars)}}" style="table-layout: fixed">
             @for ($i=0;$i < count($stars);$i++)
                 <tr id="star_{{$stars[$i]['id']}}" >
                     <th class="hidden-xs" scope="row">{{$i+1}}</th>
@@ -49,5 +49,6 @@
     <script src="../js/global.js"></script>
     <script src="../js/star.js"></script>
     <script src="../js/statistics.js"></script>
+    <script src="../js/reportCore.js"></script>
 </body>
 </html>
