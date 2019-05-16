@@ -45,12 +45,12 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <h4 class="modal-title">选择生成方式</h4>
+                  <h4 class="modal-title">选择报告生成方式</h4>
                 </div>
                 <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
-                  <div style="float:bottom">
-                    <button id="button-generate-latex" class="btn btn-success  text-center col-xs-6 col-md-offset-4 " style="margin-bottom: 5px;width: 80px" type="submit">LateX</button>
-                    <button id="button-generate-markdown" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 80px" type="submit">Markdown</button>
+                  <div style="float:bottom;padding-left: 165px;">
+                    <button id="button-generate-latex" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 250px;" type="submit">LateX(PDF版本，可下载收藏)</button>
+                    <button id="button-generate-markdown" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 250px;" type="submit">Markdown(Html版本，只可在线浏览)</button>
                   </div>
                 </div>
               </div>
@@ -118,8 +118,8 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <h4 class="modal-title" id="collection-folder-label">实验报告收藏夹</h4>
                       </div>
-                      <div class="modal-body" style="width: auto;height: auto;">
-                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 320px;" frameborder="0"></iframe>
+                      <div class="modal-body" style="width: auto;height: auto; padding:0px;">
+                        <iframe id="collection-iframe" src="{{URL::route('star')}}" style="width:100%;height: 400px;" frameborder="0"></iframe>
                       </div>
                     </div>
                   </div>
@@ -148,7 +148,11 @@
               </object>
             </div>
             <div id="chrom_pdf" style="width: 100%; height: 100%;display: none;">
-              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf" id="pdf_chromobj"></object>
+              <object data="./prepare_pdf/phylab_test.pdf" type="application/pdf">
+              </object>
+            </div>
+            <div id="show-html" style="width: 100%; height: 100%;display: none;">
+              <iframe id="html-iframe" src="" scrolling="auto" style="height: 785px;width: 1232px;"></iframe>
             </div>
           </div>
         </div>

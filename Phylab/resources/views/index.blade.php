@@ -4,60 +4,15 @@
 <div class="navbar-banner layout-no-margin-top" style="margin-top: 0px">
   <div class="banner-container">
     <div class="container">
-      <div class="row" >
-        <div class="col-xs-12 col-md-6 col-md-offset-6" @if ($auth) style="display: block" @else style="display: none" @endif>
-            <!--轮播区域-->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" >
-              <!--轮播指标-->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1" ></li>
-                <li data-target="#myCarousel" data-slide-to="2" ></li>
-                <li data-target="#myCarousel" data-slide-to="3" ></li>
-              </ol>
-              <!--轮播指标-->
-              <!--轮播项目-->
-              <div class="carousel-inner" style="height: 390px">
-                <div class="item active" >
-                  <img src="{{URL::asset('/img/aa.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
-                  <div class="carousel-caption"><strongr>宇宙中的宇航员</strongr></div>
-                </div>
-                <div class="item">
-                  <img src="{{URL::asset('/img/bb.png')}}"  alt="First slide" style="border: solid 10px;height: 100%;width: 100%">
-                  <div class="carousel-caption"><strong>有趣的物理公式</strong></div>
-                </div>
-                <div class="item">
-                  <img src="{{URL::asset('/img/cc.png')}}"  alt="First slide"  style="border: solid 3px; height: 100%;width: 100%">
-                  <div class="carousel-caption"><strong>牛顿第二定律</strong></div>
-                </div>
-                <div class="item">
-                  <img src="{{URL::asset('/img/dd.png')}}" alt="First slide" style="border: solid 3px; height: 100%;width: 100%">
-                  <div class="carousel-caption"><strong>那些有用的物理工具</strong></div>
-                </div>
-              </div>
-              <!--轮播控制器-->
-              <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-              <!--轮播控制器-->
+
+      <div id="bulletin-board" class="col-xs-12 col-md-6">
+          <h3 style="margin:5px; text-align: center">公告栏</h3>
+          <div id="bulletin-content">
+            <p> 公告 公告公告公告</p>
           </div>
-            </div>
-        </div>
-      <div  class="col-xs-12 col-md-6 col-md-offset-6"  @if ($auth) style="display: block; margin-top: 5px" @else style="display: none" @endif>
-        <label class="col-md-12 col-xs-12 text-center" style="background-color: #aeb3b9" ><strong style="font-size: 20px">公告</strong>
-          <marquee style=" HEIGHT: 50px; background-color: #aeb3b9 " scrollamount="1" direction="up" Align="Middle" >
-            <div style="text-align: center;">
-              <p > <i class="fa fa-volume-up" style="color: #9d1e15"></i>公告1：一大堆文字飘过～</p>
-              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告2：二大堆文字飘过～</p>
-              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告3：三大堆文字飘过～</p>
-              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告4：四大堆文字飘过～</p>
-              <p ><i class="fa fa-volume-up " style="color: #9d1e15"></i>公告5：五大堆文字飘过～</p>
-            </div>
-          </marquee >
-        </label>
+
+
+
       </div>
         <div class="col-xs-12 col-md-5 col-md-offset-7" @if (!$auth) style="display: block" @else style="display: none" @endif>
           <form method="post">

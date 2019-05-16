@@ -7,7 +7,7 @@ from handler import texdir
 from handler import scriptdir
 import xml.dom.minidom
 
-env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
+env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
 
 LOCA = []
 LEN = 0.0

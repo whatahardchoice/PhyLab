@@ -16,9 +16,9 @@
   <script src="./js/jquery-2.1.4.js"></script>
 
   <!-- include summernote css/js -->
-  <link href="./css/summernote.css" rel="stylesheet">
-  <script src="./js/summernote.js"></script>
-  <script src="./js/summernote-zh-CN.js" ></script>
+{{--  <link href="./css/summernote.css" rel="stylesheet">--}}
+{{--  <script src="./js/summernote.js"></script>--}}
+{{--  <script src="./js/summernote-zh-CN.js" ></script>--}}
 
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
@@ -74,6 +74,9 @@
               <a style="font-size:16px" href="{{URL::route('console')}}">控制台</a>
             </li>
             @endif
+            <li>
+              <a style="font-size:16px" href="{{URL::route('desexp')}}">设计性实验复习</a>
+            </li>
 
 		
           </ul>

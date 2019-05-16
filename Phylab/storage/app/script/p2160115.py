@@ -33,7 +33,8 @@ import numpy as np
 
 # 此处定义jinja2模板引擎的识别符号，默认为||（两个竖线），你也可以定义自己的识别符号，仅需修改
 # variable_start_string 和　variable_end_string 即可
-env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+env = Environment(line_statement_prefix="@", variable_start_string="||", variable_end_string="||")
+mdjudge = 1
 
 # 在此你可以预先写好一些会被绑定至latex文本的全局变量，方便查看
 #################
@@ -53,9 +54,13 @@ RESULT = 0
 """
 def handler(XML, type):
     if type == 1:
-        file_object = open(texdir + "Handle2160115.tex" , "r",encoding='utf-8')
+        file_object = open(texdir + "Handle2160115.tex" , "r", encoding='utf-8')
     else:
-        file_object = open(mddir + "Handle2160115.md" , "r",encoding='utf-8')
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        file_object = open(mddir + "Handle2160115.md" , "r", encoding='utf-8')
+    global mdjudge
+    mdjudge = type
     source = file_object.read()
     file_object.close()
     # 以上勿动！
@@ -146,7 +151,7 @@ def process_data(u , t  , source , name):
       e.append(temp[2])
       eta.append(temp[3])
       
-    ave_e = np.mean(e)
+    ave_e = float(np.mean(e))
     
     e0 = 1.6021773e-19
     eta_f = abs(ave_e-e0)/e0
@@ -170,6 +175,11 @@ def process_data(u , t  , source , name):
     plt.xlabel('n' , font)
     plt.ylabel('Q' , font)
     plt.savefig(pic , bbox_inches='tight')
+
+    if mdjudge == 2:
+        strs = name.split('/')
+        src = "/" + strs[5] + "/" + strs[6]
+        pic = src + '_pic1'
     
     return env.from_string(source).render(
         U = u,

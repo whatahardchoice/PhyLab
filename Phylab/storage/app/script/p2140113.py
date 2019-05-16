@@ -10,7 +10,8 @@ from handler_md import mddir
 from handler import scriptdir
 import xml.dom.minidom
 
-env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+env = Environment(line_statement_prefix="@", variable_start_string="||", variable_end_string="||")
+mdjudge = 1
 
 def readXml2140113(root):
     table_list = root.getElementsByTagName("table")
@@ -26,6 +27,9 @@ def readXml2140113(root):
 
 
 def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source,name):
+
+    strs = name.split('/')
+    src = "/" + strs[5] + "/" + strs[6]
 
     #实验1
     #I1[] 输入电流，单位：A，长度3
@@ -169,6 +173,11 @@ def FuelCell(I1,U1,t,Vc,T,U2,I2,U3,I3,Isc,Uoc,source,name):
     for i in range (0 , len(P3) , 1):
         P3_b.append( "%.3f" % P3[i] )
 
+    if mdjudge == 2:
+        pic1 = src + '_pic1'
+        pic2 = src + '_pic2'
+        pic3 = src + '_pic3'
+
     return env.from_string(source).render(
             pic1 = pic1,
             pic2 = pic2 ,
@@ -201,7 +210,11 @@ def handler(XML, type):
     if type == 1:
         file_object = open(texdir + "Handle2140113.tex" , "r", encoding='utf-8')
     else:
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
         file_object = open(mddir + "Handle2140113.md" , "r", encoding='utf-8')
+    global mdjudge
+    mdjudge = type
     source = file_object.read()
     file_object.close()
     data = readXml2140113(XML)

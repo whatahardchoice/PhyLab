@@ -13,6 +13,7 @@ return [
     'cssPath'       =>  public_path()."/css/",
     'jsPath'        =>  public_path()."/js/",
     'preparePath'   =>  public_path()."/prepare_pdf/",
+    'desexpPath'    =>  public_path().'/desexp_html/',
     'allowedFileFormat' => '/^(jpg|gif|png|jpeg|bmp)$/',
     'maxUploadSize'     => 5000000,
     'starMaxCount'      => 10,

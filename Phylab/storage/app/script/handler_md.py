@@ -42,13 +42,17 @@ if __name__ == '__main__':
             print('{"status":"fail", "msg":"no handler"}')
             exit(1)
 
-        md = markdown.Markdown(extensions=[MathExtension(enable_dollar_delimiter=True)])
+        exts = ['markdown.extensions.extra', 'markdown.extensions.codehilite','markdown.extensions.tables','markdown.extensions.toc',MathExtension(enable_dollar_delimiter=True)]
+
+        md = markdown.Markdown(extensions=exts)
         html_body = md.convert(html_body_txt)
 
         finish_str = html_head + html_body + html_tail
         finish_file = open(sys.argv[3] + ".html", "w", encoding='utf-8')
         finish_file.write(finish_str)
         finish_file.close()
+        print('{"status":"success"}')
+        exit(0)
 
     except Exception as e:
         # print(e.getTraceAsString())

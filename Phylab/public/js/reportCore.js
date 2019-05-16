@@ -232,6 +232,12 @@ function changePdf(type,fileName,ishtml){
     else if(type=="star"){
         path = "./star_pdf/"
     }
+    if(ishtml){
+        document.getElementById("show-html").style.display = 'block';
+        $('#html-iframe').attr("src",path+fileName);
+    }else{
+        document.getElementById("show-html").style.display = 'none';
+    }
     $("#pdf_object").attr("data",path+fileName);
     $('#pdf_embed').attr("src",path+fileName);
     cp(path+fileName,ishtml);
@@ -270,9 +276,13 @@ function Post_lab(postErrorFunc){
 //PhyLab2.0新增脚本
 function initReportPage() {
     check();
-    $(document).ready(function () {
-        $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
-    });
+    //$(document).ready(function () {
+    //  $('#report-num').text($($('#collection-iframe').contents().find('#collection-list')).attr('num'));
+    //});
+    window.onload = function() {
+      var num = document.getElementById('collection-iframe').contentWindow.document.getElementById('collection-list').getAttribute('data-value');
+      $('#report-num').text(num);
+    };
     $('#wait-report').css('height', $('#' + CUR_PDF).outerHeight());
     $('#wait-report').css('width', $('#' + CUR_PDF).outerWidth());
     $('#reply-notice').css('height', $('#comment-editor').outerHeight());
@@ -467,26 +477,30 @@ $('#button-generate-markdown').click(function () {
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
         return;
-    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
-    $('#wait-report').fadeIn();
-    PostAjax("./report/createMD",postData,function(){
-        if (this.readyState==4 && this.status==200){
-            var jsonText = eval("(" + this.responseText + ")");
-            //alert(this.responseText);
-            //alert(jsonText["status"]);
-            if(jsonText["status"]=='success') {
-                changePdf('tmp',jsonText['link'],1);
-                $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+    if (CUR_SUBLAB[0] === '1') {
+        alert('该实验数据报告暂不支持html浏览');
+    }else{
+        var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+        $('#wait-report').fadeIn();
+        PostAjax("./report/createMD",postData,function(){
+            if (this.readyState==4 && this.status==200){
+                var jsonText = eval("(" + this.responseText + ")");
+                //alert(this.responseText);
+                //alert(jsonText["status"]);
+                if(jsonText["status"]=='success') {
+                    changePdf('tmp',jsonText['link'],1);
+                    $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+                }
+                else
+                    errorFunction(jsonText["message"]);
+                $('#wait-report').fadeOut();
             }
-            else
-                errorFunction(jsonText["message"]);
-            $('#wait-report').fadeOut();
-        }
-        else if(this.readyState==4 && this.status!=200) {
-            $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
-        }
-    });
+            else if(this.readyState==4 && this.status!=200) {
+                $('#wait-report').fadeOut();
+                errorFunction("生成报告失败");
+            }
+        });
+    }
 
     $('#modal-report-select').modal('hide');
 });
