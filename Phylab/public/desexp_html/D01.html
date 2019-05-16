@@ -257,13 +257,14 @@ v.  将电源电压调成<span class='desexp-span'><text class='desexp-text'>1.4
 <script>
   var inners = document.getElementsByClassName("desexp-text");
   var myfunction = function () {
-      if (!this.style.opacity)
-          this.style.opacity = 1;
-      else
+      if (this.style.opacity == 1)
           this.style.opacity = "";
-  }
+      else
+          this.style.opacity = 1;
+  };
   for (var i = 0; i < inners.length; i++) {
       inners[i].addEventListener('click', myfunction, false);
+      //inners[i].addEventListener('touchstart', myfunction, false);
   }
 </script>
 

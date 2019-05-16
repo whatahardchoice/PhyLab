@@ -118,6 +118,9 @@ class ReportController extends Controller
         $output = array();
         $test = Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
         $system = exec('timeout 120 python3 '. Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+        foreach ($output as &$value) {
+            utf8_encode($value);
+        }
         if($reval==0){
             $system = json_decode($system);
             if($system->status== SUCCESS_MESSAGE){
@@ -131,6 +134,7 @@ class ReportController extends Controller
             $data["status"]=FAIL_MESSAGE;
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
+
             $data["errorLog"]=$output;
         }
         // if($scriptLink!=null){
@@ -164,7 +168,9 @@ class ReportController extends Controller
         //     $data["status"]=FAIL_MESSAGE;
         //     $data["message"]="暂时未有生成模板的脚本";
         // }
-        return response()->json($data);
+        $resp = response()->json($data);
+        return $resp;
+
     }
 
     public function createMD()
@@ -483,6 +489,9 @@ class ReportController extends Controller
         }
         return response()->json($data);
     }
+
+
+
 
 
 }

@@ -27,7 +27,7 @@ class DesexpController extends Controller
     public function index()
     {
 
-        $data = ["auth" => false ,"username"    =>  "", "admin"=>false];
+        $data = ["auth" => false ,"username"    =>  "", "admin"=>false, "expOptions"=>array()];
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;
@@ -40,8 +40,7 @@ class DesexpController extends Controller
         else{
             return redirect('/index');
         }
-
-
+        $data['expOptions'] = Desexp::all("id",'name');
         return view("desexp.index", $data);
     }
 
@@ -56,10 +55,19 @@ class DesexpController extends Controller
     {
 
         $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => ''];
+
+        if(!Auth::check()) {
+            //如果没登录返回出错，前端重定向至登录页面。
+            $data["status"] = FAIL_MESSAGE;
+            $data["message"] = "未登录，请登陆后查看其他内容";
+            return response()->json($data);
+        }
+
+
         $report = Desexp::find($id);
         if($report){
             $data["id"]=$report->id;
-            $data["link"] = Config::get('phylab.desexpPath').$report->link;
+            $data["link"] = $report->link;
             $data["name"] = $report->name;
             $data["status"] = SUCCESS_MESSAGE;
 
