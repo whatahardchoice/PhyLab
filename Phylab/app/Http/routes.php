@@ -265,7 +265,6 @@ Route::get('/desexp',
     [
     'as' => 'desexp',
     'uses' => 'DesexpController@index',
-    'middleware' => 'auth'
     ]);
 
 Route::get('/desexp/{id}',

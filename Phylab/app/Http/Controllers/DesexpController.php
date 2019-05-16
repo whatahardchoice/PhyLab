@@ -38,7 +38,7 @@ class DesexpController extends Controller
                 $data["admin"] = true;
         }
         else{
-            return redirect('/index');
+
         }
         $data['expOptions'] = Desexp::all("id",'name');
         return view("desexp.index", $data);
