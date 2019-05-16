@@ -473,26 +473,30 @@ $('#button-generate-markdown').click(function () {
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
         return;
-    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
-    $('#wait-report').fadeIn();
-    PostAjax("./report/createMD",postData,function(){
-        if (this.readyState==4 && this.status==200){
-            var jsonText = eval("(" + this.responseText + ")");
-            //alert(this.responseText);
-            //alert(jsonText["status"]);
-            if(jsonText["status"]=='success') {
-                changePdf('tmp',jsonText['link'],1);
-                $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+    if (CUR_SUBLAB[0] === '1') {
+        alert('该实验数据报告暂不支持html浏览');
+    }else{
+        var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+        $('#wait-report').fadeIn();
+        PostAjax("./report/createMD",postData,function(){
+            if (this.readyState==4 && this.status==200){
+                var jsonText = eval("(" + this.responseText + ")");
+                //alert(this.responseText);
+                //alert(jsonText["status"]);
+                if(jsonText["status"]=='success') {
+                    changePdf('tmp',jsonText['link'],1);
+                    $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
+                }
+                else
+                    errorFunction(jsonText["message"]);
+                $('#wait-report').fadeOut();
             }
-            else
-                errorFunction(jsonText["message"]);
-            $('#wait-report').fadeOut();
-        }
-        else if(this.readyState==4 && this.status!=200) {
-            $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
-        }
-    });
+            else if(this.readyState==4 && this.status!=200) {
+                $('#wait-report').fadeOut();
+                errorFunction("生成报告失败");
+            }
+        });
+    }
 
     $('#modal-report-select').modal('hide');
 });
