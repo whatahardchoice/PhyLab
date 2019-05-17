@@ -2,82 +2,112 @@
 \subsection*{1、定标}
 \indent 在扫描周期0.2ms下，CCD波形一帧对应于示波器上的41个小格。因此，在0.1ms扫描周期下，每格对应的实际空间距离为$\Delta S=\frac{2700}{41\times0.2} \times11um=3.622mm$
 \subsection*{2、布拉格衍射}
-\indent 固定功率情况下，测量数据及当前频率(P为86mA) \\
+\indent 固定功率情况下，测量数据及当前频率(P为86mA)\\ 
+
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 	\hline 
-	频率${f}_{S}/Hz${%for fsi in fs1 %}& ||fsi|| {% endfor %}  \\ 
+	频率${f}_{S}/Hz${%for fsi in fs1 %}& ||fsi|| {% endfor %}  \\
 	\hline 
-	偏转角$\phi/$div{%for div1i in div1 %}& ||div1i|| {% endfor %}  \\ 
+	偏转角$\phi/$div{%for div1i in div1 %}& ||div1i|| {% endfor %}  \\
 	\hline 
 \end{tabular} \\
-%${I}_{0}$ = 19格
-\indent 由方程组 \\
-$\left\{\begin{matrix}
-\frac{sin\theta}{siniB} = n\\ 
-D = L\cdot 2\theta 
-\end{matrix}\right. $
-\indent 由小角度原理可知:$iB = \frac{N\cdot\Delta{S}}{2Ln}$ \\
-\indent 由此可得偏转角$\varphi = 2iB = \frac{N\Delta{S}}{2Ln}$ \\
-\indent 测得 $L = {D}' = 0.568m$ , 并且已知$n = 2.386$ \\
+\\
+
+\indent 由方程组: 
+$$
+\left\{\begin{matrix}
+\frac{sin\theta}{siniB} = n\\
+D = L\cdot 2\theta
+\end{matrix}\right. 
+$$
+\indent 由小角度原理可知:$$iB = \frac{N\cdot\Delta{S}}{2Ln}$$ 
+
+\indent 由此可得偏转角:$$\varphi = 2iB = \frac{N\Delta{S}}{2Ln}$$ 
+
+\indent 测得 $L = {D}' = 0.568m$ , 并且已知$n = 2.386$ ， 计算出$\varphi$并得出下表:\\ 
+
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 	\hline 
-	频率${f}_{S}/Hz${%for fsi in fs1 %}& ||fsi|| {% endfor %}  \\ 
+	频率${f}_{S}/Hz${%for fsi in fs1 %}& ||fsi|| {% endfor %}  \\
 	\hline 
-	偏转角$\phi/$div{%for div1i in div1 %}& ||div1i|| {% endfor %}  \\ 
+	偏转角$\phi/$div{%for div1i in div1 %}& ||div1i|| {% endfor %}  \\
     \hline 
-	偏转角$\varphi/$rad{%for rad1i in rad1 %}& ||rad1i|| {% endfor %}  \\ 
+	偏转角$\varphi/$rad{%for rad1i in rad1 %}& ||rad1i|| {% endfor %}  \\
 	\hline 
-\end{tabular}
-\indent 画出$\varphi - {f}_{s}$图并进行线性拟合 \\
+\end{tabular}\\
+\\
+
+\indent 画出$\varphi - {f}_{s}$图并进行线性拟合 
 \begin{figure}[H]
 \centering
   \includegraphics[width=13cm]{||pic1||.png}
 \end{figure}
-\indent 又由$\varphi = \frac{{\lambda}_{0}}{n{V}_{s}}{f}_{s}$ \\
-\indent $k = \frac{{\lambda}_{0}}{n{V}_{s}} = ||k1||$ \\
-\indent 计算出${V}_{s} = ||Vs||m/s$ \\
-\indent 理论值$\overline{{V}_{s}} = 3632m/s$ \\
-\indent 相对误差为$\eta = \left | \frac{{V}_{s}-\overline{{V}_{s}}}{\overline{{V}_{s}}} \right | \times100\% = ||relative_err1|| $
+\indent 又由:$$\varphi = \frac{{\lambda}_{0}}{n{V}_{s}}{f}_{s}$$ \\
+
+\indent $$k = \frac{{\lambda}_{0}}{n{V}_{s}} = ||k1||$$ 
+
+\indent 计算得:$${V}_{s} = ||Vs||m/s$$ 
+
+\indent 理论值:$$\overline{{V}_{s}} = 3632m/s$$ 
+
+\indent 相对误差为:$$\eta = \left | \frac{{V}_{s}-\overline{{V}_{s}}}{\overline{{V}_{s}}} \right | \times100\% = ||relative_err1|| $$
+
 \subsection*{3、声光调制}
 \subsubsection*{(1)衍射光强度与超声波频率}
-\indent 原始数据 \\
+\indent 原始数据:\\ 
+
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 	\hline 
-	频率${f}_{s}/Hz${%for fsi in fs2 %}& ||fsi|| {% endfor %}  \\ 
+	频率${f}_{s}/Hz${%for fsi in fs2 %}& ||fsi|| {% endfor %}  \\
 	\hline 
-	光强格数$/$div{%for div2i in div2 %}& ||div2i|| {% endfor %}  \\ 
+	光强格数$/$div{%for div2i in div2 %}& ||div2i|| {% endfor %}  \\
 	\hline 
 \end{tabular} \\
+\\
+
 \indent 绘制衍射光强度与超声度频率的关系曲线 \\
 \begin{figure}[H]
 \centering
   \includegraphics[width=13cm]{||pic2||.png}
 \end{figure}
-\indent 可知，中心频率光强为$||div2_max||$格，对应大致频率为$||fs2_max||$MHz。 
+\indent 可知，中心频率光强为$||div2_max||$格，对应大致频率为$||fs2_max||$MHz。
 \subsubsection*{(2)衍射光强与超声波功率}
-\indent 原始数据($0.5$V/div) \\
+\indent 原始数据($0.5$V/div)\\ 
+
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 	\hline 
-	功率$P/mA${%for Pi in P %}& ||Pi|| {% endfor %}  \\ 
+	功率$P/mA${%for Pi in P %}& ||Pi|| {% endfor %}  \\
 	\hline 
-	光强$/$div{%for Ii in I %}& ||Ii|| {% endfor %}  \\ 
+	光强$/$div{%for Ii in I %}& ||Ii|| {% endfor %}  \\
 	\hline 
-\end{tabular}
-\indent 绘制衍射光强度与超声波功率的关系曲线 \\
+\end{tabular}\\
+\\
+
+\indent 绘制衍射光强度与超声波功率的关系曲线: \\
 \begin{figure}[H]
 \centering
   \includegraphics[width=13cm]{||pic3||.png}
 \end{figure}
-\indent 计算最大衍射效率 \\
+\indent 计算最大衍射效率: \\
+
 \indent 把频率调为0 ， ${I}_{0}$为$8.0$div \\
-\indent 所以，$eta = \frac{{I}_{1}}{{I}_{0}} = \frac{8\times0.5}{8\times1} = ||eta2||\% $ 
+
+\indent 可得$$\eta = \frac{{I}_{1}}{{I}_{0}} = \frac{8\times0.5}{8\times1} = ||eta2||\% $$
 \subsection*{4、喇曼-纳斯衍射}
-\indent (1)原始数据 \\
-\indent 两个衍射光家教距离为$||div3||$div \\
-\indent ${I}_{0} = ||I0||$div , ${I}_{1} = ||I1||div$ ; ($P = 86$mA) \\
+\indent (1)原始数据\\ 
+
+\indent\indent两个衍射光家教距离为$||div3||$div \\
+
+\indent\indent ${I}_{0} = ||I0||$div , ${I}_{1} = ||I1||div$ ; ($P = 86$mA) \\
+
 \indent (2)计算衍射角 \\
-\indent 偏转角$\theta = \frac{N\cdot\Delta S}{L\cdot n} = ||theta1||$ \\
-\indent 理论值$\overline{\theta} = 0.00653$ \\
-\indent 相对误差$\eta = = \left | \frac{\theta-\overline{\theta}}{\overline{\theta}} \right | \times100\% = ||eta2|| $ \\
-\indent (2)最大衍射衍射效率 \\
-\indent $\eta = \frac{{I}_{1}}{{I}_{0}}\times100\% = ||relative_err2||\% $ \\
+
+\indent\indent偏转角:$$\theta = \frac{N\cdot\Delta S}{L\cdot n} = ||theta1||$$ 
+
+\indent\indent理论值:$$\overline{\theta} = 0.00653$$ 
+
+\indent\indent相对误差:$$\eta = = \left | \frac{\theta-\overline{\theta}}{\overline{\theta}} \right | \times100\% = ||eta2|| $$ 
+
+\indent (2)计算最大衍射衍射效率 
+
+\indent $$\eta = \frac{{I}_{1}}{{I}_{0}}\times100\% = ||relative_err2||\% $$ \\
