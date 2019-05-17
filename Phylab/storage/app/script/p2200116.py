@@ -167,8 +167,8 @@ def process_data(D , fs1 , div1 , fs2 , div2 , P , I , div3 , I0 , I1 , source ,
     pic1 = name+'_pic1'
     plt.scatter(x, y,  color='red')
     plt.plot(x,y_pred, color='blue', linewidth=1.5)
-    plt.xlabel('频率' , font)
-    plt.ylabel('偏转角' , font)
+    plt.xlabel('f_s' , font)
+    plt.ylabel('phi' , font)
     fig1.savefig(pic1+'.png',bbox_inches='tight')
 
     #Vs整数
@@ -185,8 +185,8 @@ def process_data(D , fs1 , div1 , fs2 , div2 , P , I , div3 , I0 , I1 , source ,
     pic2 = name+'_pic2'
     plt.scatter(fs2 , div2,  color='red')
     plt.plot(fs2 , div2, color='blue', linewidth=1.5)
-    plt.xlabel('频率' , font)
-    plt.ylabel('光强度' , font)
+    plt.xlabel('f_s' , font)
+    plt.ylabel('I' , font)
     fig2.savefig(pic2+'.png',bbox_inches='tight')
 
     #eta = I1/I0
@@ -197,8 +197,8 @@ def process_data(D , fs1 , div1 , fs2 , div2 , P , I , div3 , I0 , I1 , source ,
     pic3 = name+'_pic3'
     plt.scatter(P, I,  color='red')
     plt.plot(P,I, color='blue', linewidth=1.5)
-    plt.xlabel('超声波功率' , font)
-    plt.ylabel('光强' , font)
+    plt.xlabel('P' , font)
+    plt.ylabel('I' , font)
     fig3.savefig(pic3+'.png',bbox_inches='tight')
     
     #theta1 , eta2 , relative_err2
