@@ -13,6 +13,7 @@
   <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="./css/styles.css" rel="stylesheet" type="text/css">
   <link href="./css/phylab.css" rel="stylesheet" type="text/css">
+
   <script src="./js/jquery-2.1.4.js"></script>
 
   <!-- include summernote css/js -->
