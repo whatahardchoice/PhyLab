@@ -30,24 +30,24 @@ function postmail($to,$subject = '',$body = ''){
     require_once(app_path().'/PhylabProcess/class.phpmailer.php');
     include(app_path().'/PhylabProcess/class.smtp.php');
     $mail             = new PHPMailer(); //new一个PHPMailer对象出来
-    $body            = eregi_replace("[\]",'',$body); //对邮件内容进行必要的过滤
+    //$body            = preg_replace("[\]",'',$body); //对邮件内容进行必要的过滤
     $mail->CharSet ="utf-8";//设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
     $mail->IsSMTP(); // 设定使用SMTP服务
     $mail->SMTPDebug  = 1;                     // 启用SMTP调试功能
     // 1 = errors and messages
     // 2 = messages only
     $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
-    $mail->SMTPSecure = "ssl";                 // 安全协议，可以注释掉
-    $mail->Host       = 'smtp.zoho.com.cn';      // SMTP 服务器
-    $mail->Port       = 465;                   // SMTP服务器的端口号
+    $mail->SMTPSecure = env('MAIL_ENCRYPTION');                 // 安全协议，可以注释掉
+    $mail->Host       = env('MAIL_HOST');     // SMTP 服务器
+    $mail->Port       = env('MAIL_PORT');                   // SMTP服务器的端口号
     //$mail->Username   = '634208109@qq.com';  // SMTP服务器用户名，PS：我乱打的
-    $mail->Username   = 'hardchoice@zoho.com.cn';
+    $mail->Username   = env('MAIL_USERNAME');
     //$mail->Password   = 'X1995811716hXel';
-    $mail->Password   = 'Zhoubowen-715';            // SMTP服务器密码
+    $mail->Password   = env('MAIL_PASSWORD');        // SMTP服务器密码
     //$mail->SetFrom('634208109@qq.com', '5z1');
-    $mail->SetFrom('hardchoice@zoho.com.cn', 'hardchoice');
+    $mail->SetFrom(env('MAIL_USERNAME'), 'phylab');
     //$mail->AddReplyTo('634208109@qq.com','5z1');
-    $mail->AddReplyTo('hardchoice@zoho.com.cn','hardchoice');
+    $mail->AddReplyTo(env('MAIL_USERNAME'),'phylab');
     $mail->Subject    = $subject;
     $mail->AltBody    = 'To view the message, please use an HTML compatible email viewer!'; // optional, comment out and test
     $mail->MsgHTML($body);
