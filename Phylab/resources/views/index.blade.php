@@ -14,7 +14,7 @@
 
 
       </div>
-        <div class="col-xs-12 col-md-5 col-md-offset-7" @if (!$auth) style="display: block" @else style="display: none" @endif>
+        <div class="col-xs-12 col-md-5 col-md-offset-1" @if (!$auth) style="display: block" @else style="display: none" @endif>
           <form method="post">
             <div class="form-group">
               <input class="form-control" name="name" id="name" type="text" placeholder="用户名">
