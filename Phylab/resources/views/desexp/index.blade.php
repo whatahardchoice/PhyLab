@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('contents')
 
-<div style="margin-top: 30px" class="float-container">
+<div style="margin-top: 30px;height:auto;overflow:hidden" class="float-container">
   <!--  contents -->
   <div class="col-md-8 col-md-offset-2 col-xs-12 " style="margin-bottom: 50px">
 
@@ -45,14 +45,13 @@
     </div>
   </div>
 
-  <footer id="site-footer" style="margin-top: auto" class="navbar-fixed-bottom">
-    <div class="text-center copyright">
-      <span>Copyright @2016-2016 物理实验报告平台</span>
-    </div>
-  </footer>
-
 </div>
 
+<footer id="site-footer">
+  <div class="text-center copyright" style="margin-top: 0">
+    <span>Copyright @2016-2016 物理实验报告平台</span>
+  </div>
+</footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
