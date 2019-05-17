@@ -206,6 +206,13 @@ def process_data(D , fs1 , div1 , fs2 , div2 , P , I , div3 , I0 , I1 , source ,
     eta2 = (I1/I0)*100
     relative_err2 = (abs(theta1 - theta0)*100) / theta0
 
+    if mdjudge == 2:
+        strs = name.split('/');
+        src = '/' + strs[5] + '/' + strs[6]
+        pic1 = src + '_pic1'
+        pic2 = src + '_pic2'
+        pic3 = src + '_pic3'
+
     return env.from_string(source).render(
         #INPUT_A = "%.2f" % INPUT_A, #保留两位小数
         #INPUT_B = "%.2f" % INPUT_B,
