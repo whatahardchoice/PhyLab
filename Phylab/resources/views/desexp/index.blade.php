@@ -7,11 +7,11 @@
 
     <nav class="navbar navbar-default" style="background-color: #c2ccd0;margin-top: 25px;box-shadow:2px 2px 5px rgb(200,200,200);border:none;" role="navigation">
       <div class="container-fluid" style="display: flex; align-items: center">
-        <div class="navbar-header col-xs-12  col-md-9 text-center">
+        <div class="navbar-header col-xs-12  col-md-6 text-center">
           <a class="navbar-brand" href="#"><strong style="font-size: large">设计性实验</strong></a>
-
         </div>
-        <div class="text-center col-xs-12 col-md-3">
+        <text class="col-md-3">点击虚线显示/隐藏答案</text>
+        <div class="text-center col-xs-12 col-md-3 col-md-offset-2">
             <select class="form-control" id="desexp-select" style="margin:0" onchange="switchContent()">
               <option selected="selected" disabled="disabled" style="display: none">请选择实验</option>
               @foreach($expOptions as $option)
