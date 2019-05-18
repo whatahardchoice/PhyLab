@@ -9,25 +9,9 @@
       <div class="container-fluid" style="display: flex; align-items: center">
         <div class="navbar-header col-xs-12  col-md-9 text-center">
           <a class="navbar-brand" href="#"><strong style="font-size: large">设计性实验</strong></a>
+
         </div>
         <div class="text-center col-xs-12 col-md-3">
-{{--          <ul class="nav navbar-nav">--}}
-{{--            <li class="dropdown ">--}}
-{{--              <a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
-{{--                <strong style="font-size: medium">请选择你的实验</strong>--}}
-{{--                <b class="caret"></b>--}}
-{{--              </a>--}}
-{{--              <ul class="dropdown-menu">--}}
-{{--                <li><a href="#">jmeter</a></li>--}}
-{{--                <li><a href="#">EJB</a></li>--}}
-{{--                <li><a href="#">Jasper Report</a></li>--}}
-{{--                <li class="divider"></li>--}}
-{{--                <li><a href="#">分离的链接</a></li>--}}
-{{--                <li class="divider"></li>--}}
-{{--                <li><a href="#">另一个分离的链接</a></li>--}}
-{{--              </ul>--}}
-{{--            </li>--}}
-{{--          </ul>--}}
             <select class="form-control" id="desexp-select" style="margin:0" onchange="switchContent()">
               <option selected="selected" disabled="disabled" style="display: none">请选择实验</option>
               @foreach($expOptions as $option)
@@ -42,6 +26,9 @@
         <iframe id="desexp-iframe" src="/desexp_html/D01.html" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"
               style="margin-top: 0px;height: 700px;width:100%;border:none;box-shadow:2px 2px 5px rgb(200,200,200);" scrolling="no">
         </iframe>
+    </div>
+    <div  class="float-button hidden-xs hidden-sm" style="position:fixed; right:5%;bottom:50%;">
+      <button id="btn-clear-answer" class="btn btn-success" style="cursor: pointer;border-radius: 50%;box-shadow: 2px 2px 3px rgb(200,200,200);">清空答案</button>
     </div>
   </div>
 

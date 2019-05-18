@@ -2785,7 +2785,11 @@
       };
       for (var i = 0; i < inners.length; i++) {
         inners[i].addEventListener("click", myfunction, false);
-        //inners[i].addEventListener('touchstart', myfunction, false);
+        inners[i].addEventListener('touchstart', function (e) {
+          e.preventDefault();
+          if (this.style.opacity == 1) this.style.opacity = "";
+          else this.style.opacity = 1;
+      }, false);
       }
     </script>
   </body>
