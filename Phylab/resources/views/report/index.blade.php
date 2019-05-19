@@ -86,7 +86,7 @@
     <div id="doc" class="col-xs-12 col-md-8" style="border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;margin: 5px 0 5px 0;">
       <div class="panel-group" id="lab-report" style="margin-left: 15px">
         <div class="panel panel-default pannel-autoscroll">
-          <button id="preading-report" class="btn btn-success col-xs-12 visible-xs visible-sm" style="margin-bottom: 15px" >
+          <button id="preading-report" class="btn btn-success col-xs-12 visible-xs visible-sm" style="margin-bottom: 15px" onclick="" disabled>
             <span class="sr-only">y</span>
             <i class="fa fa-bookmark-o"></i>
             <span >查看实验报告</span>
