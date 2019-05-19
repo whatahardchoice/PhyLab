@@ -53,6 +53,11 @@ class ExampleTest extends TestCase
              ->type('tttt' , 'introduction')
              ->press('update') ;
 
+        $_POST['introduction'] = 'sdf' ;
+        $this->post('/user' , [
+           'introduction' => 'shi' ,
+        ]);
+
         $this->visit('/console')
              //->assertRedirectedTo('index')
              ->see('物理实验')
@@ -69,6 +74,7 @@ class ExampleTest extends TestCase
             ->click('新增实验');
         */
 
+        /*
         $_GET['LId'] = '2101010';
         $_GET['LName'] = 'phpunit' ;
         $_GET['LTag'] = '1010' ;
@@ -76,6 +82,7 @@ class ExampleTest extends TestCase
              ->seeJson([
                  'status' => SUCCESS_MESSAGE,
              ]);
+        */
 
         $_GET['LId'] = '2160115';
         $_GET['LName'] = '密立根油滴实验' ;
@@ -97,18 +104,49 @@ class ExampleTest extends TestCase
         //$this->visit('/');
             //->see('控制台');
 
-        //测试文件上传
-        /*
+        /***
+         * 测试文件上传
+         *
+         **/
+        //未登录，重定向
+        $this->visit('/logout');
+        $this->post('/console/uploadPre')
+             ->assertRedirectedTo('index') ;
+
+        //登录无文件
+        $this->visit('/login')
+            ->see('登录')
+            ->type('982393649@qq.com' , 'email')
+            ->type('199808151' , 'password')
+            ->press('login-submit');
+        $this->post('/console/uploadPre')
+             ->seeJson([
+                'status' =>  FAIL_MESSAGE ,
+                 'message' => "上传失败，没有找到文件！",
+             ]);
+
+        //登录有文件
         $_POST['labID'] = '2222222';
         //Storage::fake('prepare_pdf');  // 伪造目录
-        $pdf = Storage::disk('public')->get('1011.pdf') ;
+        //$pdf = Storage::disk('public')->get('1011.pdf') ;
+        $pdf = new SplFileInfo('prepare_pdf/phylab_test.pdf') ;
+        self::assertTrue($pdf instanceof SplFileInfo && $pdf->getPath() != '') ;
+        $_FILES["prepare-pdf"]["name"] = 'prepare_pdf/phylab_test.pdf' ;
+        $_FILES["prepare-pdf"]['error'] = 0 ;
+        $_FILES["prepare-pdf"]['type'] = 'pdf' ;
+        $_FILES["prepare-pdf"]['tmp_name'] = 'prepare_pdf/phylab_test.pdf' ;
+        $_FILES["prepare-pdf"]['size'] = 1000 ;
         //$pdf = UploadedFile::fake()->image('2134.pdf');  // 伪造上传图片
-        $this->post('/console/uploadPre', [
-            'prepare-pdf' => $pdf
-        ]);
+        $this->post('/console/uploadPre' , [
+            'prepare-pdf' => $pdf ,
+        ])->seeJson([
+            //'status' => FAIL_MESSAGE ,
+            //'message' => "上传失败，文件格式或大小不符合要求！",
+            //'message' => 'prepare_pdf/phylab_test.pdf',
+        ]) ;
 
-        Storage::disk('prepare_pdf')->assertExists('/prepare_pdf/2134.pdf');
-        */
+        //Storage::disk('prepare_pdf')->assertExists('/prepare_pdf/2134.pdf');
+
 
 
 

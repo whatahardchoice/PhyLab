@@ -197,6 +197,17 @@ class ConsoleController extends Controller {
         }
         $data = ["status"=>"","message"=>""];
 
+        /*
+        if (Request::hasfile('prepare-pdf')){
+            $testt = Request::file('prepare-pdf');
+            //if ($testt instanceof SplFileInfo && $testt->getPath() != '')
+            $data['message'] = $_FILES['prepare-pdf']['name'] ;
+            //$data['status'] = $_FILES['prepare-pdf']['error'] ;
+            return response()->json($data);
+        }
+        */
+
+
         if (Request::hasFile('prepare-pdf'))
         {
             $pdfFile = Request::file('prepare-pdf');
