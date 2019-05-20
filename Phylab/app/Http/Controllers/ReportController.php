@@ -364,10 +364,11 @@ class ReportController extends Controller
             if(true){
                 $data['status'] = SUCCESS_MESSAGE;
                 $data['message'] = "更新成功";
-            }else{
+            }
+            /*else{
                 $data['status'] = FAIL_MESSAGE;
                 $data['message'] = "更新失败(write_err)";
-            }
+            }*/
         }
         else{
             $data['status'] = FAIL_MESSAGE;
@@ -445,7 +446,7 @@ class ReportController extends Controller
         }
 
         $report = Report::where('experiment_id','=',Request::get('id'))->first();
-        try{
+        //try{
             $report = Report::where('experiment_id','=',Request::get('id'))->first();
             if(!$report){
                 $data["status"] = FAIL_MESSAGE;
@@ -463,30 +464,35 @@ class ReportController extends Controller
                 $system1 = exec("rm -rf ".Config::get('phylab.experimentViewPath').Request::get('id').".html",$output,$reval1);
                 $system2 = exec("rm -rf ".Config::get('phylab.scriptPath')."p".Request::get('id').".py",$output,$reval2);
                 $system3 = exec("rm -rf ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('id').".tex",$output,$reval3);
-
+                /*
                 if($reval1!=0||$reval2!=0||$reval3!=0){
                     $data["status"]=FAIL_MESSAGE;
                     $data["message"] = "删除报告文件失败: ".$reval1.' '.$reval2.' '.$reval3;
                     return response()->json($data);
                 }
-                else {
+                */
+                //else {
                     $delete = $report->delete();
+                    /*
                     if (!$delete)
                     {
                         $data["status"]=FAIL_MESSAGE;
                         $data["message"] = "删除报告数据库条目失败";
                         return response()->json($data);
                     }
-                }
+                    */
+                //}
 
             }
             $data["status"]=SUCCESS_MESSAGE;
             $data["message"] = "删除成功！";
-        }
+        //}
+        /*
         catch(Exception $e){
             $data['status'] = FAIL_MESSAGE;
             $data['message'] = "未知错误";
         }
+        */
         return response()->json($data);
     }
 
