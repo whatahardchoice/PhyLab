@@ -321,6 +321,8 @@
     </div>
     <div class="text-center copyright">
       <span>Copyright @2016-2019 物理实验报告平台 {{$username}}</span>
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <span id="busuanzi_container_page_pv">本页面总访问量<span id="busuanzi_value_page_pv"></span>次</span>
     </div>
   </div>
 </footer>
