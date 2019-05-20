@@ -17,8 +17,8 @@ class AppServiceProvider extends ServiceProvider
         /*
         defind the constant of the app
         */
-        define('SUCCESS_MESSAGE', "success");
-        define('FAIL_MESSAGE',"fail");
+        if(!defined('SUCCESS_MESSAGE')) define('SUCCESS_MESSAGE', "success");
+        if(!defined('FAIL_MESSAGE')) define('FAIL_MESSAGE',"fail");
         Validator::extend('studentId', function($attribute, $value, $parameters)
         {
             return preg_match('/^\d{8}$/', $value);
@@ -35,8 +35,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         //
-        if ($this->app->environment() !== 'production') {
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-        }
+//        if ($this->app->environment() !== 'production') {
+//            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+//        }
     }
 }

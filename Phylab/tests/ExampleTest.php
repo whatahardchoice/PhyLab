@@ -12,6 +12,8 @@ use App\Models\Report;
 class ExampleTest extends TestCase
 {
     use WithoutMiddleware ;
+    protected $preserveGlobalState = FALSE;
+    protected $runTestInSeparateProcess = TRUE;
     //use DatabaseMigrations;
     /**
      * A basic functional test example.
@@ -444,4 +446,8 @@ class ExampleTest extends TestCase
 
 
     }
+    public function testExample2(){
+        echo("good");
+    }
+
 }
