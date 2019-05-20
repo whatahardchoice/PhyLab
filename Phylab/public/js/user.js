@@ -19,49 +19,45 @@ $(function() {
             alert("更新失败");
         });
     });
-/*
-    $('#load-form').submit(function(event) {
-
-        var form = new FormData($( "#load-form" )[0]);
-        $.ajax({
-            url: form.attr('action') ,
-            type: 'post',
-            data: form,
-            async: false,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                alert('更新成功');
-            },
-            error: function (data) {
-                alert("更新失败");
-            }
-        });
-    });
-*/
 });
-function load_file(){
-    var form = new FormData($("#load_file")[0]);
-    console.log(form);
-    $.ajax({
-        url:"{{URL::route('avatar')}}",
-        //url: form.attr('action'),
-        type: 'post',
-        data: form,
-        //dataType: 'json' ,
-        async: false,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success:function (returndata) {
-            $("#user_avatar").attr('src',returndata['avatarPath']);
-        },
-        error:function (returndata) {
-            //$("#user_avatar").attr('src',returndata);
-            //console.log(data);
-            alert(returndata['message']);
-        }
 
-    });
-}
+
+$("#btn-upload-avatar").click(function (){
+    if ($("#input-prepare-pdf").get(0).files.length == 0)
+    {
+        alert("请先选择一个文件！");
+        return false;
+    }
+    //e.preventDefault();
+    let formData = new FormData();
+    let file = $("#input-upload-avatar").get(0).files[0];
+
+    if (file.size > 5242800)
+    {
+        alert("文件过大了！");
+        return false;
+    }
+
+    formData.append("avatar", file);
+    $.ajax({
+            type:"POST",
+            url:"./user/avatar",
+            data:formData,
+            contentType:false,
+            processData:false
+        }
+    )
+        .done(function (data) {
+            if (data.status === "fail") {
+                alert("上传失败");
+            } else {
+                $("#user_avatar").attr('src',data['avatarPath']);
+            }
+
+        })
+        .fail(function (xhr, status) {
+            alert('失败: ' + xhr.status + ', 原因: ' + status);
+        });
+
+    return false;
+});

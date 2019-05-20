@@ -18,12 +18,12 @@
                 <input type="submit" value="上传">
             </form>
 -->
-                <form method="POST" action="/user/avatar" enctype="multipart/form-data" id = "load_file" class="text-center form-inline" role="form" style="margin-top: 5px">
+                <form  id = "load_file" class="text-center form-inline" role="form" style="margin-top: 5px">
                     <div class="form-group">
-                    <input type="file" name="avatar" style = "text-align: center"  class="form-control"/>
+                        <input id="input-upload-avatar" type="file" exts="png|jpg|bmp|jpeg" name="avatar" style = "text-align: center"  class="form-control"/>
                     </div>
                     <div class="form-group">
-                    <a name="submit" class="btn btn-primary form-control"  onclick="load_file()">上传文件</a>
+                        <button class="btn btn-primary form-control" id="btn-upload-avatar">上传文件</button>
                     </div>
                 </form>
 
