@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Report;
 
 
 class ExampleTest extends TestCase
@@ -20,90 +21,249 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $username = 'zgj982393649' ;
+        /**
+         *
+         * 测试变量定义
+         */
+        //普通管理员
+        $gen_admin_username = 'console_test' ;
+        $gen_admin_email = '123456@test.com' ;
+        $gen_admin_password = '123456' ;
+        //超级管理员
+        $super_admin_username = 'zgj982393649' ;
+        $super_admin_email = '982393649@qq.com' ;
+        $super_admin_password = '199808151' ;
+        //测试中新建实验id
+        $report_id_create = '2101010' ;
+        $report_name_create = 'phpunit' ;
+        $report_group_create = '1010' ;
+        //未发布实验id
+        $report_id_unpub = $report_id_create ;
+        //错误实验id
+        $report_id_err = '3333333' ;
+        //正确已发布实验Id
+        $report_id_pub = '1010113' ;
+        $report_name_pub = '拉伸法测钢丝弹性模型扭摆法测定转动惯量' ;
+        $report_group_pub = '1011' ;
 
-        //$this->get('index')
-        //     ->dontSee('控制台') ;
-        $this->get('/console')
-             ->assertRedirectedTo('/index');
+
+        /**
+         *
+         * 部分期望结果定义
+         */
 
 
-        /*
-        $this->visit('/console')
-             //->assertRedirected('/index')
-             ->seePageIs('/index')
-             ->dontSee('实验选择')
-             ->see('登录')
-             ->see('注册') ;
-*/
+        /**
+         *
+         * 管理员账号登录预测试
+         */
+        //超级管理员账号
         $this->visit('/login')
-            ->see('登录')
-            ->type('982393649@qq.com' , 'email')
-            ->type('199808151' , 'password')
-            ->press('login-submit');
-            //->see('登录');
-            //->seePageIs('/index') ;
-
+             ->see('登录')
+             ->type($super_admin_email , 'email')
+             ->type($super_admin_password , 'password')
+             ->press('login-submit');
         $this->visit('/index')
-             ->see('zgj982393649')
+             ->see($super_admin_username)
              ->see('登出')
              ->see('控制台');
-        //$this->be($username) ;
-        $this->visit('user')
-             ->type('tttt' , 'introduction')
-             ->press('update') ;
+        //普通管理员账号
+        $this->visit('/login')
+            ->see('登录')
+            ->type($gen_admin_email , 'email')
+            ->type($gen_admin_password , 'password')
+            ->press('login-submit');
+        $this->visit('/index')
+            ->see($gen_admin_username)
+            ->see('登出')
+            ->see('控制台');
 
-        $_POST['introduction'] = 'sdf' ;
-        $this->post('/user' , [
-           'introduction' => 'shi' ,
-        ]);
-
+        /**
+         *
+         * 控制台主页面测试
+         */
+        //未登录
+        $this->visit('logout') ;
+        $this->get('/console')
+             ->assertRedirectedTo('/index');
+        //已登录管理员
+        $this->visit('/login')
+             ->see('登录')
+             ->type($gen_admin_email , 'email')
+             ->type($gen_admin_password , 'password')
+             ->press('login-submit');
+        //控制台界面主要元素测试
         $this->visit('/console')
-             //->assertRedirectedTo('index')
-             ->see('物理实验')
-             ->see('点击选择已存在实验')
-             ->see('zgj982393649')
-             ->see('新增实验')
-             ->see('Python脚本')
-             ->see('保存实验');
-
-        //测试新增和删除
-        /*
-        $this->visit('/console')
+            //->assertRedirectedTo('index')
+            ->see('物理实验')
             ->see('点击选择已存在实验')
-            ->click('新增实验');
-        */
+            ->see($gen_admin_username)
+            ->see('新增实验')
+            ->see('上传实验预习报告')
+            ->see('删除未发布实验')
+            ->see('LaTeX模板')
+            ->see('实验表格HTML')
+            ->see('Python脚本')
+            ->see('保存实验')
+            ->see('运行测试')
+            ->see('发布实验');
+        //函数返回数据是否正确
+        $reports = Report::orderBy('experiment_id')->get();
+        $exp_arr = [] ;
+        foreach ($reports as $report) {
+            $exp = array(
+                "id"=>$report->id,
+                "experimentId"=>$report->experiment_id,
+                "experimentName"=>$report->experiment_name,
+                "prepareLink"=>$report->prepare_link
+            );
+            array_push($exp_arr,$exp);
+        }
+        $this->get('console')
+             ->assertViewHas([
+                 'admin' => true ,
+                 'username' => $gen_admin_username ,
+                 'auth' => true ,
+                 'status' => SUCCESS_MESSAGE ,
+                 'reportTemplates' => $exp_arr ,
+             ]) ;
+
+        /**
+         *
+         * 测试getTable
+         */
+        //错误实验id（进入catch分支）
+        $_GET['id'] = $report_id_err ;
+        $this->visit('/getTable')
+             ->seeJson([
+                'status' => FAIL_MESSAGE
+             ]);
+        //正确实验id
+        $_GET['id'] = $report_id_pub ;
+        $html_file = Config::get('phylab.experimentViewPath').$report_id_pub.".html";
+        $str_html = file_get_contents($html_file);
+        $this->visit('/getTable')
+             ->seeJson([
+                 'status' => SUCCESS_MESSAGE ,
+                 'contents' => $str_html ,
+             ]) ;
+
+        /**
+         *
+         * 测试getScript
+         */
+        //未登录
+        $this->visit('/logout') ;
+        $this->get('/getScript')
+             ->assertRedirectedTo('/index') ;
+        //登录，错误实验id
+        $this->visit('/login')
+             ->see('登录')
+             ->type($gen_admin_email , 'email')
+             ->type($gen_admin_password , 'password')
+             ->press('login-submit');
+        $_GET['id'] = $report_id_err ;
+        $this->visit('/getScript')
+             ->seeJson([
+                'status' => FAIL_MESSAGE
+             ]);
+        //正确实验id
+        $_GET['id'] = $report_id_pub ;
+        $py_file = Config::get('phylab.scriptPath')."p".$report_id_pub.".py";
+        $str_py = file_get_contents($py_file);
+        $this->visit('/getScript')
+            ->seeJson([
+                'status' => SUCCESS_MESSAGE ,
+                'contents' => $str_py ,
+            ]) ;
+
+
+        /**
+         *
+         * 测试getTex
+         */
+        //未登录
+        $this->visit('/logout') ;
+        $this->get('/getTex')
+             ->assertRedirectedTo('/index') ;
+        //登录，错误实验id
+        $this->visit('/login')
+             ->see('登录')
+             ->type($gen_admin_email , 'email')
+             ->type($gen_admin_password , 'password')
+             ->press('login-submit');
+        $_GET['id'] = $report_id_err ;
+        $this->visit('/getTex')
+            ->seeJson([
+                'status' => FAIL_MESSAGE
+            ]);
+        //正确实验id
+        $_GET['id'] = $report_id_pub ;
+        $tex_file = Config::get('phylab.scriptPath')."tex/Handle".$report_id_pub.".tex";
+        $str_tex = file_get_contents($tex_file);
+        $this->visit('/getTex')
+            ->seeJson([
+                'status' => SUCCESS_MESSAGE ,
+                'contents' => $str_tex ,
+            ]) ;
+
+
 
         /**
          * 测试创建实验
          */
-        $_GET['LId'] = '2101010';
-        $_GET['LName'] = 'phpunit' ;
-        $_GET['LTag'] = '1010' ;
+        //未登录
+        $this->visit('logout') ;
+        $this->get('/createLab')
+             ->assertRedirectedTo('/index') ;
+        $this->visit('/login')
+            ->see('登录')
+            ->type($gen_admin_email , 'email')
+            ->type($gen_admin_password , 'password')
+            ->press('login-submit');
+        //登录，新建实验号不存在
+        $_GET['LId'] = $report_id_create;
+        $_GET['LName'] = $report_name_create ;
+        $_GET['LTag'] = $report_group_create ;
         $this->visit('/createLab')
              ->seeJson([
                  'status' => SUCCESS_MESSAGE,
+                 'msg' => "" ,
+                 'message' => '创建新报告成功' ,
              ]);
+        //检测新建报告文件是否正确
+        $html_file = Config::get('phylab.experimentViewPath')."template.html" ;
+        $str_html_exp = file_get_contents($html_file);
+        $str_html_exp = str_replace("%%LAB_SUBLAB_ID%%" , $report_id_create , $str_html_exp) ;
+        $html_file = Config::get('phylab.experimentViewPath').$report_id_create.".html" ;
+        $str_html_act = file_get_contents($html_file);
+        $this->assertEquals($str_html_exp , $str_html_act) ;
 
-        $_GET['LId'] = '2160115';
-        $_GET['LName'] = '密立根油滴实验' ;
-        $_GET['LTag'] = '2161' ;
+        $py_file = Config::get('phylab.scriptPath')."template.py" ;
+        $str_py_exp = file_get_contents($py_file);
+        $str_py_exp = str_replace("%%LAB_SUBLAB_ID%%" , $report_id_create , $str_py_exp) ;
+        $py_file = Config::get('phylab.scriptPath')."p".$report_id_create.".py" ;
+        $str_py_act = file_get_contents($py_file);
+        $this->assertEquals($str_py_exp , $str_py_act) ;
+
+        $tex_file = Config::get('phylab.scriptPath')."tex/template.tex" ;
+        $str_tex_exp = file_get_contents($tex_file);
+        $tex_file = Config::get('phylab.scriptPath')."tex/Handle".$report_id_create.".tex" ;
+        $str_tex_act = file_get_contents($tex_file);
+        $this->assertEquals($str_tex_exp , $str_tex_act) ;
+
+
+        //新建实验号已存在
+        $_GET['LId'] = $report_id_pub;
+        $_GET['LName'] = $report_name_pub ;
+        $_GET['LTag'] = $report_group_pub ;
         $this->visit('/createLab')
-            ->seeJson([
+             ->seeJson([
                 'status' => FAIL_MESSAGE,
                 'msg' => '该报告号码已经存在',
-            ]);
+                'message' => '创建新报告失败' ,
+             ]);
 
-
-        //->press('lab-name');
-        /*
-                     ->type('2101010' , 'l_id')
-                     ->type('phpunit' , 'l_name')
-                     ->type('1010' , 'l_tag')
-                     ->press('提交') ;
-        */
-        //$this->visit('/');
-            //->see('控制台');
 
         /**
          * 测试保存实验
@@ -119,11 +279,11 @@ class ExampleTest extends TestCase
         //普通管理员
         $this->visit('/login')
             ->see('登录')
-            ->type('123456@test.com' , 'email')
-            ->type('123456' , 'password')
+            ->type($gen_admin_email , 'email')
+            ->type($gen_admin_password , 'password')
             ->press('login-submit');
         $this->post('/report/updatereport' , [
-            'reportId' => '1010113' ,
+            'reportId' => $report_id_pub ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
             'message' => "没有更新权限，请联系超级管理员" ,
@@ -132,11 +292,11 @@ class ExampleTest extends TestCase
         //超级管理员，错误的实验id
         $this->visit('/login')
             ->see('登录')
-            ->type('982393649@qq.com' , 'email')
-            ->type('199808151' , 'password')
+            ->type($super_admin_email , 'email')
+            ->type($super_admin_password , 'password')
             ->press('login-submit');
         $this->post('/report/updatereport' , [
-            'reportId' => '3333333' ,
+            'reportId' => $report_id_err ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
             'message' => "更新失败(wrong_id)" ,
@@ -145,7 +305,7 @@ class ExampleTest extends TestCase
         $str_py = "test" ;
         $str_tex = "test" ;
         $str_html = "test" ;
-        $report_id = "1010113" ;
+        $report_id = $report_id_unpub ;
         $this->post('/report/updatereport' , [
             'reportId' => $report_id ,
             'reportScript' => $str_py ,
@@ -168,6 +328,41 @@ class ExampleTest extends TestCase
 
 
         /**
+         *
+         * 测试发布实验
+         */
+        //普通管理员（无权限）
+        $this->visit('/login')
+            ->see('登录')
+            ->type($gen_admin_email , 'email')
+            ->type($gen_admin_password , 'password')
+            ->press('login-submit');
+        $this->post('/report/confirmReport')
+             ->seeJson([
+                 'status' => FAIL_MESSAGE ,
+                 'message' => "没有发布权限，请联系超级管理员" ,
+             ]) ;
+        //超级管理员，实验id错误
+        $this->visit('/login')
+            ->see('登录')
+            ->type($super_admin_email , 'email')
+            ->type($super_admin_password , 'password')
+            ->press('login-submit');
+        $this->post('/report/confirmReport' , [
+            'reportId' => $report_id_err ,
+        ])->seeJson([
+            'status' => FAIL_MESSAGE ,
+            'message' => "发布失败" ,
+        ]) ;
+        //超级管理员，正确实验Id
+        $this->post('/report/confirmReport' , [
+            'reportId' => $report_id_pub ,
+        ])->seeJson([
+            'status' => SUCCESS_MESSAGE ,
+            'message' => "发布成功" ,
+        ]) ;
+
+        /**
          * 测试删除实验
          *
          */
@@ -181,8 +376,8 @@ class ExampleTest extends TestCase
         //登录，实验id错误
         $this->visit('/login')
             ->see('登录')
-            ->type('982393649@qq.com' , 'email')
-            ->type('199808151' , 'password')
+            ->type($super_admin_email , 'email')
+            ->type($super_admin_password , 'password')
             ->press('login-submit');
         $this->post('report/delete')
              ->seeJson([
@@ -191,14 +386,14 @@ class ExampleTest extends TestCase
              ]) ;
         //已发布实验
         $this->post('/report/delete' , [
-            'id' => '1010113' ,
+            'id' => $report_id_pub ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
             'message' => "实验已发布，请联系超级管理员" ,
         ])  ;
         //正确的未发布实验
         $this->post('/report/delete' , [
-            'id' => '2101010' ,
+            'id' => $report_id_unpub ,
         ])->seeJson([
             'status' => SUCCESS_MESSAGE,
             'message' => "删除成功！" ,
@@ -216,8 +411,8 @@ class ExampleTest extends TestCase
         //登录无文件
         $this->visit('/login')
             ->see('登录')
-            ->type('982393649@qq.com' , 'email')
-            ->type('199808151' , 'password')
+            ->type($super_admin_email , 'email')
+            ->type($super_admin_password , 'password')
             ->press('login-submit');
         $this->post('/console/uploadPre')
              ->seeJson([
@@ -248,50 +443,5 @@ class ExampleTest extends TestCase
         //Storage::disk('prepare_pdf')->assertExists('/prepare_pdf/2134.pdf');
 
 
-
-
-        //分开测试时可能需要先进行登录
-        $_GET['id'] = '2160115' ;
-        $this->visit('/getTable')
-            ->seeJson([
-                'status' => SUCCESS_MESSAGE
-            ]);
-
-        $this->visit('/getScript')
-            ->seeJson([
-                'status' => SUCCESS_MESSAGE
-            ]);
-
-        $this->visit('/getTex')
-             ->seeJson([
-                 'status' => SUCCESS_MESSAGE
-             ]);
-
-        $_GET['id'] = '2110111' ;
-        $this->visit('/getTable')
-            ->seeJson([
-                'status' => FAIL_MESSAGE
-            ]);
-
-        $this->visit('/getScript')
-            ->seeJson([
-                'status' => FAIL_MESSAGE
-            ]);
-
-        $this->visit('/getTex')
-            ->seeJson([
-                'status' => FAIL_MESSAGE
-            ]);
-
-        //当分开测试时这里需要进行更改
-        $this->visit('/logout');
-        $this->get('/getScript')
-             ->assertRedirectedTo('/index');
-
-        $this->get('/getTex')
-             ->assertRedirectedTo('/index');
-
-        $this->get('/createLab')
-             ->assertRedirectedTo('index') ;
     }
 }
