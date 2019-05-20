@@ -120,7 +120,7 @@ def cat_Vs(k):
     #lamda为真空中波长
     lamda = 650
     n = 2.386
-    return (lamda) / (k * n * 1000000)
+    return (lamda * 1000000) / (k * n * 1000000000)
 
 def process_data(D , fs1 , div1 , fs2 , div2 , P , I , div3 , I0 , I1 , source , name):
     # 以下例子做了简单的加法
