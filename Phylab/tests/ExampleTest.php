@@ -74,7 +74,9 @@ class ExampleTest extends TestCase
             ->click('新增实验');
         */
 
-        /*
+        /**
+         * 测试创建实验
+         */
         $_GET['LId'] = '2101010';
         $_GET['LName'] = 'phpunit' ;
         $_GET['LTag'] = '1010' ;
@@ -82,7 +84,6 @@ class ExampleTest extends TestCase
              ->seeJson([
                  'status' => SUCCESS_MESSAGE,
              ]);
-        */
 
         $_GET['LId'] = '2160115';
         $_GET['LName'] = '密立根油滴实验' ;
@@ -103,6 +104,105 @@ class ExampleTest extends TestCase
         */
         //$this->visit('/');
             //->see('控制台');
+
+        /**
+         * 测试保存实验
+         *
+         */
+        //无权限
+        $this->visit('logout') ;
+        $this->post('/report/updatereport')
+             ->seeJson([
+                 'status' => FAIL_MESSAGE ,
+                 'message' => "没有权限" ,
+             ]);
+        //普通管理员
+        $this->visit('/login')
+            ->see('登录')
+            ->type('123456@test.com' , 'email')
+            ->type('123456' , 'password')
+            ->press('login-submit');
+        $this->post('/report/updatereport' , [
+            'reportId' => '1010113' ,
+        ])->seeJson([
+            'status' => FAIL_MESSAGE ,
+            'message' => "没有更新权限，请联系超级管理员" ,
+            //'message' => "没有权限" ,
+        ]) ;
+        //超级管理员，错误的实验id
+        $this->visit('/login')
+            ->see('登录')
+            ->type('982393649@qq.com' , 'email')
+            ->type('199808151' , 'password')
+            ->press('login-submit');
+        $this->post('/report/updatereport' , [
+            'reportId' => '3333333' ,
+        ])->seeJson([
+            'status' => FAIL_MESSAGE ,
+            'message' => "更新失败(wrong_id)" ,
+        ]);
+        //超级管理员,正确实验id
+        $str_py = "test" ;
+        $str_tex = "test" ;
+        $str_html = "test" ;
+        $report_id = "1010113" ;
+        $this->post('/report/updatereport' , [
+            'reportId' => $report_id ,
+            'reportScript' => $str_py ,
+            'reportTex' => $str_tex ,
+            'reportHtml' => $str_html ,
+        ])->seeJson([
+            'status' => SUCCESS_MESSAGE ,
+            'message' => "更新成功" ,
+        ]);
+        //测试更新是否正确
+        $tex_file = Config::get('phylab.scriptPath')."tex/Handle".$report_id.".tex";
+        $tex_read = file_get_contents($tex_file);
+        $this->assertEquals($str_tex , $tex_read) ;
+        $py_file = Config::get('phylab.scriptPath')."p".$report_id.".py";
+        $py_read = file_get_contents($py_file);
+        $this->assertEquals($str_py , $py_read) ;
+        $html_file = Config::get('phylab.experimentViewPath').$report_id.".html";
+        $html_read = file_get_contents($html_file);
+        $this->assertEquals($str_html , $html_read) ;
+
+
+        /**
+         * 测试删除实验
+         *
+         */
+        //未登录
+        $this->visit('logout') ;
+        $this->post('report/delete')
+             ->seeJson([
+                 'status' => FAIL_MESSAGE,
+                 'message' => "没有权限" ,
+             ]);
+        //登录，实验id错误
+        $this->visit('/login')
+            ->see('登录')
+            ->type('982393649@qq.com' , 'email')
+            ->type('199808151' , 'password')
+            ->press('login-submit');
+        $this->post('report/delete')
+             ->seeJson([
+                 'status' => FAIL_MESSAGE ,
+                 'message' => '实验Id不存在' ,
+             ]) ;
+        //已发布实验
+        $this->post('/report/delete' , [
+            'id' => '1010113' ,
+        ])->seeJson([
+            'status' => FAIL_MESSAGE ,
+            'message' => "实验已发布，请联系超级管理员" ,
+        ])  ;
+        //正确的未发布实验
+        $this->post('/report/delete' , [
+            'id' => '2101010' ,
+        ])->seeJson([
+            'status' => SUCCESS_MESSAGE,
+            'message' => "删除成功！" ,
+        ]);
 
         /***
          * 测试文件上传
