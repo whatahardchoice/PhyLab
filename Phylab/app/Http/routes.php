@@ -270,5 +270,5 @@ Route::get('/desexp',
 Route::get('/desexp/{id}',
     [
        'uses' => 'DesexpController@getDesexp',
-       'middleware' => 'auth'
+       //'middleware' => 'auth'
     ]);

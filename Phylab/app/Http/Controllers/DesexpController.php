@@ -56,12 +56,12 @@ class DesexpController extends Controller
 
         $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => ''];
 
-        if(!Auth::check()) {
-            //如果没登录返回出错，前端重定向至登录页面。
-            $data["status"] = FAIL_MESSAGE;
-            $data["message"] = "未登录，请登陆后查看其他内容";
-            return response()->json($data);
-        }
+//        if(!Auth::check()) {
+//            //如果没登录返回出错，前端重定向至登录页面。
+//            $data["status"] = FAIL_MESSAGE;
+//            $data["message"] = "未登录，请登陆后查看其他内容";
+//            return response()->json($data);
+//        }
 
 
         $report = Desexp::find($id);
