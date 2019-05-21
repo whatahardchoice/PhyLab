@@ -75,10 +75,14 @@ class UserController extends Controller
             $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
         }
   */
-        if (!file_exists(Config::get("phylab.avatarPath").$data["avatarPath"]))
+        if (!$auth->avatar_path||!file_exists(Config::get("phylab.avatarPath").$data["avatarPath"]))
         {
             $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
             //$data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
+        }
+        else
+        {
+            $data['avatarPath'] = '/avatar/'.$data['avatarPath'];
         }
 
 
@@ -173,11 +177,11 @@ class UserController extends Controller
                 $fname = getRandName().'.'.$avatar->getClientOriginalExtension();
                 $avatar->move(Config::get('phylab.avatarPath'),$fname);
                 $auth = Auth::user();
-                Auth::user()->update(['avatar_path' => $fname]);
+                //Auth::user()->update(['avatar_path' => $fname]);
                 try{
-                    if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath'))
+                    if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath') && !empty($auth->avatar_path))
                     {
-                        //Storage::disk('local_public')->delete($auth->avatar_path);
+                        Storage::disk('local_public')->delete($auth->avatar_path);
                     }
                 }
                 catch(Exception $e)

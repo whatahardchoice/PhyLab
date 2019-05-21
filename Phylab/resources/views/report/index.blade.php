@@ -41,14 +41,14 @@
             <i class="fa fa-area-chart"></i>生成数据报告
           </button>
           <div class="modal fade" id="modal-report-select" tabindex="-1" role="dialog" aria-labelledby="collection-folder-label" aria-hidden="true">
-            <div class="modal-dialog" style="width: 50%">
+            <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                   <h4 class="modal-title">选择报告生成方式</h4>
                 </div>
                 <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
-                  <div style="float:bottom;padding-left: 165px;">
+                  <div>
                     <button id="button-generate-latex" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 250px;" type="submit">LateX(PDF版本，可下载收藏)</button>
                     <button id="button-generate-markdown" class="btn btn-success  text-center col-xs-6 " style="margin-bottom: 5px;width: 250px;" type="submit">Markdown(Html版本，只可在线浏览)</button>
                   </div>
