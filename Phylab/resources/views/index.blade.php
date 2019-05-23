@@ -248,6 +248,42 @@
             </div>
           </a>
         </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <a href="{{URL::route('report')}}">
+            <div class="path-item">
+              <div class="col-xs-5 col-sm-4 path-img">
+                <img src="./img/1091-interference-lab.png" style="background-color: #3b3b7e">
+              </div>
+              <div class="col-xs-7 col-sm-8">
+                <div class="path-name"><h4>2161</h4>密立根油滴实验</div>
+                <div class="path-course-num">
+                  1 个子实验
+                </div>
+              </div>
+              <div class="desc-layer">
+                <div class="center">2160115 密立根油滴实验<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <a href="{{URL::route('report')}}">
+            <div class="path-item">
+              <div class="col-xs-5 col-sm-4 path-img">
+                <img src="./img/1091-interference-lab.png" style="background-color: #3b3b7e">
+              </div>
+              <div class="col-xs-7 col-sm-8">
+                <div class="path-name"><h4>2201</h4>声光衍射实验</div>
+                <div class="path-course-num">
+                  1 个子实验
+                </div>
+              </div>
+              <div class="desc-layer">
+                <div class="center">2200116 声光衍射实验<!--br/>1090212 牛顿环干涉<br/>1090312 劈尖干涉--></div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

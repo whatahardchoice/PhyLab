@@ -23,7 +23,7 @@ $(function() {
 
 
 $("#btn-upload-avatar").click(function (){
-    if ($("#input-prepare-pdf").get(0).files.length == 0)
+    if ($("#input-upload-avatar").get(0).files.length == 0)
     {
         alert("请先选择一个文件！");
         return false;

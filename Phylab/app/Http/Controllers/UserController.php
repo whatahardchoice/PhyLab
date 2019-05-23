@@ -181,7 +181,7 @@ class UserController extends Controller
                 try{
                     if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath') && !empty($auth->avatar_path))
                     {
-                        Storage::disk('local_public')->delete($auth->avatar_path);
+                        Storage::disk('local_public')->delete("/avatar/".$auth->avatar_path);
                     }
                 }
                 catch(Exception $e)

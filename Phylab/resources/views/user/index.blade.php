@@ -18,14 +18,14 @@
                 <input type="submit" value="上传">
             </form>
 -->
-                <form  id = "load_file" class="text-center form-inline" role="form" style="margin-top: 5px">
+                <div id = "load_file" class="text-center form-inline" style="margin-top: 5px;display:flex;">
                     <div class="form-group">
                         <input id="input-upload-avatar" type="file" exts="png|jpg|bmp|jpeg" name="avatar" style = "text-align: center"  class="form-control"/>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary form-control" id="btn-upload-avatar">上传文件</button>
                     </div>
-                </form>
+                </div>
 
 
             <h3>{{$username}}</h3>
