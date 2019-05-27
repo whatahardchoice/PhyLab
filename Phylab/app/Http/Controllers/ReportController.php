@@ -17,6 +17,19 @@ use DB;
 class ReportController extends Controller
 {
     /**
+     * Confirm user's identity
+     * Because if a user is an administrator, he can see the experiments
+     * that have not been published and the entrance of console
+     */
+    public function userConfirm()
+    {
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=$exists;
+
+        return $isAdmin;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -25,8 +38,7 @@ class ReportController extends Controller
     {
         //看这个形式： $data = ["reportTemplate"=>[ ["id"=> "", "experimentId" => "","experimentName"=> ""] , [] ,.......] ]
 
-        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+		$isAdmin=$this->userConfirm();
 
         $data = ['reports'=>array(),
             'username'=>Auth::user()->name,
@@ -57,8 +69,7 @@ class ReportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getAllReport(){
-		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+        $isAdmin=$this->userConfirm();
 		if ($isAdmin) {
 			$ad=Console::where('email','=',Auth::user()->email)->first();
 			$st=$ad->status;
@@ -82,7 +93,7 @@ class ReportController extends Controller
         return response()->json($data);
     }
     /**
-     * Show the form for creating a new resource.
+     * This function to create the pdf file
      *
      * @return \Illuminate\Http\Response
      */
@@ -94,18 +105,23 @@ class ReportController extends Controller
             "link"  => "",
             "message" => "",
             "errorLog"=>array()];
-        $validatorRules = array(
-            'id'  => 'required|integer|exists:reports,id',
-            'xml' => 'required'
-        );
-        $validatorAttributes = array(
-            'id'  => '生成报告ID',
-            'xml' => '模板xml文件'
-        );
+        /**
+         * $validatorRules = array(
+         * 'id'  => 'required|integer|exists:reports,id',
+         * 'xml' => 'required'
+         * );
+         * $validatorAttributes = array(
+         * 'id'  => '生成报告ID',
+         * 'xml' => '模板xml文件'
+         * );
+         */
         //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         //ToDo
         //$xmlLink = getRandName().".xml";
+
+        //give a random name to the pdf file or html file created
         $tmpName = getRandName();
+
         try{
             Storage::put("xml_tmp/".$tmpName.'.xml',Request::get('xml'));
         }
@@ -117,10 +133,35 @@ class ReportController extends Controller
         $experimentId = Request::get('id');
         $output = array();
         $test = Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
+
+        /**
+         * The code below is the key to drive python scripts(tex -> pdf) to handle the data
+         *
+         * We need three parameters.
+         * $experimentId -> which experiment it is
+         * get('phylab.tmpXmlPath').$tmpName -> where is the data
+         * get('phylab.tmpReportPath').$tmpName -> where should the created file be put
+         *
+         * The last line of python scripts return will be the value of $system
+         *
+         * The value of $reval will be what the code exit with
+         */
         $system = exec('timeout 120 python3 '. Config::get('phylab.scriptPath')."handler.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
+
         foreach ($output as &$value) {
             utf8_encode($value);
         }
+
+        /**
+         * In our python script, we get different return value when successful or failed
+         *
+         * success -> $system will be {"status":"success"}
+         * failed -> $system will be {"status":"fail", "msg":"exception"}
+         * known as json code
+         *
+         * Of course if something is wrong, $reval will be an exceptional value
+         */
+
         if($reval==0){
             $system = json_decode($system);
             if($system->status== SUCCESS_MESSAGE){
@@ -173,6 +214,12 @@ class ReportController extends Controller
 
     }
 
+    /**
+     * This function is to create the html file
+     *
+     * Most parts are same as createTex
+     */
+
     public function createMD()
     {
         //post 传入 xml 模板文件
@@ -181,14 +228,16 @@ class ReportController extends Controller
             "link"  => "",
             "message" => "",
             "errorLog"=>array()];
-        $validatorRules = array(
-            'id'  => 'required|integer|exists:reports,id',
-            'xml' => 'required'
-        );
-        $validatorAttributes = array(
-            'id'  => '生成报告ID',
-            'xml' => '模板xml文件'
-        );
+        /**
+         * $validatorRules = array(
+         * 'id'  => 'required|integer|exists:reports,id',
+         * 'xml' => 'required'
+         * );
+         * $validatorAttributes = array(
+         * 'id'  => '生成报告ID',
+         * 'xml' => '模板xml文件'
+         * );
+         */
         //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         //ToDo
         //$xmlLink = getRandName().".xml";
@@ -204,6 +253,10 @@ class ReportController extends Controller
         $experimentId = Request::get('id');
         $output = array();
         $test = Config::get('phylab.scriptPath')."handler_md.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName;
+
+        /**
+         * There we need markdown python script
+         */
         $system = exec('timeout 120 python3 '. Config::get('phylab.scriptPath')."handler_md.py ".$experimentId.' '.Config::get('phylab.tmpXmlPath').$tmpName.'.xml '.Config::get('phylab.tmpReportPath').$tmpName,$output,$reval);
         if($reval==0){
             $system = json_decode($system);
@@ -220,7 +273,8 @@ class ReportController extends Controller
             $data["test"]= $test;
             $data["errorLog"]=$output;
         }
-        return response()->json($data);
+        $resp = response()->json($data);
+        return $resp;
     }
 
     /**
@@ -250,14 +304,14 @@ class ReportController extends Controller
     }
 
     /**
-    * return the xml form view to front
+    * return the xml form view from front
     * @param int $id
     * @return \Illuminate\Http\Response
     */
     public function getXmlForm($id)
     {
         $data = ["id"   =>  ""];
-        $experimentId = "";
+        //$experimentId = "";
         $report = Report::find($id);
         if($report){
             $experimentId = $report->experiment_id;
@@ -280,7 +334,8 @@ class ReportController extends Controller
     }
 
     /**
-    * new a report.
+    * New a report.
+    * This function works in console core.
     * 
     * @return \Illuminate\Http\Response
     */
@@ -294,6 +349,11 @@ class ReportController extends Controller
                 $data["status"] = FAIL_MESSAGE;
                 $data["message"] = "实验Id已存在";
             }else{
+                /**
+                 * If you need to create a new experiment.You just need to create the three files
+                 * below in our website.
+                 */
+
                 $system1 = exec("touch ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval1);
                 $system2 = exec("touch ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval2);
                 $system3 = exec("touch ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
@@ -329,13 +389,16 @@ class ReportController extends Controller
     }
 
     /**
-    * update a report.
-    * 
+    * Update a report.
+    *
+    * If you need to change something of the reports which have been published,just edit them.
+    * First of all, you need to have an administrator identity.
+    *
     * @return \Illuminate\Http\Response
     */
     public function updateReport()
     {
-        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
             $data['message'] = "没有权限";
@@ -380,7 +443,7 @@ class ReportController extends Controller
     }
 
     /**
-    * update a report.
+    * To publish a report.
     * 
     * @return \Illuminate\Http\Response
     */
@@ -388,6 +451,13 @@ class ReportController extends Controller
     {
         $data = ["status"   =>  "",
                  "message"  =>  ""];
+
+        /**
+         * To publish a new experiment, you ought to be a super administrator.
+         *
+         * In our database, a super administrator means his atype is 2.
+         * (Check the admin table, you'll know)
+         */
         $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
@@ -430,7 +500,7 @@ class ReportController extends Controller
     }
 
     /**
-     * delete a report.
+     * Delete a report.
      *
      * @return \Illuminate\Http\Response
      */
@@ -438,7 +508,11 @@ class ReportController extends Controller
     {
         $data = ["status"   =>  "",
             "message"  =>  ""];
-        $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+
+        /**
+         * A common administrator only can delete an unpublished experiment
+         */
+        $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
             $data['message'] = "没有权限";
@@ -495,9 +569,4 @@ class ReportController extends Controller
         */
         return response()->json($data);
     }
-
-
-
-
-
 }
