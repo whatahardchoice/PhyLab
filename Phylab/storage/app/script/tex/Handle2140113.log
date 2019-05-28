@@ -1,0 +1,2175 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2019.4.5)  12 MAY 2019 19:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Handle2140113.tex
+(./Handle2140113.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+! Undefined control sequence.
+l.1 \section
+            *{‰∫î„ÄÅÊï∞ÊçÆÂ§ÑÁêÜ}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \section*
+             {‰∫î„ÄÅÊï∞ÊçÆÂ§ÑÁêÜ}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no § in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+! Undefined control sequence.
+l.2         \subsection
+                       *{ÂÆûÈ™å‰∏ÄÔºöÊ≥ïÊãâÁ¨¨ÁîµËß£ÂÆöÂæãÁöÑÈ™åËØÅ}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no û in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no ™ in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ≥ in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no £ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no ™ in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Å in font nullfont!
+! Undefined control sequence.
+l.3     \subsubsection
+                      *{1„ÄÅÂéüÂßãÊï∞ÊçÆËÆ∞ÂΩï}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ω in font nullfont!
+Missing character: There is no ï in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no • in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no • in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no ∂ in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no ¥ in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no [ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no | in font nullfont!
+Missing character: There is no | in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--28
+[]
+ []
+
+
+Overfull \hbox (37.78816pt too wide) in paragraph at lines 1--28
+[]$\OML/cmm/m/it/10 T \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (23.34381pt too wide) in paragraph at lines 1--28
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 T\OMS/cmsy/m/n/10 jj ^^N
+ []
+
+
+Overfull \hbox (7.86249pt too wide) in paragraph at lines 1--28
+\OML/cmm/m/it/10 C$ 
+ []
+
+
+Overfull \hbox (25.59726pt too wide) in paragraph at lines 1--28
+[] 
+ []
+
+! Undefined control sequence.
+l.29     \subsubsection
+                       *{2„ÄÅÊï∞ÊçÆÂ§ÑÁêÜ}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29     \subsubsection*
+                        {2„ÄÅÊï∞ÊçÆÂ§ÑÁêÜ}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no § in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 29--30
+[] 
+ []
+
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no õ in font nullfont!
+Missing character: There is no † in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+
+Overfull \hbox (18.46106pt too wide) in paragraph at lines 31--33
+\OML/cmm/m/it/10 Q \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (8.79166pt too wide) in paragraph at lines 31--33
+\OML/cmm/m/it/10 It$ 
+ []
+
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no • in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Ç in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no å in font nullfont!
+
+Overfull \hbox (22.94719pt too wide) in paragraph at lines 34--37
+[]$\OML/cmm/m/it/10 Q[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.62508pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 [0]\OMS/cmsy/m/n/10 jj ^^B
+
+ []
+
+
+Overfull \hbox (35.83336pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 [0]\OMS/cmsy/m/n/10 jj \OT
+1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.78595pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 It\OT1/cmr/m/n/10 [0]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 c$ 
+ []
+
+
+Overfull \hbox (22.94719pt too wide) in paragraph at lines 34--37
+[]$\OML/cmm/m/it/10 Q[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.62508pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 [1]\OMS/cmsy/m/n/10 jj ^^B
+
+ []
+
+
+Overfull \hbox (35.83336pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 [1]\OMS/cmsy/m/n/10 jj \OT
+1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.78595pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 It\OT1/cmr/m/n/10 [1]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 c$
+ []
+
+
+Overfull \hbox (22.94719pt too wide) in paragraph at lines 34--37
+\OML/cmm/m/it/10 Q[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.62508pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 [2]\OMS/cmsy/m/n/10 jj ^^B
+
+ []
+
+
+Overfull \hbox (35.83336pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 [2]\OMS/cmsy/m/n/10 jj \OT
+1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (34.78595pt too wide) in paragraph at lines 34--37
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 It\OT1/cmr/m/n/10 [2]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 c$ 
+ []
+
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ± in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no è in font nullfont!
+
+Overfull \hbox (12.79863pt too wide) in paragraph at lines 38--40
+\OML/cmm/m/it/10 H[]$ 
+ []
+
+
+Overfull \hbox (27.34102pt too wide) in paragraph at lines 38--40
+\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (44.42201pt too wide) in paragraph at lines 38--40
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (18.20297pt too wide) in paragraph at lines 38--40
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (20.31187pt too wide) in paragraph at lines 38--40
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (17.77783pt too wide) in paragraph at lines 38--40
+\OT1/cmr/m/n/10 22\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4$ 
+ []
+
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no å in font nullfont!
+
+Overfull \hbox (17.78816pt too wide) in paragraph at lines 41--42
+[]$\OML/cmm/m/it/10 T \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (23.34381pt too wide) in paragraph at lines 41--42
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 T\OMS/cmsy/m/n/10 jj ^^N
+ []
+
+
+Overfull \hbox (29.32426pt too wide) in paragraph at lines 41--42
+\OML/cmm/m/it/10 C$$P[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 41--42
+\OML/cmm/m/it/10 P$ 
+ []
+
+Missing character: There is no Â in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+
+Overfull \hbox (30.74385pt too wide) in paragraph at lines 43--44
+[]$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (53.92201pt too wide) in paragraph at lines 43--44
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 43--44
+\OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (40.34459pt too wide) in paragraph at lines 43--44
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (28.33334pt too wide) in paragraph at lines 43--44
+\OT1/cmr/m/n/10 22\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4 =
+ []
+
+
+Overfull \hbox (50.80797pt too wide) in paragraph at lines 43--44
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 VH\OT1/cmr/m/n/10 [0]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 ml$ 
+ []
+
+
+Overfull \hbox (30.74385pt too wide) in paragraph at lines 45--46
+[]$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (50.80797pt too wide) in paragraph at lines 45--46
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 VH\OT1/cmr/m/n/10 [1]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 ml$ 
+ []
+
+
+Overfull \hbox (30.74385pt too wide) in paragraph at lines 47--48
+[]$\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (50.80797pt too wide) in paragraph at lines 47--48
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 VH\OT1/cmr/m/n/10 [2]\OMS/cmsy/m/n/10 jj\OM
+L/cmm/m/it/10 ml$ 
+ []
+
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ó in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no õ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no π in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no • in font nullfont!
+! Undefined control sequence.
+<argument> {V}_{\text 
+                      {Êµã1}}-||VH[0]||
+l.52 ...ac{{V}_{\text{Êµã1}}-||VH[0]||}{||VH[0]||}
+                                                  \times100\% = ||A[0]||$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr5!
+Missing character: There is no µ in font cmr5!
+Missing character: There is no ã in font cmr5!
+
+Overfull \hbox (22.54166pt too wide) in paragraph at lines 52--53
+[]$\OML/cmm/m/it/10 A[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.59602pt too wide) in paragraph at lines 52--53
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (33.88892pt too wide) in paragraph at lines 52--53
+\OT1/cmr/m/n/10 100% =
+ []
+
+
+Overfull \hbox (29.16675pt too wide) in paragraph at lines 52--53
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 [0]\OMS/cmsy/m/n/10 jj$ 
+ []
+
+! Undefined control sequence.
+<argument> {V}_{\text 
+                      {Êµã2}}-||VH[1]||
+l.54 ...ac{{V}_{\text{Êµã2}}-||VH[1]||}{||VH[1]||}
+                                                  \times100\% = ||A[1]||$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr5!
+Missing character: There is no µ in font cmr5!
+Missing character: There is no ã in font cmr5!
+
+Overfull \hbox (22.54166pt too wide) in paragraph at lines 54--55
+[]$\OML/cmm/m/it/10 A[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.59602pt too wide) in paragraph at lines 54--55
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (33.88892pt too wide) in paragraph at lines 54--55
+\OT1/cmr/m/n/10 100% =
+ []
+
+
+Overfull \hbox (29.16675pt too wide) in paragraph at lines 54--55
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 [1]\OMS/cmsy/m/n/10 jj$ 
+ []
+
+! Undefined control sequence.
+<argument> {V}_{\text 
+                      {Êµã3}}-||VH[2]||
+l.56 ...ac{{V}_{\text{Êµã3}}-||VH[2]||}{||VH[2]||}
+                                                  \times100\% = ||A[2]||$\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no Ê in font cmr5!
+Missing character: There is no µ in font cmr5!
+Missing character: There is no ã in font cmr5!
+
+Overfull \hbox (22.54166pt too wide) in paragraph at lines 56--57
+[]$\OML/cmm/m/it/10 A[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.59602pt too wide) in paragraph at lines 56--57
+[] \OMS/cmsy/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (33.88892pt too wide) in paragraph at lines 56--57
+\OT1/cmr/m/n/10 100% =
+ []
+
+
+Overfull \hbox (29.16675pt too wide) in paragraph at lines 56--57
+\OMS/cmsy/m/n/10 jj\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 [2]\OMS/cmsy/m/n/10 jj$ 
+ []
+
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ú in font nullfont!
+Missing character: There is no ® in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no É in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no õ in font nullfont!
+Missing character: There is no ¥ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ≥ in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no £ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ´ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no û in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ± in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no £ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ± in font nullfont!
+Missing character: There is no † in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no É in font nullfont!
+Missing character: There is no Ω in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no % in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ø in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no ∂ in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ê in font nullfont!
+Missing character: There is no Ü in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Ç in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ò in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ú in font nullfont!
+Missing character: There is no ¨ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no û in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no ™ in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ≠ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ≥ in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ± in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no ¥ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no ä in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no ¶ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no è in font nullfont!
+Missing character: There is no ™ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ≤ in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no à in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no ´ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no Ö in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ú in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no ª in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ú in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∏ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Ø in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ∑ in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Ç in font nullfont!
+! Undefined control sequence.
+l.67     \subsection
+                    *{ÂÆûÈ™å‰∫åÔºöÁáÉÊñôÁîµÊ±†ËæìÂá∫ÁâπÊÄßÁöÑÊµãÈáè}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no û in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no ™ in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no ‰ in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no å in font nullfont!
+Missing character: There is no Ô in font nullfont!
+Missing character: There is no º in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no É in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ñ in font nullfont!
+Missing character: There is no ô in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ± in font nullfont!
+Missing character: There is no † in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no â in font nullfont!
+Missing character: There is no π in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no ö in font nullfont!
+Missing character: There is no Ñ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no È in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no è in font nullfont!
+! Undefined control sequence.
+l.68         \subsubsection
+                           *{1„ÄÅÂéüÂßãÊï∞ÊçÆËÆ∞ÂΩï}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no „ in font nullfont!
+Missing character: There is no Ä in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ß in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ï in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no ç in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no Æ in font nullfont!
+Missing character: There is no ∞ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no Ω in font nullfont!
+Missing character: There is no ï in font nullfont!
+
+! LaTeX Error: Environment table undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69          \begin{table}
+                           [htbp]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.71                  \small
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 67--73
+ [] 
+ []
+
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no ã in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no ) in font nullfont!
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.77                         \hline
+                                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.77                         \hline
+                                   
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.77                         \hline
+                                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.77                         \hline
+                                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no Ë in font nullfont!
+Missing character: There is no æ in font nullfont!
+Missing character: There is no ì in font nullfont!
+Missing character: There is no Â in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no ∫ in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no î in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Ê in font nullfont!
+Missing character: There is no µ in font nullfont!
+Missing character: There is no Å in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no ) in font nullfont!
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.79                         \hline
+                                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.79                         \hline
+                                   
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.79                         \hline
+                                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.79                         \hline
+                                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no Â in font nullfont!
+Missing character: There is no ä in font nullfont!
+Missing character: There is no ü in font nullfont!
+Missing character: There is no Á in font nullfont!
+Missing character: There is no é in font nullfont!
+Missing character: There is no á in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no * in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no W in font nullfont!
+Missing character: There is no ) in font nullfont!
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.81                         \hline
+                                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.81                         \hline
+                                   
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.81                         \hline
+                                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.81                         \hline
+                                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Misplaced \crcr.
+\endtabular ->\crcr 
+                    \egroup \egroup $\egroup 
+l.82                     \end{tabular}
+                                      
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.82                     \end{tabular}
+                                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.82                     \end{tabular}
+                                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.82                     \end{tabular}
+                                      
+I'm guessing that you meant to end an alignment here.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.82                     \end{tabular}
+                                      
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 11 strings out of 493089
+ 213 string characters out of 6138426
+ 58199 words of memory out of 5000000
+ 3596 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 85i,8n,12p,162b,145s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!
