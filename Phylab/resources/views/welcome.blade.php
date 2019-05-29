@@ -1,3 +1,5 @@
+<!--laravel欢迎页面，忽略此页面-->
+
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,3 +1,4 @@
+<!--首页 -->
 @extends('layout.main')
 
 @section('contents')

@@ -1,3 +1,5 @@
+<!--页面模板，完成部分页面的顶部和底部-->
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>

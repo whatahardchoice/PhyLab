@@ -1,4 +1,4 @@
-
+<!--个人信息页面，展示实验报告收藏夹，展示或更新个人信息-->
 @extends('layout.main')
 
 @section('contents')

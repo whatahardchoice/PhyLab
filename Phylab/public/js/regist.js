@@ -93,11 +93,11 @@
 
 
     /*
-    以下为PhyLab2.0注册界面的js部分
+    *以下为PhyLab2.0注册界面的js部分
     */
 
     /*
-    加载渲染
+     *加载渲染
      */
     $(document).ready(function () {
         $("#loading-gif").css("display","none");
@@ -108,7 +108,7 @@
 		});
 
     /*
-    注册名字合法性检查
+     *注册名字合法性检查
      */
     function check_name() {
       var patterns = "^([a-zA-Z0-9_]|[\u4E00-\u9FA5]){1,20}$";
@@ -125,7 +125,7 @@
     $('#name').change(check_name).blur(check_name);
 
     /*
-    注册邮箱合法性检查
+     *注册邮箱合法性检查
      */
     function check_email() {
       var patterns = "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$";
@@ -142,7 +142,7 @@
     $('#email').change(check_email).blur(check_email);
 
     /*
-    注册年级合法性检查
+     *注册年级合法性检查
      */
     function check_grade() {
       if($('#grade option:selected').val() === 'none') {
@@ -158,7 +158,7 @@
     $('#grade').change(check_grade).blur(check_grade);
 
     /*
-    注册密码合法性检查
+     *注册密码合法性检查
      */
     function check_password1() {
       var patterns = "^[0-9a-zA-z]{6,12}$";
@@ -175,7 +175,7 @@
     $('#password1').change(check_password1).blur(check_password1);
 
     /*
-    两次输入密码一致性检查
+     *两次输入密码一致性检查
      */
     function check_password2() {
       if ($('#password1').val() !== $('#password2').val()) {
@@ -191,7 +191,7 @@
     $('#password2').change(check_password2).blur(check_password2);
 
     /*
-    所有注册信息合法性检查
+     *所有注册信息合法性检查
      */
     function check_register() {
       var error_flag = false;
@@ -212,7 +212,7 @@
     }
 
     /*
-     点击注册函数，提交注册表单，由/view/auth/register.blade.php中的"#submit"绑定
+     *点击注册函数，提交注册表单，由/view/auth/register.blade.php中的"#submit"绑定
      */
 		function submit_register() {
       if (check_register() === false)

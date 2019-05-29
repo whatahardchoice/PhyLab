@@ -115,9 +115,7 @@
 
                         <div class="modal-footer" style="margin-top: 0;padding-bottom: 0">
                           <div style="float:right">
-                            <button type="submit" id="btn-upload-preview" class="btn btn-large btn-danger">
-                              上传
-                            </button>
+                            <button type="submit" id="btn-upload-preview" class="btn btn-large btn-danger">上传</button>
                           </div>
                         </div>
                       <!--/form-->
