@@ -14,14 +14,32 @@ use Request;
 
 class ConsoleController extends Controller {
 
+    /**
+     * Check user's identity
+     */
+    public function userConfirm()
+    {
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $isAdmin=$exists;
+
+        return $isAdmin;
+    }
+
+    /**
+     * The index of console
+     *
+     * @return mixed
+     */
 	public function index() {
-		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+		$isAdmin=$this->userConfirm();
+        /**
+         * If the user is not an administrator, website will redirect to the index
+         */
 		if (!$isAdmin) {
 			return redirect('/index');
 		}
-		$ad=Console::where('email','=',Auth::user()->email)->first();
-		$st=$ad->status;
+		//$ad=Console::where('email','=',Auth::user()->email)->first();
+		//$st=$ad->status;
         $data = ["reportTemplates"=>[],
                  "username"=>Auth::user()->name,
 				 "auth"=>$isAdmin,
@@ -41,11 +59,20 @@ class ConsoleController extends Controller {
         return view("console.index",$data);
 	}
 
+    /**
+     * Get what you edit in the html table
+     *
+     * @return mixed
+     */
     public function getTable()
     {
 		$result = [
 			'status'=>'',
 			'contents'=>''];
+        $isAdmin=$this->userConfirm();
+        if (!$isAdmin) {
+            return redirect('/index');
+        }
         $id=$_GET['id'];
         //$id = "2160115" ;
         //$htmlFile = "/var/www/Phylab/resources/views/report/".$id.".html";
@@ -61,18 +88,22 @@ class ConsoleController extends Controller {
 		return response()->json($result);
     }
 
+    /**
+     * Get what you edit in the python script table
+     *
+     * @return mixed
+     */
     public function getScript()
     {
 		$result = [
 			'status'=>'',
 			'contents'=>''];
-		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+		$isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
 			return redirect('/index');
 		}
-		$ad=Console::where('email','=',Auth::user()->email)->first();
-		$st=$ad->status;
+		//$ad=Console::where('email','=',Auth::user()->email)->first();
+		//$st=$ad->status;
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."p".$id.".py";
         //return $htmlFile;
@@ -97,20 +128,23 @@ class ConsoleController extends Controller {
         */
         return response()->json($result);
     }
-	
 
+    /**
+     * Get what you edit in the latex table
+     *
+     * @return mixed
+     */
     public function getTex()
     {
 		$result = [
 			'status'=>'',
 			'contents'=>''];
-		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+        $isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
 			return redirect('/index');
 		}
-		$ad=Console::where('email','=',Auth::user()->email)->first();
-		$st=$ad->status;
+		//$ad=Console::where('email','=',Auth::user()->email)->first();
+		//$st=$ad->status;
         $id=$_GET['id'];
         $htmlFile = Config::get('phylab.scriptPath')."tex/Handle".$id.".tex";
         //$file = fopen($htmlFile, "r");
@@ -136,18 +170,20 @@ class ConsoleController extends Controller {
     }
 	
 	public function createSublab() {
-		$exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-		$isAdmin=$exists;
+        $isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
 			return redirect('/index');
 		}
-		$ad=Console::where('email','=',Auth::user()->email)->first();
-		$st=$ad->status;
+		//$ad=Console::where('email','=',Auth::user()->email)->first();
+		//$st=$ad->status;
         $lab_id=$_GET['LId'];
         $lab_name=$_GET['LName'];
         $lab_tag=$_GET['LTag'];
 		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
+            /**
+             * Move the three files to the right dictionary
+             */
 		    $htmlcmd = "cp ".Config::get('phylab.experimentViewPath')."template.html ".Config::get('phylab.experimentViewPath').$lab_id.".html";
 		    $pycmd = "cp ".Config::get('phylab.scriptPath')."template.py ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
 		    $latexcmd = "cp ".Config::get('phylab.scriptPath')."tex/template.tex ".Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
@@ -188,10 +224,14 @@ class ConsoleController extends Controller {
 		return response()->json($result);
 	}
 
+    /**
+     * Upload the prepare pdf file for the new experiment
+     *
+     * @return mixed
+     */
     public function uploadPreparePdf()
     {
-        $exists = Auth::check() && ((Console::where('email', '=', Auth::user()->email)->get()->count()) > 0);
-        $isAdmin = $exists;
+        $isAdmin=$this->userConfirm();
         if (!$isAdmin) {
             return redirect('/index');
         }
