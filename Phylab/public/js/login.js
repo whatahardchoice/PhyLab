@@ -1,4 +1,7 @@
- function Post_login(){
+/*
+* 登录提交函数，由/view/auth/login.blade.php中的"#login-submit"按钮绑定
+* */
+function Post_login(){
     postData="email="+encodeURI($('#email').val())+"&password="+encodeURI($('#password').val());
     if($('#remember').prop('checked'))
         postData+="&remember="+$('#remember').val();
@@ -30,6 +33,9 @@
         }
     });
 }
+/*
+*将 "enter"键按下事件绑定为"#login-submit"登录按钮的点击事件
+* */
 $('#login_form input').keydown(function (e) {
     if (e.keyCode == 13)
         {
