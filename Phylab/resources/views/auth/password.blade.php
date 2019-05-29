@@ -1,3 +1,5 @@
+<!--邮箱信息提交页面，用于找回密码 -->
+
 <style type="text/css">
     .center {
         position:absolute;

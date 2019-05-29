@@ -1,3 +1,5 @@
+<!--密码重置页面，用于重置账号密码-->
+
 <style type="text/css">
     .resetcenter {
         position:absolute;
