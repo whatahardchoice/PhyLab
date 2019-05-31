@@ -26,6 +26,9 @@ class StarController extends Controller
     public function index()
     {
         $data = ["stars"=>[]];
+        /**
+         * Get reports from user's stars
+         */
         $stars = Auth::user()->stars()->get();
         foreach ($stars as $star) {
             $rearr = array(
@@ -68,6 +71,9 @@ class StarController extends Controller
                 $data["message"] = "检查失败";
                 return response()->json($data);
         }
+        /**
+         * If there is a temp pdf, then we can create a star for it
+         */
         if(Storage::disk('local_public')->exists('pdf_tmp/'.Request::get('link'))){
             //$report = Report::find(Request::get('reportId'));
             try{
@@ -86,6 +92,9 @@ class StarController extends Controller
                 return response()->json($data);
             }
             try{
+                /**
+                 * There if a limitation of the number user can star
+                 */
                 if(Auth::user()->stars()->count()<=Config::get('phylab.starMaxCount'))
                 {
                     $star = Star::create([
@@ -141,13 +150,15 @@ class StarController extends Controller
     public function delete(){
         $data = ["status"=>"",
                  "messgae"=>""]; //dont fix this
-        $validatorRules = array(
-                'id' => 'required|integer|exists:stars,id,user_id,'.Auth::user()->id
-            );
-        $validatorAttributes = array(
-                'id' => '收藏的对象'
-            );
-        //postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+        /**
+         * $validatorRules = array(
+         *      'id' => 'required|integer|exists:stars,id,user_id,'.Auth::user()->id
+         * );
+         * $validatorAttributes = array(
+         *      'id' => '收藏的对象'
+         * );
+         *  postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+         */
         try{
             $link = Star::find(Request::get('id'))->link;
             Star::destroy(Request::get('id'));
@@ -207,8 +218,8 @@ class StarController extends Controller
     */
     public function download($id)
     {
-        $reportLink = "";
-        $experimentId = "";
+        //$reportLink = "";
+        //$experimentId = "";
         $star = Star::find($id);
         if($star && $star->user->id==Auth::user()->id){
             $reportLink = $star->link;
