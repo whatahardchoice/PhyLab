@@ -7,10 +7,13 @@ from matplotlib.lines import Line2D
 from math import pi
 from phylab import *
 from handler import texdir
+from handler_md import mddir
 from jinja2 import Environment
 import xml.dom.minidom
 import sys
-env = Environment(variable_start_string="||", variable_end_string="||")
+
+env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+mdjudge = 1
 
 def GetTheGraph1022(y_init, theta2):
 	
@@ -111,6 +114,12 @@ def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, 
 			 (2 * u_db / ave_db) ** 2) ** 0.5
 	u_k = k * u_k_k
 	final = BitAdapt(k, u_k)
+
+	pic = sys.argv[3]
+	if mdjudge == 2:
+	    strs = name.split('/');
+        pic = '/' + strs[5] + '/' + strs[6]
+
 	return env.from_string(source).render(
 			theta1 = theta1, 
 			theta2 = theta2, 
@@ -141,11 +150,19 @@ def coefficientOfThermalConductivity(theta1, theta2, mp, hp, dp, hb, db, theta, 
 			u_k_k = ToScience(u_k_k), 
 			u_k = ToScience(u_k), 
 			final = final,
-			figurename = sys.argv[3]
+			figurename = pic
 			)
 
 def handler(XML, type):
-	file_object = open(texdir + "Handle1020314.tex","r",encoding='utf-8')
+    if type == 1:
+	    file_object = open(texdir + "Handle1020314.tex","r",encoding='utf-8')
+	else:
+	    global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        file_object = open(mddir + "Handle1020314.md" , "r", encoding='utf-8')
+
+    global mdjudge
+    mdjudge = type
 	source = file_object.read()
 	file_object.close()
 	data = readXml1020314(XML)

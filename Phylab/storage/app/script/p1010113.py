@@ -4,6 +4,7 @@ from math import pi
 import phylab
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 import xml.dom.minidom
 
 #texdir = "./tex/"
@@ -78,13 +79,19 @@ def SteelWire(m, C_plus, C_sub, D, L, H, b, source):
 			final = final
 			)
 
-def handler(XML, type):
-	file_object = open(texdir + "Handle1010113.tex","r", encoding='utf-8')
-	#将模板作为字符串存储在template文件中
-	source = file_object.read()
-	file_object.close()
-	data = readXml1010113(XML)
-	return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][2], source)
+def handler(XML , type):
+    if type == 1:
+        file_object = open(texdir + "Handle1010113.tex" , "r", encoding='utf-8')
+    else:
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        file_object = open(mddir + "Handle1010113.md" , "r", encoding='utf-8')
+
+    #将模板作为字符串存储在template文件中
+    source = file_object.read()
+    file_object.close()
+    data = readXml1010113(XML)
+    return SteelWire(data[2], data[3], data[4], data[1], data[0][0], data[0][1], data[0][2], source)
 	
 if __name__ == '__main__':
 	scriptdir = 'D:/Apache24/htdocs/PhyLabs/Phylab/storage/app/script/'

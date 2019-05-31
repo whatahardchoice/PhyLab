@@ -18,13 +18,14 @@ import traceback
 from matplotlib.lines import Line2D
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 
 CONST_Y_LOW = 25
 CONST_Y_MIN = 5
 CONST_Y_LIM = 180
 
 env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
-
+mdjudge = 1
 
 def ToPoint(number):
     Tempstr = format(number,'.4g')
@@ -269,8 +270,14 @@ def ReadXml1020113(sublab_root,name, source):
     print(down_bend_y_init)
     print(up_straight_line_x_init)
     print(up_straight_line_y_init)
+
+    pic = name
+    if mdjudge == 2:
+        strs = name.split('/');
+        pic = '/' + strs[5] + '/' + strs[6]
+
     result = env.from_string(source).render(
-        figurename = name,
+        figurename = pic,
 	    vertical = vertical_line,
         down_straight_line_x = down_straight_line_x_init,
         down_straight_line_y = down_straight_line_y_init,
@@ -295,7 +302,15 @@ def RToTemperature(R):
     return T
 
 def handler(XML, type):
-    file_object = open(texdir + "Handle1020113.tex","r",encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "Handle1020113.tex","r",encoding='utf-8')
+    else:
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        file_object = open(mddir + "Handle1020113.md" , "r", encoding='utf-8')
+
+    global mdjudge
+    mdjudge = type
     #将模板作为字符串存储在template文件中
     source = file_object.read()
     file_object.close()

@@ -4,6 +4,7 @@ from math import pi
 import phylab
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 import xml.dom.minidom
 import phylab
 
@@ -91,7 +92,13 @@ def Inertia(m, d, T, l, T2, source):
 
 
 def handler(XML, type):
-    file_object = open(texdir + "Handle1010212.tex", "r", encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "Handle1010212.tex", "r", encoding='utf-8')
+    else:
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        file_object = open(mddir + "Handle1010212.md", "r", encoding='utf-8')
+
     # 将模板作为字符串存储在template文件中
     source = file_object.read()
     file_object.close()

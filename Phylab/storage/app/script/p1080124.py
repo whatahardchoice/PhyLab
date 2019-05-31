@@ -11,6 +11,7 @@ import xml.dom.minidom
 from math import sqrt
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 
 # input data
 x = []
@@ -53,14 +54,17 @@ RE_U = ""
 RESULT_LAMBDA = ""
 RESULT_U_LAMBDA = ""
 
-env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
+env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
 
 
 def handler(xml, type):
     xmlReader(xml)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1080124.tex", "r",encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "/Handle1080124.tex", "r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "/Handle1080124.md", "r",encoding='utf-8')
     latex = file_object.read()
     return lexFiller(latex)
 

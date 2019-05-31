@@ -12,10 +12,11 @@ output:
 import xml.dom.minidom
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 from handler import scriptdir
 from phylab import *
 
-env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
+env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
 
 def CollimatedConvex(exper,source):
     f = []
@@ -64,7 +65,11 @@ def readXml1060213(root, source):
     return source
 
 def handler(XML, type):
-    file_object = open(texdir + "Handle1060213.tex","r",encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "Handle1060213.tex","r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "Handle1060213.md","r",encoding='utf-8')
+
     #将模板作为字符串存储在template文件中
     source = file_object.read()
     file_object.close()

@@ -25,6 +25,7 @@ import xml.dom.minidom
 from math import sqrt
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 from handler import scriptdir
 # 原始数据
 n = 0
@@ -56,7 +57,7 @@ RESULT_A = ""
 RESULT_UA = ""
 
 # 定义模板
-env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
+env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
 
 
 # 入口函数
@@ -80,7 +81,11 @@ def handler(xml, type):
     # 数据规范化
     regulation()
     # 数据填入模板
-    file_object = open(texdir + "/Handle1070212.tex", "r",encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "/Handle1070212.tex", "r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "/Handle1070212.md", "r",encoding='utf-8')
+
     latexAddress = file_object.read()
     latex_body = LatexFiller(latexAddress)
     return latex_body

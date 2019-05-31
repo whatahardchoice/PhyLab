@@ -30,8 +30,9 @@ from numpy import cos
 from numpy import pi
 from numpy import sin
 from handler import texdir
+from handler_md import mddir
 
-env = Environment(line_statement_prefix="#", variable_start_string="%%", variable_end_string="%%")
+env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
 
 angle_A = 0
 u_A = 0
@@ -78,7 +79,10 @@ def handler(xml, type):
     xmlReader(xml)
     niconiconi()
     regulation()
-    file_object = open(texdir + "/Handle1070322.tex", "r",encoding='utf-8')
+    if type == 1:
+        file_object = open(texdir + "/Handle1070322.tex", "r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "/Handle1070322.md", "r",encoding='utf-8')
     latex = file_object.read()
     return lexFiller(latex)
 
