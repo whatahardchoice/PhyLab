@@ -32,7 +32,7 @@ def CollimatedConvex(exper,source):
     ua_f = Ua(f,average_f,len(f))
     ub_f = 0.5/sqrt(3)
     uf = sqrt(pow(ua_f,2) + pow(ub_f,2))
-    final = BitAdapt(average_f,uf)
+    final = BitAdapt(abs(average_f),uf)
     RoundTwo(exper, 2)
     RoundOne(f,2)
     result = env.from_string(source).render(
