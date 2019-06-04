@@ -25,13 +25,12 @@ class UserController extends Controller
     public function index()
     {
 
-        $authed=Auth::check();
-
+        $authed=Auth::check(); //使用Laravel内置组建检查是否登陆
         if (!$authed) {
-            return redirect('/index');
+            return redirect('/index'); //如果没登陆则重定向回主页
         }
 
-        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
+        $exists=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0); // 检查是否是管理员
         $isAdmin=$exists;
         $data = ["avatarPath"   =>  "",
                  "username"     =>  "",
@@ -45,13 +44,14 @@ class UserController extends Controller
                  "introduction" =>  "",
                  "auth" => $authed,
                  "userId" => "",
-                 "admin" => $isAdmin];
+                 "admin" => $isAdmin]; //这里返回管理员字段为顶栏所用
+        //以下获取用户具体信息
         $auth = Auth::user();
-        $data["avatarPath"] = $auth->avatar_path;
-        $data["username"] = $auth->name;
-        $data["studentId"] = $auth->student_id;
-        $data["grade"] = $auth->grade ;
-        $data["email"] = $auth->email;
+        $data["avatarPath"] = $auth->avatar_path; //头像路径，为/avatar/文件夹下相对路径
+        $data["username"] = $auth->name; //用户名
+        $data["studentId"] = $auth->student_id; //学号
+        $data["grade"] = $auth->grade ;//年级
+        $data["email"] = $auth->email; //邮箱
         $data["sex"] = $auth->sex;
         $data["company"] = $auth->company;
         $data["companyAddr"] = $auth->company_addr;
@@ -66,6 +66,7 @@ class UserController extends Controller
         $size = "max";
 
 /*
+ *   这部分的作用是读取wecenter头像并显示在/user界面，但目前我们使用了两套头像系统。这部分仍需要改进
         if (file_exists("/var/www/wecenter/uploads" . '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg'))
         {
             $data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
@@ -75,6 +76,11 @@ class UserController extends Controller
             $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
         }
   */
+        /*
+         * 目前的头像系统，首先用户注册后数据库的头像字段为NULL
+         *      头像不存在或未设置的情况下，读取wecenter的默认头像
+         *      否则读取/public/avatar/下用户设置的头像
+         */
         if (!$auth->avatar_path||!file_exists(Config::get("phylab.avatarPath").$data["avatarPath"]))
         {
             $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
@@ -87,43 +93,48 @@ class UserController extends Controller
 
 
         //return json_encode($data,JSON_UNESCAPED_UNICODE);
-        return view('user.index' , $data) ;
+        return view('user.index' , $data) ; //返回页面view
     }
 
     /**
      * Show the form for editing the user infomation.
      *
+     * 此函数已废弃，因为/user/edit页面已经整合到/user页面了
      * @return \Illuminate\Http\Response
      */
-    public function edit()
-    {
-        $data = ["avatarPath"   =>  "",
-                 "username"     =>  "",
-                 "sex"          =>  "",
-                 "company"      =>  "",
-                 "companyAddr" =>  "",
-                 "birthday"     =>  "",
-                 "introduction" =>  "" ,
-                 "student_id"    =>  ""];
-        $auth = Auth::user();
-        $data["avatarPath"] = $auth->avatar_path;
-        $data["username"] = $auth->name;
-        $data["sex"] = $auth->sex;
-        $data["company"] = $auth->company;
-        $data["companyAddr"] = $auth->company_addr;
-        $data["birthday"] = $auth->birthday;
-        $data["introduction"] = $auth->introduction;
-        $data["student_id"] = $auth->student_id ;
-        #return json_encode($data,JSON_UNESCAPED_UNICODE);
-        return view("user.edit",$data);
-    }
+//    public function edit()
+//    {
+//        $data = ["avatarPath"   =>  "",
+//                 "username"     =>  "",
+//                 "sex"          =>  "",
+//                 "company"      =>  "",
+//                 "companyAddr" =>  "",
+//                 "birthday"     =>  "",
+//                 "introduction" =>  "" ,
+//                 "student_id"    =>  ""];
+//        $auth = Auth::user();
+//        $data["avatarPath"] = $auth->avatar_path;
+//        $data["username"] = $auth->name;
+//        $data["sex"] = $auth->sex;
+//        $data["company"] = $auth->company;
+//        $data["companyAddr"] = $auth->company_addr;
+//        $data["birthday"] = $auth->birthday;
+//        $data["introduction"] = $auth->introduction;
+//        $data["student_id"] = $auth->student_id ;
+//        #return json_encode($data,JSON_UNESCAPED_UNICODE);
+//        return view("user.edit",$data);
+//    }
 
     /**
-     * Update the user infomation .
+     * 此函数负责更新用户信息
      * @return \Illuminate\Http\Response
      */
     public function update()
     {
+        /*
+         *  data定义了返回信息
+         *  validator用于内容的验证，目前由于用户界面不支持修改密码和生日，因此只用到了用户名字段
+         */
         $data = ["status"       =>  "",
                  "status"       =>  ""];
         $validatorRules = array(
@@ -137,6 +148,10 @@ class UserController extends Controller
                 'birthday'  => '生日'  
             );
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
+
+        /*
+         * 定义POST中用户信息字段与数据库中字段的对应关系，并遍历每个字段更新数据库中的相应内容
+         */
         $userAttr = ['password'=>'password',
                      'username'=>'name',
                      'birthday'=>'birthday',
@@ -145,13 +160,13 @@ class UserController extends Controller
                      'companyAddr'=>'company_addr',
                      'introduction'=>'introduction',
                      'grade'=>'grade'];
-        try{
+        try{ //遍历每个字段
             foreach ($userAttr as $key => $value) {
-                if(Request::has($key)){
-                    Auth::user()->update([$value => Request::get($key)]);
+                if(Request::has($key)){ //如果请求中存在这一字段
+                    Auth::user()->update([$value => Request::get($key)]); //将其值更新至数据库中
                 }
             }
-            $data["status"] = SUCCESS_MESSAGE;
+            $data["status"] = SUCCESS_MESSAGE; //返回成功信息
         }
         catch(Exception $e)
         {
@@ -161,13 +176,29 @@ class UserController extends Controller
     }
 
     /**
-     * set user's avatar
+     * 头像设置函数
      *
      * @return \Illuminate\Http\Response
      */
     public function setAvatar()
     {
+
+        /*
+         * 头像设置的返回内容，avatarPath为前端使用的更新头像后的头像路径。在返回部分可以看到其为/public文件夹下的相对路径
+         */
         $data = ["status"=>"","avatarPath"=>"","message"=>""];
+
+        /*
+         * 上传头像的步骤包括
+         * 1. 检查头像文件是否存在，以及头像格式及大小是否符合要求。preg_match为一php函数，正则表达式检查
+         * 2. 如果符合要求，则将头像赋予一随机命名并拷贝至/public/avatar/下（move函数）
+         * 3. 在上一步基础上，首先删除数据库中保存的原有头像，然后将数据库中的头像条目更新。
+         *
+         * 以上三步都做完可以返回正确信息。
+         *
+         * 这部分目前存在的主要问题是：第三步中如果用户在wecenter端设置了头像，由于user表中头像为wecenter用户表中的视图之一，导致在
+         * phylab端会出现用户头像路径不存在的问题，从而导致在删除一步报错
+         */
         if(Request::hasFile('avatar'))
         {
             $avatar = Request::file('avatar');
@@ -186,7 +217,7 @@ class UserController extends Controller
                 }
                 catch(Exception $e)
                 {
-                    throw new FileIOException();
+                    throw new FileIOException(); //问题的主要所在
                 }
                 try{
                     //$auth->introduction = "asd" ;
