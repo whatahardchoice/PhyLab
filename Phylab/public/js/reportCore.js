@@ -181,7 +181,10 @@ $('#button-generate-latex').click(function () {
 
     let valid = checkInput();
     if (!valid)
+    {
+        $('#modal-report-select').modal('hide');
         return false;
+    }
 
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
@@ -226,7 +229,10 @@ $('#button-generate-markdown').click(function () {
 
     let valid = checkInput();
     if (!valid)
+    {
+        $('#modal-report-select').modal('hide');
         return false;
+    }
 
     var xmlString = SetXMLDoc_lab();
     if (xmlString === null)
@@ -372,9 +378,11 @@ function loadComments(article_id, group_id) {
     });
 }
 
-
 function checkInput()
 {
+    if(CUR_SUBLAB == '1020113')
+        return true;
+
     let inputs = $("#labdoc").find("input");
     if (inputs.length === 0)
         return false;
