@@ -21,6 +21,7 @@
 import phylab #这里有一些定义好的工具函数可以使用
 from jinja2 import Environment
 from handler import texdir
+from handler_md import mddir
 from handler import scriptdir
 import xml.dom.minidom
 
@@ -28,7 +29,11 @@ import xml.dom.minidom
 
 # 此处定义jinja2模板引擎的识别符号，默认为||（两个竖线），你也可以定义自己的识别符号，仅需修改
 # variable_start_string 和　variable_end_string 即可
-env = Environment(line_statement_prefix="#", variable_start_string="||", variable_end_string="||")
+env = Environment(line_statement_prefix="@", variable_start_string="||", variable_end_string="||")
+
+# mdjudge = 1
+# 此变量在生成markdown模板需要插入图片时发挥作用
+
 
 # 在此你可以预先写好一些会被绑定至latex文本的全局变量，方便查看
 #################
@@ -46,8 +51,15 @@ RESULT = 0
     此函数最后必须返回jinja2绑定好的数据。
 
 """
-def handler(XML):
-    file_object = open(texdir + "Handle%%LAB_SUBLAB_ID%%.tex" , "r",encoding='utf-8')
+def handler(XML, type):
+    if type == 1:
+        file_object = open(texdir + "Handle%%LAB_SUBLAB_ID%%.tex" , "r",encoding='utf-8')
+    else:
+        file_object = open(mddir + "Handle%%LAB_SUBLAB_ID%%.md" , "r",encoding='utf-8')
+
+    # 如需插入图片(由于markdown中图片读取方式不同)
+    # mdjudge = type
+
     source = file_object.read()
     file_object.close()
     # 以上勿动！
@@ -100,11 +112,16 @@ def process_data(data, source):
     INPUT_B = data[0][0][1]
     RESULT =  INPUT_A + INPUT_B
 
+    # 需要插入图片时
+    # if mdjudge == 2:
+    #     strs = name.split('/');
+    #     pic = '/' + strs[5] + '/' + strs[6]
 
     return env.from_string(source).render(
         INPUT_A = "%.2f" % INPUT_A, #保留两位小数
         INPUT_B = "%.2f" % INPUT_B,
         RESULT = "%.2f" % RESULT
+        # figurename = pic
         )
 
 
