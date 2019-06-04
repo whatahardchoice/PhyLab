@@ -88,7 +88,7 @@ class UserController extends Controller
         }
         else
         {
-            $data['avatarPath'] = '/avatar/'.$data['avatarPath'];
+            $data['avatarPath'] = Config::get('phylab.avatarPath').$data['avatarPath'];
         }
 
 
@@ -212,6 +212,7 @@ class UserController extends Controller
                 try{
                     if($auth->avatar_path!=Config::get('phylab.defaultAvatarPath') && !empty($auth->avatar_path))
                     {
+                        //local_public定义见/config/filesystems.php，就是public文件夹
                         Storage::disk('local_public')->delete("/avatar/".$auth->avatar_path);
                     }
                 }
@@ -225,7 +226,7 @@ class UserController extends Controller
                     $auth->save();
                     $data["status"] = SUCCESS_MESSAGE;
 
-                    $data["avatarPath"] = "avatar/".$fname;
+                    $data["avatarPath"] = Config::get('phylab.avatarPath').$fname;
 
                 }
                 catch(Exception $e)
