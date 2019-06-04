@@ -1,15 +1,14 @@
 /*
 * 登录提交函数，由/view/auth/login.blade.php中的"#login-submit"按钮绑定
-* */
+*/
 function Post_login(){
     postData="email="+encodeURI($('#email').val())+"&password="+encodeURI($('#password').val());
+
     if($('#remember').prop('checked'))
         postData+="&remember="+$('#remember').val();
     PostAjax("/login",postData,function(){
         if (this.readyState==4 && this.status==200){
             var jsonText = eval("(" + this.responseText + ")");
-            //alert(this.responseText);
-            //alert(jsonText["status"]);
             if(jsonText["status"]=='success'){
                 window.location.href="/index";
             }
@@ -33,12 +32,13 @@ function Post_login(){
         }
     });
 }
+
 /*
-*将 "enter"键按下事件绑定为"#login-submit"登录按钮的点击事件
-* */
+* 将 "enter"键按下事件绑定为"#login-submit"登录按钮的点击事件
+*/
 $('#login_form input').keydown(function (e) {
     if (e.keyCode == 13)
-        {
-            $('#login-submit').click();
-        }
-    });
+    {
+        $('#login-submit').click();
+    }
+});
