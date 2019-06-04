@@ -96,34 +96,6 @@ class UserController extends Controller
         return view('user.index' , $data) ; //返回页面view
     }
 
-    /**
-     * Show the form for editing the user infomation.
-     *
-     * 此函数已废弃，因为/user/edit页面已经整合到/user页面了
-     * @return \Illuminate\Http\Response
-     */
-//    public function edit()
-//    {
-//        $data = ["avatarPath"   =>  "",
-//                 "username"     =>  "",
-//                 "sex"          =>  "",
-//                 "company"      =>  "",
-//                 "companyAddr" =>  "",
-//                 "birthday"     =>  "",
-//                 "introduction" =>  "" ,
-//                 "student_id"    =>  ""];
-//        $auth = Auth::user();
-//        $data["avatarPath"] = $auth->avatar_path;
-//        $data["username"] = $auth->name;
-//        $data["sex"] = $auth->sex;
-//        $data["company"] = $auth->company;
-//        $data["companyAddr"] = $auth->company_addr;
-//        $data["birthday"] = $auth->birthday;
-//        $data["introduction"] = $auth->introduction;
-//        $data["student_id"] = $auth->student_id ;
-//        #return json_encode($data,JSON_UNESCAPED_UNICODE);
-//        return view("user.edit",$data);
-//    }
 
     /**
      * 此函数负责更新用户信息

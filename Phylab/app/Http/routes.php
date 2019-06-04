@@ -102,11 +102,6 @@ Route::get('/user',[
     'middleware'    =>  'auth']);
 
 
-// user infomation edit
-Route::get('/user/edit',[
-    'as'    =>  'userEdit',
-    'uses'  =>  'UserController@edit',
-    'middleware'    =>  'auth']);
 Route::post('/user',[
     'uses'  =>  'UserController@update',
     'middleware'    =>  'auth']);
