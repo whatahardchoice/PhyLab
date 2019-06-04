@@ -55,9 +55,13 @@ def handler(XML, type):
     if type == 1:
         file_object = open(texdir + "Handle%%LAB_SUBLAB_ID%%.tex" , "r",encoding='utf-8')
     else:
+        global env
+        env = Environment(line_statement_prefix="@", variable_start_string="%%", variable_end_string="%%")
+        # 由于markdown中‘||’会与表格中的‘|’产生冲突，最好用‘%%’代替
         file_object = open(mddir + "Handle%%LAB_SUBLAB_ID%%.md" , "r",encoding='utf-8')
 
     # 如需插入图片(由于markdown中图片读取方式不同)
+    # global mdjudge
     # mdjudge = type
 
     source = file_object.read()
