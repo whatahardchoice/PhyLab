@@ -27,7 +27,7 @@ class DesexpController extends Controller
     public function index()
     {
 
-        $data = ["auth" => false ,"username"    =>  "", "admin"=>false, "expOptions"=>array(),"errorcode"=>""];
+        $data = ["auth" => false ,"username"    =>  "", "admin"=>false, "expOptions"=>array(),"errorcode"=>"0000"];
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;
@@ -38,7 +38,7 @@ class DesexpController extends Controller
                 $data["admin"] = true;
         }
         else{
-
+            $data["errorcode"]="7601";
         }
         $data['expOptions'] = Desexp::all("id",'name');
         return view("desexp.index", $data);
@@ -54,7 +54,7 @@ class DesexpController extends Controller
     public function getDesexp($id)
     {
 
-        $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => '','errorcode'=>''];
+        $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => '','errorcode'=>'0000'];
 
 //        if(!Auth::check()) {
 //            //如果没登录返回出错，前端重定向至登录页面。
@@ -73,7 +73,7 @@ class DesexpController extends Controller
         }
         else{
             $data["status"] = FAIL_MESSAGE;
-            $data["errorcode"]="7601";
+            $data["errorcode"]="7602";
             $data["message"] = "未找到实验".$id;
         }
 

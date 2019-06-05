@@ -435,7 +435,7 @@ $("#btn-delete-confirm").click(function () {
             $.post("./report/delete", {
                 'id':CUR_SUBLAB
             }).done(function (data) {
-                alert(data.message);
+                alert(data.message+data['errorcode']);
                 location.reload();
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
