@@ -68,7 +68,8 @@ class ConsoleController extends Controller {
     {
 		$result = [
 			'status'=>'',
-			'contents'=>''];
+			'contents'=>'',
+             'errorcode'=>'0000'];
         $isAdmin=$this->userConfirm();
         if (!$isAdmin) {
             return redirect('/index');
@@ -84,6 +85,7 @@ class ConsoleController extends Controller {
 			fclose($file);
 		}catch(Exception $e) {
 			$result['status']=FAIL_MESSAGE;
+			$result['errorcode']="7301";
 		}
 		return response()->json($result);
     }
@@ -97,6 +99,7 @@ class ConsoleController extends Controller {
     {
 		$result = [
 			'status'=>'',
+            'errorcode'=>'0000',
 			'contents'=>''];
 		$isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
@@ -115,6 +118,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
+            $result['errorcode']="7302";
         }
         /*
 		if ($file==FALSE)
@@ -138,6 +142,7 @@ class ConsoleController extends Controller {
     {
 		$result = [
 			'status'=>'',
+            'errorcode'=>'0000',
 			'contents'=>''];
         $isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
@@ -155,6 +160,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
+            $result['errorcode']="7303";
         }
         /*
         if ($file==FALSE)
@@ -179,6 +185,7 @@ class ConsoleController extends Controller {
     {
         $result = [
             'status'=>'',
+            'errorcode'=>'0000',
             'contents'=>''];
         $isAdmin=$this->userConfirm();
         if (!$isAdmin) {
@@ -196,6 +203,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
+            $result['errorcode']="7304";
         }
         /*
         if ($file==FALSE)
@@ -212,8 +220,6 @@ class ConsoleController extends Controller {
 
 
 
-
-
     public function createSublab() {
         $isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
@@ -224,7 +230,7 @@ class ConsoleController extends Controller {
         $lab_id=$_GET['LId'];
         $lab_name=$_GET['LName'];
         $lab_tag=$_GET['LTag'];
-		$result=array('status'=>FAIL_MESSAGE,'msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
+		$result=array('status'=>FAIL_MESSAGE,'errorcode'=>'7305','msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
             /**
              * Move the three files to the right dictionary
@@ -275,7 +281,7 @@ class ConsoleController extends Controller {
         if (!$isAdmin) {
             return redirect('/index');
         }
-        $data = ["status"=>"","message"=>""];
+        $data = ["status"=>"","message"=>"","errorcode"=>"0000"];
 
         /*
         if (Request::hasfile('prepare-pdf')){
@@ -303,12 +309,14 @@ class ConsoleController extends Controller {
             else
             {
                 $data["status"]=FAIL_MESSAGE;
+                $data["errorcode"]="7306";
                 $data["message"] = "上传失败，文件格式或大小不符合要求！";
             }
         }
         else
         {
             $data["status"]=FAIL_MESSAGE;
+            $data["errorcode"]="7307";
             $data["message"] = "上传失败，没有找到文件！";
         }
 

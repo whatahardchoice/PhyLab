@@ -73,6 +73,7 @@
           <div class="login-body">
             <div class="alert alert-danger text-center" role="alert" id="login-alert">
               <i class="fa fa-remove"></i><span id="alert-message">用户名或密码错误</span>
+              <i class="fa fa-remove"></i><span id="errorcode">errorcode</span>
             </div>
             <form role="form" method="POST" action="{{URL::route('login')}}">
             	{!! csrf_field() !!}

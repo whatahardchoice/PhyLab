@@ -36,7 +36,8 @@ class PhylabAuthController extends Controller {
             return response()->json(["status"=>SUCCESS_MESSAGE]);
         }
         else{
-            throw new AuthenticationFailException();
+            return response()->json(["status"=>FAIL_MESSAGE]);
+            //e_code throw new AuthenticationFailException();
         }
     }
     /**

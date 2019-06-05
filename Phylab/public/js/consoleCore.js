@@ -47,6 +47,7 @@ function initReportPage() {
             $.ajax('./getTable', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+
                 // $("#editor_tab > li").off('click');
                 $('#button-view-preparation').removeAttr("disabled");
                 $('#button-generate-report').removeAttr("disabled");

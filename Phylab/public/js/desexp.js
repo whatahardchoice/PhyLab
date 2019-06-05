@@ -19,7 +19,7 @@ function switchContent() {
             //alert("请登录后查看其他内容！");
             //window.location.href = 'login';
         } else {
-            alert("出错了，原因："+data.message);
+            alert("出错了，原因："+data.message+data.errorcode);
         }
     }).fail(function (xhr, status) {
         // if (xhr.status === 401) {

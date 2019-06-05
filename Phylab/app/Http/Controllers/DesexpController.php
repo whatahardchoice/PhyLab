@@ -27,7 +27,7 @@ class DesexpController extends Controller
     public function index()
     {
 
-        $data = ["auth" => false ,"username"    =>  "", "admin"=>false, "expOptions"=>array()];
+        $data = ["auth" => false ,"username"    =>  "", "admin"=>false, "expOptions"=>array(),"errorcode"=>""];
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;
@@ -54,7 +54,7 @@ class DesexpController extends Controller
     public function getDesexp($id)
     {
 
-        $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => ''];
+        $data = ['status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => '','errorcode'=>''];
 
 //        if(!Auth::check()) {
 //            //如果没登录返回出错，前端重定向至登录页面。
@@ -70,10 +70,10 @@ class DesexpController extends Controller
             $data["link"] = $report->link;
             $data["name"] = $report->name;
             $data["status"] = SUCCESS_MESSAGE;
-
         }
         else{
             $data["status"] = FAIL_MESSAGE;
+            $data["errorcode"]="7601";
             $data["message"] = "未找到实验".$id;
         }
 

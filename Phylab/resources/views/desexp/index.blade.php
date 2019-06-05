@@ -1,4 +1,3 @@
-<!--设计性实验页面，展示不同编号的设计性实验-->
 @extends('layout.main')
 @section('contents')
 

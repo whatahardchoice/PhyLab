@@ -205,7 +205,7 @@ $('#button-generate-latex').click(function () {
                 $('#collect-report').removeAttr("disabled");
             }
             else
-                errorFunction(jsonText["message"]);
+                errorFunction(jsonText["message"]+jsonText["errorcode"]);
             $('#wait-report').fadeOut();
         }
         else if(this.readyState==4 && this.status!=200) {
@@ -250,7 +250,7 @@ $('#button-generate-markdown').click(function () {
                 $('#lab-status').text('子实验' + CUR_SUBLAB + '数据报告');
             }
             else
-                errorFunction(jsonText["message"]);
+                errorFunction(jsonText["message"]+jsonText["errorcode"]);
             $('#wait-report').fadeOut();
         }
         else if(this.readyState==4 && this.status!=200) {

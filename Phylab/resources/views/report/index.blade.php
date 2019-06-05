@@ -1,6 +1,4 @@
-﻿<!--实验报告数据中心页面,根据选定的不同编号的物理实验，进行在线数据处理并展示处理后的报告-->
-
-@extends('layout.main')
+﻿@extends('layout.main')
 @section('contents')
   <div id="lab-console" class="row" style="margin-top: 30px;background-color: rgb(228, 228, 228);" >
     <div id="report-data" class="col-xs-12 col-md-4"  style="margin-top: 10px;background-color: transparent;">
