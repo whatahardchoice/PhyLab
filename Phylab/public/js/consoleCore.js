@@ -470,7 +470,7 @@ function checkInput()
     }
     if (invalid !== 0)
     {
-        alert("您有"+invalid+"处输入不合法，请检查输入，输入只能为数字且不能有空格。");
+        alert("您有"+invalid+"处输入不合法，请检查输入，输入只能为数字且不能有空格.");
         return false;
     }
     else
