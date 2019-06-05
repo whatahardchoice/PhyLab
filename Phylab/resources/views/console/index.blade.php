@@ -220,10 +220,15 @@
                   </div>
                 </div>
               </div>
-                <button id="btn-test-generate" class="btn btn-success"style="border-radius: 0 0 0 0;width: 10%;">
+                <button id="btn-test-generate-tex" class="btn btn-success"style="border-radius: 0 0 0 0;width: 10%;">
                     <span class="sr-only">y</span>
                     <i class="fa fa-check"></i>
-                    <span id="collect-report-text">运行测试</span>
+                    <span >测试LaTeX</span>
+                </button>
+                <button id="btn-test-generate-md" class="btn btn-success"style="border-radius: 0 0 0 0;width: 10%;">
+                  <span class="sr-only">y</span>
+                  <i class="fa fa-check"></i>
+                  <span>测试Markdown</span>
                 </button>
                 <button id="button-push-script" class="btn btn-success"style="border-radius: 0 4px 4px 0;width: 10%;">
                     <span class="sr-only">y</span>

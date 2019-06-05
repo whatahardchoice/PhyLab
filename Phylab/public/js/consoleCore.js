@@ -274,7 +274,7 @@ $("#btn-upload-preview").click(function () {
     return false;
 });
 
-$("#btn-test-generate").click(function () {
+$("#btn-test-generate-tex").click(function () {
 
     if (typeof CUR_SUBLAB === 'undefined')
     {
@@ -325,6 +325,62 @@ $("#btn-test-generate").click(function () {
         alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
     });
 });
+
+
+
+$("#btn-test-generate-md").click(function () {
+
+    if (typeof CUR_SUBLAB === 'undefined')
+    {
+        $('#upload_preview_modal').modal('hide');
+        alert("请先选择实验！");
+        return false;
+    }
+
+
+    let valid = checkInput();
+    if (!valid)
+        return false;
+
+
+    var xmlString = SetXMLDoc_lab();
+    if (xmlString === null)
+        return;
+    var postData = 'id=' + CUR_SUBLAB + '&' + 'xml=' + xmlString;
+
+    $.ajax({
+        type:"POST",
+        url:"./report/createMD",
+        data:{'id':CUR_SUBLAB, "xml":xmlString},
+        beforeSend: function () {
+            $('#error-log-title').text("").append("正在运行，请稍侯");
+            $('#error-text').text("");
+            $('#modal-error-log').modal('show');
+        }
+    }).done(function (data) {
+        if (data['status'] == 'fail')
+        {
+            $('#error-log-title').text("").append("Oops！运行出错了");
+        }
+        else
+        {
+            $('#error-log-title').text("").append("运行成功");
+        }
+        let errStr = "";
+        for (let i = 0; i < data['errorLog'].length; i++)
+        {
+            errStr += data['errorLog'][i];
+            errStr += '<br>';
+        }
+        $('#error-text').text("").append(errStr);
+        $('#modal-error-log').modal('show');
+
+    }).fail(function (xhr, status) {
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
+    });
+});
+
+
 
 $("#lab_table_editor_area").keyup(function () {
     $("#labdoc").html(tableedit.getValue());

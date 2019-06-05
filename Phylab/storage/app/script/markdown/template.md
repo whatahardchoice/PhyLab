@@ -3,4 +3,4 @@
 
 ## 实验一：非常简单的加法
 
-* 加法：$ ||INPUT_A|| + ||INPUT_B|| = ||RESULT|| $
+* 加法：$ %%INPUT_A%% + %%INPUT_B%% = %%RESULT%% $
