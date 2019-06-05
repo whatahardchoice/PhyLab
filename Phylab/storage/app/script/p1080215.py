@@ -72,8 +72,8 @@ def niconiconi():
     global x, average_delta_x, light_small_big, data_big, data_small, s_small, s_big, b_big, b_small, lam, \
         ua_10delta_x, u_10delta_x, u_delta_x, u_b1, u_b2, u_lam, re_u, answer
     delta_x = []
-    for i in range(len(x) / 2):
-        delta_x.append(abs(x[i + len(x) / 2] - x[i]))
+    for i in range(int(len(x) / 2)):
+        delta_x.append(abs(x[int(i + len(x) / 2)] - x[i]))
     average_delta_x = sum(delta_x) / len(delta_x) / len(delta_x)
     ua_10delta_x = Ua(delta_x, 10 * average_delta_x, len(delta_x))
     ub_10delta_x = 0.00289
