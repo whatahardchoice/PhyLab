@@ -108,6 +108,7 @@ class UserController extends Controller
          *  validator用于内容的验证，目前由于用户界面不支持修改密码和生日，因此只用到了用户名字段
          */
         $data = ["status"       =>  "",
+                "errorcode" =>"0000",
                  "status"       =>  ""];
         $validatorRules = array(
                 'password' => 'confirmed|between:6,15',
@@ -142,6 +143,8 @@ class UserController extends Controller
         }
         catch(Exception $e)
         {
+            $data['status']=FAIL_MASSAGE;
+            $data["errorcode"]="7201";
             throw new DatabaseOperatorException();
         }
         return response()->json($data);
@@ -158,7 +161,7 @@ class UserController extends Controller
         /*
          * 头像设置的返回内容，avatarPath为前端使用的更新头像后的头像路径。在返回部分可以看到其为/public文件夹下的相对路径
          */
-        $data = ["status"=>"","avatarPath"=>"","message"=>""];
+        $data = ["status"=>"","avatarPath"=>"","message"=>"","errorcode"=>"0000"];
 
         /*
          * 上传头像的步骤包括
@@ -190,6 +193,7 @@ class UserController extends Controller
                 }
                 catch(Exception $e)
                 {
+                    $data["errorcode"]="7202";
                     throw new FileIOException(); //问题的主要所在
                 }
                 try{
@@ -203,14 +207,17 @@ class UserController extends Controller
                 }
                 catch(Exception $e)
                 {
+                    $data["errorcode"]="7203";
                     throw new DatabaseOperatorException();
                 }
             }
             else{
+                $data["errorcode"]="7204";
                 throw new InvalidFileFormatException();
             }
         }
         else{
+            $data["errorcode"]="7205";
             throw new InvalidRequestInputException("上传参数不正确");
         }
         return response()->json($data);

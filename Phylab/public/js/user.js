@@ -49,7 +49,7 @@ $("#btn-upload-avatar").click(function (){
     )
         .done(function (data) {
             if (data.status === "fail") {
-                alert("上传失败");
+                alert("上传失败"+data["errorcode"]);
             } else {
                 $("#user_avatar").attr('src',data['avatarPath']);
             }
