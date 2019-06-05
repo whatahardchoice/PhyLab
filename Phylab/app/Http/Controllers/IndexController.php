@@ -18,7 +18,7 @@ class IndexController extends Controller
     public function index()
     {
         //显示主页
-        $data = ["auth" => false ,"username"    =>  "", "admin"=>false];
+        $data = ["auth" => false ,"username"    =>  "", "admin"=>false,"errorcode"=>"0000"];
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;

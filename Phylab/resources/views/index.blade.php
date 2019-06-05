@@ -1,3 +1,4 @@
+<!--首页 -->
 @extends('layout.main')
 
 @section('contents')
@@ -6,9 +7,13 @@
     <div class="container">
 
       <div id="bulletin-board" class="col-xs-12 col-md-6">
+
+
           <h3 style="margin:5px; text-align: center">公告栏</h3>
           <div id="bulletin-content" style="text-align: center">
+
             <h5>设计性实验复习页面已上线！无需注册即可查看，欢迎体验！<br>（推荐使用电脑浏览器查看，移动端目前仍存在一些小问题）</h5>
+
           </div>
 
 

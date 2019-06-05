@@ -13,7 +13,6 @@ function Post_login(){
                 window.location.href="/index";
             }
             else{
-                $('#errorcode').text(jsonText["errorcode"]);
                 $('#alert-message').text(jsonText["message"]);
                 $('#login-alert').show();
             }

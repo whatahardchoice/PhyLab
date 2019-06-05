@@ -52,7 +52,7 @@ class StarController extends Controller
     {
        
         $data = ["status"=>FAIL_MESSAGE,
-                 "errorcode"=>"7501",
+                 "errorcode"=>"0000",
                  "message"=>"访问正常",
                  "id"=>""];
         //return response()->json($data);
@@ -69,7 +69,7 @@ class StarController extends Controller
         }
             catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7502";
+                $data["errorcode"]="7501";
                 $data["message"] = "检查失败";
                 return response()->json($data);
         }
@@ -82,14 +82,14 @@ class StarController extends Controller
                 $report = Report::where('experiment_id','=',Request::get('reportId'))->get();
                 if($report->count() == 0){
                     $data["status"] = FAIL_MESSAGE;
-                    $data["errorcode"]="7503";
+                    $data["errorcode"]="7502";
                     $data["message"] = "没有此类型报告";
                     return response()->json($data);
                 }
                 $experimentName = $report->first()->experiment_name;
             }catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7504";
+                $data["errorcode"]="7503";
                 $data["message"] = "报告查询失败";
                 $data['reportnumber']= $report->count();
                 $data['reportId'] = Request::get('reportId');
@@ -122,27 +122,27 @@ class StarController extends Controller
                     }
                     else{
                         $data["status"] = FAIL_MESSAGE;
-                        $data["errorcode"]="7505";
+                        $data["errorcode"]="7504";
                         $data["message"] = "收藏报告失败";
                     }
                 }
                 else
                 {
                     $data["status"] = FAIL_MESSAGE;
-                    $data["errorcode"]="7506";
+                    $data["errorcode"]="7505";
                     $data["message"] = "超过收藏最大值";
                     //throw new ReachCeilingException();
                 }
             }catch(Exception $e){
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7507";
+                $data["errorcode"]="7506";
                 $data["message"] = "收藏创建失败";
                 return response()->json($data);
             }
         }
         else{
             $data["status"] = FAIL_MESSAGE;
-            $data["errorcode"]="7508";
+            $data["errorcode"]="7507";
             $data["message"] = "不存在pdf文件";
             //throw new NoResourceException();
         }
@@ -157,6 +157,7 @@ class StarController extends Controller
     */
     public function delete(){
         $data = ["status"=>"",
+                "errorcode"=>"0000",
                  "messgae"=>""]; //dont fix this
         /**
          * $validatorRules = array(
@@ -176,7 +177,7 @@ class StarController extends Controller
             catch(Exception $e)
             {
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7509";
+                $data["errorcode"]="7508";
                 //return response()->json($data);
                 //throw new FileIOException();
             }
@@ -185,7 +186,7 @@ class StarController extends Controller
         catch(Exception $e)
         {
             $data["status"] = FAIL_MESSAGE;
-            $data["errorcode"]="7510";
+            $data["errorcode"]="7509";
             //return response()->json($data);
             //throw new DatabaseOperatorException();
         }

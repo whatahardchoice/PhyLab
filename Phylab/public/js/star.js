@@ -21,7 +21,7 @@ function createStar(){
                 $('#report-num').text(parseInt($('#report-num').text()) + 1);
             }
             else{
-                errorAlert(jsonText["message"]);
+                errorAlert(jsonText["message"]+jsonText["errorcode"]);
             }
         }
         else if(this.readyState==4 && this.status!=200){
@@ -46,7 +46,7 @@ function deleteReportStar(){
                 $('#report-num').text(parseInt($('#report-num').text()) - 1);
             }
             else{
-                errorAlert(jsonText["message"]);
+                errorAlert(jsonText["message"]+jsonText["errorcode"]);
             }
         }
         else if(this.readyState==4 && this.status!=200){
@@ -66,7 +66,7 @@ function deleteStar(id){
                 $('#star_'+id).hide("slow");
             }
             else{
-                errorAlert(jsonText["message"]);
+                errorAlert(jsonText["message"]+jsonText["errorcode"]);
             }
         }
         else if(this.readyState==4 && this.status!=200){
