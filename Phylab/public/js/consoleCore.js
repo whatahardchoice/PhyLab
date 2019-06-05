@@ -86,6 +86,14 @@ function initReportPage() {
             }).fail(function (xhr, status) {
                 alert('失败: ' + xhr.status + ', 原因: ' + status);
             });
+            $.ajax('./getMD', {
+                data: {'id': CUR_SUBLAB},
+            }).done(function (data) {
+                mdedit.setValue(data['contents']);
+                mdedit.refresh();
+            }).fail(function (xhr, status) {
+                alert('失败: ' + xhr.status + ', 原因: ' + status);
+            });
         });
     }).fail(function (xhr, status) {
         alert('失败: ' + xhr.status + ', 原因: ' + status);
@@ -174,7 +182,8 @@ $('#button-save-script').click(function () {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
         'reportHtml': tableedit.getValue(),
-        'reportTex': latexedit.getValue()
+        'reportTex': latexedit.getValue(),
+        'reportMD': mdedit.getValue()
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {

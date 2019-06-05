@@ -168,8 +168,53 @@ class ConsoleController extends Controller {
         */
         return response()->json($result);
     }
-	
-	public function createSublab() {
+
+
+    /**
+     * Get what you edit in the markdown table
+     *
+     * @return mixed
+     */
+    public function getMD()
+    {
+        $result = [
+            'status'=>'',
+            'contents'=>''];
+        $isAdmin=$this->userConfirm();
+        if (!$isAdmin) {
+            return redirect('/index');
+        }
+        //$ad=Console::where('email','=',Auth::user()->email)->first();
+        //$st=$ad->status;
+        $id=$_GET['id'];
+        $htmlFile = Config::get('phylab.scriptPath')."markdown/Handle".$id.".md";
+        //$file = fopen($htmlFile, "r");
+        try{
+            $file = fopen($htmlFile, "r");
+            $result['status'] = SUCCESS_MESSAGE;
+            $result['contents'] = file_get_contents($htmlFile);
+            fclose($file);
+        }catch (Exception $e){
+            $result['status']=FAIL_MESSAGE;
+        }
+        /*
+        if ($file==FALSE)
+		    $result['status']=FAIL_MESSAGE;
+		else
+		{
+			$result['status'] = SUCCESS_MESSAGE;
+			$result['contents'] = file_get_contents($htmlFile);
+			fclose($file);
+		}
+        */
+        return response()->json($result);
+    }
+
+
+
+
+
+    public function createSublab() {
         $isAdmin=$this->userConfirm();
 		if (!$isAdmin) {
 			return redirect('/index');
@@ -187,15 +232,16 @@ class ConsoleController extends Controller {
 		    $htmlcmd = "cp ".Config::get('phylab.experimentViewPath')."template.html ".Config::get('phylab.experimentViewPath').$lab_id.".html";
 		    $pycmd = "cp ".Config::get('phylab.scriptPath')."template.py ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
 		    $latexcmd = "cp ".Config::get('phylab.scriptPath')."tex/template.tex ".Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
-
+            $mdcmd = "cp ".Config::get('phylab.scriptPath')."markdown/template.md ".Config::get('phylab.scriptPath')."markdown/Handle".$lab_id.".md";
 		    $htmlsed = "sed -i 's/%%LAB_SUBLAB_ID%%/".$lab_id."/g' ".Config::get('phylab.experimentViewPath').$lab_id.".html";
 		    $pysed = "sed -i 's/%%LAB_SUBLAB_ID%%/".$lab_id."/g' ".Config::get('phylab.scriptPath')."p".$lab_id.".py";
 		    $system1 = exec($htmlcmd,$output,$reval1);
             $system2 = exec($pycmd,$output,$reval2);
             $system3 = exec($latexcmd,$output,$reval3);
+            $system6 = exec($mdcmd,$output,$reval6);
             $system4 = exec($htmlsed,$output,$reval4);
             $system5 = exec($pysed,$output,$reval5);
-            if($reval1==0&&$reval2==0&&$reval3==0 && $reval4==0&&$reval5==0){
+            if($reval1==0&&$reval2==0&&$reval3==0 && $reval4==0&&$reval5==0&&$reval6==0){
 				$ret=Report::create(array(
 					'experiment_id'=>$lab_id,
 					'experiment_name'=>$lab_name,
@@ -207,12 +253,6 @@ class ConsoleController extends Controller {
 				$result['status']=SUCCESS_MESSAGE;
 				$result['msg']="";
 				$result['message'] = "创建新报告成功" ;
-				$pysrc=Config::get('phylab.scriptPath')."p".$lab_id.".py";
-				$htmsrc = Config::get('phylab.experimentViewPath').$lab_id.".html";
-				$texsrc = Config::get('phylab.scriptPath')."tex/Handle".$lab_id.".tex";
-//				file_put_contents($pysrc,"# coding here...");
-//				file_put_contents($htmsrc,"");
-//				file_put_contents($texsrc,"tex...");
 			}
 			/*
 			else {

@@ -247,6 +247,12 @@ Route::get('/getTex',
 	'middleware' => 'auth'
 	]);
 
+Route::get('/getMD',
+    [
+        'uses' => 'ConsoleController@getMD',
+        'middleware' => 'auth'
+    ]);
+
 Route::get('/createLab',
 	[
 	'uses' => 'ConsoleController@createSublab',

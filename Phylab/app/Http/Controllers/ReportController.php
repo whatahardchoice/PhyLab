@@ -101,6 +101,7 @@ class ReportController extends Controller
     {
         //post 传入 xml 模板文件
         $data = ["status"=> "",
+            "errorcode"=>"0000",
             "experimentId" => "",
             "link"  => "",
             "message" => "",
@@ -173,6 +174,7 @@ class ReportController extends Controller
             }
         }else{
             $data["status"]=FAIL_MESSAGE;
+            $data["errorcode"]="7401";
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
 
@@ -224,6 +226,7 @@ class ReportController extends Controller
     {
         //post 传入 xml 模板文件
         $data = ["status"=> "",
+            "errorcode"=>"0000",
             "experimentId" => "",
             "link"  => "",
             "message" => "",
@@ -269,6 +272,7 @@ class ReportController extends Controller
             }
         }else{
             $data["status"]=FAIL_MESSAGE;
+            $data["errorcode"]="7402";
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
             $data["errorLog"]=$output;
@@ -334,61 +338,6 @@ class ReportController extends Controller
     }
 
     /**
-    * New a report.
-    * This function works in console core.
-    * 
-    * @return \Illuminate\Http\Response
-    */
-    public function newReport()
-    {
-        $data = ["status"   =>  "",
-                 "message"  =>  ""];
-        try{
-            $reports = Report::where('experiment_id','=',Request::get('reportId'))->get();
-            if($reports->count() > 0){
-                $data["status"] = FAIL_MESSAGE;
-                $data["message"] = "实验Id已存在";
-            }else{
-                /**
-                 * If you need to create a new experiment.You just need to create the three files
-                 * below in our website.
-                 */
-
-                $system1 = exec("touch ".Config::get('phylab.experimentViewPath').Request::get('reportId').".html",$output,$reval1);
-                $system2 = exec("touch ".Config::get('phylab.scriptPath')."p".Request::get('reportId').".py",$output,$reval2);
-                $system3 = exec("touch ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex",$output,$reval3);
-
-                if($reval1==0&&$reval2==0&&$reval3==0){    
-                    $newRep = Report::create([
-                        'experiment_id' => Request::get('reportId'),
-                        'experiment_tag' => Request::get('reportTag'),
-                        'experiment_name' => Request::get('reportName'),
-                        'prepare_link' => '',
-                        'related_article' => 5,
-                        'status' => 0
-                    ]);
-                    if($newRep){
-                        $data["status"] = SUCCESS_MESSAGE;
-                        $data["message"] = "创建新报告成功";
-                    }
-                    else{
-                        $data["status"] = FAIL_MESSAGE;
-                        $data["message"] = "创建新报告失败";
-                    }
-                }else{
-                    $data["status"]=FAIL_MESSAGE;
-                    $data["message"] = "创建新报告失败";
-                }
-            }
-        }
-        catch(Exception $e){
-            $data['status'] = FAIL_MESSAGE;
-            $data['message'] = "未知错误";
-        }
-        return response()->json($data);
-    }
-
-    /**
     * Update a report.
     *
     * If you need to change something of the reports which have been published,just edit them.
@@ -401,10 +350,12 @@ class ReportController extends Controller
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
+            $data["errorcode"]="7407";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
         $data = ["status"   =>  "",
+                "errorcode"=>"0000",
                  "message"  =>  ""];
         $report = Report::where('experiment_id','=',Request::get('reportId'))->get()->count();
         $isPubReport = Report::where('experiment_id','=',Request::get('reportId'))->where("status",'=','1')->get()->count();
@@ -412,6 +363,7 @@ class ReportController extends Controller
 
         if ($isPubReport && !$isSuperAdmin){
             $data['status'] = FAIL_MESSAGE;
+            $data["errorcode"]="7408";
             $data['message'] = "没有更新权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -424,6 +376,7 @@ class ReportController extends Controller
             file_put_contents(Config::get('phylab.scriptPath')."p".Request::get('reportId').".py", Request::get('reportScript'));
             file_put_contents(Config::get('phylab.experimentViewPath').Request::get('reportId').".html", Request::get('reportHtml'));
             file_put_contents(Config::get('phylab.scriptPath')."tex/Handle".Request::get('reportId').".tex", Request::get('reportTex'));
+            file_put_contents(Config::get('phylab.scriptPath')."markdown/Handle".Request::get('reportId').".md", Request::get('reportMD'));
             if(true){
                 $data['status'] = SUCCESS_MESSAGE;
                 $data['message'] = "更新成功";
@@ -435,6 +388,7 @@ class ReportController extends Controller
         }
         else{
             $data['status'] = FAIL_MESSAGE;
+            $data["errorcode"]="7409";
             $data['message'] = "更新失败(wrong_id)";
         }
         return response()->json($data);        
@@ -450,6 +404,7 @@ class ReportController extends Controller
     public function confirmReport()
     {
         $data = ["status"   =>  "",
+                "errorcode"=>"0000",
                  "message"  =>  ""];
 
         /**
@@ -461,6 +416,7 @@ class ReportController extends Controller
         $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
+            $data["errorcode"]="7410";
             $data['message'] = "没有发布权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -491,7 +447,8 @@ class ReportController extends Controller
             $data['message'] = "发布成功";
         }
         else{
-            $data['status'] = FAIL_MESSAGE;
+            $data['status'] =FAIL_MESSAGE;
+            $data["errorcode"]="7411";
             $data['message'] = "发布失败";
         }
         return response()->json($data);
@@ -507,6 +464,7 @@ class ReportController extends Controller
     public function deleteUnpublishedReport()
     {
         $data = ["status"   =>  "",
+            "errorcode"=>"0000",
             "message"  =>  ""];
 
         /**
@@ -515,6 +473,7 @@ class ReportController extends Controller
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
+            $data["errorcode"]="7412";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
@@ -524,6 +483,7 @@ class ReportController extends Controller
             $report = Report::where('experiment_id','=',Request::get('id'))->first();
             if(!$report){
                 $data["status"] = FAIL_MESSAGE;
+                $data["errorcode"]="7413";
                 $data["message"] = "实验Id不存在";
                 return response()->json($data);
             }
@@ -531,6 +491,7 @@ class ReportController extends Controller
             if ($report->status != 0)
             {
                 $data["status"] = FAIL_MESSAGE;
+                $data["errorcode"]="7414";
                 $data["message"] = "实验已发布，请联系超级管理员";
                 return response()->json($data);
             }
@@ -538,6 +499,7 @@ class ReportController extends Controller
                 $system1 = exec("rm -rf ".Config::get('phylab.experimentViewPath').Request::get('id').".html",$output,$reval1);
                 $system2 = exec("rm -rf ".Config::get('phylab.scriptPath')."p".Request::get('id').".py",$output,$reval2);
                 $system3 = exec("rm -rf ".Config::get('phylab.scriptPath')."tex/Handle".Request::get('id').".tex",$output,$reval3);
+                $system4 = exec("rm -rf ".Config::get('phylab.scriptPath')."markdown/Handle".Request::get('id').".md",$output,$reval4);
                 /*
                 if($reval1!=0||$reval2!=0||$reval3!=0){
                     $data["status"]=FAIL_MESSAGE;

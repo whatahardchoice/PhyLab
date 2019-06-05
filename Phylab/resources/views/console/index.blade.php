@@ -163,20 +163,26 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active" id="py_script_editor_area"><textarea id="py_editor" style="display:none;"></textarea></div>
                 <div role="tabpanel" class="tab-pane fade" id="latex_editor_area"><textarea id="latex_editor" style="display:none;"></textarea></div>
+                <div role="tabpanel" class="tab-pane fade" id="md_editor_area"><textarea id="md_editor" style="display:none;"></textarea></div>
                 <div role="tabpanel" class="tab-pane fade" id="lab_table_editor_area"><textarea id="table_editor" style="display:none;"></textarea></div>
             </div>
             <ul id="editor_tab" class="nav nav-tabs" style="display: block;">
-                <li class="active" style="width: 33%;text-align: center;">
+                <li class="active" style="width: 25%;text-align: center;">
                     <a id="tab-pyedit-selector"  href="#py_script_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                         <div>Python脚本</div>
                     </a>
                 </li>
-                <li style="width: 33%;text-align: center;">
+                <li style="width: 25%;text-align: center;">
                     <a id="tab-latexedit-selector" href="#latex_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                         <div>LaTeX模板</div>
                     </a>
                 </li>
-                <li style="width: 33%;text-align: center;">
+                <li style="width: 25%;text-align: center;">
+                  <a id="tab-mdedit-selector" href="#md_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
+                    <div>Markdown模板</div>
+                  </a>
+                </li>
+                <li style="width: 25%;text-align: center;">
                     <a id="tab-tableedit-selector" href="#lab_table_editor_area" data-toggle="tab" style="height: 40px;padding-top: 10px;">
                        <div> 实验表格HTML</div>
                     </a>
@@ -293,6 +299,27 @@
       latex_div=$(latex_div);
       latex_div.height(730);
       latex_div.css('clear','both');
+
+      te_md=document.getElementById('md_editor');
+      var mdedit = CodeMirror.fromTextArea(te_md, {
+          mode: "markdown",
+          lineNumbers: true,
+          lineWrapping: true,
+          extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+          keyMap: "sublime",
+          autoCloseBrackets: true,
+          showCursorWhenSelecting: true,
+          theme: "monokai",
+          tabSize: 4,
+          matchBrackets: true,
+          foldGutter: true,
+          gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+          autoRefresh:true
+      });
+      var md_div=mdedit.getWrapperElement();
+      md_div=$(md_div);
+      md_div.height(730);
+      md_div.css('clear','both');
 
       te_table=document.getElementById('table_editor');
       var tableedit = CodeMirror.fromTextArea(te_table, {
