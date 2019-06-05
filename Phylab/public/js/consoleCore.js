@@ -47,8 +47,10 @@ function initReportPage() {
             $.ajax('./getTable', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
-
                 // $("#editor_tab > li").off('click');
+                if(data['errorcode']!="0000"){
+                    alert(data['errorcode']);
+                }
                 $('#button-view-preparation').removeAttr("disabled");
                 $('#button-generate-report').removeAttr("disabled");
                 $('#collect-report').attr("disabled", true);
@@ -74,6 +76,9 @@ function initReportPage() {
             $.ajax('./getScript', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+                if(data['errorcode']!="0000"){
+                    alert(data['errorcode']);
+                }
                 pyedit.setValue(data['contents']);
                 pyedit.refresh();
             }).fail(function (xhr, status) {
@@ -82,6 +87,9 @@ function initReportPage() {
             $.ajax('./getTex', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+                if(data['errorcode']!="0000"){
+                    alert(data['errorcode']);
+                }
 				latexedit.setValue(data['contents']);
 				latexedit.refresh();
             }).fail(function (xhr, status) {
@@ -90,6 +98,9 @@ function initReportPage() {
             $.ajax('./getMD', {
                 data: {'id': CUR_SUBLAB},
             }).done(function (data) {
+                if(data['errorcode']!="0000"){
+                    alert(data['errorcode']);
+                }
                 mdedit.setValue(data['contents']);
                 mdedit.refresh();
             }).fail(function (xhr, status) {
@@ -164,7 +175,7 @@ $('#create_sublab').click(function (){
         }
 
 		else
-		    alert(data.msg);
+		    alert(data.msg+data['errorcode']);
 		$('#collection-folder').modal('hide');
 	}).fail(function (xhr, status) {
 		alert('失败: ' + xhr.status + ', 原因: ' + status);
@@ -265,7 +276,7 @@ $("#btn-upload-preview").click(function () {
         }
     )
         .done(function (data) {
-            alert(data.message);
+            alert(data.message+data['errorcode']);
         })
         .fail(function (xhr, status) {
             alert('失败: ' + xhr.status + ', 原因: ' + status);
@@ -307,7 +318,7 @@ $("#btn-test-generate-tex").click(function () {
     }).done(function (data) {
         if (data['status'] == 'fail')
         {
-            $('#error-log-title').text("").append("Oops！运行出错了");
+            $('#error-log-title').text(data['errorcode']).append("Oops！运行出错了");
         }
         else
         {
@@ -361,7 +372,7 @@ $("#btn-test-generate-md").click(function () {
     }).done(function (data) {
         if (data['status'] == 'fail')
         {
-            $('#error-log-title').text("").append("Oops！运行出错了");
+            $('#error-log-title').text(data['errorcode']).append("Oops！运行出错了");
         }
         else
         {
