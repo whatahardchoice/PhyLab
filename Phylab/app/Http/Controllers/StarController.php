@@ -205,6 +205,7 @@ class StarController extends Controller
                  "createTime"   =>  "",
                  "name"         =>  "",
                  "experimentId" =>  "",
+                 "errorcode"    =>  "0000",
                  "experimentName"   =>  ""];
         $star = Star::find($id);
         if($star && $star->user->id==Auth::user()->id){
@@ -216,6 +217,7 @@ class StarController extends Controller
             $data["name"]           = $star->name;
         }
         else{
+            $data["errorcode"]="7510";
             throw new NoResourceException();
         }
         return view("star.show",$data);
