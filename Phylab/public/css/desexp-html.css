@@ -11,6 +11,10 @@ span.desexp-span {
     transition: opacity 1s;
     -webkit-transition: opacity 1s;
 }
-.desexp-text:hover  {
-    opacity:1;
+
+
+@media (hover: hover) {
+    .desexp-text:hover  {
+        opacity:1;
+    }
 }
