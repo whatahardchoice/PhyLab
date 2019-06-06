@@ -1,14 +1,19 @@
-错误码|错误说明|所在文件|函数
--   |:-:  |:-:|:-:
-0000|无错误|无 |无
-|||
-7201|用户信息更新错误，数据库操作失败|UserController.php|update
-7202|头像文件流异常|UserController.php|setAvatar
-7203|数据库操作异常|UserController.php|setAvatar
-7204|文件格式错误|UserController.php|setAvatar
-7205|上传参数异常|UserController.php|setAvatar
-|||
-7301|文件操作异常|ConsoleController.php|getTable
+
+errorcode-expression
+====
+
+
+错误码|错误说明                       |所在文件           |函数
+-----|-------------------------------|------------------|-----
+0000 |无错误                         |无                 |无
+     |                               |                  |    
+7201|用户信息更新错误，数据库操作失败   |UserController.php|update|
+7202|头像文件流异常                   |UserController.php|setAvatar
+7203|数据库操作异常                   |UserController.php|setAvatar
+7204|文件格式错误                     |UserController.php|setAvatar
+7205|上传参数异常                     |UserController.php|setAvatar
+    |                                |                  |      
+7301|文件操作异常                     |ConsoleController.php|getTable
 7302|文件操作异常|ConsoleController.php|getScript
 7303|文件操作异常|ConsoleController.php|getTex
 7304|文件操作异常|ConsoleController.php|getMD
