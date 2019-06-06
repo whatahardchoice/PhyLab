@@ -33,7 +33,7 @@
               style="margin-top: 0px;height: 700px;width:100%;border:none;box-shadow:2px 2px 5px rgb(200,200,200);" scrolling="no">
         </iframe>
     </div>
-    <div  class="float-button hidden-xs hidden-sm" style="position:fixed; right:5%;bottom:50%;">
+    <div  class="float-button" style="position:fixed; right:5%;bottom:50%;">
       <button id="btn-clear-answer" class="btn btn-success" style="cursor: pointer;border-radius: 50%;box-shadow: 2px 2px 3px rgb(200,200,200);">清空答案</button>
     </div>
   </div>
