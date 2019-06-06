@@ -65,7 +65,6 @@ trait PhylabPasswordReset
     {
         if (is_null($token)) {
             //ecode  return FAIL_MESSAGE;
-            return view('index',["status"=>FAIL_MESSAGE]);
             throw new NotFoundHttpException;
         }
 

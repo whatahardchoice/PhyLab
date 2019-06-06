@@ -1,5 +1,3 @@
-<!--信息注册页面，用于注册账号 -->
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>

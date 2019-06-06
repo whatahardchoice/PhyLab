@@ -145,8 +145,9 @@ function submit_register() {
             data = JSON.parse(data);
             if (data.errno === 1)
                 window.location.href = data.rsm.url;
-            else
-                alert(data.err);
+            else {
+                alert(data.err+data["errorcode"]);
+            }
         }).fail(function (xhr, status) {
             alert('注册失败: ' + xhr.status + ', 原因: ' + status);
         })
