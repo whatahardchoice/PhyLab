@@ -350,7 +350,7 @@ class ReportController extends Controller
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7407";
+            $data["errorcode"]="7403";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
@@ -363,7 +363,7 @@ class ReportController extends Controller
 
         if ($isPubReport && !$isSuperAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7408";
+            $data["errorcode"]="7404";
             $data['message'] = "没有更新权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -388,7 +388,7 @@ class ReportController extends Controller
         }
         else{
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7409";
+            $data["errorcode"]="7405";
             $data['message'] = "更新失败(wrong_id)";
         }
         return response()->json($data);        
@@ -416,7 +416,7 @@ class ReportController extends Controller
         $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7410";
+            $data["errorcode"]="7406";
             $data['message'] = "没有发布权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -448,7 +448,7 @@ class ReportController extends Controller
         }
         else{
             $data['status'] =FAIL_MESSAGE;
-            $data["errorcode"]="7411";
+            $data["errorcode"]="7407";
             $data['message'] = "发布失败";
         }
         return response()->json($data);
@@ -473,7 +473,7 @@ class ReportController extends Controller
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7412";
+            $data["errorcode"]="7408";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
@@ -483,7 +483,7 @@ class ReportController extends Controller
             $report = Report::where('experiment_id','=',Request::get('id'))->first();
             if(!$report){
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7413";
+                $data["errorcode"]="7409";
                 $data["message"] = "实验Id不存在";
                 return response()->json($data);
             }
@@ -491,7 +491,7 @@ class ReportController extends Controller
             if ($report->status != 0)
             {
                 $data["status"] = FAIL_MESSAGE;
-                $data["errorcode"]="7414";
+                $data["errorcode"]="7410";
                 $data["message"] = "实验已发布，请联系超级管理员";
                 return response()->json($data);
             }
