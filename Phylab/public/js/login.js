@@ -13,7 +13,7 @@ function Post_login(){
                 window.location.href="/index";
             }
             else{
-                $('#alert-message').text(jsonText["message"]);
+                $('#alert-message').text(jsonText["message"]+jsonText["errorcode"]);
                 $('#login-alert').show();
             }
         }
