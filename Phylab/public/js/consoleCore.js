@@ -190,7 +190,7 @@ $('#button-save-script').click(function () {
         return false;
     }
    // $("#labdoc").html(tableedit.getValue());
-    $.post('./report/updatereport', {
+    $.post('./console/updatereport', {
         'reportId': CUR_SUBLAB,
         'reportScript': pyedit.getValue(),
         'reportHtml': tableedit.getValue(),
@@ -212,7 +212,7 @@ $('#button-push-script').click(function () {
     }
 
 
-    $.post('./report/confirmReport', {
+    $.post('./console/confirmReport', {
         'reportId': CUR_SUBLAB
     }).done(function (data) {
         alert(data.message);
@@ -432,7 +432,7 @@ $("#btn-delete-confirm").click(function () {
         else
         {
             //delete
-            $.post("./report/delete", {
+            $.post("./console/delete", {
                 'id':CUR_SUBLAB
             }).done(function (data) {
                 alert(data.message+data['errorcode']);

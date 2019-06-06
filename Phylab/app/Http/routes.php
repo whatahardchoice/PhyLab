@@ -190,22 +190,22 @@ Route::get('/report/download/{experimentId}/{link}',
     'middleware'    =>  'auth'
 	]);
 
-Route::post('/report/updatereport',
+Route::post('/console/updatereport',
 	[
-    'uses'  =>  'ReportController@updateReport',
+    'uses'  =>  'ConsoleController@updateReport',
     'middleware'    =>  'auth'
 	]);
 
-Route::post('/report/confirmReport',
+Route::post('/console/confirmReport',
     [
-    'uses'  =>  'ReportController@confirmReport',
+    'uses'  =>  'ConsoleController@confirmReport',
     'middleware'    =>  'auth'
     ]);
 
 
-Route::post('/report/delete',
+Route::post('/console/delete',
     [
-        'uses'=>'ReportController@deleteUnpublishedReport',
+        'uses'=>'ConsoleController@deleteUnpublishedReport',
         'middleware' => 'auth'
     ]);
 
