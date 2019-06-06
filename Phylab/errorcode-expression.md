@@ -7,6 +7,9 @@ errorcode-expression
 -----|-------------------------------|------------------|-----
 0000 |无错误                         |无                 |无
 -----|-------------------------------|------------------|-----
+7101|登陆失败|PhylabAuthController.php|postLogin
+7102|注册请求无效|PhylabAuthController.php|postRegister
+-----|-------------------------------|------------------|-----
 7201|用户信息更新错误，数据库操作失败   |UserController.php|update|
 7202|头像文件流异常                   |UserController.php|setAvatar
 7203|数据库操作异常                   |UserController.php|setAvatar
