@@ -36,7 +36,7 @@ class PhylabAuthController extends Controller {
             return response()->json(["status"=>SUCCESS_MESSAGE]);
         }
         else{
-            return response()->json(["status"=>FAIL_MESSAGE]);
+            return response()->json(["status"=>FAIL_MESSAGE,"errorcode"=>"7101"]);
             //e_code throw new AuthenticationFailException();
         }
     }
@@ -62,7 +62,7 @@ class PhylabAuthController extends Controller {
         postCheck($validatorRules,Config::get('phylab.validatorMessage'),$validatorAttributes);
         }
         catch(InvalidRequestInputException $e){
-            return response()->view('auth.register',["status"=>FAIL_MESSAGE,"message"=>json_decode($e->getMessage())]);
+            return response()->view('auth.register',["status"=>FAIL_MESSAGE,"errorcode"=>"7102","message"=>json_decode($e->getMessage())]);
         }
         Auth::login($this->create(Request::all()));
         return redirect('/index');
