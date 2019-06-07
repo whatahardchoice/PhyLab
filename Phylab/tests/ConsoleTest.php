@@ -3,10 +3,13 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Http\UploadedFile;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Report;
+//use App\Http\Requests;
+use App\Http\Controllers\ConsoleController;
+use Illuminate\Http\Request ;
 
 class ConsoleTest extends TestCase
 {
@@ -113,7 +116,7 @@ class ConsoleTest extends TestCase
             ->see('实验表格HTML')
             ->see('Python脚本')
             ->see('保存实验')
-            ->see('运行测试')
+            //->see('运行测试')
             ->see('发布实验');
 
         //函数返回数据是否正确
@@ -143,8 +146,16 @@ class ConsoleTest extends TestCase
      * 测试getTable
      */
     public function testGetTable(){
-
-        //错误实验id（进入catch分支）
+        //未登录
+        $this->visit('logout') ;
+        $this->get('/getTable')
+            ->assertRedirectedTo('/index');
+        //登录，错误实验id（进入catch分支）
+        $this->visit('/login')
+            ->see('登录')
+            ->type($this->gen_admin_email , 'email')
+            ->type($this->gen_admin_password , 'password')
+            ->press('login-submit');
         $_GET['id'] = $this->report_id_err ;
         $this->visit('/getTable')
             ->seeJson([
@@ -463,27 +474,154 @@ class ConsoleTest extends TestCase
                 'message' => "上传失败，没有找到文件！",
             ]);
 
-        //登录有文件
-        $_POST['labID'] = '2222222';
+        //登录有文件,大小格式正确
+        $_POST['labID'] = '2134';
         //Storage::fake('prepare_pdf');  // 伪造目录
         //$pdf = Storage::disk('public')->get('1011.pdf') ;
-        $pdf = new SplFileInfo('prepare_pdf/phylab_test.pdf') ;
-        self::assertTrue($pdf instanceof SplFileInfo && $pdf->getPath() != '') ;
-        $_FILES["prepare-pdf"]["name"] = 'prepare_pdf/phylab_test.pdf' ;
-        $_FILES["prepare-pdf"]['error'] = 0 ;
-        $_FILES["prepare-pdf"]['type'] = 'pdf' ;
-        $_FILES["prepare-pdf"]['tmp_name'] = 'prepare_pdf/phylab_test.pdf' ;
-        $_FILES["prepare-pdf"]['size'] = 1000 ;
+        //$pdf = new SplFileInfo('prepare_pdf/phylab_test.pdf') ;
+
+        $pdf_info = [
+            'name' => public_path().'/prepare_pdf/phylab_test.pdf' ,
+            'error' => 0 ,
+            'type' => 'pdf' ,
+            'size' => 100000 ,
+            'tmp_name' => public_path().'/prepare_pdf/phylab_test.pdf' ,
+        ] ;
+        //var_dump($pdf_info['name']) ;
+        $pdf = new UploadedFile($pdf_info['tmp_name'], $pdf_info['name'], $pdf_info['type'], $pdf_info['size'], $pdf_info['error'] , true);
+        self::assertTrue($pdf instanceof UploadedFile) ;
+        $file_arr = [
+            'prepare-pdf' => $pdf ,
+        ] ;
+        $request = Request::create(
+            $this->currentUri, 'POST', ['labID'=>'2134'],
+            [], $file_arr, array_replace($this->serverVariables, []), null
+        );
+        self::assertTrue($request->hasFile('prepare-pdf')) ;
+        $file = $request->file('prepare-pdf') ;
+
+        //var_dump($file->getFileInfo()) ;
+        //var_dump($file) ;
+
+        //var_dump(phpinfo()) ;
+        ///etc/php/7.0/cli/php.ini
+        //self::assertTrue(is_uploaded_file($file->getPathname())) ;
+
+        //$file->move(Config::get('phylab.preparePath') , '4444.pdf') ;
+        //array_push($file_arr , $pdf) ;
+        //$pdf = new SplFileInfo('prepare_pdf/phylab_test.pdf') ;;
+        $response = $this->call('POST' , '/console/uploadPre' , ['labID'=>'2134'] , [] , $file_arr);
+        $data = $response->getData() ;
+        //var_dump($data->message) ;
+        self::assertEquals('上传成功' , $data->message) ;
+        self::assertEquals(SUCCESS_MESSAGE , $data->status) ;
+        self::assertTrue(Storage::disk('local_public')->exists('prepare_pdf/'.'2134.pdf'));
+        exec("mv ".public_path().'/prepare_pdf/'.'2134.pdf'.' '.public_path().'/prepare_pdf/'.'phylab_test.pdf',$output,$reval1);
+
+        //有文件，大小或格式错误
+        //创建一个测试txt文件
+        exec('touch '.public_path().'/prepare_pdf/'.'test.txt',$output,$reval1);
+        $pdf_info = [
+            'name' => public_path().'/prepare_pdf/test.txt' ,
+            'error' => 0 ,
+            'type' => 'txt' ,
+            'size' => 100000 ,
+            'tmp_name' => public_path().'/prepare_pdf/test.txt' ,
+        ] ;
+        $pdf = new UploadedFile($pdf_info['tmp_name'], $pdf_info['name'], $pdf_info['type'], $pdf_info['size'], $pdf_info['error'] , true);
+        $file_arr = [
+            'prepare-pdf' => $pdf ,
+        ] ;
+        $response = $this->call('POST' , '/console/uploadPre' , ['labID'=>'2134'] , [] , $file_arr);
+        $data = $response->getData() ;
+        self::assertTrue(!Storage::disk('local_public')->exists('prepare_pdf/'.'2134.pdf')) ;
+        self::assertEquals('上传失败，文件格式或大小不符合要求！' , $data->message) ;
+        self::assertEquals('7306' , $data->errorcode) ;
+        self::assertEquals(FAIL_MESSAGE , $data->status) ;
+        //删除创建的测试文件
+        exec('rm -rf '.public_path().'/prepare_pdf/'.'test.txt',$output,$reval1);
+        //$res = $this->call('POST' , '/console/uploadPre') ;
+        //var_dump($res->getData()) ;
+        //self::assertEquals('7307' , $res->getData()->errorcode) ;
+        //self::assertTrue($pdf instanceof SplFileInfo && $pdf->getPath() != '') ;
+        /*
+        $_FILES["prepare-pdf"]["name"] = $pdf_info['name'] ;
+        $_FILES["prepare-pdf"]['error'] = $pdf_info['error'] ;
+        $_FILES["prepare-pdf"]['type'] = $pdf_info['type'] ;
+        $_FILES["prepare-pdf"]['tmp_name'] = $pdf_info['tmp_name'] ;
+        $_FILES["prepare-pdf"]['size'] = $pdf_info['size'] ;
+        */
+        //$_FILES['prepare-pdf'] = $pdf ;
+        //Request::capture() ;
+        //self::assertTrue(Request::hasFile('prepare-pdf')) ;
+        //$request = Illuminate\Http\Request::capture()  ;
+        //self::assertTrue($request->hasFile('prepare-pdf')) ;
+
+        //$_POST['test'] = 'test' ;
         //$pdf = UploadedFile::fake()->image('2134.pdf');  // 伪造上传图片
         $this->post('/console/uploadPre' , [
             'prepare-pdf' => $pdf ,
         ])->seeJson([
-            //'status' => FAIL_MESSAGE ,
+            'status' => FAIL_MESSAGE ,
             //'message' => "上传失败，文件格式或大小不符合要求！",
             //'message' => 'prepare_pdf/phylab_test.pdf',
+            'message' => "上传失败，没有找到文件！",
         ]) ;
 
-        //Storage::disk('prepare_pdf')->assertExists('/prepare_pdf/2134.pdf');
+        /*
+        //\Illuminate\Http\Request::capture() ;
+        //\App\Http\Requests\Request::capture() ;
+        self::assertTrue(\Illuminate\Http\Request::hasFile('prepare-pdf')) ;
+        $con = new ConsoleController() ;
+        $res = $con->uploadPreparePdf();
+        $data = ["status"=>FAIL_MESSAGE,"message"=>"上传失败，没有找到文件！","errorcode"=>"7307"];
+        $data = response()->json($data) ;
+        self::assertEquals($data , $res) ;
+        */
+
+    }
+
+    /**
+     *
+     * 测试尝试
+     */
+    public function testTest(){
+        $this->visit('/login')
+            ->see('登录')
+            ->type($this->super_admin_email , 'email')
+            ->type($this->super_admin_password , 'password')
+            ->press('登录') ;
+        $this->post('/user' , [
+            'introduction' => 'test' ,
+        ]) ;
+
+        $pdf_info = [
+            'name' => public_path().'/prepare_pdf/phylab_test.pdf' ,
+            'error' => 0 ,
+            'type' => 'pdf' ,
+            'size' => 100000000 ,
+            'tmp_name' => public_path().'/prepare_pdf/phylab_test.pdf' ,
+        ] ;
+
+        $pdf = new UploadedFile($pdf_info['tmp_name'], $pdf_info['name'], $pdf_info['type'], $pdf_info['size'], $pdf_info['error']);
+        $this->visit('console')
+             ->see('上传实验预习报告')
+             //->press('上传实验预习报告')
+             ->see('上传')
+             ->attach($pdf_info['name'] , 'prepare-pdf');
+             //->press('上传') ;
+            /*
+             ->post('/console/uploadPre')
+             ->seeJson([
+                'status' => FAIL_MESSAGE ,
+                //'message' => "上传失败，文件格式或大小不符合要求！",
+                //'message' => 'prepare_pdf/phylab_test.pdf',
+                'message' => "上传失败，没有找到文件！",
+             ]) ;
+            */
+             //->press('btn-upload-preview');
+        //$this->visit('/logout') ;
+
     }
 
 
