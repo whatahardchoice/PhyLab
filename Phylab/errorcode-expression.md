@@ -58,5 +58,7 @@ errorcode-expression
 8001|ajax.fail()网络问题|consoleCore.js
 8002|ajax.fail()网络问题|desexp.js
 8003|ajax.fail()网络问题|reportCore.js
+8004|ajax.fail()网络问题|user.js
+
 
 
