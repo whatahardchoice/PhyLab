@@ -71,7 +71,7 @@ function initReportPage() {
                 })
 
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
             });
             $.ajax('./getScript', {
                 data: {'id': CUR_SUBLAB},
@@ -82,7 +82,7 @@ function initReportPage() {
                 pyedit.setValue(data['contents']);
                 pyedit.refresh();
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
             });
             $.ajax('./getTex', {
                 data: {'id': CUR_SUBLAB},
@@ -93,7 +93,7 @@ function initReportPage() {
 				latexedit.setValue(data['contents']);
 				latexedit.refresh();
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
             });
             $.ajax('./getMD', {
                 data: {'id': CUR_SUBLAB},
@@ -104,11 +104,11 @@ function initReportPage() {
                 mdedit.setValue(data['contents']);
                 mdedit.refresh();
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
             });
         });
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
     });
 }
 
@@ -178,7 +178,7 @@ $('#create_sublab').click(function (){
 		    alert(data.msg+data['errorcode']);
 		$('#collection-folder').modal('hide');
 	}).fail(function (xhr, status) {
-		alert('失败: ' + xhr.status + ', 原因: ' + status);
+		alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
 	});	
 });
 
@@ -199,7 +199,7 @@ $('#button-save-script').click(function () {
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
     });
 });
 
@@ -217,7 +217,7 @@ $('#button-push-script').click(function () {
     }).done(function (data) {
         alert(data.message);
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
     });
 });
 
@@ -279,7 +279,7 @@ $("#btn-upload-preview").click(function () {
             alert(data.message+data['errorcode']);
         })
         .fail(function (xhr, status) {
-            alert('失败: ' + xhr.status + ', 原因: ' + status);
+            alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
         });
 
     $('#upload_preview_modal').modal('hide'); //or  $('#IDModal').modal('hide');
@@ -334,7 +334,7 @@ $("#btn-test-generate-tex").click(function () {
         $('#modal-error-log').modal('show');
 
     }).fail(function (xhr, status) {
-        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status+'8001');
     });
 });
 
@@ -388,7 +388,7 @@ $("#btn-test-generate-md").click(function () {
         $('#modal-error-log').modal('show');
 
     }).fail(function (xhr, status) {
-        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status+'8001');
     });
 });
 
@@ -438,7 +438,7 @@ $("#btn-delete-confirm").click(function () {
                 alert(data.message+data['errorcode']);
                 location.reload();
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8001');
             });
         }
         $('#modal-delete-confirm').modal('hide');

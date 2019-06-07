@@ -27,7 +27,7 @@ function switchContent() {
         //     window.location.href = 'login';
         // }
         // else
-        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status);
+        alert('AJAX POST失败: ' + xhr.status + ', 原因: ' + status+'8002');
     });
 
 }
