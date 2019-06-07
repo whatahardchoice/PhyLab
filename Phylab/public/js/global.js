@@ -65,7 +65,7 @@
 	    xmlhttp.open("POST",url,true);
 	    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	    xmlhttp.setRequestHeader("X-Requested-With","XMLHttpRequest");
-	    xmlhttp.send(postData);
+	    xmlhttp.send(postData);f
 	}
 	function cp(filePath,ishtml){
 		if(!ishtml){

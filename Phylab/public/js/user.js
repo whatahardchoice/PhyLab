@@ -16,7 +16,7 @@ $(function() {
             // Optionally alert the user of success here...
             alert('更新成功');
         }).fail(function(data) {
-            alert("更新失败");
+            alert("更新失败"+'8004');
         });
     });
 });
@@ -56,7 +56,7 @@ $("#btn-upload-avatar").click(function (){
 
         })
         .fail(function (xhr, status) {
-            alert('失败: ' + xhr.status + ', 原因: ' + status);
+            alert('失败: ' + xhr.status + ', 原因: ' + status+'8004');
         });
 
     return false;

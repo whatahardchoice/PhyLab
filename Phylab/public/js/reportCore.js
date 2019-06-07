@@ -121,11 +121,11 @@ function initReportPage() {
                 $('#btn-group-comment-group').show();
                 CUR_COMMENT_GROUPS_INDEX = 0;
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
             });
         });
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
     });
 }
 
@@ -210,7 +210,7 @@ $('#button-generate-latex').click(function () {
         }
         else if(this.readyState==4 && this.status!=200) {
             $('#wait-report').fadeOut();
-            errorFunction("生成报告失败readyState==4 status!=200");
+            errorFunction("生成报告失败");
         }
     });
     $('#modal-report-select').modal('hide');
@@ -255,7 +255,7 @@ $('#button-generate-markdown').click(function () {
         }
         else if(this.readyState==4 && this.status!=200) {
             $('#wait-report').fadeOut();
-            errorFunction("生成报告失败readyState==4 status!=200");
+            errorFunction("生成报告失败"+'8003');
         }
     });
 
