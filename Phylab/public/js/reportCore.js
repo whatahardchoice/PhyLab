@@ -210,7 +210,7 @@ $('#button-generate-latex').click(function () {
         }
         else if(this.readyState==4 && this.status!=200) {
             $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
+            errorFunction("生成报告失败readyState==4 status!=200");
         }
     });
     $('#modal-report-select').modal('hide');
@@ -255,7 +255,7 @@ $('#button-generate-markdown').click(function () {
         }
         else if(this.readyState==4 && this.status!=200) {
             $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
+            errorFunction("生成报告失败readyState==4 status!=200");
         }
     });
 
