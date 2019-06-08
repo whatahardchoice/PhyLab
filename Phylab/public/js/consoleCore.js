@@ -125,26 +125,10 @@ function recordTableValue() {
         inputs_val = {};
         $('#labdoc table input').each(function () {
             inputs_val[this.id] = $(this).val();
-        })
+        });
         localStorage.setItem($('#username').text() + CUR_SUBLAB + '-table', JSON.stringify(inputs_val));
     }
 }
-
-$('#button-view-preparation').click(function () {
-	if (!showCode) {
-        $('#labdoc').hide();
-		cmdiv.show();
-		myCodeMirror.refresh();
-		showCode=1;
-		$('#pv-button-text').html('预览数据表');
-	} else {
-		$('#labdoc').html(myCodeMirror.getValue());
-        $('#labdoc').show();
-		cmdiv.hide();
-		$('#pv-button-text').html('查看数据表代码');
-		showCode=0;
-	}
-});
 
 $('#collect-report').click(function () {
     if($(this).children('.sr-only').text()=='y'){
