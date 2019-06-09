@@ -55,6 +55,8 @@ errorcode-expression
 7601|身份验证成功|DesexpController.php|index
 7602|未找到实验|DesexpController.php|getDesexp
 -----|-------------------------------|------------------|-----
+7701|没有权限更新公告栏|IndexController.php|modifyBulletin|
+-----|-------------------------------|------------------|-----
 8001|ajax.fail()网络问题|consoleCore.js|所有函数
 8002|ajax.fail()网络问题|desexp.js|所有函数
 8003|ajax.fail()网络问题|reportCore.js|所有函数

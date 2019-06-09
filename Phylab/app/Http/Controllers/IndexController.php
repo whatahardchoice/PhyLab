@@ -19,12 +19,12 @@ class IndexController extends Controller
     {
         //显示主页
         $data = ["auth" => false ,"username"    =>  "", "admin"=>false,"errorcode"=>"0000", "bulletin"=>""];
+        $data["bulletin"] = file_get_contents(public_path()."/bulletin.html");
         if(Auth::check()){
             //ToDo
             $data["auth"] = true;
             $data["username"] = Auth::user()->name;
             $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->get()->count())>0);
-            $data["bulletin"] = file_get_contents(public_path()."/bulletin.html");
             if ($isAdmin)
                 $data["admin"] = true;
         }
@@ -69,6 +69,7 @@ class IndexController extends Controller
             $data['status'] = SUCCESS_MESSAGE;
             $data['message'] = "更新成功";
         }
+        return response()->json($data);
     }
 
 }

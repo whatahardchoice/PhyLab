@@ -6,34 +6,56 @@
   <div class="banner-container">
     <div class="container">
 
-      <div id="bulletin-board" class="col-xs-12 col-md-6">
-
-
+      <div id="bulletin-board" class="col-xs-12 col-md-6 bulletin">
           <h3 style="margin:5px; text-align: center">公告栏</h3>
+        @if($admin)
+          <button id="btn-bulletin-edit" class="btn btn-success" style="position:absolute;top:5%;right:5%">编辑</button>
+        @endif
           <div id="bulletin-content" style="text-align: center">
-
-            <h5>设计性实验复习页面已上线！无需注册即可查看，欢迎体验！<br>（推荐使用电脑浏览器查看，移动端目前仍存在一些小问题）</h5>
+            <!--<h5>设计性实验复习页面已上线！无需注册即可查看，欢迎体验！<br>（推荐使用电脑浏览器查看，移动端目前仍存在一些小问题）</h5>-->
+            {!! $bulletin !!}
 
           </div>
+      </div>
 
+      @if($admin)
+
+
+      <div  id="bulletin-board-edit" class="col-xs-12 col-md-5 col-md-offset-1 bulletin">
+        <h3 style="margin:5px; text-align: center">编辑公告</h3>
+        <button id="btn-bulletin-save" class="btn btn-success" style="position:absolute;top:5%;right:5%">保存</button>
+        <button id="btn-bulletin-cancel" class="btn btn-danger" style="position:absolute;top:5%;left:5%">取消</button>
+        <div style="position:absolute;top:20%;left:5%;right:5%;bottom:10%">
+          <textarea id="textarea-bulletin-edit" style="width:100%;height:100%">{!! $bulletin !!}</textarea>
+        </div>
+
+
+        </div>
+
+        @endif
+
+      <div class="col-xs-12 col-md-5 col-md-offset-1" @if (!$auth) style="display: block" @else style="display: none" @endif>
+        <form method="post">
+          <div class="form-group">
+            <input class="form-control" name="name" id="name" type="text" placeholder="用户名">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="email" id="email" type="email" placeholder="邮箱">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="password" id="password" type="password" placeholder="密码">
+          </div>
+          <button id='quick-regist' class="btn register" type="button">注册</button>
+          <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</p>
+        </form>
+      </div>
 
 
       </div>
-        <div class="col-xs-12 col-md-5 col-md-offset-1" @if (!$auth) style="display: block" @else style="display: none" @endif>
-          <form method="post">
-            <div class="form-group">
-              <input class="form-control" name="name" id="name" type="text" placeholder="用户名">
-            </div>
-            <div class="form-group">
-              <input class="form-control" name="email" id="email" type="email" placeholder="邮箱">
-            </div>
-            <div class="form-group">
-              <input class="form-control" name="password" id="password" type="password" placeholder="密码">
-            </div>
-            <button id='quick-regist' class="btn register" type="button">注册</button>
-            <p class="tip">点击“注册”，表示您已经同意我们的隐私条款</p>
-          </form>
-        </div>
+
+
+
+
       </div>
     </div>
   </div>
@@ -379,6 +401,10 @@
 <script type="text/javascript">$('.carousel').carousel()</script>
 <script src="./js/statistics.js"></script>
 <script src="./js/regist.js"></script>
+@if($admin)
+<script src="./js/bulletin.js"></script>
+@endif
+
 </body>
 </html>
 @stop

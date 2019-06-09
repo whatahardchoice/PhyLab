@@ -72,7 +72,7 @@
 
 /*首页公告栏*/
 
-#bulletin-board {
+.bulletin {
   background-color: white;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
   min-height: 350px;
@@ -80,6 +80,11 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+}
+
+#bulletin-board-edit {
+  display: none;
+
 }
 
 #bulletin-content {
