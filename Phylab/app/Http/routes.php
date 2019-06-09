@@ -273,3 +273,12 @@ Route::get('/desexp/{id}',
        'uses' => 'DesexpController@getDesexp',
        //'middleware' => 'auth'
     ]);
+
+/**
+ * 公告栏
+ */
+Route::post("/modifyBulletin",
+    [
+        'uses'=>'IndexController@modifyBulletin',
+        'middleware' => 'auth'
+    ]);
