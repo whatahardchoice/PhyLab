@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Config;
 
 class DebugScriptController extends Controller {
 
@@ -27,7 +28,7 @@ class DebugScriptController extends Controller {
     public function getTable()
     {
         $id=$_GET['id'];
-        $htmlFile = "/var/www/Phylab/resources/views/report/".$id.".html";
+        $htmlFile = Config::get("phylab.experimentViewPath").$id.".html";
         $file = fopen($htmlFile, "r");
         $html = fread($file,filesize($htmlFile));
         return $html;
