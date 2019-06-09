@@ -121,11 +121,11 @@ function initReportPage() {
                 $('#btn-group-comment-group').show();
                 CUR_COMMENT_GROUPS_INDEX = 0;
             }).fail(function (xhr, status) {
-                alert('失败: ' + xhr.status + ', 原因: ' + status);
+                alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
             });
         });
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
     });
 }
 
@@ -255,7 +255,7 @@ $('#button-generate-markdown').click(function () {
         }
         else if(this.readyState==4 && this.status!=200) {
             $('#wait-report').fadeOut();
-            errorFunction("生成报告失败");
+            errorFunction("生成报告失败"+'8003');
         }
     });
 
@@ -309,7 +309,7 @@ function sendComment(article_id, message) {
     }).done(function (data) {
         post_hash = JSON.parse(data)['rsm']['new_post_hash'];
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
     });
     $.post(G_BASE_URL + '/wecenter/?/article/ajax/save_comment/', {
         'post_hash': post_hash,
@@ -330,6 +330,7 @@ function sendComment(article_id, message) {
     }).fail(function (xhr, status) {
         $('#reply-notice-check').attr('class', 'fa fa-exclamation');
         $('#reply-notice-text').text('评论失败');
+        alert("评论失败8003");
     }).always(function () {
         $('#reply-notice').fadeIn();
         setTimeout('$(\'#reply-notice\').fadeOut()', 1500);
@@ -374,7 +375,7 @@ function loadComments(article_id, group_id) {
         else
 			$('#button-comment-reply').attr('disabled','1');
     }).fail(function (xhr, status) {
-        alert('失败: ' + xhr.status + ', 原因: ' + status);
+        alert('失败: ' + xhr.status + ', 原因: ' + status+'8003');
     });
 }
 

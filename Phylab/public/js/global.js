@@ -1,8 +1,8 @@
 	function browser(){
 		var userAgent = navigator.userAgent; 
 		var isOpera = userAgent.indexOf("Opera") > -1;
-		var browser_name=navigator.appName
-		var b_version=navigator.appVersion
+		var browser_name=navigator.appName;
+		var b_version=navigator.appVersion;
 		var version=b_version.split(";");
 		var trim_Version=version.length>1?version[1].replace(/[ ]/g,""):"UPON"; 
 		if (isOpera) {
@@ -29,38 +29,16 @@
 			}
 		}
 	}
-	function SetDisable(index,if_disable){
-		var item = document.getElementById(index);
-		if(if_disable)
-			item.setAttribute("disabled","disabled");
-		else
-			item.removeAttribute("disabled")
-	}
-	
-	function setShowHide(show_index,hide_index,time_offset){
-		var show_item = document.getElementById(show_index);
-		var hide_item = document.getElementById(hide_index);
-		show_item.style.display = "block";
-		hide_item.style.display = "none";
-		if(time_offset<0)return;
-		else setTimeout(_setShowHide(hide_index,show_index),time_offset);
-	}
-	function _setShowHide(show_index,hide_index){
-		return function(){
-			setShowHide(show_index,hide_index,-1)
-		}
-	}
 
 	function PostAjax(url,postData,cfunc){
 	    var xmlhttp;
-	        if (window.XMLHttpRequest)
-	          {// code for IE7+, Firefox, Chrome, Opera, Safari
-	          xmlhttp=new XMLHttpRequest();
-	          }
-	        else
-	          {// code for IE6, IE5
-	          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	          }
+	    if (window.XMLHttpRequest)
+	    {// code for IE7+, Firefox, Chrome, Opera, Safari
+	    	xmlhttp=new XMLHttpRequest();
+	    }
+	    else {// code for IE6, IE5
+	    	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	    }
 	    xmlhttp.onreadystatechange=cfunc;
 	    xmlhttp.open("POST",url,true);
 	    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

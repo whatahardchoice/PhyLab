@@ -72,7 +72,7 @@ class ConsoleController extends Controller {
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7405";
+            $data["errorcode"]="7301";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
@@ -85,7 +85,7 @@ class ConsoleController extends Controller {
 
         if ($isPubReport && !$isSuperAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7406";
+            $data["errorcode"]="7302";
             $data['message'] = "没有更新权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -110,7 +110,7 @@ class ConsoleController extends Controller {
         }
         else{
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7407";
+            $data["errorcode"]="7303";
             $data['message'] = "更新失败(wrong_id)";
         }
         return response()->json($data);
@@ -138,7 +138,7 @@ class ConsoleController extends Controller {
         $isAdmin=Auth::check()&&((Console::where('email','=',Auth::user()->email)->where('atype','=','2')->get()->count())>0);
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7408";
+            $data["errorcode"]="7304";
             $data['message'] = "没有发布权限，请联系超级管理员";
             return response()->json($data);
         }
@@ -170,7 +170,7 @@ class ConsoleController extends Controller {
         }
         else{
             $data['status'] =FAIL_MESSAGE;
-            $data["errorcode"]="7409";
+            $data["errorcode"]="7305";
             $data['message'] = "发布失败";
         }
         return response()->json($data);
@@ -195,7 +195,7 @@ class ConsoleController extends Controller {
         $isAdmin=$this->userConfirm();
         if(!$isAdmin){
             $data['status'] = FAIL_MESSAGE;
-            $data["errorcode"]="7410";
+            $data["errorcode"]="7306";
             $data['message'] = "没有权限";
             return response()->json($data);
         }
@@ -205,7 +205,7 @@ class ConsoleController extends Controller {
         $report = Report::where('experiment_id','=',Request::get('id'))->first();
         if(!$report){
             $data["status"] = FAIL_MESSAGE;
-            $data["errorcode"]="7411";
+            $data["errorcode"]="7307";
             $data["message"] = "实验Id不存在";
             return response()->json($data);
         }
@@ -213,7 +213,7 @@ class ConsoleController extends Controller {
         if ($report->status != 0)
         {
             $data["status"] = FAIL_MESSAGE;
-            $data["errorcode"]="7412";
+            $data["errorcode"]="7308";
             $data["message"] = "实验已发布，请联系超级管理员";
             return response()->json($data);
         }
@@ -280,7 +280,7 @@ class ConsoleController extends Controller {
 			fclose($file);
 		}catch(Exception $e) {
 			$result['status']=FAIL_MESSAGE;
-			$result['errorcode']="7301";
+			$result['errorcode']="7309";
 		}
 		return response()->json($result);
     }
@@ -313,7 +313,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
-            $result['errorcode']="7302";
+            $result['errorcode']="7310";
         }
         /*
 		if ($file==FALSE)
@@ -355,7 +355,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
-            $result['errorcode']="7303";
+            $result['errorcode']="7311";
         }
         /*
         if ($file==FALSE)
@@ -398,7 +398,7 @@ class ConsoleController extends Controller {
             fclose($file);
         }catch (Exception $e){
             $result['status']=FAIL_MESSAGE;
-            $result['errorcode']="7304";
+            $result['errorcode']="7312";
         }
         /*
         if ($file==FALSE)
@@ -425,7 +425,7 @@ class ConsoleController extends Controller {
         $lab_id=$_GET['LId'];
         $lab_name=$_GET['LName'];
         $lab_tag=$_GET['LTag'];
-		$result=array('status'=>FAIL_MESSAGE,'errorcode'=>'7305','msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
+		$result=array('status'=>FAIL_MESSAGE,'errorcode'=>'7313','msg'=>"该报告号码已经存在" , 'message' => "创建新报告失败");
 		if ((Report::where('experiment_id','=',$lab_id)->get()->count())==0) {
             /**
              * Move the three files to the right dictionary
@@ -504,14 +504,14 @@ class ConsoleController extends Controller {
             else
             {
                 $data["status"]=FAIL_MESSAGE;
-                $data["errorcode"]="7306";
+                $data["errorcode"]="7314";
                 $data["message"] = "上传失败，文件格式或大小不符合要求！";
             }
         }
         else
         {
             $data["status"]=FAIL_MESSAGE;
-            $data["errorcode"]="7307";
+            $data["errorcode"]="7315";
             $data["message"] = "上传失败，没有找到文件！";
         }
 

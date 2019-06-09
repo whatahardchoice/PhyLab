@@ -127,6 +127,7 @@ class ReportController extends Controller
             Storage::put("xml_tmp/".$tmpName.'.xml',Request::get('xml'));
         }
         catch(Exception $e){
+            $data["errorcode"]="7401";
             throw new FileIOException();
         }
         // $report = Report::find(Request::get('id'));
@@ -174,7 +175,7 @@ class ReportController extends Controller
             }
         }else{
             $data["status"]=FAIL_MESSAGE;
-            $data["errorcode"]="7401";
+            $data["errorcode"]="7402";
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
 
@@ -249,6 +250,7 @@ class ReportController extends Controller
             Storage::put("xml_tmp/".$tmpName.'.xml',Request::get('xml'));
         }
         catch(Exception $e){
+            $data["errorcode"]="7403";
             throw new FileIOException();
         }
         // $report = Report::find(Request::get('id'));
@@ -272,7 +274,7 @@ class ReportController extends Controller
             }
         }else{
             $data["status"]=FAIL_MESSAGE;
-            $data["errorcode"]="7402";
+            $data["errorcode"]="7404";
             $data["message"]="生成脚本生成失败: ". $system;
             $data["test"]= $test;
             $data["errorLog"]=$output;
@@ -302,7 +304,7 @@ class ReportController extends Controller
             $data["prepareLink"]=$report->prepare_link;
         }
         else{
-            $data["errorcode"]="7403";
+            $data["errorcode"]="7405";
             throw new NoResourceException();
         }
         #return view("report.show",$data);
@@ -324,7 +326,7 @@ class ReportController extends Controller
             $data["id"] = $id;
         }
         else{
-            $data["e"]="7404";
+            $data["errorcode"]="7406";
             throw new NoResourceException();
         }
         return view("report.xmlForm.".$experimentId,$data);
