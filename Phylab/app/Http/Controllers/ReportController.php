@@ -14,6 +14,8 @@ use App\Exceptions\App\NoResourceException;
 use Exception;
 use Config;
 use DB;
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
+
 class ReportController extends Controller
 {
     /**
@@ -351,8 +353,16 @@ class ReportController extends Controller
     {
         $id=$_GET['id'];
         $htmlFile = Config::get("phylab.experimentViewPath").$id.".html";
-        $file = fopen($htmlFile, "r");
-        $html = fread($file,filesize($htmlFile));
+        try {
+            $file = fopen($htmlFile, "r");
+            $html = fread($file,filesize($htmlFile));
+        } catch (Exception $e) {
+            $data = ["status"=>''];
+            $data["status"]=FAIL_MESSAGE;
+
+            return response()->json($data);
+        }
+
         return $html;
     }
 

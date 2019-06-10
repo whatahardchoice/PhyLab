@@ -255,7 +255,7 @@ v.  将电源电压调成<span class='desexp-span'><text class='desexp-text'>1.4
 
 
 <script>
-  var inners = document.getElementsByClassName("desexp-text");
+  var inners = document.getElementsByClassName("desexp-text");//test
   var myfunction = function () {
       if (this.style.opacity == 1)
           this.style.opacity = "";
@@ -266,6 +266,7 @@ v.  将电源电压调成<span class='desexp-span'><text class='desexp-text'>1.4
       inners[i].addEventListener('click', myfunction, false);
       //inners[i].addEventListener('touchstart', myfunction, false);
   }
+  (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document); // sticky hover fix in iOS
 </script>
 
 </body>
