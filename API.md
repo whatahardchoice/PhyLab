@@ -1,6 +1,6 @@
 # Laravel框架API文档
 
-## 登录注册
+## 登录注册/公告/设计性实验/小工具
 
 ### 登录
 - url: 
@@ -40,9 +40,56 @@
     ```
 - 说明：注册完毕后会默认直接登录。
 
+###获取设计性实验
+- url
+```
+/desexp/{id}
+```
+- 请求方式：GET
+- 内容：
+```
+"id"=>"设计性实验id"
+```
+- 返回方式：json
+- 内容：
+```
+'status'=>'', 'message'=> '', 'id'=>'', 'link'=>'', 'name' => '','errorcode'=>''
+```
+###公告栏
+- url:
+```
+/modifyBulletin
+```
+- 请求方式： POST
+- 内容：
+```
+无
+```
+- 返回方式：json
+- 内容：
+```
+"status"=> "",
+"errorcode"=>"",
+"message" => ""
+```
+###小工具
+- url:
+```
+/tools
+```
+- 请求方式：GET
+- 内容：
+```
+无
+```
+- 返回方式：view
+- 内容：
+```
+小工具主页面
+```
 ## 收藏以及获取收藏
 
-### 收藏报告
+### 收藏夹收藏报告
 - url: 
     ```
     /user/star
@@ -60,7 +107,7 @@
     "status"=>FAIL_MESSAGE && "message"=>'收藏报告失败' && "errorcode"
     ```
 
-### 获取收藏
+### 获取收藏夹
 - url: 
     ```
     /user/star
@@ -76,10 +123,57 @@
     "time" =>'报告生成时间'
     ```
 - 说明：上述返回Json实际上为一个实验报告条目的Json数组，实际返回Json格式为{'0'=>[一个报告],'1'=>[一个报告]}，并且这个数组在数据的“stars”键里。
+###删除收藏
+- url:
+    ```
+	/user/star
+ 	```
+- 请求方式：delete
+- 内容：
+	```
+	"id"=>"需要删除的收藏文件"
+	```
+- 返回方式：json
+- 返回内容：
+	```
+	status;errorcode;messgae
+	```
+
+###展示收藏的报告
+- url:
+	```
+	/user/star/{id}
+	```
+- 请求方式：GET
+- 内容：
+	```	
+	"id"=>"需要展示的收藏报告的id"
+	``` 
+- 返回方式：view页面(html)
+- 返回内容:
+```
+报告文件
+```
+###下载收藏报告
+- url:
+	```
+	/user/star/download/{id}
+	```
+- 请求方式：GET
+- 内容：
+```
+"id"=>"需要展示的收藏报告的id"
+```
+- 返回方式：json
+- 返回内容:
+```
+报告文件
+```
+
 
 ## 个人信息的获取以及更新
 
-### 获取
+### 获取个人信息
 - url: 
     ```
     /user
@@ -104,7 +198,7 @@
     "introduction"=>'介绍'
     ```
 
-### 更新
+### 更新个人信息
 - url: 
     ```
     /user/
@@ -127,6 +221,56 @@
     "status"=>SUCCESS_MESSAGE || "status"=>FAIL_MESSAGE && "errorcode"=>"72.."
     ```
 - 说明：请求内容中可以发送上述Json的任意子集更新对应数据。
+
+###设置头像
+- url:
+```
+/user/avatar
+```
+- 请求方式：POST
+- 内容：
+```
+avatar图像文件
+```
+- 返回方式:json
+- 返回内容：
+```
+$data = ["status"=>"","avatarPath"=>"","message"=>"","errorcode"=>""]
+```
+
+##密码操作
+###填写重置密码用户的邮箱
+- url:
+```
+password/email
+```
+- 请求方式：POST
+- 内容：
+```
+"email"=>"邮箱"
+```
+- 返回方式：return
+- 内容：
+```
+成功或失败的提示信息
+```
+###提交重置密码
+- url:
+```
+password/reset
+```
+- 请求方式：POST
+- 内容：
+```
+'token' => 'required',
+'email' => 'required|email',
+'password' => 'required|confirmed|min:6'
+```
+- 返回方式：redirect重定向
+- 返回内容：
+```
+view页面
+```
 
 ## 实验报告的获取与生成
 
