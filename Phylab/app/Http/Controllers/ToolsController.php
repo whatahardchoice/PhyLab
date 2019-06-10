@@ -10,8 +10,8 @@ class ToolsController extends Controller {
             $data["auth"] = true;
             $data["username"] = Auth::user()->name;
         }
-	//return view('tools.index',$data);		
-	return view('tools.main',$data);		
+	//return view('tools.index',$data);
+	return view('tools.main',$data);
 	}
 
 	// public function main(){

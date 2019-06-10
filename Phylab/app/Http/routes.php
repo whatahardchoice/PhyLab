@@ -60,6 +60,8 @@ Route::get('/index',[
 /***
 // Authentication routes
 ***/
+
+//登陆和登出使用了laravel自带的控制器getLogin和getLogout
 Route::get('/login', [
     'as'    =>  'login',
     'uses'  =>  'Auth\AuthController@getLogin',
@@ -75,7 +77,7 @@ Route::get('/logout', [
 /***
 // Registration routes
 ***/
-
+//注册也使用了laravel自带控制器
 Route::get('/register', [
     'as'    =>  'register',
     'uses'  =>  'Auth\AuthController@getRegister',
@@ -214,7 +216,10 @@ Route::get('/zichen',
 	'as' => 'DebugScript',
 	'uses' => 'DebugScriptController@debug'
 	]);
-Route::get('/table',['uses' => 'DebugScriptController@getTable']);
+Route::get('/table',
+    [
+    'uses' => 'ReportController@getTable'
+    ]);
 
 Route::get('/console',
 	[

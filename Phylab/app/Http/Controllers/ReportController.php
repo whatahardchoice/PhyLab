@@ -342,4 +342,18 @@ class ReportController extends Controller
         return response()->download(Config::get('phylab.tmpReportPath').$link, $experimentId.".pdf");
     }
 
+
+    /**
+     * get input table html file for specific lab
+     *
+     */
+    public function getTable()
+    {
+        $id=$_GET['id'];
+        $htmlFile = Config::get("phylab.experimentViewPath").$id.".html";
+        $file = fopen($htmlFile, "r");
+        $html = fread($file,filesize($htmlFile));
+        return $html;
+    }
+
 }
