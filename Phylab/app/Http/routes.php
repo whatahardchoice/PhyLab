@@ -134,11 +134,6 @@ Route::get('/user/star/download',[
 Route::get('/user/star/download/{id}',[
     'uses'  =>  'StarController@download',
     'middleware'    =>  'auth']);
-/***tiku routes***/
-Route::get('/tiku/tikuxulun.html',[
-    'as' => 'tiku',
-    'uses' => 'TikuController@index',
-    'middleware' => 'auth']);
 /***
 tools routes
 ***/
@@ -164,17 +159,17 @@ Route::get('/getreport',
     'uses'  =>  'ReportController@getAllReport',
     'middleware'    =>  'auth'
 	]);
-Route::get('/report/{id}',
-	[
-    'uses'  =>  'ReportController@show',
-    'middleware'    =>  'auth'
-	]);
-Route::get('/report/edit/{id}',
-	[
-    'as'    =>  'editReport',
-    'uses'  =>  'ReportController@getXmlForm',
-    'middleware'    =>  'auth'
-	]);
+//Route::get('/report/{id}',
+//	[
+//    'uses'  =>  'ReportController@show',
+//    'middleware'    =>  'auth'
+//	]);
+//Route::get('/report/edit/{id}',
+//	[
+//    'as'    =>  'editReport',
+//    'uses'  =>  'ReportController@getXmlForm',
+//    'middleware'    =>  'auth'
+//	]);
 Route::post('/report/createTex',
 	[
     'uses'  =>  'ReportController@createTex',
@@ -185,12 +180,12 @@ Route::post('/report/createMD',
     'uses' =>  'ReportController@createMD',
     'middleware'    =>  'auth'
     ]);
-Route::get('/report/download/{experimentId}/{link}',
-	[
-    'as'    =>  'downloadReport',
-    'uses'  =>  'ReportController@downloadReport',
-    'middleware'    =>  'auth'
-	]);
+//Route::get('/report/download/{experimentId}/{link}',
+//	[
+//    'as'    =>  'downloadReport',
+//    'uses'  =>  'ReportController@downloadReport',
+//    'middleware'    =>  'auth'
+//	]);
 
 Route::post('/console/updatereport',
 	[
@@ -211,11 +206,6 @@ Route::post('/console/delete',
         'middleware' => 'auth'
     ]);
 
-Route::get('/zichen',
-	[
-	'as' => 'DebugScript',
-	'uses' => 'DebugScriptController@debug'
-	]);
 Route::get('/table',
     [
     'uses' => 'ReportController@getTable'
