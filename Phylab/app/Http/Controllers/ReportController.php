@@ -48,7 +48,8 @@ class ReportController extends Controller
             'admin' => $isAdmin];
         $reports = Report::orderBy('experiment_tag')->get();
         foreach ($reports as $report) {
-            if (!$isAdmin&&($report->status&1)==0) continue;
+            if (!$isAdmin&&($report->status&1)==0)
+                continue;
             $rearr = array(
                 "id"=>$report->experiment_id,
                 "experimentName"=>$report->experiment_name,
@@ -291,6 +292,7 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+/*
     public function show($id)
     {
         $data = ["id"   =>  "",
@@ -312,12 +314,14 @@ class ReportController extends Controller
         #return view("report.show",$data);
         return json_encode($data,JSON_UNESCAPED_UNICODE);
     }
+*/
 
     /**
     * return the xml form view from front
     * @param int $id
     * @return \Illuminate\Http\Response
     */
+    /*
     public function getXmlForm($id)
     {
         $data = ["id"   =>  "","errorcode"=>"0000"];
@@ -333,16 +337,19 @@ class ReportController extends Controller
         }
         return view("report.xmlForm.".$experimentId,$data);
     }
+    */
 
     /**
     * download the tmp report.
     * @param string $link
     * @return \Illuminate\Http\Response
     */
+    /*
     public function downloadReport($experimentId,$link)
     {
         return response()->download(Config::get('phylab.tmpReportPath').$link, $experimentId.".pdf");
     }
+    */
 
 
     /**
@@ -362,7 +369,6 @@ class ReportController extends Controller
 
             return response()->json($data);
         }
-
         return $html;
     }
 

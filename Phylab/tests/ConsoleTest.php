@@ -159,7 +159,8 @@ class ConsoleTest extends TestCase
         $_GET['id'] = $this->report_id_err ;
         $this->visit('/getTable')
             ->seeJson([
-                'status' => FAIL_MESSAGE
+                'status' => FAIL_MESSAGE,
+                'errorcode' => '7309' ,
             ]);
 
         //正确实验id
@@ -242,6 +243,40 @@ class ConsoleTest extends TestCase
     }
 
     /**
+     *
+     * 测试getMD
+     */
+    public function testGetMD(){
+
+        //未登录
+        $this->visit('/logout') ;
+        $this->get('/getMD')
+            ->assertRedirectedTo('/index') ;
+
+        //登录，错误实验id
+        $this->visit('/login')
+            ->see('登录')
+            ->type($this->gen_admin_email , 'email')
+            ->type($this->gen_admin_password , 'password')
+            ->press('login-submit');
+        $_GET['id'] = $this->report_id_err ;
+        $this->visit('/getMD')
+            ->seeJson([
+                'status' => FAIL_MESSAGE
+            ]);
+
+        //正确实验id
+        $_GET['id'] = $this->report_id_pub ;
+        $md_file = Config::get('phylab.scriptPath')."markdown/Handle".$this->report_id_pub.".md";
+        $str_md = file_get_contents($md_file);
+        $this->visit('/getMD')
+            ->seeJson([
+                'status' => SUCCESS_MESSAGE ,
+                'contents' => $str_md ,
+            ]) ;
+    }
+
+    /**
      * 测试创建实验
      */
     public function testCreate(){
@@ -308,7 +343,7 @@ class ConsoleTest extends TestCase
 
         //无权限
         $this->visit('logout') ;
-        $this->post('/report/updatereport')
+        $this->post('/console/updatereport')
             ->seeJson([
                 'status' => FAIL_MESSAGE ,
                 'message' => "没有权限" ,
@@ -320,7 +355,7 @@ class ConsoleTest extends TestCase
             ->type($this->gen_admin_email , 'email')
             ->type($this->gen_admin_password , 'password')
             ->press('login-submit');
-        $this->post('/report/updatereport' , [
+        $this->post('/console/updatereport' , [
             'reportId' => $this->report_id_pub ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
@@ -334,7 +369,7 @@ class ConsoleTest extends TestCase
             ->type($this->super_admin_email , 'email')
             ->type($this->super_admin_password , 'password')
             ->press('login-submit');
-        $this->post('/report/updatereport' , [
+        $this->post('/console/updatereport' , [
             'reportId' => $this->report_id_err ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
@@ -346,7 +381,7 @@ class ConsoleTest extends TestCase
         $str_tex = "test" ;
         $str_html = "test" ;
         $report_id = $this->report_id_unpub ;
-        $this->post('/report/updatereport' , [
+        $this->post('/console/updatereport' , [
             'reportId' => $report_id ,
             'reportScript' => $str_py ,
             'reportTex' => $str_tex ,
@@ -380,7 +415,7 @@ class ConsoleTest extends TestCase
             ->type($this->gen_admin_email , 'email')
             ->type($this->gen_admin_password , 'password')
             ->press('login-submit');
-        $this->post('/report/confirmReport')
+        $this->post('/console/confirmReport')
             ->seeJson([
                 'status' => FAIL_MESSAGE ,
                 'message' => "没有发布权限，请联系超级管理员" ,
@@ -392,7 +427,7 @@ class ConsoleTest extends TestCase
             ->type($this->super_admin_email , 'email')
             ->type($this->super_admin_password , 'password')
             ->press('login-submit');
-        $this->post('/report/confirmReport' , [
+        $this->post('/console/confirmReport' , [
             'reportId' => $this->report_id_err ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
@@ -400,7 +435,7 @@ class ConsoleTest extends TestCase
         ]) ;
 
         //超级管理员，正确实验Id
-        $this->post('/report/confirmReport' , [
+        $this->post('/console/confirmReport' , [
             'reportId' => $this->report_id_pub ,
         ])->seeJson([
             'status' => SUCCESS_MESSAGE ,
@@ -416,7 +451,7 @@ class ConsoleTest extends TestCase
 
         //未登录
         $this->visit('logout') ;
-        $this->post('report/delete')
+        $this->post('/console/delete')
             ->seeJson([
                 'status' => FAIL_MESSAGE,
                 'message' => "没有权限" ,
@@ -428,14 +463,14 @@ class ConsoleTest extends TestCase
             ->type($this->super_admin_email , 'email')
             ->type($this->super_admin_password , 'password')
             ->press('login-submit');
-        $this->post('report/delete')
+        $this->post('/console/delete')
             ->seeJson([
                 'status' => FAIL_MESSAGE ,
                 'message' => '实验Id不存在' ,
             ]) ;
 
         //已发布实验
-        $this->post('/report/delete' , [
+        $this->post('/console/delete' , [
             'id' => $this->report_id_pub ,
         ])->seeJson([
             'status' => FAIL_MESSAGE ,
@@ -443,7 +478,7 @@ class ConsoleTest extends TestCase
         ])  ;
 
         //正确的未发布实验
-        $this->post('/report/delete' , [
+        $this->post('/console/delete' , [
             'id' => $this->report_id_unpub ,
         ])->seeJson([
             'status' => SUCCESS_MESSAGE,
@@ -536,7 +571,7 @@ class ConsoleTest extends TestCase
         $data = $response->getData() ;
         self::assertTrue(!Storage::disk('local_public')->exists('prepare_pdf/'.'2134.pdf')) ;
         self::assertEquals('上传失败，文件格式或大小不符合要求！' , $data->message) ;
-        self::assertEquals('7306' , $data->errorcode) ;
+        self::assertEquals('7314' , $data->errorcode) ;
         self::assertEquals(FAIL_MESSAGE , $data->status) ;
         //删除创建的测试文件
         exec('rm -rf '.public_path().'/prepare_pdf/'.'test.txt',$output,$reval1);

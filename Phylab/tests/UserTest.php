@@ -7,10 +7,11 @@ use Illuminate\View\View;
 //use App\Http\Controllers\Auth;
 use App\Models\User;
 
+
 class UserTest extends TestCase
 {
 
-    //use WithoutMiddleware ;
+    use WithoutMiddleware ;
     protected $preserveGlobalState = FALSE;
     protected $runTestInSeparateProcess = TRUE;
 
@@ -39,6 +40,10 @@ class UserTest extends TestCase
      */
     public function  testIndex(){
         //未登录，重定向
+        $this->get('/logout') ;
+        Auth::logout() ;
+        $this->visit('/index')
+             ->see('登录') ;
         $this->get('/user')
              ->assertRedirectedTo('/index');
         //登录
@@ -132,6 +137,11 @@ class UserTest extends TestCase
         self::assertEquals('2016' , $user->grade) ;
         self::assertEquals('1' , $user->sex) ;
         self::assertEquals('test' ,$user->introduction) ;
+        //提交错误信息，异常
+        $this->post('/user' , [
+            'company' => ['test' => null] ,
+        ]) ;
+
         //还原，以确保下次测试的有效性
 
         $this->post('/user' , [
