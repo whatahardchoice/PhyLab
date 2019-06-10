@@ -128,41 +128,284 @@
     ```
 - 说明：请求内容中可以发送上述Json的任意子集更新对应数据。
 
-## 发送实验数据以获取PDF报告
+## 实验报告的获取与生成
 
-### 发送
+### 获取所有实验信息
 - url: 
     ```
-    /report
-    ```
-- 请求方式：POST
-- 内容：
-    ```
-    "id"=>'实验的id',
-    'xml'=>'实验数据的xml'
-    ```
-- 返回方式：Json
-- 内容：
-    ```
-    "status"=> "生成状态",
-    "experimentId" => "生成实验id",
-    "link"  => "生成报告路径",
-    "message" => "生成信息"
-    ```
-
-### 获取
-- url: 
-    ```
-    /report
+    /getreport
     ```
 - 请求方式：GET
-- 内容：无请求内容
 - 返回方式：Json
 - 内容：
     ```
-    "status"=> "生成状态",
-    "id" => "生成实验id",
-    "experimentName"  => "实验的名字",
-    "relatedArticle" => "报告的地址"
+    ["report"=> [
+    		["id"=> "实验编号",
+    		"experimentName" => "实验名称",
+    		"relatedArticle"  => "相关的评论区文章",
+    		"status" => "发布状态（0为未发布，1为发布）"],
+    		[...],
+    		...
+    	]
+    ]
     ```
+
+### 获取实验输入表格
+- url: 
+    ```
+    /table
+    ```
+    
+- 请求方式：GET
+
+- 参数（附加在url后）：
+
+    ```
+    'id'=>'报告编号'
+    ```
+
+- 返回方式：HTML，出错返回json
+
+- 内容：对应报告编号的html表格
+
+### 生成LaTeX报告
+
+* url：
+
+  ```
+  /report/createTex
+  ```
+
+* 请求方式：POST
+
+* 内容：
+
+  ```
+  ['id'=>'实验编号',
+  'xml'=>'实验数据，由前端转为xml']
+  ```
+
+* 返回方式：JSON
+
+* 内容：
+
+  ```
+  ['status'=>'生成状态，success/fail',
+  'experimentId'=>'实验id',
+  'link'=>'pdf文件名',
+  'message'=>'错误信息',
+  'test'=>'实验生成指令',
+  'errorcode'=>'错误编码',
+  'errorLog'=>'控制台使用的后台输出信息',]
+  ```
+
+  
+
+### 生成Markdown报告
+
+- url：
+
+  ```
+  /report/createMD
+  ```
+
+- 请求方式：POST
+
+- 内容：
+
+  ```
+  ['id'=>'实验编号',
+  'xml'=>'实验数据，由前端转为xml']
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'生成状态，success/fail',
+  'experimentId'=>'实验id',
+  'link'=>'html文件名',
+  'message'=>'错误信息',
+  'test'=>'实验生成指令',
+  'errorcode'=>'错误编码',
+  'errorLog'=>'控制台使用的后台输出信息',]
+  ```
+
+
+
+## 控制台
+
+### 新建实验
+
+- url：
+
+  ```
+  /createLab
+  ```
+
+- 请求方式：GET
+
+- 参数：
+
+  ```
+  'LId'=>'实验编号7位',
+  'LName'=>'实验名称',
+  'LTag'=>'实验分组4位'
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'message'=>'信息',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+### 上传实验预习报告
+
+- url：
+
+  ```
+  /console/uploadPre
+  ```
+
+- 请求方式：POST
+
+- 内容：
+
+  ```
+  'labID'=>'实验编号',
+  'prepare-pdf'=>"pdf文件，大小不超过5M"
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'message'=>'信息',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+### 获取实验Python脚本/表格/Latex模板/Markdown模板
+
+- url：
+
+  ```
+  /getScript /getTable /getTex /getMD
+  ```
+
+- 请求方式：GET
+
+- 内容：
+
+  ```
+  'id'=>'实验编号'
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'contents'=>'相应的文件内容',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+### 更新实验
+
+- url：
+
+  ```
+  /console/updatereport
+  ```
+
+- 请求方式：POST
+
+- 内容：
+
+  ```
+  'reportId'=>'实验编号'
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'message'=>'信息',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+### 发布实验
+
+- url：
+
+  ```
+  /console/confirmReport
+  ```
+
+- 请求方式：POST
+
+- 内容：
+
+  ```
+  'reportId'=>'实验编号'
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'message'=>'信息',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+### 删除未发布实验
+
+- url：
+
+  ```
+  /console/delete
+  ```
+
+- 请求方式：POST
+
+- 内容：
+
+  ```
+  'id'=>'实验编号'
+  ```
+
+- 返回方式：JSON
+
+- 内容：
+
+  ```
+  ['status'=>'状态，success/fail',
+  'message'=>'信息',
+  'errorcode'=>'错误编码']
+  ```
+
+
+
+
 
