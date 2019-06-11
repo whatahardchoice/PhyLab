@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Auth;
@@ -57,17 +58,15 @@ trait PhylabPasswordReset
 
     /**
      * Display the password reset view for the given token.
-     *
+     *  if (is_null($token){
      * @param  string  $token
      * @return \Illuminate\Http\Response
      */
     public function getReset($token = null)
     {
-        if (is_null($token)) {
-            //ecode  return FAIL_MESSAGE;
-            throw new NotFoundHttpException;
+        if (is_null($token)){
+            return response()->json(["fail_message"=>"PhylabPasswordReset.php.getReset()","errorcode"=>"7801"]);
         }
-
         return view('auth.reset')->with('token', $token);
     }
 

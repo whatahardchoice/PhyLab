@@ -194,7 +194,8 @@ class UserController extends Controller
                 catch(Exception $e)
                 {
                     $data["errorcode"]="7202";
-                    throw new FileIOException(); //问题的主要所在
+                    return response()->json($data);
+                    //throw new FileIOException(); //问题的主要所在
                 }
                 try{
                     //$auth->introduction = "asd" ;
@@ -208,17 +209,20 @@ class UserController extends Controller
                 catch(Exception $e)
                 {
                     $data["errorcode"]="7203";
-                    throw new DatabaseOperatorException();
+                    return response()->json($data);
+                    //throw new DatabaseOperatorException();
                 }
             }
             else{
                 $data["errorcode"]="7204";
-                throw new InvalidFileFormatException();
+                return response()->json($data);
+                //throw new InvalidFileFormatException();
             }
         }
         else{
             $data["errorcode"]="7205";
-            throw new InvalidRequestInputException("上传参数不正确");
+            return response()->json($data);
+            //throw new InvalidRequestInputException("上传参数不正确");
         }
         return response()->json($data);
     }

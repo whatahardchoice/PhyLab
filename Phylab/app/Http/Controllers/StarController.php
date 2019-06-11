@@ -218,7 +218,8 @@ class StarController extends Controller
         }
         else{
             $data["errorcode"]="7510";
-            throw new NoResourceException();
+            return view("star.show",$data);
+            //throw new NoResourceException();
         }
         return view("star.show",$data);
         #return json_encode($data,JSON_UNESCAPED_UNICODE);
@@ -239,7 +240,8 @@ class StarController extends Controller
             $experimentId = $star->report->experiment_id;
         }
         else{
-            throw new NoResourceException();
+            return response()->json(["fail_message"=>"StartController.php.download()","errorcode"=>"7511"]);
+            //throw new NoResourceException();
         }
         return response()->download(Config::get('phylab.starPath').$reportLink,$experimentId.".pdf");
     }

@@ -38,8 +38,7 @@ errorcode-expression
 7402|脚本生成失败|ReportController.php|createTex
 7403|exception|ReportController.php|createMD
 7404|脚本生成失败|ReportController.php|createMD
-7405|exception|ReportController.php|show
-7406|exception|ReportController.php|getXmlForm
+7405|exception|ReportController.php|getTable
 -----|-------------------------------|------------------|-----
 7501|检查失败|StarController.php|create
 7502|没有此类型报告|StarController.php|create
@@ -51,11 +50,14 @@ errorcode-expression
 7508|删除失败|StarController.php|delete
 7509|删除失败|StarController.php|delete
 7510|未找到文件|StarController.php|show
+7511|未找到文件|StarController.php|download
 -----|-------------------------------|------------------|-----
 7601|身份验证成功|DesexpController.php|index
 7602|未找到实验|DesexpController.php|getDesexp
 -----|-------------------------------|------------------|-----
 7701|没有权限更新公告栏|IndexController.php|modifyBulletin|
+-----|-------------------------------|------------------|-----
+7801|token值为空|PhylabPasswordReset.php|getReset
 -----|-------------------------------|------------------|-----
 8001|ajax.fail()网络问题|consoleCore.js|所有函数
 8002|ajax.fail()网络问题|desexp.js|所有函数

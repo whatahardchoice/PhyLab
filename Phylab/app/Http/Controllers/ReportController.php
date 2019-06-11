@@ -131,7 +131,9 @@ class ReportController extends Controller
         }
         catch(Exception $e){
             $data["errorcode"]="7401";
-            throw new FileIOException();
+            $resp = response()->json($data);
+            return $resp;
+            //throw new FileIOException();
         }
         // $report = Report::find(Request::get('id'));
         // $scriptLink = $report->script_link;
@@ -254,7 +256,9 @@ class ReportController extends Controller
         }
         catch(Exception $e){
             $data["errorcode"]="7403";
-            throw new FileIOException();
+            $resp = response()->json($data);
+            return $resp;
+            //throw new FileIOException();
         }
         // $report = Report::find(Request::get('id'));
         // $scriptLink = $report->script_link;
@@ -364,7 +368,7 @@ class ReportController extends Controller
             $file = fopen($htmlFile, "r");
             $html = fread($file,filesize($htmlFile));
         } catch (Exception $e) {
-            $data = ["status"=>''];
+            $data = ["status"=>'',"errorcode"=>"7405"];
             $data["status"]=FAIL_MESSAGE;
 
             return response()->json($data);
