@@ -1,0 +1,819 @@
+{
+	"info": {
+		"_postman_id": "537178de-a029-4bdf-9cc0-2664d84e5b1e",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "log in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe03691c-e891-4303-bad2-753dc6992cea",
+						"exec": [
+							"pm.test(\"Status\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://47.94.228.157:8080/login?email=123456@test.com&password=123456",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "123456@test.com"
+						},
+						{
+							"key": "password",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user test: upload avatar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "29902aa0-e773-4d1d-ab5a-db92575ba0e7",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Avatar exists\", function () {",
+							"    pm.expect(jsonData.avatarPath).to.include(\".png\");",
+							"});",
+							"",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"Message is right\", function () {",
+							"    pm.expect(jsonData.message).to.eql(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "test.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/user/avatar",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user test: upload information",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65402e35-8399-4e73-ad95-25c40f2c318f",
+						"exec": [
+							"pm.test(\"Status is right\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://47.94.228.157:8080/user?username=test_account&sex=3&grade=2017&introduction=my introduction",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test_account"
+						},
+						{
+							"key": "sex",
+							"value": "3"
+						},
+						{
+							"key": "grade",
+							"value": "2017"
+						},
+						{
+							"key": "introduction",
+							"value": "my introduction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report test: 2111 create Tex",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "038616b4-f975-4690-af69-651e51bf7f97",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"pdflink\", jsonData.link);",
+							"pm.environment.set(\"reportId\", jsonData.experimentId);",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"ExperimentId is right\", function () {",
+							"    pm.expect(jsonData.experimentId).to.eql(\"2110114\");",
+							"});",
+							"",
+							"pm.test(\"Return a pdf link\", function () {",
+							"    pm.expect(jsonData.link).to.include(\".pdf\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "id=2110114&xml=<?xml version=\"1.0\" encoding=\"utf-8\"?><lab id=\"2110114\">\n<table name=\"21111_1\" raw=\"1\" column=\"8\">\n<tr index=\"1\">\n<td>0</td>\n<td>0.35</td>\n<td>0.63</td>\n<td>0.92</td>\n<td>1.12</td>\n<td>1.30</td>\n<td>1.41</td>\n<td>1.63</td>\n</tr>\n</table>\n<table name=\"21111_2\" raw=\"1\" column=\"5\">\n<tr index=\"1\">\n<td>70</td>\n<td>40</td>\n<td>1.54</td>\n<td>632.8</td>\n<td>10</td>\n</tr>\n</table>\n</lab>"
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/report/createTex",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"createTex"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "star test: star a report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fa3c0cb7-544a-4c36-b5af-673bb7cbe8e2",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"starId\", jsonData.id);",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"ErrorCode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"Message is right\", function () {",
+							"    pm.expect(jsonData.message).to.eql(\"收藏报告成功\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "cf5bfb8d-01dd-4cb4-9a0d-98f452d462a4",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "link={{pdflink}}&reportId={{reportId}}"
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/user/star",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"star"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "star test: delete a star report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "abe42179-c369-41f9-a622-b1e1e53180e5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"ErrorCode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "_method=DELETE&id={{starId}}"
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/user/star",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"star"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "report test: 2111 createMD",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "330e6d82-2eac-4a21-a776-3c635bb8fa45",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"ExperimentId is right\", function () {",
+							"    pm.expect(jsonData.experimentId).to.eql(\"2110114\");",
+							"});",
+							"",
+							"pm.test(\"Return a pdf link\", function () {",
+							"    pm.expect(jsonData.link).to.include(\".html\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "id=2110114&xml=<?xml version=\"1.0\" encoding=\"utf-8\"?><lab id=\"2110114\">\n<table name=\"21111_1\" raw=\"1\" column=\"8\">\n<tr index=\"1\">\n<td>0</td>\n<td>0.35</td>\n<td>0.63</td>\n<td>0.92</td>\n<td>1.12</td>\n<td>1.30</td>\n<td>1.41</td>\n<td>1.63</td>\n</tr>\n</table>\n<table name=\"21111_2\" raw=\"1\" column=\"5\">\n<tr index=\"1\">\n<td>70</td>\n<td>40</td>\n<td>1.54</td>\n<td>632.8</td>\n<td>10</td>\n</tr>\n</table>\n</lab>"
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/report/createMD",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"createMD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "console test: create a new experiment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94b092ab-f18a-4ce5-a48a-4d513fbd4154",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"pm.test(\"Msg is nothing\", function () {",
+							"    pm.expect(jsonData.msg).to.eql(\"\");",
+							"});",
+							"pm.test(\"Message is right\", function () {",
+							"    pm.expect(jsonData.message).to.eql(\"创建新报告成功\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "zh-CN,zh;q=0.9",
+						"type": "text"
+					},
+					{
+						"key": "x-requested-with",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": "http://47.94.228.157:8080/console",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://47.94.228.157:8080/createLab?LId=8888888&LName=Interface test&LTag=8888",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"createLab"
+					],
+					"query": [
+						{
+							"key": "LId",
+							"value": "8888888"
+						},
+						{
+							"key": "LName",
+							"value": "Interface test"
+						},
+						{
+							"key": "LTag",
+							"value": "8888"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "console test: upload pdf",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c3fccdfa-a0f2-475f-8c18-be63f6a31acb",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"Message is right\", function () {",
+							"    pm.expect(jsonData.message).to.eql(\"上传成功\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "http://47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "prepare-pdf",
+							"type": "file",
+							"src": "test.pdf"
+						},
+						{
+							"key": "labID",
+							"value": "8881",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/console/uploadPre",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"console",
+						"uploadPre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "console test: delete a experiment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aacfc3d4-944d-4985-8c42-df05979528fb",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Status is right\", function () {",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Errorcode is right\", function () {",
+							"    pm.expect(jsonData.errorcode).to.eql(\"0000\");",
+							"});",
+							"",
+							"pm.test(\"Message is right\", function () {",
+							"    pm.expect(jsonData.message).to.eql(\"删除成功！\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "47.94.228.157:8080",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded; charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "DNT",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "id=8888888"
+				},
+				"url": {
+					"raw": "http://47.94.228.157:8080/console/delete",
+					"protocol": "http",
+					"host": [
+						"47",
+						"94",
+						"228",
+						"157"
+					],
+					"port": "8080",
+					"path": [
+						"console",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
