@@ -88,7 +88,7 @@ class UserController extends Controller
         }
         else
         {
-            $data['avatarPath'] = Config::get('phylab.avatarPath').$data['avatarPath'];
+            $data['avatarPath'] = 'avatar/'.$data['avatarPath'];
         }
 
 
@@ -203,7 +203,7 @@ class UserController extends Controller
                     $auth->save();
                     $data["status"] = SUCCESS_MESSAGE;
 
-                    $data["avatarPath"] = Config::get('phylab.avatarPath').$fname;
+                    $data["avatarPath"] = 'avatar/'.$fname;
 
                 }
                 catch(Exception $e)
