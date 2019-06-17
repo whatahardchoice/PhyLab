@@ -384,7 +384,7 @@ class ReportTest extends TestCase
         //正确实验id
         $_GET['id'] = $this->last_confirm_exp_id ;
         //var_dump($this->get('/table')) ;
-        $this->get('/table') ;
+        $this->get('/table');
 
        // $response = $this->call('GET','/table',['id'=>'2140113']);
 

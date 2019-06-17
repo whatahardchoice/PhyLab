@@ -102,10 +102,11 @@ class StarTest extends TestCase
      */
     public  function testDelete(){
 
-        //创建一条数据库记录，没有link
+        //创建一条数据库记录
         DB::table('stars')->insert([
             'id' => 9999 ,
             'name' => 'test_delete' ,
+            'link' =>'abcd.pdf'
         ]) ;
         //登录
         $this->visit('/login')

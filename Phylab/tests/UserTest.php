@@ -95,7 +95,7 @@ class UserTest extends TestCase
         $user = Auth::user() ;
         //$user = User::where('name','=',$this->super_admin_username)->get() ;
         $this->get('/user')
-             ->assertViewHas('avatarPath' , Config::get('phylab.avatarPath').$user->avatar_path) ;
+             ->assertViewHas('avatarPath' , 'avatar/'.$user->avatar_path) ;
         //self::assertEquals('' , Config::get('phylab.avatarPath').$user->avatar_path) ;
         //self::assertEquals($user->introduction , $data['introduction']) ;
 

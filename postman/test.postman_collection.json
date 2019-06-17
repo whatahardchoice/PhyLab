@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "537178de-a029-4bdf-9cc0-2664d84e5b1e",
+		"_postman_id": "22b56b4b-ac4a-4df3-960f-1afb19664466",
 		"name": "test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -26,15 +26,10 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://47.94.228.157:8080/login?email=123456@test.com&password=123456",
-					"protocol": "http",
+					"raw": "{{domain}}/login?email=123456@test.com&password=123456",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"login"
 					],
@@ -128,15 +123,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/user/avatar",
-					"protocol": "http",
+					"raw": "{{domain}}/user/avatar",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"user",
 						"avatar"
@@ -170,15 +160,10 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://47.94.228.157:8080/user?username=test_account&sex=3&grade=2017&introduction=my introduction",
-					"protocol": "http",
+					"raw": "{{domain}}/user?username=test_account&sex=3&grade=2017&introduction=my introduction",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"user"
 					],
@@ -269,15 +254,10 @@
 					"raw": "id=2110114&xml=<?xml version=\"1.0\" encoding=\"utf-8\"?><lab id=\"2110114\">\n<table name=\"21111_1\" raw=\"1\" column=\"8\">\n<tr index=\"1\">\n<td>0</td>\n<td>0.35</td>\n<td>0.63</td>\n<td>0.92</td>\n<td>1.12</td>\n<td>1.30</td>\n<td>1.41</td>\n<td>1.63</td>\n</tr>\n</table>\n<table name=\"21111_2\" raw=\"1\" column=\"5\">\n<tr index=\"1\">\n<td>70</td>\n<td>40</td>\n<td>1.54</td>\n<td>632.8</td>\n<td>10</td>\n</tr>\n</table>\n</lab>"
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/report/createTex",
-					"protocol": "http",
+					"raw": "{{domain}}/report/createTex",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"report",
 						"createTex"
@@ -363,15 +343,10 @@
 					"raw": "link={{pdflink}}&reportId={{reportId}}"
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/user/star",
-					"protocol": "http",
+					"raw": "{{domain}}/user/star",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"user",
 						"star"
@@ -441,15 +416,10 @@
 					"raw": "_method=DELETE&id={{starId}}"
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/user/star",
-					"protocol": "http",
+					"raw": "{{domain}}/user/star",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"user",
 						"star"
@@ -520,15 +490,10 @@
 					"raw": "id=2110114&xml=<?xml version=\"1.0\" encoding=\"utf-8\"?><lab id=\"2110114\">\n<table name=\"21111_1\" raw=\"1\" column=\"8\">\n<tr index=\"1\">\n<td>0</td>\n<td>0.35</td>\n<td>0.63</td>\n<td>0.92</td>\n<td>1.12</td>\n<td>1.30</td>\n<td>1.41</td>\n<td>1.63</td>\n</tr>\n</table>\n<table name=\"21111_2\" raw=\"1\" column=\"5\">\n<tr index=\"1\">\n<td>70</td>\n<td>40</td>\n<td>1.54</td>\n<td>632.8</td>\n<td>10</td>\n</tr>\n</table>\n</lab>"
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/report/createMD",
-					"protocol": "http",
+					"raw": "{{domain}}/report/createMD",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"report",
 						"createMD"
@@ -604,15 +569,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://47.94.228.157:8080/createLab?LId=8888888&LName=Interface test&LTag=8888",
-					"protocol": "http",
+					"raw": "{{domain}}/createLab?LId=8888888&LName=Interface test&LTag=8888",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"createLab"
 					],
@@ -710,15 +670,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/console/uploadPre",
-					"protocol": "http",
+					"raw": "{{domain}}/console/uploadPre",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"console",
 						"uploadPre"
@@ -792,15 +747,10 @@
 					"raw": "id=8888888"
 				},
 				"url": {
-					"raw": "http://47.94.228.157:8080/console/delete",
-					"protocol": "http",
+					"raw": "{{domain}}/console/delete?=",
 					"host": [
-						"47",
-						"94",
-						"228",
-						"157"
+						"{{domain}}"
 					],
-					"port": "8080",
 					"path": [
 						"console",
 						"delete"
@@ -814,6 +764,54 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "652e3de8-3b5c-440e-b7a4-2160d10d2032",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3883bfb7-3f69-46ec-9ed9-d4acd6ac9950",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "08367c71-50da-4b8a-a55a-90b278167c79",
+			"key": "domain",
+			"value": "http://47.94.228.157:8080",
+			"type": "string"
+		},
+		{
+			"id": "072721fd-9baf-42ad-9f59-4d88aa9b4e21",
+			"key": "pdflink",
+			"value": "null",
+			"type": "string"
+		},
+		{
+			"id": "04e79532-e91c-49d5-8fe1-83115f479524",
+			"key": "reportId",
+			"value": "null",
+			"type": "string"
+		},
+		{
+			"id": "6f60dad3-fcba-424f-ab71-c8fc3f980cfd",
+			"key": "starId",
+			"value": "null",
+			"type": "string"
 		}
 	]
 }
