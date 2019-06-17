@@ -453,6 +453,7 @@ class ConsoleController extends Controller {
 				));
 				$result['status']=SUCCESS_MESSAGE;
 				$result['msg']="";
+				$result['errorcode']='0000';
 				$result['message'] = "创建新报告成功" ;
 			}
 			/*
