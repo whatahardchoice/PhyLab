@@ -83,7 +83,7 @@ class UserController extends Controller
          */
         if (!$auth->avatar_path||!file_exists(Config::get("phylab.avatarPath").$data["avatarPath"]))
         {
-            $data["avatarPath"] = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . $size . '-img.png';
+            $data["avatarPath"] = "wecenter/static" . '/common/avatar-' . $size . '-img.png';
             //$data["avatarPath"] =  env("SERVER_PAGE")."/wecenter/uploads". '/avatar/' . $dir1 . '/' . $dir2 . '/' . $dir3 . '/' . substr($uid, - 2) . '_avatar_' . $size . '.jpg';
         }
         else

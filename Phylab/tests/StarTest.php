@@ -273,7 +273,7 @@ class StarTest extends TestCase
         //创建一个新的实验和收藏夹项目，实验名字为空
 
         DB::table('reports')->insert([
-            'id' => 9999 ,
+            'id' => 10000 ,
             'experiment_id' => 8888888 ,
         ]);
         /*
@@ -332,7 +332,7 @@ class StarTest extends TestCase
 
         DB::table('stars')->where('link' , 'test_star_notsame.pdf')->delete() ;
         //删除新创建实验
-        DB::table('reports')->where('id' , '9999')->delete() ;
+        DB::table('reports')->where('id' , '10000')->delete() ;
         //超过最大收藏数量
         for($i = 0 ; $i<10 ; $i++){
             DB::table('stars')->insert([

@@ -83,7 +83,7 @@ class UserTest extends TestCase
         self::assertEquals(true , $data['auth']) ;
         self::assertEquals(true , $data['admin']) ;
         //头像路径，未上传过，使用默认
-        $avatar_path = env("SERVER_PAGE")."/wecenter/static" . '/common/avatar-' . "max" . '-img.png';
+        $avatar_path = "wecenter/static" . '/common/avatar-' . "max" . '-img.png';
         self::assertEquals($avatar_path , $data['avatarPath']) ;
         //头像路径，已上传过，查询
         $this->visit('logout') ;

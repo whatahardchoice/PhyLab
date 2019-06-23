@@ -1,77 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PhpIncludePathManager">
-    <include_path>
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/jakub-onderka/php-console-color" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/composer" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/yaml" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpspec/phpspec" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/phpunit-mock-objects" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/mtdowling/cron-expression" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/jeremeamia/SuperClosure" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/danielstjules/stringy" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/classpreloader/classpreloader" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/barryvdh/reflection-docblock" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/barryvdh/laravel-ide-helper" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/class-loader" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-php56" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-util" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/Phylab/vendor/doctrine/cache" />
-    </include_path>
-  </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="78f17d60-2335-4a40-a509-632efa6d7db4" name="Remote PHP 7.0" home="sftp://DATA" debugger_id="php.debugger.XDebug">
-        <remote_data WEB_SERVER_CONFIG_ID="3abac7c6-6b02-42e1-b3d9-5aa98bbb8721" WEB_SERVER_CONFIG_NAME="aliyun" WEB_SERVER_CREDENTIALS_ID="sftp://root@47.94.228.157:22" INTERPRETER_PATH="/usr/bin/php" HELPERS_PATH="/root/.phpstorm_helpers" INITIALIZED="false" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" />
+      <interpreter home="sftp://DATA" id="78f17d60-2335-4a40-a509-632efa6d7db4" name="Remote PHP 7.0" debugger_id="php.debugger.XDebug">
+        <remote_data WEB_SERVER_CONFIG_ID="3abac7c6-6b02-42e1-b3d9-5aa98bbb8721" WEB_SERVER_CONFIG_NAME="aliyun" WEB_SERVER_CREDENTIALS_ID="sftp://root@47.94.228.157:22" INTERPRETER_PATH="/usr/bin/php" HELPERS_PATH="/root/.phpstorm_helpers" INITIALIZED="false" VALID="true" />
       </interpreter>
     </interpreters>
   </component>
